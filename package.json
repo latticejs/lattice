@@ -2,6 +2,9 @@
   "private": true,
   "name": "lattice",
   "version": "1.0.0",
+  "scripts": {
+    "create-react-app": "node tasks/cra.js"
+  },
   "devDependencies": {
     "lerna": "^2.9.0"
   },
