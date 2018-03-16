@@ -1,0 +1,13 @@
+{
+  "name": "@lattice/widgets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "material-ui": "^1.0.0-beta.37"
+  },
+  "devDependencies": {
+    "material-ui": "^1.0.0-beta.37"
+  }
+  
+}
