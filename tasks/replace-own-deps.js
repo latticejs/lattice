@@ -19,12 +19,12 @@ const data = require(pkgFilename);
 fs.readdirSync(packagesDir).forEach((name) => {
   if (data.dependencies[name]) {
     data.dependencies[name] = 'file:' + path.join(packagesDir, name);
-  }
-  // Added to support scoped pkg
-  if (data.dependencies[`@lattice/${name}`]) {
-    data.dependencies[`@lattice/${name}`] = 'file:' + path.join(packagesDir, name);
-  }
-  
+  } else {
+    const pkgName = require(path.join(packagesDir, name, 'package.json')).name
+    if (data.dependencies[pkgName]) {
+      data.dependencies[pkgName] = 'file:' + path.join(packagesDir, name);      
+    }
+  }  
 })
 
 fs.writeFile(pkgFilename, JSON.stringify(data, null, 2), 'utf8', (err) => {
