@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
-import './App.css';
+
+// Material-UI
+import CssBaseline from 'material-ui/CssBaseline';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Typography from 'material-ui/Typography';
+import { createMuiTheme } from 'material-ui/styles';
+
+// Typeface
+import 'typeface-roboto';
+
+const muiTheme = {
+  typography: {
+    title: {
+      fontWeight: 300
+    }
+  }
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Lattice</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
+        <CssBaseline>
+          <Typography variant="display1" align="center">Welcome to Lattice</Typography>
+          <Typography variant="subheading">Edit src/App.js</Typography>
+        </CssBaseline>
+      </MuiThemeProvider>
     );
   }
 }
