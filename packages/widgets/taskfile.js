@@ -14,7 +14,8 @@ const baseRollupPlugins = [
     namedExports: {
       'react': ['Children', 'Component', 'PropTypes', 'createElement'],
       'react-dom': ['render', 'findDOMNode'],
-      'material-ui/styles': ['withStyles']
+      'material-ui/styles': ['withStyles'],
+      'material-ui/List': ['ListItem', 'ListItemIcon', 'ListItemText']
     }
   }),
   resolve({

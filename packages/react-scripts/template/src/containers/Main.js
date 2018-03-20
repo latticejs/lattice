@@ -25,10 +25,12 @@ import MoreVerticalIcon from 'material-ui-icons/MoreVert';
 // Router
 import { Redirect, withRouter } from 'react-router-dom';
 
+// @lattice
+import { SideMenu } from '@lattice/widgets';
+
 // Ours
 import routes, { routeByPath, navigation } from './routes';
 import Content from '../components/Content';
-import SideMenu from '../components/SideMenu';
 import { toggleNightMode } from '../actions/ui';
 import Lightbulb from '../components/icons/Lightbulb';
 import PrivateRoute from './PrivateRoute';
