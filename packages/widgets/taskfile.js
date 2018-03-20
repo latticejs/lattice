@@ -2,6 +2,7 @@
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+import pkg from './package'
 
 const baseRollupPlugins = [
   babel({
@@ -22,11 +23,7 @@ const baseRollupPlugins = [
   })
 ]
 
-const external = [
-  'react',
-  'react-dom',
-  'material-ui'
-]
+const external = Object.keys(pkg.peerDependencies).concat(Object.keys(pkg.dependencies))
 
 export async function cjs(task, opts) {
   await task
