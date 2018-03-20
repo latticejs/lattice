@@ -47,19 +47,23 @@ export async function es(task, opts) {
       plugins: baseRollupPlugins,
       external,
       output: {
-        file: 'es/widgets.js',
+        file: 'widgets.es.js',
         format: 'es'
       }
     })
-    .target('dist/')
+    .target('dist/es')
 }
 
-export async function compile(task) {
+export async function modules(task) {
   await task.parallel(['cjs', 'es'])
 }
 
+export async function compile(task, opts) {
+  await task.source(opts.src || 'src/**/*.js').babel().target('dist/')
+}
+
 export async function build(task) {
-  await task.serial(['compile'])
+  await task.serial(['compile', 'modules'])
 }
 
 export default async function (task) {

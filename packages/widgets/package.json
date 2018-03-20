@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",
-  "module": "dist/es/lattice-widgets.js",
+  "module": "dist/es/widgets.es.js",
+  "files":[
+    "dist",
+    "Widget.js",
+    "SideMenu.js"
+  ],
   "scripts": {
     "build": "taskr",
     "release": "taskr release",
