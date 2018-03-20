@@ -6,7 +6,7 @@ import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 
 // @lattice
-import { Widget } from '@lattice/widgets';
+import Widget from '@lattice/widgets/Widget';
 
 class General extends Component {
   render () {

@@ -26,7 +26,7 @@ import MoreVerticalIcon from 'material-ui-icons/MoreVert';
 import { Redirect, withRouter } from 'react-router-dom';
 
 // @lattice
-import { SideMenu } from '@lattice/widgets';
+import SideMenu from '@lattice/widgets/SideMenu';
 
 // Ours
 import routes, { routeByPath, navigation } from './routes';

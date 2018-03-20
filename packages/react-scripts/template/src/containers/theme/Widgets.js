@@ -6,7 +6,7 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
 // @lattice
-import { Widget } from '@lattice/widgets';
+import Widget from '@lattice/widgets/Widget';
 
 const styles = theme => ({
   borderWidth: {
