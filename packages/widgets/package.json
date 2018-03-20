@@ -1,13 +1,45 @@
 {
   "name": "@lattice/widgets",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
+  "module": "dist/es/lattice-widgets.js",
+  "scripts": {
+    "build": "taskr",
+    "release": "taskr release",
+    "prepublish": "npm run release"
+  },
   "peerDependencies": {
-    "material-ui": "^1.0.0-beta.37"
+    "material-ui": "^1.0.0-beta.37",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "material-ui": "^1.0.0-beta.37"
+    "@taskr/babel": "^1.1.0",
+    "@taskr/clear": "^1.1.0",
+    "@taskr/esnext": "^1.1.0",
+    "@taskr/watch": "^1.1.0",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "^22.2.2",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-async-functions": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "material-ui": "^1.0.0-beta.37",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "taskr": "^1.1.0",
+    "taskr-rollup": "^0.0.4"
   },
   "dependencies": {
     "classnames": "^2.2.5"
