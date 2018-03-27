@@ -68,7 +68,7 @@ export async function build(task) {
 
 export default async function (task) {
   await task.start('build')
-  await task.watch('src/**/*.js', ['compile'])
+  await task.watch('src/**/*.js', ['compile', 'modules'])
 }
 
 export async function release(task) {
