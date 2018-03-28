@@ -2,17 +2,24 @@
 import ContentCopyIcon from 'material-ui-icons/ContentCopy';
 import DashboardIcon from 'material-ui-icons/Dashboard';
 import ExtensionIcon from 'material-ui-icons/Extension';
-import InsertChartIcon from 'material-ui-icons/InsertChart';
-import MapIcon from 'material-ui-icons/Map'
-import PageViewIcon from 'material-ui-icons/Pageview';
-import PeopleIcon from 'material-ui-icons/People';
-import PersonIcon from 'material-ui-icons/Person';
+// import InsertChartIcon from 'material-ui-icons/InsertChart';
+// import MapIcon from 'material-ui-icons/Map'
+// import PageViewIcon from 'material-ui-icons/Pageview';
+// import PeopleIcon from 'material-ui-icons/People';
+// import PersonIcon from 'material-ui-icons/Person';
 import TextFormatIcon from 'material-ui-icons/TextFormat';
 
+import Dashboard from './Dashboard';
 import General from './theme/General';
 import Widgets from './theme/Widgets';
 
 export const navigation = [
+  {
+    path: '/dashboard',
+    title: 'Dashboard',
+    component: Dashboard,
+    icon: DashboardIcon
+  },
   {
     title: 'Theme',
     icon: ExtensionIcon,
@@ -53,7 +60,7 @@ const routesInNavigation = () => {
 const routes = [
   {
     path: '/',
-    redirect: '/theme/widgets'
+    redirect: '/dashboard'
   },
   ...routesInNavigation()
 ];
