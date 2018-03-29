@@ -31,7 +31,7 @@ const reduceValue = (value) => (value > 1000) ? `${Math.floor(value/1000)}k`: `$
 const Stats = ({ stat: { label, value, unit } ,...props}) => {
   const { classes, classNames } = props
   return (
-    <Widget    
+    <Widget
       title={label}
       className={classnames([classNames, classes.root])}
       border="bottom"
