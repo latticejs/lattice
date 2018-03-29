@@ -11,6 +11,8 @@ import {
   isSsr
 } from 'recharts/lib/util/ReactUtils';
 import Tooltip from 'recharts/lib/component/Tooltip';
+import { getValueByDataKey } from 'recharts/lib/util/ChartUtils';
+
 // d3
 import { hierarchy, partition } from 'd3-hierarchy';
 import { arc } from 'd3-shape';
@@ -52,39 +54,113 @@ export default class Sunburst extends Component {
     };
   }
 
-  renderNode(node, index, arc) {
+  handleMouseEnter(node, e) {
+    const { onMouseEnter, children } = this.props;
+    const tooltipItem = findChildByType(children, Tooltip);
+    if (tooltipItem) {
+      this.setState({
+        isTooltipActive: true,
+        activeNode: node,
+      }, () => {
+        if (onMouseEnter) {
+          onMouseEnter(node, e);
+        }
+      });
+    } else if (onMouseEnter) {
+      onMouseEnter(node, e);
+    }
+  }
+
+  handleMouseLeave(node, e) {
+    const { onMouseLeave, children } = this.props;
+    const tooltipItem = findChildByType(children, Tooltip);
+
+    if (tooltipItem) {
+      this.setState({
+        isTooltipActive: false,
+        activeNode: null,
+      }, () => {
+        if (onMouseLeave) {
+          onMouseLeave(node, e);
+        }
+      });
+    } else if (onMouseLeave) {
+      onMouseLeave(node, e);
+    }
+  }
+ 
+  renderNode(node, index, arc, root) {
+    const nodeProps = { ...getPresentationAttributes(this.props), ...node, root };
+    const isLeaf = !node.children || !node.children.length;
+    const events = {
+      onMouseEnter: this.handleMouseEnter.bind(this, node),
+      onMouseLeave: this.handleMouseLeave.bind(this, node),
+    };
+
     let opacity = 1;
+
     return (
       <path
+        {...events}
         key={`path-${index}`}
         display={node.depth ? null : 'none'}
         d={arc(node)}
         fillRule={'evenodd'}
         // fill={colors[node.data.name]}
-        fill="#ccc"
+        fill="purple"
+        stroke="#fff"
         style={{ opacity }}
-        // onMouseOver={(...args) => this.handleMouseOver(...args, node)}
+        {...getPresentationAttributes(this.props)}
       />
     )
-
   }
 
   renderAllNodes () {
-    const { width, height, data, dataKey } = this.props;
+    const { width, height, data, dataKey, nameKey } = this.props;
     const radius = Math.min(width, height) / 2;
-
-    const root = computeData(data, radius, dataKey)
+    const root = computeData({[nameKey]: 'root',  children: data}, radius, dataKey);
     const dataArc = arc()
       .startAngle((d) => { return d.x0; })
       .endAngle((d) => { return d.x1; })
       .innerRadius((d) => { return Math.sqrt(d.y0); })
       .outerRadius((d) => { return Math.sqrt(d.y1); });
-
     return (
       <Layer transform={`translate( ${width/2} , ${height/2})`}>
-        {root.map((node, index) => this.renderNode(node, index, dataArc))}
+        {root.map((node, index) => this.renderNode(node, index, dataArc, root))}
       </Layer>
     )
+  }
+
+  renderTooltip() {
+    const { children, nameKey } = this.props;
+    const tooltipItem = findChildByType(children, Tooltip);
+
+    if (!tooltipItem) { return null; }
+
+    const { width, height, dataKey } = this.props;
+    const { isTooltipActive, activeNode } = this.state;
+    const viewBox = { x: 0, y: 0, width, height };
+    // const coordinate = {
+    //   x: width / 2,
+    //   y: height / 2
+    // }
+    const coordinate = activeNode ? {
+      x: activeNode.x + activeNode.width / 2,
+      y: activeNode.y + activeNode.height / 2,
+    } : null;
+    const payload = isTooltipActive && activeNode ? [{
+      payload: activeNode,
+      name: getValueByDataKey(activeNode.data, nameKey, ''),
+      value: activeNode.value//getValueByDataKey(activeNode, dataKey),
+    }] : [];
+
+    return React.cloneElement(tooltipItem, {
+      viewBox,
+      active: isTooltipActive,
+      coordinate,
+      label: '',
+      payload,
+    });
   }
 
   render () {
@@ -102,8 +178,8 @@ export default class Sunburst extends Component {
           {this.renderAllNodes()}
           {filterSvgElements(children)}
         </Surface>
-        {/* {this.renderTooltip()} */}
+        {this.renderTooltip()}
       </div>
-    );    
+    );
   }
 }
