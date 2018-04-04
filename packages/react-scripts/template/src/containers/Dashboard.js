@@ -3,39 +3,20 @@ import React, { Component } from 'react';
 // Material-UI
 import Grid from 'material-ui/Grid';
 
+// Apollo
+import { compose, graphql } from 'react-apollo';
+
 // Ours
 import AverageRevenue from '../components/dashboard/AverageRevenue';
 import NewCustomers from '../components/dashboard/NewCustomers';
 import Sales from '../components/dashboard/Sales';
 import Stats from '../components/dashboard/Stats';
+import allSales from '../queries/sales';
+import allStats from '../queries/stats';
 
-const stats = [
-  { label: 'Followers',
-    unit: "New Followers",
-    value: 6
-  },
-  { label: 'Mentions',
-    unit: "In last hour",
-    value: 38
-  },
-  { label: 'Revenue',
-    unit: "USD",
-    value: 92380
-  }, 
-  { label: 'Visitors',
-    unit: "New Visitors",
-    value: 289
-  }
-]
-const sales = [
-  { name: 'Product A', value: 123245 },
-  { name: 'Product B', value: 887237 },
-  { name: 'Product C', value: 536551 },
-  { name: 'Product D', value: 34323 }
-]
-
-export default class Dashboard extends Component {
+class Dashboard extends Component {
   render () {
+    const { sales = [], stats = [] } = this.props
     return (
       <Grid container>
         <Grid item xs={12}>
@@ -66,3 +47,8 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+export default compose(
+  graphql(allSales, { props: ({ data: { allSales } }) => ({ sales: allSales }) }),
+  graphql(allStats, { props: ({ data: { allStats } }) => ({ stats: allStats }) })
+)(Dashboard)
