@@ -18,9 +18,9 @@ class Dashboard extends Component {
   render () {
     const { sales = [], stats = [] } = this.props
     return (
-      <Grid container>
+      <Grid container spacing={16}>
         <Grid item xs={12}>
-          <Grid container>
+          <Grid container spacing={16}>
             {
               stats.map((stat, idx) => (
                 <Grid key={`stat-${idx}`} item xs={6}  lg={12 / stats.length}> 
@@ -34,7 +34,7 @@ class Dashboard extends Component {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Grid container alignItems="stretch">
+          <Grid container alignItems="stretch" spacing={16}>
             <Grid item xs={12} md={8}>
               <NewCustomers style={{height: '100%'}}/>
             </Grid>
