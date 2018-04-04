@@ -10,7 +10,9 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { withClientState } from 'apollo-link-state';
 import { ApolloLink } from 'apollo-link';
-import { HttpLink } from 'apollo-link-http';
+// apollo-link-http is included for your convinience but not used
+// Uncomment this line and define your graphQL uri below on the apollo client definition
+// import { HttpLink } from 'apollo-link-http';
 
 // Ours
 import App from './containers/App';
