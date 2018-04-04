@@ -1,6 +1,11 @@
-const asGraphQL = type => array => array.map(e => ({...e, __typename: type}))
+const seed = {
+  'Stats': 100,
+  'Sales': 1000
+}
 
-export const stats = [
+const asGraphQL = type => array => array.map((e, index) => ({...e, __typename: type, id: seed[type] + index }))
+
+export const stats = asGraphQL('Stats')([
   {
     label: 'Followers',
     unit: "New Followers",
@@ -21,11 +26,11 @@ export const stats = [
     unit: "New Visitors",
     value: 289
   }
-].map(e => ({...e, __typename: 'Stats'}))
+])
 
-export const sales = [
+export const sales = asGraphQL('Sales')([
   { name: 'Product A', value: 123245 },
   { name: 'Product B', value: 887237 },
   { name: 'Product C', value: 536551 },
   { name: 'Product D', value: 34323 }
-].map(e => ({...e, __typename: 'Sales'}))
+])
