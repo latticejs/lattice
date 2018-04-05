@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Redux
-import { Provider } from 'react-redux';
-
 // Apollo
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
@@ -16,10 +13,7 @@ import { ApolloLink } from 'apollo-link';
 
 // Ours
 import App from './containers/App';
-import store from './store';
-
-// Mock data
-import { stats, sales } from './mock-data';
+import resolvers from './resolvers';
 
 const cache = new InMemoryCache();
 
@@ -28,20 +22,15 @@ const client = new ApolloClient({
     // new HttpLink({ uri: '/' }),
     withClientState({
       cache,
-      defaults: {
-        allStats: stats,
-        allSales: sales
-      }
+      ...resolvers
     })
   ]),
   cache
-})
+});
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <App />
   </ApolloProvider>,
   document.getElementById('root')
 );

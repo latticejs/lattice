@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
 
-// Redux
-import { connect } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-
 // Material-UI
 import { createMuiTheme } from 'material-ui/styles';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import CssBaseline from 'material-ui/CssBaseline';
 
 // Router
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter , Route, Switch } from 'react-router-dom';
+
+// Apollo
+import { compose, graphql } from 'react-apollo';
 
 // Typeface
 import 'typeface-roboto';
 
-import { history } from '../store';
 import Login from './Login';
 import Main from './Main';
 import PrivateRoute from './PrivateRoute';
-
+import ui from '../queries/ui';
 
 class App extends Component {
   state = {
     muiTheme: {
       palette: {
+        type: this.props.nightMode ? 'dark' : 'light'
       },
       typography: {
         title: {
@@ -50,13 +49,12 @@ class App extends Component {
         }        
       })
     }
-
   }
 
   render() {
     const { muiTheme } = this.state;
     return (
-      <ConnectedRouter history={history}>
+      <BrowserRouter>
         <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
           <CssBaseline>
             <Switch>
@@ -65,11 +63,13 @@ class App extends Component {
             </Switch>
           </CssBaseline>
         </MuiThemeProvider>
-      </ConnectedRouter>
+      </BrowserRouter>
     );
   }
 }
 
-export default connect(
-  ({ ui: { nightMode } }) => ({ nightMode })
+export default compose(
+  graphql(ui, {
+    props: ({ data: { ui: { nightMode } } }) => ({ nightMode })
+  })
 )(App);

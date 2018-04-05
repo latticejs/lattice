@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 import { Redirect, Route } from 'react-router-dom';
+
+// Apollo
+import { compose, graphql } from 'react-apollo';
+import user from '../queries/user';
 
 class PrivateRoute extends Component {
   render () {
@@ -20,6 +23,8 @@ class PrivateRoute extends Component {
   }
 }
 
-export default connect(
-  ({ user: { loggedIn } }) => ({ loggedIn })
-)(PrivateRoute);
+export default compose(
+  graphql(user, {
+    props: ({ data: { user: { loggedIn } } }) => ({ loggedIn })
+  })
+)(PrivateRoute)

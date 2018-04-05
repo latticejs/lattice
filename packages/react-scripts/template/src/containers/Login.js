@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 // Material-UI
 import Button from 'material-ui/Button';
@@ -9,10 +8,14 @@ import TextField from 'material-ui/TextField'
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
+// Apollo
+import { compose, graphql } from 'react-apollo';
+
+// Router
 import { Redirect } from 'react-router-dom';
 
 // Ours
-import { signIn } from '../actions/user';
+import user, { signIn } from '../queries/user';
 
 const styles = theme => ({
   root: {
@@ -30,12 +33,27 @@ const styles = theme => ({
 });
 
 class Login extends Component {
+  state = {
+    username: 'jane.doe@company.co',
+    password: ''
+  }
+
+
   handleSignIn = () => {
-    this.props.signIn()
+    const { username, password } = this.state;
+    const { signIn } = this.props;
+
+    signIn({
+      variables: {
+        username,
+        password
+      }
+    })
   }
 
   render () {
     const { classes, loggedIn, location: { state } } = this.props;
+    const { username, password } = this.state;
     return (
       loggedIn ? <Redirect to={state ? state.from : '/'} /> :
       <Grid container direction="row" alignItems="stretch" spacing={0} className={classes.root}>
@@ -60,12 +78,13 @@ class Login extends Component {
                 label="Username"
                 type="text"
                 fullWidth
-                value="jane@company.co"
+                value={username}
               />
               <TextField
                 label="Password"
                 type="password"
                 fullWidth
+                value={password}
               />
             </Grid>
             <Grid item xs={8}>
@@ -80,9 +99,10 @@ class Login extends Component {
   }
 }
 
-export default connect(
-  ({ user: { loggedIn } }) => ({loggedIn}),
-  (dispatch) => ({
-    signIn: () => dispatch(signIn())
-  })
-)(withStyles(styles)(Login));
+export default compose(
+  graphql(user, {
+    props: ({ data: { user: { loggedIn } } }) => ({ loggedIn })    
+  }),
+  graphql(signIn, { name: 'signIn' }),
+  withStyles(styles)
+)(Login)

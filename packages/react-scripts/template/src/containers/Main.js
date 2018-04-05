@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-// Redux
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
-
 // Material-UI
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -25,16 +21,20 @@ import MoreVerticalIcon from 'material-ui-icons/MoreVert';
 // Router
 import { Redirect, withRouter } from 'react-router-dom';
 
+// Apollo
+import { compose, graphql } from 'react-apollo';
+
 // @lattice
 import SideMenu from '@lattice/widgets/SideMenu';
 
 // Ours
 import routes, { routeByPath, navigation } from './routes';
 import Content from '../components/Content';
-import { toggleNightMode } from '../actions/ui';
 import Lightbulb from '../components/icons/Lightbulb';
 import PrivateRoute from './PrivateRoute';
-import { signOut } from '../actions/user';
+
+import ui, { updateNightMode } from '../queries/ui';
+import { signOut } from '../queries/user';
 
 const styles = theme => ({
   root: {
@@ -86,16 +86,20 @@ class Main extends Component {
   }
 
   handleMenuItemClick = ({ path }) => {
-    const { navigateTo } = this.props;
+    const { history } = this.props;
     this.setState({
       sideOpen: false
-    }, () => { navigateTo(path); })
+    }, () => { history.push(path); })
     
   }
 
-  handleNightModeChange = (e, checked) => {
-    const { toggleNightMode } = this.props;
-    toggleNightMode();
+  handleNightModeChange =  (e, checked) => {
+    const { updateNightMode, nightMode } = this.props;
+    updateNightMode({
+        variables: {
+          nightMode: !nightMode
+        }
+    })
   }
 
   handleSignOut = () => {
@@ -104,7 +108,7 @@ class Main extends Component {
   }
 
   renderSideMenu () {
-    const { activePath } = this.props;
+    const { location: { pathname: activePath } } = this.props;
     const { sideMenuMini } = this.state;
     const activeRoute = routeByPath(activePath);
 
@@ -121,7 +125,7 @@ class Main extends Component {
   }
 
   render() {
-    const { activePath, classes, nightMode } = this.props;
+    const { location: { pathname: activePath }, classes, nightMode } = this.props;
     const { sideMenuMini, sideOpen } = this.state;
     const activeRoute = routeByPath(activePath);
     const className = classnames(classes.root, classes['with-sidemenu' + (sideMenuMini ? 'mini' : '') ]);
@@ -207,18 +211,15 @@ class Main extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    navigateTo: (path) => dispatch(push(path)),
-    toggleNightMode: () => dispatch(toggleNightMode()),
-    signOut: () => dispatch(signOut())
-  }
-}
-
-export default withRouter(connect(
-  ({ routing, ui: { nightMode }, user: { loggedIn } }) => ({
-    activePath: routing.location.pathname,
-    nightMode
+export default compose(
+  graphql(ui, {
+    props: ({ data: { ui: { nightMode } } }) => ({
+      nightMode
+    })
   }),
-  mapDispatchToProps
-)(withStyles(styles)(Main)));
+  graphql(updateNightMode, { name: 'updateNightMode' }),
+  graphql(signOut, { name: 'signOut' }),
+  withRouter,
+  withStyles(styles)
+)(Main);
+
