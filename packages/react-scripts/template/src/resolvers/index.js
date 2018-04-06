@@ -4,11 +4,9 @@ import user from './user';
 // Mock data
 import { stats, sales } from '../mock-data';
 
-
 const combineResolvers = resolvers => {
-  return Object.keys(resolvers)
-    .reduce((prev, key) => {
-      const curr = resolvers[key]
+  return resolvers
+    .reduce((prev, curr) => {
       const currResolvers = curr.resolvers && curr.resolvers.Mutation
     
       return {
@@ -23,17 +21,22 @@ const combineResolvers = resolvers => {
           }
         }
       }
-    }, {
+    },
+    {
       defaults: {},
       resolvers: {
         Mutation: {}
       }
-    })
+    });
 }
 
-export default combineResolvers({
+export default combineResolvers([
   ui,
   user,
-  allStats: { defaults: { allStats: stats } },
-  allSales: { defaults: { allSales: sales } }
-});
+  { 
+    defaults: { 
+      allStats: stats, 
+      allSales: sales 
+    }
+  }
+]);
