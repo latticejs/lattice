@@ -1,3 +1,4 @@
+
 const seed = { 
   employee: 1000,
   department: 200,
@@ -101,13 +102,7 @@ const generator = {
         unit: "New Visitors",
         value: 289
       }
-    ].map((e, idx) => {
-      console.log(e, idx, seed.stats, seed.stats + idx)
-      return {
-        id: seed.stats + idx,
-        ...e
-      }
-    })
+    ].map((e, idx) => ({ id: seed.stats + idx, ...e }))
   }
 }
 
