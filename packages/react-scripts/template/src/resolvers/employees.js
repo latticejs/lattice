@@ -2,6 +2,7 @@ import gql from 'graphql-tag';
 
 import { employees } from '../mock-data';
 
+
 const filterBy = (filter) => e => {
   return (!filter || !filter.q || 
     e.name.indexOf(filter.q) !== -1 ||
@@ -9,39 +10,80 @@ const filterBy = (filter) => e => {
   )
 }
 
+const byId = id => e => ((id !== 0 && !id) || e.id === id)
+
 export default {
+  defaults: {
+    allEmployees: employees
+  },
   resolvers: {
     Query: {
-      allEmployees: (_, { page, perPage, filter }, { cache } ) => {
-        const from = page * perPage;
-        const to = from + perPage
-        const allEmployees = employees
-          .filter(filterBy(filter))
-          .slice(from, to)
+      allEmployees: (_, params, { cache } ) => {
+        const query = gql`
+          query getAllEmployees {
+            allEmployees @client {
+              id
+              name
+              email
+              position
+              department
+            }
+          }
+        `
+        const previous = cache.readQuery({query})
         
-        return allEmployees;
+        if (!params) return previous.allEmployees;
 
+        const { id, page, perPage, filter } = params;
+
+        let results = previous.allEmployees
+          .filter(byId(id))
+          .filter(filterBy(filter));
+        
+        if (page || perPage) {
+          const from = page * perPage;
+          const to = from + perPage;
+          results = results.slice(from, to);
+        }
+
+        return results;
       },
-      _allEmployeesMeta: (_, { filter }, { cache }) => ({
-        __typename: '_allEmployeesMeta',
-         count: employees
-          .filter(filterBy(filter)).length
-        })
+      _allEmployeesMeta: (_, { filter }, { cache }) => {
+        const query = gql`
+          query getAllEmployees {
+            allEmployees @client {
+              id
+              name
+              email
+              position
+              department
+            }
+          }
+        `
+        const previous = cache.readQuery({query})
+
+        return {
+          __typename: '_allEmployeesMeta',
+          count: previous.allEmployees
+            .filter(filterBy(filter)).length
+        }
+      }
     },
     Mutation: {
       createEmployee: (_, { id, name, email, position, department },  { cache }) => {
-        const previous = cache.readQuery({
-          query: gql`
-            query getAllEmployees {
-              allEmployees @client {
-                id
-                name
-                email
-                position
-                department
-              }
+        const query = gql`
+          query getAllEmployees {
+            allEmployees @client {
+              id
+              name
+              email
+              position
+              department
             }
-          `
+          }
+        `
+        const previous = cache.readQuery({
+          query
         });
 
         const newEmployee = {
@@ -53,14 +95,14 @@ export default {
           __typename: 'Employees'
         }
 
-        cache.writeData({
+        cache.writeQuery({
+          query,
           data: {
             allEmployees: previous.allEmployees.concat([newEmployee])
           }
         });
 
-        return newEmployee;
-        
+        return newEmployee;        
       },
       updateEmployee: (_, { id, name, email, position, department },  { cache }) => {
         const data = { id, name, email, position, department, __typename: 'Employees' };
