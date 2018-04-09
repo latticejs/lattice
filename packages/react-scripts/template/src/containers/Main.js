@@ -95,11 +95,7 @@ class Main extends Component {
 
   handleNightModeChange =  (e, checked) => {
     const { updateNightMode, nightMode } = this.props;
-    updateNightMode({
-        variables: {
-          nightMode: !nightMode
-        }
-    })
+    updateNightMode(!nightMode);
   }
 
   handleSignOut = () => {
@@ -217,7 +213,19 @@ export default compose(
       nightMode
     })
   }),
-  graphql(updateNightMode, { name: 'updateNightMode' }),
+  graphql(updateNightMode, {
+    props ({ mutate }) {
+      return {
+        updateNightMode: (nightMode) => {
+          return mutate({
+            variables:{
+              nightMode
+            }
+          })
+        }
+      }
+    }      
+  }),
   graphql(signOut, { name: 'signOut' }),
   withRouter,
   withStyles(styles)
