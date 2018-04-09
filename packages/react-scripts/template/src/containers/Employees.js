@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 // Apollo
 import { compose, graphql } from 'react-apollo';
-import gql from 'graphql-tag';
 
 // Material-UI
 import Button from 'material-ui/Button';
@@ -14,7 +13,8 @@ import AddIcon from 'material-ui-icons/Add';
 // Ours
 import List from '../components/employees/List';
 import Form from '../components/employees/Form';
-import employees, { updateEmployee, createEmployee } from '../queries/employees'
+import departments from '../queries/departments';
+import employees, { updateEmployee, createEmployee } from '../queries/employees';
 
 class Employees extends Component {
   state = {
@@ -158,14 +158,7 @@ export default compose(
       }
     }
   ),
-  graphql(
-    gql`
-      query AllDepartments {
-        allDepartments {
-          label value
-        }
-      }
-    `,
+  graphql(departments,
     {
       props ({ data: { allDepartments } }) {
         return {
