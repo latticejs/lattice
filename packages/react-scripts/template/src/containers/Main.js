@@ -142,7 +142,6 @@ class Main extends Component {
             open={sideOpen}
             variant="temporary"
             classes={{paper: classes.drawer}}
-
           >
           {this.renderSideMenu()}
           </Drawer>
