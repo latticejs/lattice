@@ -79,7 +79,7 @@ class Employees extends Component {
     const { employees, meta, departments, variables: { page, rowsPerPage, filterBy } } = this.props;
 
     return (
-      <Grid container>
+      <Grid container spacing={16}>
         {
           editing ?
           <Grid item xs={12}>

@@ -30,12 +30,6 @@ class Form extends Component {
     handleChange(...args);
   }
 
-  // handleSave = () => {
-  //   const { handleSubmit, onCreate, onUpdate } = this.props; 
-  //   this.isAdd() ?  onCreate() : onUpdate()
-    
-  // }
-
   handleCancel = () => {
     const { onCancel } = this.props; 
     onCancel();
@@ -106,7 +100,7 @@ class Form extends Component {
             </TextField>
           </Grid>
           <Toolbar>
-            <Grid container>
+            <Grid container spacing={16}>
               <Grid item>
                 <Button type="submit" variant="raised" color="primary" disabled={isSubmitting}>Save</Button>
               </Grid>
