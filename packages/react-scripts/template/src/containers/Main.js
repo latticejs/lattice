@@ -178,9 +178,11 @@ class Main extends Component {
               { nightMode ? <LightbulbOutline /> : <Lightbulb /> }
               </IconButton>
             </Tooltip>
-            <IconButton onClick={this.handleSignOut} color="inherit">
-              <Exit/>
-            </IconButton>
+            <Tooltip id="appbar-signout" title="Sign out" enterDelay={300}>
+              <IconButton onClick={this.handleSignOut} color="inherit">
+                <Exit/>
+              </IconButton>
+            </Tooltip>
           </Toolbar>
         </AppBar>
         <Content className={classes.content}>
