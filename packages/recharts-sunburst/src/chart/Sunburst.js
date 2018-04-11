@@ -37,6 +37,13 @@ export default class Sunburst extends Component {
   static displayName = 'Sunburst'
   state = this.createDefaultState();
 
+  dataArc = arc()
+      .startAngle((d) => { return d.x0; })
+      .endAngle((d) => { return d.x1; })
+      .innerRadius((d) => { return Math.sqrt(d.y0); })
+      .outerRadius((d) => { return Math.sqrt(d.y1); });
+
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.data !== this.props.data) {
       this.setState(this.createDefaultState());
@@ -89,7 +96,8 @@ export default class Sunburst extends Component {
     }
   }
  
-  renderNode(node, index, arc, root) {
+  renderNode(node, index, root) {
+    const { dataArc } = this;
     const nodeProps = { ...getPresentationAttributes(this.props), ...node, root };
     const isLeaf = !node.children || !node.children.length;
     const events = {
@@ -104,7 +112,7 @@ export default class Sunburst extends Component {
         {...events}
         key={`path-${index}`}
         display={node.depth ? null : 'none'}
-        d={arc(node)}
+        d={dataArc(node)}
         fillRule={'evenodd'}
         // fill={colors[node.data.name]}
         fill="purple"
@@ -115,28 +123,20 @@ export default class Sunburst extends Component {
     )
   }
 
-  dataArc = () => {
-    return arc()
-      .startAngle((d) => { return d.x0; })
-      .endAngle((d) => { return d.x1; })
-      .innerRadius((d) => { return Math.sqrt(d.y0); })
-      .outerRadius((d) => { return Math.sqrt(d.y1); });
-  }
-
   renderAllNodes () {
-    const { dataArc } = this;
     const { width, height, data, dataKey, nameKey } = this.props;
     const radius = Math.min(width, height) / 2;
     const root = computeData({[nameKey]: 'root',  children: data}, radius, dataKey);
 
     return (
       <Layer transform={`translate( ${width/2} , ${height/2})`}>
-        {root.map((node, index) => this.renderNode(node, index, dataArc(), root))}
+        {root.map((node, index) => this.renderNode(node, index, root))}
       </Layer>
     )
   }
 
   renderTooltip() {
+    const { dataArc } = this;
     const { children, nameKey } = this.props;
     const tooltipItem = findChildByType(children, Tooltip);
 
@@ -149,7 +149,7 @@ export default class Sunburst extends Component {
     let coordinate = null;
 
     if (activeNode) {
-      const [x, y] = this.dataArc().centroid(activeNode);
+      const [x, y] = dataArc.centroid(activeNode);
       coordinate = {
         x: x + width / 2,
         y: y + height / 2
