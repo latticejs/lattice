@@ -115,18 +115,23 @@ export default class Sunburst extends Component {
     )
   }
 
-  renderAllNodes () {
-    const { width, height, data, dataKey, nameKey } = this.props;
-    const radius = Math.min(width, height) / 2;
-    const root = computeData({[nameKey]: 'root',  children: data}, radius, dataKey);
-    const dataArc = arc()
+  dataArc = () => {
+    return arc()
       .startAngle((d) => { return d.x0; })
       .endAngle((d) => { return d.x1; })
       .innerRadius((d) => { return Math.sqrt(d.y0); })
       .outerRadius((d) => { return Math.sqrt(d.y1); });
+  }
+
+  renderAllNodes () {
+    const { dataArc } = this;
+    const { width, height, data, dataKey, nameKey } = this.props;
+    const radius = Math.min(width, height) / 2;
+    const root = computeData({[nameKey]: 'root',  children: data}, radius, dataKey);
+
     return (
       <Layer transform={`translate( ${width/2} , ${height/2})`}>
-        {root.map((node, index) => this.renderNode(node, index, dataArc, root))}
+        {root.map((node, index) => this.renderNode(node, index, dataArc(), root))}
       </Layer>
     )
   }
@@ -140,14 +145,17 @@ export default class Sunburst extends Component {
     const { width, height, dataKey } = this.props;
     const { isTooltipActive, activeNode } = this.state;
     const viewBox = { x: 0, y: 0, width, height };
-    // const coordinate = {
-    //   x: width / 2,
-    //   y: height / 2
-    // }
-    const coordinate = activeNode ? {
-      x: activeNode.x + activeNode.width / 2,
-      y: activeNode.y + activeNode.height / 2,
-    } : null;
+
+    let coordinate = null;
+
+    if (activeNode) {
+      const [x, y] = this.dataArc().centroid(activeNode);
+      coordinate = {
+        x: x + width / 2,
+        y: y + height / 2
+      }
+    }
+    
     const payload = isTooltipActive && activeNode ? [{
       payload: activeNode,
       name: getValueByDataKey(activeNode.data, nameKey, ''),
