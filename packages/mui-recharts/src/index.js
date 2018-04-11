@@ -7,12 +7,6 @@ const styles = theme => ({
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.fontSize,
     color: theme.palette.text.primary
-
-    // // axis labels
-    // '& svg text': {
-    //   fill: theme.palette.text.secondary,
-    // },
-
   }
 });
 
