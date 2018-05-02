@@ -1,5 +1,6 @@
 import { select, mouse, event } from 'd3-selection';
 import { drag } from 'd3-drag';
+import { zoom } from 'd3-zoom';
 
 export default class DagCore {
 
@@ -83,6 +84,31 @@ export default class DagCore {
       })
       .on('end', () => event.subject.active = false)
 
+    // listen for dragging
+    const dragSvg = zoom()
+      .on('zoom', () => {
+        if (event.sourceEvent.shiftKey){
+          // TODO  the internal d3 state is still changing
+          return false;
+        } else{
+          this.zoomed();
+        }
+        return true;
+      })
+      .on('start', () => {
+        const ael = select(`#${DagCore.DEFAULTS.activeEditId}`).node();
+        if (ael){
+          ael.blur();
+        }
+        if (!event.sourceEvent.shiftKey) select('body').style('cursor', 'move');
+      })
+      .on('end', function(){
+        select('body').style('cursor', 'auto');
+      });
+
+    this.svg.call(dragSvg).on('dblclick.zoom', null);
+
+
     // svg nodes and edges
     this.paths = this.svgG.append("g").selectAll("g");
     this.circles = this.svgG.append("g").selectAll("g");
@@ -102,6 +128,13 @@ export default class DagCore {
     })
   }
 
+  zoomed () {
+    this.state.justScaleTransGraph = true;
+
+    select(`.${DagCore.DEFAULTS.graphClass}`)
+      .attr("transform", event.transform);
+  }
+
   circleMouseDown (d3node, d) {
 
     event.stopPropagation();
@@ -112,6 +145,92 @@ export default class DagCore {
       this.dragLine.classed('hidden', false)
         .attr('d', `M${d.x},${d.y}L${d.x},${d.y}`);
       return;
+    }
+  }
+    /*
+  circleMouseUp (d3node, d) {
+    // reset the states
+    this.state.shiftNodeDrag = false;
+    d3node.classed(DagCore.DEFAULTS.connectClass, false);
+
+    var mouseDownNode = this.state.mouseDownNode;
+
+    if (!mouseDownNode) return;
+
+    this.dragLine.classed("hidden", true);
+
+    if (mouseDownNode !== d){
+      // we're in a different node: create new edge for mousedown edge and add to graph
+      var newEdge = {source: mouseDownNode, target: d};
+      var filtRes = this.state.paths.filter(d => {
+        if (d.source === newEdge.target && d.target === newEdge.source){
+          this.state.edges.splice(this.state.edges.indexOf(d), 1);
+        }
+        return d.source === newEdge.source && d.target === newEdge.target;
+      });
+      if (!filtRes[0].length){
+        this.state.edges.push(newEdge);
+        this.updateGraph();
+      }
+    } else{
+      // we're in the same node
+      if (this.state.justDragged) {
+        // dragged, not clicked
+        this.state.justDragged = false;
+      } else{
+        // clicked, not dragged
+        if (event.shiftKey){
+          // shift-clicked node: edit text content
+          const d3txt = this.changeTextOfNode(d3node, d);
+          const txtNode = d3txt.node();
+          this.selectElementContents(txtNode);
+          txtNode.focus();
+        } else{
+          if (this.state.selectedEdge){
+            this.removeSelectFromEdge();
+          }
+          const prevNode = this.state.selectedNode;
+
+          if (!prevNode || prevNode.id !== d.id){
+            this.replaceSelectNode(d3node, d);
+          } else{
+            this.removeSelectFromNode();
+          }
+        }
+      }
+    }
+    this.state.mouseDownNode = null;
+    return;
+  }*/
+
+  replaceSelectEdge (d3Path, edgeData){
+    d3Path.classed(DagCore.DEFAULTS.selectedClass, true);
+    if (this.state.selectedEdge){
+      this.removeSelectFromEdge();
+    }
+    this.state.selectedEdge = edgeData;
+  }
+
+  removeSelectFromEdge () {
+    this.paths
+      .filter(cd => cd === this.state.selectedEdge)
+      .classed(DagCore.DEFAULTS.selectedClass, false);
+    this.state.selectedEdge = null;
+  }
+
+  pathMouseDown (d3path, d) {
+    event.stopPropagation();
+    this.state.mouseDownLink = d;
+
+    if (this.state.selectedNode){
+      this.removeSelectFromNode();
+    }
+
+    var prevEdge = this.state.selectedEdge;
+    if (!prevEdge || prevEdge !== d){
+      this.replaceSelectEdge(d3path, d);
+    } else{
+      this.removeSelectFromEdge();
     }
   }
 
@@ -161,9 +280,9 @@ export default class DagCore {
         return `M${d.source.x},${d.source.y}L${d.target.x},${d.target.y}`;
       })
       .merge(this.paths)
-      .on('mousedown', (d) => {
+      .on('mousedown',function (d) {
         console.log('mousedown', d)
-        // thisGraph.pathMouseDown.call(thisGraph, d3.select(this), d);
+        thisGraph.pathMouseDown.call(thisGraph, select(this), d);
       })
       .on('mouseup', (d) => {
         this.state.mouseDownLink = null;
@@ -191,7 +310,7 @@ export default class DagCore {
       })
       .on('mousedown', function (d) {
         console.log('mousedown', d)
-        //thisGraph.circleMouseDown(select(this), d);
+        thisGraph.circleMouseDown(select(this), d);
       })
       .on('mouseup', function(d) {
         console.log('mouseup', d)
