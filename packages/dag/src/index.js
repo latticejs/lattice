@@ -6,29 +6,12 @@ const style = {}
 
 export default class Dag extends Component {
   static displayName = 'Dag'
-  // TODO(dk): rename title to name
-  static defaultProps = {
-    nodes: [
-      {title: 'app'},
-      {title: 'lodash'}
-    ],
-    edges: [{
-      source: 'app',
-      target: 'lodash'
-    }],
-    width: 500,
-    height: 500
-  }
 
   state = {}
 
   componentDidMount () {
     this.dagcore = new DagCore(this.node, { ...this.props, ...this.state })
     this.dagcore.simulation.on('tick', this.dagcore.updateGraph)
-  }
-
-  componentDidUpdate() {
-    //this.dagcore.updateGraph();
   }
 
   componentWillUnmount () {
