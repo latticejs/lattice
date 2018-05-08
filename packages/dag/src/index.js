@@ -6,46 +6,29 @@ const style = {}
 
 export default class Dag extends Component {
   static displayName = 'Dag'
-
+  // TODO(dk): rename title to name
   static defaultProps = {
-    xLoc: 175,
-    yLoc: 100,
     nodes: [
-      {title: "new concept", id: 0, x: (175), y: 100},
-      {title: "new concept", id: 1, x: (175), y: 300}
+      {title: 'app'},
+      {title: 'lodash'}
     ],
     edges: [{
-      source: {title: "new concept", id: 1, x: (175), y: 100},
-      target: {title: "new concept", id: 1, x: (175), y: 300}
+      source: 'app',
+      target: 'lodash'
     }],
     width: 500,
     height: 500
   }
 
-  state = this.createDefaultState()
-
-  createDefaultState () {
-    return {
-      defaultNodeTitle: 'demo',
-      selectedNode: null,
-      selectedEdge: null,
-      mouseDownNode: null,
-      mouseDownLink: null,
-      justDragged: false,
-      justScaleTransGraph: false,
-      lastKeyDown: -1,
-      shiftNodeDrag: false,
-      selectedText: null
-    }
-  }
+  state = {}
 
   componentDidMount () {
     this.dagcore = new DagCore(this.node, { ...this.props, ...this.state })
-    this.dagcore.updateGraph();
+    this.dagcore.simulation.on('tick', this.dagcore.updateGraph)
   }
 
   componentDidUpdate() {
-    this.dagcore.updateGraph();
+    //this.dagcore.updateGraph();
   }
 
   componentWillUnmount () {
