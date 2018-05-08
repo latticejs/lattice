@@ -10,13 +10,15 @@
   "scripts": {
     "build": "taskr",
     "release": "taskr release",
-    "prepublish": "npm run release"
+    "prepublish": "npm run release",
+     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@storybook/react": "^3.4.3",
     "@taskr/babel": "^1.1.0",
     "@taskr/clear": "^1.1.0",
     "@taskr/esnext": "^1.1.0",
