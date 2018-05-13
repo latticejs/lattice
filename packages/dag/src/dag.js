@@ -1,4 +1,4 @@
-import { select, selectAll, mouse, event } from 'd3-selection';
+import { select, selectAll, event } from 'd3-selection';
 import { drag } from 'd3-drag';
 import { zoom } from 'd3-zoom';
 import {
@@ -11,115 +11,72 @@ import {
   forceLink
 } from 'd3-force';
 
+export const DEFAULTS = {
+  selectedClass: "selected",
+  linkClass: "connect-node",
+  nodeClass: "node",
+  graphClass: "graph",
+  activeEditId: "active-editing",
+  BACKSPACE_KEY: 8,
+  DELETE_KEY: 46,
+  ENTER_KEY: 13,
+  nodeRadius: 50
+}
+
+
 export default class DagCore {
 
-  static DEFAULTS = {
-    selectedClass: "selected",
-    linkClass: "connect-node",
-    nodeClass: "node",
-    graphClass: "graph",
-    activeEditId: "active-editing",
-    BACKSPACE_KEY: 8,
-    DELETE_KEY: 46,
-    ENTER_KEY: 13,
-    nodeRadius: 50
-  }
-
-  static defaultState = {
-  }
+  static DEFAULTS = DEFAULTS;
 
   constructor (root, initialState) {
-    this.state = Object.assign(DagCore.defaultState, initialState);
-    this.createGraph({ root, width: initialState.width, height: initialState.height });
+    this.createGraph({
+      root,
+      width: initialState.width,
+      height: initialState.height,
+      nodes: initialState.nodes,
+      edges: initialState.edges
+    });
   }
 
-  createGraph ({ root, width, height }) {
-    const thisGraph = this;
+  createGraph ({ root, width, height, nodes, edges }) {
 
-    this.svg = select(root)
-      .append('svg')
-      .attr('width', width)
-      .attr('height', height);
-
-    // The <g> SVG element is a container used to group other SVG elements.
-    this.svgG = this.svg.append('g')
-      .classed(DagCore.DEFAULTS.graphClass, true)
-      .attr('width', width)
-      .attr('height', height)
+    select(root)
+      .select(`.${DEFAULTS.graphClass}`)
       .attr('transform', 'translate(0,0)')
 
-    // listen for dragging
+    this.svg = select(`.${DEFAULTS.graphClass}`)
+
     const dragSvg = zoom()
+      .scaleExtent([1 / 2, 8])
       .on('zoom', () => {
-        if (event.sourceEvent.shiftKey){
-          // TODO  the internal d3 state is still changing
-          return false;
-        } else {
-          this.zoomed();
-        }
+        this.zoomed();
         return true;
       })
       .on('start', function () {
-        const ael = select(this).node();
-        if (ael) ael.blur();
-
         select('body').style('cursor', 'move');
       })
       .on('end', function(){
         select('body').style('cursor', 'auto');
       });
 
-    this.svg.call(dragSvg).on('dblclick.zoom', null);
+    select(root).call(dragSvg)
 
-    this.simulation = forceSimulation()
-      .force("link", forceLink().id(function(d) {return d.title}))
-      .force("collide",forceCollide( function(d){return 80 }) )
-      .force("charge", forceManyBody())
-      .force("center", forceCenter(width / 2, height / 2))
-      .force("y", forceY(0))
-      .force("x", forceX(0))
+    this.simulation = forceSimulation(nodes)
+      .force('charge', forceManyBody().strength(-2000))
+      .force('link', forceLink(edges).id(function(d) {return d.title}))
+      .force('collide',forceCollide( function(d){return 80 }) )
+      .force('center', forceCenter(width / 2, height / 2))
+      .force('y', forceY(0))
+      .force('x', forceX(0))
 
-    this.link = this.svgG.append('g')
-      .attr('class', DagCore.DEFAULTS.linkClass)
-      .selectAll('line')
-      .data(this.state.edges)
-      .enter()
-      .append('line')
-      .attr('stroke', 'black')  // use theme
-
-    this.nodes = this.svgG.append('g')
-      .selectAll(`.${DagCore.DEFAULTS.nodeClass}`)
-      .data(this.state.nodes)
-      .enter()
-      .append('g')
-      .attr('class', DagCore.DEFAULTS.nodeClass)
-      .append('circle')
-      .attr('r', (d) => {  return 50 }) // d.r
+    selectAll(`.${DagCore.DEFAULTS.nodeClass}`)
       .call(drag()
         .on('start', (d) => this.dragstarted(d))
         .on('drag', this.dragged)
         .on('end', (d) => this.dragended(d)));
 
-    selectAll(`.${DagCore.DEFAULTS.nodeClass}`).each(function (n){
-      thisGraph.insertTitleLinebreaks(select(this), n.title)
-    })
-
     this.simulation
-      .nodes(this.state.nodes)
-      .on('tick', this.updateGraph)
-
-    this.simulation.force('link').links(this.state.edges);
-  }
-
-  updateGraph () {
-    selectAll('line')
-      .attr("x1", (d) => { return d.source.x; })
-      .attr("y1", (d) => { return d.source.y; })
-      .attr("x2", (d) => { return d.target.x; })
-      .attr("y2", (d) => { return d.target.y; });
-
-    selectAll(`.${DagCore.DEFAULTS.nodeClass}`)
-      .attr('transform', (d) => `translate(${d.x}, ${d.y})`)
+      .on('tick', () => this.updateGraph())
   }
 
   dragstarted(d) {
@@ -129,37 +86,32 @@ export default class DagCore {
   }
 
   dragged(d) {
+    console.log('event.active?', event.active)
     d.fx = event.x;
     d.fy = event.y;
   }
 
   dragended(d) {
     if (!event.active) this.simulation.alphaTarget(0);
-    //d.fx = null;
-    //d.fy = null;
   }
 
-  insertTitleLinebreaks (gEl, title) {
-    const words = title.split(/\s+/g);
-    const nwords = words.length;
+  updateGraph(){
+    selectAll('line')
+      .attr('x1', (d) => d.source.x)
+      .attr('y1', (d) => d.source.y)
+      .attr('x2', (d) => d.target.x)
+      .attr('y2', (d) => d.target.y);
 
-    const el = gEl.append('text')
-      .attr('text-anchor','middle')
-      .attr('dy', `-${(nwords-1)*7.5}`);
-
-    words.map((word, idx) => {
-      const tspan = el.append('tspan').text(word);
-      if (idx > 0) tspan.attr('x', 0).attr('dy', '15');
-    })
+    selectAll(`.${DagCore.DEFAULTS.nodeClass}`)
+      .attr('transform', (d) => `translate(${d.x}, ${d.y})`)
   }
 
   zoomed () {
-    select(`.${DagCore.DEFAULTS.graphClass}`)
+   this.svg
       .attr('transform', event.transform);
   }
 
   destroyGraph () {
-    console.log('destroyGraph :: TBD')
     this.simulation.stop()
   }
 }
