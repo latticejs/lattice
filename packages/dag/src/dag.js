@@ -86,7 +86,6 @@ export default class DagCore {
   }
 
   dragged(d) {
-    console.log('event.active?', event.active)
     d.fx = event.x;
     d.fy = event.y;
   }
