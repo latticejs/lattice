@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Paper from 'material-ui/Paper';
-import { withStyles } from 'material-ui/styles';
+import withStyles from 'material-ui/styles/withStyles';
 import DagCore, { DEFAULTS } from './dag';
 import Node from './node';
 import Edge from './edge';
@@ -11,7 +11,7 @@ const styles = theme => ({
   root: {
     color: theme.palette.text.secondary,
     padding: 16,
-    fontFamily: theme.typography.fontFamily || 'roboto',
+    fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.fontSize
   },
   border: {
@@ -27,10 +27,27 @@ const styles = theme => ({
   featured: {
     backgroundColor: theme.palette.primary.main,
     color:theme.palette.getContrastText(theme.palette.primary.main)
+  },
+  dagNode: {
+    stroke: theme.palette.primary.main,
+    fill: theme.palette.getContrastText(theme.palette.primary.main),
+    '&:hover': {
+      backgroundColor: theme.palette.action.hover
+    }
+  },
+  dagNodeText: {
+    stroke: theme.palette.text.secondary,
+    fill: theme.palette.text.secondary,
+  },
+  dagEdge: {
+    stroke: theme.palette.grey['500'],
+  },
+  dagEdgeMarker: {
+    fill: theme.palette.grey['500']
   }
 });
 
-export default class Dag extends Component {
+ class Dag extends Component {
   static displayName = 'Dag'
 
   state = {}
@@ -47,14 +64,14 @@ export default class Dag extends Component {
 
   render () {
 
-    const { width, height, elevation=2, className, classes={}, style, children, ...others } = this.props;
+    const { title, width, height, elevation=2, className, classes={}, style, theme, border, featured, ...others } = this.props;
     const rootClasses = [classes.root]
 
-    if (classes.border) {
+    if (border) {
       rootClasses.push(classes.border, classes[`border-${border}`])
     }
-    if (classes.featured) {
-      rootClasses.push(classes.featured)
+    if (featured) {
+      rootClasses.push(featured)
     }
 
     const nodes = this.props.nodes.map( (node,i) => {
@@ -63,6 +80,7 @@ export default class Dag extends Component {
           data={node}
           name={node.title}
           key={`node-${i}`}
+          classes={classes}
         />);
     });
     const edges = this.props.edges.map( (edge,i) => {
@@ -70,6 +88,7 @@ export default class Dag extends Component {
         <Edge
           key={edge.target+i}
           data={edge}
+          classes={classes}
         />);
     });
 
@@ -79,21 +98,20 @@ export default class Dag extends Component {
         style={{ ...style, position: 'relative', cursor: 'default', width, height }}
         className={classNames('dag-wrapper', rootClasses)}
       >
+        {title && <Typography variant="title" color="inherit" gutterBottom>{title}</Typography>}
         <svg
           ref={node => this.root = node}
           width={width}
           height={height}
         >
           <g className={DEFAULTS.graphClass}>
-            <g>
-              {edges}
-            </g>
-            <g>
-              {nodes}
-            </g>
+            {edges}
+            {nodes}
           </g>
         </svg>
       </Paper>
     )
   }
 }
+
+export default withStyles(styles, { name: 'Dag' })(Dag) 
