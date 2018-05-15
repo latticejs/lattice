@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag'
 
-const enterNode = (selection, {dag = {}, name}) => {
+const enterNode = (selection, name) => {
   selection
     .select('circle')
     .attr('r', (d) => {  return 50 }) // d.r
-    .style('fill', dag.nodeFill || '#fff')
-    .style('stroke', dag.nodeStroke || '#000')
 
   insertTitleLinebreaks(selection, name);
 }
@@ -36,7 +35,7 @@ export default class Node extends Component {
   componentDidMount() {
     this.d3Node = select(this.node)
       .datum(this.props.data)
-      .call((selection) => enterNode(selection, { ...this.props } ))
+      .call((selection) => enterNode(selection, this.props.name))
   }
 
   componentDidUpdate() {
@@ -48,16 +47,16 @@ export default class Node extends Component {
     console.log(this.props.name + ' been clicked')
   }
 
-    render() {
-      return (
-        <g
-          className={DEFAULTS.nodeClass}
-          ref={node => this.node = node}
-        >
-          <circle onClick={this.handle.bind(this)}/>
-          <text></text>
-        </g>
-      );
-    }
+  render() {
+    return (
+      <g
+        className={classNames(DEFAULTS.nodeClass, this.props.classes.dagNode)}
+        ref={node => this.node = node}
+      >
+        <circle onClick={this.handle.bind(this)}/>
+        <text className={this.props.classes.dagNodeText}></text>
+      </g>
+    );
+  }
 }
 
