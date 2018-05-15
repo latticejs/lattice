@@ -11,9 +11,10 @@
     "build": "taskr",
     "release": "taskr release",
     "prepublish": "npm run release",
-     "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "peerDependencies": {
+    "material-ui": "1.0.0-beta.37",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
