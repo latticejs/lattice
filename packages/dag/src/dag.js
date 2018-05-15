@@ -34,18 +34,34 @@ export default class DagCore {
       width: initialState.width,
       height: initialState.height,
       nodes: initialState.nodes,
-      edges: initialState.edges
+      edges: initialState.edges,
+      theme: initialState.classes.dagEdgeMarker
     });
   }
 
-  createGraph ({ root, width, height, nodes, edges }) {
+  createGraph ({ root, width, height, nodes, edges, theme }) {
 
     select(root)
+      .append('svg:defs')
+      .selectAll('marker')
+      .data(['end'])
+      .enter()
+      .append('svg:marker')    // This section adds in the arrows
+      .attr('id', String)
+      .attr('viewBox', '0 -5 10 10')
+      .attr('refX', 72) // refx distanche === node radius
+      .attr('refY', 0)
+      .attr('markerWidth', 8)//6
+      .attr('markerHeight', 8) //6
+      .attr('class', theme)
+      .attr('orient', 'auto')
+      .append('svg:path')
+      .attr('d', 'M0,-5L10,0L0,5')
+
       .select(`.${DEFAULTS.graphClass}`)
       .attr('transform', 'translate(0,0)')
 
     this.svg = select(`.${DEFAULTS.graphClass}`)
-
     const dragSvg = zoom()
       .scaleExtent([1 / 2, 8])
       .on('zoom', () => {
