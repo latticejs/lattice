@@ -29,21 +29,21 @@ const styles = theme => ({
     color:theme.palette.getContrastText(theme.palette.primary.main)
   },
   dagNode: {
-    stroke: theme.palette.primary.main,
-    fill: theme.palette.getContrastText(theme.palette.primary.main),
+    stroke: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.secondary.dark,
+    fill: theme.palette.background.default,
     '&:hover': {
       backgroundColor: theme.palette.action.hover
     }
   },
   dagNodeText: {
-    stroke: theme.palette.text.secondary,
-    fill: theme.palette.text.secondary,
+    stroke: theme.palette.text.primary,
+    fill: theme.palette.text.primary,
   },
   dagEdge: {
-    stroke: theme.palette.grey['500'],
+    stroke: theme.palette.secondary[theme.palette.type],
   },
   dagEdgeMarker: {
-    fill: theme.palette.grey['500']
+    fill: theme.palette.secondary[theme.palette.type]
   }
 });
 
