@@ -29,10 +29,16 @@ export async function cjs(task, opts) {
     .source('src/index.js')
     .rollup({
       plugins: baseRollupPlugins,
-      external,  
+      external,
       output: {
         file: 'recharts-sunburst.js',
         format: 'cjs'
+      },
+      onwarn: (warning) => {
+        if (warning.code === 'CIRCULAR_DEPENDENCY') {
+          // skip it
+          return;
+        }
       }
     })
     .target('dist/')
@@ -47,6 +53,12 @@ export async function es(task, opts) {
       output: {
         file: 'recharts-sunburst.es.js',
         format: 'es'
+      },
+      onwarn: (warning) => {
+        if (warning.code === 'CIRCULAR_DEPENDENCY') {
+          // skip it
+          return;
+        }
       }
     })
     .target('dist/es')
