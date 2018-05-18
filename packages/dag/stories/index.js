@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Dag from '../';
 // Material UI
+import Paper from 'material-ui/Paper';
 import { createMuiTheme } from 'material-ui/styles';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import CssBaseline from 'material-ui/CssBaseline';
@@ -12,6 +13,7 @@ import 'typeface-roboto';
 // simple fake props
 const getProps = (mix = {}) => {
   const defaults = {
+    title: 'Package Dependencies',
     nodes: [
       {title: 'app'},
       {title: 'lodash'}
@@ -22,39 +24,67 @@ const getProps = (mix = {}) => {
     }],
     width: 500,
     height: 500,
-    nightMode: false
   }
   return Object.assign(defaults, mix)
 }
 
-const ThemeDecorator = (storyFn) => {
-  const muiTheme = {
-    palette: {
-      type: storyFn().props.nightMode ? 'dark' : 'light'
-    },
-    typography: {
-      title: {
-        fontWeight: 300
-      }
-    }
-  }
-
-  return (
-    <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
-      <CssBaseline>
-        { storyFn() }
-      </CssBaseline>
-    </MuiThemeProvider>
-  )
-}
+const PaperWrap = ({children}) => (
+  <Paper
+    elevation={2}
+    style={{ width:'500px', height: '500px' }}
+  >
+    { children }
+  </Paper>
+)
 
 storiesOf('Directed Acyclic Graph Component', module)
-  .addDecorator(ThemeDecorator)
-  .add('with some props (emulating super simple package.json) with default theme', () => {
+  .add('no wrapper, with dummy props (emulating super simple package.json) & default theme', () => {
     // TODO(dk): parse pkg json deps.
     return <Dag onClick={action('clicked')} {...getProps()} />
   })
-  .add('with dark theme ON', () => {
+  .add('with paper wrapper, dummy props & light theme', () => {
     // TODO(dk): parse pkg json deps.
-    return <Dag onClick={action('clicked')} {...getProps({nightMode:true})} />
+    const props = getProps()
+    const muiTheme = {
+      palette: {
+        type: 'light'
+      },
+      typography: {
+        title: {
+          fontWeight: 300
+        }
+      }
+    }
+    return (
+      <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
+        <CssBaseline>
+          <PaperWrap>
+            <Dag onClick={action('clicked')} {...props} />
+          </PaperWrap>
+        </CssBaseline>
+      </MuiThemeProvider>
+    )
+  })
+  .add('with paper wrapper, dummy props & dark theme', () => {
+    // TODO(dk): parse pkg json deps.
+    const props = getProps()
+    const muiTheme = {
+      palette: {
+        type: 'dark'
+      },
+      typography: {
+        title: {
+          fontWeight: 300
+        }
+      }
+    }
+    return (
+      <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
+        <CssBaseline>
+          <PaperWrap>
+            <Dag onClick={action('clicked')} {...props} />
+          </PaperWrap>
+        </CssBaseline>
+      </MuiThemeProvider>
+    )
   })

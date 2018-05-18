@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import Paper from 'material-ui/Paper';
 import withStyles from 'material-ui/styles/withStyles';
 import DagCore, { DEFAULTS } from './dag';
 import Node from './node';
@@ -38,6 +37,9 @@ const styles = theme => ({
   dagNodeText: {
     stroke: theme.palette.text.primary,
     fill: theme.palette.text.primary,
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.fontSize,
+    fontWeight: theme.typography.fontWeightLight
   },
   dagEdge: {
     stroke: theme.palette.secondary[theme.palette.type],
@@ -64,15 +66,8 @@ const styles = theme => ({
 
   render () {
 
-    const { title, width, height, elevation=2, className, classes={}, style, theme, border, featured, ...others } = this.props;
+    const { width, height, classes={}, style, theme, ...others } = this.props;
     const rootClasses = [classes.root]
-
-    if (border) {
-      rootClasses.push(classes.border, classes[`border-${border}`])
-    }
-    if (featured) {
-      rootClasses.push(featured)
-    }
 
     const nodes = this.props.nodes.map( (node,i) => {
       return (
@@ -93,23 +88,17 @@ const styles = theme => ({
     });
 
     return (
-      <Paper
-        elevation={elevation}
-        style={{ ...style, position: 'relative', cursor: 'default', width, height }}
+      <svg
+        ref={node => this.root = node}
+        width={width}
+        height={height}
         className={classNames('dag-wrapper', rootClasses)}
       >
-        {title && <Typography variant="title" color="inherit" gutterBottom>{title}</Typography>}
-        <svg
-          ref={node => this.root = node}
-          width={width}
-          height={height}
-        >
-          <g className={DEFAULTS.graphClass}>
-            {edges}
-            {nodes}
-          </g>
-        </svg>
-      </Paper>
+        <g className={DEFAULTS.graphClass}>
+          {edges}
+          {nodes}
+        </g>
+      </svg>
     )
   }
 }
