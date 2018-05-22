@@ -7,15 +7,14 @@ import pkg from './package'
 const baseRollupPlugins = [
   babel({
     exclude: ['node_modules/**', '../../node_modules/**'],
-    runtimeHelpers: true 
+    runtimeHelpers: true
   }),
   commonjs({
     include: ['node_modules/**', '../../node_modules/**'],
     namedExports: {
       'react': ['Children', 'Component', 'PropTypes', 'createElement'],
       'react-dom': ['render', 'findDOMNode'],
-      'material-ui/styles': ['withStyles'],
-      'material-ui/List': ['ListItem', 'ListItemIcon', 'ListItemText']
+      '@material-ui/core/styles': ['withStyles'],
     }
   }),
   resolve({

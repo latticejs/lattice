@@ -13,10 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 // Material-UI Icons
-import Exit from 'material-ui-icons/ExitToApp';
-import LightbulbOutline from 'material-ui-icons/LightbulbOutline';
-import MenuIcon from 'material-ui-icons/Menu';
-import MoreVerticalIcon from 'material-ui-icons/MoreVert';
+import Exit from '@material-ui/icons/ExitToApp';
+import LightbulbOutline from '@material-ui/icons/LightbulbOutline';
+import MenuIcon from '@material-ui/icons/Menu';
+import MoreVerticalIcon from '@material-ui/icons/MoreVert';
 
 // Router
 import { Redirect, withRouter } from 'react-router-dom';

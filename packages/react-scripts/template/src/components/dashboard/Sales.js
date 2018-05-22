@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import classnames from 'classnames';
 // Material-UI
 import Grid from '@material-ui/core/Grid/Grid';
-import LinearProgress from '@material-ui/core/Progress/LinearProgress';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography/Typography';
 import { withStyles } from '@material-ui/core/styles';
 // Recharts
