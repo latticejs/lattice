@@ -17,7 +17,7 @@ Hi! First of all, thanks for taking some time to make a contribution to the proj
 
 3. Run `yarn` in the root `lattice` folder.
 
-4. Finally, run `yarn run lerna prepublish` in order to trigger npm install lifecycle ([see more](https://github.com/yarnpkg/yarn/issues/3911))
+4. Finally, run `yarn run lerna run prepublish` in order to trigger npm install lifecycle ([see more](https://github.com/yarnpkg/yarn/issues/3911))
 
 Once it is done, you can modify any file locally and run `yarn start`, `yarn test` or `yarn build` just like in a generated project.
 
