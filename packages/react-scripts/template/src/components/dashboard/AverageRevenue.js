@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // Material-UI
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 // Recharts
 import { LineChart as RechartLineChart, Line, ResponsiveContainer } from 'recharts';
 // Lattice

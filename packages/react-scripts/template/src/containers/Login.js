@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 // Material-UI
-import Button from 'material-ui/Button';
-import Grid from 'material-ui/Grid';
-import Hidden from 'material-ui/Hidden';
-import TextField from 'material-ui/TextField'
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
+import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 // Apollo
 import { compose, graphql } from 'react-apollo';

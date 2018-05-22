@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 
 // Material-UI
-import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import Grid from 'material-ui/Grid'
-import Hidden from 'material-ui/Hidden';
-import IconButton from 'material-ui/IconButton';
-import Toolbar from 'material-ui/Toolbar';
-import Tooltip from 'material-ui/Tooltip';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Drawer from '@material-ui/core/Drawer';
+import Grid from '@material-ui/core/Grid'
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import Toolbar from '@material-ui/core/Toolbar';
+import Tooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 // Material-UI Icons
 import Exit from 'material-ui-icons/ExitToApp';

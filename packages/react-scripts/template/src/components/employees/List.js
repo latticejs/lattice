@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Material-UI
-import Avatar from 'material-ui/Avatar';
+import Avatar from '@material-ui/core/Avatar';
 import Table, {
   TableBody,
   TableCell,
@@ -9,9 +9,9 @@ import Table, {
   TableRow,
   TablePagination,
   TableFooter
-} from 'material-ui/Table';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+} from '@material-ui/core/Table';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 // @lattice
 import Widget from '@lattice/widgets/Widget';

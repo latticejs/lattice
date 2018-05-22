@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import withStyles from 'material-ui/styles/withStyles';
+import withStyles from '@material-ui/core/styles/withStyles';
 import DagCore, { DEFAULTS } from './dag';
 import Node from './node';
 import Edge from './edge';
@@ -12,20 +12,6 @@ const styles = theme => ({
     padding: 16,
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.fontSize
-  },
-  border: {
-    borderColor: theme.palette.primary.main,
-    borderWidth: 4
-  },
-  'border-top': {
-    borderTopStyle: 'solid'
-  },
-  'border-bottom':{
-    borderBottomStyle: 'solid'
-  },
-  featured: {
-    backgroundColor: theme.palette.primary.main,
-    color:theme.palette.getContrastText(theme.palette.primary.main)
   },
   dagNode: {
     stroke: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.secondary.dark,

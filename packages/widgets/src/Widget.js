@@ -2,9 +2,9 @@ import React from 'react';
 import classnames from 'classnames';
 
 // Material-UI
-import Paper from 'material-ui/Paper';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {
