@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "index.js",
   "module": "dist/es/widgets.es.js",
-  "files":[
+  "files": [
     "dist",
     "Widget.js",
     "SideMenu.js"
@@ -15,12 +15,14 @@
     "prepublish": "npm run release"
   },
   "peerDependencies": {
-    "material-ui": "^1.0.0-beta.37",
-    "material-ui-icons": "^1.0.0-beta.36",
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "@taskr/babel": "^1.1.0",
     "@taskr/clear": "^1.1.0",
     "@taskr/esnext": "^1.1.0",
@@ -37,8 +39,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "material-ui": "^1.0.0-beta.37",
-    "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "rollup": "^0.57.1",

@@ -13,8 +13,8 @@
     "prepublish": "npm run release"
   },
   "peerDependencies": {
-    "material-ui": "^1.0.0-beta.37",
-    "material-ui-icons": "^1.0.0-beta.36",
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "recharts": "^1.0.0-beta.10"
@@ -36,8 +36,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "material-ui": "^1.0.0-beta.37",
-    "material-ui-icons": "^1.0.0-beta.36",
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "recharts": "^1.0.0-beta.10",

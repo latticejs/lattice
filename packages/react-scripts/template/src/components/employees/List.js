@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 
 // Material-UI
-import Avatar from 'material-ui/Avatar';
-import Table, {
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  TablePagination,
-  TableFooter
-} from 'material-ui/Table';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Avatar from '@material-ui/core/Avatar';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableFooter from '@material-ui/core/TableFooter';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 // @lattice
 import Widget from '@lattice/widgets/Widget';

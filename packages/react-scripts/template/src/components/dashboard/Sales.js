@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import classnames from 'classnames';
 // Material-UI
-import Grid from 'material-ui/Grid/Grid';
-import LinearProgress from 'material-ui/Progress/LinearProgress';
-import Typography from 'material-ui/Typography/Typography';
-import { withStyles } from 'material-ui/styles';
+import Grid from '@material-ui/core/Grid/Grid';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import Typography from '@material-ui/core/Typography/Typography';
+import { withStyles } from '@material-ui/core/styles';
 // Recharts
 import { PieChart as RechartPieChart, Pie, Cell } from 'recharts';
 // Lattice

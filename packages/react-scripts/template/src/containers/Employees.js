@@ -4,11 +4,11 @@ import React, { Component } from 'react';
 import { compose, graphql } from 'react-apollo';
 
 // Material-UI
-import Button from 'material-ui/Button';
-import Grid from 'material-ui/Grid';
-import TextField from 'material-ui/TextField/TextField';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField/TextField';
 
-import AddIcon from 'material-ui-icons/Add';
+import AddIcon from '@material-ui/icons/Add';
 
 // Ours
 import List from '../components/employees/List';

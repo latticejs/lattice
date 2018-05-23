@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // Material-UI
-import Grid from 'material-ui/Grid/Grid';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Grid from '@material-ui/core/Grid/Grid';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 // Recharts
 import { BarChart as RechartBarChart, Bar, ResponsiveContainer } from 'recharts';
 // Lattice

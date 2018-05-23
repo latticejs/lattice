@@ -1,13 +1,13 @@
 
-import ContentCopyIcon from 'material-ui-icons/ContentCopy';
-import DashboardIcon from 'material-ui-icons/Dashboard';
-import ExtensionIcon from 'material-ui-icons/Extension';
+import ContentCopyIcon from '@material-ui/icons/ContentCopy';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import ExtensionIcon from '@material-ui/icons/Extension';
 // import InsertChartIcon from 'material-ui-icons/InsertChart';
 // import MapIcon from 'material-ui-icons/Map'
 // import PageViewIcon from 'material-ui-icons/Pageview';
-import PeopleIcon from 'material-ui-icons/People';
-// import PersonIcon from 'material-ui-icons/Person';
-import TextFormatIcon from 'material-ui-icons/TextFormat';
+import PeopleIcon from '@material-ui/icons/People';
+// import PersonIcon from '@material-ui/icons/Person';
+import TextFormatIcon from '@material-ui/icons/TextFormat';
 
 import Dashboard from './Dashboard';
 import Employees from './Employees';

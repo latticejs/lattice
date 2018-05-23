@@ -5,12 +5,12 @@ import { withFormik } from 'formik';
 import yup from 'yup';
 
 // Material-UI
-import Button from 'material-ui/Button';
-import Grid from 'material-ui/Grid';
-import MenuItem from 'material-ui/Menu/MenuItem';
-import TextField from 'material-ui/TextField';
-import Toolbar from 'material-ui/Toolbar';
-import { withStyles } from 'material-ui/styles';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import Toolbar from '@material-ui/core/Toolbar';
+import { withStyles } from '@material-ui/core/styles';
 
 // @lattice
 import Widget from '@lattice/widgets/Widget';

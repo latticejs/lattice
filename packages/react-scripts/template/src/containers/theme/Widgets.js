@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 // Material-UI
-import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 // @lattice
 import Widget from '@lattice/widgets/Widget';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Material-UI
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 
 // Apollo
 import { compose, graphql } from 'react-apollo';
