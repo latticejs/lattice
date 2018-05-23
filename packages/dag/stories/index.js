@@ -3,12 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Dag from '../';
 // Material UI
-import Paper from 'material-ui/Paper';
-import { createMuiTheme } from 'material-ui/styles';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import CssBaseline from 'material-ui/CssBaseline';
-// Typeface
-import 'typeface-roboto';
+import { Paper } from '@material-ui/core';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 // simple fake props
 const getProps = (mix = {}) => {
