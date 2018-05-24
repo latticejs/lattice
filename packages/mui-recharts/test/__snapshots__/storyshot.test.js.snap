@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots MUI-recharts Wrapper around LineChart 1`] = `
+<div
+  className="recharts-wrapper MuiRechart-LineChart--rootChart-1"
+  style={
+    Object {
+      "cursor": "default",
+      "height": 400,
+      "position": "relative",
+      "width": 400,
+    }
+  }
+>
+  <svg
+    className="recharts-surface"
+    height={400}
+    style={undefined}
+    version="1.1"
+    viewBox="0 0 400 400"
+    width={400}
+  >
+    <g
+      className="recharts-layer recharts-line"
+    >
+      <path
+        className="recharts-curve recharts-line-curve"
+        clipPath={null}
+        d="M5,301.4L70,340.478L135,12.800000000000011L200,242.588L265,207.8L330,246.8L395,227.3"
+        fill="none"
+        height={390}
+        stroke="#8884d8"
+        strokeDasharray="0px 0px"
+        strokeWidth={2}
+        width={390}
+      />
+    </g>
+    <g
+      className="recharts-layer recharts-line"
+    >
+      <path
+        className="recharts-curve recharts-line-curve"
+        clipPath={null}
+        d="M5,239L70,278L135,317L200,286.58L265,321.29L330,301.79L395,258.89"
+        fill="none"
+        height={390}
+        stroke="#82ca9d"
+        strokeDasharray="0px 0px"
+        strokeWidth={1}
+        width={390}
+      />
+    </g>
+  </svg>
+</div>
+`;
