@@ -16,6 +16,7 @@ import {
 import Tooltip from 'recharts/lib/component/Tooltip';
 import { getValueByDataKey } from 'recharts/lib/util/ChartUtils';
 import { shallowEqual } from 'recharts/lib/util/PureRender';
+import Sector from 'recharts/lib/shape/Sector';
 
 import Smooth from 'react-smooth'; // transitive dep
 
@@ -192,7 +193,7 @@ export default class Sunburst extends Component {
               {this.renderContentItem(content, {
                 ...nodeProps,
                 isAnimationActive,
-                isUpdateAnimationActive: !isUpdateAnimationActive,
+                isUpdateAnimationActive: false,//!isUpdateAnimationActive,
                 width: currWidth,
                 height: currHeight,
                 x: currX,
@@ -213,6 +214,18 @@ export default class Sunburst extends Component {
     }
 
     return (
+      // <Sector
+      //   startAngle={nodeProps.x0}
+      //   endAngle={nodeProps.x1}
+      //   innerRadius={Math.sqrt(nodeProps.y0)}
+      //   outerRadius={Math.sqrt(nodeProps.y1)}
+      //   // display={nodeProps.depth ? null : 'none'}
+      //   fillRule="evenodd"
+      //   // fill={colors[node.data.name]}
+      //   fill="purple"
+      //   stroke="#fff"
+      //   {...nodeProps}
+      // />
       <path
         display={nodeProps.depth ? null : 'none'}
         d={dataArc(nodeProps)}
@@ -221,7 +234,7 @@ export default class Sunburst extends Component {
         fill={nodeProps.fill || 'purple'}
         stroke={nodeProps.stroke || '#fff'}
         // style={{ opacity }}
-        // {...getPresentationAttributes(this.props)}
+        {...getPresentationAttributes(this.props)}
       />
     );
   }
@@ -290,6 +303,8 @@ export default class Sunburst extends Component {
 
     if (activeNode) {
       const [x, y] = dataArc.centroid(activeNode);
+      console.log(dataArc(activeNode), activeNode)
+      
       coordinate = {
         x: x + width / 2,
         y: y + height / 2
