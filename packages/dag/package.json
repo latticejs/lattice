@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.4.5",
-    "@storybook/react": "^3.4.3",
+    "@storybook/react": "^3.4.5",
     "@taskr/babel": "^1.1.0",
     "@taskr/clear": "^1.1.0",
     "@taskr/esnext": "^1.1.0",
