@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+// d3
+import { hierarchy, partition } from 'd3-hierarchy';
+import { arc } from 'd3-shape';
+
 // recharts
 import Layer from 'recharts/lib/container/Layer';
 import Surface from 'recharts/lib/container/Surface';
@@ -15,10 +19,6 @@ import { getValueByDataKey } from 'recharts/lib/util/ChartUtils';
 import { shallowEqual } from 'recharts/lib/util/PureRender';
 
 import Smooth from 'react-smooth'; // transitive dep
-
-// d3
-import { hierarchy, partition } from 'd3-hierarchy';
-import { arc } from 'd3-shape';
 
 const computeData = (data, radius, dataKey) => {
   const dataPartition = partition().size([2 * Math.PI, radius * radius]);
