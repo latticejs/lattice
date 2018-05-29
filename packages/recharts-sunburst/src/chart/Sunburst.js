@@ -191,8 +191,8 @@ export default class Sunburst extends Component {
         d={dataArc(nodeProps)}
         fillRule={'evenodd'}
         // fill={colors[node.data.name]}
-        fill="purple"
-        stroke="#fff"
+        fill={nodeProps.fill || "purple"}
+        stroke={nodeProps.stroke || "#fff"}
         // style={{ opacity }}
         // {...getPresentationAttributes(this.props)}
       />
