@@ -12,6 +12,7 @@ import NewCustomers from '../components/dashboard/NewCustomers';
 import Sales from '../components/dashboard/Sales';
 import Stats from '../components/dashboard/Stats';
 import TaskScheduler from '../components/dashboard/TaskScheduler';
+import Demographic from '../components/dashboard/Demographic';
 import allSales from '../queries/sales';
 import allStats from '../queries/stats';
 
@@ -48,6 +49,9 @@ class Dashboard extends Component {
           <Grid container alignItems="stretch" spacing={16}>
             <Grid item xs={12} md={8}>
               <TaskScheduler />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Demographic style={{height: '100%'}}/>
             </Grid>
           </Grid>
         </Grid>
