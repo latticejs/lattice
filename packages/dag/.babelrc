@@ -1,13 +1,12 @@
 {
   "presets": [
-    "react",
     [
       "env",
       {
         "modules": false
       }
-    ]
-    
+    ],
+    "react",
   ],
   "plugins": [
     "external-helpers",
@@ -20,12 +19,13 @@
   "env": {
     "test": {
       "presets": [
+        ["env"],
         "react",
         "es2015"
       ],
       "plugins": [
         "transform-object-rest-spread",
-        "babel-plugin-transform-class-properties"    
+        "babel-plugin-transform-class-properties"
       ]
     }
   }

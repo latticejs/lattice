@@ -18,7 +18,8 @@ const baseRollupPlugins = [
   }),
   resolve({
     jsnext: true,
-    main: true
+    main: true,
+    modulesOnly: true
   })
 ]
 
@@ -26,7 +27,7 @@ const external = Object.keys(pkg.peerDependencies).concat(Object.keys(pkg.depend
 
 export async function cjs(task, opts) {
   await task
-    .source('src/index.js')
+    .source('src/chart/Sunburst.js')
     .rollup({
       plugins: baseRollupPlugins,
       external,
@@ -46,7 +47,7 @@ export async function cjs(task, opts) {
 
 export async function es(task, opts) {
   await task
-    .source('src/index.js')
+    .source('src/chart/Sunburst.js')
     .rollup({
       plugins: baseRollupPlugins,
       external,

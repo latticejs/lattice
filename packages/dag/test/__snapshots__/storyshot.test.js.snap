@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Directed Acyclic Graph Component no wrapper, with dummy props (emulating super simple package.json) & default theme 1`] = `
+<svg
+  className="dag-wrapper Dag-root-1"
+  height={500}
+  width={500}
+>
+  <g
+    className="graph"
+  >
+    <line
+      className="connect-node Dag-dagEdge-4"
+    />
+    <g
+      className="node Dag-dagNode-2"
+    >
+      <circle
+        onClick={[Function]}
+      />
+      <text
+        className="Dag-dagNodeText-3"
+      />
+    </g>
+    <g
+      className="node Dag-dagNode-2"
+    >
+      <circle
+        onClick={[Function]}
+      />
+      <text
+        className="Dag-dagNodeText-3"
+      />
+    </g>
+  </g>
+</svg>
+`;
+
+exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy props & dark theme 1`] = `
+<div
+  className="MuiPaper-root-28 MuiPaper-elevation2-32 MuiPaper-rounded-29"
+  style={
+    Object {
+      "height": "500px",
+      "width": "500px",
+    }
+  }
+>
+  <svg
+    className="dag-wrapper Dag-root-11"
+    height={500}
+    width={500}
+  >
+    <g
+      className="graph"
+    >
+      <line
+        className="connect-node Dag-dagEdge-14"
+      />
+      <g
+        className="node Dag-dagNode-12"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-13"
+        />
+      </g>
+      <g
+        className="node Dag-dagNode-12"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-13"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy props & light theme 1`] = `
+<div
+  className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+  style={
+    Object {
+      "height": "500px",
+      "width": "500px",
+    }
+  }
+>
+  <svg
+    className="dag-wrapper Dag-root-6"
+    height={500}
+    width={500}
+  >
+    <g
+      className="graph"
+    >
+      <line
+        className="connect-node Dag-dagEdge-9"
+      />
+      <g
+        className="node Dag-dagNode-7"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-8"
+        />
+      </g>
+      <g
+        className="node Dag-dagNode-7"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-8"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;

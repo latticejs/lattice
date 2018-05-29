@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots SideMenu basic SideMenu 1`] = `
+<nav
+  className="MuiList-root-1 MuiList-padding-2 SideMenu-root-113"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  style={
+    Object {
+      "width": 200,
+    }
+  }
+>
+  <div
+    className="SideMenu-topSpacer-114"
+  />
+  <div
+    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-default-8 MuiListItem-gutters-12 SideMenu-listItemGutters-116 MuiListItem-button-13 SideMenu-listItem-115"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role="button"
+    tabIndex="0"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root-19 MuiListItemIcon-root-18"
+      color={undefined}
+      focusable="false"
+      style={
+        Object {
+          "color": "#fff",
+          "margin": "0",
+        }
+      }
+      viewBox="0 0 24 24"
+    >
+      <g>
+        <path
+          d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
+        />
+      </g>
+    </svg>
+    <div
+      className="MuiListItemText-root-25 SideMenu-listItemText-118"
+    >
+      <h3
+        className="MuiTypography-root-31 MuiTypography-subheading-38 MuiListItemText-primary-28 SideMenu-listItemPrimary-117"
+      >
+        Dashboard
+      </h3>
+    </div>
+    <span
+      className="MuiTouchRipple-root-55"
+    />
+  </div>
+  <div
+    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-default-8 MuiListItem-gutters-12 SideMenu-listItemGutters-116 MuiListItem-button-13 SideMenu-listItem-115"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role="button"
+    tabIndex="0"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root-19 MuiListItemIcon-root-18"
+      color={undefined}
+      focusable="false"
+      style={
+        Object {
+          "color": "#fff",
+          "margin": "0",
+        }
+      }
+      viewBox="0 0 24 24"
+    >
+      <g>
+        <path
+          d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+        />
+      </g>
+    </svg>
+    <div
+      className="MuiListItemText-root-25 SideMenu-listItemText-118"
+    >
+      <h3
+        className="MuiTypography-root-31 MuiTypography-subheading-38 MuiListItemText-primary-28 SideMenu-listItemPrimary-117"
+      >
+        Employees
+      </h3>
+    </div>
+    <span
+      className="MuiTouchRipple-root-55"
+    />
+  </div>
+</nav>
+`;
+
+exports[`Storyshots Widget Widget with light theme 1`] = `
+<div
+  className="MuiPaper-root-62 MuiPaper-elevation2-66 MuiPaper-rounded-63 Widget-root-57"
+>
+  <h2
+    className="MuiTypography-root-89 MuiTypography-title-95 MuiTypography-colorInherit-108 MuiTypography-gutterBottom-106"
+  >
+    MUI Widget
+  </h2>
+</div>
+`;
+
+exports[`Storyshots Widget basic Widget 1`] = `
+<div
+  className="MuiPaper-root-6 MuiPaper-elevation2-10 MuiPaper-rounded-7 Widget-root-1"
+>
+  <h2
+    className="MuiTypography-root-33 MuiTypography-title-39 MuiTypography-colorInherit-52 MuiTypography-gutterBottom-50"
+  >
+    basic Widget
+  </h2>
+</div>
+`;
