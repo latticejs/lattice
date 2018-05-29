@@ -26,7 +26,7 @@ Once it is done, you can modify any file locally and run `yarn start`, `yarn tes
 If you want to try out the `@lattice/react-scripts` locally, you can run this command on the root `lattice` folder:
 
 ```
-yarn create-react-app test-app
+yarn run create-react-app test-app
 cd test-app
 ```
 
