@@ -17,7 +17,10 @@
   "peerDependencies": {
     "@material-ui/core": "^1.0.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "enzyme": "^3.3.0",
+    "jest-enzyme": "^6.0.1",
+    "enzyme-adapter-react-16": "^1.1.1"
   },
   "devDependencies": {
     "@material-ui/core": "^1.0.0",
@@ -38,6 +41,9 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-enzyme": "^6.0.1",
     "jest": "^21",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -58,6 +64,7 @@
     "d3-zoom": "^1.7.1"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./test/shim.js"
+    "setupFiles": ["./test/shim.js"],
+    "setupTestFrameworkScriptFile": "../../node_modules/jest-enzyme/lib/index.js"
   }
 }
