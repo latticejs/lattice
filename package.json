@@ -3,7 +3,8 @@
   "name": "lattice",
   "version": "1.0.0",
   "scripts": {
-    "create-react-app": "node tasks/cra.js"
+    "create-react-app": "node tasks/cra.js",
+    "test": "lerna run test"
   },
   "devDependencies": {
     "lerna": "^2.11.0"
