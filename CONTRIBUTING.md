@@ -7,7 +7,11 @@ Hi! First of all, thanks for taking some time to make a contribution to the proj
 - [Setting Up a Local Copy](#setting-up-a-local-copy)
 - [Customized React Scripts](#customized-react-scripts)
 - [Development](#development)
+- [Working in a specific latticejs module](#working-in-a-specific-latticejs-module)
+- [How to run a demo app](#how-to-run-a-demo-app)
 - [How To Consume a Local Package](#how-to-consume-a-local-package)
+- [Troubleshooting](#troubleshooting)
+- [Cleaning the project](#cleaning-the-project)
 
 ## Setting Up a Local Copy
 
@@ -21,7 +25,7 @@ Hi! First of all, thanks for taking some time to make a contribution to the proj
 
 Once it is done, you can modify any file locally and run `yarn start`, `yarn test` or `yarn build` just like in a generated project.
 
-## Customized React Scripts
+## Running our Customized React Scripts
 
 If you want to try out the `@latticejs/react-scripts` locally, you can run this command on the root `lattice` folder:
 
@@ -34,6 +38,13 @@ and then run `yarn start` or `yarn build`.
 
 ## Development
 
+### Working in a specific latticejs module
+
+1. Run `cd pacakges/<module>`
+2. Development using storybook: `yarn storybook`
+
+### How to run a demo app
+
 1. Run `npx create-react-app test-demo-app` outside project's workspace.
 
 2. Remove `node_modules` directory from the recently created react app `test-demo-app`
@@ -44,7 +55,7 @@ and then run `yarn start` or `yarn build`.
 
 5. Finally, `cd test-demo-app && yarn start`.
 
-## How to consume a local package
+### How to consume a local package
 
 1. For example, inside `test-demo-app` directory you can run `npx lerna add @lattice/target-module --scope=test-demo-app`
 
@@ -53,3 +64,11 @@ and then run `yarn start` or `yarn build`.
 2. If target module has peer dependencies, those should be installed as mentioned in *1*.
 
 Now modules are linked and local changes can be seen instantly.
+
+## Troubleshooting
+
+### Cleaning the project
+
+Sometimes, after a major change in the source is preferable start with a new clean repository: `git clean -xdf`
+
+> Remember that you are going to lose your unversioned files.
