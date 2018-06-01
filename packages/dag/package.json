@@ -19,7 +19,6 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "enzyme": "^3.3.0",
-    "jest-enzyme": "^6.0.1",
     "enzyme-adapter-react-16": "^1.1.1"
   },
   "devDependencies": {
@@ -65,6 +64,6 @@
   },
   "jest": {
     "setupFiles": ["./test/shim.js"],
-    "setupTestFrameworkScriptFile": "../../node_modules/jest-enzyme/lib/index.js"
+    "setupTestFrameworkScriptFile": "./setupTest.js"
   }
 }
