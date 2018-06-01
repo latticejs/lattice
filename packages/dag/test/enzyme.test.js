@@ -10,7 +10,6 @@ describe('<MyComponent />', () => {
       height={500}
       nodes={[]} 
       edges={[]}/>);
-    console.log(wrapper.find('.dag-wrapper'))
 		expect(wrapper.find('.dag-wrapper').length).toBe(1);
 	});
 })
