@@ -23,7 +23,7 @@ Once it is done, you can modify any file locally and run `yarn start`, `yarn tes
 
 ## Customized React Scripts
 
-If you want to try out the `@lattice/react-scripts` locally, you can run this command on the root `lattice` folder:
+If you want to try out the `@latticejs/react-scripts` locally, you can run this command on the root `lattice` folder:
 
 ```
 yarn run create-react-app test-demo-app

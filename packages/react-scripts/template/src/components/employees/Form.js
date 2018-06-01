@@ -12,8 +12,8 @@ import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
 
-// @lattice
-import Widget from '@lattice/widgets/Widget';
+// @latticejs
+import Widget from '@latticejs/widgets/Widget';
 
 const styles = theme => ({
   root: {

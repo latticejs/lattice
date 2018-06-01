@@ -8,8 +8,8 @@ import { withStyles } from '@material-ui/core/styles';
 // Recharts
 import { PieChart as RechartPieChart, Pie, Cell } from 'recharts';
 // Lattice
-import Widget from '@lattice/widgets/Widget';
-import withMuiStyle from '@lattice/mui-recharts';
+import Widget from '@latticejs/widgets/Widget';
+import withMuiStyle from '@latticejs/mui-recharts';
 
 const PieChart = withMuiStyle(RechartPieChart);
 

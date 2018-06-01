@@ -4,8 +4,8 @@ import Typography from '@material-ui/core/Typography';
 // Recharts
 import { LineChart as RechartLineChart, Line, ResponsiveContainer } from 'recharts';
 // Lattice
-import Widget from '@lattice/widgets/Widget';
-import withMuiStyle from '@lattice/mui-recharts';
+import Widget from '@latticejs/widgets/Widget';
+import withMuiStyle from '@latticejs/mui-recharts';
 
 const LineChart = withMuiStyle(RechartLineChart);
 

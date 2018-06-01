@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 // Lattice
-import Widget from '@lattice/widgets/Widget';
+import Widget from '@latticejs/widgets/Widget';
 
 const styles = theme => ({
   root: {
