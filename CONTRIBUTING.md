@@ -21,13 +21,13 @@ Hi! First of all, thanks for taking some time to make a contribution to the proj
 
 Once it is done, you can modify any file locally and run `yarn start`, `yarn test` or `yarn build` just like in a generated project.
 
-## Customized React Scripts 
+## Customized React Scripts
 
 If you want to try out the `@lattice/react-scripts` locally, you can run this command on the root `lattice` folder:
 
 ```
-yarn run create-react-app test-app
-cd test-app
+yarn run create-react-app test-demo-app
+cd test-demo-app
 ```
 
 and then run `yarn start` or `yarn build`.
