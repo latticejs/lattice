@@ -24,8 +24,8 @@ import { Redirect, withRouter } from 'react-router-dom';
 // Apollo
 import { compose, graphql } from 'react-apollo';
 
-// @lattice
-import SideMenu from '@lattice/widgets/SideMenu';
+// @latticejs
+import SideMenu from '@latticejs/widgets/SideMenu';
 
 // Ours
 import routes, { routeByPath, navigation } from './routes';

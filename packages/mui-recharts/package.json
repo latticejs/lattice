@@ -1,5 +1,5 @@
 {
-  "name": "@lattice/mui-recharts",
+  "name": "@latticejs/mui-recharts",
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@lattice/recharts-sunburst",
+  "name": "@latticejs/recharts-sunburst",
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",

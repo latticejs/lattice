@@ -5,8 +5,8 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-// @lattice
-import Widget from '@lattice/widgets/Widget';
+// @latticejs
+import Widget from '@latticejs/widgets/Widget';
 
 class General extends Component {
   render () {

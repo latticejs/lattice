@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 // Recharts
 import { ResponsiveContainer } from 'recharts';
 // Lattice
-import Widget from '@lattice/widgets/Widget';
-import Dag from '@lattice/dag';
+import Widget from '@latticejs/widgets/Widget';
+import Dag from '@latticejs/dag';
 
 const data = {
   nodes: [
