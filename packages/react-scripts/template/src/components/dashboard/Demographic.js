@@ -49,10 +49,10 @@ const defaultData = [
 class Demographic extends Component {
 
   render () {
-    const { className, width, height, classes, data = defaultData, fill = COLORS.fill, stroke = COLORS.stroke, ...props } = this.props
+    const { className, width, height, classes, data = defaultData, fill = COLORS.fill, stroke = COLORS.stroke } = this.props
 
     return (
-      <Widget title="Demographic" {...props}>
+      <Widget title="Demographic">
         <ResponsiveContainer aspect={1}>
           <Sunburst
             width={width}
