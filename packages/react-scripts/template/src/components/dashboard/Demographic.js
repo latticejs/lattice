@@ -55,8 +55,6 @@ class Demographic extends Component {
       <Widget title="Demographic">
         <ResponsiveContainer aspect={1}>
           <Sunburst
-            width={width}
-            height={height}
             data={data}
             dataKey='size'
             className={classnames(className, classes.root)}
