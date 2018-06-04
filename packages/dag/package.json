@@ -62,5 +62,8 @@
   "jest": {
     "setupFiles": ["./test/shim.js"],
     "setupTestFrameworkScriptFile": "./setupTest.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

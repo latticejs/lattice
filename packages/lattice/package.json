@@ -4,5 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
