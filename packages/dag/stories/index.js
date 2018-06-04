@@ -34,6 +34,7 @@ const PaperWrap = ({children}) => (
   </Paper>
 )
 
+export default ({storiesOf, action})  => {
 storiesOf('Directed Acyclic Graph Component', module)
   .add('no wrapper, with dummy props (emulating super simple package.json) & default theme', () => {
     // TODO(dk): parse pkg json deps.
@@ -85,3 +86,4 @@ storiesOf('Directed Acyclic Graph Component', module)
       </MuiThemeProvider>
     )
   })
+}

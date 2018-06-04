@@ -15,6 +15,7 @@ const data = [
   {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
 ];
 
+export default ({storiesOf, action})  => {
 storiesOf('MUI-recharts', module)
   .add('Wrapper around LineChart', () => (
     <LineChart width={400} height={400} data={data}>
@@ -22,3 +23,4 @@ storiesOf('MUI-recharts', module)
       <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
     </LineChart>
   ))
+}

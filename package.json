@@ -4,9 +4,12 @@
   "version": "1.0.0",
   "scripts": {
     "create-react-app": "node tasks/cra.js",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "devDependencies": {
+    "@storybook/addon-storyshots": "^3.4.6",
+    "@storybook/react": "^3.4.6",
     "lerna": "^2.11.0"
   },
   "workspaces": {
@@ -17,5 +20,6 @@
       "**/taskr",
       "**/@taskr/esnext**"
     ]
-  }
+  },
+  "dependencies": {}
 }
