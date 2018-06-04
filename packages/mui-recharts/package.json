@@ -59,5 +59,8 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./test/shim.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
