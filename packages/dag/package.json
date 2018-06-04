@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/dag",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "license": "MIT",
   "main": "index.js",
   "module": "dist/es/dag.es.js",
@@ -60,7 +60,9 @@
     "d3-zoom": "^1.7.1"
   },
   "jest": {
-    "setupFiles": ["./test/shim.js"],
+    "setupFiles": [
+      "./test/shim.js"
+    ],
     "setupTestFrameworkScriptFile": "./setupTest.js"
   },
   "publishConfig": {

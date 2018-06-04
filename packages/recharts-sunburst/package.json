@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/recharts-sunburst",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "license": "MIT",
   "main": "index.js",
   "module": "dist/es/recharts-sunburst.es.js",
@@ -21,13 +21,13 @@
     "recharts": "^1.0.0-beta.10"
   },
   "devDependencies": {
+    "@material-ui/core": "^1.0.0",
     "@storybook/addon-storyshots": "^3.4.5",
     "@storybook/react": "^3.4.5",
     "@taskr/babel": "^1.1.0",
     "@taskr/clear": "^1.1.0",
     "@taskr/esnext": "^1.1.0",
     "@taskr/watch": "^1.1.0",
-    "@material-ui/core": "^1.0.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "7.2.3",
     "babel-jest": "^22.2.2",
