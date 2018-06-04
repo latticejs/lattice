@@ -5,11 +5,24 @@
   "scripts": {
     "create-react-app": "node tasks/cra.js",
     "test": "lerna run test",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "lint": "eslint --cache --ignore-path .gitignore .",
+    "lint:fix": "yarn run lint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && yarn lint"
+    }
   },
   "devDependencies": {
     "@storybook/react": "^3.4.6",
-    "lerna": "^2.11.0"
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react-app": "^3.0.0",
+    "husky": "^1.0.0-rc.8",
+    "lerna": "^2.11.0",
+    "prettier": "^1.13.4"
   },
   "workspaces": {
     "packages": [
