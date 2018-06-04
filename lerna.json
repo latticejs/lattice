@@ -3,6 +3,12 @@
   "packages": [
     "packages/*"
   ],
+  "command": {
+    "publish": {
+      "allowBranch": "master",
+      "message": "chore(release): publish %s"
+    }
+  },  
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "1.0.0"
