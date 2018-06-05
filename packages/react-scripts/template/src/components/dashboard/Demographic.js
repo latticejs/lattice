@@ -52,11 +52,9 @@ class Demographic extends Component {
     const { className, width, height, classes, data = defaultData, fill = COLORS.fill, stroke = COLORS.stroke } = this.props
 
     return (
-      <Widget title="Demographic" {...this.props}>
+      <Widget title="Demographic">
         <ResponsiveContainer aspect={1}>
           <Sunburst
-            width={width}
-            height={height}
             data={data}
             dataKey='size'
             className={classnames(className, classes.root)}
