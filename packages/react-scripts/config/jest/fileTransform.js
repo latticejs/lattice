@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 // @remove-on-eject-end
-'use strict';
 
 const path = require('path');
 
@@ -16,5 +15,5 @@ const path = require('path');
 module.exports = {
   process(src, filename) {
     return `module.exports = ${JSON.stringify(path.basename(filename))};`;
-  },
+  }
 };

@@ -13,12 +13,12 @@ function createNodeMock(element) {
         offsetWidth: 777,
         offsetHeight: 888,
         currentStyle: {
-          position: 'relative',
-        },
+          position: 'relative'
+        }
       }
-    }
+    };
   }
-  return null
+  return null;
 }
 
 initStoryshots({

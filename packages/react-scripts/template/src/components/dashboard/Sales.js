@@ -22,58 +22,48 @@ const styles = theme => ({
   progress: {
     margin: '5px 0'
   },
-  ...COLORS.reduce(( prev, curr, index ) => { prev[`color${index}`] = {backgroundColor: curr}; return prev }, {})
+  ...COLORS.reduce((prev, curr, index) => {
+    prev[`color${index}`] = { backgroundColor: curr };
+    return prev;
+  }, {})
 });
 
 class Sales extends Component {
-
-  render () {
-    const { className, classes, data = [] } = this.props
-    const total = data.reduce( (prev, curr) => (prev + curr.value), 0)
+  render() {
+    const { className, classes, data = [] } = this.props;
+    const total = data.reduce((prev, curr) => prev + curr.value, 0);
 
     return (
       <Widget title="Sales">
-        <Grid
-          container
-          alignItems="center"
-          justify="center"
-          className={classnames(className, classes.root)}
-        >
+        <Grid container alignItems="center" justify="center" className={classnames(className, classes.root)}>
           <Grid item>
             <PieChart width={300} height={300}>
-              <Pie
-                data={data} 
-                dataKey="value"
-                innerRadius={40}              
-                fill="#8884d8"
-              >
-                {
-                  data.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]}/>)
-                }
+              <Pie data={data} dataKey="value" innerRadius={40} fill="#8884d8">
+                {data.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]} />)}
               </Pie>
             </PieChart>
           </Grid>
           <Grid item xs={4}>
-            {
-              data.map((entry, index) => { 
-                return (
-                  <Fragment key={`legend-${index}`}>
-                    <Typography variant="subheading">{entry.name}</Typography>
-                    <Typography variant="caption">{entry.value} units - {Math.ceil((entry.value/total * 100))}%</Typography>
-                    <LinearProgress
-                      variant="determinate"
-                      className={classes.progress}
-                      classes={{barColorPrimary: classes[`color${index}`]}}
-                      value={(entry.value/total) * 100}
-                    />
-                  </Fragment>
-                );
-              })
-            }
+            {data.map((entry, index) => {
+              return (
+                <Fragment key={`legend-${index}`}>
+                  <Typography variant="subheading">{entry.name}</Typography>
+                  <Typography variant="caption">
+                    {entry.value} units - {Math.ceil((entry.value / total) * 100)}%
+                  </Typography>
+                  <LinearProgress
+                    variant="determinate"
+                    className={classes.progress}
+                    classes={{ barColorPrimary: classes[`color${index}`] }}
+                    value={(entry.value / total) * 100}
+                  />
+                </Fragment>
+              );
+            })}
           </Grid>
         </Grid>
-      </Widget>      
-    )
+      </Widget>
+    );
   }
 }
 

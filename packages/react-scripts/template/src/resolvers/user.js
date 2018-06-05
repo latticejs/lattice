@@ -13,7 +13,7 @@ export default {
             __typename: 'user',
             loggedIn: true
           }
-        }
+        };
         cache.writeData({ data });
         return null;
       },
@@ -23,10 +23,10 @@ export default {
             __typename: 'user',
             loggedIn: false
           }
-        }
+        };
         cache.writeData({ data });
         return null;
-      }   
+      }
     }
   }
-}
+};

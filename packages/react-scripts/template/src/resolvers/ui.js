@@ -13,10 +13,10 @@ export default {
             __typename: 'ui',
             nightMode
           }
-        }
+        };
         cache.writeData({ data });
         return null;
       }
     }
   }
-}
+};

@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 /**
- * Copyright (c) 2015-present, Facebook, Inc. 
- * 
- * This source code is licensed under the MIT license found in the 
- * LICENSE file in the root directory of this source tree. 
+ * Copyright (c) 2015-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
-
-'use strict';
 
 const fs = require('fs');
 const path = require('path');
@@ -47,7 +45,7 @@ const packageJsonOrigPath = path.join(reactScriptsDir, 'package.json.orig');
 const lernaPath = path.join(rootDir, 'node_modules', '.bin', 'lerna');
 cp.execSync(`${lernaPath} bootstrap`, {
   cwd: rootDir,
-  stdio: 'inherit',
+  stdio: 'inherit'
 });
 
 // Save package.json because we're going to touch it
@@ -65,12 +63,7 @@ const scriptsFileName = cp
   .execSync(`npm pack`, { cwd: reactScriptsDir })
   .toString()
   .trim();
-const scriptsPath = path.join(
-  rootDir,
-  'packages',
-  'react-scripts',
-  scriptsFileName
-);
+const scriptsPath = path.join(rootDir, 'packages', 'react-scripts', scriptsFileName);
 
 // Restore package.json
 fs.unlinkSync(packageJsonPath);
@@ -97,13 +90,10 @@ const args = process.argv.slice(2);
 //   'create-react-app',
 //   'index.js'
 // );
-cp.execSync(
-  `npx create-react-app --scripts-version="${scriptsPath}" ${args.join(' ')}`,
-  {
-    cwd: rootDir,
-    stdio: 'inherit',
-  }
-);
+cp.execSync(`npx create-react-app --scripts-version="${scriptsPath}" ${args.join(' ')}`, {
+  cwd: rootDir,
+  stdio: 'inherit'
+});
 
 // Cleanup
 handleExit();

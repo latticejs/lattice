@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import gql from 'graphql-tag';
 
 export default gql`
   query ui {
@@ -7,9 +7,9 @@ export default gql`
       nightMode
     }
   }
-`
+`;
 export const updateNightMode = gql`
   mutation updateUi($nightMode: Boolean) {
     updateUi(nightMode: $nightMode) @client
   }
-`
+`;

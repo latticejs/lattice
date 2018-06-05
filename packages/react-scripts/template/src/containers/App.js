@@ -6,7 +6,7 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Router
-import { BrowserRouter , Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Apollo
 import { compose, graphql } from 'react-apollo';
@@ -31,24 +31,26 @@ class App extends Component {
         }
       }
     }
-  }
+  };
 
-  componentWillReceiveProps (nextProps) {
-    const { nightMode: prevNightMode } = this.props;
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { muiTheme } = prevState;
     const { nightMode } = nextProps;
+    const type = nightMode ? 'dark' : 'light';
 
-    if (nightMode !== prevNightMode) {
-      const { muiTheme } = this.state;
-      this.setState({
+    if (type !== muiTheme.palette.type) {
+      return {
         muiTheme: {
           ...muiTheme,
           palette: {
             ...muiTheme.palette,
-            type: nightMode ? 'dark' : 'light'
+            type
           }
-        }        
-      })
+        }
+      };
     }
+
+    return null;
   }
 
   render() {
@@ -58,8 +60,8 @@ class App extends Component {
         <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
           <CssBaseline>
             <Switch>
-              <Route path="/login" component={Login}/>
-              <PrivateRoute path="/" component={Main}/>
+              <Route path="/login" component={Login} />
+              <PrivateRoute path="/" component={Main} />
             </Switch>
           </CssBaseline>
         </MuiThemeProvider>
@@ -70,6 +72,10 @@ class App extends Component {
 
 export default compose(
   graphql(ui, {
-    props: ({ data: { ui: { nightMode } } }) => ({ nightMode })
+    props: ({
+      data: {
+        ui: { nightMode }
+      }
+    }) => ({ nightMode })
   })
 )(App);

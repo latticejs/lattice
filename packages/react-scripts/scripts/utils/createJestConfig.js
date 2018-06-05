@@ -5,7 +5,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-'use strict';
 
 const fs = require('fs');
 const chalk = require('chalk');
@@ -14,9 +13,7 @@ const paths = require('../../config/paths');
 module.exports = (resolve, rootDir, isEjecting) => {
   // Use this instead of `paths.testsSetup` to avoid putting
   // an absolute filename into configuration after ejecting.
-  const setupTestsFile = fs.existsSync(paths.testsSetup)
-    ? '<rootDir>/src/setupTests.js'
-    : undefined;
+  const setupTestsFile = fs.existsSync(paths.testsSetup) ? '<rootDir>/src/setupTests.js' : undefined;
 
   // TODO: I don't know if it's safe or not to just use / as path separator
   // in Jest configs. We need help from somebody with Windows to determine this.
@@ -24,10 +21,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
     collectCoverageFrom: ['src/**/*.{js,jsx,mjs}'],
     setupFiles: [resolve('config/polyfills.js')],
     setupTestFrameworkScriptFile: setupTestsFile,
-    testMatch: [
-      '<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}',
-      '<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}',
-    ],
+    testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}', '<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}'],
     testEnvironment: 'node',
     testURL: 'http://localhost',
     transform: {
@@ -35,34 +29,19 @@ module.exports = (resolve, rootDir, isEjecting) => {
         ? '<rootDir>/node_modules/babel-jest'
         : resolve('config/jest/babelTransform.js'),
       '^.+\\.css$': resolve('config/jest/cssTransform.js'),
-      '^(?!.*\\.(js|jsx|mjs|css|json)$)': resolve(
-        'config/jest/fileTransform.js'
-      ),
+      '^(?!.*\\.(js|jsx|mjs|css|json)$)': resolve('config/jest/fileTransform.js')
     },
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$'],
     moduleNameMapper: {
-      '^react-native$': 'react-native-web',
+      '^react-native$': 'react-native-web'
     },
-    moduleFileExtensions: [
-      'web.js',
-      'mjs',
-      'js',
-      'json',
-      'web.jsx',
-      'jsx',
-      'node',
-    ],
+    moduleFileExtensions: ['web.js', 'mjs', 'js', 'json', 'web.jsx', 'jsx', 'node']
   };
   if (rootDir) {
     config.rootDir = rootDir;
   }
   const overrides = Object.assign({}, require(paths.appPackageJson).jest);
-  const supportedKeys = [
-    'collectCoverageFrom',
-    'coverageReporters',
-    'coverageThreshold',
-    'snapshotSerializers',
-  ];
+  const supportedKeys = ['collectCoverageFrom', 'coverageReporters', 'coverageThreshold', 'snapshotSerializers'];
   if (overrides) {
     supportedKeys.forEach(key => {
       if (overrides.hasOwnProperty(key)) {
@@ -80,9 +59,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
             '.\n\n' +
             'These options in your package.json Jest configuration ' +
             'are not currently supported by Create React App:\n\n' +
-            unsupportedKeys
-              .map(key => chalk.bold('  \u2022 ' + key))
-              .join('\n') +
+            unsupportedKeys.map(key => chalk.bold('  \u2022 ' + key)).join('\n') +
             '\n\nIf you wish to override other Jest options, you need to ' +
             'eject from the default setup. You can do so by running ' +
             chalk.bold('npm run eject') +

@@ -2,15 +2,11 @@ import gql from 'graphql-tag';
 
 import { employees } from '../mock-data';
 
+const filterBy = filter => e => {
+  return !filter || !filter.q || e.name.indexOf(filter.q) !== -1 || e.email.indexOf(filter.q) !== -1;
+};
 
-const filterBy = (filter) => e => {
-  return (!filter || !filter.q || 
-    e.name.indexOf(filter.q) !== -1 ||
-    e.email.indexOf(filter.q) !== -1
-  )
-}
-
-const byId = id => e => ((id !== 0 && !id) || e.id === id)
+const byId = id => e => (id !== 0 && !id) || e.id === id;
 
 export default {
   defaults: {
@@ -18,7 +14,7 @@ export default {
   },
   resolvers: {
     Query: {
-      allEmployees: (_, params, { cache } ) => {
+      allEmployees: (_, params, { cache }) => {
         const query = gql`
           query getAllEmployees {
             allEmployees @client {
@@ -29,17 +25,15 @@ export default {
               department
             }
           }
-        `
-        const previous = cache.readQuery({query})
-        
+        `;
+        const previous = cache.readQuery({ query });
+
         if (!params) return previous.allEmployees;
 
         const { id, page, perPage, filter } = params;
 
-        let results = previous.allEmployees
-          .filter(byId(id))
-          .filter(filterBy(filter));
-        
+        let results = previous.allEmployees.filter(byId(id)).filter(filterBy(filter));
+
         if (page || perPage) {
           const from = page * perPage;
           const to = from + perPage;
@@ -59,18 +53,17 @@ export default {
               department
             }
           }
-        `
-        const previous = cache.readQuery({query})
+        `;
+        const previous = cache.readQuery({ query });
 
         return {
           __typename: '_allEmployeesMeta',
-          count: previous.allEmployees
-            .filter(filterBy(filter)).length
-        }
+          count: previous.allEmployees.filter(filterBy(filter)).length
+        };
       }
     },
     Mutation: {
-      createEmployee: (_, { id, name, email, position, department },  { cache }) => {
+      createEmployee: (_, { id, name, email, position, department }, { cache }) => {
         const query = gql`
           query getAllEmployees {
             allEmployees @client {
@@ -81,7 +74,7 @@ export default {
               department
             }
           }
-        `
+        `;
         const previous = cache.readQuery({
           query
         });
@@ -93,7 +86,7 @@ export default {
           position,
           department,
           __typename: 'Employees'
-        }
+        };
 
         cache.writeQuery({
           query,
@@ -102,14 +95,13 @@ export default {
           }
         });
 
-        return newEmployee;        
+        return newEmployee;
       },
-      updateEmployee: (_, { id, name, email, position, department },  { cache }) => {
+      updateEmployee: (_, { id, name, email, position, department }, { cache }) => {
         const data = { id, name, email, position, department, __typename: 'Employees' };
         cache.writeData({ id: `Employees:${id}`, data });
-        return null;        
+        return null;
       }
-      
     }
   }
-}
+};

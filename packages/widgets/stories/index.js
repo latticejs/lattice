@@ -1,17 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Widget, SideMenu } from '../';
+import { Widget, SideMenu } from '../src';
 // Material UI
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
 
-const DummyComponent = () => (
-  <div>
-    Children
-  </div>
-)
+const DummyComponent = () => <div>Children</div>;
 
 const navigation = [
   {
@@ -38,35 +33,24 @@ const MuiThemeWrapper = ({ children }) => {
         fontWeight: 300
       }
     }
-  }
+  };
   return (
     <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
-      <CssBaseline>
-        { children }
-      </CssBaseline>
+      <CssBaseline>{children}</CssBaseline>
     </MuiThemeProvider>
-  )
-}
+  );
+};
 
-export default ({storiesOf, action})  => {
-storiesOf('Widget', module)
-  .add('basic Widget', () => (
-    <Widget title="basic Widget">
-    </Widget>
-  ))
-  .add('Widget with light theme', () => (
-    <MuiThemeWrapper>
-      <Widget title="MUI Widget">
-      </Widget>
-    </MuiThemeWrapper>
-  ))
+export default ({ storiesOf, action }) => {
+  storiesOf('Widget', module)
+    .add('basic Widget', () => <Widget title="basic Widget" />)
+    .add('Widget with light theme', () => (
+      <MuiThemeWrapper>
+        <Widget title="MUI Widget" />
+      </MuiThemeWrapper>
+    ));
 
-storiesOf('SideMenu', module)
-  .add('basic SideMenu', () => (
-    <SideMenu
-      width={200}
-      miniWidth={70}
-      navigation={navigation}
-    />
-  ))
-}
+  storiesOf('SideMenu', module).add('basic SideMenu', () => (
+    <SideMenu width={200} miniWidth={70} navigation={navigation} />
+  ));
+};

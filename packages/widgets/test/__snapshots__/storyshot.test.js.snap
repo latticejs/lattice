@@ -2,7 +2,7 @@
 
 exports[`Storyshots SideMenu basic SideMenu 1`] = `
 <nav
-  className="MuiList-root-1 MuiList-padding-2 SideMenu-root-113"
+  className="MuiList-root-122 MuiList-padding-123 SideMenu-root-113"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
   style={
@@ -15,7 +15,7 @@ exports[`Storyshots SideMenu basic SideMenu 1`] = `
     className="SideMenu-topSpacer-114"
   />
   <div
-    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-default-8 MuiListItem-gutters-12 SideMenu-listItemGutters-116 MuiListItem-button-13 SideMenu-listItem-115"
+    className="MuiButtonBase-root-136 MuiListItem-root-126 MuiListItem-default-129 MuiListItem-gutters-133 SideMenu-listItemGutters-116 MuiListItem-button-134 SideMenu-listItem-115"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -32,7 +32,7 @@ exports[`Storyshots SideMenu basic SideMenu 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-19 MuiListItemIcon-root-18"
+      className="MuiSvgIcon-root-140 MuiListItemIcon-root-139"
       color={undefined}
       focusable="false"
       style={
@@ -50,20 +50,20 @@ exports[`Storyshots SideMenu basic SideMenu 1`] = `
       </g>
     </svg>
     <div
-      className="MuiListItemText-root-25 SideMenu-listItemText-118"
+      className="MuiListItemText-root-146 SideMenu-listItemText-118"
     >
       <span
-        className="MuiTypography-root-31 MuiTypography-subheading-38 MuiListItemText-primary-28 SideMenu-listItemPrimary-117"
+        className="MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149 SideMenu-listItemPrimary-117"
       >
         Dashboard
       </span>
     </div>
     <span
-      className="MuiTouchRipple-root-55"
+      className="MuiTouchRipple-root-176"
     />
   </div>
   <div
-    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-default-8 MuiListItem-gutters-12 SideMenu-listItemGutters-116 MuiListItem-button-13 SideMenu-listItem-115"
+    className="MuiButtonBase-root-136 MuiListItem-root-126 MuiListItem-default-129 MuiListItem-gutters-133 SideMenu-listItemGutters-116 MuiListItem-button-134 SideMenu-listItem-115"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -80,7 +80,7 @@ exports[`Storyshots SideMenu basic SideMenu 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-19 MuiListItemIcon-root-18"
+      className="MuiSvgIcon-root-140 MuiListItemIcon-root-139"
       color={undefined}
       focusable="false"
       style={
@@ -98,16 +98,16 @@ exports[`Storyshots SideMenu basic SideMenu 1`] = `
       </g>
     </svg>
     <div
-      className="MuiListItemText-root-25 SideMenu-listItemText-118"
+      className="MuiListItemText-root-146 SideMenu-listItemText-118"
     >
       <span
-        className="MuiTypography-root-31 MuiTypography-subheading-38 MuiListItemText-primary-28 SideMenu-listItemPrimary-117"
+        className="MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149 SideMenu-listItemPrimary-117"
       >
         Employees
       </span>
     </div>
     <span
-      className="MuiTouchRipple-root-55"
+      className="MuiTouchRipple-root-176"
     />
   </div>
 </nav>
