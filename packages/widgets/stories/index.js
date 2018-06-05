@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Widget, SideMenu } from '../';
-// Material UI 
+// Material UI
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -48,6 +48,7 @@ const MuiThemeWrapper = ({ children }) => {
   )
 }
 
+export default ({storiesOf, action})  => {
 storiesOf('Widget', module)
   .add('basic Widget', () => (
     <Widget title="basic Widget">
@@ -68,3 +69,4 @@ storiesOf('SideMenu', module)
       navigation={navigation}
     />
   ))
+}

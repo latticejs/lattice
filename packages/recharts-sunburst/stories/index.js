@@ -26,6 +26,7 @@ const data = [
   },
 ];
 
+export default ({storiesOf, action})  => {
 storiesOf('recharts-sunburst', module)
   .add('basic sunburst', () => (
       <Sunburst
@@ -37,4 +38,4 @@ storiesOf('recharts-sunburst', module)
         isTooltipActive={true}
       />
   ))
-
+}
