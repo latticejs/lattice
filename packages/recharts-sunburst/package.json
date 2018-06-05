@@ -11,7 +11,7 @@
     "build": "taskr",
     "release": "taskr release",
     "prepublish": "npm run release",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 9012 -c .storybook",
     "test": "jest"
   },
   "peerDependencies": {
