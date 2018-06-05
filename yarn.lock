@@ -109,20 +109,6 @@
     puppeteer "^1.2.0"
     read-pkg-up "^3.0.0"
 
-"@storybook/addon-storyshots@^3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-3.4.6.tgz#0a428d27a4d02437181fd97495cdfb5a806181ba"
-  dependencies:
-    "@storybook/channels" "3.4.6"
-    "@storybook/node-logger" "3.4.6"
-    babel-runtime "^6.26.0"
-    glob "^7.1.2"
-    global "^4.3.2"
-    jest-image-snapshot "^2.4.1"
-    jest-specific-snapshot "^0.5.0"
-    puppeteer "^1.2.0"
-    read-pkg-up "^3.0.0"
-
 "@storybook/addons@3.4.5":
   version "3.4.5"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.5.tgz#8dd6eb93ae26b4498a9b1e2b890316944efa41da"
