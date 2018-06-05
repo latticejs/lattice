@@ -52,11 +52,11 @@ exports[`Storyshots SideMenu basic SideMenu 1`] = `
     <div
       className="MuiListItemText-root-25 SideMenu-listItemText-118"
     >
-      <h3
+      <span
         className="MuiTypography-root-31 MuiTypography-subheading-38 MuiListItemText-primary-28 SideMenu-listItemPrimary-117"
       >
         Dashboard
-      </h3>
+      </span>
     </div>
     <span
       className="MuiTouchRipple-root-55"
@@ -100,11 +100,11 @@ exports[`Storyshots SideMenu basic SideMenu 1`] = `
     <div
       className="MuiListItemText-root-25 SideMenu-listItemText-118"
     >
-      <h3
+      <span
         className="MuiTypography-root-31 MuiTypography-subheading-38 MuiListItemText-primary-28 SideMenu-listItemPrimary-117"
       >
         Employees
-      </h3>
+      </span>
     </div>
     <span
       className="MuiTouchRipple-root-55"
