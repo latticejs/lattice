@@ -27,13 +27,7 @@ if (process.env.E2E_FILE) {
   resourceLoader = (resource, callback) =>
     callback(
       null,
-      fs.readFileSync(
-        path.join(
-          path.dirname(file),
-          resource.url.pathname.replace(pathPrefix, '')
-        ),
-        'utf8'
-      )
+      fs.readFileSync(path.join(path.dirname(file), resource.url.pathname.replace(pathPrefix, '')), 'utf8')
     );
 } else if (process.env.E2E_URL) {
   getMarkup = () =>
@@ -47,14 +41,9 @@ if (process.env.E2E_FILE) {
 
   resourceLoader = (resource, callback) => resource.defaultFetch(callback);
 } else {
-  it.only(
-    'can run jsdom (at least one of "E2E_FILE" or "E2E_URL" environment variables must be provided)',
-    () => {
-      expect(
-        new Error("This isn't the error you are looking for.")
-      ).to.be.undefined();
-    }
-  );
+  it.only('can run jsdom (at least one of "E2E_FILE" or "E2E_URL" environment variables must be provided)', () => {
+    expect(new Error("This isn't the error you are looking for.")).to.be.undefined();
+  });
 }
 
 export default feature =>
@@ -64,14 +53,13 @@ export default feature =>
     const doc = jsdom.jsdom(markup, {
       features: {
         FetchExternalResources: ['script', 'css'],
-        ProcessExternalResources: ['script'],
+        ProcessExternalResources: ['script']
       },
-      created: (_, win) =>
-        win.addEventListener('ReactFeatureDidMount', () => resolve(doc), true),
+      created: (_, win) => win.addEventListener('ReactFeatureDidMount', () => resolve(doc), true),
       deferClose: true,
       resourceLoader,
       url: `${host}#${feature}`,
-      virtualConsole: jsdom.createVirtualConsole().sendTo(console),
+      virtualConsole: jsdom.createVirtualConsole().sendTo(console)
     });
 
     doc.close();

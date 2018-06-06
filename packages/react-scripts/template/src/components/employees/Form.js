@@ -16,30 +16,28 @@ import { withStyles } from '@material-ui/core/styles';
 import Widget from '@latticejs/widgets/Widget';
 
 const styles = theme => ({
-  root: {
-  },
+  root: {},
   container: {
     padding: '24px 8px'
   }
 });
 
 class Form extends Component {
-  
   handleFieldChange = (...args) => {
     const { handleChange } = this.props;
     handleChange(...args);
-  }
+  };
 
   handleCancel = () => {
-    const { onCancel } = this.props; 
+    const { onCancel } = this.props;
     onCancel();
-  }
+  };
 
   isAdd = () => {
-    return !!(this.props.employee)
-  }
+    return !!this.props.employee;
+  };
 
-  render () {
+  render() {
     const { classes, className, values, errors, touched, departments = [], handleSubmit, isSubmitting } = this.props;
     const action = this.isAdd() ? 'Edit' : 'Add';
 
@@ -54,7 +52,7 @@ class Form extends Component {
         <Grid container className={classes.container} spacing={24}>
           <Grid item xs={12}>
             <TextField
-              label={(touched.name && errors.name) || "Name"}
+              label={(touched.name && errors.name) || 'Name'}
               name="name"
               required
               error={!!errors.name}
@@ -65,7 +63,7 @@ class Form extends Component {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              label={(touched.email && errors.email) || "Email"}
+              label={(touched.email && errors.email) || 'Email'}
               name="email"
               required
               error={!!errors.email}
@@ -102,10 +100,14 @@ class Form extends Component {
           <Toolbar>
             <Grid container spacing={16}>
               <Grid item>
-                <Button type="submit" variant="raised" color="primary" disabled={isSubmitting}>Save</Button>
+                <Button type="submit" variant="raised" color="primary" disabled={isSubmitting}>
+                  Save
+                </Button>
               </Grid>
               <Grid item>
-                <Button variant="raised" onClick={this.handleCancel}>Cancel</Button>
+                <Button variant="raised" onClick={this.handleCancel}>
+                  Cancel
+                </Button>
               </Grid>
             </Grid>
           </Toolbar>
@@ -117,7 +119,7 @@ class Form extends Component {
 
 export default withStyles(styles)(
   withFormik({
-    mapPropsToValues: ({ employee: { id, name = '', email = '', department = '', position = ''} = {} }) => ({
+    mapPropsToValues: ({ employee: { id, name = '', email = '', department = '', position = '' } = {} }) => ({
       id,
       name,
       email,
@@ -126,7 +128,10 @@ export default withStyles(styles)(
     }),
     validationSchema: yup.object().shape({
       name: yup.string().required('A name is required'),
-      email: yup.string().email().required(),
+      email: yup
+        .string()
+        .email()
+        .required(),
       position: yup.string(),
       department: yup.string()
     }),
@@ -135,10 +140,11 @@ export default withStyles(styles)(
       let { id } = values;
 
       if (id) {
-        onUpdate(values)
+        onUpdate(values);
       } else {
-        values.id = 2000 + Math.floor(Math.random() * 1000 )
-        onCreate(values)
+        values.id = 2000 + Math.floor(Math.random() * 1000);
+        onCreate(values);
       }
     }
-  })(Form));
+  })(Form)
+);

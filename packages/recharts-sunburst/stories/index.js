@@ -1,6 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import Sunburst from '../';
+import Sunburst from '../src/chart/Sunburst';
 
 const data = [
   {
@@ -16,26 +15,18 @@ const data = [
           { name: 'ArrowType', size: 698 },
           { name: 'EdgeRenderer', size: 5569 },
           { name: 'IRenderer', size: 353 },
-          { name: 'ShapeRenderer', size: 2247 },
-        ],
+          { name: 'ShapeRenderer', size: 2247 }
+        ]
       },
       { name: 'ScaleBinding', size: 11275 },
       { name: 'Tree', size: 7147 },
-      { name: 'TreeBuilder', size: 9930 },
-    ],
-  },
+      { name: 'TreeBuilder', size: 9930 }
+    ]
+  }
 ];
 
-export default ({storiesOf, action})  => {
-storiesOf('recharts-sunburst', module)
-  .add('basic sunburst', () => (
-      <Sunburst
-        width={500}
-        height={500}
-        data={data}
-        dataKey='size'
-        ratio={4/3}
-        isTooltipActive={true}
-      />
-  ))
-}
+export default ({ storiesOf, action }) => {
+  storiesOf('recharts-sunburst', module).add('basic sunburst', () => (
+    <Sunburst width={500} height={500} data={data} dataKey="size" ratio={4 / 3} isTooltipActive={true} />
+  ));
+};

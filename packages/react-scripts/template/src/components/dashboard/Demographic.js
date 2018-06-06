@@ -11,7 +11,7 @@ import Sunburst from '@latticejs/recharts-sunburst';
 const COLORS = {
   fill: '#00C49F',
   stroke: '#fff'
-}
+};
 
 const styles = theme => ({
   root: {
@@ -36,34 +36,33 @@ const defaultData = [
           { name: 'ArrowType', size: 698 },
           { name: 'EdgeRenderer', size: 5569 },
           { name: 'IRenderer', size: 353 },
-          { name: 'ShapeRenderer', size: 2247 },
-        ],
+          { name: 'ShapeRenderer', size: 2247 }
+        ]
       },
       { name: 'ScaleBinding', size: 11275 },
       { name: 'Tree', size: 7147 },
-      { name: 'TreeBuilder', size: 9930 },
-    ],
-  },
+      { name: 'TreeBuilder', size: 9930 }
+    ]
+  }
 ];
 
 class Demographic extends Component {
-
-  render () {
-    const { className, width, height, classes, data = defaultData, fill = COLORS.fill, stroke = COLORS.stroke } = this.props
+  render() {
+    const { className, classes, data = defaultData, fill = COLORS.fill, stroke = COLORS.stroke } = this.props;
 
     return (
       <Widget title="Demographic">
         <ResponsiveContainer aspect={1}>
           <Sunburst
             data={data}
-            dataKey='size'
+            dataKey="size"
             className={classnames(className, classes.root)}
             fill={fill}
             stroke={stroke}
           />
         </ResponsiveContainer>
       </Widget>
-    )
+    );
   }
 }
 

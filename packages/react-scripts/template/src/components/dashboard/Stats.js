@@ -26,10 +26,10 @@ const styles = theme => ({
   }
 });
 
-const reduceValue = (value) => (value > 1000) ? `${Math.floor(value/1000)}k`: `${value}`
+const reduceValue = value => (value > 1000 ? `${Math.floor(value / 1000)}k` : `${value}`);
 
-const Stats = ({ stat: { label, value, unit } ,...props}) => {
-  const { classes, classNames } = props
+const Stats = ({ stat: { label, value, unit }, ...props }) => {
+  const { classes, classNames } = props;
   return (
     <Widget
       title={label}
@@ -37,10 +37,14 @@ const Stats = ({ stat: { label, value, unit } ,...props}) => {
       border="bottom"
       classes={{ border: classes[label.toLowerCase()] }}
     >
-      <Typography variant="display2" align="center">{reduceValue(value)}</Typography>
-      <Typography variant="caption" align="center">{unit}</Typography>  
+      <Typography variant="display2" align="center">
+        {reduceValue(value)}
+      </Typography>
+      <Typography variant="caption" align="center">
+        {unit}
+      </Typography>
     </Widget>
-  )
-}
+  );
+};
 
-export default withStyles(styles)(Stats)
+export default withStyles(styles)(Stats);

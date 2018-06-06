@@ -10,18 +10,13 @@ import PropTypes from 'prop-types';
 
 async function load() {
   return {
-    users: [
-      { id: 1, name: '1' },
-      { id: 2, name: '2' },
-      { id: 3, name: '3' },
-      { id: 4, name: '4' },
-    ],
+    users: [{ id: 1, name: '1' }, { id: 2, name: '2' }, { id: 3, name: '3' }, { id: 4, name: '4' }]
   };
 }
 
 export default class extends Component {
   static propTypes = {
-    onReady: PropTypes.func.isRequired,
+    onReady: PropTypes.func.isRequired
   };
 
   constructor(props) {

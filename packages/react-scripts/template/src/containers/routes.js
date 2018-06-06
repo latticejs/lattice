@@ -1,4 +1,3 @@
-
 import ContentCopyIcon from '@material-ui/icons/ContentCopy';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ExtensionIcon from '@material-ui/icons/Extension';
@@ -26,7 +25,7 @@ export const navigation = [
     title: 'Employees',
     component: Employees,
     icon: PeopleIcon
-  },  
+  },
   {
     title: 'Theme',
     icon: ExtensionIcon,
@@ -35,13 +34,13 @@ export const navigation = [
         path: '/theme/general',
         title: 'General',
         component: General,
-        icon: TextFormatIcon            
+        icon: TextFormatIcon
       },
       {
         path: '/theme/widgets',
         title: 'Widgets',
         component: Widgets,
-        icon: ContentCopyIcon            
+        icon: ContentCopyIcon
       }
     ]
   }
@@ -52,17 +51,13 @@ const routesInNavigation = () => {
     .filter(r => r.children)
     .map(r => {
       const { title, children } = r;
-      children.map(c => c.breadcrumb = `${title} | ${c.title}` );
+      children.map(c => (c.breadcrumb = `${title} | ${c.title}`));
       return r;
     })
-    .reduce((prev, curr) => prev.concat(...curr.children) ,[]);
+    .reduce((prev, curr) => prev.concat(...curr.children), []);
 
-  return navigation
-    .filter(r => r.path)
-    .concat(
-      ...sub
-    );
-}
+  return navigation.filter(r => r.path).concat(...sub);
+};
 
 const routes = [
   {
@@ -74,7 +69,6 @@ const routes = [
 
 export default routes;
 
-export const routeByPath = (pathname) => {
-  return routes.filter(route => !route.redirect && route.path === pathname)[0]
-}
-
+export const routeByPath = pathname => {
+  return routes.filter(route => !route.redirect && route.path === pathname)[0];
+};

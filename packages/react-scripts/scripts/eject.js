@@ -5,7 +5,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-'use strict';
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
@@ -29,7 +28,7 @@ const cyan = chalk.cyan;
 function getGitStatus() {
   try {
     let stdout = execSync(`git status --porcelain`, {
-      stdio: ['pipe', 'pipe', 'ignore'],
+      stdio: ['pipe', 'pipe', 'ignore']
     }).toString();
     return stdout.trim();
   } catch (e) {
@@ -42,7 +41,7 @@ inquirer
     type: 'confirm',
     name: 'shouldEject',
     message: 'Are you sure you want to eject? This action is permanent.',
-    default: false,
+    default: false
   })
   .then(answer => {
     if (!answer.shouldEject) {
@@ -53,18 +52,14 @@ inquirer
     const gitStatus = getGitStatus();
     if (gitStatus) {
       console.error(
-        chalk.red(
-          'This git repository has untracked files or uncommitted changes:'
-        ) +
+        chalk.red('This git repository has untracked files or uncommitted changes:') +
           '\n\n' +
           gitStatus
             .split('\n')
             .map(line => line.match(/ .*/g)[0].trim())
             .join('\n') +
           '\n\n' +
-          chalk.red(
-            'Remove untracked files, stash or commit any changes, and try again.'
-          )
+          chalk.red('Remove untracked files, stash or commit any changes, and try again.')
       );
       process.exit(1);
     }
@@ -105,11 +100,7 @@ inquirer
     files.forEach(verifyAbsent);
 
     // Prepare Jest config early in case it throws
-    const jestConfig = createJestConfig(
-      filePath => path.posix.join('<rootDir>', filePath),
-      null,
-      true
-    );
+    const jestConfig = createJestConfig(filePath => path.posix.join('<rootDir>', filePath), null, true);
 
     console.log();
     console.log(cyan(`Copying files into ${appPath}`));
@@ -128,15 +119,9 @@ inquirer
       content =
         content
           // Remove dead code from .js files on eject
-          .replace(
-            /\/\/ @remove-on-eject-begin([\s\S]*?)\/\/ @remove-on-eject-end/gm,
-            ''
-          )
+          .replace(/\/\/ @remove-on-eject-begin([\s\S]*?)\/\/ @remove-on-eject-end/gm, '')
           // Remove dead code from .applescript files on eject
-          .replace(
-            /-- @remove-on-eject-begin([\s\S]*?)-- @remove-on-eject-end/gm,
-            ''
-          )
+          .replace(/-- @remove-on-eject-begin([\s\S]*?)-- @remove-on-eject-end/gm, '')
           .trim() + '\n';
       console.log(`  Adding ${cyan(file.replace(ownPath, ''))} to the project`);
       fs.writeFileSync(file.replace(ownPath, appPath), content);
@@ -186,15 +171,8 @@ inquirer
         if (!regex.test(appPackage.scripts[key])) {
           return;
         }
-        appPackage.scripts[key] = appPackage.scripts[key].replace(
-          regex,
-          'node scripts/$1.js'
-        );
-        console.log(
-          `  Replacing ${cyan(`"${binKey} ${key}"`)} with ${cyan(
-            `"node scripts/${key}.js"`
-          )}`
-        );
+        appPackage.scripts[key] = appPackage.scripts[key].replace(regex, 'node scripts/$1.js');
+        console.log(`  Replacing ${cyan(`"${binKey} ${key}"`)} with ${cyan(`"node scripts/${key}.js"`)}`);
       });
     });
 
@@ -207,19 +185,16 @@ inquirer
     // Add Babel config
     console.log(`  Adding ${cyan('Babel')} preset`);
     appPackage.babel = {
-      presets: ['react-app'],
+      presets: ['react-app']
     };
 
     // Add ESlint config
     console.log(`  Adding ${cyan('ESLint')} configuration`);
     appPackage.eslintConfig = {
-      extends: 'react-app',
+      extends: 'react-app'
     };
 
-    fs.writeFileSync(
-      path.join(appPath, 'package.json'),
-      JSON.stringify(appPackage, null, 2) + '\n'
-    );
+    fs.writeFileSync(path.join(appPath, 'package.json'), JSON.stringify(appPackage, null, 2) + '\n');
     console.log();
 
     // "Don't destroy what isn't ours"
@@ -254,15 +229,13 @@ inquirer
     } else {
       console.log(cyan('Running npm install...'));
       spawnSync('npm', ['install', '--loglevel', 'error'], {
-        stdio: 'inherit',
+        stdio: 'inherit'
       });
     }
     console.log(green('Ejected successfully!'));
     console.log();
 
-    console.log(
-      green('Please consider sharing why you ejected in this survey:')
-    );
+    console.log(green('Please consider sharing why you ejected in this survey:'));
     console.log(green('  http://goo.gl/forms/Bi6CZjk1EqsdelXk1'));
     console.log();
   });

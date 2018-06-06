@@ -6,7 +6,6 @@ import Node from './node';
 import Edge from './edge';
 
 const styles = theme => ({
-
   root: {
     color: theme.palette.text.secondary,
     padding: 16,
@@ -28,54 +27,41 @@ const styles = theme => ({
     fontWeight: theme.typography.fontWeightLight
   },
   dagEdge: {
-    stroke: theme.palette.secondary[theme.palette.type],
+    stroke: theme.palette.secondary[theme.palette.type]
   },
   dagEdgeMarker: {
     fill: theme.palette.secondary[theme.palette.type]
   }
 });
 
- class Dag extends Component {
-  static displayName = 'Dag'
+class Dag extends Component {
+  static displayName = 'Dag';
 
-  state = {}
+  state = {};
 
-  componentDidMount () {
-
-    this.dagcore = new DagCore(this.root, { ...this.props, ...this.state })
-    this.dagcore.simulation.on('tick', this.dagcore.updateGraph)
+  componentDidMount() {
+    this.dagcore = new DagCore(this.root, { ...this.props, ...this.state });
+    this.dagcore.simulation.on('tick', this.dagcore.updateGraph);
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     this.dagcore.destroyGraph();
   }
 
-  render () {
+  render() {
+    const { width, height, classes = {} } = this.props;
+    const rootClasses = [classes.root];
 
-    const { width, height, classes={}, style, theme, ...others } = this.props;
-    const rootClasses = [classes.root]
-
-    const nodes = this.props.nodes.map( (node,i) => {
-      return (
-        <Node
-          data={node}
-          name={node.title}
-          key={`node-${i}`}
-          classes={classes}
-        />);
+    const nodes = this.props.nodes.map((node, i) => {
+      return <Node data={node} name={node.title} key={`node-${i}`} classes={classes} />;
     });
-    const edges = this.props.edges.map( (edge,i) => {
-      return (
-        <Edge
-          key={edge.target+i}
-          data={edge}
-          classes={classes}
-        />);
+    const edges = this.props.edges.map((edge, i) => {
+      return <Edge key={edge.target + i} data={edge} classes={classes} />;
     });
 
     return (
       <svg
-        ref={node => this.root = node}
+        ref={node => (this.root = node)}
         width={width}
         height={height}
         className={classNames('dag-wrapper', rootClasses)}
@@ -85,8 +71,8 @@ const styles = theme => ({
           {nodes}
         </g>
       </svg>
-    )
+    );
   }
 }
 
-export default withStyles(styles, { name: 'Dag' })(Dag) 
+export default withStyles(styles, { name: 'Dag' })(Dag);

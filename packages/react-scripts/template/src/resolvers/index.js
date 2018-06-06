@@ -6,11 +6,11 @@ import employees from './employees';
 import { stats, sales, departments } from '../mock-data';
 
 const combineResolvers = resolvers => {
-  return resolvers
-    .reduce((prev, curr) => {
-      const mutation = curr.resolvers && curr.resolvers.Mutation
-      const query = curr.resolvers && curr.resolvers.Query
-    
+  return resolvers.reduce(
+    (prev, curr) => {
+      const mutation = curr.resolvers && curr.resolvers.Mutation;
+      const query = curr.resolvers && curr.resolvers.Query;
+
       return {
         defaults: {
           ...prev.defaults,
@@ -25,9 +25,8 @@ const combineResolvers = resolvers => {
             ...prev.resolvers.Mutation,
             ...mutation
           }
-          
         }
-      }
+      };
     },
     {
       defaults: {},
@@ -35,14 +34,15 @@ const combineResolvers = resolvers => {
         Query: {},
         Mutation: {}
       }
-    });
-}
+    }
+  );
+};
 
 export default combineResolvers([
   ui,
   user,
   employees,
-  { 
+  {
     defaults: {
       allStats: stats,
       allSales: sales,

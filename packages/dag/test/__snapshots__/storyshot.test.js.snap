@@ -38,7 +38,7 @@ exports[`Storyshots Directed Acyclic Graph Component no wrapper, with dummy prop
 
 exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy props & dark theme 1`] = `
 <div
-  className="MuiPaper-root-28 MuiPaper-elevation2-32 MuiPaper-rounded-29"
+  className="MuiPaper-root-38 MuiPaper-elevation2-42 MuiPaper-rounded-39"
   style={
     Object {
       "height": "500px",
@@ -47,7 +47,7 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
   }
 >
   <svg
-    className="dag-wrapper Dag-root-11"
+    className="dag-wrapper Dag-root-65"
     height={500}
     width={500}
   >
@@ -55,26 +55,26 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
       className="graph"
     >
       <line
-        className="connect-node Dag-dagEdge-14"
+        className="connect-node Dag-dagEdge-68"
       />
       <g
-        className="node Dag-dagNode-12"
+        className="node Dag-dagNode-66"
       >
         <circle
           onClick={[Function]}
         />
         <text
-          className="Dag-dagNodeText-13"
+          className="Dag-dagNodeText-67"
         />
       </g>
       <g
-        className="node Dag-dagNode-12"
+        className="node Dag-dagNode-66"
       >
         <circle
           onClick={[Function]}
         />
         <text
-          className="Dag-dagNodeText-13"
+          className="Dag-dagNodeText-67"
         />
       </g>
     </g>
@@ -84,7 +84,7 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
 
 exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy props & light theme 1`] = `
 <div
-  className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+  className="MuiPaper-root-6 MuiPaper-elevation2-10 MuiPaper-rounded-7"
   style={
     Object {
       "height": "500px",
@@ -93,7 +93,7 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
   }
 >
   <svg
-    className="dag-wrapper Dag-root-6"
+    className="dag-wrapper Dag-root-33"
     height={500}
     width={500}
   >
@@ -101,26 +101,26 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
       className="graph"
     >
       <line
-        className="connect-node Dag-dagEdge-9"
+        className="connect-node Dag-dagEdge-36"
       />
       <g
-        className="node Dag-dagNode-7"
+        className="node Dag-dagNode-34"
       >
         <circle
           onClick={[Function]}
         />
         <text
-          className="Dag-dagNodeText-8"
+          className="Dag-dagNodeText-35"
         />
       </g>
       <g
-        className="node Dag-dagNode-7"
+        className="node Dag-dagNode-34"
       >
         <circle
           onClick={[Function]}
         />
         <text
-          className="Dag-dagNodeText-8"
+          className="Dag-dagNodeText-35"
         />
       </g>
     </g>

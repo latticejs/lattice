@@ -17,28 +17,26 @@ import allSales from '../queries/sales';
 import allStats from '../queries/stats';
 
 class Dashboard extends Component {
-  render () {
-    const { sales = [], stats = [] } = this.props
+  render() {
+    const { sales = [], stats = [] } = this.props;
     return (
       <Grid container spacing={16}>
         <Grid item xs={12}>
           <Grid container spacing={16}>
-            {
-              stats.map((stat, idx) => (
-                <Grid key={`stat-${idx}`} item xs={6}  lg={12 / stats.length}> 
-                  <Stats stat={stat}/>
-                </Grid>
-              ))
-            }
+            {stats.map((stat, idx) => (
+              <Grid key={`stat-${idx}`} item xs={6} lg={12 / stats.length}>
+                <Stats stat={stat} />
+              </Grid>
+            ))}
             <Grid item xs={12}>
-                <Sales data={sales}/>
+              <Sales data={sales} />
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12}>
           <Grid container alignItems="stretch" spacing={16}>
             <Grid item xs={12} md={8}>
-              <NewCustomers style={{height: '100%'}}/>
+              <NewCustomers style={{ height: '100%' }} />
             </Grid>
             <Grid item xs={12} md={4}>
               <AverageRevenue />
@@ -51,7 +49,7 @@ class Dashboard extends Component {
               <TaskScheduler />
             </Grid>
             <Grid item xs={12} md={4}>
-              <Demographic style={{height: '100%'}}/>
+              <Demographic style={{ height: '100%' }} />
             </Grid>
           </Grid>
         </Grid>
@@ -63,4 +61,4 @@ class Dashboard extends Component {
 export default compose(
   graphql(allSales, { props: ({ data: { allSales } }) => ({ sales: allSales }) }),
   graphql(allStats, { props: ({ data: { allStats } }) => ({ stats: allStats }) })
-)(Dashboard)
+)(Dashboard);

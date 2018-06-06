@@ -6,14 +6,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
-
 const spawn = require('react-dev-utils/crossSpawn');
 const args = process.argv.slice(2);
 
-const scriptIndex = args.findIndex(
-  x => x === 'build' || x === 'eject' || x === 'start' || x === 'test'
-);
+const scriptIndex = args.findIndex(x => x === 'build' || x === 'eject' || x === 'start' || x === 'test');
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : [];
 
@@ -24,9 +20,7 @@ switch (script) {
   case 'test': {
     const result = spawn.sync(
       'node',
-      nodeArgs
-        .concat(require.resolve('../scripts/' + script))
-        .concat(args.slice(scriptIndex + 1)),
+      nodeArgs.concat(require.resolve('../scripts/' + script)).concat(args.slice(scriptIndex + 1)),
       { stdio: 'inherit' }
     );
     if (result.signal) {
