@@ -1365,16 +1365,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
           >
             <g
               className="recharts-layer"
-              onAnimationStart={[Function]}
-              style={
-                Object {
-                  "MozTransform": "translate(62px, 62px)",
-                  "OTransform": "translate(62px, 62px)",
-                  "WebkitTransform": "translate(62px, 62px)",
-                  "msTransform": "translate(62px, 62px)",
-                  "transform": "translate(62px, 62px)",
-                }
-              }
             >
               <path
                 className="recharts-rectangle"
@@ -1393,16 +1383,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(0px, 0px)",
-                    "OTransform": "translate(0px, 0px)",
-                    "WebkitTransform": "translate(0px, 0px)",
-                    "msTransform": "translate(0px, 0px)",
-                    "transform": "translate(0px, 0px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -1421,19 +1401,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-2px, -2px)",
-                      "OTransform": "translate(-2px, -2px)",
-                      "WebkitTransform": "translate(-2px, -2px)",
-                      "msTransform": "translate(-2px, -2px)",
-                      "transform": "translate(-2px, -2px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1453,19 +1423,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(11px, 11px)",
-                      "OTransform": "translate(11px, 11px)",
-                      "WebkitTransform": "translate(11px, 11px)",
-                      "msTransform": "translate(11px, 11px)",
-                      "transform": "translate(11px, 11px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1485,19 +1445,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1517,19 +1467,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-1px, -1px)",
-                      "OTransform": "translate(-1px, -1px)",
-                      "WebkitTransform": "translate(-1px, -1px)",
-                      "msTransform": "translate(-1px, -1px)",
-                      "transform": "translate(-1px, -1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1549,19 +1489,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-7px, -7px)",
-                      "OTransform": "translate(-7px, -7px)",
-                      "WebkitTransform": "translate(-7px, -7px)",
-                      "msTransform": "translate(-7px, -7px)",
-                      "transform": "translate(-7px, -7px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1582,16 +1512,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(20px, 20px)",
-                    "OTransform": "translate(20px, 20px)",
-                    "WebkitTransform": "translate(20px, 20px)",
-                    "msTransform": "translate(20px, 20px)",
-                    "transform": "translate(20px, 20px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -1610,19 +1530,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1642,19 +1552,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1674,19 +1574,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1706,19 +1596,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-5px, -5px)",
-                      "OTransform": "translate(-5px, -5px)",
-                      "WebkitTransform": "translate(-5px, -5px)",
-                      "msTransform": "translate(-5px, -5px)",
-                      "transform": "translate(-5px, -5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1738,19 +1618,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(1px, 1px)",
-                      "OTransform": "translate(1px, 1px)",
-                      "WebkitTransform": "translate(1px, 1px)",
-                      "msTransform": "translate(1px, 1px)",
-                      "transform": "translate(1px, 1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1770,19 +1640,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1802,19 +1662,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1834,19 +1684,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(2px, 2px)",
-                      "OTransform": "translate(2px, 2px)",
-                      "WebkitTransform": "translate(2px, 2px)",
-                      "msTransform": "translate(2px, 2px)",
-                      "transform": "translate(2px, 2px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1866,19 +1706,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(1px, 1px)",
-                      "OTransform": "translate(1px, 1px)",
-                      "WebkitTransform": "translate(1px, 1px)",
-                      "msTransform": "translate(1px, 1px)",
-                      "transform": "translate(1px, 1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1898,19 +1728,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-3px, -3px)",
-                      "OTransform": "translate(-3px, -3px)",
-                      "WebkitTransform": "translate(-3px, -3px)",
-                      "msTransform": "translate(-3px, -3px)",
-                      "transform": "translate(-3px, -3px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1930,19 +1750,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(5px, 5px)",
-                      "OTransform": "translate(5px, 5px)",
-                      "WebkitTransform": "translate(5px, 5px)",
-                      "msTransform": "translate(5px, 5px)",
-                      "transform": "translate(5px, 5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -1963,16 +1773,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(-52px, -52px)",
-                    "OTransform": "translate(-52px, -52px)",
-                    "WebkitTransform": "translate(-52px, -52px)",
-                    "msTransform": "translate(-52px, -52px)",
-                    "transform": "translate(-52px, -52px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -1991,19 +1791,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(19px, 19px)",
-                      "OTransform": "translate(19px, 19px)",
-                      "WebkitTransform": "translate(19px, 19px)",
-                      "msTransform": "translate(19px, 19px)",
-                      "transform": "translate(19px, 19px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2023,19 +1813,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-5px, -5px)",
-                      "OTransform": "translate(-5px, -5px)",
-                      "WebkitTransform": "translate(-5px, -5px)",
-                      "msTransform": "translate(-5px, -5px)",
-                      "transform": "translate(-5px, -5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2055,19 +1835,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-1px, -1px)",
-                      "OTransform": "translate(-1px, -1px)",
-                      "WebkitTransform": "translate(-1px, -1px)",
-                      "msTransform": "translate(-1px, -1px)",
-                      "transform": "translate(-1px, -1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2087,19 +1857,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2119,19 +1879,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-13px, -13px)",
-                      "OTransform": "translate(-13px, -13px)",
-                      "WebkitTransform": "translate(-13px, -13px)",
-                      "msTransform": "translate(-13px, -13px)",
-                      "transform": "translate(-13px, -13px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2151,16 +1901,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-2px, -2px)",
-                      "OTransform": "translate(-2px, -2px)",
-                      "WebkitTransform": "translate(-2px, -2px)",
-                      "msTransform": "translate(-2px, -2px)",
-                      "transform": "translate(-2px, -2px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2179,19 +1919,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-2px, -2px)",
-                        "OTransform": "translate(-2px, -2px)",
-                        "WebkitTransform": "translate(-2px, -2px)",
-                        "msTransform": "translate(-2px, -2px)",
-                        "transform": "translate(-2px, -2px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2211,19 +1941,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(6px, 6px)",
-                        "OTransform": "translate(6px, 6px)",
-                        "WebkitTransform": "translate(6px, 6px)",
-                        "msTransform": "translate(6px, 6px)",
-                        "transform": "translate(6px, 6px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2243,19 +1963,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-3px, -3px)",
-                        "OTransform": "translate(-3px, -3px)",
-                        "WebkitTransform": "translate(-3px, -3px)",
-                        "msTransform": "translate(-3px, -3px)",
-                        "transform": "translate(-3px, -3px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2275,19 +1985,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(4px, 4px)",
-                        "OTransform": "translate(4px, 4px)",
-                        "WebkitTransform": "translate(4px, 4px)",
-                        "msTransform": "translate(4px, 4px)",
-                        "transform": "translate(4px, 4px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2308,19 +2008,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(15px, 15px)",
-                      "OTransform": "translate(15px, 15px)",
-                      "WebkitTransform": "translate(15px, 15px)",
-                      "msTransform": "translate(15px, 15px)",
-                      "transform": "translate(15px, 15px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2340,19 +2030,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(1px, 1px)",
-                      "OTransform": "translate(1px, 1px)",
-                      "WebkitTransform": "translate(1px, 1px)",
-                      "msTransform": "translate(1px, 1px)",
-                      "transform": "translate(1px, 1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2372,19 +2052,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-5px, -5px)",
-                      "OTransform": "translate(-5px, -5px)",
-                      "WebkitTransform": "translate(-5px, -5px)",
-                      "msTransform": "translate(-5px, -5px)",
-                      "transform": "translate(-5px, -5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2405,16 +2075,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(5px, 5px)",
-                    "OTransform": "translate(5px, 5px)",
-                    "WebkitTransform": "translate(5px, 5px)",
-                    "msTransform": "translate(5px, 5px)",
-                    "transform": "translate(5px, 5px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -2433,19 +2093,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-4px, -4px)",
-                      "OTransform": "translate(-4px, -4px)",
-                      "WebkitTransform": "translate(-4px, -4px)",
-                      "msTransform": "translate(-4px, -4px)",
-                      "transform": "translate(-4px, -4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2465,19 +2115,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-13px, -13px)",
-                      "OTransform": "translate(-13px, -13px)",
-                      "WebkitTransform": "translate(-13px, -13px)",
-                      "msTransform": "translate(-13px, -13px)",
-                      "transform": "translate(-13px, -13px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2497,19 +2137,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2529,19 +2159,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(2px, 2px)",
-                      "OTransform": "translate(2px, 2px)",
-                      "WebkitTransform": "translate(2px, 2px)",
-                      "msTransform": "translate(2px, 2px)",
-                      "transform": "translate(2px, 2px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2562,16 +2182,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(5px, 5px)",
-                    "OTransform": "translate(5px, 5px)",
-                    "WebkitTransform": "translate(5px, 5px)",
-                    "msTransform": "translate(5px, 5px)",
-                    "transform": "translate(5px, 5px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -2590,19 +2200,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-15px, -15px)",
-                      "OTransform": "translate(-15px, -15px)",
-                      "WebkitTransform": "translate(-15px, -15px)",
-                      "msTransform": "translate(-15px, -15px)",
-                      "transform": "translate(-15px, -15px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2622,19 +2222,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(12px, 12px)",
-                      "OTransform": "translate(12px, 12px)",
-                      "WebkitTransform": "translate(12px, 12px)",
-                      "msTransform": "translate(12px, 12px)",
-                      "transform": "translate(12px, 12px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2654,19 +2244,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-1px, -1px)",
-                      "OTransform": "translate(-1px, -1px)",
-                      "WebkitTransform": "translate(-1px, -1px)",
-                      "msTransform": "translate(-1px, -1px)",
-                      "transform": "translate(-1px, -1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2687,16 +2267,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(70px, 70px)",
-                    "OTransform": "translate(70px, 70px)",
-                    "WebkitTransform": "translate(70px, 70px)",
-                    "msTransform": "translate(70px, 70px)",
-                    "transform": "translate(70px, 70px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -2715,16 +2285,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(4px, 4px)",
-                      "OTransform": "translate(4px, 4px)",
-                      "WebkitTransform": "translate(4px, 4px)",
-                      "msTransform": "translate(4px, 4px)",
-                      "transform": "translate(4px, 4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2743,19 +2303,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-6px, -6px)",
-                        "OTransform": "translate(-6px, -6px)",
-                        "WebkitTransform": "translate(-6px, -6px)",
-                        "msTransform": "translate(-6px, -6px)",
-                        "transform": "translate(-6px, -6px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2775,19 +2325,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-1px, -1px)",
-                        "OTransform": "translate(-1px, -1px)",
-                        "WebkitTransform": "translate(-1px, -1px)",
-                        "msTransform": "translate(-1px, -1px)",
-                        "transform": "translate(-1px, -1px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2807,19 +2347,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-9px, -9px)",
-                        "OTransform": "translate(-9px, -9px)",
-                        "WebkitTransform": "translate(-9px, -9px)",
-                        "msTransform": "translate(-9px, -9px)",
-                        "transform": "translate(-9px, -9px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2840,16 +2370,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(4px, 4px)",
-                      "OTransform": "translate(4px, 4px)",
-                      "WebkitTransform": "translate(4px, 4px)",
-                      "msTransform": "translate(4px, 4px)",
-                      "transform": "translate(4px, 4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -2868,19 +2388,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-5px, -5px)",
-                        "OTransform": "translate(-5px, -5px)",
-                        "WebkitTransform": "translate(-5px, -5px)",
-                        "msTransform": "translate(-5px, -5px)",
-                        "transform": "translate(-5px, -5px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2900,19 +2410,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(1px, 1px)",
-                        "OTransform": "translate(1px, 1px)",
-                        "WebkitTransform": "translate(1px, 1px)",
-                        "msTransform": "translate(1px, 1px)",
-                        "transform": "translate(1px, 1px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2932,19 +2432,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(8px, 8px)",
-                        "OTransform": "translate(8px, 8px)",
-                        "WebkitTransform": "translate(8px, 8px)",
-                        "msTransform": "translate(8px, 8px)",
-                        "transform": "translate(8px, 8px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2964,19 +2454,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(1px, 1px)",
-                        "OTransform": "translate(1px, 1px)",
-                        "WebkitTransform": "translate(1px, 1px)",
-                        "msTransform": "translate(1px, 1px)",
-                        "transform": "translate(1px, 1px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -2996,19 +2476,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-3px, -3px)",
-                        "OTransform": "translate(-3px, -3px)",
-                        "WebkitTransform": "translate(-3px, -3px)",
-                        "msTransform": "translate(-3px, -3px)",
-                        "transform": "translate(-3px, -3px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3029,16 +2499,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(13px, 13px)",
-                      "OTransform": "translate(13px, 13px)",
-                      "WebkitTransform": "translate(13px, 13px)",
-                      "msTransform": "translate(13px, 13px)",
-                      "transform": "translate(13px, 13px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -3057,19 +2517,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(4px, 4px)",
-                        "OTransform": "translate(4px, 4px)",
-                        "WebkitTransform": "translate(4px, 4px)",
-                        "msTransform": "translate(4px, 4px)",
-                        "transform": "translate(4px, 4px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3089,19 +2539,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(3px, 3px)",
-                        "OTransform": "translate(3px, 3px)",
-                        "WebkitTransform": "translate(3px, 3px)",
-                        "msTransform": "translate(3px, 3px)",
-                        "transform": "translate(3px, 3px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3121,19 +2561,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(4px, 4px)",
-                        "OTransform": "translate(4px, 4px)",
-                        "WebkitTransform": "translate(4px, 4px)",
-                        "msTransform": "translate(4px, 4px)",
-                        "transform": "translate(4px, 4px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3154,19 +2584,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -3186,16 +2606,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(3px, 3px)",
-                      "OTransform": "translate(3px, 3px)",
-                      "WebkitTransform": "translate(3px, 3px)",
-                      "msTransform": "translate(3px, 3px)",
-                      "transform": "translate(3px, 3px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -3214,19 +2624,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-6px, -6px)",
-                        "OTransform": "translate(-6px, -6px)",
-                        "WebkitTransform": "translate(-6px, -6px)",
-                        "msTransform": "translate(-6px, -6px)",
-                        "transform": "translate(-6px, -6px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3246,19 +2646,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(2px, 2px)",
-                        "OTransform": "translate(2px, 2px)",
-                        "WebkitTransform": "translate(2px, 2px)",
-                        "msTransform": "translate(2px, 2px)",
-                        "transform": "translate(2px, 2px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3278,19 +2668,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-2px, -2px)",
-                        "OTransform": "translate(-2px, -2px)",
-                        "WebkitTransform": "translate(-2px, -2px)",
-                        "msTransform": "translate(-2px, -2px)",
-                        "transform": "translate(-2px, -2px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3311,16 +2691,6 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-45px, -45px)",
-                      "OTransform": "translate(-45px, -45px)",
-                      "WebkitTransform": "translate(-45px, -45px)",
-                      "msTransform": "translate(-45px, -45px)",
-                      "transform": "translate(-45px, -45px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -3339,19 +2709,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-1px, -1px)",
-                        "OTransform": "translate(-1px, -1px)",
-                        "WebkitTransform": "translate(-1px, -1px)",
-                        "msTransform": "translate(-1px, -1px)",
-                        "transform": "translate(-1px, -1px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3371,19 +2731,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(11px, 11px)",
-                        "OTransform": "translate(11px, 11px)",
-                        "WebkitTransform": "translate(11px, 11px)",
-                        "msTransform": "translate(11px, 11px)",
-                        "transform": "translate(11px, 11px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3403,19 +2753,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-10px, -10px)",
-                        "OTransform": "translate(-10px, -10px)",
-                        "WebkitTransform": "translate(-10px, -10px)",
-                        "msTransform": "translate(-10px, -10px)",
-                        "transform": "translate(-10px, -10px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3435,19 +2775,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(7px, 7px)",
-                        "OTransform": "translate(7px, 7px)",
-                        "WebkitTransform": "translate(7px, 7px)",
-                        "msTransform": "translate(7px, 7px)",
-                        "transform": "translate(7px, 7px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3467,19 +2797,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(4px, 4px)",
-                        "OTransform": "translate(4px, 4px)",
-                        "WebkitTransform": "translate(4px, 4px)",
-                        "msTransform": "translate(4px, 4px)",
-                        "transform": "translate(4px, 4px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3499,19 +2819,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(5px, 5px)",
-                        "OTransform": "translate(5px, 5px)",
-                        "WebkitTransform": "translate(5px, 5px)",
-                        "msTransform": "translate(5px, 5px)",
-                        "transform": "translate(5px, 5px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3531,19 +2841,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(3px, 3px)",
-                        "OTransform": "translate(3px, 3px)",
-                        "WebkitTransform": "translate(3px, 3px)",
-                        "msTransform": "translate(3px, 3px)",
-                        "transform": "translate(3px, 3px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3563,19 +2863,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(0px, 0px)",
-                        "OTransform": "translate(0px, 0px)",
-                        "WebkitTransform": "translate(0px, 0px)",
-                        "msTransform": "translate(0px, 0px)",
-                        "transform": "translate(0px, 0px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3595,19 +2885,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-14px, -14px)",
-                        "OTransform": "translate(-14px, -14px)",
-                        "WebkitTransform": "translate(-14px, -14px)",
-                        "msTransform": "translate(-14px, -14px)",
-                        "transform": "translate(-14px, -14px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3627,19 +2907,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-7px, -7px)",
-                        "OTransform": "translate(-7px, -7px)",
-                        "WebkitTransform": "translate(-7px, -7px)",
-                        "msTransform": "translate(-7px, -7px)",
-                        "transform": "translate(-7px, -7px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3659,19 +2929,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(0px, 0px)",
-                        "OTransform": "translate(0px, 0px)",
-                        "WebkitTransform": "translate(0px, 0px)",
-                        "msTransform": "translate(0px, 0px)",
-                        "transform": "translate(0px, 0px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3691,19 +2951,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(20px, 20px)",
-                        "OTransform": "translate(20px, 20px)",
-                        "WebkitTransform": "translate(20px, 20px)",
-                        "msTransform": "translate(20px, 20px)",
-                        "transform": "translate(20px, 20px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3723,19 +2973,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(0px, 0px)",
-                        "OTransform": "translate(0px, 0px)",
-                        "WebkitTransform": "translate(0px, 0px)",
-                        "msTransform": "translate(0px, 0px)",
-                        "transform": "translate(0px, 0px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3755,19 +2995,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(3px, 3px)",
-                        "OTransform": "translate(3px, 3px)",
-                        "WebkitTransform": "translate(3px, 3px)",
-                        "msTransform": "translate(3px, 3px)",
-                        "transform": "translate(3px, 3px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3787,19 +3017,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(12px, 12px)",
-                        "OTransform": "translate(12px, 12px)",
-                        "WebkitTransform": "translate(12px, 12px)",
-                        "msTransform": "translate(12px, 12px)",
-                        "transform": "translate(12px, 12px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -3820,19 +3040,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-5px, -5px)",
-                      "OTransform": "translate(-5px, -5px)",
-                      "WebkitTransform": "translate(-5px, -5px)",
-                      "msTransform": "translate(-5px, -5px)",
-                      "transform": "translate(-5px, -5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -3852,19 +3062,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(10px, 10px)",
-                      "OTransform": "translate(10px, 10px)",
-                      "WebkitTransform": "translate(10px, 10px)",
-                      "msTransform": "translate(10px, 10px)",
-                      "transform": "translate(10px, 10px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -3884,19 +3084,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(6px, 6px)",
-                      "OTransform": "translate(6px, 6px)",
-                      "WebkitTransform": "translate(6px, 6px)",
-                      "msTransform": "translate(6px, 6px)",
-                      "transform": "translate(6px, 6px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -3916,19 +3106,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-1px, -1px)",
-                      "OTransform": "translate(-1px, -1px)",
-                      "WebkitTransform": "translate(-1px, -1px)",
-                      "msTransform": "translate(-1px, -1px)",
-                      "transform": "translate(-1px, -1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -3948,19 +3128,9 @@ exports[`Storyshots mui-recharts: dark theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(1px, 1px)",
-                      "OTransform": "translate(1px, 1px)",
-                      "WebkitTransform": "translate(1px, 1px)",
-                      "msTransform": "translate(1px, 1px)",
-                      "transform": "translate(1px, 1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6110,16 +5280,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
           >
             <g
               className="recharts-layer"
-              onAnimationStart={[Function]}
-              style={
-                Object {
-                  "MozTransform": "translate(44px, 44px)",
-                  "OTransform": "translate(44px, 44px)",
-                  "WebkitTransform": "translate(44px, 44px)",
-                  "msTransform": "translate(44px, 44px)",
-                  "transform": "translate(44px, 44px)",
-                }
-              }
             >
               <path
                 className="recharts-rectangle"
@@ -6138,16 +5298,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(5px, 5px)",
-                    "OTransform": "translate(5px, 5px)",
-                    "WebkitTransform": "translate(5px, 5px)",
-                    "msTransform": "translate(5px, 5px)",
-                    "transform": "translate(5px, 5px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -6166,19 +5316,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(10px, 10px)",
-                      "OTransform": "translate(10px, 10px)",
-                      "WebkitTransform": "translate(10px, 10px)",
-                      "msTransform": "translate(10px, 10px)",
-                      "transform": "translate(10px, 10px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6198,19 +5338,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(8px, 8px)",
-                      "OTransform": "translate(8px, 8px)",
-                      "WebkitTransform": "translate(8px, 8px)",
-                      "msTransform": "translate(8px, 8px)",
-                      "transform": "translate(8px, 8px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6230,19 +5360,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6262,19 +5382,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(2px, 2px)",
-                      "OTransform": "translate(2px, 2px)",
-                      "WebkitTransform": "translate(2px, 2px)",
-                      "msTransform": "translate(2px, 2px)",
-                      "transform": "translate(2px, 2px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6294,19 +5404,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-10px, -10px)",
-                      "OTransform": "translate(-10px, -10px)",
-                      "WebkitTransform": "translate(-10px, -10px)",
-                      "msTransform": "translate(-10px, -10px)",
-                      "transform": "translate(-10px, -10px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6327,16 +5427,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(16px, 16px)",
-                    "OTransform": "translate(16px, 16px)",
-                    "WebkitTransform": "translate(16px, 16px)",
-                    "msTransform": "translate(16px, 16px)",
-                    "transform": "translate(16px, 16px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -6355,19 +5445,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-2px, -2px)",
-                      "OTransform": "translate(-2px, -2px)",
-                      "WebkitTransform": "translate(-2px, -2px)",
-                      "msTransform": "translate(-2px, -2px)",
-                      "transform": "translate(-2px, -2px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6387,19 +5467,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-4px, -4px)",
-                      "OTransform": "translate(-4px, -4px)",
-                      "WebkitTransform": "translate(-4px, -4px)",
-                      "msTransform": "translate(-4px, -4px)",
-                      "transform": "translate(-4px, -4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6419,19 +5489,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6451,19 +5511,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(6px, 6px)",
-                      "OTransform": "translate(6px, 6px)",
-                      "WebkitTransform": "translate(6px, 6px)",
-                      "msTransform": "translate(6px, 6px)",
-                      "transform": "translate(6px, 6px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6483,19 +5533,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6515,19 +5555,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(3px, 3px)",
-                      "OTransform": "translate(3px, 3px)",
-                      "WebkitTransform": "translate(3px, 3px)",
-                      "msTransform": "translate(3px, 3px)",
-                      "transform": "translate(3px, 3px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6547,19 +5577,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-1px, -1px)",
-                      "OTransform": "translate(-1px, -1px)",
-                      "WebkitTransform": "translate(-1px, -1px)",
-                      "msTransform": "translate(-1px, -1px)",
-                      "transform": "translate(-1px, -1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6579,19 +5599,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-4px, -4px)",
-                      "OTransform": "translate(-4px, -4px)",
-                      "WebkitTransform": "translate(-4px, -4px)",
-                      "msTransform": "translate(-4px, -4px)",
-                      "transform": "translate(-4px, -4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6611,19 +5621,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6643,19 +5643,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(6px, 6px)",
-                      "OTransform": "translate(6px, 6px)",
-                      "WebkitTransform": "translate(6px, 6px)",
-                      "msTransform": "translate(6px, 6px)",
-                      "transform": "translate(6px, 6px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6675,19 +5665,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-6px, -6px)",
-                      "OTransform": "translate(-6px, -6px)",
-                      "WebkitTransform": "translate(-6px, -6px)",
-                      "msTransform": "translate(-6px, -6px)",
-                      "transform": "translate(-6px, -6px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6708,16 +5688,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(-8px, -8px)",
-                    "OTransform": "translate(-8px, -8px)",
-                    "WebkitTransform": "translate(-8px, -8px)",
-                    "msTransform": "translate(-8px, -8px)",
-                    "transform": "translate(-8px, -8px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -6736,19 +5706,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-4px, -4px)",
-                      "OTransform": "translate(-4px, -4px)",
-                      "WebkitTransform": "translate(-4px, -4px)",
-                      "msTransform": "translate(-4px, -4px)",
-                      "transform": "translate(-4px, -4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6768,19 +5728,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(15px, 15px)",
-                      "OTransform": "translate(15px, 15px)",
-                      "WebkitTransform": "translate(15px, 15px)",
-                      "msTransform": "translate(15px, 15px)",
-                      "transform": "translate(15px, 15px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6800,19 +5750,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-9px, -9px)",
-                      "OTransform": "translate(-9px, -9px)",
-                      "WebkitTransform": "translate(-9px, -9px)",
-                      "msTransform": "translate(-9px, -9px)",
-                      "transform": "translate(-9px, -9px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6832,19 +5772,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(3px, 3px)",
-                      "OTransform": "translate(3px, 3px)",
-                      "WebkitTransform": "translate(3px, 3px)",
-                      "msTransform": "translate(3px, 3px)",
-                      "transform": "translate(3px, 3px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6864,19 +5794,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-9px, -9px)",
-                      "OTransform": "translate(-9px, -9px)",
-                      "WebkitTransform": "translate(-9px, -9px)",
-                      "msTransform": "translate(-9px, -9px)",
-                      "transform": "translate(-9px, -9px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6896,16 +5816,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(7px, 7px)",
-                      "OTransform": "translate(7px, 7px)",
-                      "WebkitTransform": "translate(7px, 7px)",
-                      "msTransform": "translate(7px, 7px)",
-                      "transform": "translate(7px, 7px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -6924,19 +5834,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(3px, 3px)",
-                        "OTransform": "translate(3px, 3px)",
-                        "WebkitTransform": "translate(3px, 3px)",
-                        "msTransform": "translate(3px, 3px)",
-                        "transform": "translate(3px, 3px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -6956,19 +5856,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-3px, -3px)",
-                        "OTransform": "translate(-3px, -3px)",
-                        "WebkitTransform": "translate(-3px, -3px)",
-                        "msTransform": "translate(-3px, -3px)",
-                        "transform": "translate(-3px, -3px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -6988,19 +5878,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(0px, 0px)",
-                        "OTransform": "translate(0px, 0px)",
-                        "WebkitTransform": "translate(0px, 0px)",
-                        "msTransform": "translate(0px, 0px)",
-                        "transform": "translate(0px, 0px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7020,19 +5900,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(4px, 4px)",
-                        "OTransform": "translate(4px, 4px)",
-                        "WebkitTransform": "translate(4px, 4px)",
-                        "msTransform": "translate(4px, 4px)",
-                        "transform": "translate(4px, 4px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7053,19 +5923,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-9px, -9px)",
-                      "OTransform": "translate(-9px, -9px)",
-                      "WebkitTransform": "translate(-9px, -9px)",
-                      "msTransform": "translate(-9px, -9px)",
-                      "transform": "translate(-9px, -9px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7085,19 +5945,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7117,19 +5967,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-1px, -1px)",
-                      "OTransform": "translate(-1px, -1px)",
-                      "WebkitTransform": "translate(-1px, -1px)",
-                      "msTransform": "translate(-1px, -1px)",
-                      "transform": "translate(-1px, -1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7150,16 +5990,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(0px, 0px)",
-                    "OTransform": "translate(0px, 0px)",
-                    "WebkitTransform": "translate(0px, 0px)",
-                    "msTransform": "translate(0px, 0px)",
-                    "transform": "translate(0px, 0px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -7178,19 +6008,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(4px, 4px)",
-                      "OTransform": "translate(4px, 4px)",
-                      "WebkitTransform": "translate(4px, 4px)",
-                      "msTransform": "translate(4px, 4px)",
-                      "transform": "translate(4px, 4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7210,19 +6030,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(1px, 1px)",
-                      "OTransform": "translate(1px, 1px)",
-                      "WebkitTransform": "translate(1px, 1px)",
-                      "msTransform": "translate(1px, 1px)",
-                      "transform": "translate(1px, 1px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7242,19 +6052,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-5px, -5px)",
-                      "OTransform": "translate(-5px, -5px)",
-                      "WebkitTransform": "translate(-5px, -5px)",
-                      "msTransform": "translate(-5px, -5px)",
-                      "transform": "translate(-5px, -5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7274,19 +6074,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7307,16 +6097,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(21px, 21px)",
-                    "OTransform": "translate(21px, 21px)",
-                    "WebkitTransform": "translate(21px, 21px)",
-                    "msTransform": "translate(21px, 21px)",
-                    "transform": "translate(21px, 21px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -7335,19 +6115,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-3px, -3px)",
-                      "OTransform": "translate(-3px, -3px)",
-                      "WebkitTransform": "translate(-3px, -3px)",
-                      "msTransform": "translate(-3px, -3px)",
-                      "transform": "translate(-3px, -3px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7367,19 +6137,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(0px, 0px)",
-                      "OTransform": "translate(0px, 0px)",
-                      "WebkitTransform": "translate(0px, 0px)",
-                      "msTransform": "translate(0px, 0px)",
-                      "transform": "translate(0px, 0px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7399,19 +6159,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(8px, 8px)",
-                      "OTransform": "translate(8px, 8px)",
-                      "WebkitTransform": "translate(8px, 8px)",
-                      "msTransform": "translate(8px, 8px)",
-                      "transform": "translate(8px, 8px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7432,16 +6182,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
             >
               <g
                 className="recharts-layer"
-                onAnimationStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(59px, 59px)",
-                    "OTransform": "translate(59px, 59px)",
-                    "WebkitTransform": "translate(59px, 59px)",
-                    "msTransform": "translate(59px, 59px)",
-                    "transform": "translate(59px, 59px)",
-                  }
-                }
               >
                 <path
                   className="recharts-rectangle"
@@ -7460,16 +6200,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-2px, -2px)",
-                      "OTransform": "translate(-2px, -2px)",
-                      "WebkitTransform": "translate(-2px, -2px)",
-                      "msTransform": "translate(-2px, -2px)",
-                      "transform": "translate(-2px, -2px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7488,19 +6218,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-4px, -4px)",
-                        "OTransform": "translate(-4px, -4px)",
-                        "WebkitTransform": "translate(-4px, -4px)",
-                        "msTransform": "translate(-4px, -4px)",
-                        "transform": "translate(-4px, -4px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7520,19 +6240,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-7px, -7px)",
-                        "OTransform": "translate(-7px, -7px)",
-                        "WebkitTransform": "translate(-7px, -7px)",
-                        "msTransform": "translate(-7px, -7px)",
-                        "transform": "translate(-7px, -7px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7552,19 +6262,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-12px, -12px)",
-                        "OTransform": "translate(-12px, -12px)",
-                        "WebkitTransform": "translate(-12px, -12px)",
-                        "msTransform": "translate(-12px, -12px)",
-                        "transform": "translate(-12px, -12px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7585,16 +6285,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-5px, -5px)",
-                      "OTransform": "translate(-5px, -5px)",
-                      "WebkitTransform": "translate(-5px, -5px)",
-                      "msTransform": "translate(-5px, -5px)",
-                      "transform": "translate(-5px, -5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7613,19 +6303,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(6px, 6px)",
-                        "OTransform": "translate(6px, 6px)",
-                        "WebkitTransform": "translate(6px, 6px)",
-                        "msTransform": "translate(6px, 6px)",
-                        "transform": "translate(6px, 6px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7645,19 +6325,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(1px, 1px)",
-                        "OTransform": "translate(1px, 1px)",
-                        "WebkitTransform": "translate(1px, 1px)",
-                        "msTransform": "translate(1px, 1px)",
-                        "transform": "translate(1px, 1px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7677,19 +6347,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-5px, -5px)",
-                        "OTransform": "translate(-5px, -5px)",
-                        "WebkitTransform": "translate(-5px, -5px)",
-                        "msTransform": "translate(-5px, -5px)",
-                        "transform": "translate(-5px, -5px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7709,19 +6369,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-1px, -1px)",
-                        "OTransform": "translate(-1px, -1px)",
-                        "WebkitTransform": "translate(-1px, -1px)",
-                        "msTransform": "translate(-1px, -1px)",
-                        "transform": "translate(-1px, -1px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7741,19 +6391,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(2px, 2px)",
-                        "OTransform": "translate(2px, 2px)",
-                        "WebkitTransform": "translate(2px, 2px)",
-                        "msTransform": "translate(2px, 2px)",
-                        "transform": "translate(2px, 2px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7774,16 +6414,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(13px, 13px)",
-                      "OTransform": "translate(13px, 13px)",
-                      "WebkitTransform": "translate(13px, 13px)",
-                      "msTransform": "translate(13px, 13px)",
-                      "transform": "translate(13px, 13px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7802,19 +6432,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-5px, -5px)",
-                        "OTransform": "translate(-5px, -5px)",
-                        "WebkitTransform": "translate(-5px, -5px)",
-                        "msTransform": "translate(-5px, -5px)",
-                        "transform": "translate(-5px, -5px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7834,19 +6454,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(0px, 0px)",
-                        "OTransform": "translate(0px, 0px)",
-                        "WebkitTransform": "translate(0px, 0px)",
-                        "msTransform": "translate(0px, 0px)",
-                        "transform": "translate(0px, 0px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7866,19 +6476,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(0px, 0px)",
-                        "OTransform": "translate(0px, 0px)",
-                        "WebkitTransform": "translate(0px, 0px)",
-                        "msTransform": "translate(0px, 0px)",
-                        "transform": "translate(0px, 0px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7899,19 +6499,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-7px, -7px)",
-                      "OTransform": "translate(-7px, -7px)",
-                      "WebkitTransform": "translate(-7px, -7px)",
-                      "msTransform": "translate(-7px, -7px)",
-                      "transform": "translate(-7px, -7px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7931,16 +6521,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-4px, -4px)",
-                      "OTransform": "translate(-4px, -4px)",
-                      "WebkitTransform": "translate(-4px, -4px)",
-                      "msTransform": "translate(-4px, -4px)",
-                      "transform": "translate(-4px, -4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -7959,19 +6539,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-7px, -7px)",
-                        "OTransform": "translate(-7px, -7px)",
-                        "WebkitTransform": "translate(-7px, -7px)",
-                        "msTransform": "translate(-7px, -7px)",
-                        "transform": "translate(-7px, -7px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -7991,19 +6561,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-4px, -4px)",
-                        "OTransform": "translate(-4px, -4px)",
-                        "WebkitTransform": "translate(-4px, -4px)",
-                        "msTransform": "translate(-4px, -4px)",
-                        "transform": "translate(-4px, -4px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8023,19 +6583,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(1px, 1px)",
-                        "OTransform": "translate(1px, 1px)",
-                        "WebkitTransform": "translate(1px, 1px)",
-                        "msTransform": "translate(1px, 1px)",
-                        "transform": "translate(1px, 1px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8056,16 +6606,6 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(29px, 29px)",
-                      "OTransform": "translate(29px, 29px)",
-                      "WebkitTransform": "translate(29px, 29px)",
-                      "msTransform": "translate(29px, 29px)",
-                      "transform": "translate(29px, 29px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -8084,19 +6624,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(10px, 10px)",
-                        "OTransform": "translate(10px, 10px)",
-                        "WebkitTransform": "translate(10px, 10px)",
-                        "msTransform": "translate(10px, 10px)",
-                        "transform": "translate(10px, 10px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8116,19 +6646,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-2px, -2px)",
-                        "OTransform": "translate(-2px, -2px)",
-                        "WebkitTransform": "translate(-2px, -2px)",
-                        "msTransform": "translate(-2px, -2px)",
-                        "transform": "translate(-2px, -2px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8148,19 +6668,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-10px, -10px)",
-                        "OTransform": "translate(-10px, -10px)",
-                        "WebkitTransform": "translate(-10px, -10px)",
-                        "msTransform": "translate(-10px, -10px)",
-                        "transform": "translate(-10px, -10px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8180,19 +6690,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-2px, -2px)",
-                        "OTransform": "translate(-2px, -2px)",
-                        "WebkitTransform": "translate(-2px, -2px)",
-                        "msTransform": "translate(-2px, -2px)",
-                        "transform": "translate(-2px, -2px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8212,19 +6712,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-5px, -5px)",
-                        "OTransform": "translate(-5px, -5px)",
-                        "WebkitTransform": "translate(-5px, -5px)",
-                        "msTransform": "translate(-5px, -5px)",
-                        "transform": "translate(-5px, -5px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8244,19 +6734,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-7px, -7px)",
-                        "OTransform": "translate(-7px, -7px)",
-                        "WebkitTransform": "translate(-7px, -7px)",
-                        "msTransform": "translate(-7px, -7px)",
-                        "transform": "translate(-7px, -7px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8276,19 +6756,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(3px, 3px)",
-                        "OTransform": "translate(3px, 3px)",
-                        "WebkitTransform": "translate(3px, 3px)",
-                        "msTransform": "translate(3px, 3px)",
-                        "transform": "translate(3px, 3px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8308,19 +6778,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-2px, -2px)",
-                        "OTransform": "translate(-2px, -2px)",
-                        "WebkitTransform": "translate(-2px, -2px)",
-                        "msTransform": "translate(-2px, -2px)",
-                        "transform": "translate(-2px, -2px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8340,19 +6800,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-11px, -11px)",
-                        "OTransform": "translate(-11px, -11px)",
-                        "WebkitTransform": "translate(-11px, -11px)",
-                        "msTransform": "translate(-11px, -11px)",
-                        "transform": "translate(-11px, -11px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8372,19 +6822,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(10px, 10px)",
-                        "OTransform": "translate(10px, 10px)",
-                        "WebkitTransform": "translate(10px, 10px)",
-                        "msTransform": "translate(10px, 10px)",
-                        "transform": "translate(10px, 10px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8404,19 +6844,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-12px, -12px)",
-                        "OTransform": "translate(-12px, -12px)",
-                        "WebkitTransform": "translate(-12px, -12px)",
-                        "msTransform": "translate(-12px, -12px)",
-                        "transform": "translate(-12px, -12px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8436,19 +6866,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-8px, -8px)",
-                        "OTransform": "translate(-8px, -8px)",
-                        "WebkitTransform": "translate(-8px, -8px)",
-                        "msTransform": "translate(-8px, -8px)",
-                        "transform": "translate(-8px, -8px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8468,19 +6888,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(0px, 0px)",
-                        "OTransform": "translate(0px, 0px)",
-                        "WebkitTransform": "translate(0px, 0px)",
-                        "msTransform": "translate(0px, 0px)",
-                        "transform": "translate(0px, 0px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8500,19 +6910,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(17px, 17px)",
-                        "OTransform": "translate(17px, 17px)",
-                        "WebkitTransform": "translate(17px, 17px)",
-                        "msTransform": "translate(17px, 17px)",
-                        "transform": "translate(17px, 17px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8532,19 +6932,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
                 >
                   <g
                     className="recharts-layer"
-                    onAnimationStart={[Function]}
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
-                    style={
-                      Object {
-                        "MozTransform": "translate(-16px, -16px)",
-                        "OTransform": "translate(-16px, -16px)",
-                        "WebkitTransform": "translate(-16px, -16px)",
-                        "msTransform": "translate(-16px, -16px)",
-                        "transform": "translate(-16px, -16px)",
-                      }
-                    }
                   >
                     <path
                       className="recharts-rectangle"
@@ -8565,19 +6955,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-5px, -5px)",
-                      "OTransform": "translate(-5px, -5px)",
-                      "WebkitTransform": "translate(-5px, -5px)",
-                      "msTransform": "translate(-5px, -5px)",
-                      "transform": "translate(-5px, -5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -8597,19 +6977,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-16px, -16px)",
-                      "OTransform": "translate(-16px, -16px)",
-                      "WebkitTransform": "translate(-16px, -16px)",
-                      "msTransform": "translate(-16px, -16px)",
-                      "transform": "translate(-16px, -16px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -8629,19 +6999,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-5px, -5px)",
-                      "OTransform": "translate(-5px, -5px)",
-                      "WebkitTransform": "translate(-5px, -5px)",
-                      "msTransform": "translate(-5px, -5px)",
-                      "transform": "translate(-5px, -5px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -8661,19 +7021,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(-4px, -4px)",
-                      "OTransform": "translate(-4px, -4px)",
-                      "WebkitTransform": "translate(-4px, -4px)",
-                      "msTransform": "translate(-4px, -4px)",
-                      "transform": "translate(-4px, -4px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
@@ -8693,19 +7043,9 @@ exports[`Storyshots mui-recharts: light theme All basic charts 1`] = `
               >
                 <g
                   className="recharts-layer"
-                  onAnimationStart={[Function]}
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozTransform": "translate(2px, 2px)",
-                      "OTransform": "translate(2px, 2px)",
-                      "WebkitTransform": "translate(2px, 2px)",
-                      "msTransform": "translate(2px, 2px)",
-                      "transform": "translate(2px, 2px)",
-                    }
-                  }
                 >
                   <path
                     className="recharts-rectangle"
