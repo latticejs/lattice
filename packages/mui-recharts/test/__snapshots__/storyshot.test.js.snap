@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots mui-recharts: dark theme Area Chart: axis 1`] = `
+exports[`Storyshots mui-recharts: dark theme Area 1`] = `
 <div
   style={
     Object {
@@ -16,12 +16,179 @@ exports[`Storyshots mui-recharts: dark theme Area Chart: axis 1`] = `
       Object {
         "height": "100%",
         "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
+        "minHeight": 100,
+        "minWidth": 100,
         "width": "100%",
       }
     }
   >
+    <div
+      className="recharts-wrapper MuiRechart-AreaChart--rootChart-4"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseMove={[Function]}
+      onTouchMove={[Function]}
+      style={
+        Object {
+          "cursor": "default",
+          "height": 100,
+          "position": "relative",
+          "width": 100,
+        }
+      }
+    >
+      <svg
+        className="recharts-surface"
+        height={100}
+        style={undefined}
+        version="1.1"
+        viewBox="0 0 100 100"
+        width={100}
+      >
+        <g
+          className="recharts-layer recharts-area"
+        >
+          <g
+            className="recharts-layer"
+          >
+            <defs>
+              <clipPath
+                id="animationClipPath-recharts-area-19"
+              >
+                <rect
+                  height={96}
+                  width={0}
+                  x={5}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <g
+              className="recharts-layer"
+              clipPath="url(#animationClipPath-recharts-area-19)"
+            >
+              <g
+                className="recharts-layer"
+                clipPath={null}
+              >
+                <path
+                  className="recharts-curve recharts-area-area"
+                  d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
+                  fill="#8884d8"
+                  fillOpacity={0.6}
+                  height={90}
+                  stroke="none"
+                  width={90}
+                />
+                <path
+                  className="recharts-curve recharts-area-curve"
+                  d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3"
+                  fill="none"
+                  fillOpacity={0.6}
+                  height={90}
+                  stroke="#8884d8"
+                  width={90}
+                />
+              </g>
+            </g>
+          </g>
+        </g>
+        <g
+          className="recharts-layer recharts-area"
+        >
+          <g
+            className="recharts-layer"
+          >
+            <defs>
+              <clipPath
+                id="animationClipPath-recharts-area-20"
+              >
+                <rect
+                  height={96}
+                  width={0}
+                  x={5}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <g
+              className="recharts-layer"
+              clipPath="url(#animationClipPath-recharts-area-20)"
+            >
+              <g
+                className="recharts-layer"
+                clipPath={null}
+              >
+                <path
+                  className="recharts-curve recharts-area-area"
+                  d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
+                  fill="#82ca9d"
+                  fillOpacity={0.6}
+                  height={90}
+                  stroke="none"
+                  width={90}
+                />
+                <path
+                  className="recharts-curve recharts-area-curve"
+                  d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59"
+                  fill="none"
+                  fillOpacity={0.6}
+                  height={90}
+                  stroke="#82ca9d"
+                  width={90}
+                />
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div
+        className="recharts-tooltip-wrapper"
+        style={
+          Object {
+            "MozTransform": "translate(undefinedpx, undefinedpx)",
+            "OTransform": "translate(undefinedpx, undefinedpx)",
+            "WebkitTransform": "translate(undefinedpx, undefinedpx)",
+            "backgroundColor": "#424242",
+            "border": "none",
+            "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+            "color": "rgba(255, 255, 255, 0.7)",
+            "msTransform": "translate(undefinedpx, undefinedpx)",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "top": 0,
+            "transform": "translate(undefinedpx, undefinedpx)",
+            "visibility": "hidden",
+          }
+        }
+      >
+        <div
+          className="recharts-default-tooltip"
+          style={
+            Object {
+              "backgroundColor": "#424242",
+              "border": "none",
+              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+              "color": "rgba(255, 255, 255, 0.7)",
+              "margin": 0,
+              "padding": 10,
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          <p
+            className="recharts-tooltip-label"
+            style={
+              Object {
+                "margin": 0,
+              }
+            }
+          >
+            
+          </p>
+        </div>
+      </div>
+    </div>
     <div
       style={
         Object {
@@ -95,7 +262,7 @@ exports[`Storyshots mui-recharts: dark theme Area Chart: axis 1`] = `
 </div>
 `;
 
-exports[`Storyshots mui-recharts: dark theme Area Chart: basic 1`] = `
+exports[`Storyshots mui-recharts: dark theme Bar 1`] = `
 <div
   style={
     Object {
@@ -111,12 +278,151 @@ exports[`Storyshots mui-recharts: dark theme Area Chart: basic 1`] = `
       Object {
         "height": "100%",
         "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
+        "minHeight": 100,
+        "minWidth": 100,
         "width": "100%",
       }
     }
   >
+    <div
+      className="recharts-wrapper MuiRechart-BarChart--rootChart-5"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseMove={[Function]}
+      onTouchMove={[Function]}
+      style={
+        Object {
+          "cursor": "default",
+          "height": 100,
+          "position": "relative",
+          "width": 100,
+        }
+      }
+    >
+      <svg
+        className="recharts-surface"
+        height={100}
+        style={undefined}
+        version="1.1"
+        viewBox="0 0 100 100"
+        width={100}
+      >
+        <g
+          className="recharts-layer recharts-bar"
+        >
+          <g
+            className="recharts-layer recharts-bar-rectangles"
+            clipPath={null}
+          >
+            <g
+              className="recharts-layer"
+            >
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+            </g>
+          </g>
+        </g>
+        <g
+          className="recharts-layer recharts-bar"
+        >
+          <g
+            className="recharts-layer recharts-bar-rectangles"
+            clipPath={null}
+          >
+            <g
+              className="recharts-layer"
+            >
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div
+        className="recharts-tooltip-wrapper"
+        style={
+          Object {
+            "MozTransform": "translate(undefinedpx, undefinedpx)",
+            "OTransform": "translate(undefinedpx, undefinedpx)",
+            "WebkitTransform": "translate(undefinedpx, undefinedpx)",
+            "backgroundColor": "#424242",
+            "border": "none",
+            "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+            "color": "rgba(255, 255, 255, 0.7)",
+            "msTransform": "translate(undefinedpx, undefinedpx)",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "top": 0,
+            "transform": "translate(undefinedpx, undefinedpx)",
+            "visibility": "hidden",
+          }
+        }
+      >
+        <div
+          className="recharts-default-tooltip"
+          style={
+            Object {
+              "backgroundColor": "#424242",
+              "border": "none",
+              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+              "color": "rgba(255, 255, 255, 0.7)",
+              "margin": 0,
+              "padding": 10,
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          <p
+            className="recharts-tooltip-label"
+            style={
+              Object {
+                "margin": 0,
+              }
+            }
+          >
+            
+          </p>
+        </div>
+      </div>
+    </div>
     <div
       style={
         Object {
@@ -190,7 +496,7 @@ exports[`Storyshots mui-recharts: dark theme Area Chart: basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots mui-recharts: dark theme Line Chart: axis 1`] = `
+exports[`Storyshots mui-recharts: dark theme Line 1`] = `
 <div
   style={
     Object {
@@ -206,12 +512,113 @@ exports[`Storyshots mui-recharts: dark theme Line Chart: axis 1`] = `
       Object {
         "height": "100%",
         "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
+        "minHeight": 100,
+        "minWidth": 100,
         "width": "100%",
       }
     }
   >
+    <div
+      className="recharts-wrapper MuiRechart-LineChart--rootChart-6"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseMove={[Function]}
+      onTouchMove={[Function]}
+      style={
+        Object {
+          "cursor": "default",
+          "height": 100,
+          "position": "relative",
+          "width": 100,
+        }
+      }
+    >
+      <svg
+        className="recharts-surface"
+        height={100}
+        style={undefined}
+        version="1.1"
+        viewBox="0 0 100 100"
+        width={100}
+      >
+        <g
+          className="recharts-layer recharts-line"
+        >
+          <path
+            className="recharts-curve recharts-line-curve"
+            clipPath={null}
+            d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3"
+            fill="none"
+            height={90}
+            stroke="#8884d8"
+            strokeDasharray="0px 0px"
+            strokeWidth={1}
+            width={90}
+          />
+        </g>
+        <g
+          className="recharts-layer recharts-line"
+        >
+          <path
+            className="recharts-curve recharts-line-curve"
+            clipPath={null}
+            d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59"
+            fill="none"
+            height={90}
+            stroke="#82ca9d"
+            strokeDasharray="0px 0px"
+            strokeWidth={1}
+            width={90}
+          />
+        </g>
+      </svg>
+      <div
+        className="recharts-tooltip-wrapper"
+        style={
+          Object {
+            "MozTransform": "translate(undefinedpx, undefinedpx)",
+            "OTransform": "translate(undefinedpx, undefinedpx)",
+            "WebkitTransform": "translate(undefinedpx, undefinedpx)",
+            "backgroundColor": "#424242",
+            "border": "none",
+            "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+            "color": "rgba(255, 255, 255, 0.7)",
+            "msTransform": "translate(undefinedpx, undefinedpx)",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "top": 0,
+            "transform": "translate(undefinedpx, undefinedpx)",
+            "visibility": "hidden",
+          }
+        }
+      >
+        <div
+          className="recharts-default-tooltip"
+          style={
+            Object {
+              "backgroundColor": "#424242",
+              "border": "none",
+              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+              "color": "rgba(255, 255, 255, 0.7)",
+              "margin": 0,
+              "padding": 10,
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          <p
+            className="recharts-tooltip-label"
+            style={
+              Object {
+                "margin": 0,
+              }
+            }
+          >
+            
+          </p>
+        </div>
+      </div>
+    </div>
     <div
       style={
         Object {
@@ -285,7 +692,7 @@ exports[`Storyshots mui-recharts: dark theme Line Chart: axis 1`] = `
 </div>
 `;
 
-exports[`Storyshots mui-recharts: dark theme Line Chart: basic 1`] = `
+exports[`Storyshots mui-recharts: light theme Area 1`] = `
 <div
   style={
     Object {
@@ -301,12 +708,179 @@ exports[`Storyshots mui-recharts: dark theme Line Chart: basic 1`] = `
       Object {
         "height": "100%",
         "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
+        "minHeight": 100,
+        "minWidth": 100,
         "width": "100%",
       }
     }
   >
+    <div
+      className="recharts-wrapper MuiRechart-AreaChart--rootChart-1"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseMove={[Function]}
+      onTouchMove={[Function]}
+      style={
+        Object {
+          "cursor": "default",
+          "height": 100,
+          "position": "relative",
+          "width": 100,
+        }
+      }
+    >
+      <svg
+        className="recharts-surface"
+        height={100}
+        style={undefined}
+        version="1.1"
+        viewBox="0 0 100 100"
+        width={100}
+      >
+        <g
+          className="recharts-layer recharts-area"
+        >
+          <g
+            className="recharts-layer"
+          >
+            <defs>
+              <clipPath
+                id="animationClipPath-recharts-area-4"
+              >
+                <rect
+                  height={96}
+                  width={0}
+                  x={5}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <g
+              className="recharts-layer"
+              clipPath="url(#animationClipPath-recharts-area-4)"
+            >
+              <g
+                className="recharts-layer"
+                clipPath={null}
+              >
+                <path
+                  className="recharts-curve recharts-area-area"
+                  d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
+                  fill="#8884d8"
+                  fillOpacity={0.6}
+                  height={90}
+                  stroke="none"
+                  width={90}
+                />
+                <path
+                  className="recharts-curve recharts-area-curve"
+                  d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3"
+                  fill="none"
+                  fillOpacity={0.6}
+                  height={90}
+                  stroke="#8884d8"
+                  width={90}
+                />
+              </g>
+            </g>
+          </g>
+        </g>
+        <g
+          className="recharts-layer recharts-area"
+        >
+          <g
+            className="recharts-layer"
+          >
+            <defs>
+              <clipPath
+                id="animationClipPath-recharts-area-5"
+              >
+                <rect
+                  height={96}
+                  width={0}
+                  x={5}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <g
+              className="recharts-layer"
+              clipPath="url(#animationClipPath-recharts-area-5)"
+            >
+              <g
+                className="recharts-layer"
+                clipPath={null}
+              >
+                <path
+                  className="recharts-curve recharts-area-area"
+                  d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
+                  fill="#82ca9d"
+                  fillOpacity={0.6}
+                  height={90}
+                  stroke="none"
+                  width={90}
+                />
+                <path
+                  className="recharts-curve recharts-area-curve"
+                  d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59"
+                  fill="none"
+                  fillOpacity={0.6}
+                  height={90}
+                  stroke="#82ca9d"
+                  width={90}
+                />
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div
+        className="recharts-tooltip-wrapper"
+        style={
+          Object {
+            "MozTransform": "translate(undefinedpx, undefinedpx)",
+            "OTransform": "translate(undefinedpx, undefinedpx)",
+            "WebkitTransform": "translate(undefinedpx, undefinedpx)",
+            "backgroundColor": "#fff",
+            "border": "none",
+            "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+            "color": "rgba(0, 0, 0, 0.54)",
+            "msTransform": "translate(undefinedpx, undefinedpx)",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "top": 0,
+            "transform": "translate(undefinedpx, undefinedpx)",
+            "visibility": "hidden",
+          }
+        }
+      >
+        <div
+          className="recharts-default-tooltip"
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "none",
+              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+              "color": "rgba(0, 0, 0, 0.54)",
+              "margin": 0,
+              "padding": 10,
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          <p
+            className="recharts-tooltip-label"
+            style={
+              Object {
+                "margin": 0,
+              }
+            }
+          >
+            
+          </p>
+        </div>
+      </div>
+    </div>
     <div
       style={
         Object {
@@ -380,7 +954,7 @@ exports[`Storyshots mui-recharts: dark theme Line Chart: basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots mui-recharts: light theme Area Chart: axis 1`] = `
+exports[`Storyshots mui-recharts: light theme Bar 1`] = `
 <div
   style={
     Object {
@@ -396,12 +970,151 @@ exports[`Storyshots mui-recharts: light theme Area Chart: axis 1`] = `
       Object {
         "height": "100%",
         "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
+        "minHeight": 100,
+        "minWidth": 100,
         "width": "100%",
       }
     }
   >
+    <div
+      className="recharts-wrapper MuiRechart-BarChart--rootChart-2"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseMove={[Function]}
+      onTouchMove={[Function]}
+      style={
+        Object {
+          "cursor": "default",
+          "height": 100,
+          "position": "relative",
+          "width": 100,
+        }
+      }
+    >
+      <svg
+        className="recharts-surface"
+        height={100}
+        style={undefined}
+        version="1.1"
+        viewBox="0 0 100 100"
+        width={100}
+      >
+        <g
+          className="recharts-layer recharts-bar"
+        >
+          <g
+            className="recharts-layer recharts-bar-rectangles"
+            clipPath={null}
+          >
+            <g
+              className="recharts-layer"
+            >
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+            </g>
+          </g>
+        </g>
+        <g
+          className="recharts-layer recharts-bar"
+        >
+          <g
+            className="recharts-layer recharts-bar-rectangles"
+            clipPath={null}
+          >
+            <g
+              className="recharts-layer"
+            >
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div
+        className="recharts-tooltip-wrapper"
+        style={
+          Object {
+            "MozTransform": "translate(undefinedpx, undefinedpx)",
+            "OTransform": "translate(undefinedpx, undefinedpx)",
+            "WebkitTransform": "translate(undefinedpx, undefinedpx)",
+            "backgroundColor": "#fff",
+            "border": "none",
+            "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+            "color": "rgba(0, 0, 0, 0.54)",
+            "msTransform": "translate(undefinedpx, undefinedpx)",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "top": 0,
+            "transform": "translate(undefinedpx, undefinedpx)",
+            "visibility": "hidden",
+          }
+        }
+      >
+        <div
+          className="recharts-default-tooltip"
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "border": "none",
+              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+              "color": "rgba(0, 0, 0, 0.54)",
+              "margin": 0,
+              "padding": 10,
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          <p
+            className="recharts-tooltip-label"
+            style={
+              Object {
+                "margin": 0,
+              }
+            }
+          >
+            
+          </p>
+        </div>
+      </div>
+    </div>
     <div
       style={
         Object {
@@ -475,7 +1188,7 @@ exports[`Storyshots mui-recharts: light theme Area Chart: axis 1`] = `
 </div>
 `;
 
-exports[`Storyshots mui-recharts: light theme Area Chart: basic 1`] = `
+exports[`Storyshots mui-recharts: light theme Line 1`] = `
 <div
   style={
     Object {
@@ -491,202 +1204,113 @@ exports[`Storyshots mui-recharts: light theme Area Chart: basic 1`] = `
       Object {
         "height": "100%",
         "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
+        "minHeight": 100,
+        "minWidth": 100,
         "width": "100%",
       }
     }
   >
     <div
+      className="recharts-wrapper MuiRechart-LineChart--rootChart-3"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseMove={[Function]}
+      onTouchMove={[Function]}
       style={
         Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-          "visibility": "hidden",
-          "zIndex": -1,
+          "cursor": "default",
+          "height": 100,
+          "position": "relative",
+          "width": 100,
         }
       }
     >
+      <svg
+        className="recharts-surface"
+        height={100}
+        style={undefined}
+        version="1.1"
+        viewBox="0 0 100 100"
+        width={100}
+      >
+        <g
+          className="recharts-layer recharts-line"
+        >
+          <path
+            className="recharts-curve recharts-line-curve"
+            clipPath={null}
+            d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3"
+            fill="none"
+            height={90}
+            stroke="#8884d8"
+            strokeDasharray="0px 0px"
+            strokeWidth={1}
+            width={90}
+          />
+        </g>
+        <g
+          className="recharts-layer recharts-line"
+        >
+          <path
+            className="recharts-curve recharts-line-curve"
+            clipPath={null}
+            d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59"
+            fill="none"
+            height={90}
+            stroke="#82ca9d"
+            strokeDasharray="0px 0px"
+            strokeWidth={1}
+            width={90}
+          />
+        </g>
+      </svg>
       <div
-        onScroll={[Function]}
+        className="recharts-tooltip-wrapper"
         style={
           Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
+            "MozTransform": "translate(undefinedpx, undefinedpx)",
+            "OTransform": "translate(undefinedpx, undefinedpx)",
+            "WebkitTransform": "translate(undefinedpx, undefinedpx)",
+            "backgroundColor": "#fff",
+            "border": "none",
+            "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+            "color": "rgba(0, 0, 0, 0.54)",
+            "msTransform": "translate(undefinedpx, undefinedpx)",
+            "pointerEvents": "none",
             "position": "absolute",
-            "right": 0,
             "top": 0,
+            "transform": "translate(undefinedpx, undefinedpx)",
             "visibility": "hidden",
-            "zIndex": -1,
           }
         }
       >
         <div
+          className="recharts-default-tooltip"
           style={
             Object {
-              "height": 454,
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": 343,
+              "backgroundColor": "#fff",
+              "border": "none",
+              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+              "color": "rgba(0, 0, 0, 0.54)",
+              "margin": 0,
+              "padding": 10,
+              "whiteSpace": "nowrap",
             }
           }
-        />
-      </div>
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "200%",
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": "200%",
+        >
+          <p
+            className="recharts-tooltip-label"
+            style={
+              Object {
+                "margin": 0,
+              }
             }
-          }
-        />
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots mui-recharts: light theme Line Chart: axis 1`] = `
-<div
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100vw",
-    }
-  }
->
-  <div
-    className="recharts-responsive-container"
-    id={undefined}
-    style={
-      Object {
-        "height": "100%",
-        "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
-        "width": "100%",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-          "visibility": "hidden",
-          "zIndex": -1,
-        }
-      }
-    >
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": 454,
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": 343,
-            }
-          }
-        />
-      </div>
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "200%",
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": "200%",
-            }
-          }
-        />
+          >
+            
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots mui-recharts: light theme Line Chart: basic 1`] = `
-<div
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100vw",
-    }
-  }
->
-  <div
-    className="recharts-responsive-container"
-    id={undefined}
-    style={
-      Object {
-        "height": "100%",
-        "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
-        "width": "100%",
-      }
-    }
-  >
     <div
       style={
         Object {

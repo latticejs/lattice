@@ -1,25 +1,15 @@
 import React from 'react';
 // recharts
-import {
-  LineChart as RechartLineChart,
-  AreaChart as RechartAreaChart,
-  Area,
-  Line,
-  Tooltip,
-  ResponsiveContainer,
-  XAxis,
-  YAxis
-} from 'recharts';
+import { AreaChart, BarChart, LineChart, Area, Bar, Line, ResponsiveContainer, Tooltip, XAxis } from '../src';
 // Ours
 import muiTheme from '../.storybook/decorator-material-ui';
-import withMuiStyle from '../src';
-
-// Wrapped Charts
-const LineChart = withMuiStyle(RechartLineChart);
-const AreaChart = withMuiStyle(RechartAreaChart);
 
 // Decorators
-const AddResponsive = story => <ResponsiveContainer width="100%">{story()}</ResponsiveContainer>;
+const AddResponsive = story => (
+  <ResponsiveContainer aspect={1} minHeight={100} minWidth={100}>
+    {story()}
+  </ResponsiveContainer>
+);
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
 export default ({ storiesOf, action }) => {
@@ -27,18 +17,17 @@ export default ({ storiesOf, action }) => {
     .addDecorator(AddResponsive)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('Area Chart: basic', () => <AreaChartBasic />)
-    .add('Area Chart: axis', () => <AreaChartAxis />)
-    .add('Line Chart: basic', () => <LineChartBasic />)
-    .add('Line Chart: axis', () => <LineChartAxis />);
+    .add('Area', () => <AreaChartBasic />)
+    .add('Bar', () => <BarChartBasic />)
+    .add('Line', () => <LineChartBasic />);
+
   storiesOf('mui-recharts: dark theme', module)
     .addDecorator(AddResponsive)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
-    .add('Area Chart: basic', () => <AreaChartBasic />)
-    .add('Area Chart: axis', () => <AreaChartAxis />)
-    .add('Line Chart: basic', () => <LineChartBasic />)
-    .add('Line Chart: axis', () => <LineChartAxis />);
+    .add('Area', () => <AreaChartBasic />)
+    .add('Bar', () => <BarChartBasic />)
+    .add('Line', () => <LineChartBasic />);
 };
 
 const data = [
@@ -55,36 +44,27 @@ const data = [
 
 const AreaChartBasic = props => (
   <AreaChart data={data} {...props}>
-    <Area variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-    <Area variant="monotone" dataKey="uv" stroke="#82ca9d" />
+    <XAxis hide={true} dataKey="name" />
     <Tooltip />
+    <Area dataKey="pv" fill="#8884d8" stroke="#8884d8" />
+    <Area dataKey="uv" fill="#82ca9d" stroke="#82ca9d" />
   </AreaChart>
 );
 
-const AreaChartAxis = props => (
-  <AreaChart data={data} {...props}>
-    <XAxis dataKey="name" />
-    <YAxis />
-    <Area variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-    <Area variant="monotone" dataKey="uv" stroke="#82ca9d" />
+const BarChartBasic = props => (
+  <BarChart data={data} {...props}>
+    <XAxis hide={true} dataKey="name" />
     <Tooltip />
-  </AreaChart>
+    <Bar dataKey="pv" fill="#8884d8" />
+    <Bar dataKey="uv" fill="#82ca9d" />
+  </BarChart>
 );
 
 const LineChartBasic = props => (
   <LineChart data={data} {...props}>
-    <Line variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-    <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
+    <XAxis hide={true} dataKey="name" />
     <Tooltip />
-  </LineChart>
-);
-
-const LineChartAxis = props => (
-  <LineChart data={data} {...props}>
-    <XAxis dataKey="name" />
-    <YAxis />
-    <Line variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-    <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
-    <Tooltip />
+    <Line dataKey="pv" stroke="#8884d8" />
+    <Line dataKey="uv" stroke="#82ca9d" />
   </LineChart>
 );

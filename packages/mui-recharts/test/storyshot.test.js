@@ -3,6 +3,8 @@ import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots
 function createNodeMock(element) {
   if (element.type === 'div') {
     return {
+      clientHeight: 100,
+      clientWidth: 100,
       scrollWidth: 111,
       scrollHeight: 222,
       offsetWidth: 333,

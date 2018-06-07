@@ -5,13 +5,10 @@ import Grid from '@material-ui/core/Grid/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography/Typography';
 import { withStyles } from '@material-ui/core/styles';
-// Recharts
-import { PieChart as RechartPieChart, Pie, Cell } from 'recharts';
+
 // Lattice
 import Widget from '@latticejs/widgets/Widget';
-import withMuiStyle from '@latticejs/mui-recharts';
-
-const PieChart = withMuiStyle(RechartPieChart);
+import { PieChart, Pie, Cell } from '@latticejs/mui-recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 

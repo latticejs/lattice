@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import withMuiStyle from '../';
+import { withMuiStyle } from '../';
 
 class Dummy extends React.Component {
   static displayName = 'DummyComponent';
@@ -10,7 +10,7 @@ class Dummy extends React.Component {
   }
 }
 
-describe('<MuiRecharts />', () => {
+describe('mui-recharts', () => {
   it('renders one <Dummy /> component wrapped up with mui recharts', () => {
     const Wrapped = withMuiStyle(Dummy);
     const wrapper = shallow(<Wrapped />);

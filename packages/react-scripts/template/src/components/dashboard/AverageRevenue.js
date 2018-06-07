@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 // Material-UI
 import Typography from '@material-ui/core/Typography';
-// Recharts
-import { LineChart as RechartLineChart, Line, ResponsiveContainer } from 'recharts';
-// Lattice
-import Widget from '@latticejs/widgets/Widget';
-import withMuiStyle from '@latticejs/mui-recharts';
 
-const LineChart = withMuiStyle(RechartLineChart);
+// Lattice
+import { LineChart, Line, ResponsiveContainer } from '@lattice/mui-recharts';
+import Widget from '@latticejs/widgets/Widget';
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },

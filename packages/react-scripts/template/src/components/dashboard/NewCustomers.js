@@ -3,13 +3,10 @@ import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-// Recharts
-import { BarChart as RechartBarChart, Bar, ResponsiveContainer } from 'recharts';
-// Lattice
-import Widget from '@latticejs/widgets/Widget';
-import withMuiStyle from '@latticejs/mui-recharts';
 
-const BarChart = withMuiStyle(RechartBarChart);
+// Lattice
+import { BarChart, Bar, ResponsiveContainer } from '@latticejs/mui-recharts';
+import Widget from '@latticejs/widgets/Widget';
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
