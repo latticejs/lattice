@@ -1,15 +1,10 @@
 import React from 'react';
-// recharts
-import { AreaChart, BarChart, LineChart, Area, Bar, Line, ResponsiveContainer, Tooltip, XAxis } from '../src';
 // Ours
+import { AreaChart, BarChart, LineChart, Area, Bar, Line, ResponsiveContainer, Tooltip, XAxis } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 
 // Decorators
-const AddResponsive = story => (
-  <ResponsiveContainer aspect={1} minHeight={100} minWidth={100}>
-    {story()}
-  </ResponsiveContainer>
-);
+const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
 export default ({ storiesOf, action }) => {
