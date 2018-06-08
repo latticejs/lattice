@@ -3,11 +3,14 @@
   "name": "lattice",
   "version": "1.0.0",
   "scripts": {
+    "bootstrap": "lerna bootstrap && lerna run prepublish",
+    "clean": "lerna clean --yes",
     "create-react-app": "node tasks/cra.js",
-    "test": "lerna run test",
-    "storybook": "start-storybook -p 9001 -c .storybook",
     "lint": "eslint --cache --ignore-path .gitignore .",
-    "lint:fix": "yarn run lint --fix"
+    "lint:fix": "yarn run lint --fix",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "test": "lerna run test"
+
   },
   "husky": {
     "hooks": {
