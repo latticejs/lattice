@@ -1,6 +1,6 @@
 import React from 'react';
 // Ours
-import { AreaChart, BarChart, LineChart, Area, Bar, Line, ResponsiveContainer, Tooltip, XAxis } from '../src';
+import { AreaChart, BarChart, LineChart, Area, Bar, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 
 // Decorators
@@ -8,21 +8,21 @@ const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContain
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
 export default ({ storiesOf, action }) => {
-  storiesOf('mui-recharts: light theme', module)
+  storiesOf('mui-recharts/axis & tooltips', module)
     .addDecorator(AddResponsive)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('Area', () => <AreaChartBasic />)
-    .add('Bar', () => <BarChartBasic />)
-    .add('Line', () => <LineChartBasic />);
+    .add('Area (light)', () => <AreaChartBasic />)
+    .add('Bar (light)', () => <BarChartBasic />)
+    .add('Line (light)', () => <LineChartBasic />);
 
-  storiesOf('mui-recharts: dark theme', module)
+  storiesOf('mui-recharts/axis & tooltips', module)
     .addDecorator(AddResponsive)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
-    .add('Area', () => <AreaChartBasic />)
-    .add('Bar', () => <BarChartBasic />)
-    .add('Line', () => <LineChartBasic />);
+    .add('Area (dark)', () => <AreaChartBasic />)
+    .add('Bar (dark)', () => <BarChartBasic />)
+    .add('Line (dark)', () => <LineChartBasic />);
 };
 
 const data = [
@@ -39,7 +39,8 @@ const data = [
 
 const AreaChartBasic = props => (
   <AreaChart data={data} {...props}>
-    <XAxis hide={true} dataKey="name" />
+    <XAxis dataKey="name" />
+    <YAxis />
     <Tooltip />
     <Area dataKey="pv" fill="#8884d8" stroke="#8884d8" />
     <Area dataKey="uv" fill="#82ca9d" stroke="#82ca9d" />
@@ -48,7 +49,8 @@ const AreaChartBasic = props => (
 
 const BarChartBasic = props => (
   <BarChart data={data} {...props}>
-    <XAxis hide={true} dataKey="name" />
+    <XAxis dataKey="name" />
+    <YAxis />
     <Tooltip />
     <Bar dataKey="pv" fill="#8884d8" />
     <Bar dataKey="uv" fill="#82ca9d" />
@@ -57,7 +59,8 @@ const BarChartBasic = props => (
 
 const LineChartBasic = props => (
   <LineChart data={data} {...props}>
-    <XAxis hide={true} dataKey="name" />
+    <XAxis dataKey="name" />
+    <YAxis />
     <Tooltip />
     <Line dataKey="pv" stroke="#8884d8" />
     <Line dataKey="uv" stroke="#82ca9d" />

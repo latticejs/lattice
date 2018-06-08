@@ -27,17 +27,17 @@ const Flexed = story => (
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
 export default ({ storiesOf, action }) => {
-  storiesOf('mui-recharts: light theme', module)
+  storiesOf('mui-recharts/basic', module)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('All basic charts', () => <BasicCharts />);
+    .add('Basic charts (light)', () => <BasicCharts />);
 
-  storiesOf('mui-recharts: dark theme', module)
+  storiesOf('mui-recharts/basic', module)
     .addDecorator(Flexed)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
-    .add('All basic charts', () => <BasicCharts />);
+    .add('Basic charts (dark)', () => <BasicCharts />);
 };
 
 // Components
