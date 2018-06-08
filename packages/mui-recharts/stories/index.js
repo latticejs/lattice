@@ -1,8 +1,29 @@
 import React from 'react';
-import { LineChart as RechartLineChart, Line } from 'recharts';
-import withMuiStyle from '../src';
+// Ours
+import { AreaChart, BarChart, LineChart, Area, Bar, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from '../src';
+import muiTheme from '../.storybook/decorator-material-ui';
 
-const LineChart = withMuiStyle(RechartLineChart);
+// Decorators
+const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
+const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
+
+export default ({ storiesOf, action }) => {
+  storiesOf('mui-recharts/axis & tooltips', module)
+    .addDecorator(AddResponsive)
+    .addDecorator(muiTheme())
+    .addDecorator(FullViewport)
+    .add('Area (light)', () => <AreaChartBasic />)
+    .add('Bar (light)', () => <BarChartBasic />)
+    .add('Line (light)', () => <LineChartBasic />);
+
+  storiesOf('mui-recharts/axis & tooltips', module)
+    .addDecorator(AddResponsive)
+    .addDecorator(muiTheme({ palette: { type: 'dark' } }))
+    .addDecorator(FullViewport)
+    .add('Area (dark)', () => <AreaChartBasic />)
+    .add('Bar (dark)', () => <BarChartBasic />)
+    .add('Line (dark)', () => <LineChartBasic />);
+};
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
@@ -14,11 +35,34 @@ const data = [
   { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 }
 ];
 
-export default ({ storiesOf, action }) => {
-  storiesOf('MUI-recharts', module).add('Wrapper around LineChart', () => (
-    <LineChart width={400} height={400} data={data}>
-      <Line variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-      <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
-    </LineChart>
-  ));
-};
+// Components
+
+const AreaChartBasic = props => (
+  <AreaChart data={data} {...props}>
+    <XAxis dataKey="name" />
+    <YAxis />
+    <Tooltip />
+    <Area dataKey="pv" fill="#8884d8" stroke="#8884d8" />
+    <Area dataKey="uv" fill="#82ca9d" stroke="#82ca9d" />
+  </AreaChart>
+);
+
+const BarChartBasic = props => (
+  <BarChart data={data} {...props}>
+    <XAxis dataKey="name" />
+    <YAxis />
+    <Tooltip />
+    <Bar dataKey="pv" fill="#8884d8" />
+    <Bar dataKey="uv" fill="#82ca9d" />
+  </BarChart>
+);
+
+const LineChartBasic = props => (
+  <LineChart data={data} {...props}>
+    <XAxis dataKey="name" />
+    <YAxis />
+    <Tooltip />
+    <Line dataKey="pv" stroke="#8884d8" />
+    <Line dataKey="uv" stroke="#82ca9d" />
+  </LineChart>
+);
