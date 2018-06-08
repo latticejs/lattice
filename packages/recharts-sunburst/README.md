@@ -4,10 +4,10 @@ A recharts API-compatible sunburst component
 
 ## Install
 
-`@latticejs/recharts-sunburst` requires both `@material-ui/core` and `recharts` to be installed in your project:
+`@latticejs/recharts-sunburst` requires `recharts` to be installed in your project:
 
 ```bash
-npm install @material-ui/core recharts
+npm install recharts
 ```
 
 Then install `@latticejs/recharts-sunburst`:
