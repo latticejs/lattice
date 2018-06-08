@@ -1,6 +1,6 @@
 # @latticejs/dag
 
-This module will add a directed graph component based on d3. 
+A directed graph component based on d3. 
 
 ## Install
 
