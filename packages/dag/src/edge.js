@@ -19,16 +19,29 @@ export default class Edge extends Component {
   componentDidMount() {
     this.d3Edge = select(this.node)
       .datum(this.props.data)
-      .call(selection => enterEdge(selection, this.props.theme));
+      .call(selection => enterEdge(selection));
   }
 
   componentDidUpdate() {
     this.d3Edge.datum(this.props.data).call(updateEdge);
   }
 
+  handleEdgeClick = e => {
+    this.props.onEdgeClick.call(this, e);
+  };
+
   render() {
+    // TODO (dk): apply classes.dagEdgeMarker class to marker-end (arrow)
     return (
-      <line ref={node => (this.node = node)} className={classNames(DEFAULTS.linkClass, this.props.classes.dagEdge)} />
+      <line
+        ref={node => (this.node = node)}
+        className={classNames(DEFAULTS.linkClass, this.props.classes.dagEdge)}
+        onClick={this.handleEdgeClick}
+      />
     );
   }
 }
+
+Edge.defaultProps = {
+  onEdgeClick: () => {}
+};
