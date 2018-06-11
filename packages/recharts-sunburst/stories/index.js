@@ -1,8 +1,16 @@
 import React from 'react';
+import { Tooltip, ResponsiveContainer } from 'recharts';
+
+// Ours
 import Sunburst from '../src/chart/Sunburst';
+
+function isSsr() {
+  return !(typeof window !== 'undefined' && window.document && window.document.createElement && window.setTimeout);
+}
 
 const data = [
   {
+    name: 'All',
     children: [
       { name: 'Data', size: 20544 },
       { name: 'DataList', size: 19788 },
@@ -25,8 +33,21 @@ const data = [
   }
 ];
 
+// Decorators
+const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
+const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
+
 export default ({ storiesOf, action }) => {
-  storiesOf('recharts-sunburst', module).add('basic sunburst', () => (
-    <Sunburst width={500} height={500} data={data} dataKey="size" ratio={4 / 3} isTooltipActive={true} />
-  ));
+  storiesOf('recharts-sunburst', module)
+    .addDecorator(AddResponsive)
+    .addDecorator(FullViewport)
+    .add('basic sunburst', () => <Sunburst data={data} dataKey="size" fill="#8884d8" />)
+    .add('basic sunburst animated', () => (
+      <Sunburst data={data} dataKey="size" fill="#8884d8" isAnimationActive={!isSsr()} />
+    ))
+    .add('with tooltip', () => (
+      <Sunburst data={data} dataKey="size" nameKey="name">
+        <Tooltip />
+      </Sunburst>
+    ));
 };

@@ -1,3 +1,31 @@
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 
-initStoryshots();
+function createNodeMock(element) {
+  if (element.type === 'div') {
+    return {
+      clientHeight: 100,
+      clientWidth: 100,
+      scrollWidth: 111,
+      scrollHeight: 222,
+      offsetWidth: 333,
+      offsetHeight: 444,
+      parentElement: {
+        scrollWidth: 555,
+        scrollHeight: 666,
+        offsetWidth: 777,
+        offsetHeight: 888,
+        currentStyle: {
+          position: 'relative'
+        }
+      }
+    };
+  }
+  return null;
+}
+
+initStoryshots({
+  storyNameRegex: /^((?!.*?animated).)*$/, // do not test animated stories since animation is random
+  test: snapshotWithOptions({
+    createNodeMock
+  })
+});
