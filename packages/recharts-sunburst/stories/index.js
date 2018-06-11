@@ -33,6 +33,21 @@ const data = [
   }
 ];
 
+const colors = {
+  All: '#5687d1',
+  Data: '#7b615c',
+  DataList: '#de783b',
+  DataSprite: '#6ab975',
+  EdgeSprite: '#a173d1',
+  NodeSprite: '#bbbbbb',
+  render: '#5687d1',
+  ArrowType: '#7b615c',
+  EdgeRenderer: '#de783b',
+  IRenderer: '#6ab975',
+  ShapeRenderer: '#a173d1',
+  ScaleBinding: '#bbbbbb'
+};
+
 // Decorators
 const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
@@ -44,6 +59,9 @@ export default ({ storiesOf, action }) => {
     .add('basic sunburst', () => <Sunburst data={data} dataKey="size" fill="#8884d8" />)
     .add('basic sunburst animated', () => (
       <Sunburst data={data} dataKey="size" fill="#8884d8" isAnimationActive={!isSsr()} />
+    ))
+    .add('with customized colors', () => (
+      <Sunburst data={data} colors={colors} dataKey="size" nameKey="name" fill="#8884d8" />
     ))
     .add('with tooltip', () => (
       <Sunburst data={data} dataKey="size" nameKey="name">

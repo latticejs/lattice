@@ -194,24 +194,25 @@ export default class Sunburst extends Component {
     } else if (typeof content === 'function') {
       return content(nodeProps);
     }
-    const { nameKey } = this.props;
+    const { nameKey, colors = {} } = this.props;
     const { activeNode } = this.state;
     let opacity = 1;
     if (activeNode) {
       const ancestors = activeNode.ancestors();
       opacity = ancestors.filter(n => n.data[nameKey] === node.data[nameKey]).length > 0 ? 1 : 0.3;
     }
+    const { depth, fill = 'purple', stroke = 'white' } = nodeProps;
+    const name = node.data[nameKey];
 
     return (
       <path
-        display={nodeProps.depth ? null : 'none'}
+        display={depth ? null : 'none'}
         d={dataArc(nodeProps)}
         fillRule={'evenodd'}
-        // fill={colors[node.data.name]}
-        fill={nodeProps.fill || 'purple'}
-        stroke={nodeProps.stroke || '#fff'}
-        style={{ opacity }}
         {...getPresentationAttributes(this.props)}
+        fill={node.data.fill || colors[name] || fill}
+        stroke={node.data.stroke || stroke}
+        style={{ opacity }}
       />
     );
   }

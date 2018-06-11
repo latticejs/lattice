@@ -61,7 +61,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -85,7 +85,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -109,7 +109,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -134,7 +134,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -159,7 +159,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -184,7 +184,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -209,7 +209,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -234,7 +234,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -259,7 +259,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -283,7 +283,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                       fill="#8884d8"
                       fillRule="evenodd"
                       height={100}
-                      stroke="#fff"
+                      stroke="white"
                       style={
                         Object {
                           "opacity": 1,
@@ -308,7 +308,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                       fill="#8884d8"
                       fillRule="evenodd"
                       height={100}
-                      stroke="#fff"
+                      stroke="white"
                       style={
                         Object {
                           "opacity": 1,
@@ -333,7 +333,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                       fill="#8884d8"
                       fillRule="evenodd"
                       height={100}
-                      stroke="#fff"
+                      stroke="white"
                       style={
                         Object {
                           "opacity": 1,
@@ -358,7 +358,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                       fill="#8884d8"
                       fillRule="evenodd"
                       height={100}
-                      stroke="#fff"
+                      stroke="white"
                       style={
                         Object {
                           "opacity": 1,
@@ -384,7 +384,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -409,7 +409,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -436,7 +436,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -460,7 +460,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -485,7 +485,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -510,7 +510,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -535,7 +535,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -560,7 +560,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -585,7 +585,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -610,7 +610,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -634,7 +634,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -659,7 +659,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -684,7 +684,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -709,7 +709,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                     fill="#8884d8"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -735,7 +735,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -760,7 +760,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -786,7 +786,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -811,7 +811,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -836,7 +836,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -861,7 +861,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -886,7 +886,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -911,7 +911,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -936,7 +936,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -960,7 +960,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -985,7 +985,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1010,7 +1010,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1035,7 +1035,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                   fill="#8884d8"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1061,7 +1061,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -1086,7 +1086,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -1111,7 +1111,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -1136,7 +1136,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -1161,7 +1161,7 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -1186,7 +1186,1279 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
                 fill="#8884d8"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "visibility": "hidden",
+          "zIndex": -1,
+        }
+      }
+    >
+      <div
+        onScroll={[Function]}
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "visibility": "hidden",
+            "zIndex": -1,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": 454,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 343,
+            }
+          }
+        />
+      </div>
+      <div
+        onScroll={[Function]}
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "visibility": "hidden",
+            "zIndex": -1,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "200%",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": "200%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots recharts-sunburst with customized colors 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    className="recharts-responsive-container"
+    id={undefined}
+    style={
+      Object {
+        "height": "100%",
+        "maxHeight": undefined,
+        "minHeight": undefined,
+        "minWidth": undefined,
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="recharts-wrapper"
+      style={
+        Object {
+          "cursor": "default",
+          "height": 100,
+          "position": "relative",
+          "width": 100,
+        }
+      }
+    >
+      <svg
+        className="recharts-surface"
+        fill="#8884d8"
+        height={100}
+        style={undefined}
+        version="1.1"
+        viewBox="0 0 100 100"
+        width={100}
+      >
+        <g
+          className="recharts-layer"
+          transform="translate( 50 , 50)"
+        >
+          <g
+            className="recharts-layer recharts-sunburst-depth-0"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M1.5308084989341915e-15,-25A25,25,0,1,1,-1.5308084989341915e-15,25A25,25,0,1,1,1.5308084989341915e-15,-25Z"
+                display="none"
+                fill="#8884d8"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-1"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M2.164890140588733e-15,-35.35533905932738A35.35533905932738,35.35533905932738,0,1,1,-2.164890140588733e-15,35.35533905932738A35.35533905932738,35.35533905932738,0,1,1,2.164890140588733e-15,-35.35533905932738M-4.592425496802574e-15,-25A25,25,0,1,0,4.592425496802574e-15,25A25,25,0,1,0,-4.592425496802574e-15,-25Z"
+                  display={null}
+                  fill="#5687d1"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M2.651438096812267e-15,-43.30127018922193A43.30127018922193,43.30127018922193,0,0,1,39.82363796529711,-17.0022898225194L32.51586423876867,-13.882311508029366A35.35533905932738,35.35533905932738,0,0,0,2.164890140588733e-15,-35.35533905932738Z"
+                    display={null}
+                    fill="#7b615c"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M39.82363796529711,-17.0022898225194A43.30127018922193,43.30127018922193,0,0,1,32.53081707383426,28.578767302120184L26.561300915570964,23.334465789310226A35.35533905932738,35.35533905932738,0,0,0,32.51586423876867,-13.882311508029366Z"
+                    display={null}
+                    fill="#de783b"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M32.53081707383426,28.578767302120184A43.30127018922193,43.30127018922193,0,0,1,-10.766633903228216,41.941382838359736L-8.790919770086377,34.24499568690153A35.35533905932738,35.35533905932738,0,0,0,26.561300915570964,23.334465789310226Z"
+                    display={null}
+                    fill="#bbbbbb"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-10.766633903228216,41.941382838359736A43.30127018922193,43.30127018922193,0,0,1,-33.70024163786884,27.189956115250556L-27.516132073758104,22.200506203676994A35.35533905932738,35.35533905932738,0,0,0,-8.790919770086377,34.24499568690153Z"
+                    display={null}
+                    fill="#bbbbbb"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-33.70024163786884,27.189956115250556A43.30127018922193,43.30127018922193,0,0,1,-43.1226265679951,3.9292592020943897L-35.20947715339112,3.208226704088874A35.35533905932738,35.35533905932738,0,0,0,-27.516132073758104,22.200506203676994Z"
+                    display={null}
+                    fill="#6ab975"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-43.1226265679951,3.9292592020943897A43.30127018922193,43.30127018922193,0,0,1,-38.54027333499597,-19.73948660081609L-31.468001406044223,-16.117223318835A35.35533905932738,35.35533905932738,0,0,0,-35.20947715339112,3.208226704088874Z"
+                    display={null}
+                    fill="#8884d8"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-38.54027333499597,-19.73948660081609A43.30127018922193,43.30127018922193,0,0,1,-24.22202314594298,-35.89280700526782L-19.777199081814686,-29.30635419969991A35.35533905932738,35.35533905932738,0,0,0,-31.468001406044223,-16.117223318835Z"
+                    display={null}
+                    fill="#5687d1"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+                <g
+                  className="recharts-layer recharts-sunburst-depth-3"
+                >
+                  <g
+                    className="recharts-layer"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <path
+                      d="M-44.50247436920336,-22.793195805292363A50,50,0,0,1,-35.20057229311758,-35.5094312857444L-30.484589833590476,-30.75206956739257A43.30127018922193,43.30127018922193,0,0,0,-38.54027333499597,-19.73948660081609Z"
+                      display={null}
+                      fill="#de783b"
+                      fillRule="evenodd"
+                      height={100}
+                      stroke="white"
+                      style={
+                        Object {
+                          "opacity": 1,
+                        }
+                      }
+                      width={100}
+                    />
+                  </g>
+                </g>
+                <g
+                  className="recharts-layer recharts-sunburst-depth-3"
+                >
+                  <g
+                    className="recharts-layer"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <path
+                      d="M-35.20057229311758,-35.5094312857444A50,50,0,0,1,-30.39283349050777,-39.70233837468858L-26.3209658957702,-34.38323362212609A43.30127018922193,43.30127018922193,0,0,0,-30.484589833590476,-30.75206956739257Z"
+                      display={null}
+                      fill="#a173d1"
+                      fillRule="evenodd"
+                      height={100}
+                      stroke="white"
+                      style={
+                        Object {
+                          "opacity": 1,
+                        }
+                      }
+                      width={100}
+                    />
+                  </g>
+                </g>
+                <g
+                  className="recharts-layer recharts-sunburst-depth-3"
+                >
+                  <g
+                    className="recharts-layer"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <path
+                      d="M-30.39283349050777,-39.70233837468858A50,50,0,0,1,-28.7947735544341,-40.87616684510502L-24.937005394360266,-35.399798897192156A43.30127018922193,43.30127018922193,0,0,0,-26.3209658957702,-34.38323362212609Z"
+                      display={null}
+                      fill="#7b615c"
+                      fillRule="evenodd"
+                      height={100}
+                      stroke="white"
+                      style={
+                        Object {
+                          "opacity": 1,
+                        }
+                      }
+                      width={100}
+                    />
+                  </g>
+                </g>
+                <g
+                  className="recharts-layer recharts-sunburst-depth-3"
+                >
+                  <g
+                    className="recharts-layer"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <path
+                      d="M-28.7947735544341,-40.87616684510502A50,50,0,0,1,-27.969183167255053,-41.44544357292532L-24.22202314594298,-35.89280700526782A43.30127018922193,43.30127018922193,0,0,0,-24.937005394360266,-35.399798897192156Z"
+                      display={null}
+                      fill="#6ab975"
+                      fillRule="evenodd"
+                      height={100}
+                      stroke="white"
+                      style={
+                        Object {
+                          "opacity": 1,
+                        }
+                      }
+                      width={100}
+                    />
+                  </g>
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-24.22202314594298,-35.89280700526782A43.30127018922193,43.30127018922193,0,0,1,-8.07399326762063,-42.54186917278573L-6.5923878974457235,-34.73529072585418A35.35533905932738,35.35533905932738,0,0,0,-19.777199081814686,-29.30635419969991Z"
+                    display={null}
+                    fill="#8884d8"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-2"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-8.07399326762063,-42.54186917278573A43.30127018922193,43.30127018922193,0,0,1,3.050493943723447e-14,-43.30127018922193L2.4907178751909302e-14,-35.35533905932738A35.35533905932738,35.35533905932738,0,0,0,-6.5923878974457235,-34.73529072585418Z"
+                    display={null}
+                    fill="#a173d1"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-1"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M2.164890140588733e-15,-35.35533905932738A35.35533905932738,35.35533905932738,0,1,1,-2.164890140588733e-15,35.35533905932738A35.35533905932738,35.35533905932738,0,1,1,2.164890140588733e-15,-35.35533905932738M-4.592425496802574e-15,-25A25,25,0,1,0,4.592425496802574e-15,25A25,25,0,1,0,-4.592425496802574e-15,-25Z"
+                display={null}
+                fill="#5687d1"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M2.651438096812267e-15,-43.30127018922193A43.30127018922193,43.30127018922193,0,0,1,39.82363796529711,-17.0022898225194L32.51586423876867,-13.882311508029366A35.35533905932738,35.35533905932738,0,0,0,2.164890140588733e-15,-35.35533905932738Z"
+                  display={null}
+                  fill="#7b615c"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M39.82363796529711,-17.0022898225194A43.30127018922193,43.30127018922193,0,0,1,32.53081707383426,28.578767302120184L26.561300915570964,23.334465789310226A35.35533905932738,35.35533905932738,0,0,0,32.51586423876867,-13.882311508029366Z"
+                  display={null}
+                  fill="#de783b"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M32.53081707383426,28.578767302120184A43.30127018922193,43.30127018922193,0,0,1,-10.766633903228216,41.941382838359736L-8.790919770086377,34.24499568690153A35.35533905932738,35.35533905932738,0,0,0,26.561300915570964,23.334465789310226Z"
+                  display={null}
+                  fill="#bbbbbb"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-10.766633903228216,41.941382838359736A43.30127018922193,43.30127018922193,0,0,1,-33.70024163786884,27.189956115250556L-27.516132073758104,22.200506203676994A35.35533905932738,35.35533905932738,0,0,0,-8.790919770086377,34.24499568690153Z"
+                  display={null}
+                  fill="#bbbbbb"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-33.70024163786884,27.189956115250556A43.30127018922193,43.30127018922193,0,0,1,-43.1226265679951,3.9292592020943897L-35.20947715339112,3.208226704088874A35.35533905932738,35.35533905932738,0,0,0,-27.516132073758104,22.200506203676994Z"
+                  display={null}
+                  fill="#6ab975"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-43.1226265679951,3.9292592020943897A43.30127018922193,43.30127018922193,0,0,1,-38.54027333499597,-19.73948660081609L-31.468001406044223,-16.117223318835A35.35533905932738,35.35533905932738,0,0,0,-35.20947715339112,3.208226704088874Z"
+                  display={null}
+                  fill="#8884d8"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-38.54027333499597,-19.73948660081609A43.30127018922193,43.30127018922193,0,0,1,-24.22202314594298,-35.89280700526782L-19.777199081814686,-29.30635419969991A35.35533905932738,35.35533905932738,0,0,0,-31.468001406044223,-16.117223318835Z"
+                  display={null}
+                  fill="#5687d1"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-3"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-44.50247436920336,-22.793195805292363A50,50,0,0,1,-35.20057229311758,-35.5094312857444L-30.484589833590476,-30.75206956739257A43.30127018922193,43.30127018922193,0,0,0,-38.54027333499597,-19.73948660081609Z"
+                    display={null}
+                    fill="#de783b"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-3"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-35.20057229311758,-35.5094312857444A50,50,0,0,1,-30.39283349050777,-39.70233837468858L-26.3209658957702,-34.38323362212609A43.30127018922193,43.30127018922193,0,0,0,-30.484589833590476,-30.75206956739257Z"
+                    display={null}
+                    fill="#a173d1"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-3"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-30.39283349050777,-39.70233837468858A50,50,0,0,1,-28.7947735544341,-40.87616684510502L-24.937005394360266,-35.399798897192156A43.30127018922193,43.30127018922193,0,0,0,-26.3209658957702,-34.38323362212609Z"
+                    display={null}
+                    fill="#7b615c"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+              <g
+                className="recharts-layer recharts-sunburst-depth-3"
+              >
+                <g
+                  className="recharts-layer"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <path
+                    d="M-28.7947735544341,-40.87616684510502A50,50,0,0,1,-27.969183167255053,-41.44544357292532L-24.22202314594298,-35.89280700526782A43.30127018922193,43.30127018922193,0,0,0,-24.937005394360266,-35.399798897192156Z"
+                    display={null}
+                    fill="#6ab975"
+                    fillRule="evenodd"
+                    height={100}
+                    stroke="white"
+                    style={
+                      Object {
+                        "opacity": 1,
+                      }
+                    }
+                    width={100}
+                  />
+                </g>
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-24.22202314594298,-35.89280700526782A43.30127018922193,43.30127018922193,0,0,1,-8.07399326762063,-42.54186917278573L-6.5923878974457235,-34.73529072585418A35.35533905932738,35.35533905932738,0,0,0,-19.777199081814686,-29.30635419969991Z"
+                  display={null}
+                  fill="#8884d8"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-2"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-8.07399326762063,-42.54186917278573A43.30127018922193,43.30127018922193,0,0,1,3.050493943723447e-14,-43.30127018922193L2.4907178751909302e-14,-35.35533905932738A35.35533905932738,35.35533905932738,0,0,0,-6.5923878974457235,-34.73529072585418Z"
+                  display={null}
+                  fill="#a173d1"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M2.651438096812267e-15,-43.30127018922193A43.30127018922193,43.30127018922193,0,0,1,39.82363796529711,-17.0022898225194L32.51586423876867,-13.882311508029366A35.35533905932738,35.35533905932738,0,0,0,2.164890140588733e-15,-35.35533905932738Z"
+                display={null}
+                fill="#7b615c"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M39.82363796529711,-17.0022898225194A43.30127018922193,43.30127018922193,0,0,1,32.53081707383426,28.578767302120184L26.561300915570964,23.334465789310226A35.35533905932738,35.35533905932738,0,0,0,32.51586423876867,-13.882311508029366Z"
+                display={null}
+                fill="#de783b"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M32.53081707383426,28.578767302120184A43.30127018922193,43.30127018922193,0,0,1,-10.766633903228216,41.941382838359736L-8.790919770086377,34.24499568690153A35.35533905932738,35.35533905932738,0,0,0,26.561300915570964,23.334465789310226Z"
+                display={null}
+                fill="#bbbbbb"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-10.766633903228216,41.941382838359736A43.30127018922193,43.30127018922193,0,0,1,-33.70024163786884,27.189956115250556L-27.516132073758104,22.200506203676994A35.35533905932738,35.35533905932738,0,0,0,-8.790919770086377,34.24499568690153Z"
+                display={null}
+                fill="#bbbbbb"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-33.70024163786884,27.189956115250556A43.30127018922193,43.30127018922193,0,0,1,-43.1226265679951,3.9292592020943897L-35.20947715339112,3.208226704088874A35.35533905932738,35.35533905932738,0,0,0,-27.516132073758104,22.200506203676994Z"
+                display={null}
+                fill="#6ab975"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-43.1226265679951,3.9292592020943897A43.30127018922193,43.30127018922193,0,0,1,-38.54027333499597,-19.73948660081609L-31.468001406044223,-16.117223318835A35.35533905932738,35.35533905932738,0,0,0,-35.20947715339112,3.208226704088874Z"
+                display={null}
+                fill="#8884d8"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-38.54027333499597,-19.73948660081609A43.30127018922193,43.30127018922193,0,0,1,-24.22202314594298,-35.89280700526782L-19.777199081814686,-29.30635419969991A35.35533905932738,35.35533905932738,0,0,0,-31.468001406044223,-16.117223318835Z"
+                display={null}
+                fill="#5687d1"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-3"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-44.50247436920336,-22.793195805292363A50,50,0,0,1,-35.20057229311758,-35.5094312857444L-30.484589833590476,-30.75206956739257A43.30127018922193,43.30127018922193,0,0,0,-38.54027333499597,-19.73948660081609Z"
+                  display={null}
+                  fill="#de783b"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-3"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-35.20057229311758,-35.5094312857444A50,50,0,0,1,-30.39283349050777,-39.70233837468858L-26.3209658957702,-34.38323362212609A43.30127018922193,43.30127018922193,0,0,0,-30.484589833590476,-30.75206956739257Z"
+                  display={null}
+                  fill="#a173d1"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-3"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-30.39283349050777,-39.70233837468858A50,50,0,0,1,-28.7947735544341,-40.87616684510502L-24.937005394360266,-35.399798897192156A43.30127018922193,43.30127018922193,0,0,0,-26.3209658957702,-34.38323362212609Z"
+                  display={null}
+                  fill="#7b615c"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+            <g
+              className="recharts-layer recharts-sunburst-depth-3"
+            >
+              <g
+                className="recharts-layer"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  d="M-28.7947735544341,-40.87616684510502A50,50,0,0,1,-27.969183167255053,-41.44544357292532L-24.22202314594298,-35.89280700526782A43.30127018922193,43.30127018922193,0,0,0,-24.937005394360266,-35.399798897192156Z"
+                  display={null}
+                  fill="#6ab975"
+                  fillRule="evenodd"
+                  height={100}
+                  stroke="white"
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                  width={100}
+                />
+              </g>
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-24.22202314594298,-35.89280700526782A43.30127018922193,43.30127018922193,0,0,1,-8.07399326762063,-42.54186917278573L-6.5923878974457235,-34.73529072585418A35.35533905932738,35.35533905932738,0,0,0,-19.777199081814686,-29.30635419969991Z"
+                display={null}
+                fill="#8884d8"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-2"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-8.07399326762063,-42.54186917278573A43.30127018922193,43.30127018922193,0,0,1,3.050493943723447e-14,-43.30127018922193L2.4907178751909302e-14,-35.35533905932738A35.35533905932738,35.35533905932738,0,0,0,-6.5923878974457235,-34.73529072585418Z"
+                display={null}
+                fill="#a173d1"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-3"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-44.50247436920336,-22.793195805292363A50,50,0,0,1,-35.20057229311758,-35.5094312857444L-30.484589833590476,-30.75206956739257A43.30127018922193,43.30127018922193,0,0,0,-38.54027333499597,-19.73948660081609Z"
+                display={null}
+                fill="#de783b"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-3"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-35.20057229311758,-35.5094312857444A50,50,0,0,1,-30.39283349050777,-39.70233837468858L-26.3209658957702,-34.38323362212609A43.30127018922193,43.30127018922193,0,0,0,-30.484589833590476,-30.75206956739257Z"
+                display={null}
+                fill="#a173d1"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-3"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-30.39283349050777,-39.70233837468858A50,50,0,0,1,-28.7947735544341,-40.87616684510502L-24.937005394360266,-35.399798897192156A43.30127018922193,43.30127018922193,0,0,0,-26.3209658957702,-34.38323362212609Z"
+                display={null}
+                fill="#7b615c"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                width={100}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-sunburst-depth-3"
+          >
+            <g
+              className="recharts-layer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <path
+                d="M-28.7947735544341,-40.87616684510502A50,50,0,0,1,-27.969183167255053,-41.44544357292532L-24.22202314594298,-35.89280700526782A43.30127018922193,43.30127018922193,0,0,0,-24.937005394360266,-35.399798897192156Z"
+                display={null}
+                fill="#6ab975"
+                fillRule="evenodd"
+                height={100}
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -1332,7 +2604,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -1356,7 +2628,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1380,7 +2652,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1405,7 +2677,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1430,7 +2702,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1455,7 +2727,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1480,7 +2752,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1505,7 +2777,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1530,7 +2802,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1554,7 +2826,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                       fill="purple"
                       fillRule="evenodd"
                       height={100}
-                      stroke="#fff"
+                      stroke="white"
                       style={
                         Object {
                           "opacity": 1,
@@ -1579,7 +2851,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                       fill="purple"
                       fillRule="evenodd"
                       height={100}
-                      stroke="#fff"
+                      stroke="white"
                       style={
                         Object {
                           "opacity": 1,
@@ -1604,7 +2876,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                       fill="purple"
                       fillRule="evenodd"
                       height={100}
-                      stroke="#fff"
+                      stroke="white"
                       style={
                         Object {
                           "opacity": 1,
@@ -1629,7 +2901,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                       fill="purple"
                       fillRule="evenodd"
                       height={100}
-                      stroke="#fff"
+                      stroke="white"
                       style={
                         Object {
                           "opacity": 1,
@@ -1655,7 +2927,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1680,7 +2952,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1707,7 +2979,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -1731,7 +3003,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1756,7 +3028,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1781,7 +3053,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1806,7 +3078,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1831,7 +3103,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1856,7 +3128,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1881,7 +3153,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -1905,7 +3177,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1930,7 +3202,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1955,7 +3227,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -1980,7 +3252,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                     fill="purple"
                     fillRule="evenodd"
                     height={100}
-                    stroke="#fff"
+                    stroke="white"
                     style={
                       Object {
                         "opacity": 1,
@@ -2006,7 +3278,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -2031,7 +3303,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -2057,7 +3329,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2082,7 +3354,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2107,7 +3379,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2132,7 +3404,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2157,7 +3429,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2182,7 +3454,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2207,7 +3479,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2231,7 +3503,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -2256,7 +3528,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -2281,7 +3553,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -2306,7 +3578,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                   fill="purple"
                   fillRule="evenodd"
                   height={100}
-                  stroke="#fff"
+                  stroke="white"
                   style={
                     Object {
                       "opacity": 1,
@@ -2332,7 +3604,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2357,7 +3629,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2382,7 +3654,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2407,7 +3679,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2432,7 +3704,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
@@ -2457,7 +3729,7 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
                 fill="purple"
                 fillRule="evenodd"
                 height={100}
-                stroke="#fff"
+                stroke="white"
                 style={
                   Object {
                     "opacity": 1,
