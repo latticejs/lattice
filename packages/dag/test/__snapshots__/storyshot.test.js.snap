@@ -11,6 +11,7 @@ exports[`Storyshots Directed Acyclic Graph Component no wrapper, with dummy prop
   >
     <line
       className="connect-node Dag-dagEdge-4"
+      onClick={[Function]}
     />
     <line
       className="connect-node Dag-dagEdge-4"
@@ -69,20 +70,18 @@ exports[`Storyshots Directed Acyclic Graph Component no wrapper, with dummy prop
     </g>
     <g
       className="node Dag-dagNode-2"
+      onClick={[Function]}
     >
-      <circle
-        onClick={[Function]}
-      />
+      <circle />
       <text
         className="Dag-dagNodeText-3"
       />
     </g>
     <g
       className="node Dag-dagNode-2"
+      onClick={[Function]}
     >
-      <circle
-        onClick={[Function]}
-      />
+      <circle />
       <text
         className="Dag-dagNodeText-3"
       />
@@ -111,6 +110,7 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
     >
       <line
         className="connect-node Dag-dagEdge-68"
+        onClick={[Function]}
       />
       <line
         className="connect-node Dag-dagEdge-68"
@@ -169,20 +169,18 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
       </g>
       <g
         className="node Dag-dagNode-66"
+        onClick={[Function]}
       >
-        <circle
-          onClick={[Function]}
-        />
+        <circle />
         <text
           className="Dag-dagNodeText-67"
         />
       </g>
       <g
         className="node Dag-dagNode-66"
+        onClick={[Function]}
       >
-        <circle
-          onClick={[Function]}
-        />
+        <circle />
         <text
           className="Dag-dagNodeText-67"
         />
@@ -212,6 +210,7 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
     >
       <line
         className="connect-node Dag-dagEdge-36"
+        onClick={[Function]}
       />
       <line
         className="connect-node Dag-dagEdge-36"
@@ -270,20 +269,18 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
       </g>
       <g
         className="node Dag-dagNode-34"
+        onClick={[Function]}
       >
-        <circle
-          onClick={[Function]}
-        />
+        <circle />
         <text
           className="Dag-dagNodeText-35"
         />
       </g>
       <g
         className="node Dag-dagNode-34"
+        onClick={[Function]}
       >
-        <circle
-          onClick={[Function]}
-        />
+        <circle />
         <text
           className="Dag-dagNodeText-35"
         />
