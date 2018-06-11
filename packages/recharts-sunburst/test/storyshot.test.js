@@ -24,7 +24,6 @@ function createNodeMock(element) {
 }
 
 initStoryshots({
-  storyNameRegex: /^((?!.*?animated).)*$/, // do not test animated stories since animation is random
   test: snapshotWithOptions({
     createNodeMock
   })

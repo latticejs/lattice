@@ -4,10 +4,6 @@ import { Tooltip, ResponsiveContainer } from 'recharts';
 // Ours
 import Sunburst from '../src/chart/Sunburst';
 
-function isSsr() {
-  return !(typeof window !== 'undefined' && window.document && window.document.createElement && window.setTimeout);
-}
-
 const data = [
   {
     name: 'All',
@@ -57,9 +53,7 @@ export default ({ storiesOf, action }) => {
     .addDecorator(AddResponsive)
     .addDecorator(FullViewport)
     .add('basic sunburst', () => <Sunburst data={data} dataKey="size" fill="#8884d8" />)
-    .add('basic sunburst animated', () => (
-      <Sunburst data={data} dataKey="size" fill="#8884d8" isAnimationActive={!isSsr()} />
-    ))
+    .add('basic sunburst animated', () => <Sunburst data={data} dataKey="size" fill="#8884d8" isAnimationActive />)
     .add('with customized colors', () => (
       <Sunburst data={data} colors={colors} dataKey="size" nameKey="name" fill="#8884d8" />
     ))

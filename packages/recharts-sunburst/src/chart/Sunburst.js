@@ -17,7 +17,7 @@ import Tooltip from 'recharts/lib/component/Tooltip';
 import { getValueByDataKey } from 'recharts/lib/util/ChartUtils';
 import { shallowEqual } from 'recharts/lib/util/PureRender';
 
-import Smooth from 'react-smooth'; // transitive dep
+import Animate from 'react-smooth'; // transitive dep
 
 const computeData = (data, radius, dataKey) => {
   const dataPartition = partition().size([2 * Math.PI, radius * radius]);
@@ -145,46 +145,75 @@ export default class Sunburst extends Component {
       animationEasing,
       isUpdateAnimationActive
     } = this.props;
-    const { width, height, x, y } = nodeProps;
-    const translateX = parseInt((Math.random() * 2 - 1) * width, 10);
+
     const event = {
       onMouseEnter: this.handleMouseEnter.bind(this, node, nodeProps),
       onMouseLeave: this.handleMouseLeave.bind(this, node, nodeProps),
       onClick: this.handleClick.bind(this, node, nodeProps)
     };
-
+    if (!node.depth) return;
+    const position = node.depth ? node.parent.children.indexOf(node) : 0;
     return (
-      <Smooth
-        from={{ x, y, width, height }}
-        to={{ x, y, width, height }}
+      <Animate
+        from={{ t: 0 }}
+        to={{ t: 1 }}
         duration={animationDuration}
         easing={animationEasing}
         isActive={isUpdateAnimationActive}
       >
-        {({ x: currX, y: currY, width: currWidth, height: currHeight }) => (
-          <Smooth
-            from={`translate(${translateX}px, ${translateX}px)`}
-            to="translate(0, 0)"
-            attributeName="transform"
-            begin={animationBegin}
-            easing={animationEasing}
-            isActive={isAnimationActive}
-            duration={animationDuration}
-          >
-            <Layer {...event}>
-              {this.renderContentItem(content, node, {
-                ...nodeProps,
-                isAnimationActive,
-                isUpdateAnimationActive: isUpdateAnimationActive,
-                width: currWidth,
-                height: currHeight,
-                x: currX,
-                y: currY
-              })}
-            </Layer>
-          </Smooth>
-        )}
-      </Smooth>
+        {() => {
+          return (
+            <Animate
+              from="0"
+              to="1"
+              attributeName="opacity"
+              easing={animationEasing}
+              isActive={isAnimationActive}
+              duration={animationDuration}
+              begin={(node.depth + position * 0.1) * 350 + animationBegin}
+            >
+              <Layer {...event}>
+                {this.renderContentItem(content, node, {
+                  ...nodeProps,
+                  isAnimationActive,
+                  isUpdateAnimationActive
+                })}
+              </Layer>
+            </Animate>
+          );
+        }}
+      </Animate>
+      // <Smooth
+      //   from={{ x, y, width, height }}
+      //   to={{ x, y, width, height }}
+      //   duration={animationDuration}
+      //   easing={animationEasing}
+      //   isActive={isUpdateAnimationActive}
+      // >
+      //   {({ x: currX, y: currY, width: currWidth, height: currHeight }) => (
+      //     <Smooth
+      //       from={`translate(${translateX}px, ${translateX}px)`}
+      //       to="translate(0, 0)"
+      //       attributeName="transform"
+      //       begin={animationBegin}
+      //       easing={animationEasing}
+      //       isActive={isAnimationActive}
+      //       duration={animationDuration}
+      //     >
+      //       <Layer {...event}>
+      //         {this.renderContentItem(content, node, {
+      //           ...nodeProps,
+      //           isAnimationActive,
+      //           isUpdateAnimationActive: isUpdateAnimationActive,
+      //           width: currWidth,
+      //           height: currHeight,
+      //           x: currX,
+      //           y: currY
+      //         })}
+      //       </Layer>
+      //     </Smooth>
+      //   )}
+      // </Smooth>
     );
   }
 
