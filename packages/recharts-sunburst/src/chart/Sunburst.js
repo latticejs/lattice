@@ -17,7 +17,7 @@ import Tooltip from 'recharts/lib/component/Tooltip';
 import { getValueByDataKey } from 'recharts/lib/util/ChartUtils';
 import { shallowEqual } from 'recharts/lib/util/PureRender';
 
-import Smooth from 'react-smooth'; // transitive dep
+import Animate from 'react-smooth'; // transitive dep
 
 const computeData = (data, radius, dataKey) => {
   const dataPartition = partition().size([2 * Math.PI, radius * radius]);
@@ -58,15 +58,12 @@ export default class Sunburst extends Component {
 
   static defaultProps = {
     dataKey: 'value',
-    // isAnimationActive: !isSsr(),
-    // isUpdateAnimationActive: !isSsr(),
-
+    nameKey: 'name',
     isAnimationActive: false,
     isUpdateAnimationActive: false,
-
     animationBegin: 0,
-    animationDuration: 1500,
-    animationEasing: 'linear'
+    animationDuration: 600,
+    animationEasing: 'ease-out'
   };
 
   state = {
@@ -104,42 +101,32 @@ export default class Sunburst extends Component {
   handleMouseEnter(node, e) {
     const { onMouseEnter, children } = this.props;
     const tooltipItem = findChildByType(children, Tooltip);
-    if (tooltipItem) {
-      this.setState(
-        {
-          isTooltipActive: true,
-          activeNode: node
-        },
-        () => {
-          if (onMouseEnter) {
-            onMouseEnter(node, e);
-          }
+    this.setState(
+      {
+        isTooltipActive: tooltipItem ? true : false,
+        activeNode: node
+      },
+      () => {
+        if (onMouseEnter) {
+          onMouseEnter(node, e);
         }
-      );
-    } else if (onMouseEnter) {
-      onMouseEnter(node, e);
-    }
+      }
+    );
   }
 
   handleMouseLeave(node, e) {
-    const { onMouseLeave, children } = this.props;
-    const tooltipItem = findChildByType(children, Tooltip);
-
-    if (tooltipItem) {
-      this.setState(
-        {
-          isTooltipActive: false,
-          activeNode: null
-        },
-        () => {
-          if (onMouseLeave) {
-            onMouseLeave(node, e);
-          }
+    const { onMouseLeave } = this.props;
+    this.setState(
+      {
+        isTooltipActive: false,
+        activeNode: null
+      },
+      () => {
+        if (onMouseLeave) {
+          onMouseLeave(node, e);
         }
-      );
-    } else if (onMouseLeave) {
-      onMouseLeave(node, e);
-    }
+      }
+    );
   }
 
   handleClick(node) {
@@ -150,7 +137,7 @@ export default class Sunburst extends Component {
     }
   }
 
-  renderAnimatedItem(content, nodeProps, isLeaf) {
+  renderAnimatedItem(content, node, nodeProps, isLeaf) {
     const {
       isAnimationActive,
       animationBegin,
@@ -158,70 +145,103 @@ export default class Sunburst extends Component {
       animationEasing,
       isUpdateAnimationActive
     } = this.props;
-    const { width, height, x, y } = nodeProps;
-    const translateX = parseInt((Math.random() * 2 - 1) * width, 10);
-    let event = {};
 
-    // if (isLeaf) {
-    event = {
-      onMouseEnter: this.handleMouseEnter.bind(this, nodeProps),
-      onMouseLeave: this.handleMouseLeave.bind(this, nodeProps),
-      onClick: this.handleClick.bind(this, nodeProps)
+    const event = {
+      onMouseEnter: this.handleMouseEnter.bind(this, node, nodeProps),
+      onMouseLeave: this.handleMouseLeave.bind(this, node, nodeProps),
+      onClick: this.handleClick.bind(this, node, nodeProps)
     };
-    // }
-
+    if (!node.depth) return;
+    const position = node.depth ? node.parent.children.indexOf(node) : 0;
     return (
-      <Smooth
-        from={{ x, y, width, height }}
-        to={{ x, y, width, height }}
+      <Animate
+        from={{ t: 0 }}
+        to={{ t: 1 }}
         duration={animationDuration}
         easing={animationEasing}
         isActive={isUpdateAnimationActive}
       >
-        {({ x: currX, y: currY, width: currWidth, height: currHeight }) => (
-          <Smooth
-            from={`translate(${translateX}px, ${translateX}px)`}
-            to="translate(0, 0)"
-            attributeName="transform"
-            begin={animationBegin}
-            easing={animationEasing}
-            isActive={isAnimationActive}
-            duration={animationDuration}
-          >
-            <Layer {...event}>
-              {this.renderContentItem(content, {
-                ...nodeProps,
-                isAnimationActive,
-                isUpdateAnimationActive: !isUpdateAnimationActive,
-                width: currWidth,
-                height: currHeight,
-                x: currX,
-                y: currY
-              })}
-            </Layer>
-          </Smooth>
-        )}
-      </Smooth>
+        {() => {
+          return (
+            <Animate
+              from="0"
+              to="1"
+              attributeName="opacity"
+              easing={animationEasing}
+              isActive={isAnimationActive}
+              duration={animationDuration}
+              begin={(node.depth + position * 0.1) * 350 + animationBegin}
+            >
+              <Layer {...event}>
+                {this.renderContentItem(content, node, {
+                  ...nodeProps,
+                  isAnimationActive,
+                  isUpdateAnimationActive
+                })}
+              </Layer>
+            </Animate>
+          );
+        }}
+      </Animate>
+      // <Smooth
+      //   from={{ x, y, width, height }}
+      //   to={{ x, y, width, height }}
+      //   duration={animationDuration}
+      //   easing={animationEasing}
+      //   isActive={isUpdateAnimationActive}
+      // >
+      //   {({ x: currX, y: currY, width: currWidth, height: currHeight }) => (
+      //     <Smooth
+      //       from={`translate(${translateX}px, ${translateX}px)`}
+      //       to="translate(0, 0)"
+      //       attributeName="transform"
+      //       begin={animationBegin}
+      //       easing={animationEasing}
+      //       isActive={isAnimationActive}
+      //       duration={animationDuration}
+      //     >
+      //       <Layer {...event}>
+      //         {this.renderContentItem(content, node, {
+      //           ...nodeProps,
+      //           isAnimationActive,
+      //           isUpdateAnimationActive: isUpdateAnimationActive,
+      //           width: currWidth,
+      //           height: currHeight,
+      //           x: currX,
+      //           y: currY
+      //         })}
+      //       </Layer>
+      //     </Smooth>
+      //   )}
+      // </Smooth>
     );
   }
 
-  renderContentItem(content, nodeProps) {
+  renderContentItem(content, node, nodeProps) {
     if (React.isValidElement(content)) {
       return React.cloneElement(content, nodeProps);
     } else if (typeof content === 'function') {
       return content(nodeProps);
     }
+    const { nameKey, colors = {} } = this.props;
+    const { activeNode } = this.state;
+    let opacity = 1;
+    if (activeNode) {
+      const ancestors = activeNode.ancestors();
+      opacity = ancestors.filter(n => n.data[nameKey] === node.data[nameKey]).length > 0 ? 1 : 0.3;
+    }
+    const { depth, fill = 'purple', stroke = 'white' } = nodeProps;
+    const name = node.data[nameKey];
 
     return (
       <path
-        display={nodeProps.depth ? null : 'none'}
+        display={depth ? null : 'none'}
         d={dataArc(nodeProps)}
         fillRule={'evenodd'}
-        // fill={colors[node.data.name]}
-        fill={nodeProps.fill || 'purple'}
-        stroke={nodeProps.stroke || '#fff'}
-        // style={{ opacity }}
-        // {...getPresentationAttributes(this.props)}
+        {...getPresentationAttributes(this.props)}
+        fill={node.data.fill || colors[name] || fill}
+        stroke={node.data.stroke || stroke}
+        style={{ opacity }}
       />
     );
   }
@@ -231,35 +251,14 @@ export default class Sunburst extends Component {
     const { content } = this.props;
     const nodeProps = { ...getPresentationAttributes(this.props), ...node, root };
     const isLeaf = !node.children || !node.children.length;
-    // const events = {
-    //   onMouseEnter: this.handleMouseEnter.bind(this, node),
-    //   onMouseLeave: this.handleMouseLeave.bind(this, node),
-    //   onClick: this.handleClick.bind(this, nodeProps),
-    // };
-
     return (
       <Layer key={`recharts-sunburst-node-${i}`} className={`recharts-sunburst-depth-${node.depth}`}>
-        {this.renderAnimatedItem(content, nodeProps, isLeaf)}
+        {this.renderAnimatedItem(content, node, nodeProps, isLeaf)}
         {node.children && node.children.length
           ? node.children.map((child, index) => this.renderNode(node, child, index))
           : null}
       </Layer>
     );
-
-    // return (
-    //   <path
-    //     {...events}
-    //     key={`path-${index}`}
-    //     display={node.depth ? null : 'none'}
-    //     d={dataArc(node)}
-    //     fillRule={'evenodd'}
-    //     // fill={colors[node.data.name]}
-    //     fill="purple"
-    //     stroke="#fff"
-    //     style={{ opacity }}
-    //     {...getPresentationAttributes(this.props)}
-    //   />
-    // )
   }
 
   renderAllNodes() {
@@ -290,6 +289,7 @@ export default class Sunburst extends Component {
 
     if (activeNode) {
       const [x, y] = dataArc.centroid(activeNode);
+
       coordinate = {
         x: x + width / 2,
         y: y + height / 2
