@@ -28,7 +28,7 @@ const InGrid = story => (
 const Flexed = story => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
+const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 export default ({ storiesOf, action }) => {
   storiesOf('widgets/SideMenu', module)

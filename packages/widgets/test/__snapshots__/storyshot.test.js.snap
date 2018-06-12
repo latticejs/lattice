@@ -5,6 +5,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
@@ -218,6 +219,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
@@ -412,6 +414,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
@@ -625,6 +628,7 @@ exports[`Storyshots widgets/Widget (dark theme) basic 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
@@ -665,6 +669,7 @@ exports[`Storyshots widgets/Widget (dark theme) featured 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
@@ -705,6 +710,7 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
@@ -795,6 +801,7 @@ exports[`Storyshots widgets/Widget basic 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
@@ -835,6 +842,7 @@ exports[`Storyshots widgets/Widget featured 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
@@ -875,6 +883,7 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
   style={
     Object {
       "height": "100vh",
+      "padding": 12,
       "width": "100vw",
     }
   }
