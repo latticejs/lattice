@@ -12,6 +12,61 @@ exports[`Storyshots Directed Acyclic Graph Component no wrapper, with dummy prop
     <line
       className="connect-node Dag-dagEdge-4"
     />
+    <line
+      className="connect-node Dag-dagEdge-4"
+    />
+    <line
+      className="connect-node Dag-dagEdge-4"
+    />
+    <line
+      className="connect-node Dag-dagEdge-4"
+    />
+    <line
+      className="connect-node Dag-dagEdge-4"
+    />
+    <line
+      className="connect-node Dag-dagEdge-4"
+    />
+    <g
+      className="node Dag-dagNode-2"
+    >
+      <circle
+        onClick={[Function]}
+      />
+      <text
+        className="Dag-dagNodeText-3"
+      />
+    </g>
+    <g
+      className="node Dag-dagNode-2"
+    >
+      <circle
+        onClick={[Function]}
+      />
+      <text
+        className="Dag-dagNodeText-3"
+      />
+    </g>
+    <g
+      className="node Dag-dagNode-2"
+    >
+      <circle
+        onClick={[Function]}
+      />
+      <text
+        className="Dag-dagNodeText-3"
+      />
+    </g>
+    <g
+      className="node Dag-dagNode-2"
+    >
+      <circle
+        onClick={[Function]}
+      />
+      <text
+        className="Dag-dagNodeText-3"
+      />
+    </g>
     <g
       className="node Dag-dagNode-2"
     >
@@ -57,6 +112,61 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
       <line
         className="connect-node Dag-dagEdge-68"
       />
+      <line
+        className="connect-node Dag-dagEdge-68"
+      />
+      <line
+        className="connect-node Dag-dagEdge-68"
+      />
+      <line
+        className="connect-node Dag-dagEdge-68"
+      />
+      <line
+        className="connect-node Dag-dagEdge-68"
+      />
+      <line
+        className="connect-node Dag-dagEdge-68"
+      />
+      <g
+        className="node Dag-dagNode-66"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-67"
+        />
+      </g>
+      <g
+        className="node Dag-dagNode-66"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-67"
+        />
+      </g>
+      <g
+        className="node Dag-dagNode-66"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-67"
+        />
+      </g>
+      <g
+        className="node Dag-dagNode-66"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-67"
+        />
+      </g>
       <g
         className="node Dag-dagNode-66"
       >
@@ -103,6 +213,61 @@ exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy p
       <line
         className="connect-node Dag-dagEdge-36"
       />
+      <line
+        className="connect-node Dag-dagEdge-36"
+      />
+      <line
+        className="connect-node Dag-dagEdge-36"
+      />
+      <line
+        className="connect-node Dag-dagEdge-36"
+      />
+      <line
+        className="connect-node Dag-dagEdge-36"
+      />
+      <line
+        className="connect-node Dag-dagEdge-36"
+      />
+      <g
+        className="node Dag-dagNode-34"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-35"
+        />
+      </g>
+      <g
+        className="node Dag-dagNode-34"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-35"
+        />
+      </g>
+      <g
+        className="node Dag-dagNode-34"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-35"
+        />
+      </g>
+      <g
+        className="node Dag-dagNode-34"
+      >
+        <circle
+          onClick={[Function]}
+        />
+        <text
+          className="Dag-dagNodeText-35"
+        />
+      </g>
       <g
         className="node Dag-dagNode-34"
       >

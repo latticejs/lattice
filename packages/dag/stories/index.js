@@ -9,11 +9,38 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 const getProps = (mix = {}) => {
   const defaults = {
     title: 'Package Dependencies',
-    nodes: [{ title: 'app' }, { title: 'lodash' }],
+    nodes: [
+      { title: 'app' },
+      { title: 'lodash' },
+      { title: 'react' },
+      { title: 'react-dom' },
+      { title: 'apollo' },
+      { title: 'enzyme' }
+    ],
     edges: [
       {
         source: 'app',
         target: 'lodash'
+      },
+      {
+        source: 'app',
+        target: 'react'
+      },
+      {
+        source: 'app',
+        target: 'react-dom'
+      },
+      {
+        source: 'react',
+        target: 'react-dom'
+      },
+      {
+        source: 'app',
+        target: 'apollo'
+      },
+      {
+        source: 'app',
+        target: 'enzyme'
       }
     ],
     width: 500,
