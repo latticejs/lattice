@@ -118,10 +118,22 @@ class List extends Component {
           <TableHead>
             <TableRow>
               <TableCell colSpan={2} />
-              <TableHeadField field="position" className={classes.cell} onOrder={this.handleOrder} orderBy={orderBy}>
-                Positionn
+              <TableHeadField
+                field="position"
+                title="Position"
+                className={classes.cell}
+                onOrder={this.handleOrder}
+                orderBy={orderBy}
+              >
+                Position
               </TableHeadField>
-              <TableHeadField field="department" className={classes.cell} onOrder={this.handleOrder} orderBy={orderBy}>
+              <TableHeadField
+                field="department"
+                title="Department"
+                className={classes.cell}
+                onOrder={this.handleOrder}
+                orderBy={orderBy}
+              >
                 Department
               </TableHeadField>
             </TableRow>
