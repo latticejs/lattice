@@ -74,13 +74,23 @@ class Employees extends Component {
     });
   };
 
+  handleOrder = order => {
+    const { onOrder } = this.props;
+    onOrder(order);
+  };
+
+  handleLoadMore = (...args) => {
+    const { fetchMore } = this.props;
+    fetchMore(...args);
+  };
+
   render() {
     const { editing, employee } = this.state;
     const {
       employees,
       meta,
       departments,
-      variables: { page, rowsPerPage, filterBy }
+      variables: { page, rowsPerPage, filterBy, orderBy }
     } = this.props;
 
     return (
@@ -110,9 +120,12 @@ class Employees extends Component {
                 employees={employees}
                 meta={meta}
                 onPageChange={this.handlePageChange}
+                onOrder={this.handleOrder}
+                onLoadMore={this.handleLoadMore}
                 onSelected={this.handleSelectionChange}
                 page={page}
                 rowsPerPage={rowsPerPage}
+                orderBy={orderBy}
               />
             </Grid>
           </React.Fragment>
@@ -132,7 +145,7 @@ export default compose(
         }
       };
     },
-    props({ data: { allEmployees, _allEmployeesMeta, refetch, variables } }) {
+    props({ data: { allEmployees, _allEmployeesMeta, refetch, fetchMore, variables } }) {
       return {
         variables,
         employees: allEmployees,
@@ -144,11 +157,23 @@ export default compose(
             page
           });
         },
+        fetchMore(page, rowsPerPage) {
+          return fetchMore({
+            rowsPerPage,
+            page
+          });
+        },
         onFilterBy(text) {
           return refetch({
             ...variables,
             page: 0,
             filterBy: text
+          });
+        },
+        onOrder(orderBy = []) {
+          return refetch({
+            ...variables,
+            orderBy
           });
         }
       };
