@@ -13,6 +13,62 @@ exports[`Storyshots dag/basic editable mode 1`] = `
       className="connect-node Dag-dagEdge-9"
       onClick={[Function]}
     />
+    <line
+      className="connect-node Dag-dagEdge-9"
+      onClick={[Function]}
+    />
+    <line
+      className="connect-node Dag-dagEdge-9"
+      onClick={[Function]}
+    />
+    <line
+      className="connect-node Dag-dagEdge-9"
+      onClick={[Function]}
+    />
+    <line
+      className="connect-node Dag-dagEdge-9"
+      onClick={[Function]}
+    />
+    <line
+      className="connect-node Dag-dagEdge-9"
+      onClick={[Function]}
+    />
+    <g
+      className="node Dag-dagNode-7"
+      onClick={[Function]}
+    >
+      <circle />
+      <text
+        className="Dag-dagNodeText-8"
+      />
+    </g>
+    <g
+      className="node Dag-dagNode-7"
+      onClick={[Function]}
+    >
+      <circle />
+      <text
+        className="Dag-dagNodeText-8"
+      />
+    </g>
+    <g
+      className="node Dag-dagNode-7"
+      onClick={[Function]}
+    >
+      <circle />
+      <text
+        className="Dag-dagNodeText-8"
+      />
+    </g>
+    <g
+      className="node Dag-dagNode-7"
+      onClick={[Function]}
+    >
+      <circle />
+      <text
+        className="Dag-dagNodeText-8"
+      />
+    </g>
     <g
       className="node Dag-dagNode-7"
       onClick={[Function]}
@@ -50,55 +106,56 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
     />
     <line
       className="connect-node Dag-dagEdge-4"
+      onClick={[Function]}
     />
     <line
       className="connect-node Dag-dagEdge-4"
+      onClick={[Function]}
     />
     <line
       className="connect-node Dag-dagEdge-4"
+      onClick={[Function]}
     />
     <line
       className="connect-node Dag-dagEdge-4"
+      onClick={[Function]}
     />
     <line
       className="connect-node Dag-dagEdge-4"
+      onClick={[Function]}
     />
     <g
       className="node Dag-dagNode-2"
+      onClick={[Function]}
     >
-      <circle
-        onClick={[Function]}
-      />
+      <circle />
       <text
         className="Dag-dagNodeText-3"
       />
     </g>
     <g
       className="node Dag-dagNode-2"
+      onClick={[Function]}
     >
-      <circle
-        onClick={[Function]}
-      />
+      <circle />
       <text
         className="Dag-dagNodeText-3"
       />
     </g>
     <g
       className="node Dag-dagNode-2"
+      onClick={[Function]}
     >
-      <circle
-        onClick={[Function]}
-      />
+      <circle />
       <text
         className="Dag-dagNodeText-3"
       />
     </g>
     <g
       className="node Dag-dagNode-2"
+      onClick={[Function]}
     >
-      <circle
-        onClick={[Function]}
-      />
+      <circle />
       <text
         className="Dag-dagNodeText-3"
       />
@@ -155,6 +212,62 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
           className="connect-node Dag-dagEdge-73"
           onClick={[Function]}
         />
+        <line
+          className="connect-node Dag-dagEdge-73"
+          onClick={[Function]}
+        />
+        <line
+          className="connect-node Dag-dagEdge-73"
+          onClick={[Function]}
+        />
+        <line
+          className="connect-node Dag-dagEdge-73"
+          onClick={[Function]}
+        />
+        <line
+          className="connect-node Dag-dagEdge-73"
+          onClick={[Function]}
+        />
+        <line
+          className="connect-node Dag-dagEdge-73"
+          onClick={[Function]}
+        />
+        <g
+          className="node Dag-dagNode-71"
+          onClick={[Function]}
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-72"
+          />
+        </g>
+        <g
+          className="node Dag-dagNode-71"
+          onClick={[Function]}
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-72"
+          />
+        </g>
+        <g
+          className="node Dag-dagNode-71"
+          onClick={[Function]}
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-72"
+          />
+        </g>
+        <g
+          className="node Dag-dagNode-71"
+          onClick={[Function]}
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-72"
+          />
+        </g>
         <g
           className="node Dag-dagNode-71"
           onClick={[Function]}
@@ -209,6 +322,62 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
           className="connect-node Dag-dagEdge-41"
           onClick={[Function]}
         />
+        <line
+          className="connect-node Dag-dagEdge-41"
+          onClick={[Function]}
+        />
+        <line
+          className="connect-node Dag-dagEdge-41"
+          onClick={[Function]}
+        />
+        <line
+          className="connect-node Dag-dagEdge-41"
+          onClick={[Function]}
+        />
+        <line
+          className="connect-node Dag-dagEdge-41"
+          onClick={[Function]}
+        />
+        <line
+          className="connect-node Dag-dagEdge-41"
+          onClick={[Function]}
+        />
+        <g
+          className="node Dag-dagNode-39"
+          onClick={[Function]}
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-40"
+          />
+        </g>
+        <g
+          className="node Dag-dagNode-39"
+          onClick={[Function]}
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-40"
+          />
+        </g>
+        <g
+          className="node Dag-dagNode-39"
+          onClick={[Function]}
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-40"
+          />
+        </g>
+        <g
+          className="node Dag-dagNode-39"
+          onClick={[Function]}
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-40"
+          />
+        </g>
         <g
           className="node Dag-dagNode-39"
           onClick={[Function]}
