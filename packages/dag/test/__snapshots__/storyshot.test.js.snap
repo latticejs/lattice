@@ -1,6 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Directed Acyclic Graph Component no wrapper, with dummy props (emulating super simple package.json) & default theme 1`] = `
+exports[`Storyshots dag/basic editable mode 1`] = `
+<svg
+  className="dag-wrapper Dag-root-6"
+  height={500}
+  width={500}
+>
+  <g
+    className="graph"
+  >
+    <line
+      className="connect-node Dag-dagEdge-9"
+      onClick={[Function]}
+    />
+    <g
+      className="node Dag-dagNode-7"
+      onClick={[Function]}
+    >
+      <circle />
+      <text
+        className="Dag-dagNodeText-8"
+      />
+    </g>
+    <g
+      className="node Dag-dagNode-7"
+      onClick={[Function]}
+    >
+      <circle />
+      <text
+        className="Dag-dagNodeText-8"
+      />
+    </g>
+  </g>
+</svg>
+`;
+
+exports[`Storyshots dag/basic no wrapper 1`] = `
 <svg
   className="dag-wrapper Dag-root-1"
   height={500}
@@ -90,202 +125,110 @@ exports[`Storyshots Directed Acyclic Graph Component no wrapper, with dummy prop
 </svg>
 `;
 
-exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy props & dark theme 1`] = `
+exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
 <div
-  className="MuiPaper-root-38 MuiPaper-elevation2-42 MuiPaper-rounded-39"
   style={
     Object {
-      "height": "500px",
-      "width": "500px",
+      "height": "100vh",
+      "width": "100vw",
     }
   }
 >
-  <svg
-    className="dag-wrapper Dag-root-65"
-    height={500}
-    width={500}
+  <div
+    className="MuiPaper-root-43 MuiPaper-elevation2-47 MuiPaper-rounded-44"
+    style={
+      Object {
+        "height": "500px",
+        "width": "500px",
+      }
+    }
   >
-    <g
-      className="graph"
+    <svg
+      className="dag-wrapper Dag-root-70"
+      height={500}
+      width={500}
     >
-      <line
-        className="connect-node Dag-dagEdge-68"
-        onClick={[Function]}
-      />
-      <line
-        className="connect-node Dag-dagEdge-68"
-      />
-      <line
-        className="connect-node Dag-dagEdge-68"
-      />
-      <line
-        className="connect-node Dag-dagEdge-68"
-      />
-      <line
-        className="connect-node Dag-dagEdge-68"
-      />
-      <line
-        className="connect-node Dag-dagEdge-68"
-      />
       <g
-        className="node Dag-dagNode-66"
+        className="graph"
       >
-        <circle
+        <line
+          className="connect-node Dag-dagEdge-73"
           onClick={[Function]}
         />
-        <text
-          className="Dag-dagNodeText-67"
-        />
-      </g>
-      <g
-        className="node Dag-dagNode-66"
-      >
-        <circle
+        <g
+          className="node Dag-dagNode-71"
           onClick={[Function]}
-        />
-        <text
-          className="Dag-dagNodeText-67"
-        />
-      </g>
-      <g
-        className="node Dag-dagNode-66"
-      >
-        <circle
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-72"
+          />
+        </g>
+        <g
+          className="node Dag-dagNode-71"
           onClick={[Function]}
-        />
-        <text
-          className="Dag-dagNodeText-67"
-        />
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-72"
+          />
+        </g>
       </g>
-      <g
-        className="node Dag-dagNode-66"
-      >
-        <circle
-          onClick={[Function]}
-        />
-        <text
-          className="Dag-dagNodeText-67"
-        />
-      </g>
-      <g
-        className="node Dag-dagNode-66"
-        onClick={[Function]}
-      >
-        <circle />
-        <text
-          className="Dag-dagNodeText-67"
-        />
-      </g>
-      <g
-        className="node Dag-dagNode-66"
-        onClick={[Function]}
-      >
-        <circle />
-        <text
-          className="Dag-dagNodeText-67"
-        />
-      </g>
-    </g>
-  </svg>
+    </svg>
+  </div>
 </div>
 `;
 
-exports[`Storyshots Directed Acyclic Graph Component with paper wrapper, dummy props & light theme 1`] = `
+exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
 <div
-  className="MuiPaper-root-6 MuiPaper-elevation2-10 MuiPaper-rounded-7"
   style={
     Object {
-      "height": "500px",
-      "width": "500px",
+      "height": "100vh",
+      "width": "100vw",
     }
   }
 >
-  <svg
-    className="dag-wrapper Dag-root-33"
-    height={500}
-    width={500}
+  <div
+    className="MuiPaper-root-11 MuiPaper-elevation2-15 MuiPaper-rounded-12"
+    style={
+      Object {
+        "height": "500px",
+        "width": "500px",
+      }
+    }
   >
-    <g
-      className="graph"
+    <svg
+      className="dag-wrapper Dag-root-38"
+      height={500}
+      width={500}
     >
-      <line
-        className="connect-node Dag-dagEdge-36"
-        onClick={[Function]}
-      />
-      <line
-        className="connect-node Dag-dagEdge-36"
-      />
-      <line
-        className="connect-node Dag-dagEdge-36"
-      />
-      <line
-        className="connect-node Dag-dagEdge-36"
-      />
-      <line
-        className="connect-node Dag-dagEdge-36"
-      />
-      <line
-        className="connect-node Dag-dagEdge-36"
-      />
       <g
-        className="node Dag-dagNode-34"
+        className="graph"
       >
-        <circle
+        <line
+          className="connect-node Dag-dagEdge-41"
           onClick={[Function]}
         />
-        <text
-          className="Dag-dagNodeText-35"
-        />
-      </g>
-      <g
-        className="node Dag-dagNode-34"
-      >
-        <circle
+        <g
+          className="node Dag-dagNode-39"
           onClick={[Function]}
-        />
-        <text
-          className="Dag-dagNodeText-35"
-        />
-      </g>
-      <g
-        className="node Dag-dagNode-34"
-      >
-        <circle
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-40"
+          />
+        </g>
+        <g
+          className="node Dag-dagNode-39"
           onClick={[Function]}
-        />
-        <text
-          className="Dag-dagNodeText-35"
-        />
+        >
+          <circle />
+          <text
+            className="Dag-dagNodeText-40"
+          />
+        </g>
       </g>
-      <g
-        className="node Dag-dagNode-34"
-      >
-        <circle
-          onClick={[Function]}
-        />
-        <text
-          className="Dag-dagNodeText-35"
-        />
-      </g>
-      <g
-        className="node Dag-dagNode-34"
-        onClick={[Function]}
-      >
-        <circle />
-        <text
-          className="Dag-dagNodeText-35"
-        />
-      </g>
-      <g
-        className="node Dag-dagNode-34"
-        onClick={[Function]}
-      >
-        <circle />
-        <text
-          className="Dag-dagNodeText-35"
-        />
-      </g>
-    </g>
-  </svg>
+    </svg>
+  </div>
 </div>
 `;
