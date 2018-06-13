@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { withMuiStyle } from '../';
+import { withMuiStyle } from '../src';
 
 class Dummy extends React.Component {
   static displayName = 'DummyComponent';

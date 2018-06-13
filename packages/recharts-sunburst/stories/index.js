@@ -2,7 +2,7 @@ import React from 'react';
 import { Tooltip, ResponsiveContainer } from 'recharts';
 
 // Ours
-import Sunburst from '../src/chart/Sunburst';
+import Sunburst from '../src';
 
 const data = [
   {
