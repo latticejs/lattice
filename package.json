@@ -29,12 +29,12 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "examples/*"
     ],
     "nohoist": [
       "**/taskr",
       "**/@taskr/esnext**"
     ]
-  },
-  "dependencies": {}
+  }
 }
