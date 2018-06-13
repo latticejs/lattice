@@ -35,6 +35,9 @@ const insertTitleLinebreaks = (gEl, title) => {
 };
 
 export default class Node extends Component {
+  static defaultProps = {
+    onClickNode: () => {}
+  };
   componentDidMount() {
     this.d3Node = select(this.node)
       .datum(this.props.data)
@@ -46,6 +49,10 @@ export default class Node extends Component {
   }
 
   handleNodeClick = e => {
+    if (this.props.editable) {
+      this.props.editSelectedNode(this.props.name);
+    }
+
     this.props.onClickNode.call(this, e);
   };
 
@@ -53,7 +60,7 @@ export default class Node extends Component {
     return (
       <g
         className={classNames(DEFAULTS.nodeClass, this.props.classes.dagNode)}
-        onClick={this.handleNodeClick}
+        onClick={e => this.handleNodeClick(e, this.name)}
         ref={node => (this.node = node)}
       >
         <circle />
@@ -62,7 +69,3 @@ export default class Node extends Component {
     );
   }
 }
-
-Node.defaultProps = {
-  onClickNode: () => {}
-};

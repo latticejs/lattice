@@ -16,6 +16,9 @@ const updateEdge = selection => {
 };
 
 export default class Edge extends Component {
+  static defaultProps = {
+    onEdgeClick: () => {}
+  };
   componentDidMount() {
     this.d3Edge = select(this.node)
       .datum(this.props.data)
@@ -27,7 +30,7 @@ export default class Edge extends Component {
   }
 
   handleEdgeClick = e => {
-    this.props.onEdgeClick.call(this, e);
+    this.props.onClickEdge(e);
   };
 
   render() {
@@ -41,7 +44,3 @@ export default class Edge extends Component {
     );
   }
 }
-
-Edge.defaultProps = {
-  onEdgeClick: () => {}
-};
