@@ -2,8 +2,9 @@ import React from 'react';
 import Dag from '../src';
 // Material UI
 import { Paper } from '@material-ui/core';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// Decorators
+import muiTheme from '../.storybook/decorator-material-ui';
+const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
 // simple fake props
 const getProps = (mix = {}) => {
@@ -56,55 +57,38 @@ const PaperWrap = ({ children }) => (
 );
 
 export default ({ storiesOf, action }) => {
-  storiesOf('Directed Acyclic Graph Component', module)
-    .add('no wrapper, with dummy props (emulating super simple package.json) & default theme', () => {
-      // TODO(dk): parse pkg json deps.
+  storiesOf('dag/basic', module)
+    .add('no wrapper', () => {
+      // TODO(dk): parse real pkg json deps.
       return <Dag onClick={action('clicked')} {...getProps()} />;
     })
-    .add('with paper wrapper, dummy props & light theme', () => {
+    .add('editable mode', () => {
+      return <Dag editable={true} onEdgeAdded={action('onEdgeAdded')} {...getProps()} />;
+    });
+
+  storiesOf('dag/themed', module)
+    .addDecorator(muiTheme())
+    .addDecorator(FullViewport)
+    .add('paper wrapper (light)', () => {
       // TODO(dk): parse pkg json deps.
       const props = getProps();
-      const muiTheme = {
-        palette: {
-          type: 'light'
-        },
-        typography: {
-          title: {
-            fontWeight: 300
-          }
-        }
-      };
       return (
-        <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
-          <CssBaseline>
-            <PaperWrap>
-              <Dag onClick={action('clicked')} {...props} />
-            </PaperWrap>
-          </CssBaseline>
-        </MuiThemeProvider>
+        <PaperWrap>
+          <Dag onClick={action('clicked')} {...props} />
+        </PaperWrap>
       );
-    })
-    .add('with paper wrapper, dummy props & dark theme', () => {
+    });
+
+  storiesOf('dag/themed', module)
+    .addDecorator(muiTheme({ palette: { type: 'dark' } }))
+    .addDecorator(FullViewport)
+    .add('paper wrapper (dark)', () => {
       // TODO(dk): parse pkg json deps.
       const props = getProps();
-      const muiTheme = {
-        palette: {
-          type: 'dark'
-        },
-        typography: {
-          title: {
-            fontWeight: 300
-          }
-        }
-      };
       return (
-        <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
-          <CssBaseline>
-            <PaperWrap>
-              <Dag onClick={action('clicked')} {...props} />
-            </PaperWrap>
-          </CssBaseline>
-        </MuiThemeProvider>
+        <PaperWrap>
+          <Dag onClick={action('clicked')} {...props} />
+        </PaperWrap>
       );
     });
 };
