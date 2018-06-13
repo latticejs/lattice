@@ -9,12 +9,12 @@
     "lint": "eslint --cache --ignore-path .gitignore .",
     "lint:fix": "yarn run lint --fix",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "lerna run test"
-
+    "test": "lerna run test",
+    "posttest": "yarn lint"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn lint"
+      "pre-commit": "yarn test"
     }
   },
   "devDependencies": {
@@ -33,7 +33,8 @@
     ],
     "nohoist": [
       "**/taskr",
-      "**/@taskr/esnext**"
+      "**/@taskr/esnext**",
+      "**/@latticejs/react-scripts"
     ]
   },
   "dependencies": {}

@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query AllEmployees($page: Int, $rowsPerPage: Int, $filterBy: String) {
-    allEmployees(page: $page, perPage: $rowsPerPage, filter: { q: $filterBy }) @client {
+  query AllEmployees($page: Int, $rowsPerPage: Int, $filterBy: String, $orderBy: Order) {
+    allEmployees(page: $page, perPage: $rowsPerPage, filter: { q: $filterBy }, order: $orderBy) @client {
       id
       name
       email
