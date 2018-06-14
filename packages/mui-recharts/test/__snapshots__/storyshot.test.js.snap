@@ -11,7 +11,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -40,7 +39,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
       <svg
         className="recharts-surface"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -723,7 +721,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -752,7 +749,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
       <svg
         className="recharts-surface"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -1435,7 +1431,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (dark) 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -1464,7 +1459,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (dark) 1`] = `
       <svg
         className="recharts-surface"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -2017,7 +2011,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (light) 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -2046,7 +2039,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (light) 1`] = `
       <svg
         className="recharts-surface"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -2599,7 +2591,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -2628,7 +2619,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
       <svg
         className="recharts-surface"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -3245,7 +3235,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -3274,7 +3263,6 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
       <svg
         className="recharts-surface"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -3900,7 +3888,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
   >
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -3925,7 +3912,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -4100,7 +4086,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -4125,7 +4110,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -4272,7 +4256,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -4297,7 +4280,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -4444,7 +4426,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -4469,7 +4450,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -4578,7 +4558,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -4603,7 +4582,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -4776,7 +4754,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -4801,7 +4778,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -4979,7 +4955,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -5004,7 +4979,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -5208,7 +5182,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -5235,7 +5208,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           fill="#8884d8"
           height={100}
           stroke="#fff"
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -7123,7 +7095,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
   >
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -7148,7 +7119,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -7323,7 +7293,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -7348,7 +7317,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -7495,7 +7463,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -7520,7 +7487,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -7667,7 +7633,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -7692,7 +7657,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -7801,7 +7765,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -7826,7 +7789,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -7999,7 +7961,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -8024,7 +7985,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -8202,7 +8162,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -8227,7 +8186,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
         <svg
           className="recharts-surface"
           height={100}
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}
@@ -8431,7 +8389,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
     </div>
     <div
       className="recharts-responsive-container"
-      id={undefined}
       style={
         Object {
           "height": "100%",
@@ -8458,7 +8415,6 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           fill="#8884d8"
           height={100}
           stroke="#fff"
-          style={undefined}
           version="1.1"
           viewBox="0 0 100 100"
           width={100}

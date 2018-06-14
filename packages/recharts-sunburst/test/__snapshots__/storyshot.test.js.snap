@@ -11,7 +11,6 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -37,7 +36,6 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
         className="recharts-surface"
         fill="#8884d8"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -1262,7 +1260,6 @@ exports[`Storyshots recharts-sunburst basic sunburst animated 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -1288,7 +1285,6 @@ exports[`Storyshots recharts-sunburst basic sunburst animated 1`] = `
         className="recharts-surface"
         fill="#8884d8"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -2783,7 +2779,6 @@ exports[`Storyshots recharts-sunburst with customized colors 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -2809,7 +2804,6 @@ exports[`Storyshots recharts-sunburst with customized colors 1`] = `
         className="recharts-surface"
         fill="#8884d8"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
@@ -4034,7 +4028,6 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
 >
   <div
     className="recharts-responsive-container"
-    id={undefined}
     style={
       Object {
         "height": "100%",
@@ -4059,7 +4052,6 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
       <svg
         className="recharts-surface"
         height={100}
-        style={undefined}
         version="1.1"
         viewBox="0 0 100 100"
         width={100}
