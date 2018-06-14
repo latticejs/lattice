@@ -6,7 +6,6 @@
         "packages/dag/package.json",
         "packages/lattice/package.json",
         "packages/mui-recharts/package.json",
-        "packages/react-scripts/package.json",
         "packages/recharts-sunburst/package.json",
         "packages/widgets/package.json"
       ]
