@@ -29,7 +29,8 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "examples/*"
     ],
     "nohoist": [
       "**/taskr",
@@ -37,6 +38,5 @@
       "**/@latticejs/react-scripts",
       "**/jest**"
     ]
-  },
-  "dependencies": {}
+  }
 }
