@@ -34,7 +34,8 @@
     "nohoist": [
       "**/taskr",
       "**/@taskr/esnext**",
-      "**/@latticejs/react-scripts"
+      "**/@latticejs/react-scripts",
+      "**/jest**"
     ]
   },
   "dependencies": {}
