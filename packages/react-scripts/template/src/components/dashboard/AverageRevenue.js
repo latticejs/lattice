@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 
 // Lattice
-import { LineChart, Line, ResponsiveContainer } from '@lattice/mui-recharts';
+import { LineChart, Line, ResponsiveContainer } from '@latticejs/mui-recharts';
 import Widget from '@latticejs/widgets/Widget';
 
 const data = [
