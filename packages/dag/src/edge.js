@@ -30,7 +30,7 @@ export default class Edge extends Component {
   }
 
   handleEdgeClick = e => {
-    this.props.onClickEdge(e);
+    this.props.onEdgeClick(e);
   };
 
   render() {

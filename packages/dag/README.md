@@ -54,13 +54,13 @@ export class MyGraph extends React.Component {
 
 Indicates if the `dag` can be edited, eg: new edges can be added. This mode endables extra functionality.
 
-### onClickNode
+### onNodeClick
 
 > `function(event: Object)` | defaults to: `noOp`
 
 Used to capture node selection event.
 
-### onClickEdge
+### onEdgeClick
 
 > `function(event: Object)` | defaults to: `noOp`
 
@@ -68,9 +68,14 @@ Used to capture edge selection event.
 
 ### onEdgeAdded
 
-> `function(event: Object)` | defaults to: `noOp`
+> `function(edge: Object)` | defaults to: `noOp`
 
-Used to create a new edge between node target and source. In order to work the `dag` needs the editable prop enabled.
+Used to create a new edge between node target and source. In order to work the `dag` needs the `editable` prop enabled. `edge` parameter looks like this:
+
+```javascript
+// edge parameter description
+{ source:String, target: String }
+```
 
 ## FAQs
 

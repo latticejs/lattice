@@ -88,7 +88,7 @@ class Dag extends Component {
   };
 
   render() {
-    const { width, height, classes = {}, editable, onClickNode, onClickEdge } = this.props;
+    const { width, height, classes = {}, editable, onNodeClick, onEdgeClick } = this.props;
     const rootClasses = [classes.root];
 
     const nodes = this.props.nodes.map((node, i) => {
@@ -100,13 +100,13 @@ class Dag extends Component {
           classes={classes}
           editSelectedNode={this.editSelectedNode}
           editable={editable}
-          onClickNode={onClickNode}
+          onNodeClick={onNodeClick}
         />
       );
     });
 
     const edges = this.props.edges.map((edge, i) => {
-      return <Edge key={edge.target + i} data={edge} classes={classes} editable={editable} onClickEdge={onClickEdge} />;
+      return <Edge key={edge.target + i} data={edge} classes={classes} editable={editable} onEdgeClick={onEdgeClick} />;
     });
 
     return (

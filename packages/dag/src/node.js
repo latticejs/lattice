@@ -36,7 +36,7 @@ const insertTitleLinebreaks = (gEl, title) => {
 
 export default class Node extends Component {
   static defaultProps = {
-    onClickNode: () => {}
+    onNodeClick: () => {}
   };
   componentDidMount() {
     this.d3Node = select(this.node)
@@ -53,7 +53,7 @@ export default class Node extends Component {
       this.props.editSelectedNode(this.props.name);
     }
 
-    this.props.onClickNode.call(this, e);
+    this.props.onNodeClick.call(this, e);
   };
 
   render() {
