@@ -3,12 +3,14 @@ import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag';
 
-const enterNode = (selection, name) => {
-  selection.select('circle').attr('r', d => {
-    return 50;
-  }); // d.r
+const DEFAULT_RADIUS = 50;
 
-  insertTitleLinebreaks(selection, name);
+const enterNode = (selection, props) => {
+  selection.select('circle').attr('r', d => {
+    return props.radius || DEFAULT_RADIUS;
+  });
+
+  insertTitleLinebreaks(selection, props.name);
 };
 
 const updateNode = selection => {
@@ -33,24 +35,35 @@ const insertTitleLinebreaks = (gEl, title) => {
 };
 
 export default class Node extends Component {
+  static defaultProps = {
+    onNodeClick: () => {}
+  };
   componentDidMount() {
     this.d3Node = select(this.node)
       .datum(this.props.data)
-      .call(selection => enterNode(selection, this.props.name));
+      .call(selection => enterNode(selection, { ...this.props }));
   }
 
   componentDidUpdate() {
     this.d3Node.datum(this.props.data).call(updateNode);
   }
 
-  handle(e) {
-    console.log(this.props.name + ' been clicked');
-  }
+  handleNodeClick = e => {
+    if (this.props.editable) {
+      this.props.editSelectedNode(this.props.name);
+    }
+
+    this.props.onNodeClick.call(this, e);
+  };
 
   render() {
     return (
-      <g className={classNames(DEFAULTS.nodeClass, this.props.classes.dagNode)} ref={node => (this.node = node)}>
-        <circle onClick={this.handle.bind(this)} />
+      <g
+        className={classNames(DEFAULTS.nodeClass, this.props.classes.dagNode)}
+        onClick={e => this.handleNodeClick(e, this.name)}
+        ref={node => (this.node = node)}
+      >
+        <circle />
         <text className={this.props.classes.dagNodeText} />
       </g>
     );
