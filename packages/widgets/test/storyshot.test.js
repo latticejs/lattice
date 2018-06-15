@@ -1,3 +1,17 @@
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 
-initStoryshots();
+function createNodeMock(element) {
+  if (element.type === 'div') {
+    return {
+      scrollLeft: 200,
+      scrollRight: 200
+    };
+  }
+  return null;
+}
+
+initStoryshots({
+  test: snapshotWithOptions({
+    createNodeMock
+  })
+});
