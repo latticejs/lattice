@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/react-scripts",
-  "version": "1.0.1-alpha.1",
+  "version": "1.0.1-alpha.2",
   "description": "Configuration and scripts for Create React App.",
   "repository": "latticejs/lattice",
   "license": "MIT",
@@ -18,10 +18,10 @@
     "lattice-react-scripts": "./bin/react-scripts.js"
   },
   "dependencies": {
-    "@latticejs/dag": "^1.0.1-alpha.1",
-    "@latticejs/mui-recharts": "^1.0.1-alpha.1",
-    "@latticejs/recharts-sunburst": "^1.0.1-alpha.1",
-    "@latticejs/widgets": "^1.0.1-alpha.1",
+    "@latticejs/dag": "^1.0.1-alpha.2",
+    "@latticejs/mui-recharts": "^1.0.1-alpha.2",
+    "@latticejs/recharts-sunburst": "^1.0.1-alpha.2",
+    "@latticejs/widgets": "^1.0.1-alpha.2",
     "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^1.0.0",
     "apollo-cache-inmemory": "^1.1.12",
