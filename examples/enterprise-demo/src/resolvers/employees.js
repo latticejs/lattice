@@ -8,6 +8,19 @@ const filterBy = filter => e => {
 
 const byId = id => e => (id !== 0 && !id) || e.id === id;
 
+const orderBy = (list, { field, direction }) =>
+  list.sort((a, b) => {
+    let x = -1;
+    let y = 1;
+    if (direction === 'desc') {
+      x = 1;
+      y = -1;
+    }
+    if (a[field] < b[field]) return x;
+    if (a[field] > b[field]) return y;
+    return 0;
+  });
+
 export default {
   defaults: {
     allEmployees: employees
@@ -30,9 +43,15 @@ export default {
 
         if (!params) return previous.allEmployees;
 
-        const { id, page, perPage, filter } = params;
+        const { id, page, perPage, filter, order } = params;
 
-        let results = previous.allEmployees.filter(byId(id)).filter(filterBy(filter));
+        let results = previous.allEmployees;
+
+        if (order) {
+          results = orderBy(results, order);
+        }
+
+        results = results.filter(byId(id)).filter(filterBy(filter));
 
         if (page || perPage) {
           const from = page * perPage;
