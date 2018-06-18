@@ -1,0 +1,16 @@
+{
+  "name": "enterprise-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@latticejs/react-scripts": "1.0.1-alpha.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "scripts": {
+    "start": "lattice-react-scripts start",
+    "build": "lattice-react-scripts build",
+    "test": "lattice-react-scripts test --env=jsdom",
+    "eject": "lattice-react-scripts eject"
+  }
+}
