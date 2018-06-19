@@ -19,6 +19,13 @@ export default class DagCore {
   static DEFAULTS = DEFAULTS;
 
   constructor(root, initialState) {
+    this.state = {
+      dragEnable: initialState.dragEnable || true,
+      zoomEnable: initialState.zoomEnable || false
+    };
+
+    this.d3root = root;
+
     this.createGraph({
       root,
       width: initialState.width,
@@ -45,29 +52,12 @@ export default class DagCore {
       .attr('class', theme)
       .attr('orient', 'auto')
       .append('svg:path')
-      .attr('d', 'M0,-5L10,0L0,5')
-
-      .select(`.${DEFAULTS.graphClass}`)
-      .attr('transform', 'translate(0,0)');
+      .attr('d', 'M0,-5L10,0L0,5');
 
     this.svg = select(`.${DEFAULTS.graphClass}`);
-    const dragSvg = zoom()
-      .scaleExtent([1 / 2, 8])
-      .on('zoom', () => {
-        this.zoomed();
-        return true;
-      })
-      .on('start', function() {
-        select('body').style('cursor', 'move');
-      })
-      .on('end', function() {
-        select('body').style('cursor', 'auto');
-      });
-
-    select(root).call(dragSvg);
 
     this.simulation = forceSimulation(nodes)
-      .force('charge', forceManyBody().strength(-2000))
+      .force('charge', forceManyBody())
       .force(
         'link',
         forceLink(edges).id(function(d) {
@@ -84,12 +74,8 @@ export default class DagCore {
       .force('y', forceY(0))
       .force('x', forceX(0));
 
-    selectAll(`.${DagCore.DEFAULTS.nodeClass}`).call(
-      drag()
-        .on('start', d => this.dragstarted(d))
-        .on('drag', this.dragged)
-        .on('end', d => this.dragended(d))
-    );
+    this.setZoomMode();
+    this.setDragMode();
 
     this.simulation.on('tick', () => this.updateGraph());
   }
@@ -124,6 +110,55 @@ export default class DagCore {
   }
 
   destroyGraph() {
-    this.simulation.stop();
+    this.svg.selectAll('line').remove();
+    this.svg.selectAll('g.node').remove();
+    //this.simulation.stop();
+  }
+
+  nodes() {
+    return selectAll(`.${DagCore.DEFAULTS.nodeClass}`);
+  }
+
+  edges() {
+    return selectAll(`.${DagCore.DEFAULTS.linkClass}`);
+  }
+
+  graph() {
+    return select(`.${DagCore.DEFAULTS.graphClass}`);
+  }
+
+  setZoomMode() {
+    const zoomGraph = zoom()
+      .scaleExtent([1 / 2, 8])
+      .on('zoom', () => {
+        if (this.state.dragEnable) {
+          this.zoomed();
+        }
+        return true;
+      })
+      .on('start', function() {
+        select('body').style('cursor', 'move');
+      })
+      .on('end', function() {
+        select('body').style('cursor', 'auto');
+      });
+
+    select(this.d3root)
+      .call(this.state.zoomEnable ? zoomGraph : () => {})
+      .on('dblclick.zoom', null); // disable zoom on double click
+  }
+
+  setDragMode() {
+    selectAll(`.${DagCore.DEFAULTS.nodeClass}`).call(
+      drag()
+        .on('start', d => (this.state.dragEnable ? this.dragstarted(d) : () => {}))
+        .on('drag', this.state.dragEnable ? this.dragged : () => {})
+        .on('end', d => (this.state.dragEnable ? this.dragended(d) : () => {}))
+    );
+  }
+
+  toggleDrag() {
+    this.state.dragEnable = !this.state.dragEnable;
+    this.setDragMode();
   }
 }
