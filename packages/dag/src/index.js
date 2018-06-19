@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { createPortal } from 'react-dom';
 import classNames from 'classnames';
 import withStyles from '@material-ui/core/styles/withStyles';
+import Input from '@material-ui/core/Input';
+
 import DagCore, { DEFAULTS } from './dag';
 import Node from './node';
 import Edge from './edge';
@@ -34,23 +37,54 @@ const styles = theme => ({
   }
 });
 
+const SvgTextInput = props => {
+  props.domNode = document.createElement('div');
+  document.body.appendChild(props.domNode);
+  return createPortal(
+    <Input
+      ref="input"
+      type="text"
+      autoFocus={true}
+      placeholder="name..."
+      value={props.value}
+      onChange={props.onTextChange}
+      onKeyDown={props.onKeyDown}
+      style={{
+        position: 'absolute',
+        top: props.labelY,
+        left: props.labelX,
+        width: props.labelWidth,
+        height: props.labelHeight
+      }}
+    />,
+    props.domNode
+  );
+};
+
 class Dag extends Component {
   static displayName = 'Dag';
   static defaultProps = {
-    editable: false
+    editable: false,
+    onNodeAdded: () => {},
+    onEdgeAdded: () => {}
   };
 
   constructor(...args) {
     super(...args);
     this.state = {
       newEdge: {},
-      initNode: true
+      initNode: true,
+      newNodeReady: false
     };
   }
 
-  componentDidMount() {
-    this.dagcore = new DagCore(this.root, { ...this.props, ...this.state });
+  createGraph = ({ root, nodes, edges, width, height, classes }) => {
+    this.dagcore = new DagCore(root, { nodes, edges, width, height, classes });
     this.dagcore.simulation.on('tick', this.dagcore.updateGraph);
+  };
+
+  componentDidMount() {
+    this.createGraph({ root: this.root, ...this.props });
   }
 
   componentWillUnmount() {
@@ -61,6 +95,13 @@ class Dag extends Component {
     return {
       newEdge: {},
       initNode: true
+    };
+  }
+
+  resetNode() {
+    return {
+      newNodeReady: false,
+      newNode: {}
     };
   }
 
@@ -87,6 +128,22 @@ class Dag extends Component {
     });
   };
 
+  newNode = e => {
+    this.setState({
+      newNodeReady: !this.state.newNodeReady,
+      newNode: {
+        x: e.clientX,
+        y: e.clientY
+      }
+    });
+    this.dagcore.toggleDrag();
+  };
+
+  closeNode = () => {
+    this.setState(this.resetNode());
+    this.dagcore.toggleDrag();
+  };
+
   render() {
     const { width, height, classes = {}, editable, onNodeClick, onEdgeClick } = this.props;
     const rootClasses = [classes.root];
@@ -110,17 +167,32 @@ class Dag extends Component {
     });
 
     return (
-      <svg
-        ref={node => (this.root = node)}
-        width={width}
-        height={height}
-        className={classNames('dag-wrapper', rootClasses)}
-      >
-        <g className={DEFAULTS.graphClass}>
-          {edges}
-          {nodes}
-        </g>
-      </svg>
+      <div style={{ position: 'relative' }}>
+        <svg
+          ref={node => (this.root = node)}
+          width={width}
+          height={height}
+          className={classNames('dag-wrapper', rootClasses)}
+          onDoubleClick={editable ? this.newNode : () => {}}
+        >
+          <g className={DEFAULTS.graphClass}>
+            {edges}
+            {nodes}
+            {this.state.newNodeReady && (
+              <Node
+                data={{ id: undefined, x: this.state.newNode.x, y: this.state.newNode.y }}
+                name={''}
+                classes={this.props.classes}
+                newNode={editable && this.state.newNodeReady}
+                onNodeAdded={this.props.onNodeAdded}
+                closeNode={this.closeNode}
+              >
+                {params => SvgTextInput(params)}
+              </Node>
+            )}
+          </g>
+        </svg>
+      </div>
     );
   }
 }
