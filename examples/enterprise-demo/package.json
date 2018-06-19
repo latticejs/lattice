@@ -1,0 +1,28 @@
+{
+  "name": "enterprise-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@latticejs/dag": "^1.0.1-alpha.2",
+    "@latticejs/mui-recharts": "^1.0.1-alpha.2",
+    "@latticejs/react-scripts": "^1.0.1-alpha.2",
+    "@latticejs/recharts-sunburst": "^1.0.1-alpha.2",
+    "@latticejs/widgets": "^1.0.1-alpha.2",
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
+    "apollo-cache-inmemory": "^1.1.12",
+    "apollo-client": "^2.2.8",
+    "apollo-link": "^1.2.1",
+    "apollo-link-http": "^1.5.3",
+    "apollo-link-state": "^0.4.1",    
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "recharts": "^1.0.0-beta.10"
+  },
+  "scripts": {
+    "start": "lattice-react-scripts start",
+    "build": "lattice-react-scripts build",
+    "test": "lattice-react-scripts test --env=jsdom",
+    "eject": "lattice-react-scripts eject"
+  }
+}
