@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag';
@@ -36,17 +37,42 @@ const insertTitleLinebreaks = (gEl, title) => {
 
 export default class Node extends Component {
   static defaultProps = {
-    onNodeClick: () => {}
+    onNodeClick: () => {},
+    onNodeAdded: () => {}
   };
+
+  constructor(args) {
+    super(...args);
+    this.state = {
+      labelX: 0,
+      labelY: 0,
+      labelWidth: '50px',
+      labelHeight: '20px',
+      text: ''
+    };
+  }
+
   componentDidMount() {
     this.d3Node = select(this.node)
       .datum(this.props.data)
-      .call(selection => enterNode(selection, { ...this.props }));
+      .call(selection => enterNode(selection, { ...this.props, onTextChange: this.onTextChange }));
+    this.updateLabelBounds();
+    this.domNode = findDOMNode(this);
   }
 
   componentDidUpdate() {
     this.d3Node.datum(this.props.data).call(updateNode);
   }
+
+  updateLabelBounds = () => {
+    var rect = this.label.getBoundingClientRect();
+    this.setState({
+      labelX: this.props.data.x,
+      labelY: this.props.data.y + Math.max(16, rect.height),
+      labelWidth: Math.max(50, rect.width),
+      labelHeight: Math.max(16, rect.height)
+    });
+  };
 
   handleNodeClick = e => {
     if (this.props.editable) {
@@ -56,7 +82,35 @@ export default class Node extends Component {
     this.props.onNodeClick.call(this, e);
   };
 
+  onTextChange = e => {
+    const { value } = e.target;
+    this.setState({
+      text: value
+    });
+  };
+
+  onKeyDown = e => {
+    const { keyCode } = e;
+    switch (keyCode) {
+      case 13:
+        // enter key
+        this.props.onNodeAdded({
+          ...this.props.data,
+          name: this.state.text
+        });
+        break;
+      case 27:
+        // esc key
+        this.props.closeNode();
+        break;
+      default:
+        return;
+    }
+  };
+
   render() {
+    const { newNode } = this.props;
+
     return (
       <g
         className={classNames(DEFAULTS.nodeClass, this.props.classes.dagNode)}
@@ -64,7 +118,18 @@ export default class Node extends Component {
         ref={node => (this.node = node)}
       >
         <circle />
-        <text className={this.props.classes.dagNodeText} />
+        <text ref={node => (this.label = node)} className={this.props.classes.dagNodeText} />
+        {newNode &&
+          this.props.children({
+            domNode: this.domNode,
+            onTextChange: this.onTextChange,
+            onKeyDown: this.onKeyDown,
+            value: this.state.text,
+            labelX: this.state.labelX,
+            labelY: this.state.labelY,
+            labelWidth: this.state.labelWidth,
+            labelHeight: this.state.labelHeight
+          })}
       </g>
     );
   }
