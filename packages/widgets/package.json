@@ -20,8 +20,7 @@
     "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^1.0.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-virtualized": "^9.19.1"
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@material-ui/core": "^1.0.0",
@@ -59,7 +58,8 @@
     "taskr-rollup": "^0.0.4"
   },
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "react-virtualized": "^9.19.1"
   },
   "jest": {
     "setupFiles": [
