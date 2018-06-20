@@ -51,18 +51,10 @@ export default class ScrollLoader extends Component {
       rvListProps
     } = this.props;
 
-    if (parentWidth) {
-      rvAutoSizerProps.disableWidth = true;
-    }
-
-    if (parentHeight) {
-      rvAutoSizerProps.disableHeight = true;
-    }
-
     return (
       <InfiniteLoader isRowLoaded={isRowLoaded} loadMoreRows={loadMore} rowCount={rowCount}>
         {({ onRowsRendered, registerChild }) => (
-          <AutoSizer {...rvAutoSizerProps}>
+          <AutoSizer disableWidth={!!parentWidth} disableHeight={!!parentHeight} {...rvAutoSizerProps}>
             {({ width, height }) => (
               <List
                 {...rvListProps}
