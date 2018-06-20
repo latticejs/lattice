@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 // Material UI
 import Grid from '@material-ui/core/Grid';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Paper from '@material-ui/core/Paper';
 
 // Ours
-import { InfiniteList } from '../src';
+import { List, ListItem } from '../src/infinite/list';
+import { Table, TableBody, TableHead, TableRow, TableCell } from '../src/infinite/table';
 import muiTheme from '../.storybook/decorator-material-ui';
 
 // Decorators
@@ -35,7 +36,7 @@ class Basic extends Component {
   };
 
   state = {
-    items: Array.from(Array(10).keys()).map(v => ({ index: v, title: `title ${v}` }))
+    items: Array.from(Array(10).keys()).map(v => ({ index: v, title: `title ${v}`, timestamp: Date.now() }))
   };
 
   findItem = ({ index }) => {
@@ -48,55 +49,112 @@ class Basic extends Component {
     this.setState(state => {
       const newItems = Array.from(Array(stopIndex - startIndex + 1).keys()).map(v => ({
         index: startIndex + v,
-        title: `title ${startIndex + v}`
+        title: `title ${startIndex + v}`,
+        timestamp: Date.now()
       }));
 
       return { items: [...state.items, ...newItems] };
     });
   };
+}
 
+class BasicList extends Basic {
   render() {
     const { height } = this.props;
     const { items } = this.state;
 
     return (
-      <InfiniteList
-        loadMore={this.loadMore}
-        findItem={this.findItem}
-        list={items}
-        rowCount={1000}
-        rowHeight={68}
-        height={height}
-      >
-        {({ item, isEmpty, listItemProps }) => {
-          if (isEmpty) {
-            return <h4>Empty list</h4>;
-          }
+      <Paper>
+        <List
+          loadMore={this.loadMore}
+          findItem={this.findItem}
+          list={items}
+          rowCount={1000}
+          rowHeight={68}
+          height={height}
+        >
+          {({ item, isEmpty, key, style }) => {
+            if (isEmpty) {
+              return <h4>Empty list</h4>;
+            }
 
-          if (!item) {
+            if (!item) {
+              return (
+                <ListItem key={key} style={style}>
+                  <ListItemText primary="loading..." />
+                </ListItem>
+              );
+            }
+
             return (
-              <ListItem {...listItemProps}>
-                <ListItemText primary="loading..." />
+              <ListItem key={key} style={style}>
+                <ListItemText primary={item.title} />
               </ListItem>
             );
-          }
+          }}
+        </List>
+      </Paper>
+    );
+  }
+}
 
-          return (
-            <ListItem {...listItemProps}>
-              <ListItemText primary={item.title} />
-            </ListItem>
-          );
-        }}
-      </InfiniteList>
+class BasicTable extends Basic {
+  render() {
+    const { height } = this.props;
+    const { items } = this.state;
+
+    return (
+      <Paper>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Index</TableCell>
+              <TableCell>Title</TableCell>
+              <TableCell>Timestamp</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody
+            loadMore={this.loadMore}
+            findItem={this.findItem}
+            list={items}
+            rowCount={1000}
+            rowHeight={48}
+            height={height}
+          >
+            {({ item, isEmpty, key, style }) => {
+              if (isEmpty) {
+                return <h4>Empty list</h4>;
+              }
+
+              if (!item) {
+                return (
+                  <TableRow key={key} style={style}>
+                    <TableCell>loading...</TableCell>
+                  </TableRow>
+                );
+              }
+
+              return (
+                <TableRow key={key} style={style}>
+                  <TableCell>{item.index}</TableCell>
+                  <TableCell>{item.title}</TableCell>
+                  <TableCell>{item.timestamp}</TableCell>
+                </TableRow>
+              );
+            }}
+          </TableBody>
+        </Table>
+      </Paper>
     );
   }
 }
 
 export default ({ storiesOf, action }) => {
-  storiesOf('InfiniteList', module)
+  storiesOf('InfiniteLoader', module)
     .addDecorator(InGrid)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', () => <Basic />);
+    .add('basic list', () => <BasicList />)
+    .add('basic table', () => <BasicTable />);
 };
