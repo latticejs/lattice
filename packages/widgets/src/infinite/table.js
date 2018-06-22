@@ -36,7 +36,8 @@ const stylesCell = theme => {
     ...styles,
     root: {
       borderBottom: 'none',
-      flex: 1
+      flex: 1,
+      minWidth: 5
     }
   };
 };

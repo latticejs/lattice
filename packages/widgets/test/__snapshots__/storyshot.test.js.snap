@@ -41,27 +41,110 @@ exports[`Storyshots InfiniteLoader basic list 1`] = `
               }
             >
               <div
-                aria-label="grid"
-                aria-readonly={true}
-                className="ReactVirtualized__Grid ReactVirtualized__List"
-                id={undefined}
-                onScroll={[Function]}
-                role="grid"
                 style={
                   Object {
-                    "WebkitOverflowScrolling": "touch",
-                    "boxSizing": "border-box",
-                    "direction": "ltr",
                     "height": 400,
-                    "overflowX": "hidden",
-                    "overflowY": "auto",
+                    "overflow": "hidden",
                     "position": "relative",
                     "width": 0,
-                    "willChange": "transform",
                   }
                 }
-                tabIndex={0}
-              />
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitOverflowScrolling": "touch",
+                      "bottom": 0,
+                      "left": 0,
+                      "marginBottom": 0,
+                      "marginRight": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <div
+                    aria-label="grid"
+                    aria-readonly={true}
+                    className="ReactVirtualized__Grid ReactVirtualized__List"
+                    id={undefined}
+                    onScroll={[Function]}
+                    role="grid"
+                    style={
+                      Object {
+                        "WebkitOverflowScrolling": "touch",
+                        "boxSizing": "border-box",
+                        "direction": "ltr",
+                        "height": 400,
+                        "overflowX": false,
+                        "overflowY": false,
+                        "position": "relative",
+                        "width": 0,
+                        "willChange": "transform",
+                      }
+                    }
+                    tabIndex={0}
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderRadius": 3,
+                      "bottom": 2,
+                      "display": "none",
+                      "height": 6,
+                      "left": 2,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 2,
+                      "transition": "opacity 200ms",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,.2)",
+                        "borderRadius": "inherit",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "height": "100%",
+                        "position": "relative",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderRadius": 3,
+                      "bottom": 2,
+                      "display": "none",
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 2,
+                      "top": 2,
+                      "transition": "opacity 200ms",
+                      "width": 6,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,.2)",
+                        "borderRadius": "inherit",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -141,27 +224,110 @@ exports[`Storyshots InfiniteLoader basic table 1`] = `
               }
             >
               <div
-                aria-label="grid"
-                aria-readonly={true}
-                className="ReactVirtualized__Grid ReactVirtualized__List InnerTableBody-root-270"
-                id={undefined}
-                onScroll={[Function]}
-                role="grid"
                 style={
                   Object {
-                    "WebkitOverflowScrolling": "touch",
-                    "boxSizing": "border-box",
-                    "direction": "ltr",
                     "height": 400,
-                    "overflowX": "hidden",
-                    "overflowY": "auto",
+                    "overflow": "hidden",
                     "position": "relative",
                     "width": 0,
-                    "willChange": "transform",
                   }
                 }
-                tabIndex={0}
-              />
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitOverflowScrolling": "touch",
+                      "bottom": 0,
+                      "left": 0,
+                      "marginBottom": 0,
+                      "marginRight": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <div
+                    aria-label="grid"
+                    aria-readonly={true}
+                    className="ReactVirtualized__Grid ReactVirtualized__List InnerTableBody-root-270"
+                    id={undefined}
+                    onScroll={[Function]}
+                    role="grid"
+                    style={
+                      Object {
+                        "WebkitOverflowScrolling": "touch",
+                        "boxSizing": "border-box",
+                        "direction": "ltr",
+                        "height": 400,
+                        "overflowX": false,
+                        "overflowY": false,
+                        "position": "relative",
+                        "width": 0,
+                        "willChange": "transform",
+                      }
+                    }
+                    tabIndex={0}
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderRadius": 3,
+                      "bottom": 2,
+                      "display": "none",
+                      "height": 6,
+                      "left": 2,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 2,
+                      "transition": "opacity 200ms",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,.2)",
+                        "borderRadius": "inherit",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "height": "100%",
+                        "position": "relative",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderRadius": 3,
+                      "bottom": 2,
+                      "display": "none",
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 2,
+                      "top": 2,
+                      "transition": "opacity 200ms",
+                      "width": 6,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,.2)",
+                        "borderRadius": "inherit",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

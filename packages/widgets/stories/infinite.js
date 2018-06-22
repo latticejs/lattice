@@ -6,8 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 
 // Ours
-import { List, ListItem } from '../src/infinite/list';
-import { Table, TableBody, TableHead, TableRow, TableCell } from '../src/infinite/table';
+import { List, ListItem, Table, TableBody, TableHead, TableRow, TableCell } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 
 // Decorators

@@ -59,6 +59,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "prop-types": "^15.6.2",
+    "react-custom-scrollbars": "^4.2.1",
     "react-virtualized": "^9.19.1"
   },
   "jest": {
