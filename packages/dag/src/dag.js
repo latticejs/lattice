@@ -45,7 +45,7 @@ export default class DagCore {
       .append('svg:marker') // This section adds in the arrows
       .attr('id', String)
       .attr('viewBox', '0 -5 10 10')
-      .attr('refX', 72) // refx distanche === node radius
+      .attr('refX', 72) // refx distanche ~= node radius
       .attr('refY', 0)
       .attr('markerWidth', 8) //6
       .attr('markerHeight', 8) //6
