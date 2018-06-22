@@ -9,90 +9,91 @@ exports[`Storyshots dag/basic editable mode 1`] = `
   }
 >
   <svg
-    className="dag-wrapper Dag-root-6"
+    className="dag-wrapper Dag-root-7"
     height={500}
     onDoubleClick={[Function]}
+    onMouseMove={[Function]}
     width={500}
   >
     <g
       className="graph"
     >
       <line
-        className="connect-node Dag-dagEdge-9"
+        className="connect-node Dag-dagEdge-10"
         onClick={[Function]}
       />
       <line
-        className="connect-node Dag-dagEdge-9"
+        className="connect-node Dag-dagEdge-10"
         onClick={[Function]}
       />
       <line
-        className="connect-node Dag-dagEdge-9"
+        className="connect-node Dag-dagEdge-10"
         onClick={[Function]}
       />
       <line
-        className="connect-node Dag-dagEdge-9"
+        className="connect-node Dag-dagEdge-10"
         onClick={[Function]}
       />
       <line
-        className="connect-node Dag-dagEdge-9"
+        className="connect-node Dag-dagEdge-10"
         onClick={[Function]}
       />
       <line
-        className="connect-node Dag-dagEdge-9"
+        className="connect-node Dag-dagEdge-10"
         onClick={[Function]}
       />
       <g
-        className="node Dag-dagNode-7"
+        className="node Dag-dagNode-8"
         onClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-8"
+          className="Dag-dagNodeText-9"
         />
       </g>
       <g
-        className="node Dag-dagNode-7"
+        className="node Dag-dagNode-8"
         onClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-8"
+          className="Dag-dagNodeText-9"
         />
       </g>
       <g
-        className="node Dag-dagNode-7"
+        className="node Dag-dagNode-8"
         onClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-8"
+          className="Dag-dagNodeText-9"
         />
       </g>
       <g
-        className="node Dag-dagNode-7"
+        className="node Dag-dagNode-8"
         onClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-8"
+          className="Dag-dagNodeText-9"
         />
       </g>
       <g
-        className="node Dag-dagNode-7"
+        className="node Dag-dagNode-8"
         onClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-8"
+          className="Dag-dagNodeText-9"
         />
       </g>
       <g
-        className="node Dag-dagNode-7"
+        className="node Dag-dagNode-8"
         onClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-8"
+          className="Dag-dagNodeText-9"
         />
       </g>
     </g>
@@ -112,6 +113,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
     className="dag-wrapper Dag-root-1"
     height={500}
     onDoubleClick={[Function]}
+    onMouseMove={[Function]}
     width={500}
   >
     <g
@@ -210,7 +212,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
   }
 >
   <div
-    className="MuiPaper-root-43 MuiPaper-elevation2-47 MuiPaper-rounded-44"
+    className="MuiPaper-root-46 MuiPaper-elevation2-50 MuiPaper-rounded-47"
     style={
       Object {
         "height": "500px",
@@ -226,90 +228,91 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
       }
     >
       <svg
-        className="dag-wrapper Dag-root-70"
+        className="dag-wrapper Dag-root-73"
         height={500}
         onDoubleClick={[Function]}
+        onMouseMove={[Function]}
         width={500}
       >
         <g
           className="graph"
         >
           <line
-            className="connect-node Dag-dagEdge-73"
+            className="connect-node Dag-dagEdge-76"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-73"
+            className="connect-node Dag-dagEdge-76"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-73"
+            className="connect-node Dag-dagEdge-76"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-73"
+            className="connect-node Dag-dagEdge-76"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-73"
+            className="connect-node Dag-dagEdge-76"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-73"
+            className="connect-node Dag-dagEdge-76"
             onClick={[Function]}
           />
           <g
-            className="node Dag-dagNode-71"
+            className="node Dag-dagNode-74"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-72"
+              className="Dag-dagNodeText-75"
             />
           </g>
           <g
-            className="node Dag-dagNode-71"
+            className="node Dag-dagNode-74"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-72"
+              className="Dag-dagNodeText-75"
             />
           </g>
           <g
-            className="node Dag-dagNode-71"
+            className="node Dag-dagNode-74"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-72"
+              className="Dag-dagNodeText-75"
             />
           </g>
           <g
-            className="node Dag-dagNode-71"
+            className="node Dag-dagNode-74"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-72"
+              className="Dag-dagNodeText-75"
             />
           </g>
           <g
-            className="node Dag-dagNode-71"
+            className="node Dag-dagNode-74"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-72"
+              className="Dag-dagNodeText-75"
             />
           </g>
           <g
-            className="node Dag-dagNode-71"
+            className="node Dag-dagNode-74"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-72"
+              className="Dag-dagNodeText-75"
             />
           </g>
         </g>
@@ -329,7 +332,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
   }
 >
   <div
-    className="MuiPaper-root-11 MuiPaper-elevation2-15 MuiPaper-rounded-12"
+    className="MuiPaper-root-13 MuiPaper-elevation2-17 MuiPaper-rounded-14"
     style={
       Object {
         "height": "500px",
@@ -345,90 +348,91 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
       }
     >
       <svg
-        className="dag-wrapper Dag-root-38"
+        className="dag-wrapper Dag-root-40"
         height={500}
         onDoubleClick={[Function]}
+        onMouseMove={[Function]}
         width={500}
       >
         <g
           className="graph"
         >
           <line
-            className="connect-node Dag-dagEdge-41"
+            className="connect-node Dag-dagEdge-43"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-41"
+            className="connect-node Dag-dagEdge-43"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-41"
+            className="connect-node Dag-dagEdge-43"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-41"
+            className="connect-node Dag-dagEdge-43"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-41"
+            className="connect-node Dag-dagEdge-43"
             onClick={[Function]}
           />
           <line
-            className="connect-node Dag-dagEdge-41"
+            className="connect-node Dag-dagEdge-43"
             onClick={[Function]}
           />
           <g
-            className="node Dag-dagNode-39"
+            className="node Dag-dagNode-41"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-40"
+              className="Dag-dagNodeText-42"
             />
           </g>
           <g
-            className="node Dag-dagNode-39"
+            className="node Dag-dagNode-41"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-40"
+              className="Dag-dagNodeText-42"
             />
           </g>
           <g
-            className="node Dag-dagNode-39"
+            className="node Dag-dagNode-41"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-40"
+              className="Dag-dagNodeText-42"
             />
           </g>
           <g
-            className="node Dag-dagNode-39"
+            className="node Dag-dagNode-41"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-40"
+              className="Dag-dagNodeText-42"
             />
           </g>
           <g
-            className="node Dag-dagNode-39"
+            className="node Dag-dagNode-41"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-40"
+              className="Dag-dagNodeText-42"
             />
           </g>
           <g
-            className="node Dag-dagNode-39"
+            className="node Dag-dagNode-41"
             onClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText-40"
+              className="Dag-dagNodeText-42"
             />
           </g>
         </g>
