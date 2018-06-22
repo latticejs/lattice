@@ -11,7 +11,6 @@ import Edge from './edge';
 const styles = theme => ({
   root: {
     color: theme.palette.text.secondary,
-    padding: 16,
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.fontSize
   },
@@ -34,6 +33,9 @@ const styles = theme => ({
   },
   dagEdgeMarker: {
     fill: theme.palette.secondary[theme.palette.type]
+  },
+  dagEdgeGhost: {
+    'stroke-dasharray': 10
   }
 });
 
@@ -74,7 +76,9 @@ class Dag extends Component {
     this.state = {
       newEdge: {},
       initNode: true,
-      newNodeReady: false
+      newNodeReady: false,
+      edgeInitialPoint: {},
+      mouseMove: {}
     };
   }
 
@@ -89,6 +93,15 @@ class Dag extends Component {
 
   componentWillUnmount() {
     this.dagcore.destroyGraph();
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const { editable } = this.props;
+    const { edgeInitialPoint } = this.state;
+    if (editable && !edgeInitialPoint.x) {
+      return false;
+    }
+    return true;
   }
 
   resetSelection() {
@@ -108,23 +121,33 @@ class Dag extends Component {
   editSelectedNode = node => {
     let { newEdge } = this.state;
     const newEdgeKey = this.state.initNode ? 'source' : 'target';
+    const nodeCoords = this.props.nodes.find(n => n.title === node) || {};
+
+    let edgeInitialPoint = {
+      x: nodeCoords.x,
+      y: nodeCoords.y
+    };
+
     // avoid self-directed nodes
-    if (node === newEdge.source) {
-      this.setState(this.resetSelection());
+    if (newEdge.source && node === newEdge.source) {
+      this.setState(Object.assign(this.resetSelection(), { edgeInitialPoint }));
       return;
     }
 
     newEdge[newEdgeKey] = node;
+
     if (newEdgeKey === 'target') {
       // trigger new edge cb
       this.props.onEdgeAdded(newEdge);
       // reset state
       newEdge = {};
+      edgeInitialPoint = {};
     }
 
     this.setState({
       initNode: !this.state.initNode,
-      newEdge
+      newEdge,
+      edgeInitialPoint
     });
   };
 
@@ -142,6 +165,39 @@ class Dag extends Component {
   closeNode = () => {
     this.setState(this.resetNode());
     this.dagcore.toggleDrag();
+  };
+
+  setMousePosition = e => {
+    this.setState({
+      mouseMove: {
+        x: e.clientX,
+        y: e.clientY
+      }
+    });
+  };
+
+  renderGhostEdge = () => {
+    // Note (dk): ghostEdge refers to an extra edge which appears
+    // when you try to connect two nodes while in editable mode.
+    const data = {
+      source: {
+        x: this.state.edgeInitialPoint.x,
+        y: this.state.edgeInitialPoint.y
+      },
+      target: {
+        x: this.state.mouseMove.x,
+        y: this.state.mouseMove.y
+      }
+    };
+    return (
+      <Edge
+        data={data}
+        classes={this.props.classes}
+        ghostEdge={true}
+        editable={this.props.editable}
+        onEdgeClick={this.props.onEdgeClick}
+      />
+    );
   };
 
   render() {
@@ -174,6 +230,7 @@ class Dag extends Component {
           height={height}
           className={classNames('dag-wrapper', rootClasses)}
           onDoubleClick={editable ? this.newNode : () => {}}
+          onMouseMove={editable ? this.setMousePosition : () => {}}
         >
           <g className={DEFAULTS.graphClass}>
             {edges}
@@ -190,6 +247,7 @@ class Dag extends Component {
                 {params => SvgTextInput(params)}
               </Node>
             )}
+            {editable && this.state.edgeInitialPoint.x && this.renderGhostEdge()}
           </g>
         </svg>
       </div>
