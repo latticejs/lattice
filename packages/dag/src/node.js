@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag';
@@ -57,7 +56,6 @@ export default class Node extends Component {
       .datum(this.props.data)
       .call(selection => enterNode(selection, { ...this.props, onTextChange: this.onTextChange }));
     this.updateLabelBounds();
-    this.domNode = findDOMNode(this);
   }
 
   componentDidUpdate() {
@@ -67,19 +65,25 @@ export default class Node extends Component {
   updateLabelBounds = () => {
     var rect = this.label.getBoundingClientRect();
     this.setState({
-      labelX: this.props.data.x,
-      labelY: this.props.data.y + Math.max(16, rect.height),
+      labelX: this.props.data.x - 20,
+      labelY: this.props.data.y - 8,
       labelWidth: Math.max(50, rect.width),
-      labelHeight: Math.max(16, rect.height)
+      labelHeight: Math.max(20, rect.height)
     });
   };
 
   handleNodeClick = e => {
+    const node = {
+      title: this.props.name,
+      x: this.props.data.x,
+      y: this.props.data.y
+    };
+
     if (this.props.editable) {
-      this.props.editSelectedNode(this.props.name);
+      this.props.editSelectedNode(node);
     }
 
-    this.props.onNodeClick.call(this, e);
+    this.props.onNodeClick(node);
   };
 
   onTextChange = e => {
@@ -98,6 +102,7 @@ export default class Node extends Component {
           ...this.props.data,
           name: this.state.text
         });
+        this.props.closeNode();
         break;
       case 27:
         // esc key
@@ -109,7 +114,7 @@ export default class Node extends Component {
   };
 
   render() {
-    const { newNode } = this.props;
+    const { newNode, outerEl } = this.props;
 
     return (
       <g
@@ -121,7 +126,7 @@ export default class Node extends Component {
         <text ref={node => (this.label = node)} className={this.props.classes.dagNodeText} />
         {newNode &&
           this.props.children({
-            domNode: this.domNode,
+            outerEl,
             onTextChange: this.onTextChange,
             onKeyDown: this.onKeyDown,
             value: this.state.text,

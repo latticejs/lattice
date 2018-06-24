@@ -35,33 +35,47 @@ const styles = theme => ({
     fill: theme.palette.secondary[theme.palette.type]
   },
   dagEdgeGhost: {
-    'stroke-dasharray': 10
+    'stroke-dasharray': 5
   }
 });
 
-const SvgTextInput = props => {
-  props.domNode = document.createElement('div');
-  document.body.appendChild(props.domNode);
-  return createPortal(
-    <Input
-      ref="input"
-      type="text"
-      autoFocus={true}
-      placeholder="name..."
-      value={props.value}
-      onChange={props.onTextChange}
-      onKeyDown={props.onKeyDown}
-      style={{
-        position: 'absolute',
-        top: props.labelY,
-        left: props.labelX,
-        width: props.labelWidth,
-        height: props.labelHeight
-      }}
-    />,
-    props.domNode
-  );
-};
+class SvgTextInput extends Component {
+  constructor(props) {
+    super(props);
+    this.el = document.createElement('div');
+  }
+
+  componentDidMount() {
+    this.props.outerEl.appendChild(this.el);
+    if (this.svginput) this.svginput.focus();
+  }
+
+  componentWillUnmount() {
+    this.props.outerEl.removeChild(this.el);
+  }
+
+  render() {
+    return createPortal(
+      <Input
+        inputRef={svginput => (this.svginput = svginput)}
+        type="text"
+        autoFocus={true}
+        placeholder="name..."
+        value={this.props.value}
+        onChange={this.props.onTextChange}
+        onKeyDown={this.props.onKeyDown}
+        style={{
+          position: 'absolute',
+          top: this.props.labelY,
+          left: this.props.labelX,
+          width: this.props.labelWidth,
+          height: this.props.labelHeight
+        }}
+      />,
+      this.el
+    );
+  }
+}
 
 class Dag extends Component {
   static displayName = 'Dag';
@@ -82,6 +96,16 @@ class Dag extends Component {
     };
   }
 
+  resetEditableState() {
+    this.setState({
+      newEdge: {},
+      initNode: true,
+      newNodeReady: false,
+      edgeInitialPoint: {},
+      mouseMove: {}
+    });
+  }
+
   createGraph = ({ root, nodes, edges, width, height, classes }) => {
     this.dagcore = new DagCore(root, { nodes, edges, width, height, classes });
     this.dagcore.simulation.on('tick', this.dagcore.updateGraph);
@@ -98,9 +122,20 @@ class Dag extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     const { editable } = this.props;
     const { edgeInitialPoint } = this.state;
-    if (editable && !edgeInitialPoint.x) {
-      return false;
-    }
+    const { newNodeReady } = nextState;
+
+    const newNodeReadyGoingOn = !this.state.newNodeReady && newNodeReady;
+    const newNodeReadyGoingOff = !newNodeReadyGoingOn;
+
+    // allow re-render when newNodeReady
+    if (editable && newNodeReadyGoingOn) return true;
+
+    // close newNodeReady element
+    if (editable && newNodeReadyGoingOff) return true;
+
+    // prevent re-render on mouseover
+    if (editable && !edgeInitialPoint.x) return false;
+
     return true;
   }
 
@@ -119,22 +154,25 @@ class Dag extends Component {
   }
 
   editSelectedNode = node => {
+    // Note (dk): editSelectedNode is called whenever the user click on a node.
+    // Only when the graph is on editable mode.
     let { newEdge } = this.state;
     const newEdgeKey = this.state.initNode ? 'source' : 'target';
-    const nodeCoords = this.props.nodes.find(n => n.title === node) || {};
 
+    // Note (dk): edgeInitialPoint represents the node coords of the first node
+    // selected when the graph is on editable mode. This is useful for creating a
+    // ghost edge between this node and the following selected by the user.
     let edgeInitialPoint = {
-      x: nodeCoords.x,
-      y: nodeCoords.y
+      x: node.x,
+      y: node.y
     };
 
+    newEdge[newEdgeKey] = node.title;
     // avoid self-directed nodes
-    if (newEdge.source && node === newEdge.source) {
+    if (newEdge.source && newEdgeKey === 'target' && node.title === newEdge.source) {
       this.setState(Object.assign(this.resetSelection(), { edgeInitialPoint }));
       return;
     }
-
-    newEdge[newEdgeKey] = node;
 
     if (newEdgeKey === 'target') {
       // trigger new edge cb
@@ -179,6 +217,8 @@ class Dag extends Component {
   renderGhostEdge = () => {
     // Note (dk): ghostEdge refers to an extra edge which appears
     // when you try to connect two nodes while in editable mode.
+    const { editable, classes } = this.props;
+
     const data = {
       source: {
         x: this.state.edgeInitialPoint.x,
@@ -189,15 +229,12 @@ class Dag extends Component {
         y: this.state.mouseMove.y
       }
     };
-    return (
-      <Edge
-        data={data}
-        classes={this.props.classes}
-        ghostEdge={true}
-        editable={this.props.editable}
-        onEdgeClick={this.props.onEdgeClick}
-      />
-    );
+
+    return <Edge data={data} classes={classes} ghostEdge={true} editable={editable} />;
+  };
+
+  disableGhostEdge = e => {
+    this.resetEditableState();
   };
 
   render() {
@@ -223,14 +260,15 @@ class Dag extends Component {
     });
 
     return (
-      <div style={{ position: 'relative' }}>
+      <div ref={container => (this.graphContainer = container)} style={{ position: 'relative' }}>
         <svg
           ref={node => (this.root = node)}
           width={width}
           height={height}
           className={classNames('dag-wrapper', rootClasses)}
           onDoubleClick={editable ? this.newNode : () => {}}
-          onMouseMove={editable ? this.setMousePosition : () => {}}
+          onMouseMove={editable && !this.state.newNodeReady ? this.setMousePosition : () => {}}
+          onMouseUp={editable && this.state.edgeInitialPoint.x ? this.disableGhostEdge : () => {}}
         >
           <g className={DEFAULTS.graphClass}>
             {edges}
@@ -243,8 +281,9 @@ class Dag extends Component {
                 newNode={editable && this.state.newNodeReady}
                 onNodeAdded={this.props.onNodeAdded}
                 closeNode={this.closeNode}
+                outerEl={this.graphContainer}
               >
-                {params => SvgTextInput(params)}
+                {params => <SvgTextInput {...params} />}
               </Node>
             )}
             {editable && this.state.edgeInitialPoint.x && this.renderGhostEdge()}
