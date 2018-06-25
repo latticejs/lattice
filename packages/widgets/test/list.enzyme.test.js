@@ -29,7 +29,7 @@ const renderRow = ({ item, isEmpty, key, style }) => {
 describe('<List />', () => {
   it('renders <List /> with 10 <ListItem /> as divs', () => {
     const wrapper = mount(
-      <List loadMore={() => {}} list={list} rowCount={10} rowHeight={68} height={150} width={150}>
+      <List loadMore={() => {}} list={list} rowCount={list.length} rowHeight={68} height={150} width={150}>
         {renderRow}
       </List>
     );
