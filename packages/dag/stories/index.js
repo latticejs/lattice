@@ -56,14 +56,16 @@ const PaperWrap = ({ children }) => (
   </Paper>
 );
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf, action, forceReRender }) => {
   storiesOf('dag/basic', module)
     .add('no wrapper', () => {
       // TODO(dk): parse real pkg json deps.
       return <Dag onClick={action('clicked')} {...getProps()} />;
     })
     .add('editable mode', () => {
-      return <Dag editable={true} onEdgeAdded={action('onEdgeAdded')} {...getProps()} />;
+      return (
+        <Dag editable={true} onEdgeAdded={action('onEdgeAdded')} onNodeAdded={action('onNodeAdded')} {...getProps()} />
+      );
     });
 
   storiesOf('dag/themed', module)

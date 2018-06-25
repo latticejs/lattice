@@ -46,6 +46,9 @@ export class MyGraph extends React.Component {
 
 ```
 
+Also, take a look to the `dag` stories.
+
+
 ## API
 
 ### editable
@@ -70,12 +73,25 @@ Used to capture edge selection event.
 
 > `function(edge: Object)` | defaults to: `noOp`
 
-Used to create a new edge between node target and source. In order to work the `dag` needs the `editable` prop enabled. `edge` parameter looks like this:
+Used to create a new edge between node target and source. In order to work the `dag` needs the `editable` prop enabled. When the user click on a node, a new "ghost edge" will appear representing the new edge. The function will be called when a different node is clicked. Cancelling the effect otherwise.
+`edge` parameter looks like this:
 
 ```javascript
 // edge parameter description
 { source:String, target: String }
 ```
+
+### onNodeAdded
+
+> `function(node: Object)` | defaults to: `noOp`
+
+Used to create a new node. Only works on `editable` mode. To trigger the new node creation the user will need to doubleClick on the graph component. This shows a new editable node. Cancel with `ESC` key, confirm with `ENTER`. After confirmation, this function will be called with a object like this:
+
+```javascript
+// node parameter description
+{ title: String, x: Number, y: Number}
+```
+Where `x` and `y` are the coords where the user double clicked.
 
 ## FAQs
 
