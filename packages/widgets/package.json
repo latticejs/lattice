@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/widgets",
-  "version": "1.0.1-alpha.2",
+  "version": "1.0.1-alpha.3",
   "license": "MIT",
   "main": "index.js",
   "module": "dist/es/widgets.es.js",
@@ -49,8 +49,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.4.0",
-    "rollup": "^0.61.0",
     "react-virtualized": "^9.19.1",
+    "rollup": "^0.61.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
