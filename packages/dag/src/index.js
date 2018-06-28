@@ -3,10 +3,13 @@ import { createPortal } from 'react-dom';
 import classNames from 'classnames';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Input from '@material-ui/core/Input';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import DagCore, { DEFAULTS } from './dag';
 import Node from './node';
 import Edge from './edge';
+import GraphPanel from './panel';
 
 const styles = theme => ({
   root: {
@@ -29,7 +32,12 @@ const styles = theme => ({
     fontWeight: theme.typography.fontWeightLight
   },
   dagEdge: {
-    stroke: theme.palette.secondary[theme.palette.type]
+    stroke: theme.palette.secondary[theme.palette.type],
+    transition: 'stroke-width 0.3s ease-in',
+    strokeWidth: 1,
+    '&:hover': {
+      strokeWidth: 3
+    }
   },
   dagEdgeMarker: {
     fill: theme.palette.secondary[theme.palette.type]
@@ -92,7 +100,9 @@ class Dag extends Component {
       initNode: true,
       newNodeReady: false,
       edgeInitialPoint: {},
-      mouseMove: {}
+      mouseMove: {},
+      edgePanel: false,
+      panelPosition: {}
     };
   }
 
@@ -102,7 +112,9 @@ class Dag extends Component {
       initNode: true,
       newNodeReady: false,
       edgeInitialPoint: {},
-      mouseMove: {}
+      mouseMove: {},
+      edgePanel: false,
+      panelPosition: {}
     });
   }
 
@@ -155,7 +167,7 @@ class Dag extends Component {
 
   editSelectedNode = node => {
     // Note (dk): editSelectedNode is called whenever the user click on a node.
-    // Only when the graph is on editable mode.
+    // Only when the graph is on editable mode. It is used to create new edges.
     let { newEdge } = this.state;
     const newEdgeKey = this.state.initNode ? 'source' : 'target';
 
@@ -186,6 +198,17 @@ class Dag extends Component {
       initNode: !this.state.initNode,
       newEdge,
       edgeInitialPoint
+    });
+  };
+
+  editSelectedEdge = edge => {
+    this.setState({
+      edgePanel: !this.state.edgePanel,
+      edgePanelIdx: edge.idx,
+      panelPosition: {
+        x: (edge.source.x + edge.target.x) / 2,
+        y: (edge.source.y + edge.target.y) / 2
+      }
     });
   };
 
@@ -237,10 +260,32 @@ class Dag extends Component {
     this.resetEditableState();
   };
 
+  renderEdgePanel = data => {
+    return (
+      <GraphPanel
+        style={{
+          position: 'absolute',
+          top: this.state.panelPosition.y,
+          left: this.state.panelPosition.x
+        }}
+        outerEl={this.graphContainer}
+        source={data.source.title}
+        target={data.target.title}
+      >
+        {() => (
+          <IconButton>
+            <DeleteIcon />
+          </IconButton>
+        )}
+      </GraphPanel>
+    );
+  };
+
   render() {
     const { width, height, classes = {}, editable, onNodeClick, onEdgeClick } = this.props;
     const rootClasses = [classes.root];
 
+    // NODES
     const nodes = this.props.nodes.map((node, i) => {
       return (
         <Node
@@ -255,8 +300,23 @@ class Dag extends Component {
       );
     });
 
+    // EDGES
     const edges = this.props.edges.map((edge, i) => {
-      return <Edge key={edge.target + i} data={edge} classes={classes} editable={editable} onEdgeClick={onEdgeClick} />;
+      return (
+        <Edge
+          key={`dag__edge-${i}`}
+          idx={i}
+          data={edge}
+          classes={classes}
+          editable={editable}
+          onEdgeClick={onEdgeClick}
+          editSelectedEdge={this.editSelectedEdge}
+          showEdgePanel={this.state.edgePanel}
+          showEdgePanelIdx={this.state.edgePanelIdx}
+        >
+          {({ data }) => this.renderEdgePanel(data)}
+        </Edge>
+      );
     });
 
     return (
