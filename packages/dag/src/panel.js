@@ -7,7 +7,8 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   card: {
-    display: 'flex'
+    display: 'flex',
+    position: 'absolute'
   },
   details: {
     display: 'flex',
@@ -30,8 +31,10 @@ class GraphPanel extends Component {
     this.el = document.createElement('div');
   }
   componentDidMount() {
-    //this.props.outerEl.appendChild(this.el);
-    document.body.appendChild(this.el)
+    // FIXME(dk): we should use the outerEl (div wrapping graph)
+    // instead of adding a random div to the body.
+    // this.props.outerEl.appendChild(this.el);
+    document.body.appendChild(this.el);
     if (this.panel) this.panel.focus();
   }
 
@@ -54,25 +57,21 @@ class GraphPanel extends Component {
     return (
       <React.Fragment>
         <div>
-          <Typography variant="body1">Source:</Typography>
-          <Typography variant="body1" color="textSecondary">
-            {source}
-          </Typography>
+          <Typography variant="caption">Source</Typography>
+          <Typography variant="body1">{source}</Typography>
         </div>
         <div>
-          <Typography variant="body1">Target:</Typography>
-          <Typography variant="body1" color="textSecondary">
-            {target}
-          </Typography>
+          <Typography variant="caption">Target</Typography>
+          <Typography variant="body1">{target}</Typography>
         </div>
       </React.Fragment>
     );
   }
 
   render() {
-    const { children, classes, title, source, target } = this.props;
+    const { children, classes, title, source, target, style } = this.props;
     return createPortal(
-      <Card className={classes.panel}>
+      <Card className={classes.panel} style={style}>
         <div className={classes.details}>
           <CardContent className={classes.content}>
             {title ? this.renderContentNode({ title }) : this.renderContentEdge({ source, target })}
