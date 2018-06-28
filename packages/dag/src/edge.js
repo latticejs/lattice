@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { select, selectAll } from 'd3-selection';
+
 import { DEFAULTS } from './dag';
 
 const enterEdge = (selection, ghostEdge) => {
@@ -38,22 +39,35 @@ export default class Edge extends Component {
   }
 
   handleEdgeClick = e => {
-    this.props.onEdgeClick(e);
+    const { editable, data, editSelectedEdge, idx } = this.props;
+
+    if (editable) {
+      editSelectedEdge(Object.assign({}, data, { idx }));
+    }
+    this.props.onEdgeClick(e, data);
   };
 
   render() {
     // TODO (dk): apply classes.dagEdgeMarker class to marker-end (arrow)
-    const { classes, ghostEdge } = this.props;
+    const { classes, ghostEdge, children, data, showEdgePanel, showEdgePanelIdx, idx } = this.props;
     const edgeClasses = [classes.dagEdge];
+
     if (ghostEdge) {
       edgeClasses.push(classes.dagEdgeGhost);
     }
+
+    if (showEdgePanelIdx === idx) {
+      edgeClasses.push(classes.dagEdgeEditable);
+    }
+
     return (
       <line
         ref={node => (this.node = node)}
         className={classNames(DEFAULTS.linkClass, edgeClasses)}
         onClick={this.handleEdgeClick}
-      />
+      >
+        {showEdgePanel && showEdgePanelIdx === idx && children && children({ data })}
+      </line>
     );
   }
 }
