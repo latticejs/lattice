@@ -4,9 +4,12 @@ const bodyParser = require('body-parser');
 const gql = require('graphql-tag');
 const { passwords, db } = require('./db');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 const secret = 'aSecret';
 
 const app = express();
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
@@ -50,13 +53,13 @@ const Query = `
   }
 
   extend type Mutation {
-    login(email: String!, password: String!): Token!
+    signIn(email: String!, password: String!): Token!
   }
 `;
 
 const resolvers = {
   Mutation: {
-    login(obj, { email, password }) {
+    signIn(obj, { email, password }) {
       let user = passwords.find(
         u => u.email.toLowerCase() === email.toLowerCase() && u.password.toString() === password
       );
@@ -72,6 +75,6 @@ const resolvers = {
   }
 };
 
-app.use('/graphql', validateAuth, jsonGraphqlExpress({ data: db, typeDefs: Query, resolvers }));
+app.use('/graphql', /*validateAuth,*/ jsonGraphqlExpress({ data: db, typeDefs: Query, resolvers }));
 
 app.listen(process.env.NODE_PORT || 3001);

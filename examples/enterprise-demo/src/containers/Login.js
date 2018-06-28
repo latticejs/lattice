@@ -15,7 +15,7 @@ import { compose, graphql } from 'react-apollo';
 import { Redirect } from 'react-router-dom';
 
 // Ours
-import user, { signIn } from '../queries/user';
+import { signIn } from '../stores/auth';
 
 const styles = theme => ({
   root: {
@@ -88,13 +88,6 @@ class Login extends Component {
 }
 
 export default compose(
-  graphql(user, {
-    props: ({
-      data: {
-        user: { loggedIn }
-      }
-    }) => ({ loggedIn })
-  }),
   graphql(signIn, { name: 'signIn' }),
   withStyles(styles)
 )(Login);

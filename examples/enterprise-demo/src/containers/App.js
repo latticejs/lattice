@@ -14,54 +14,30 @@ import { compose, graphql } from 'react-apollo';
 // Typeface
 import 'typeface-roboto';
 
+import * as routes from '../constants/routes';
 import Login from './Login';
-import Main from './Main';
-import PrivateRoute from './PrivateRoute';
-import ui from '../queries/ui';
+//import Main from './Main';
+//import PrivateRoute from './PrivateRoute';
+import { getUi } from '../stores/ui';
 
 class App extends Component {
-  state = {
-    muiTheme: {
+  createTheme() {
+    const { nightMode } = this.props;
+
+    return createMuiTheme({
       palette: {
-        type: this.props.nightMode ? 'dark' : 'light'
-      },
-      typography: {
-        title: {
-          fontWeight: 300
-        }
+        type: nightMode ? 'dark' : 'light'
       }
-    }
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { muiTheme } = prevState;
-    const { nightMode } = nextProps;
-    const type = nightMode ? 'dark' : 'light';
-
-    if (type !== muiTheme.palette.type) {
-      return {
-        muiTheme: {
-          ...muiTheme,
-          palette: {
-            ...muiTheme.palette,
-            type
-          }
-        }
-      };
-    }
-
-    return null;
+    });
   }
 
   render() {
-    const { muiTheme } = this.state;
     return (
       <BrowserRouter>
-        <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
+        <MuiThemeProvider theme={this.createTheme()}>
           <CssBaseline>
             <Switch>
               <Route path="/login" component={Login} />
-              <PrivateRoute path="/" component={Main} />
             </Switch>
           </CssBaseline>
         </MuiThemeProvider>
@@ -71,7 +47,7 @@ class App extends Component {
 }
 
 export default compose(
-  graphql(ui, {
+  graphql(getUi, {
     props: ({
       data: {
         ui: { nightMode }

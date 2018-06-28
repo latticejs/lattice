@@ -9,6 +9,7 @@
     "apollo-link": "^1.2.1",
     "apollo-link-http": "^1.5.3",
     "apollo-link-state": "^0.4.1",
+    "cors": "^2.8.4",
     "formik": "^0.11.11",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
@@ -21,7 +22,7 @@
   "scripts": {
     "start": "lattice-react-scripts start",
     "build": "lattice-react-scripts build",
-    "test": "lattice-react-scripts test --env=jsdom",
+    "test": "echo 'test'",
     "eject": "lattice-react-scripts eject",
     "graphql": "NODE_PORT=5000 node graphql/index.js",
     "dev": "concurrently --kill-others-on-fail \"yarn graphql\" \"yarn start\""
