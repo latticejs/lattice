@@ -49,6 +49,7 @@ export default class DagCore {
       .attr('refY', 0)
       .attr('markerWidth', 8) //6
       .attr('markerHeight', 8) //6
+      .attr('markerUnits', 'userSpaceOnUse')
       .attr('class', theme)
       .attr('orient', 'auto')
       .append('svg:path')
