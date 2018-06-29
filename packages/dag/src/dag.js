@@ -1,7 +1,7 @@
 import { select, selectAll, event } from 'd3-selection';
 import { drag } from 'd3-drag';
 import { zoom } from 'd3-zoom';
-import { forceSimulation, forceCollide, forceManyBody, forceCenter, forceY, forceX, forceLink } from 'd3-force';
+import { forceSimulation, forceCollide, forceCenter, forceLink } from 'd3-force';
 
 export const DEFAULTS = {
   selectedClass: 'selected',
@@ -15,13 +15,35 @@ export const DEFAULTS = {
   nodeRadius: 50
 };
 
+const createArrow = (arrow, line, nodeRadius) => {
+  const triangleSize = 10;
+
+  const totalLength = line.getTotalLength() - (nodeRadius + 11.5); // yes, 11.5 is a magic number
+  const startPoint = line.getPointAtLength(totalLength - triangleSize);
+  const endPoint = line.getPointAtLength(totalLength);
+
+  const angle = Math.atan2(endPoint.y - startPoint.y, endPoint.x - startPoint.x);
+  const angleDeg = (angle * 180) / Math.PI;
+
+  const pointOnCircle = (p, a, d) => {
+    const newAngle = ((a + d) * Math.PI) / 180;
+    return p.x + Math.cos(newAngle) * triangleSize + ',' + (p.y + Math.sin(newAngle) * triangleSize);
+  };
+
+  const p1 = pointOnCircle(endPoint, angleDeg, 0);
+  const p2 = pointOnCircle(endPoint, angleDeg, 135);
+  const p3 = pointOnCircle(endPoint, angleDeg, -135);
+  arrow.setAttribute('points', `${p1} ${p2} ${p3}`);
+};
+
 export default class DagCore {
   static DEFAULTS = DEFAULTS;
 
   constructor(root, initialState) {
     this.state = {
       dragEnable: initialState.dragEnable || true,
-      zoomEnable: initialState.zoomEnable || false
+      zoomEnable: initialState.zoomEnable || false,
+      nodeRadius: initialState.nodeRadius
     };
 
     this.d3root = root;
@@ -32,52 +54,31 @@ export default class DagCore {
       height: initialState.height,
       nodes: initialState.nodes,
       edges: initialState.edges,
-      theme: initialState.classes.dagEdgeMarker
+      theme: initialState.classes.dagEdgeMarker,
+      nodeRadius: initialState.nodeRadius
     });
   }
 
-  createGraph({ root, width, height, nodes, edges, theme }) {
+  createGraph({ root, width, height, nodes, edges, theme, nodeRadius }) {
     select(root)
-      .append('svg:defs')
-      .selectAll('marker')
-      .data(['end'])
-      .enter()
-      .append('svg:marker') // This section adds in the arrows
-      .attr('id', String)
-      .attr('viewBox', '0 -5 10 10')
-      .attr('refX', 72) // refx distanche ~= node radius
-      .attr('refY', 0)
-      .attr('markerWidth', 8) //6
-      .attr('markerHeight', 8) //6
-      .attr('markerUnits', 'userSpaceOnUse')
       .attr('class', theme)
-      .attr('orient', 'auto')
-      .append('svg:path')
-      .attr('d', 'M0,-5L10,0L0,5');
+      .attr('orient', 'auto');
 
     this.svg = select(`.${DEFAULTS.graphClass}`);
 
     this.simulation = forceSimulation(nodes)
-      .force('charge', forceManyBody())
+      .force('charge', null)
       .force(
         'link',
         forceLink(edges).id(function(d) {
           return d.title;
         })
       )
-      .force(
-        'collide',
-        forceCollide(function(d) {
-          return 80;
-        })
-      )
-      .force('center', forceCenter(width / 2, height / 2))
-      .force('y', forceY(0))
-      .force('x', forceX(0));
+      .force('collide', forceCollide(() => 80))
+      .force('center', forceCenter(width / 2, height / 2));
 
     this.setZoomMode();
     this.setDragMode();
-
     this.simulation.on('tick', () => this.updateGraph());
   }
 
@@ -102,6 +103,13 @@ export default class DagCore {
       .attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x)
       .attr('y2', d => d.target.y);
+
+    const nodeRadius = this.state.nodeRadius;
+    // add arrow heads using a polygon
+    selectAll('.dag__edge-arrow').each(function() {
+      const line = this.parentNode.querySelector('line');
+      createArrow(this, line, nodeRadius);
+    });
 
     selectAll(`.${DagCore.DEFAULTS.nodeClass}`).attr('transform', d => `translate(${d.x}, ${d.y})`);
   }
