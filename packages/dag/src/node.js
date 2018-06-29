@@ -3,11 +3,9 @@ import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag';
 
-const DEFAULT_RADIUS = 50;
-
 const enterNode = (selection, props) => {
   selection.select('circle').attr('r', d => {
-    return props.radius || DEFAULT_RADIUS;
+    return props.nodeRadius;
   });
 
   insertTitleLinebreaks(selection, props.name);
@@ -24,6 +22,7 @@ const insertTitleLinebreaks = (gEl, title) => {
   const el = gEl
     .select('text')
     .attr('text-anchor', 'middle')
+    .attr('stroke-width', 1)
     .attr('dy', `-${(nwords - 1) * 7.5}`);
 
   words.forEach((word, idx) => {
@@ -99,10 +98,12 @@ export default class Node extends Component {
     switch (keyCode) {
       case 13:
         // enter key
-        this.props.onNodeAdded({
-          ...this.props.data,
-          name: this.state.text
-        });
+        if (this.state.text) {
+          this.props.onNodeAdded({
+            ...this.props.data,
+            name: this.state.text
+          });
+        }
         this.props.closeNode();
         break;
       case 27:
@@ -115,16 +116,22 @@ export default class Node extends Component {
   };
 
   render() {
-    const { newNode, outerEl } = this.props;
+    const { newNode, outerEl, classes, editable } = this.props;
+
+    const nodeClasses = [classes.dagNode];
+
+    if (editable) {
+      nodeClasses.push(classes.dagEditable);
+    }
 
     return (
       <g
-        className={classNames(DEFAULTS.nodeClass, this.props.classes.dagNode)}
+        className={classNames(DEFAULTS.nodeClass, nodeClasses)}
         onClick={e => this.handleNodeClick(e, this.name)}
         ref={node => (this.node = node)}
       >
         <circle />
-        <text ref={node => (this.label = node)} className={this.props.classes.dagNodeText} />
+        <text ref={node => (this.label = node)} className={classes.dagNodeText} />
         {newNode &&
           this.props.children({
             outerEl,

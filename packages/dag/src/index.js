@@ -286,13 +286,14 @@ class Dag extends Component {
   };
 
   render() {
-    const { width, height, classes = {}, editable, onNodeClick, onEdgeClick } = this.props;
+    const { width, height, classes = {}, editable, onNodeClick, onEdgeClick, nodeRadius } = this.props;
     const rootClasses = [classes.root];
 
     // NODES
     const nodes = this.props.nodes.map((node, i) => {
       return (
         <Node
+          nodeRadius={nodeRadius}
           data={node}
           name={node.title}
           key={`node-${i}`}
@@ -339,6 +340,7 @@ class Dag extends Component {
             {nodes}
             {this.state.newNodeReady && (
               <Node
+                nodeRadius={nodeRadius}
                 data={{ id: undefined, x: this.state.newNode.x, y: this.state.newNode.y }}
                 name={''}
                 classes={this.props.classes}
