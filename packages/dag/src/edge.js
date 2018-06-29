@@ -5,14 +5,12 @@ import { select, selectAll } from 'd3-selection';
 import { DEFAULTS } from './dag';
 
 const enterEdge = (selection, ghostEdge) => {
-  selection.attr('stroke-width', 1).attr('marker-end', 'url(#end)');
   if (ghostEdge) {
     // Note (dk): ghostEdge mode refers to an extra edge which appears
     // when you try to connect two nodes while in editable mode.
     selectAll(`.${DEFAULTS.nodeClass}`).each(function() {
       this.parentNode.appendChild(this);
     });
-    selection.attr('stroke-width', 1).attr('marker-end', '');
   }
 };
 
@@ -28,8 +26,9 @@ export default class Edge extends Component {
   static defaultProps = {
     onEdgeClick: () => {}
   };
+
   componentDidMount() {
-    this.d3Edge = select(this.node)
+    this.d3Edge = select(this.edge)
       .datum(this.props.data)
       .call(selection => enterEdge(selection, this.props.ghostEdge));
   }
@@ -49,25 +48,24 @@ export default class Edge extends Component {
 
   render() {
     // TODO (dk): apply classes.dagEdgeMarker class to marker-end (arrow)
-    const { classes, ghostEdge, children, data, showEdgePanel, showEdgePanelIdx, idx } = this.props;
+    const { classes, editable, ghostEdge, children, data, showEdgePanel, showEdgePanelIdx, idx } = this.props;
     const edgeClasses = [classes.dagEdge];
 
     if (ghostEdge) {
       edgeClasses.push(classes.dagEdgeGhost);
     }
 
-    if (showEdgePanelIdx === idx) {
-      edgeClasses.push(classes.dagEdgeEditable);
+    if (editable) {
+      edgeClasses.push(classes.dagEditable);
     }
 
     return (
-      <line
-        ref={node => (this.node = node)}
-        className={classNames(DEFAULTS.linkClass, edgeClasses)}
-        onClick={this.handleEdgeClick}
-      >
-        {showEdgePanel && showEdgePanelIdx === idx && children && children({ data })}
-      </line>
+      <g className={classNames(DEFAULTS.linkClass, edgeClasses)}>
+        <line ref={edge => (this.edge = edge)} onClick={this.handleEdgeClick}>
+          {showEdgePanel && showEdgePanelIdx === idx && children && children({ data })}
+        </line>
+        {ghostEdge ? '' : <polygon className="dag__edge-arrow" />}
+      </g>
     );
   }
 }
