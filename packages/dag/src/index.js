@@ -20,6 +20,8 @@ const styles = theme => ({
   dagNode: {
     stroke: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.secondary.dark,
     fill: theme.palette.background.default,
+    transition: 'stroke-width 0.3s ease-in',
+    strokeWidth: 2,
     '&:hover': {
       backgroundColor: theme.palette.action.hover
     }
@@ -34,9 +36,11 @@ const styles = theme => ({
   dagEdge: {
     stroke: theme.palette.secondary[theme.palette.type],
     transition: 'stroke-width 0.3s ease-in',
-    strokeWidth: 1,
+    strokeWidth: 2
+  },
+  dagEditable: {
     '&:hover': {
-      strokeWidth: 3
+      strokeWidth: 4
     }
   },
   dagEdgeMarker: {
@@ -88,6 +92,7 @@ class SvgTextInput extends Component {
 class Dag extends Component {
   static displayName = 'Dag';
   static defaultProps = {
+    nodeRadius: 50,
     editable: false,
     onNodeAdded: () => {},
     onEdgeAdded: () => {}
@@ -118,9 +123,8 @@ class Dag extends Component {
     });
   }
 
-  createGraph = ({ root, nodes, edges, width, height, classes }) => {
-    this.dagcore = new DagCore(root, { nodes, edges, width, height, classes });
-    this.dagcore.simulation.on('tick', this.dagcore.updateGraph);
+  createGraph = ({ root, nodes, edges, width, height, classes, nodeRadius }) => {
+    this.dagcore = new DagCore(root, { nodes, edges, width, height, classes, nodeRadius });
   };
 
   componentDidMount() {
