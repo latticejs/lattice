@@ -98,7 +98,7 @@ class Dag extends Component {
     selectedNodeClass: DEFAULTS.selectedNodeClass,
     onNodeAdded: () => {},
     onEdgeAdded: () => {},
-    onDeleteEdge: () => {},
+    onEdgeRemoved: () => {},
     nodes: [],
     edges: []
   };
@@ -301,7 +301,7 @@ class Dag extends Component {
 
   // GRAPH ACTIONS
   deleteEdge(idx) {
-    const { onDeleteEdge, edges } = this.props;
+    const { onEdgeRemoved, edges } = this.props;
     // remove edge from this.props.edges (copy)
     let start = 0;
     let pivotA = 1;
@@ -318,7 +318,7 @@ class Dag extends Component {
     }
     const newEdges = edges.slice(start, pivotA).concat(edges.slice(pivotB, end));
 
-    onDeleteEdge(newEdges);
+    onEdgeRemoved(newEdges);
   }
 
   render() {

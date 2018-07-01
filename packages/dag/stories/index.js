@@ -68,7 +68,7 @@ export default ({ storiesOf, action, forceReRender }) => {
           editable={true}
           onEdgeAdded={action('onEdgeAdded')}
           onNodeAdded={action('onNodeAdded')}
-          onDeleteEdge={action('onDeleteEdge')}
+          onEdgeRemoved={action('onEdgeRemoved')}
           onEdgeClick={action('onEdgeClick')}
           onNodeClick={action('onNodeClick')}
           {...getProps()}
