@@ -17,70 +17,65 @@ exports[`Storyshots dag/basic editable mode 1`] = `
     width={500}
   >
     <g
-      className="graph"
+      className="dag__graph"
     >
       <g
-        className="connect-node Dag-dagEdge-11 Dag-dagEditable-12"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-11 Dag-dagEditable-12"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-11 Dag-dagEditable-12"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-11 Dag-dagEditable-12"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-11 Dag-dagEditable-12"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-11 Dag-dagEditable-12"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="node Dag-dagNode-9 Dag-dagEditable-12"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
+        id="dag__node--app"
         onClick={[Function]}
       >
         <circle />
@@ -89,7 +84,8 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-9 Dag-dagEditable-12"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
+        id="dag__node--lodash"
         onClick={[Function]}
       >
         <circle />
@@ -98,7 +94,8 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-9 Dag-dagEditable-12"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
+        id="dag__node--react"
         onClick={[Function]}
       >
         <circle />
@@ -107,7 +104,8 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-9 Dag-dagEditable-12"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
+        id="dag__node--react-dom"
         onClick={[Function]}
       >
         <circle />
@@ -116,7 +114,8 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-9 Dag-dagEditable-12"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
+        id="dag__node--apollo"
         onClick={[Function]}
       >
         <circle />
@@ -125,7 +124,8 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-9 Dag-dagEditable-12"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
+        id="dag__node--enzyme"
         onClick={[Function]}
       >
         <circle />
@@ -155,70 +155,65 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
     width={500}
   >
     <g
-      className="graph"
+      className="dag__graph"
     >
       <g
-        className="connect-node Dag-dagEdge-4"
+        className="dag__edge Dag-dagEdge-4"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-4"
+        className="dag__edge Dag-dagEdge-4"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-4"
+        className="dag__edge Dag-dagEdge-4"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-4"
+        className="dag__edge Dag-dagEdge-4"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-4"
+        className="dag__edge Dag-dagEdge-4"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="connect-node Dag-dagEdge-4"
+        className="dag__edge Dag-dagEdge-4"
+        onClick={[Function]}
       >
-        <line
-          onClick={[Function]}
-        />
+        <line />
         <polygon
           className="dag__edge-arrow"
         />
       </g>
       <g
-        className="node Dag-dagNode-2"
+        className="dag__node Dag-dagNode-2"
+        id="dag__node--app"
         onClick={[Function]}
       >
         <circle />
@@ -227,7 +222,8 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-2"
+        className="dag__node Dag-dagNode-2"
+        id="dag__node--lodash"
         onClick={[Function]}
       >
         <circle />
@@ -236,7 +232,8 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-2"
+        className="dag__node Dag-dagNode-2"
+        id="dag__node--react"
         onClick={[Function]}
       >
         <circle />
@@ -245,7 +242,8 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-2"
+        className="dag__node Dag-dagNode-2"
+        id="dag__node--react-dom"
         onClick={[Function]}
       >
         <circle />
@@ -254,7 +252,8 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-2"
+        className="dag__node Dag-dagNode-2"
+        id="dag__node--apollo"
         onClick={[Function]}
       >
         <circle />
@@ -263,7 +262,8 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="node Dag-dagNode-2"
+        className="dag__node Dag-dagNode-2"
+        id="dag__node--enzyme"
         onClick={[Function]}
       >
         <circle />
@@ -310,70 +310,65 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
         width={500}
       >
         <g
-          className="graph"
+          className="dag__graph"
         >
           <g
-            className="connect-node Dag-dagEdge-79"
+            className="dag__edge Dag-dagEdge-79"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-79"
+            className="dag__edge Dag-dagEdge-79"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-79"
+            className="dag__edge Dag-dagEdge-79"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-79"
+            className="dag__edge Dag-dagEdge-79"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-79"
+            className="dag__edge Dag-dagEdge-79"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-79"
+            className="dag__edge Dag-dagEdge-79"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="node Dag-dagNode-77"
+            className="dag__node Dag-dagNode-77"
+            id="dag__node--app"
             onClick={[Function]}
           >
             <circle />
@@ -382,7 +377,8 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-77"
+            className="dag__node Dag-dagNode-77"
+            id="dag__node--lodash"
             onClick={[Function]}
           >
             <circle />
@@ -391,7 +387,8 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-77"
+            className="dag__node Dag-dagNode-77"
+            id="dag__node--react"
             onClick={[Function]}
           >
             <circle />
@@ -400,7 +397,8 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-77"
+            className="dag__node Dag-dagNode-77"
+            id="dag__node--react-dom"
             onClick={[Function]}
           >
             <circle />
@@ -409,7 +407,8 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-77"
+            className="dag__node Dag-dagNode-77"
+            id="dag__node--apollo"
             onClick={[Function]}
           >
             <circle />
@@ -418,7 +417,8 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-77"
+            className="dag__node Dag-dagNode-77"
+            id="dag__node--enzyme"
             onClick={[Function]}
           >
             <circle />
@@ -467,70 +467,65 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
         width={500}
       >
         <g
-          className="graph"
+          className="dag__graph"
         >
           <g
-            className="connect-node Dag-dagEdge-45"
+            className="dag__edge Dag-dagEdge-45"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-45"
+            className="dag__edge Dag-dagEdge-45"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-45"
+            className="dag__edge Dag-dagEdge-45"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-45"
+            className="dag__edge Dag-dagEdge-45"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-45"
+            className="dag__edge Dag-dagEdge-45"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="connect-node Dag-dagEdge-45"
+            className="dag__edge Dag-dagEdge-45"
+            onClick={[Function]}
           >
-            <line
-              onClick={[Function]}
-            />
+            <line />
             <polygon
               className="dag__edge-arrow"
             />
           </g>
           <g
-            className="node Dag-dagNode-43"
+            className="dag__node Dag-dagNode-43"
+            id="dag__node--app"
             onClick={[Function]}
           >
             <circle />
@@ -539,7 +534,8 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-43"
+            className="dag__node Dag-dagNode-43"
+            id="dag__node--lodash"
             onClick={[Function]}
           >
             <circle />
@@ -548,7 +544,8 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-43"
+            className="dag__node Dag-dagNode-43"
+            id="dag__node--react"
             onClick={[Function]}
           >
             <circle />
@@ -557,7 +554,8 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-43"
+            className="dag__node Dag-dagNode-43"
+            id="dag__node--react-dom"
             onClick={[Function]}
           >
             <circle />
@@ -566,7 +564,8 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-43"
+            className="dag__node Dag-dagNode-43"
+            id="dag__node--apollo"
             onClick={[Function]}
           >
             <circle />
@@ -575,7 +574,8 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="node Dag-dagNode-43"
+            className="dag__node Dag-dagNode-43"
+            id="dag__node--enzyme"
             onClick={[Function]}
           >
             <circle />
