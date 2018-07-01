@@ -46,7 +46,8 @@ export default class Node extends Component {
       labelY: 0,
       labelWidth: '50px',
       labelHeight: '20px',
-      text: ''
+      text: '',
+      selected: false
     };
   }
 
@@ -84,6 +85,8 @@ export default class Node extends Component {
     }
 
     onNodeClick(node);
+    // add selected state
+    this.setState({ selected: !this.state.selected });
   };
 
   onTextChange = e => {
@@ -116,7 +119,7 @@ export default class Node extends Component {
   };
 
   render() {
-    const { newNode, outerEl, classes, editable } = this.props;
+    const { newNode, outerEl, classes, editable, name, selectedClass } = this.props;
 
     const nodeClasses = [classes.dagNode];
 
@@ -124,11 +127,16 @@ export default class Node extends Component {
       nodeClasses.push(classes.dagEditable);
     }
 
+    if (this.state.selected) {
+      // TODO(dk): clear other selected nodes (allow multiple selection?)
+      nodeClasses.push(selectedClass);
+    }
     return (
       <g
         className={classNames(DEFAULTS.nodeClass, nodeClasses)}
         onClick={e => this.handleNodeClick(e, this.name)}
         ref={node => (this.node = node)}
+        id={`dag__node--${name}`}
       >
         <circle />
         <text ref={node => (this.label = node)} className={classes.dagNodeText} />
