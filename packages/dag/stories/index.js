@@ -64,7 +64,15 @@ export default ({ storiesOf, action, forceReRender }) => {
     })
     .add('editable mode', () => {
       return (
-        <Dag editable={true} onEdgeAdded={action('onEdgeAdded')} onNodeAdded={action('onNodeAdded')} {...getProps()} />
+        <Dag
+          editable={true}
+          onEdgeAdded={action('onEdgeAdded')}
+          onNodeAdded={action('onNodeAdded')}
+          onDeleteEdge={action('onDeleteEdge')}
+          onEdgeClick={action('onEdgeClick')}
+          onNodeClick={action('onNodeClick')}
+          {...getProps()}
+        />
       );
     });
 
