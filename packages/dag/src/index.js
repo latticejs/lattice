@@ -94,12 +94,18 @@ class Dag extends Component {
   static defaultProps = {
     nodeRadius: 50,
     editable: false,
+    selectedEdgeClass: DEFAULTS.selectedEdgeClass,
+    selectedNodeClass: DEFAULTS.selectedNodeClass,
     onNodeAdded: () => {},
-    onEdgeAdded: () => {}
+    onEdgeAdded: () => {},
+    onDeleteEdge: () => {},
+    nodes: [],
+    edges: []
   };
 
-  constructor(...args) {
-    super(...args);
+  constructor(props) {
+    super(props);
+
     this.state = {
       newEdge: {},
       initNode: true,
@@ -109,6 +115,10 @@ class Dag extends Component {
       edgePanel: false,
       panelPosition: {}
     };
+
+    // deep copy nodes and edges, d3 will work with this.
+    this.gnodes = JSON.parse(JSON.stringify(props.nodes));
+    this.gedges = JSON.parse(JSON.stringify(props.edges));
   }
 
   resetEditableState() {
@@ -123,12 +133,15 @@ class Dag extends Component {
     });
   }
 
-  createGraph = ({ root, nodes, edges, width, height, classes, nodeRadius }) => {
-    this.dagcore = new DagCore(root, { nodes, edges, width, height, classes, nodeRadius });
-  };
-
   componentDidMount() {
-    this.createGraph({ root: this.root, ...this.props });
+    const { width, height, classes, nodeRadius } = this.props;
+    const params = Object.assign(
+      {},
+      { width, height, classes, nodeRadius },
+      { nodes: this.gnodes },
+      { edges: this.gedges }
+    );
+    this.dagcore = new DagCore(this.root, params);
   }
 
   componentWillUnmount() {
@@ -260,11 +273,11 @@ class Dag extends Component {
     return <Edge data={data} classes={classes} ghostEdge={true} editable={editable} />;
   };
 
-  disableGhostEdge = e => {
+  disableGhostEdge() {
     this.resetEditableState();
-  };
+  }
 
-  renderEdgePanel = data => {
+  renderEdgePanel = ({ source, target, actions }) => {
     return (
       <GraphPanel
         style={{
@@ -273,24 +286,57 @@ class Dag extends Component {
           left: this.state.panelPosition.x
         }}
         outerEl={this.graphContainer}
-        source={data.source.title}
-        target={data.target.title}
+        source={source.title}
+        target={target.title}
+        actions={actions}
       >
-        {() => (
+        {({ deleteAction }) => (
           <IconButton>
-            <DeleteIcon />
+            <DeleteIcon onClick={deleteAction} />
           </IconButton>
         )}
       </GraphPanel>
     );
   };
 
+  // GRAPH ACTIONS
+  deleteEdge(idx) {
+    const { onDeleteEdge, edges } = this.props;
+    // remove edge from this.props.edges (copy)
+    let start = 0;
+    let pivotA = 1;
+    let pivotB = 1;
+    let end = edges.length;
+
+    if (start === idx) {
+      start = pivotA;
+    } else if (end === idx) {
+      end = idx - 1;
+    } else {
+      pivotA = idx;
+      pivotB = pivotA + 1;
+    }
+    const newEdges = edges.slice(start, pivotA).concat(edges.slice(pivotB, end));
+
+    onDeleteEdge(newEdges);
+  }
+
   render() {
-    const { width, height, classes = {}, editable, onNodeClick, onEdgeClick, nodeRadius } = this.props;
+    const {
+      width,
+      height,
+      classes = {},
+      editable,
+      onNodeClick,
+      onEdgeClick,
+      nodeRadius,
+      selectedNodeClass,
+      selectedEdgeClass
+    } = this.props;
     const rootClasses = [classes.root];
 
     // NODES
-    const nodes = this.props.nodes.map((node, i) => {
+    const nodes = this.gnodes.map((node, i) => {
       return (
         <Node
           nodeRadius={nodeRadius}
@@ -301,12 +347,13 @@ class Dag extends Component {
           editSelectedNode={this.editSelectedNode}
           editable={editable}
           onNodeClick={onNodeClick}
+          selectedClass={selectedNodeClass}
         />
       );
     });
 
     // EDGES
-    const edges = this.props.edges.map((edge, i) => {
+    const edges = this.gedges.map((edge, i) => {
       return (
         <Edge
           key={`dag__edge-${i}`}
@@ -318,8 +365,10 @@ class Dag extends Component {
           editSelectedEdge={this.editSelectedEdge}
           showEdgePanel={this.state.edgePanel}
           showEdgePanelIdx={this.state.edgePanelIdx}
+          deleteEdge={idx => this.deleteEdge(idx)}
+          selectedClass={selectedEdgeClass}
         >
-          {({ data }) => this.renderEdgePanel(data)}
+          {data => this.renderEdgePanel(data)}
         </Edge>
       );
     });
@@ -333,7 +382,7 @@ class Dag extends Component {
           className={classNames('dag-wrapper', rootClasses)}
           onDoubleClick={editable ? this.newNode : () => {}}
           onMouseMove={editable && !this.state.newNodeReady ? this.setMousePosition : () => {}}
-          onMouseUp={editable && this.state.edgeInitialPoint.x ? this.disableGhostEdge : () => {}}
+          onMouseUp={editable && this.state.edgeInitialPoint.x ? () => this.disableGhostEdge() : () => {}}
         >
           <g className={DEFAULTS.graphClass}>
             {edges}
@@ -361,3 +410,4 @@ class Dag extends Component {
 }
 
 export default withStyles(styles, { name: 'Dag' })(Dag);
+export const DAG_DEFAULTS = DEFAULTS;
