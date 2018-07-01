@@ -4,11 +4,12 @@ import { zoom } from 'd3-zoom';
 import { forceSimulation, forceCollide, forceCenter, forceLink } from 'd3-force';
 
 export const DEFAULTS = {
-  selectedClass: 'selected',
-  linkClass: 'connect-node',
-  nodeClass: 'node',
-  graphClass: 'graph',
-  activeEditId: 'active-editing',
+  selectedNodeClass: 'dag__node-selected',
+  selectedEdgeClass: 'dag__edge-selected',
+  linkClass: 'dag__edge',
+  nodeClass: 'dag__node',
+  graphClass: 'dag__graph',
+  arrowClass: 'dag__edge-arrow',
   BACKSPACE_KEY: 8,
   DELETE_KEY: 46,
   ENTER_KEY: 13,
@@ -40,6 +41,7 @@ export default class DagCore {
   static DEFAULTS = DEFAULTS;
 
   constructor(root, initialState) {
+    // root represents the svg element. It is required.
     this.state = {
       dragEnable: initialState.dragEnable || true,
       zoomEnable: initialState.zoomEnable || false,
@@ -65,7 +67,6 @@ export default class DagCore {
       .attr('orient', 'auto');
 
     this.svg = select(`.${DEFAULTS.graphClass}`);
-
     this.simulation = forceSimulation(nodes)
       .force('charge', null)
       .force(
@@ -98,18 +99,18 @@ export default class DagCore {
   }
 
   updateGraph() {
+    const { nodeRadius } = this.state;
+    // add arrow heads using a polygon
+    selectAll(`.${DEFAULTS.arrowClass}`).each(function() {
+      const line = this.parentNode.querySelector('line');
+      createArrow(this, line, nodeRadius);
+    });
+
     selectAll('line')
       .attr('x1', d => d.source.x)
       .attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x)
       .attr('y2', d => d.target.y);
-
-    const nodeRadius = this.state.nodeRadius;
-    // add arrow heads using a polygon
-    selectAll('.dag__edge-arrow').each(function() {
-      const line = this.parentNode.querySelector('line');
-      createArrow(this, line, nodeRadius);
-    });
 
     selectAll(`.${DagCore.DEFAULTS.nodeClass}`).attr('transform', d => `translate(${d.x}, ${d.y})`);
   }
