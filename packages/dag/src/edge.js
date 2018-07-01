@@ -27,6 +27,12 @@ export default class Edge extends Component {
     onEdgeClick: () => {}
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: false
+    };
+  }
   componentDidMount() {
     this.d3Edge = select(this.edge)
       .datum(this.props.data)
@@ -43,12 +49,34 @@ export default class Edge extends Component {
     if (editable) {
       editSelectedEdge(Object.assign({}, data, { idx }));
     }
-    this.props.onEdgeClick(e, data);
+
+    this.props.onEdgeClick(data);
+    // add selected state
+    this.setState({ selected: !this.state.selected });
   };
 
+  deleteAction() {
+    this.props.deleteEdge(this.props.idx);
+  }
+
+  getActions() {
+    return {
+      deleteAction: () => this.deleteAction()
+    };
+  }
+
   render() {
-    // TODO (dk): apply classes.dagEdgeMarker class to marker-end (arrow)
-    const { classes, editable, ghostEdge, children, data, showEdgePanel, showEdgePanelIdx, idx } = this.props;
+    const {
+      classes,
+      editable,
+      ghostEdge,
+      children,
+      data,
+      showEdgePanel,
+      showEdgePanelIdx,
+      idx,
+      selectedClass
+    } = this.props;
     const edgeClasses = [classes.dagEdge];
 
     if (ghostEdge) {
@@ -59,12 +87,16 @@ export default class Edge extends Component {
       edgeClasses.push(classes.dagEditable);
     }
 
+    if (this.state.selected) {
+      // TODO(dk): clear other selected eddges (allow multiple selection?)
+      edgeClasses.push(selectedClass);
+    }
     return (
-      <g className={classNames(DEFAULTS.linkClass, edgeClasses)}>
-        <line ref={edge => (this.edge = edge)} onClick={this.handleEdgeClick}>
-          {showEdgePanel && showEdgePanelIdx === idx && children && children({ data })}
+      <g className={classNames(DEFAULTS.linkClass, edgeClasses)} onClick={this.handleEdgeClick}>
+        <line ref={edge => (this.edge = edge)}>
+          {showEdgePanel && showEdgePanelIdx === idx && children && children({ ...data, actions: this.getActions() })}
         </line>
-        {ghostEdge ? '' : <polygon className="dag__edge-arrow" />}
+        {ghostEdge ? '' : <polygon className={DEFAULTS.arrowClass} />}
       </g>
     );
   }
