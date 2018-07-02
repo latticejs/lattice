@@ -7,6 +7,7 @@
     "apollo-cache-inmemory": "^1.1.12",
     "apollo-client": "^2.2.8",
     "apollo-link": "^1.2.1",
+    "apollo-link-error": "^1.1.0",
     "apollo-link-http": "^1.5.3",
     "apollo-link-state": "^0.4.1",
     "cors": "^2.8.4",
@@ -17,7 +18,8 @@
     "lodash.merge": "^4.6.1",
     "react": "^16.4.1",
     "react-apollo": "^2.1.2",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "yup": "^0.25.1"
   },
   "scripts": {
     "start": "lattice-react-scripts start",

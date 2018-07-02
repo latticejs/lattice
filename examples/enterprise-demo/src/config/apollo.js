@@ -4,24 +4,31 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { withClientState } from 'apollo-link-state';
 import { ApolloLink } from 'apollo-link';
 import { HttpLink } from 'apollo-link-http';
+import { onError } from 'apollo-link-error';
+
+// stores
 import stores from '../stores';
+
+import { authLink, onQLAuthError, onNetworkAuthError } from './auth';
 
 const cache = new InMemoryCache();
 
-const authLink = new ApolloLink((operation, forward) => {
-  operation.setContext(({ headers = {} }) => ({
-    headers: {
-      ...headers,
-      'x-token': `${localStorage.getItem('token')}`
-    }
-  }));
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    graphQLErrors.forEach(({ message, locations, path }) => {
+      onQLAuthError(client, message);
+    });
+  }
 
-  return forward(operation);
+  if (networkError) {
+    onNetworkAuthError(client, networkError);
+  }
 });
 
-export default new ApolloClient({
+const client = new ApolloClient({
   link: ApolloLink.from([
     authLink,
+    //errorLink,
     withClientState({
       ...merge(...stores),
       cache
@@ -30,3 +37,5 @@ export default new ApolloClient({
   ]),
   cache
 });
+
+export default client;

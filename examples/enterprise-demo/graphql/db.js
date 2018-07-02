@@ -87,7 +87,7 @@ const users = [
   {
     id: 123456,
     name: 'Jane Doe',
-    email: 'jane.doe@company.co',
+    email: 'test@test.com',
     password: 123456,
     teams: ['Administrators', 'Support', 'General', 'Specialists']
   }

@@ -29,6 +29,11 @@ const validateAuth = async (req, res, next) => {
     resource = g.definitions[0].selectionSet.selections[0].name.value;
   }
 
+  if (resource && ['signIn', 'logout', '__schema'].includes(resource)) {
+    next();
+    return;
+  }
+
   if (token) {
     try {
       const credentials = await jwt.verify(token, secret);
@@ -38,10 +43,6 @@ const validateAuth = async (req, res, next) => {
       res.status(401).json({ error });
       return;
     }
-  } else if (resource && !['login', 'logout', '__schema'].includes(resource)) {
-    const error = 'Your session expired. Sign in again.';
-    res.status(401).json({ error });
-    return;
   }
 
   next();
@@ -54,6 +55,10 @@ const Query = `
 
   extend type Mutation {
     signIn(email: String!, password: String!): Token!
+  }
+
+  extend type Query {
+    currentUser: User
   }
 `;
 
@@ -72,9 +77,18 @@ const resolvers = {
 
       return { token: createToken(user, '30m') };
     }
+  },
+  Query: {
+    currentUser(obj, params, { credentials }) {
+      if (!credentials) {
+        return null;
+      }
+
+      return db.users.find(u => u.id === credentials.id);
+    }
   }
 };
 
-app.use('/graphql', /*validateAuth,*/ jsonGraphqlExpress({ data: db, typeDefs: Query, resolvers }));
+app.use('/graphql', validateAuth, jsonGraphqlExpress({ data: db, typeDefs: Query, resolvers }));
 
 app.listen(process.env.NODE_PORT || 3001);
