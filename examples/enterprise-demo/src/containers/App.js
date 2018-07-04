@@ -28,7 +28,6 @@ import { withSignOut } from '../components/Auth';
 import PrivateRoute from '../components/PrivateRoute';
 
 const Main = withSignOut(({ signOut }) => {
-  console.log(signOut);
   return <button onClick={signOut}>test</button>;
 });
 

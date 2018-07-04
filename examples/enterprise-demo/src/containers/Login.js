@@ -16,8 +16,9 @@ import { compose } from 'react-apollo';
 import { Redirect } from 'react-router-dom';
 
 // Ours
-import { withSignIn } from '../components/Auth';
+import { withSignIn, withCurrentUser } from '../components/Auth';
 import FormikTextField from '../components/FormikTextField';
+import { GraphqlErrorNotification } from '../components/Notification';
 
 const styles = theme => ({
   root: {
@@ -46,15 +47,18 @@ class Login extends Component {
       currentUser,
       location: { state },
       handleSubmit,
-      submitForm
+      isSubmitting,
+      submitForm,
+      status
     } = this.props;
 
-    if (currentUser) {
+    if (!isSubmitting && currentUser) {
       return <Redirect to={state ? state.from : '/'} />;
     }
 
     return (
       <Grid container direction="row" alignItems="stretch" spacing={0} className={classes.root}>
+        <GraphqlErrorNotification error={status} />
         <Hidden xsDown>
           <Grid item sm={4} className={classes.side}>
             <img src="/images/sidebar-2.jpg" className={classes.img} alt="side" />
@@ -91,7 +95,7 @@ class Login extends Component {
 }
 
 const EnhancedForm = withFormik({
-  mapPropsToValues: () => ({ email: '', password: '' }),
+  mapPropsToValues: () => ({ email: 'admin@lattice.com', password: '123456' }),
   validationSchema: yup.object().shape({
     email: yup
       .string()
@@ -99,7 +103,7 @@ const EnhancedForm = withFormik({
       .required('Email is required!'),
     password: yup.string().required('Password is required!')
   }),
-  handleSubmit: async (values, { setSubmitting, props: { signIn, refetchUser } }) => {
+  handleSubmit: async (values, { setSubmitting, setStatus, props: { signIn } }) => {
     try {
       await signIn({
         variables: {
@@ -108,9 +112,10 @@ const EnhancedForm = withFormik({
         }
       });
 
-      refetchUser();
+      setSubmitting(false);
     } catch (err) {
       setSubmitting(false);
+      setStatus(err);
     }
   },
   displayName: 'BasicForm'
@@ -118,6 +123,7 @@ const EnhancedForm = withFormik({
 
 export default compose(
   withSignIn,
+  withCurrentUser,
   EnhancedForm,
   withStyles(styles)
 )(Login);

@@ -7,3 +7,13 @@ export const signIn = gql`
     }
   }
 `;
+
+export const currentUser = gql`
+  query CurrentUser {
+    currentUser {
+      id
+      email
+      role
+    }
+  }
+`;
