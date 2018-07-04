@@ -87,7 +87,7 @@ export default class Node extends Component {
 
     onNodeClick({ title: name });
     // add selected state
-    this.setState({ selected: !this.state.selected });
+    this.setState(prevState => ({ selected: !prevState.selected }));
   };
 
   onTextChange = e => {
