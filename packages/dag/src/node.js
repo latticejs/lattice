@@ -39,8 +39,8 @@ export default class Node extends Component {
     onNodeAdded: () => {}
   };
 
-  constructor(args) {
-    super(...args);
+  constructor(props) {
+    super(props);
     this.state = {
       labelX: 0,
       labelY: 0,
@@ -73,18 +73,19 @@ export default class Node extends Component {
   };
 
   handleNodeClick = e => {
-    const { editable, editSelectedNode, onNodeClick } = this.props;
+    const { editable, editSelectedNode, onNodeClick, data, idx, name } = this.props;
     const node = {
-      title: this.props.name,
-      x: this.props.data.x,
-      y: this.props.data.y
+      title: name,
+      x: data.x,
+      y: data.y,
+      idx: idx
     };
 
     if (editable) {
-      editSelectedNode(node);
+      return editSelectedNode(node);
     }
 
-    onNodeClick(node);
+    onNodeClick({ title: name });
     // add selected state
     this.setState({ selected: !this.state.selected });
   };
@@ -104,7 +105,7 @@ export default class Node extends Component {
         if (this.state.text) {
           this.props.onNodeAdded({
             ...this.props.data,
-            name: this.state.text
+            title: this.state.text
           });
         }
         this.props.closeNode();
@@ -118,8 +119,33 @@ export default class Node extends Component {
     }
   };
 
+  deleteAction(event) {
+    const { deleteNode, idx } = this.props;
+    deleteNode({ event, idx });
+  }
+
+  getActions() {
+    return {
+      deleteAction: event => this.deleteAction(event),
+      createEdgeAction: this.props.createEdge
+    };
+  }
+
   render() {
-    const { newNode, outerEl, classes, editable, name, selectedClass } = this.props;
+    const {
+      newNode,
+      outerEl,
+      classes,
+      editable,
+      name,
+      data,
+      selectedClass,
+      children,
+      nodePanel,
+      showPanel,
+      showPanelIdx,
+      idx
+    } = this.props;
 
     const nodeClasses = [classes.dagNode];
 
@@ -134,14 +160,14 @@ export default class Node extends Component {
     return (
       <g
         className={classNames(DEFAULTS.nodeClass, nodeClasses)}
-        onClick={e => this.handleNodeClick(e, this.name)}
+        onClick={this.handleNodeClick}
         ref={node => (this.node = node)}
         id={`dag__node--${name}`}
       >
         <circle />
         <text ref={node => (this.label = node)} className={classes.dagNodeText} />
         {newNode &&
-          this.props.children({
+          children({
             outerEl,
             onTextChange: this.onTextChange,
             onKeyDown: this.onKeyDown,
@@ -151,6 +177,10 @@ export default class Node extends Component {
             labelWidth: this.state.labelWidth,
             labelHeight: this.state.labelHeight
           })}
+        {showPanel &&
+          showPanelIdx === idx &&
+          nodePanel &&
+          nodePanel({ outerEl, title: name, x: data.x, y: data.y, actions: this.getActions() })}
       </g>
     );
   }
