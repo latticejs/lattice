@@ -47,7 +47,10 @@ export default class Edge extends Component {
     const { editable, data, editSelectedEdge, onEdgeClick, idx } = this.props;
 
     if (editable) {
-      return editSelectedEdge(Object.assign({}, data, { idx }));
+      return editSelectedEdge({
+        ...data,
+        idx
+      });
     }
 
     onEdgeClick({
@@ -55,7 +58,9 @@ export default class Edge extends Component {
       target: data.target.title
     });
     // add selected state
-    this.setState({ selected: !this.state.selected });
+    this.setState(prevState => ({
+      selected: !prevState.selected
+    }));
   };
 
   deleteAction(event) {
