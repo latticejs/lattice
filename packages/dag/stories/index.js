@@ -60,7 +60,14 @@ export default ({ storiesOf, action, forceReRender }) => {
   storiesOf('dag/basic', module)
     .add('no wrapper', () => {
       // TODO(dk): parse real pkg json deps.
-      return <Dag onClick={action('clicked')} {...getProps()} />;
+      return (
+        <Dag
+          onClick={action('clicked')}
+          onEdgeClick={action('onEdgeClick')}
+          onNodeClick={action('onNodeClick')}
+          {...getProps()}
+        />
+      );
     })
     .add('editable mode', () => {
       return (
@@ -69,8 +76,7 @@ export default ({ storiesOf, action, forceReRender }) => {
           onEdgeAdded={action('onEdgeAdded')}
           onNodeAdded={action('onNodeAdded')}
           onEdgeRemoved={action('onEdgeRemoved')}
-          onEdgeClick={action('onEdgeClick')}
-          onNodeClick={action('onNodeClick')}
+          onNodeRemoved={action('onNodeRemoved')}
           {...getProps()}
         />
       );
