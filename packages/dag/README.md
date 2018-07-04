@@ -46,7 +46,7 @@ export class MyGraph extends React.Component {
 
 ```
 
-Also, take a look to the `dag` stories.
+:arrow_right: Also, take a look to the `dag` stories.
 
 
 ## API
@@ -59,26 +59,26 @@ Indicates if the `dag` can be edited, eg: new edges can be added. This mode enda
 
 ### onNodeClick
 
-> `function(event: Object)` | defaults to: `noOp`
+> `function(node: Object)` | defaults to: `noOp`
 
-Used to capture node selection event.
+Used to get the selected node. Click on a node also adds the `selectedNodeClass` to target node. See exported `DAG_DEFAULTS` object.
 
 ### onEdgeClick
 
-> `function(event: Object)` | defaults to: `noOp`
+> `function(edge: Object)` | defaults to: `noOp`
 
-Used to capture edge selection event.
+Used to get the selected edge. Click on an edge also adds the `selectedEdgeClass` to target edge. See exported `DAG_DEFAULTS` object.
 
 ### onEdgeAdded
 
 > `function(edge: Object)` | defaults to: `noOp`
 
-Used to create a new edge between node target and source. In order to work the `dag` needs the `editable` prop enabled. When the user click on a node, a new "ghost edge" will appear representing the new edge. The function will be called when a different node is clicked. Cancelling the effect otherwise.
+Used to create a new edge between node target and source. In order to work the `dag` needs the `editable` prop enabled. When the user clicks on a node, a new _panel_ will appear where they can select actions to trigger. If they select to create a new edge, then a new "ghost edge" will show representing a new connection between nodes. Initial node will be the **source**. The cb function will be called when a different node (**target**) is clicked.
 `edge` parameter looks like this:
 
 ```javascript
 // edge parameter description
-{ source:String, target: String }
+{ source: String, target: String }
 ```
 
 ### onNodeAdded
@@ -92,6 +92,22 @@ Used to create a new node. Only works on `editable` mode. To trigger the new nod
 { title: String, x: Number, y: Number}
 ```
 Where `x` and `y` are the coords where the user double clicked.
+
+### onNodeRemoved
+
+> `function(nodes: Array)` | defaults to: `noOp`
+
+Used to remove selected node. On `editable` mode, click on a node opens a _panel_ for trigger specific component actions, ie: remove element, add edge, etc. 
+
+When remove-node-action is executed this cb function will be called with a copy of input `nodes` **excluding** selected node.
+
+### onEdgeRemoved
+
+> `function(edges: Array)` | defaults to `noOp`
+
+Used to remove selected edge. On `editable` mode, click on an edge opens a _panel_ for trigger specific component actions, ie: remove element, etc.
+
+When remove-edge-action is executed this cb function will be called with a copy of input `edges` **excluding** selected edge.
 
 ## FAQs
 
