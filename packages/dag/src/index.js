@@ -90,6 +90,24 @@ class SvgTextInput extends Component {
   }
 }
 
+// \\ default render method for edge actions \\
+const dagRenderEdgeActions = ({ deleteAction }) => (
+  <IconButton>
+    <DeleteIcon onClick={deleteAction} />
+  </IconButton>
+);
+
+const dagRenderNodeActions = ({ deleteAction, createEdgeAction }) => (
+  <React.Fragment>
+    <IconButton>
+      <DeleteIcon onClick={deleteAction} />
+    </IconButton>
+    <IconButton>
+      <MultilineIcon onClick={createEdgeAction} />
+    </IconButton>
+  </React.Fragment>
+);
+
 class Dag extends Component {
   static displayName = 'Dag';
   static defaultProps = {
@@ -102,7 +120,9 @@ class Dag extends Component {
     onEdgeRemoved: () => {},
     onNodeRemoved: () => {},
     nodes: [],
-    edges: []
+    edges: [],
+    renderNodeActions: dagRenderNodeActions,
+    renderEdgeActions: dagRenderEdgeActions
   };
 
   constructor(props) {
@@ -267,13 +287,13 @@ class Dag extends Component {
   };
 
   newNode = e => {
-    this.setState({
-      newNodeReady: !this.state.newNodeReady,
+    this.setState(prevState => ({
+      newNodeReady: !prevState.newNodeReady,
       newNode: {
         x: e.clientX,
         y: e.clientY
       }
-    });
+    }));
     this.dagcore.toggleDrag();
   };
 
@@ -323,11 +343,7 @@ class Dag extends Component {
         target={target.title}
         actions={actions}
       >
-        {({ deleteAction }) => (
-          <IconButton>
-            <DeleteIcon onClick={deleteAction} />
-          </IconButton>
-        )}
+        {this.props.renderEdgeActions}
       </GraphPanel>
     );
   };
@@ -344,16 +360,7 @@ class Dag extends Component {
         title={title}
         actions={actions}
       >
-        {({ deleteAction, createEdgeAction }) => (
-          <React.Fragment>
-            <IconButton>
-              <DeleteIcon onClick={deleteAction} />
-            </IconButton>
-            <IconButton>
-              <MultilineIcon onClick={createEdgeAction} />
-            </IconButton>
-          </React.Fragment>
-        )}
+        {this.props.renderNodeActions}
       </GraphPanel>
     );
   };
