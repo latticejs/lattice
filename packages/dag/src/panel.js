@@ -19,6 +19,7 @@ const styles = theme => ({
   },
   controls: {
     alignItems: 'center',
+    paddingTop: theme.spacing.unit,
     paddingLeft: theme.spacing.unit,
     paddingBottom: theme.spacing.unit
   }
@@ -30,24 +31,21 @@ class GraphPanel extends Component {
     this.el = document.createElement('div');
   }
   componentDidMount() {
-    // FIXME(dk): we should use the outerEl (div wrapping graph)
-    // instead of adding a random div to the body.
-    // this.props.outerEl.appendChild(this.el);
-    document.body.appendChild(this.el);
+    this.props.outerEl.appendChild(this.el);
     if (this.panel) this.panel.focus();
   }
 
   componentWillUnmount() {
-    document.body.removeChild(this.el);
+    this.props.outerEl.removeChild(this.el);
   }
 
   renderContentNode({ title }) {
     return (
       <Grid item xs={12}>
-        <Typography variant="body1" color="default">
-          Node:
+        <Typography variant="caption" color="default">
+          Node
         </Typography>
-        <Typography variant="body1" color="inherit">
+        <Typography variant="body2" color="inherit">
           {title}
         </Typography>
       </Grid>
