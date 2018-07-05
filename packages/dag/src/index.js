@@ -287,13 +287,13 @@ class Dag extends Component {
   };
 
   newNode = e => {
-    this.setState(prevState => ({
-      newNodeReady: !prevState.newNodeReady,
+    this.setState({
+      newNodeReady: !this.state.newNodeReady,
       newNode: {
         x: e.clientX,
         y: e.clientY
       }
-    }));
+    });
     this.dagcore.toggleDrag();
   };
 
