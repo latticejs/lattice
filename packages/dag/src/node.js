@@ -3,11 +3,9 @@ import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag';
 
-const DEFAULT_RADIUS = 50;
-
 const enterNode = (selection, props) => {
   selection.select('circle').attr('r', d => {
-    return props.radius || DEFAULT_RADIUS;
+    return props.nodeRadius;
   });
 
   insertTitleLinebreaks(selection, props.name);
@@ -24,6 +22,7 @@ const insertTitleLinebreaks = (gEl, title) => {
   const el = gEl
     .select('text')
     .attr('text-anchor', 'middle')
+    .attr('stroke-width', 1)
     .attr('dy', `-${(nwords - 1) * 7.5}`);
 
   words.forEach((word, idx) => {
@@ -40,14 +39,15 @@ export default class Node extends Component {
     onNodeAdded: () => {}
   };
 
-  constructor(args) {
-    super(...args);
+  constructor(props) {
+    super(props);
     this.state = {
       labelX: 0,
       labelY: 0,
       labelWidth: '50px',
       labelHeight: '20px',
-      text: ''
+      text: '',
+      selected: false
     };
   }
 
@@ -73,17 +73,21 @@ export default class Node extends Component {
   };
 
   handleNodeClick = e => {
+    const { editable, editSelectedNode, onNodeClick, data, idx, name } = this.props;
     const node = {
-      title: this.props.name,
-      x: this.props.data.x,
-      y: this.props.data.y
+      title: name,
+      x: data.x,
+      y: data.y,
+      idx: idx
     };
 
-    if (this.props.editable) {
-      this.props.editSelectedNode(node);
+    if (editable) {
+      return editSelectedNode(node);
     }
 
-    this.props.onNodeClick(node);
+    onNodeClick({ title: name });
+    // add selected state
+    this.setState(prevState => ({ selected: !prevState.selected }));
   };
 
   onTextChange = e => {
@@ -98,10 +102,12 @@ export default class Node extends Component {
     switch (keyCode) {
       case 13:
         // enter key
-        this.props.onNodeAdded({
-          ...this.props.data,
-          name: this.state.text
-        });
+        if (this.state.text) {
+          this.props.onNodeAdded({
+            ...this.props.data,
+            title: this.state.text
+          });
+        }
         this.props.closeNode();
         break;
       case 27:
@@ -113,19 +119,55 @@ export default class Node extends Component {
     }
   };
 
-  render() {
-    const { newNode, outerEl } = this.props;
+  deleteAction(event) {
+    const { deleteNode, idx } = this.props;
+    deleteNode({ event, idx });
+  }
 
+  getActions() {
+    return {
+      deleteAction: event => this.deleteAction(event),
+      createEdgeAction: this.props.createEdge
+    };
+  }
+
+  render() {
+    const {
+      newNode,
+      outerEl,
+      classes,
+      editable,
+      name,
+      data,
+      selectedClass,
+      children,
+      nodePanel,
+      showPanel,
+      showPanelIdx,
+      idx
+    } = this.props;
+
+    const nodeClasses = [classes.dagNode];
+
+    if (editable) {
+      nodeClasses.push(classes.dagEditable);
+    }
+
+    if (this.state.selected) {
+      // TODO(dk): clear other selected nodes (allow multiple selection?)
+      nodeClasses.push(selectedClass);
+    }
     return (
       <g
-        className={classNames(DEFAULTS.nodeClass, this.props.classes.dagNode)}
-        onClick={e => this.handleNodeClick(e, this.name)}
+        className={classNames(DEFAULTS.nodeClass, nodeClasses)}
+        onClick={this.handleNodeClick}
         ref={node => (this.node = node)}
+        id={`dag__node--${name}`}
       >
         <circle />
-        <text ref={node => (this.label = node)} className={this.props.classes.dagNodeText} />
+        <text ref={node => (this.label = node)} className={classes.dagNodeText} />
         {newNode &&
-          this.props.children({
+          children({
             outerEl,
             onTextChange: this.onTextChange,
             onKeyDown: this.onKeyDown,
@@ -135,6 +177,10 @@ export default class Node extends Component {
             labelWidth: this.state.labelWidth,
             labelHeight: this.state.labelHeight
           })}
+        {showPanel &&
+          showPanelIdx === idx &&
+          nodePanel &&
+          nodePanel({ outerEl, title: name, x: data.x, y: data.y, actions: this.getActions() })}
       </g>
     );
   }
