@@ -2,6 +2,8 @@ const merge = require('lodash.merge');
 
 const { typeDef: Auth, resolvers: authResolvers } = require('./auth.js');
 const { typeDef: Employee, resolvers: employeeResolvers } = require('./employee.js');
+const { typeDef: Area, resolvers: areaResolvers } = require('./area.js');
+const { typeDef: Task, resolvers: taskResolvers } = require('./task.js');
 
 // const {
 // typeDef: User,
@@ -21,6 +23,11 @@ const Query = `
     direction: String!
   }
 
+  type PageInfo {
+    endCursor: String
+    hasNextPage: Boolean!
+  }
+
   type Query {
     _empty: String
   }
@@ -33,6 +40,6 @@ const Query = `
 const resolvers = {};
 
 module.exports = {
-  typeDefs: [Query, Auth, Employee],
-  resolvers: merge(resolvers, authResolvers, employeeResolvers)
+  typeDefs: [Query, Auth, Employee, Area, Task],
+  resolvers: merge(resolvers, authResolvers, employeeResolvers, areaResolvers, taskResolvers)
 };

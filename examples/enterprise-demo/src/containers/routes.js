@@ -9,9 +9,16 @@ import PeopleIcon from '@material-ui/icons/People';
 import TextFormatIcon from '@material-ui/icons/TextFormat';
 
 import Dashboard from './Dashboard';
-import Employees from './Employees';
-import General from './theme/General';
-import Widgets from './theme/Widgets';
+//import Employees from './Employees';
+//import General from './theme/General';
+//import Widgets from './theme/Widgets';
+
+export const MAIN = '/';
+export const SIGN_IN = '/login';
+export const DASHBOARD = '/dashboard';
+export const EMPLOYEES = '/employees';
+export const THEME_GENERAL = '/theme/general';
+export const THEME_WIDGETS = '/theme/widgets';
 
 export const navigation = [
   {
@@ -20,30 +27,30 @@ export const navigation = [
     component: Dashboard,
     icon: DashboardIcon
   },
-  {
-    path: '/employees',
-    title: 'Employees',
-    component: Employees,
-    icon: PeopleIcon
-  },
-  {
-    title: 'Theme',
-    icon: ExtensionIcon,
-    children: [
-      {
-        path: '/theme/general',
-        title: 'General',
-        component: General,
-        icon: TextFormatIcon
-      },
-      {
-        path: '/theme/widgets',
-        title: 'Widgets',
-        component: Widgets,
-        icon: ContentCopyIcon
-      }
-    ]
-  }
+  //{
+    //path: '/employees',
+    //title: 'Employees',
+    //component: Employees,
+    //icon: PeopleIcon
+  //},
+  //{
+    //title: 'Theme',
+    //icon: ExtensionIcon,
+    //children: [
+      //{
+        //path: '/theme/general',
+        //title: 'General',
+        //component: General,
+        //icon: TextFormatIcon
+      //},
+      //{
+        //path: '/theme/widgets',
+        //title: 'Widgets',
+        //component: Widgets,
+        //icon: ContentCopyIcon
+      //}
+    //]
+  //}
 ];
 
 const routesInNavigation = () => {

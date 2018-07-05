@@ -1,22 +1,24 @@
 import gql from 'graphql-tag';
 
-export const allEmployees = gql`
-  query AllEmployees($page: Int, $rowsPerPage: Int, $filterBy: String, $sortField: String, $sortOrder: String) {
-    allEmployees(
-      page: $page
-      perPage: $rowsPerPage
-      filter: { q: $filterBy }
-      sortField: $sortField
-      sortOrder: $sortOrder
-    ) {
-      id
-      name
-      email
-      position
-      department
-    }
-    _allEmployeesMeta(filter: { q: $filterBy }) {
-      count
+export const employeesConnection = gql`
+  query EmployeesConnection($filterBy: [Filter], $orderBy: [Order], $first: Int = 10, $after: String) {
+    employeesConnection(filterBy: $filterBy, orderBy: $orderBy, first: $first, after: $after) {
+      totalCount
+      edges {
+        node {
+          id
+          name
+          email
+          area {
+            name
+          }
+        }
+        cursor
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
     }
   }
 `;

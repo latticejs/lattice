@@ -10,7 +10,6 @@ export const withCurrentUser = graphql(currentUser, {
     error
   }),
   options: {
-    fetchPolicy: 'network-only',
     errorPolicy: 'all'
   }
 });

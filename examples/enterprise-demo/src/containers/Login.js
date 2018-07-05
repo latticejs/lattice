@@ -16,6 +16,7 @@ import { compose } from 'react-apollo';
 import { Redirect } from 'react-router-dom';
 
 // Ours
+import { MAIN } from './routes';
 import { withSignIn, withCurrentUser } from '../components/Auth';
 import FormikTextField from '../components/FormikTextField';
 import { GraphqlErrorNotification } from '../components/Notification';
@@ -25,7 +26,8 @@ const styles = theme => ({
     height: '100vh'
   },
   side: {
-    overflow: 'hidden'
+    overflow: 'hidden',
+    display: 'flex'
   },
   img: {
     objectFit: 'cover'
@@ -37,6 +39,9 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     minHeight: 190
+  },
+  containerForm: {
+    padding: 20
   }
 });
 
@@ -53,7 +58,7 @@ class Login extends Component {
     } = this.props;
 
     if (!isSubmitting && currentUser) {
-      return <Redirect to={state ? state.from : '/'} />;
+      return <Redirect to={state ? state.from : MAIN} />;
     }
 
     return (
@@ -64,7 +69,7 @@ class Login extends Component {
             <img src="/images/sidebar-2.jpg" className={classes.img} alt="side" />
           </Grid>
         </Hidden>
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={8} className={classes.containerForm}>
           <Grid
             component="form"
             autoComplete="off"

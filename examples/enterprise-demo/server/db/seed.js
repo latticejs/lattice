@@ -41,13 +41,14 @@ function getRandomInt(min, max) {
   for (let i = 0; i < 100; i++) {
     const employee1 = employees.get(getRandomInt(0, 5000)).value().id;
     const employee2 = employees.get(getRandomInt(0, 5000)).value().id;
-
+    const createdAt = faker.date.past();
     await tasks
       .insert({
         title: faker.name.title(),
         description: faker.lorem.paragraph(),
         employees: [employee1, employee2],
-        createdAt: faker.date.past().getTime()
+        createdAt: createdAt.getTime(),
+        completedAt: getRandomInt(0, 2) ? faker.date.between(createdAt, new Date()).getTime() : null
       })
       .write();
   }

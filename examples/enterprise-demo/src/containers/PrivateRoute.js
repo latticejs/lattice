@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import { Redirect, Route } from 'react-router-dom';
 
-import { withCurrentUser } from './Auth';
+import { withCurrentUser } from '../components/Auth';
 
-import { SIGN_IN } from '../constants/routes';
+import { SIGN_IN } from './routes';
 
 class PrivateRoute extends Component {
   render() {
@@ -28,4 +28,5 @@ class PrivateRoute extends Component {
     );
   }
 }
+
 export default withCurrentUser(PrivateRoute);

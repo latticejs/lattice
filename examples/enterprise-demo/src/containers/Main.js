@@ -27,14 +27,15 @@ import { compose, graphql } from 'react-apollo';
 // @latticejs
 import SideMenu from '@latticejs/widgets/SideMenu';
 
+// Stores
+import { getUi, updateUi } from '../stores/ui';
+
 // Ours
 import routes, { routeByPath, navigation } from './routes';
 import Content from '../components/Content';
 import Lightbulb from '../components/icons/Lightbulb';
+import { withSignOut } from '../components/Auth';
 import PrivateRoute from './PrivateRoute';
-
-import ui, { updateNightMode } from '../queries/ui';
-import { signOut } from '../queries/user';
 
 const styles = theme => ({
   root: {
@@ -97,8 +98,8 @@ class Main extends Component {
   };
 
   handleNightModeChange = (e, checked) => {
-    const { updateNightMode, nightMode } = this.props;
-    updateNightMode(!nightMode);
+    const { updateUi, nightMode } = this.props;
+    updateUi(!nightMode);
   };
 
   handleSignOut = () => {
@@ -198,7 +199,8 @@ class Main extends Component {
 }
 
 export default compose(
-  graphql(ui, {
+  withSignOut,
+  graphql(getUi, {
     props: ({
       data: {
         ui: { nightMode }
@@ -207,10 +209,10 @@ export default compose(
       nightMode
     })
   }),
-  graphql(updateNightMode, {
+  graphql(updateUi, {
     props({ mutate }) {
       return {
-        updateNightMode: nightMode => {
+        updateUi: nightMode => {
           return mutate({
             variables: {
               nightMode
@@ -220,7 +222,6 @@ export default compose(
       };
     }
   }),
-  graphql(signOut, { name: 'signOut' }),
   withRouter,
   withStyles(styles)
 )(Main);

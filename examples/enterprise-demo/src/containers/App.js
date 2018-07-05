@@ -17,19 +17,13 @@ import { compose, graphql } from 'react-apollo';
 // stores
 import { getUi } from '../stores/ui';
 
-// Pages
-import * as routes from '../constants/routes';
-import Login from './Login';
-//import Main from './Main';
-
 // components
+import PrivateRoute from './PrivateRoute';
 
-import { withSignOut } from '../components/Auth';
-import PrivateRoute from '../components/PrivateRoute';
-
-const Main = withSignOut(({ signOut }) => {
-  return <button onClick={signOut}>test</button>;
-});
+// Pages
+import { SIGN_IN, MAIN } from './routes';
+import Login from './Login';
+import Main from './Main';
 
 class App extends Component {
   createTheme() {
@@ -48,8 +42,8 @@ class App extends Component {
         <MuiThemeProvider theme={this.createTheme()}>
           <CssBaseline>
             <Switch>
-              <Route path={routes.SIGN_IN} component={Login} />
-              <PrivateRoute path={routes.MAIN} component={Main} />
+              <Route path={SIGN_IN} component={Login} />
+              <PrivateRoute path={MAIN} component={Main} />
             </Switch>
           </CssBaseline>
         </MuiThemeProvider>

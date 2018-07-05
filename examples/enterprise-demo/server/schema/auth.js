@@ -12,7 +12,7 @@ exports.typeDef = `
   }
 
   type CurrentUser {
-    id: String!
+    id: ID!
     email: String!
     role: String!
   }
