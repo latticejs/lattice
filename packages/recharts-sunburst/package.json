@@ -17,7 +17,7 @@
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "recharts": "^1.0.0-beta.10"
+    "recharts": "^1.0.1"
   },
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.4.5",
