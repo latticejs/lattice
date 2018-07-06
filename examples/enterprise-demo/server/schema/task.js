@@ -28,7 +28,7 @@ exports.typeDef = `
 
 exports.resolvers = {
   Query: {
-    tasksConnection: (...args) => {
+    tasksConnection: async (...args) => {
       return handlerConnection(...args);
     }
   },

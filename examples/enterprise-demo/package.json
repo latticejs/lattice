@@ -5,6 +5,7 @@
   "dependencies": {
     "@latticejs/react-scripts": "^1.0.1-alpha.4",
     "apollo-cache-inmemory": "^1.1.12",
+    "apollo-cache-persist": "^0.1.1",
     "apollo-client": "^2.3.5",
     "apollo-link": "^1.2.1",
     "apollo-link-error": "^1.1.0",

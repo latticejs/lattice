@@ -5,10 +5,12 @@ import ExtensionIcon from '@material-ui/icons/Extension';
 // import MapIcon from 'material-ui-icons/Map'
 // import PageViewIcon from 'material-ui-icons/Pageview';
 import PeopleIcon from '@material-ui/icons/People';
+import BusinessIcon from '@material-ui/icons/Business';
 // import PersonIcon from '@material-ui/icons/Person';
 import TextFormatIcon from '@material-ui/icons/TextFormat';
 
 import Dashboard from './Dashboard';
+import Areas from './Areas';
 //import Employees from './Employees';
 //import General from './theme/General';
 //import Widgets from './theme/Widgets';
@@ -19,37 +21,44 @@ export const DASHBOARD = '/dashboard';
 export const EMPLOYEES = '/employees';
 export const THEME_GENERAL = '/theme/general';
 export const THEME_WIDGETS = '/theme/widgets';
+export const AREAS = '/areas';
 
 export const navigation = [
   {
-    path: '/dashboard',
+    path: DASHBOARD,
     title: 'Dashboard',
     component: Dashboard,
     icon: DashboardIcon
   },
+  {
+    path: AREAS,
+    title: 'Areas',
+    component: Areas,
+    icon: BusinessIcon
+  }
   //{
-    //path: '/employees',
-    //title: 'Employees',
-    //component: Employees,
-    //icon: PeopleIcon
+  //path: '/employees',
+  //title: 'Employees',
+  //component: Employees,
+  //icon: PeopleIcon
   //},
   //{
-    //title: 'Theme',
-    //icon: ExtensionIcon,
-    //children: [
-      //{
-        //path: '/theme/general',
-        //title: 'General',
-        //component: General,
-        //icon: TextFormatIcon
-      //},
-      //{
-        //path: '/theme/widgets',
-        //title: 'Widgets',
-        //component: Widgets,
-        //icon: ContentCopyIcon
-      //}
-    //]
+  //title: 'Theme',
+  //icon: ExtensionIcon,
+  //children: [
+  //{
+  //path: '/theme/general',
+  //title: 'General',
+  //component: General,
+  //icon: TextFormatIcon
+  //},
+  //{
+  //path: '/theme/widgets',
+  //title: 'Widgets',
+  //component: Widgets,
+  //icon: ContentCopyIcon
+  //}
+  //]
   //}
 ];
 

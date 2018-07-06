@@ -3,19 +3,14 @@ import React, { Component } from 'react';
 // Material-UI
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import ListItemText from '@material-ui/core/ListItemText';
 
 // Apollo
 import { compose, graphql } from 'react-apollo';
 
-// @latticejs
-import { List, ListItem } from '@latticejs/widgets';
-
 // Ours
 import AverageRevenue from '../components/dashboard/AverageRevenue';
 import NewCustomers from '../components/dashboard/NewCustomers';
-import Sales from '../components/dashboard/Sales';
-import Stats from '../components/dashboard/Stats';
+import Tasks from '../components/dashboard/Tasks';
 import TaskScheduler from '../components/dashboard/TaskScheduler';
 import Demographic from '../components/dashboard/Demographic';
 
@@ -24,43 +19,13 @@ import { tasksConnection } from '../stores/task';
 
 class Dashboard extends Component {
   render() {
-    const { lastCompletedTasks } = this.props;
+    const { completedTasks } = this.props;
     return (
       <Grid container spacing={16}>
         <Grid item xs={12}>
           <Grid container spacing={16}>
             <Grid item xs={6} lg={12}>
-              <Paper>
-                {lastCompletedTasks && (
-                  <List
-                    loadMore={() => {}}
-                    list={lastCompletedTasks.edges.map(edge => edge.node)}
-                    rowCount={lastCompletedTasks.totalCount}
-                    rowHeight={68}
-                    height={200}
-                  >
-                    {({ item, isEmpty, key, style }) => {
-                      if (isEmpty) {
-                        return <h4>Empty list</h4>;
-                      }
-
-                      if (!item) {
-                        return (
-                          <ListItem key={key} style={style}>
-                            <ListItemText primary="loading..." />
-                          </ListItem>
-                        );
-                      }
-
-                      return (
-                        <ListItem key={key} style={style}>
-                          <ListItemText primary={item.title} />
-                        </ListItem>
-                      );
-                    }}
-                  </List>
-                )}
-              </Paper>
+              <Tasks {...completedTasks} title="Completed Tasks" />
             </Grid>
             <Grid item xs={12} />
           </Grid>
@@ -92,11 +57,16 @@ class Dashboard extends Component {
 
 export default compose(
   graphql(tasksConnection, {
-    props: ({ data: { tasksConnection } }) => ({
-      lastCompletedTasks: tasksConnection
+    props: ({ data: { tasksConnection, loading, fetchMore } }) => ({
+      completedTasks: {
+        tasks: tasksConnection,
+        loading,
+        fetchMore
+      }
     }),
     options: props => ({
       variables: {
+        filterBy: [{ field: 'completedAt', value: null, operator: 'NOT_EQUAL' }],
         orderBy: [{ field: 'completedAt', direction: 'asc' }],
         first: 10
       }

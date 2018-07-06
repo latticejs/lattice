@@ -13,7 +13,23 @@ module.exports = collection => (_, { filterBy = [], orderBy = [], first = 10, af
   const list = db[collection]
     .filter(row => {
       return filterBy.reduce((result, next) => {
-        return result && row[next.field].toLowerCase().includes(next.value.toLowerCase());
+        const left = row[next.field];
+        const right = next.value;
+
+        const operator = next.operator || 'LIKE';
+
+        switch (operator) {
+          case 'LIKE':
+            return result && left.toLowerCase().includes(right.toLowerCase());
+          case 'EQUAL':
+            return result && left === right;
+          case 'NOT_LIKE':
+            return result && !left.toLowerCase().includes(right.toLowerCase());
+          case 'NOT_EQUAL':
+            return result && left !== right;
+          default:
+            return result;
+        }
       }, true);
     })
     .orderBy(ordersField, ordersDirection);

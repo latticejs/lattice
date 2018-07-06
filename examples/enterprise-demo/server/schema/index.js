@@ -13,9 +13,17 @@ const { typeDef: Task, resolvers: taskResolvers } = require('./task.js');
 // If you had Query fields not associated with a
 // specific type you could put them here
 const Query = `
+  enum Operator {
+    EQUAL
+    LIKE
+    NOT_EQUAL
+    NOT_LIKE
+  }
+
   input Filter {
     field: String!
-    value: String!
+    value: String
+    operator: Operator
   }
 
   input Order {
