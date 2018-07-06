@@ -26,7 +26,9 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
+      onTouchEnd={[Function]}
       onTouchMove={[Function]}
+      onTouchStart={[Function]}
       style={
         Object {
           "cursor": "default",
@@ -614,10 +616,8 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
           className="recharts-default-tooltip"
           style={
             Object {
-              "backgroundColor": "#424242",
-              "border": "none",
-              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
-              "color": "rgba(255, 255, 255, 0.7)",
+              "backgroundColor": "#fff",
+              "border": "1px solid #ccc",
               "margin": 0,
               "padding": 10,
               "whiteSpace": "nowrap",
@@ -736,7 +736,9 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
+      onTouchEnd={[Function]}
       onTouchMove={[Function]}
+      onTouchStart={[Function]}
       style={
         Object {
           "cursor": "default",
@@ -1325,9 +1327,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
           style={
             Object {
               "backgroundColor": "#fff",
-              "border": "none",
-              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
-              "color": "rgba(0, 0, 0, 0.54)",
+              "border": "1px solid #ccc",
               "margin": 0,
               "padding": 10,
               "whiteSpace": "nowrap",
@@ -1446,7 +1446,9 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (dark) 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
+      onTouchEnd={[Function]}
       onTouchMove={[Function]}
+      onTouchStart={[Function]}
       style={
         Object {
           "cursor": "default",
@@ -1904,10 +1906,8 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (dark) 1`] = `
           className="recharts-default-tooltip"
           style={
             Object {
-              "backgroundColor": "#424242",
-              "border": "none",
-              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
-              "color": "rgba(255, 255, 255, 0.7)",
+              "backgroundColor": "#fff",
+              "border": "1px solid #ccc",
               "margin": 0,
               "padding": 10,
               "whiteSpace": "nowrap",
@@ -2026,7 +2026,9 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (light) 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
+      onTouchEnd={[Function]}
       onTouchMove={[Function]}
+      onTouchStart={[Function]}
       style={
         Object {
           "cursor": "default",
@@ -2485,9 +2487,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (light) 1`] = `
           style={
             Object {
               "backgroundColor": "#fff",
-              "border": "none",
-              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
-              "color": "rgba(0, 0, 0, 0.54)",
+              "border": "1px solid #ccc",
               "margin": 0,
               "padding": 10,
               "whiteSpace": "nowrap",
@@ -2606,7 +2606,9 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
+      onTouchEnd={[Function]}
       onTouchMove={[Function]}
+      onTouchStart={[Function]}
       style={
         Object {
           "cursor": "default",
@@ -3128,10 +3130,8 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
           className="recharts-default-tooltip"
           style={
             Object {
-              "backgroundColor": "#424242",
-              "border": "none",
-              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
-              "color": "rgba(255, 255, 255, 0.7)",
+              "backgroundColor": "#fff",
+              "border": "1px solid #ccc",
               "margin": 0,
               "padding": 10,
               "whiteSpace": "nowrap",
@@ -3250,7 +3250,9 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
+      onTouchEnd={[Function]}
       onTouchMove={[Function]}
+      onTouchStart={[Function]}
       style={
         Object {
           "cursor": "default",
@@ -3773,9 +3775,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
           style={
             Object {
               "backgroundColor": "#fff",
-              "border": "none",
-              "boxShadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
-              "color": "rgba(0, 0, 0, 0.54)",
+              "border": "1px solid #ccc",
               "margin": 0,
               "padding": 10,
               "whiteSpace": "nowrap",
