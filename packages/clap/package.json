@@ -8,7 +8,8 @@
     "clap": "./bin/cli.js"
   },
   "scripts": {
-    "build": "async-to-gen cli.js > ./bin/cli.js"
+    "build": "async-to-gen cli.js > ./bin/cli.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": "https://github.com/latticejs/lattice/tree/master/packages/clap",
   "author": "GEUT",
