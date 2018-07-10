@@ -1,0 +1,24 @@
+{
+  "name": "@latticejs/clap",
+  "version": "1.0.0",
+  "description": "Create Lattice App, the CLI for bootstraping your upcoming lattice app.",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "clap": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "async-to-gen cli.js > ./bin/cli.js"
+  },
+  "repository": "https://github.com/latticejs/lattice/tree/master/packages/clap",
+  "author": "GEUT",
+  "license": "MIT",
+  "devDependencies": {
+    "async-to-gen": "^1.4.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.16.0",
+    "ora": "^2.1.0"
+  }
+}
