@@ -1,7 +1,7 @@
 module.exports = collection => (_, { filterBy = [], orderBy = [], first = 10, after }, { db }) => {
   let ordersField = [];
   let ordersDirection = [];
-  let cursorDate;
+  let offset = 0;
 
   if (orderBy) {
     orderBy.forEach(order => {
@@ -46,33 +46,22 @@ module.exports = collection => (_, { filterBy = [], orderBy = [], first = 10, af
   }
 
   if (after) {
-    cursorDate = parseInt(Buffer.from(after, 'base64').toString('ascii'), 10);
-  } else {
-    cursorDate = list.first().value().createdAt;
+    offset = parseInt(Buffer.from(after, 'base64').toString('ascii'), 10) + 1;
   }
 
-  const newIndex = list.findIndex({ createdAt: cursorDate }).value();
-  const startIndex = after ? newIndex + 1 : newIndex;
-  const endIndex = startIndex + first;
+  const endIndex = offset + (first === 0 ? 1 : first);
 
   const edges = list
-    .slice(startIndex, endIndex)
+    .slice(offset, endIndex)
     .value()
-    .map(node => ({
+    .map((node, key) => ({
       node,
-      cursor: Buffer.from(node.createdAt.toString()).toString('base64')
+      cursor: Buffer.from((key + offset).toString()).toString('base64'),
+      position: key + offset
     }));
 
   const endCursor = edges[edges.length - 1].cursor;
-
-  const finalCursor = Buffer.from(
-    list
-      .last()
-      .value()
-      .createdAt.toString()
-  ).toString('base64');
-
-  const hasNextPage = !edges.find(edge => edge.cursor === finalCursor);
+  const hasNextPage = list.last().id !== edges[edges.length - 1].id;
 
   return {
     totalCount: list.value().length,

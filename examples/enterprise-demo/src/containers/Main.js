@@ -181,6 +181,7 @@ class Main extends Component {
         <Content className={classes.content}>
           {routes.map((route, index) => {
             const { path, redirect, component: RouteComponent } = route;
+
             return (
               <PrivateRoute
                 key={`route-${index}`}

@@ -11,14 +11,18 @@ import TextFormatIcon from '@material-ui/icons/TextFormat';
 
 import Dashboard from './Dashboard';
 import Areas from './Areas';
-//import Employees from './Employees';
-//import General from './theme/General';
-//import Widgets from './theme/Widgets';
+import Employees from './employees/List';
+import EmployeesCreate from './employees/Create';
+import EmployeesEdit from './employees/Edit';
+import General from './theme/General';
+import Widgets from './theme/Widgets';
 
 export const MAIN = '/';
 export const SIGN_IN = '/login';
 export const DASHBOARD = '/dashboard';
 export const EMPLOYEES = '/employees';
+export const EMPLOYEES_CREATE = `${EMPLOYEES}/create`;
+export const EMPLOYEES_EDIT = `${EMPLOYEES}/:id/edit`;
 export const THEME_GENERAL = '/theme/general';
 export const THEME_WIDGETS = '/theme/widgets';
 export const AREAS = '/areas';
@@ -35,31 +39,31 @@ export const navigation = [
     title: 'Areas',
     component: Areas,
     icon: BusinessIcon
+  },
+  {
+    path: EMPLOYEES,
+    title: 'Employees',
+    component: Employees,
+    icon: PeopleIcon
+  },
+  {
+    title: 'Theme',
+    icon: ExtensionIcon,
+    children: [
+      {
+        path: THEME_GENERAL,
+        title: 'General',
+        component: General,
+        icon: TextFormatIcon
+      },
+      {
+        path: THEME_WIDGETS,
+        title: 'Widgets',
+        component: Widgets,
+        icon: ContentCopyIcon
+      }
+    ]
   }
-  //{
-  //path: '/employees',
-  //title: 'Employees',
-  //component: Employees,
-  //icon: PeopleIcon
-  //},
-  //{
-  //title: 'Theme',
-  //icon: ExtensionIcon,
-  //children: [
-  //{
-  //path: '/theme/general',
-  //title: 'General',
-  //component: General,
-  //icon: TextFormatIcon
-  //},
-  //{
-  //path: '/theme/widgets',
-  //title: 'Widgets',
-  //component: Widgets,
-  //icon: ContentCopyIcon
-  //}
-  //]
-  //}
 ];
 
 const routesInNavigation = () => {
@@ -79,6 +83,16 @@ const routes = [
   {
     path: '/',
     redirect: '/dashboard'
+  },
+  {
+    path: EMPLOYEES_CREATE,
+    title: 'Create Employee',
+    component: EmployeesCreate
+  },
+  {
+    path: EMPLOYEES_EDIT,
+    title: 'Edit Employee',
+    component: EmployeesEdit
   },
   ...routesInNavigation()
 ];

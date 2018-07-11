@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 // Material-UI
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
@@ -18,7 +17,7 @@ import { Redirect } from 'react-router-dom';
 // Ours
 import { MAIN } from './routes';
 import { withSignIn, withCurrentUser } from '../components/Auth';
-import FormikTextField from '../components/FormikTextField';
+import { TextField, Button, Form } from '../components/MuiFormik';
 import { GraphqlErrorNotification } from '../components/Notification';
 
 const styles = theme => ({
@@ -39,9 +38,6 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     minHeight: 190
-  },
-  containerForm: {
-    padding: 20
   }
 });
 
@@ -51,9 +47,7 @@ class Login extends Component {
       classes,
       currentUser,
       location: { state },
-      handleSubmit,
       isSubmitting,
-      submitForm,
       status
     } = this.props;
 
@@ -69,31 +63,20 @@ class Login extends Component {
             <img src="/images/sidebar-2.jpg" className={classes.img} alt="side" />
           </Grid>
         </Hidden>
-        <Grid item xs={12} sm={8} className={classes.containerForm}>
-          <Grid
-            component="form"
-            autoComplete="off"
-            onSubmit={handleSubmit}
-            container
-            alignContent="center"
-            justify="center"
-            spacing={40}
-            className={classes.form}
-          >
-            <Grid item xs={8}>
-              <Typography variant="display1">Sign In</Typography>
-            </Grid>
-            <Grid item xs={8} className={classes.containerField}>
-              <FormikTextField id="email" label="Email" type="text" fullWidth />
-              <FormikTextField id="password" label="Password" type="password" fullWidth />
-            </Grid>
-            <Grid item xs={8}>
-              <Button variant="raised" color="primary" onClick={submitForm}>
-                Sign in
-              </Button>
-            </Grid>
+        <Form className={classes.form}>
+          <Grid item xs={8}>
+            <Typography variant="display1">Sign In</Typography>
           </Grid>
-        </Grid>
+          <Grid item xs={8} className={classes.containerField}>
+            <TextField id="email" label="Email" type="text" fullWidth />
+            <TextField id="password" label="Password" type="password" fullWidth />
+          </Grid>
+          <Grid item xs={8}>
+            <Button variant="raised" color="primary">
+              Sign in
+            </Button>
+          </Grid>
+        </Form>
       </Grid>
     );
   }

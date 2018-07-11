@@ -39,7 +39,7 @@ exports.resolvers = {
     }
   },
   Mutation: {
-    signIn: (_, { email, password }, { db }) => {
+    signIn: async (_, { email, password }, { db }) => {
       let user = db.users.find({ email: email.toLowerCase(), password }).value();
 
       if (!user) {
