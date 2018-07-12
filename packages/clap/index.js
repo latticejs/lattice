@@ -1,2 +1,4 @@
-// clap API
-export { default as listExamples } from './lib/listExamples';
+// \\ clap API \\
+module.exports = {
+  api: require('./lib')
+};

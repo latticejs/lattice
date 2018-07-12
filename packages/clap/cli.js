@@ -1,14 +1,16 @@
 #!/usr/bin/env node
-
 // \\ CLAP => Create Lattice App \\
 
-const program = require('commander');
-const clapi = require('../lib');
-const pkg = require('../package.json');
+var program = require('commander');
+var clapi = require('./lib');
+var pkg = require('./package.json');
 
-const DEFAULT_EXAMPLE = 'enterprise-demo';
+var DEFAULT_EXAMPLE = (exports.DEFAULT_EXAMPLE = 'enterprise-demo');
 
-program.version(pkg.version).description(pkg.description);
+program
+  .version(pkg.version)
+  .usage('[options] [command] <projectName>')
+  .description(pkg.description);
 
 program
   .command('example <exampleName> <projectName>')
