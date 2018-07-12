@@ -1,0 +1,13 @@
+{
+    "env": {
+        "production": {
+            "plugins": ["module:fast-async"]
+        },
+        "development": {
+                "plugins": ["module:fast-async"]
+        },
+        "test": {
+                "plugins": ["fast-async"]
+        }
+    }
+}
