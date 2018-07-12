@@ -36,7 +36,8 @@ describe('<Dag />', () => {
       .simulate('click');
     expect(onEdgeAdded).toHaveBeenCalled();
   });
-
+  /*** NOTE(dk): commented out due to https://github.com/jsdom/jsdom/issues/300
+  /*** Look for a workaround ***
   it('renders a <Dag editable={true}/> and creates a new node', () => {
     const nodes = [{ title: 'app' }, { title: 'lodash' }];
     const edges = [{ source: 'app', target: 'lodash' }];
@@ -77,4 +78,5 @@ describe('<Dag />', () => {
     // finally, onNodeAdded should be called :)
     expect(onNodeAdded).toHaveBeenCalled();
   });
+  */
 });
