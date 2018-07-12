@@ -8,7 +8,7 @@
 npm install -g @latticejs/clap
 ```
 
-:arrow-right: Or you can just use `npx`
+:arrow_right: Or you can just use `npx` (see below)
 
 ## Usage
 
