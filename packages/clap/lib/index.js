@@ -1,9 +1,10 @@
 // \\ CLAP API \\
 var fs = require('fs');
 var messages = require('./messages');
-var createDir = require('./createDir');
-var downloadExample = require('./downloadExample');
-var installDeps = require('./installDeps');
+var tasks = require('./tasks');
+var createDir = tasks.createDir;
+var downloadExample = tasks.download;
+var installDeps = tasks.install;
 
 function taskFailed(taskSpinner, err) {
   taskSpinner.fail(messages.error(err.message ? err.message : err));
