@@ -5,17 +5,29 @@
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "clap": "./bin/cli.js"
+    "clap": "./bin/clap.bin.js"
   },
   "scripts": {
-    "build": "async-to-gen cli.js > ./bin/cli.js",
-    "prepublishOnly": "npm run build"
+    "build": "del-cli bin/* && bili",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "roots": [
+      "<rootDir>/lib/",
+      "<rootDir>/test/"
+    ]
   },
   "repository": "https://github.com/latticejs/lattice/tree/master/packages/clap",
   "author": "GEUT",
   "license": "MIT",
   "devDependencies": {
-    "async-to-gen": "^1.4.0"
+    "bili": "^3.1.2",
+    "del-cli": "^1.1.0",
+    "fast-async": "^6.3.7",
+    "jest": "^23.4.0"
   },
   "dependencies": {
     "chalk": "^2.4.1",
