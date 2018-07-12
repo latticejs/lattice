@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 // Material-UI
-import Avatar from '@material-ui/core/Avatar';
 import TableFooter from '@material-ui/core/TableFooter';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Input from '@material-ui/core/Input';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
 import { withStyles } from '@material-ui/core/styles';
 
 // @latticejs
@@ -33,43 +34,79 @@ const styles = theme => ({
   footer: {
     padding: 10,
     textAlign: 'right'
+  },
+  input: {
+    margin: theme.spacing.unit
   }
 });
 
 class DataGrid extends Component {
-  handleRowClick = (e, employee) => {
-    const { onSelected } = this.props;
+  handleRowClick = employee => {
+    const { handleSelect } = this.props;
 
-    onSelected(employee);
-  };
-
-  handleChangePage = (e, page) => {
-    const { rowsPerPage, onPageChange } = this.props;
-    onPageChange(page, rowsPerPage);
-  };
-
-  handleChangeRowsPerPage = event => {
-    const rowsPerPage = event.target.value;
-    const { page, onPageChange } = this.props;
-    onPageChange(page, rowsPerPage);
-  };
-
-  handleOrder = (event, order) => {
-    const { onOrder } = this.props;
-    onOrder(order);
+    handleSelect(employee);
   };
 
   render() {
-    const { totalCount, list, classes, handleLoadMore, handleSelect, findItem } = this.props;
+    const {
+      listRef,
+      totalCount,
+      list,
+      classes,
+      filterBy,
+      orderBy,
+      handleLoadMore,
+      handleSelect,
+      findItem,
+      handleOrder,
+      handleSearch
+    } = this.props;
 
     return (
       <Widget className={classes.root}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
+              <TableHeadField
+                field="id"
+                title="ID"
+                className={classes.cell}
+                handleOrder={handleOrder}
+                orderBy={orderBy}
+              >
+                {({ title, orderProps }) => {
+                  return <TableSortLabel {...orderProps}>{title}</TableSortLabel>;
+                }}
+              </TableHeadField>
+              <TableHeadField
+                field="name"
+                title="Name"
+                className={classes.cell}
+                orderBy={orderBy}
+                handleOrder={handleOrder}
+                filterBy={filterBy}
+                handleSearch={handleSearch}
+              >
+                {({ title, orderProps, searchProps }) => {
+                  return (
+                    <div>
+                      <TableSortLabel {...orderProps}>{title}</TableSortLabel>
+                      <Input className={classes.input} {...searchProps} />
+                    </div>
+                  );
+                }}
+              </TableHeadField>
+              <TableHeadField
+                field="email"
+                title="Email"
+                className={classes.cell}
+                handleOrder={handleOrder}
+                orderBy={orderBy}
+              >
+                {({ title, orderProps }) => {
+                  return <TableSortLabel {...orderProps}>{title}</TableSortLabel>;
+                }}
+              </TableHeadField>
             </TableRow>
           </TableHead>
           <TableBody
@@ -79,6 +116,9 @@ class DataGrid extends Component {
             rowCount={totalCount}
             rowHeight={48}
             height={500}
+            rvInfiniteLoaderProps={{
+              ref: listRef
+            }}
           >
             {({ item, isEmpty, key, style }) => {
               if (isEmpty) {
@@ -100,7 +140,7 @@ class DataGrid extends Component {
               }
 
               return (
-                <TableRow key={item.id} style={style} hover onClick={() => handleSelect(item)}>
+                <TableRow key={item.id} style={style} hover onClick={this.handleRowClick.bind(this, item)}>
                   <TableCell className={classes.cell}>{item.id}</TableCell>
                   <TableCell className={classes.cell}>{item.name}</TableCell>
                   <TableCell className={classes.cell}>{item.email}</TableCell>

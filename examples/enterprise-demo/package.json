@@ -19,6 +19,7 @@
     "graphql-yoga": "^1.14.10",
     "jsonwebtoken": "^8.3.0",
     "lodash-id": "^0.14.0",
+    "lodash.debounce": "^4.0.8",
     "lodash.merge": "^4.6.1",
     "lowdb": "^1.0.0",
     "react": "^16.4.1",

@@ -1,6 +1,6 @@
 const merge = require('lodash.merge');
 
-const { typeDef: Input } = require('./task.js');
+const { typeDef: Input } = require('./input.js');
 const { typeDef: Auth, resolvers: authResolvers } = require('./auth.js');
 const { typeDef: Employee, resolvers: employeeResolvers } = require('./employee.js');
 const { typeDef: Area, resolvers: areaResolvers } = require('./area.js');

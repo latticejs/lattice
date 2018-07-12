@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { compose, graphql } from 'react-apollo';
-import { SizeMe } from 'react-sizeme';
 
 // Material-UI
 import Grid from '@material-ui/core/Grid';

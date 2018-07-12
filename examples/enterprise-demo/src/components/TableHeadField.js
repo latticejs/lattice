@@ -1,41 +1,112 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import TableSortLabel from '@material-ui/core/TableSortLabel';
+import debounce from 'lodash.debounce';
 import Tooltip from '@material-ui/core/Tooltip';
 
 import { TableCell } from '@latticejs/widgets';
 
-export default function TableHeadField(props = {}) {
-  const { field, title = '', children, numeric, orderBy, className, onOrder } = props;
+const checkOrder = (field, orderBy) => {
+  const order = orderBy.find(o => o.field === field);
 
-  let order;
-  let direction;
-  if (orderBy && orderBy.field === field) {
-    order = orderBy;
-    direction = orderBy.direction;
-  } else {
-    direction = 'asc';
+  let direction = 'asc';
+  let active = false;
+  if (order) {
+    active = true;
+    direction = order.direction;
+  }
+  return { active, direction };
+};
+
+export default class TableHeadField extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: ''
+    };
+
+    this.search = debounce(this.search, props.debounce);
   }
 
-  return (
-    <TableCell key={field} numeric={numeric} padding="default" sortDirection={direction} className={className}>
-      <Tooltip title={title} placement={numeric ? 'bottom-end' : 'bottom-start'} enterDelay={300}>
-        <TableSortLabel
-          active={order !== undefined}
-          direction={direction}
-          onClick={e => {
-            let newDirection = 'asc';
+  static defaultProps = {
+    multiSort: true,
+    debounce: 500,
+    title: '',
+    orderBy: [],
+    filterBy: []
+  };
 
-            if (order) {
-              newDirection = direction === 'asc' ? 'desc' : 'asc';
+  handleOrder = ({ active, direction }, e) => {
+    const { handleOrder, multiSort, field, orderBy } = this.props;
+    let newDirection = 'asc';
+
+    if (active) {
+      newDirection = direction === 'asc' ? 'desc' : 'asc';
+    }
+
+    const nextOrder = { field, direction: newDirection };
+    let nextOrderBy;
+    if (multiSort && e.shiftKey) {
+      nextOrderBy = [...orderBy.filter(o => o.field !== field), nextOrder];
+    } else {
+      nextOrderBy = [nextOrder];
+    }
+
+    handleOrder(nextOrderBy);
+  };
+
+  handleInputChange = e => {
+    const target = e.target;
+    const value = target.value;
+
+    this.setState(
+      {
+        value
+      },
+      () => {
+        this.search();
+      }
+    );
+  };
+
+  search = () => {
+    const { field, filterBy, handleSearch } = this.props;
+    const { value } = this.state;
+
+    const filter = { field, value };
+    const filters = filterBy.filter(filter => filter.field !== field);
+    handleSearch([...filters, filter]);
+  };
+
+  render() {
+    const { field, title, children, numeric, sort, orderBy, className } = this.props;
+
+    const { active, direction } = checkOrder(field, orderBy);
+
+    return (
+      <TableCell
+        key={field}
+        numeric={numeric}
+        padding="default"
+        sortDirection={sort && direction}
+        className={className}
+      >
+        <Tooltip title={title} placement={numeric ? 'bottom-end' : 'bottom-start'} enterDelay={300}>
+          {children({
+            title,
+            orderProps: {
+              active,
+              direction,
+              onClick: this.handleOrder.bind(this, { active, direction })
+            },
+            searchProps: {
+              name: field,
+              value: this.state.value,
+              onChange: this.handleInputChange
             }
-
-            onOrder(e, { field, direction: newDirection });
-          }}
-        >
-          {children}
-        </TableSortLabel>
-      </Tooltip>
-    </TableCell>
-  );
+          })}
+        </Tooltip>
+      </TableCell>
+    );
+  }
 }

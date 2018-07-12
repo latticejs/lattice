@@ -19,8 +19,6 @@ import DataGrid from '../../components/employees/DataGrid';
 import { employeesConnection } from '../../stores/employee';
 
 class List extends Component {
-  temp = new Map();
-
   static defaultProps = {
     employeesConnection: { totalCount: 0, edges: [] }
   };
@@ -34,10 +32,6 @@ class List extends Component {
       employeesConnection: { edges }
     } = this.props;
 
-    if (this.temp.has(index)) {
-      return this.temp.get(index);
-    }
-
     const findCursor = offsetToCursor(index);
 
     const edge = edges.find(edge => {
@@ -45,22 +39,28 @@ class List extends Component {
     });
 
     if (edge) {
-      this.temp.set(index, edge.node);
       return edge.node;
     }
 
     return null;
   };
 
-  handleSearch = e => {
-    const { onFilterBy } = this.props;
-    const filter = e.target.value;
-    onFilterBy(filter);
+  handleOrder = async orderBy => {
+    const { fetchData } = this.props;
+    const { list } = this;
+
+    await fetchData({ orderBy });
+
+    list.resetLoadMoreRowsCache(true);
   };
 
-  handleOrder = order => {
-    const { onOrder } = this.props;
-    onOrder(order);
+  handleSearch = async filterBy => {
+    const { fetchData } = this.props;
+    const { list } = this;
+
+    await fetchData({ filterBy });
+
+    list.resetLoadMoreRowsCache(true);
   };
 
   handleSelect = employee => {
@@ -81,8 +81,8 @@ class List extends Component {
   render() {
     const {
       employeesConnection: { edges, totalCount },
-      loading
-      //variables: { page, rowsPerPage, filterBy, orderBy }
+      loading,
+      variables: { filterBy, orderBy }
     } = this.props;
 
     return (
@@ -94,14 +94,17 @@ class List extends Component {
         </Grid>
         <Grid item xs={12}>
           <DataGrid
+            listRef={instance => (this.list = instance)}
             list={edges.map(edge => edge.node)}
             totalCount={totalCount}
             loading={loading}
+            filterBy={filterBy}
+            orderBy={orderBy}
             handleLoadMore={this.handleLoadMore}
             findItem={this.findItem}
-            handleSearch={this.handleSearch}
-            handleOrder={this.handleOrder}
             handleSelect={this.handleSelect}
+            handleOrder={this.handleOrder}
+            handleSearch={this.handleSearch}
           />
         </Grid>
       </Grid>
@@ -111,31 +114,37 @@ class List extends Component {
 
 export default compose(
   graphql(employeesConnection, {
-    props: ({ data: { employeesConnection, loading, refetch, fetchMore } }) => ({
-      employeesConnection,
-      loading,
-      fetchMore({ first, after }) {
-        return fetchMore({
-          variables: { first, after: after || (employeesConnection ? employeesConnection.pageInfo.endCursor : null) },
-          // concatenate old and new entries
-          updateQuery: (previousResult, { fetchMoreResult }) => {
-            const { edges: previousEdges } = previousResult.employeesConnection;
-            const { edges: nextEdges, ...props } = fetchMoreResult.employeesConnection;
+    props: ({ data: { employeesConnection, loading, refetch, fetchMore, variables } }) => {
+      return {
+        employeesConnection,
+        loading,
+        variables,
+        fetchMore({ first, after }) {
+          return fetchMore({
+            variables: { first, after: after || (employeesConnection ? employeesConnection.pageInfo.endCursor : null) },
+            // concatenate old and new entries
+            updateQuery: (previousResult, { fetchMoreResult }) => {
+              const { edges: previousEdges } = previousResult.employeesConnection;
+              const { edges: nextEdges, ...props } = fetchMoreResult.employeesConnection;
 
-            return {
-              employeesConnection: {
-                ...props,
-                edges: mergeEdges(previousEdges, nextEdges)
-              }
-            };
-          }
-        });
-      },
-      refetch
-    }),
+              return {
+                employeesConnection: {
+                  ...props,
+                  edges: mergeEdges(previousEdges, nextEdges)
+                }
+              };
+            }
+          });
+        },
+        fetchData(props) {
+          return refetch({ ...variables, ...props });
+        }
+      };
+    },
     options: props => ({
       variables: {
-        first: 10
+        first: 10,
+        orderBy: [{ field: 'name', direction: 'asc' }]
       }
     })
   })
