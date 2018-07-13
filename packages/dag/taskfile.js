@@ -12,7 +12,8 @@ const baseRollupPlugins = [
     include: ['node_modules/**', '../../node_modules/**'],
     namedExports: {
       react: ['Children', 'Component', 'PropTypes', 'createElement'],
-      'react-dom': ['render', 'findDOMNode']
+      'react-dom': ['render', 'findDOMNode'],
+      '@material-ui/core/styles': ['withStyles']
     }
   }),
   resolve({
@@ -31,7 +32,8 @@ export async function cjs(task, opts) {
       external,
       output: {
         file: 'dag.cjs.js',
-        format: 'cjs'
+        format: 'cjs',
+        exports: 'named'
       }
     })
     .target('dist/');

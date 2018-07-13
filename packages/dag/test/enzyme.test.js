@@ -9,7 +9,7 @@ describe('<Dag />', () => {
     expect(wrapper.find('.dag-wrapper').length).toBe(1);
   });
 
-  it('renders a <Dag editable={true}/> component', () => {
+  it('renders a <Dag editable={true}/> and creates a new edge', () => {
     const nodes = [{ title: 'app' }, { title: 'lodash' }];
     const edges = [{ source: 'app', target: 'lodash' }];
     const onEdgeAdded = jest.fn();
@@ -36,4 +36,47 @@ describe('<Dag />', () => {
       .simulate('click');
     expect(onEdgeAdded).toHaveBeenCalled();
   });
+  /*** NOTE(dk): commented out due to https://github.com/jsdom/jsdom/issues/300
+  /*** Look for a workaround ***
+  it('renders a <Dag editable={true}/> and creates a new node', () => {
+    const nodes = [{ title: 'app' }, { title: 'lodash' }];
+    const edges = [{ source: 'app', target: 'lodash' }];
+    const CLIENTX = 200;
+    const CLIENTY = 200;
+    const NODENAME = 'test';
+    const onNodeAdded = jest.fn();
+    const wrapper = mount(
+      <Dag width={500} height={500} nodes={nodes} editable={true} edges={edges} onNodeAdded={onNodeAdded} />
+    );
+
+    expect(onNodeAdded).not.toHaveBeenCalled();
+
+    // find svg graph and double click it
+    wrapper.find(`.${DAG_DEFAULTS.graphClass}`).simulate('dblclick', { clientX: CLIENTX, clientY: CLIENTY });
+
+    // a new node should appear with a propr `data` with coords x and y equal to CLIENTY and CLIENTY.
+    expect(
+      wrapper
+        .update()
+        .find(`.${DAG_DEFAULTS.nodeClass}`)
+        .last()
+        .parent()
+        .prop('data')
+    ).toMatchObject({
+      x: CLIENTX,
+      y: CLIENTY
+    });
+
+    // set an input value for the new node and trigger ENTER
+    wrapper
+      .find(`.${DAG_DEFAULTS.nodeClass}`)
+      .last()
+      .find('input')
+      .simulate('change', { target: { value: NODENAME } })
+      .simulate('keydown', { keyCode: 13 });
+
+    // finally, onNodeAdded should be called :)
+    expect(onNodeAdded).toHaveBeenCalled();
+  });
+  */
 });

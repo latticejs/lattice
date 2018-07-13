@@ -97,6 +97,7 @@ const dagRenderEdgeActions = ({ deleteAction }) => (
   </IconButton>
 );
 
+// \\ default render method for edge actions \\
 const dagRenderNodeActions = ({ deleteAction, createEdgeAction }) => (
   <React.Fragment>
     <IconButton>
@@ -221,6 +222,17 @@ class Dag extends Component {
     };
   }
 
+  getMousePosition = (svg, clientX, clientY) => {
+    const pt = svg.createSVGPoint();
+    pt.x = clientX;
+    pt.y = clientY;
+    const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+    return {
+      x: svgP.x,
+      y: svgP.y
+    };
+  };
+
   // \\ onClickNode \\
   editSelectedNode = node => {
     // Note (dk): editSelectedNode is called whenever the user click on a node.
@@ -287,13 +299,10 @@ class Dag extends Component {
   };
 
   newNode = e => {
-    this.setState(prevState => ({
-      newNodeReady: !prevState.newNodeReady,
-      newNode: {
-        x: e.clientX,
-        y: e.clientY
-      }
-    }));
+    this.setState({
+      newNodeReady: !this.state.newNodeReady,
+      newNode: this.getMousePosition(this.root, e.clientX, e.clientY)
+    });
     this.dagcore.toggleDrag();
   };
 
@@ -304,10 +313,7 @@ class Dag extends Component {
 
   setMousePosition = e => {
     this.setState({
-      mouseMove: {
-        x: e.clientX,
-        y: e.clientY
-      }
+      mouseMove: this.getMousePosition(this.root, e.clientX, e.clientY)
     });
   };
 
