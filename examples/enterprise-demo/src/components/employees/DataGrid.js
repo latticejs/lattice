@@ -5,14 +5,14 @@ import TableFooter from '@material-ui/core/TableFooter';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Input from '@material-ui/core/Input';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
 import { withStyles } from '@material-ui/core/styles';
 
 // @latticejs
 import { Widget, Table, TableBody, TableHead, TableRow, TableCell } from '@latticejs/widgets';
 
 // Ours
-import TableHeadField from '../TableHeadField';
+import TableOrderCell from '../TableOrderCell';
+import TableSearchCell from '../TableSearchCell';
 
 const styles = theme => ({
   root: {
@@ -34,9 +34,6 @@ const styles = theme => ({
   footer: {
     padding: 10,
     textAlign: 'right'
-  },
-  input: {
-    margin: theme.spacing.unit
   }
 });
 
@@ -67,46 +64,36 @@ class DataGrid extends Component {
         <Table>
           <TableHead>
             <TableRow>
-              <TableHeadField
+              <TableOrderCell
                 field="id"
                 title="ID"
                 className={classes.cell}
                 handleOrder={handleOrder}
                 orderBy={orderBy}
-              >
-                {({ title, orderProps }) => {
-                  return <TableSortLabel {...orderProps}>{title}</TableSortLabel>;
-                }}
-              </TableHeadField>
-              <TableHeadField
+              />
+              <TableOrderCell
                 field="name"
                 title="Name"
                 className={classes.cell}
                 orderBy={orderBy}
                 handleOrder={handleOrder}
-                filterBy={filterBy}
-                handleSearch={handleSearch}
-              >
-                {({ title, orderProps, searchProps }) => {
-                  return (
-                    <div>
-                      <TableSortLabel {...orderProps}>{title}</TableSortLabel>
-                      <Input className={classes.input} {...searchProps} />
-                    </div>
-                  );
-                }}
-              </TableHeadField>
-              <TableHeadField
+              />
+              <TableOrderCell
                 field="email"
                 title="Email"
                 className={classes.cell}
                 handleOrder={handleOrder}
                 orderBy={orderBy}
-              >
-                {({ title, orderProps }) => {
-                  return <TableSortLabel {...orderProps}>{title}</TableSortLabel>;
-                }}
-              </TableHeadField>
+              />
+            </TableRow>
+            <TableRow>
+              <TableCell />
+              <TableSearchCell field="name" debounce={200} filterBy={filterBy} handleSearch={handleSearch}>
+                {({ inputProps }) => <Input {...inputProps} />}
+              </TableSearchCell>
+              <TableSearchCell field="email" filterBy={filterBy} handleSearch={handleSearch}>
+                {({ inputProps }) => <Input {...inputProps} />}
+              </TableSearchCell>
             </TableRow>
           </TableHead>
           <TableBody

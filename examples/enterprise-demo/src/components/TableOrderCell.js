@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import debounce from 'lodash.debounce';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Tooltip from '@material-ui/core/Tooltip';
 
 import { TableCell } from '@latticejs/widgets';
@@ -17,23 +17,11 @@ const checkOrder = (field, orderBy) => {
   return { active, direction };
 };
 
-export default class TableHeadField extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: ''
-    };
-
-    this.search = debounce(this.search, props.debounce);
-  }
-
+export default class TableOrderCell extends Component {
   static defaultProps = {
     multiSort: true,
-    debounce: 500,
     title: '',
-    orderBy: [],
-    filterBy: []
+    orderBy: []
   };
 
   handleOrder = ({ active, direction }, e) => {
@@ -55,29 +43,6 @@ export default class TableHeadField extends Component {
     handleOrder(nextOrderBy);
   };
 
-  handleInputChange = e => {
-    const target = e.target;
-    const value = target.value;
-
-    this.setState(
-      {
-        value
-      },
-      () => {
-        this.search();
-      }
-    );
-  };
-
-  search = () => {
-    const { field, filterBy, handleSearch } = this.props;
-    const { value } = this.state;
-
-    const filter = { field, value };
-    const filters = filterBy.filter(filter => filter.field !== field);
-    handleSearch([...filters, filter]);
-  };
-
   render() {
     const { field, title, children, numeric, sort, orderBy, className } = this.props;
 
@@ -85,26 +50,20 @@ export default class TableHeadField extends Component {
 
     return (
       <TableCell
-        key={field}
+        key={`order-${field}`}
         numeric={numeric}
         padding="default"
         sortDirection={sort && direction}
         className={className}
       >
         <Tooltip title={title} placement={numeric ? 'bottom-end' : 'bottom-start'} enterDelay={300}>
-          {children({
-            title,
-            orderProps: {
-              active,
-              direction,
-              onClick: this.handleOrder.bind(this, { active, direction })
-            },
-            searchProps: {
-              name: field,
-              value: this.state.value,
-              onChange: this.handleInputChange
-            }
-          })}
+          <TableSortLabel
+            active={active}
+            direction={direction}
+            onClick={this.handleOrder.bind(this, { active, direction })}
+          >
+            {children ? children : title}
+          </TableSortLabel>
         </Tooltip>
       </TableCell>
     );

@@ -13,11 +13,12 @@ import stores from '../stores';
 import { authLink, onQLAuthError, onNetworkAuthError } from './auth';
 
 const cache = new InMemoryCache();
-// Set up cache persistence.
-//persistCache({
-//cache,
-//storage: window.localStorage
-//});
+
+// set up cache persistence.
+persistCache({
+  cache,
+  storage: window.localStorage
+});
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
