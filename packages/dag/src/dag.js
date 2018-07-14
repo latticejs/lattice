@@ -1,7 +1,7 @@
 import { select, selectAll, event } from 'd3-selection';
 import { drag } from 'd3-drag';
 import { zoom } from 'd3-zoom';
-import { forceSimulation, forceCollide, forceCenter, forceLink } from 'd3-force';
+import { forceSimulation, forceCollide, forceCenter, forceLink, forceManyBody } from 'd3-force';
 
 export const DEFAULTS = {
   selectedNodeClass: 'dag__node-selected',
@@ -16,7 +16,7 @@ export const DEFAULTS = {
   nodeRadius: 50
 };
 
-const createArrow = (arrow, line, nodeRadius) => {
+const updateArrow = (arrow, line, nodeRadius) => {
   const triangleSize = 10;
 
   const totalLength = line.getTotalLength() - (nodeRadius + 11.5); // yes, 11.5 is a magic number
@@ -45,10 +45,14 @@ export default class DagCore {
     this.state = {
       dragEnable: initialState.dragEnable || true,
       zoomEnable: initialState.zoomEnable || false,
-      nodeRadius: initialState.nodeRadius
+      nodeRadius: initialState.nodeRadius,
+      height: initialState.height,
+      width: initialState.width,
+      nodes: initialState.nodes
     };
 
     this.d3root = root;
+    this.linesCache = [];
 
     this.createGraph({
       root,
@@ -68,28 +72,49 @@ export default class DagCore {
 
     this.svg = select(`.${DEFAULTS.graphClass}`);
     this.simulation = forceSimulation(nodes)
-      .force('charge', null)
+      .force(
+        'charge',
+        forceManyBody()
+          .strength(`-${nodeRadius}`)
+          .distanceMax(0)
+      )
       .force(
         'link',
-        forceLink(edges).id(function(d) {
-          return d.title;
-        })
+        forceLink(edges)
+          .id(function(d) {
+            return d.title;
+          })
+          .distance(nodeRadius)
+          .strength(1)
       )
-      .force('collide', forceCollide(() => 80))
+      .force(
+        'collide',
+        forceCollide()
+          .radius(nodeRadius * 1.4)
+          .strength(1)
+      )
       .force('center', forceCenter(width / 2, height / 2));
 
     this.setZoomMode();
     this.setDragMode();
     this.simulation.on('tick', () => this.updateGraph());
+    // Note (dk): here we are doing some custom and limited iterations
+    // to the graph. The graph iterates calling the tick fn every 300ms or so.
+    // Here we are avoiding doing that and we are manually limiting iterations.
+    // The final effect is to show a "static" graph instead of a one which is always
+    // moving. The effect is noticed when the graph is mounted (on creation)
+    const iterations = Math.pow(16, 2); // 16 === magic number
+    for (let i = iterations; i > 0; --i) this.simulation.tick();
+    this.cacheLines();
   }
-
+  // \\ drag functions \\
   dragstarted(d) {
-    if (!event.active) this.simulation.alphaTarget(0.3).restart();
     d.fx = event.x;
     d.fy = event.y;
   }
 
   dragged(d) {
+    this.simulation.alphaTarget(0).restart();
     d.fx = event.x;
     d.fy = event.y;
   }
@@ -97,22 +122,38 @@ export default class DagCore {
   dragended(d) {
     if (!event.active) this.simulation.alphaTarget(0);
   }
+  // \\ END drag functions \\
+
+  cacheLines() {
+    const that = this;
+    if (this.linesCache.length) return;
+    selectAll(`.${DEFAULTS.arrowClass}`).each(function() {
+      if (!that.linesCache[this.id]) {
+        that.linesCache[this.id] = this.parentNode.querySelector('line');
+      }
+    });
+  }
 
   updateGraph() {
     const { nodeRadius } = this.state;
-    // add arrow heads using a polygon
-    selectAll(`.${DEFAULTS.arrowClass}`).each(function() {
-      const line = this.parentNode.querySelector('line');
-      createArrow(this, line, nodeRadius);
-    });
-
+    const that = this;
+    // move lines
     selectAll('line')
       .attr('x1', d => d.source.x)
       .attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x)
       .attr('y2', d => d.target.y);
 
-    selectAll(`.${DagCore.DEFAULTS.nodeClass}`).attr('transform', d => `translate(${d.x}, ${d.y})`);
+    // add arrow heads using a polygon
+    selectAll(`.${DEFAULTS.arrowClass}`).each(function() {
+      updateArrow(this, that.linesCache[this.id], nodeRadius);
+    });
+    // move nodes
+    selectAll(`.${DagCore.DEFAULTS.nodeClass}`).attr('transform', d => {
+      d.fx = d.x;
+      d.fy = d.y;
+      return `translate(${d.x}, ${d.y})`;
+    });
   }
 
   zoomed() {
@@ -162,7 +203,7 @@ export default class DagCore {
     selectAll(`.${DagCore.DEFAULTS.nodeClass}`).call(
       drag()
         .on('start', d => (this.state.dragEnable ? this.dragstarted(d) : () => {}))
-        .on('drag', this.state.dragEnable ? this.dragged : () => {})
+        .on('drag', d => (this.state.dragEnable ? this.dragged(d) : () => {}))
         .on('end', d => (this.state.dragEnable ? this.dragended(d) : () => {}))
     );
   }
