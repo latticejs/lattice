@@ -100,12 +100,13 @@ export default class Edge extends Component {
       // TODO(dk): clear other selected eddges (allow multiple selection?)
       edgeClasses.push(selectedClass);
     }
+
     return (
       <g className={classNames(DEFAULTS.linkClass, edgeClasses)} onClick={this.handleEdgeClick}>
         <line ref={edge => (this.edge = edge)}>
           {showEdgePanel && showEdgePanelIdx === idx && children && children({ ...data, actions: this.getActions() })}
         </line>
-        {ghostEdge ? '' : <polygon className={DEFAULTS.arrowClass} />}
+        {ghostEdge ? '' : <polygon id={`dag__line-${idx}`} className={DEFAULTS.arrowClass} />}
       </g>
     );
   }
