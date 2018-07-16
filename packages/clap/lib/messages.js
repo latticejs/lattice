@@ -63,3 +63,13 @@ exports.wait = function wait(message) {
   spinner.start();
   return spinner;
 };
+
+exports.listExamples = function listExamples() {
+  return chalk.green('Lattice example projects: ');
+};
+
+exports.describeList = function describeList() {
+  return `
+    ${chalk.cyan('list all the available lattice example projects.')}
+  `;
+};
