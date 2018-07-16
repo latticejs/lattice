@@ -5,6 +5,7 @@ var tasks = require('./tasks');
 var createDir = tasks.createDir;
 var downloadExample = tasks.download;
 var installDeps = tasks.install;
+var listExamples = tasks.list;
 
 function taskFailed(taskSpinner, err) {
   taskSpinner.fail(messages.error(err.message ? err.message : err));
@@ -59,8 +60,37 @@ async function clap(example, project) {
   console.log(messages.clapSucceed(project));
 }
 
+async function list() {
+  // Tasks:
+  //   - get examples (gh content api)
+  //   - parse
+  //   - display examples
+
+  console.log(messages.listExamples());
+  var repoOptions = {
+    owner: 'latticejs',
+    repo: 'lattice',
+    path: 'examples',
+    ref: 'master'
+  };
+
+  var parseList = function parseList(listRawItem) {
+    if (listRawItem.name === 'README.md') return;
+    console.log(`- ${listRawItem.name}`);
+  };
+
+  try {
+    var examplesRaw = await listExamples(repoOptions);
+    examplesRaw.data.forEach(parseList);
+  } catch (err) {
+    console.error(messages.error(err));
+    process.exit(1);
+  }
+}
+
 // exported
 module.exports = {
   clap: clap,
+  list: list,
   messages: messages
 };
