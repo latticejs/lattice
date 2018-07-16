@@ -18,6 +18,12 @@ program
   .description(clapi.messages.describeClap())
   .action(clapi.clap);
 
+program
+  .command('list')
+  .alias('ls')
+  .description(clapi.messages.describeList())
+  .action(clapi.list);
+
 program.on('command:*', function(args) {
   // runs: clap projectName
   // shortcut for clap example enterprise-demo projectName
