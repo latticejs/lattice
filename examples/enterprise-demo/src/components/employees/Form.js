@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import { withFormik } from 'formik';
-import yup from 'yup';
+import * as yup from 'yup';
 
 // Material-UI
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
 
 // @latticejs
 import Widget from '@latticejs/widgets/Widget';
+
+// Ours
+import { TextField, Button } from '../MuiFormik';
+import { GraphqlErrorNotification } from '../Notification';
 
 const styles = theme => ({
   root: {},
@@ -23,76 +25,50 @@ const styles = theme => ({
 });
 
 class Form extends Component {
-  handleFieldChange = (...args) => {
-    const { handleChange } = this.props;
-    handleChange(...args);
+  handleSubmit = employee => {
+    const { handleSubmit } = this.props;
+    handleSubmit(employee);
   };
 
   handleCancel = () => {
-    const { onCancel } = this.props;
-    onCancel();
-  };
-
-  isAdd = () => {
-    return !!this.props.employee;
+    const { handleCancel, employee } = this.props;
+    handleCancel(employee);
   };
 
   render() {
-    const { classes, className, values, errors, touched, departments = [], handleSubmit, isSubmitting } = this.props;
-    const action = this.isAdd() ? 'Edit' : 'Add';
+    const { classes, className, status, areas, handleSubmit, isSubmitting } = this.props;
 
     return (
       <Widget
-        title={`${action} Employee`}
         className={classnames(classes.root, className)}
         component="form"
         autoComplete="off"
         onSubmit={handleSubmit}
       >
+        <GraphqlErrorNotification error={status} />
         <Grid container className={classes.container} spacing={24}>
           <Grid item xs={12}>
-            <TextField
-              label={(touched.name && errors.name) || 'Name'}
-              name="name"
-              required
-              error={!!errors.name}
-              fullWidth
-              value={values.name}
-              onChange={this.handleFieldChange}
-            />
+            <TextField field="name" label="Name" type="text" fullWidth />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              label={(touched.email && errors.email) || 'Email'}
-              name="email"
-              required
-              error={!!errors.email}
-              fullWidth
-              value={values.email}
-              onChange={this.handleFieldChange}
-            />
+            <TextField field="email" label="Email" type="text" fullWidth />
           </Grid>
           <Grid item xs={6}>
-            <TextField
-              label="Position"
-              name="position"
-              fullWidth
-              value={values.position}
-              onChange={this.handleFieldChange}
-            />
+            <TextField field="jobTitle" label="Job" type="text" fullWidth />
           </Grid>
           <Grid item xs={6}>
             <TextField
               select
-              label="Department"
-              name="department"
+              loading={areas.loading}
+              field="areaId"
+              label="Area"
+              type="text"
+              placeholder="Select an area..."
               fullWidth
-              value={values.department}
-              onChange={this.handleFieldChange}
             >
-              {departments.map(option => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
+              {areas.items.map(option => (
+                <MenuItem key={option.id} value={option.id}>
+                  {option.name}
                 </MenuItem>
               ))}
             </TextField>
@@ -119,12 +95,12 @@ class Form extends Component {
 
 export default withStyles(styles)(
   withFormik({
-    mapPropsToValues: ({ employee: { id, name = '', email = '', department = '', position = '' } = {} }) => ({
+    mapPropsToValues: ({ employee: { id, name = '', email = '', jobTitle = '', areaId = '' } = {} }) => ({
       id,
       name,
       email,
-      department,
-      position
+      jobTitle,
+      areaId
     }),
     validationSchema: yup.object().shape({
       name: yup.string().required('A name is required'),
@@ -132,18 +108,23 @@ export default withStyles(styles)(
         .string()
         .email()
         .required(),
-      position: yup.string(),
-      department: yup.string()
+      jobTitle: yup.string().required(),
+      areaId: yup.string().required()
     }),
-    handleSubmit: (values, { props }) => {
-      const { onCreate, onUpdate } = props;
-      let { id } = values;
+    handleSubmit: async (values, { setSubmitting, setStatus, props }) => {
+      const { saveObject, handleSuccess } = props;
 
-      if (id) {
-        onUpdate(values);
-      } else {
-        values.id = 2000 + Math.floor(Math.random() * 1000);
-        onCreate(values);
+      try {
+        await saveObject({
+          variables: {
+            ...values
+          }
+        });
+
+        handleSuccess();
+      } catch (err) {
+        setSubmitting(false);
+        setStatus(err);
       }
     }
   })(Form)

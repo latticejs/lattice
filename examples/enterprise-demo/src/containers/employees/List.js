@@ -6,17 +6,16 @@ import { compose, graphql } from 'react-apollo';
 
 // Material-UI
 import Grid from '@material-ui/core/Grid';
-
 import AddIcon from '@material-ui/icons/Add';
+
+// stores
+import { employeesConnection } from '../../stores/employee';
 
 // Ours
 import { offsetToCursor, mergeEdges } from '../../utils';
 import { EMPLOYEES_CREATE, EMPLOYEES_EDIT } from '../routes';
 import { Link } from '../../components/MuiRouter';
 import DataGrid from '../../components/employees/DataGrid';
-
-// stores
-import { employeesConnection } from '../../stores/employee';
 
 class List extends Component {
   static defaultProps = {
@@ -65,12 +64,13 @@ class List extends Component {
 
   handleSelect = employee => {
     this.props.history.push(
-      generatePath({
-        to: EMPLOYEES_EDIT,
-        params: {
+      generatePath(
+        EMPLOYEES_EDIT,
+
+        {
           id: employee.id
         }
-      })
+      )
     );
   };
 

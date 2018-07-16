@@ -4,12 +4,14 @@ import { signIn, currentUser } from '../stores/auth';
 import { signOut } from '../config/auth';
 
 export const withCurrentUser = graphql(currentUser, {
-  props: ({ data: { currentUser, error, refetch } }) => ({
+  props: ({ data: { currentUser, error, refetch, loading } }) => ({
     currentUser,
     refetchUser: refetch,
-    error
+    loadingUser: loading,
+    errorUser: error
   }),
   options: {
+    fetchPolicy: 'cache-and-network',
     errorPolicy: 'all'
   }
 });
@@ -19,8 +21,5 @@ export const withSignOut = Component => (props = {}) => {
 };
 
 export const withSignIn = graphql(signIn, {
-  name: 'signIn',
-  options: {
-    refetchQueries: [{ query: currentUser }]
-  }
+  name: 'signIn'
 });

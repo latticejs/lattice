@@ -1,7 +1,6 @@
 import merge from 'lodash.merge';
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { persistCache } from 'apollo-cache-persist';
 import { withClientState } from 'apollo-link-state';
 import { ApolloLink } from 'apollo-link';
 import { HttpLink } from 'apollo-link-http';
@@ -13,12 +12,6 @@ import stores from '../stores';
 import { authLink, onQLAuthError, onNetworkAuthError } from './auth';
 
 const cache = new InMemoryCache();
-
-// set up cache persistence.
-persistCache({
-  cache,
-  storage: window.localStorage
-});
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {

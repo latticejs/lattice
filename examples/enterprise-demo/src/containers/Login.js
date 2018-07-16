@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { withFormik } from 'formik';
+import * as yup from 'yup';
 
 // Material-UI
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import { withFormik } from 'formik';
-import * as yup from 'yup';
 
 // Apollo
 import { compose } from 'react-apollo';
@@ -16,8 +16,8 @@ import { Redirect } from 'react-router-dom';
 
 // Ours
 import { MAIN } from './routes';
-import { withSignIn, withCurrentUser } from '../components/Auth';
-import { TextField, Button, Form } from '../components/MuiFormik';
+import { withSignIn } from '../components/Auth';
+import { TextField, Button } from '../components/MuiFormik';
 import { GraphqlErrorNotification } from '../components/Notification';
 
 const styles = theme => ({
@@ -38,6 +38,9 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     minHeight: 190
+  },
+  containerForm: {
+    padding: 20
   }
 });
 
@@ -45,10 +48,11 @@ class Login extends Component {
   render() {
     const {
       classes,
-      currentUser,
       location: { state },
+      currentUser,
       isSubmitting,
-      status
+      status,
+      handleSubmit
     } = this.props;
 
     if (!isSubmitting && currentUser) {
@@ -63,20 +67,31 @@ class Login extends Component {
             <img src="/images/sidebar-2.jpg" className={classes.img} alt="side" />
           </Grid>
         </Hidden>
-        <Form className={classes.form}>
-          <Grid item xs={8}>
-            <Typography variant="display1">Sign In</Typography>
+        <Grid item xs={12} sm={8} className={classes.containerForm}>
+          <Grid
+            component="form"
+            autoComplete="off"
+            onSubmit={handleSubmit}
+            container
+            alignContent="center"
+            justify="center"
+            spacing={40}
+            className={classes.form}
+          >
+            <Grid item xs={8}>
+              <Typography variant="display1">Sign In</Typography>
+            </Grid>
+            <Grid item xs={8} className={classes.containerField}>
+              <TextField field="email" label="Email" type="text" fullWidth />
+              <TextField field="password" label="Password" type="password" fullWidth />
+            </Grid>
+            <Grid item xs={8}>
+              <Button type="submit" variant="raised" color="primary">
+                Sign in
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={8} className={classes.containerField}>
-            <TextField id="email" label="Email" type="text" fullWidth />
-            <TextField id="password" label="Password" type="password" fullWidth />
-          </Grid>
-          <Grid item xs={8}>
-            <Button variant="raised" color="primary">
-              Sign in
-            </Button>
-          </Grid>
-        </Form>
+        </Grid>
       </Grid>
     );
   }
@@ -91,7 +106,7 @@ const EnhancedForm = withFormik({
       .required('Email is required!'),
     password: yup.string().required('Password is required!')
   }),
-  handleSubmit: async (values, { setSubmitting, setStatus, props: { signIn } }) => {
+  handleSubmit: async (values, { setSubmitting, setStatus, props: { signIn, refetchUser } }) => {
     try {
       await signIn({
         variables: {
@@ -100,7 +115,7 @@ const EnhancedForm = withFormik({
         }
       });
 
-      setSubmitting(false);
+      await refetchUser();
     } catch (err) {
       setSubmitting(false);
       setStatus(err);
@@ -111,7 +126,6 @@ const EnhancedForm = withFormik({
 
 export default compose(
   withSignIn,
-  withCurrentUser,
   EnhancedForm,
   withStyles(styles)
 )(Login);

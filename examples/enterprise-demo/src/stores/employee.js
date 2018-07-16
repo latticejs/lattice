@@ -24,25 +24,27 @@ export const employeesConnection = gql`
 `;
 
 export const createEmployee = gql`
-  mutation createEmployee($id: ID!, $name: String!, $email: String!, $position: String!, $department: String!) {
-    createEmployee(id: $id, name: $name, email: $email, position: $position, department: $department) {
+  mutation createEmployee($name: String!, $email: String!, $jobTitle: String!, $areaId: ID!) {
+    createEmployee(name: $name, email: $email, jobTitle: $jobTitle, areaId: $areaId) {
       id
       name
       email
-      position
-      department
+      area {
+        name
+      }
     }
   }
 `;
 
 export const updateEmployee = gql`
-  mutation updateEmployee($id: ID!, $name: String, $email: String, $position: String, $department: String) {
-    updateEmployee(id: $id, name: $name, email: $email, position: $position, department: $department) {
+  mutation updateEmployee($id: ID!, $name: String, $email: String, $jobTitle: String, $areaId: String) {
+    updateEmployee(id: $id, name: $name, email: $email, jobTitle: $jobTitle, areaId: $areaId) {
       id
       name
       email
-      position
-      department
+      area {
+        name
+      }
     }
   }
 `;

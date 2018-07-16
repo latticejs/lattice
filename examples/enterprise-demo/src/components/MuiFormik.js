@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 import MuiTextField from '@material-ui/core/TextField';
 import MuiButton from '@material-ui/core/Button';
-import MuiGrid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -12,22 +11,26 @@ import { withStyles } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
 import red from '@material-ui/core/colors/red';
 
-export const TextField = connect(({ formik, ...props }) => {
+export const TextField = connect(({ formik, children, loading, ...props }) => {
   const { values, touched, errors, handleChange, handleBlur, isSubmitting } = formik;
-  const { id } = props;
+  const { field } = props;
 
-  const hasError = !!(touched[id] && errors[id]);
+  const hasError = !!(touched[field] && errors[field]);
 
   return (
     <MuiTextField
       error={hasError}
-      helperText={hasError && errors[id]}
-      value={values[id]}
+      helperText={hasError && errors[field]}
+      value={values[field]}
       onChange={handleChange}
       onBlur={handleBlur}
       disabled={isSubmitting}
+      name={field}
       {...props}
-    />
+    >
+      {loading && <CircularProgress size={24} />}
+      {!loading && children}
+    </MuiTextField>
   );
 });
 
@@ -56,55 +59,22 @@ const stylesButton = theme => ({
 
 export const Button = connect(
   withStyles(stylesButton)(({ formik, ...props }) => {
-    const { submitForm, resetForm, isValid, isSubmitting, submitCount } = formik;
-    const { type = 'submit', classes, children, ...restProps } = props;
+    const { isValid, isSubmitting, submitCount } = formik;
+    const { classes, children, className, ...restProps } = props;
 
-    const buttonClassname = classNames({
-      [classes.buttonSuccess]: submitCount > 0 && isValid,
-      [classes.buttonError]: submitCount > 0 && !isValid
-    });
+    const buttonClassname = classNames(
+      {
+        [classes.buttonSuccess]: submitCount > 0 && isValid,
+        [classes.buttonError]: submitCount > 0 && !isValid
+      },
+      className
+    );
 
     return (
-      <MuiButton
-        className={buttonClassname}
-        disabled={isSubmitting}
-        onClick={() => {
-          type === 'submit' ? submitForm() : resetForm();
-        }}
-        {...restProps}
-      >
+      <MuiButton className={buttonClassname} disabled={isSubmitting} {...restProps}>
         {children}
         {isSubmitting && <CircularProgress size={24} className={classes.buttonProgress} />}
       </MuiButton>
-    );
-  })
-);
-
-const stylesForm = theme => ({
-  containerForm: {
-    padding: 20
-  }
-});
-
-export const Form = connect(
-  withStyles(stylesForm)(({ formik, children, classes, ...props }) => {
-    const { handleSubmit } = formik;
-
-    return (
-      <MuiGrid item xs={12} sm={8} className={classes.containerForm}>
-        <MuiGrid
-          component="form"
-          autoComplete="off"
-          onSubmit={handleSubmit}
-          container
-          alignContent="center"
-          justify="center"
-          spacing={40}
-          {...props}
-        >
-          {children}
-        </MuiGrid>
-      </MuiGrid>
     );
   })
 );

@@ -53,7 +53,6 @@ class DataGrid extends Component {
       filterBy,
       orderBy,
       handleLoadMore,
-      handleSelect,
       findItem,
       handleOrder,
       handleSearch
@@ -64,13 +63,7 @@ class DataGrid extends Component {
         <Table>
           <TableHead>
             <TableRow>
-              <TableOrderCell
-                field="id"
-                title="ID"
-                className={classes.cell}
-                handleOrder={handleOrder}
-                orderBy={orderBy}
-              />
+              <TableCell>#</TableCell>
               <TableOrderCell
                 field="name"
                 title="Name"
@@ -89,10 +82,10 @@ class DataGrid extends Component {
             <TableRow>
               <TableCell />
               <TableSearchCell field="name" debounce={200} filterBy={filterBy} handleSearch={handleSearch}>
-                {({ inputProps }) => <Input {...inputProps} />}
+                {({ inputProps }) => <Input fullWidth {...inputProps} />}
               </TableSearchCell>
               <TableSearchCell field="email" filterBy={filterBy} handleSearch={handleSearch}>
-                {({ inputProps }) => <Input {...inputProps} />}
+                {({ inputProps }) => <Input fullWidth {...inputProps} />}
               </TableSearchCell>
             </TableRow>
           </TableHead>
@@ -127,7 +120,7 @@ class DataGrid extends Component {
               }
 
               return (
-                <TableRow key={item.id} style={style} hover onClick={this.handleRowClick.bind(this, item)}>
+                <TableRow key={item.id} style={style} hover onDoubleClick={this.handleRowClick.bind(this, item)}>
                   <TableCell className={classes.cell}>{item.id}</TableCell>
                   <TableCell className={classes.cell}>{item.name}</TableCell>
                   <TableCell className={classes.cell}>{item.email}</TableCell>

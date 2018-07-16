@@ -40015,6 +40015,22 @@
       "jobTitle": "International Group Assistant",
       "createdAt": 1508876418164,
       "id": "5aeb8ab2-ebf9-4db6-883d-5406e163e75b"
+    },
+    {
+      "name": "pepe",
+      "email": "test@test.com",
+      "jobTitle": "test",
+      "areaId": "df6379b3-9526-41a5-b73a-1dc704d6065f",
+      "createdAt": 1531770697185,
+      "id": "e8252134-781f-4a48-aa37-a8ce6b688e3c"
+    },
+    {
+      "name": "marta",
+      "email": "marta@google.com",
+      "jobTitle": "test",
+      "areaId": "b2686852-45ae-42f0-908d-f611f0166a77",
+      "createdAt": 1531771117267,
+      "id": "32d6e8f4-064a-40e0-8c44-8b86f08157a1"
     }
   ],
   "tasks": [

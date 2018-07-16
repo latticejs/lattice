@@ -17,11 +17,11 @@ import { compose, graphql } from 'react-apollo';
 // stores
 import { getUi } from '../stores/ui';
 
-// components
-import PrivateRoute from './PrivateRoute';
-
-// Pages
+// Ours
+import Loader from '../components/Loader';
+import { withCurrentUser } from '../components/Auth';
 import { SIGN_IN, MAIN } from './routes';
+import PrivateRoute from './PrivateRoute';
 import Login from './Login';
 import Main from './Main';
 
@@ -37,14 +37,21 @@ class App extends Component {
   }
 
   render() {
+    const { refetchUser, currentUser, loadingUser } = this.props;
+
     return (
       <BrowserRouter>
         <MuiThemeProvider theme={this.createTheme()}>
           <CssBaseline>
-            <Switch>
-              <Route path={SIGN_IN} component={Login} />
-              <PrivateRoute path={MAIN} component={Main} />
-            </Switch>
+            <Loader loading={!currentUser && loadingUser}>
+              <Switch>
+                <Route
+                  path={SIGN_IN}
+                  component={props => <Login {...props} refetchUser={refetchUser} currentUser={currentUser} />}
+                />
+                <PrivateRoute path={MAIN} component={Main} />
+              </Switch>
+            </Loader>
           </CssBaseline>
         </MuiThemeProvider>
       </BrowserRouter>
@@ -59,5 +66,6 @@ export default compose(
         ui: { nightMode }
       }
     }) => ({ nightMode })
-  })
+  }),
+  withCurrentUser
 )(App);
