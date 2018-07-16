@@ -30,6 +30,7 @@
     "jest": "^23.4.0"
   },
   "dependencies": {
+    "@octokit/rest": "^15.9.4",
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
     "ora": "^2.1.0"
