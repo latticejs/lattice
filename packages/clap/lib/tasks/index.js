@@ -1,5 +1,6 @@
 module.exports = {
   createDir: require('./createDir'),
   download: require('./downloadExample'),
-  install: require('./installDeps')
+  install: require('./installDeps'),
+  list: require('./listExamples')
 };
