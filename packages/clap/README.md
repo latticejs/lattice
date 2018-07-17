@@ -19,27 +19,27 @@ npm start
 ```
 This will create a copy of `enterprise-demo` running on `http://localhost:3000`.
 
-## OPTIONS
+## Commands 
 
-### custom example
+### example
 
 > `example <example-name>` | `e <example-name>`
 
 Choose a specific [lattice example](/examples) to bootstrap your project.
 
-### interactive mode
+Eg:
 
-> `interactive` | `i`
+`$ clap example basic myDemo`
 
-Navigate through lattice examples. A little helper to start your upcoming lattice project.
+### list 
 
-## API
+> `list` | `ls`
 
-### listExamples
+List all the available lattice examples.
 
-> `listExamples: function` returns: `Array`
+Eg:
 
-It is used to obtain an array of lattice examples metadata.
+`$ clap ls`
 
 ## FAQs
 
