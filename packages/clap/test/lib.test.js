@@ -15,7 +15,7 @@ var DEFAULT_PROJECT = 'demo';
 describe('clap', () => {
   test('call clap with a projectName should return exit(0)', async done => {
     /* WIP - test kind of work but they leave "open handles" so jest doesnt exit properly */
-
+    jest.spyOn(console, 'log').mockImplementation(() => {}); // silent output
     jest.spyOn(process, 'exit').mockImplementation(code => {
       if (code === 0) return 'ok';
       if (code === 1) throw new Error('process.exit() was called.');
