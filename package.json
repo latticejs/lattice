@@ -36,7 +36,8 @@
       "**/taskr",
       "**/@taskr/esnext**",
       "**/@latticejs/react-scripts",
-      "**/jest**"
+      "**/jest**",
+      "**/packages/clap"
     ]
   }
 }

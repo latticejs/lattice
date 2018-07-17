@@ -62,3 +62,6 @@ test-demo*
 
 # generated dist
 dist/
+
+# clap bin
+packages/clap/bin/

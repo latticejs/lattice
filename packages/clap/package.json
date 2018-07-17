@@ -1,0 +1,38 @@
+{
+  "name": "@latticejs/clap",
+  "version": "1.0.1-alpha.3",
+  "description": "Create Lattice App, the CLI for bootstraping your upcoming lattice app.",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "clap": "./bin/clap.bin.js"
+  },
+  "scripts": {
+    "build": "del-cli bin/* && bili",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "roots": [
+      "<rootDir>/lib/",
+      "<rootDir>/test/"
+    ]
+  },
+  "repository": "https://github.com/latticejs/lattice/tree/master/packages/clap",
+  "author": "GEUT",
+  "license": "MIT",
+  "devDependencies": {
+    "bili": "^3.1.2",
+    "del-cli": "^1.1.0",
+    "fast-async": "^6.3.7",
+    "jest": "^23.4.0"
+  },
+  "dependencies": {
+    "@octokit/rest": "^15.9.4",
+    "chalk": "^2.4.1",
+    "commander": "^2.16.0",
+    "ora": "^2.1.0"
+  }
+}
