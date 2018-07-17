@@ -26,6 +26,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-0"
         />
       </g>
       <g
@@ -35,6 +36,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-1"
         />
       </g>
       <g
@@ -44,6 +46,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-2"
         />
       </g>
       <g
@@ -53,6 +56,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-3"
         />
       </g>
       <g
@@ -62,6 +66,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-4"
         />
       </g>
       <g
@@ -71,6 +76,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-5"
         />
       </g>
       <g
@@ -164,6 +170,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-0"
         />
       </g>
       <g
@@ -173,6 +180,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-1"
         />
       </g>
       <g
@@ -182,6 +190,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-2"
         />
       </g>
       <g
@@ -191,6 +200,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-3"
         />
       </g>
       <g
@@ -200,6 +210,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-4"
         />
       </g>
       <g
@@ -209,6 +220,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         <line />
         <polygon
           className="dag__edge-arrow"
+          id="dag__line-5"
         />
       </g>
       <g
@@ -319,6 +331,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-0"
             />
           </g>
           <g
@@ -328,6 +341,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-1"
             />
           </g>
           <g
@@ -337,6 +351,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-2"
             />
           </g>
           <g
@@ -346,6 +361,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-3"
             />
           </g>
           <g
@@ -355,6 +371,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-4"
             />
           </g>
           <g
@@ -364,6 +381,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-5"
             />
           </g>
           <g
@@ -476,6 +494,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-0"
             />
           </g>
           <g
@@ -485,6 +504,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-1"
             />
           </g>
           <g
@@ -494,6 +514,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-2"
             />
           </g>
           <g
@@ -503,6 +524,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-3"
             />
           </g>
           <g
@@ -512,6 +534,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-4"
             />
           </g>
           <g
@@ -521,6 +544,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             <line />
             <polygon
               className="dag__edge-arrow"
+              id="dag__line-5"
             />
           </g>
           <g
