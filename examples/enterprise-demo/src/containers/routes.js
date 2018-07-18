@@ -12,8 +12,7 @@ import TextFormatIcon from '@material-ui/icons/TextFormat';
 import Dashboard from './Dashboard';
 import Areas from './Areas';
 import Employees from './employees/List';
-import EmployeesCreate from './employees/Create';
-import EmployeesEdit from './employees/Edit';
+import EmployeesForm from './employees/Form';
 import General from './theme/General';
 import Widgets from './theme/Widgets';
 
@@ -87,12 +86,12 @@ const routes = [
   {
     path: EMPLOYEES_CREATE,
     title: 'Create Employee',
-    component: EmployeesCreate
+    component: EmployeesForm
   },
   {
     path: EMPLOYEES_EDIT,
     title: 'Edit Employee',
-    component: EmployeesEdit
+    component: EmployeesForm
   },
   ...routesInNavigation()
 ];

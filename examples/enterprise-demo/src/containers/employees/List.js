@@ -7,6 +7,7 @@ import { compose, graphql } from 'react-apollo';
 // Material-UI
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
 
 // stores
 import { employeesConnection } from '../../stores/employee';
@@ -14,16 +15,42 @@ import { employeesConnection } from '../../stores/employee';
 // Ours
 import { offsetToCursor, mergeEdges } from '../../utils';
 import { EMPLOYEES_CREATE, EMPLOYEES_EDIT } from '../routes';
-import { Link } from '../../components/MuiRouter';
 import DataGrid from '../../components/employees/DataGrid';
+
+const getDatagridMeta = props => {
+  const { location } = props;
+
+  if (location.state && location.state.datagridMeta) {
+    return location.state.datagridMeta;
+  }
+
+  return null;
+};
 
 class List extends Component {
   static defaultProps = {
     employeesConnection: { totalCount: 0, edges: [] }
   };
 
+  constructor(props) {
+    super(props);
+
+    const datagridMeta = getDatagridMeta(props);
+    if (datagridMeta) {
+      this.scrollTop = datagridMeta.scrollTop;
+    }
+  }
+
+  async componentDidMount() {
+    window.requestAnimationFrame(() => {
+      if (this.scrollTop) {
+        this.scroll.scrollTop(this.scrollTop);
+      }
+    });
+  }
+
   handleLoadMore = async ({ startIndex, stopIndex }) => {
-    return this.props.fetchMore({ first: stopIndex - startIndex, after: offsetToCursor(startIndex - 1) });
+    await this.props.fetchMore({ first: stopIndex - startIndex, after: offsetToCursor(startIndex - 1) });
   };
 
   findItem = ({ index }) => {
@@ -46,37 +73,50 @@ class List extends Component {
 
   handleOrder = async orderBy => {
     const { fetchData } = this.props;
-    const { list } = this;
+    const { dataLoader } = this;
 
     await fetchData({ orderBy });
 
-    list.resetLoadMoreRowsCache(true);
+    dataLoader.resetLoadMoreRowsCache(true);
   };
 
   handleSearch = async filterBy => {
     const { fetchData } = this.props;
-    const { list } = this;
+    const { dataLoader } = this;
 
     await fetchData({ filterBy });
 
-    list.resetLoadMoreRowsCache(true);
+    dataLoader.resetLoadMoreRowsCache(true);
   };
 
   handleSelect = employee => {
-    this.props.history.push(
-      generatePath(
-        EMPLOYEES_EDIT,
+    const { history } = this.props;
 
-        {
-          id: employee.id
-        }
-      )
+    history.push(
+      generatePath(EMPLOYEES_EDIT, {
+        id: employee.id
+      }),
+      {
+        datagridMeta: this.datagridMeta()
+      }
     );
   };
 
-  handleAdded = () => {};
+  handleAdd = () => {
+    const { history } = this.props;
 
-  handleUpdated = () => {};
+    history.push(generatePath(EMPLOYEES_CREATE), {
+      datagridMeta: this.datagridMeta()
+    });
+  };
+
+  datagridMeta = () => {
+    const { variables } = this.props;
+    return {
+      variables,
+      scrollTop: this.scroll && this.scroll.getScrollTop()
+    };
+  };
 
   render() {
     const {
@@ -88,13 +128,14 @@ class List extends Component {
     return (
       <Grid container spacing={16}>
         <Grid item xs={8}>
-          <Link color="primary" variant="raised" to={EMPLOYEES_CREATE}>
+          <Button color="primary" variant="raised" onClick={this.handleAdd}>
             <AddIcon /> Add
-          </Link>
+          </Button>
         </Grid>
         <Grid item xs={12}>
           <DataGrid
-            listRef={instance => (this.list = instance)}
+            dataLoaderRef={instance => (this.dataLoader = instance)}
+            scrollRef={instance => (this.scroll = instance)}
             list={edges.map(edge => edge.node)}
             totalCount={totalCount}
             loading={loading}
@@ -119,9 +160,9 @@ export default compose(
         employeesConnection,
         loading,
         variables,
-        fetchMore({ first, after }) {
+        fetchMore(variables) {
           return fetchMore({
-            variables: { first, after: after || (employeesConnection ? employeesConnection.pageInfo.endCursor : null) },
+            variables,
             // concatenate old and new entries
             updateQuery: (previousResult, { fetchMoreResult }) => {
               const { edges: previousEdges } = previousResult.employeesConnection;
@@ -141,90 +182,17 @@ export default compose(
         }
       };
     },
-    options: props => ({
-      variables: {
-        first: 10,
-        orderBy: [{ field: 'name', direction: 'asc' }]
-      }
-    })
+    options: props => {
+      const datagridMeta = getDatagridMeta(props);
+      return {
+        variables: datagridMeta
+          ? datagridMeta.variables
+          : {
+              first: 10,
+              orderBy: [{ field: 'name', direction: 'asc' }]
+            },
+        fetchPolicy: 'network'
+      };
+    }
   })
 )(List);
-
-//export default compose(
-//graphql(employees, {
-//options(props) {
-//return {
-//variables: {
-//...List.initialPagination,
-//filterBy: ''
-//}
-//};
-//},
-//props({ data: { allEmployees, _allEmployeesMeta, refetch, fetchMore, variables } }) {
-//return {
-//variables,
-//employees: allEmployees,
-//meta: _allEmployeesMeta,
-//onPageChange(page, rowsPerPage) {
-//return refetch({
-//...variables,
-//rowsPerPage,
-//page
-//});
-//},
-//fetchMore(page, rowsPerPage) {
-//return fetchMore({
-//rowsPerPage,
-//page
-//});
-//},
-//onFilterBy(text) {
-//return refetch({
-//...variables,
-//page: 0,
-//filterBy: text
-//});
-//},
-//onOrder(orderBy = []) {
-//return refetch({
-//...variables,
-//orderBy
-//});
-//}
-//};
-//}
-//}),
-//graphql(departments, {
-//props({ data: { allDepartments } }) {
-//return {
-//departments: allDepartments
-//};
-//}
-//}),
-//graphql(createEmployee, {
-//props({ mutate }) {
-//return {
-//createEmployee: employee => {
-//return mutate({
-//variables: {
-//...employee
-//}
-//});
-//}
-//};
-//}
-//}),
-//graphql(updateEmployee, {
-//props({ mutate }) {
-//return {
-//updateEmployee: employee => {
-//return mutate({
-//variables: {
-//...employee
-//}
-//});
-//}
-//};
-//}
-//})
-//)(List);

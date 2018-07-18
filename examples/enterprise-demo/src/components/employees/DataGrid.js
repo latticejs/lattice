@@ -46,7 +46,8 @@ class DataGrid extends Component {
 
   render() {
     const {
-      listRef,
+      dataLoaderRef,
+      scrollRef,
       totalCount,
       list,
       classes,
@@ -97,7 +98,10 @@ class DataGrid extends Component {
             rowHeight={48}
             height={500}
             rvInfiniteLoaderProps={{
-              ref: listRef
+              ref: dataLoaderRef
+            }}
+            rvScrollProps={{
+              ref: scrollRef
             }}
           >
             {({ item, isEmpty, key, style }) => {

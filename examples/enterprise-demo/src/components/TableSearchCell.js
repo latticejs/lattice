@@ -4,20 +4,24 @@ import debounce from 'lodash.debounce';
 import { TableCell } from '@latticejs/widgets';
 
 export default class TableSearchCell extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: ''
-    };
-
-    this.search = debounce(this.search, props.debounce);
-  }
-
   static defaultProps = {
     debounce: 300,
     filterBy: []
   };
+
+  constructor(props) {
+    super(props);
+
+    const { field, filterBy } = props;
+
+    const filter = filterBy.find(filter => filter.field === field);
+
+    this.state = {
+      value: filter ? filter.value : ''
+    };
+
+    this.search = debounce(this.search, props.debounce);
+  }
 
   handleInputChange = e => {
     const target = e.target;

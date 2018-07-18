@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Redirect, Route } from 'react-router-dom';
 
-import { withCurrentUser } from '../components/Auth';
+import { withCurrentUser } from './Auth';
 
 import { SIGN_IN } from './routes';
 

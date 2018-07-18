@@ -1,5 +1,20 @@
 import gql from 'graphql-tag';
 
+export const getEmployee = gql`
+  query GetEmployee($id: ID!) {
+    getEmployee(id: $id) {
+      id
+      name
+      email
+      jobTitle
+      area {
+        id
+        name
+      }
+    }
+  }
+`;
+
 export const employeesConnection = gql`
   query EmployeesConnection($filterBy: [Filter], $orderBy: [Order], $first: Int = 10, $after: String) {
     employeesConnection(filterBy: $filterBy, orderBy: $orderBy, first: $first, after: $after) {
@@ -9,7 +24,9 @@ export const employeesConnection = gql`
           id
           name
           email
+          jobTitle
           area {
+            id
             name
           }
         }
@@ -29,7 +46,9 @@ export const createEmployee = gql`
       id
       name
       email
+      jobTitle
       area {
+        id
         name
       }
     }
@@ -37,12 +56,14 @@ export const createEmployee = gql`
 `;
 
 export const updateEmployee = gql`
-  mutation updateEmployee($id: ID!, $name: String, $email: String, $jobTitle: String, $areaId: String) {
+  mutation updateEmployee($id: ID!, $name: String, $email: String, $jobTitle: String, $areaId: ID) {
     updateEmployee(id: $id, name: $name, email: $email, jobTitle: $jobTitle, areaId: $areaId) {
       id
       name
       email
+      jobTitle
       area {
+        id
         name
       }
     }

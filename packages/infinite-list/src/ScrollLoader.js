@@ -25,7 +25,6 @@ class ScrollLoader extends Component {
     registerChild(instance);
 
     this.list = instance;
-<<<<<<< HEAD:packages/infinite-list/src/ScrollLoader.js
 
     if (this.props.rvListProps.ref) {
       this.props.rvListProps.ref(this.list);
@@ -45,10 +44,6 @@ class ScrollLoader extends Component {
 
     if (this.props.rvScrollProps.ref) {
       this.props.rvScrollProps.ref(this.scroll);
-=======
-    if (this.props.rvListProps.ref) {
-      this.props.rvListProps.ref(instance);
->>>>>>> add datagrid pagination:packages/widgets/src/infinite/scroll-loader.js
     }
   };
 

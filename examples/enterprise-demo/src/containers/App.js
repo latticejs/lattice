@@ -19,8 +19,8 @@ import { getUi } from '../stores/ui';
 
 // Ours
 import Loader from '../components/Loader';
-import { withCurrentUser } from '../components/Auth';
 import { SIGN_IN, MAIN } from './routes';
+import { withCurrentUser } from './Auth';
 import PrivateRoute from './PrivateRoute';
 import Login from './Login';
 import Main from './Main';

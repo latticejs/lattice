@@ -25,9 +25,9 @@ const styles = theme => ({
 });
 
 class Form extends Component {
-  handleSubmit = employee => {
-    const { handleSubmit } = this.props;
-    handleSubmit(employee);
+  handleSuccess = employee => {
+    const { handleSuccess } = this.props;
+    handleSuccess(employee);
   };
 
   handleCancel = () => {
@@ -36,7 +36,7 @@ class Form extends Component {
   };
 
   render() {
-    const { classes, className, status, areas, handleSubmit, isSubmitting } = this.props;
+    const { classes, className, status, areas, handleSubmit } = this.props;
 
     return (
       <Widget
@@ -57,15 +57,7 @@ class Form extends Component {
             <TextField field="jobTitle" label="Job" type="text" fullWidth />
           </Grid>
           <Grid item xs={6}>
-            <TextField
-              select
-              loading={areas.loading}
-              field="areaId"
-              label="Area"
-              type="text"
-              placeholder="Select an area..."
-              fullWidth
-            >
+            <TextField select loading={areas.loading} field="areaId" label="Area" fullWidth>
               {areas.items.map(option => (
                 <MenuItem key={option.id} value={option.id}>
                   {option.name}
@@ -76,7 +68,7 @@ class Form extends Component {
           <Toolbar>
             <Grid container spacing={16}>
               <Grid item>
-                <Button type="submit" variant="raised" color="primary" disabled={isSubmitting}>
+                <Button type="submit" variant="raised" color="primary">
                   Save
                 </Button>
               </Grid>
@@ -112,14 +104,14 @@ export default withStyles(styles)(
       areaId: yup.string().required()
     }),
     handleSubmit: async (values, { setSubmitting, setStatus, props }) => {
-      const { saveObject, handleSuccess } = props;
+      const { createEmployee, updateEmployee, handleSuccess } = props;
 
       try {
-        await saveObject({
-          variables: {
-            ...values
-          }
-        });
+        if (values.id) {
+          await updateEmployee(values);
+        } else {
+          await createEmployee(values);
+        }
 
         handleSuccess();
       } catch (err) {

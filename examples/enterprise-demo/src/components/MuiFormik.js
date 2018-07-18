@@ -5,50 +5,51 @@ import classNames from 'classnames';
 import MuiTextField from '@material-ui/core/TextField';
 import MuiButton from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import { withStyles } from '@material-ui/core/styles';
-
-// colors
-import green from '@material-ui/core/colors/green';
-import red from '@material-ui/core/colors/red';
 
 export const TextField = connect(({ formik, children, loading, ...props }) => {
   const { values, touched, errors, handleChange, handleBlur, isSubmitting } = formik;
-  const { field } = props;
+  const { field, InputProps = {} } = props;
 
   const hasError = !!(touched[field] && errors[field]);
+
+  const _InputProps = {
+    ...InputProps,
+    startAdornment: loading && (
+      <InputAdornment position="start">
+        <CircularProgress size={24} />
+      </InputAdornment>
+    )
+  };
 
   return (
     <MuiTextField
       error={hasError}
       helperText={hasError && errors[field]}
       value={values[field]}
-      onChange={handleChange}
-      onBlur={handleBlur}
+      onChange={handleChange(field)}
+      onBlur={handleBlur(field)}
       disabled={isSubmitting}
       name={field}
+      InputProps={_InputProps}
       {...props}
     >
-      {loading && <CircularProgress size={24} />}
       {!loading && children}
     </MuiTextField>
   );
 });
 
 const stylesButton = theme => ({
-  buttonSuccess: {
-    backgroundColor: green[500],
-    '&:hover': {
-      backgroundColor: green[700]
-    }
-  },
   buttonError: {
-    backgroundColor: red[500],
+    backgroundColor: theme.palette.error.main,
     '&:hover': {
-      backgroundColor: red[700]
-    }
+      backgroundColor: theme.palette.error.dark
+    },
+    color: theme.palette.error.contrastText
   },
   buttonProgress: {
-    color: green[500],
+    color: theme.palette.primary.main,
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -60,20 +61,19 @@ const stylesButton = theme => ({
 export const Button = connect(
   withStyles(stylesButton)(({ formik, ...props }) => {
     const { isValid, isSubmitting, submitCount } = formik;
-    const { classes, children, className, ...restProps } = props;
+    const { classes, type, children, className, ...restProps } = props;
 
     const buttonClassname = classNames(
       {
-        [classes.buttonSuccess]: submitCount > 0 && isValid,
         [classes.buttonError]: submitCount > 0 && !isValid
       },
       className
     );
 
     return (
-      <MuiButton className={buttonClassname} disabled={isSubmitting} {...restProps}>
+      <MuiButton type={type} className={buttonClassname} disabled={isSubmitting} {...restProps}>
         {children}
-        {isSubmitting && <CircularProgress size={24} className={classes.buttonProgress} />}
+        {isSubmitting && type === 'submit' && <CircularProgress size={24} className={classes.buttonProgress} />}
       </MuiButton>
     );
   })
