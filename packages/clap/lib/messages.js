@@ -73,3 +73,7 @@ exports.describeList = function describeList() {
     ${chalk.cyan('list all the available lattice example projects.')}
   `;
 };
+
+exports.checkValidExample = function checkValidExample() {
+  return chalk.green('Validating example...');
+};
