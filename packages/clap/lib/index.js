@@ -2,10 +2,14 @@
 var fs = require('fs');
 var messages = require('./messages');
 var tasks = require('./tasks');
-var createDir = tasks.createDir;
-var downloadExample = tasks.download;
-var installDeps = tasks.install;
-var listExamples = tasks.list;
+
+// \ Lattice repo data \
+var repoOptions = {
+  owner: 'latticejs',
+  repo: 'lattice',
+  path: 'examples',
+  ref: 'master'
+};
 
 function taskFailed(taskSpinner, err) {
   taskSpinner.fail(messages.error(err.message ? err.message : err));
@@ -31,27 +35,50 @@ async function clap(example, project) {
   // - tell user job ended succesfully (and follow steps?)
   console.log(messages.runningClap());
 
+  // all the tasks follow the same structure.
+  // in case of error the output has the following shape:
+  // {
+  //   code: 1,
+  //   stderr: error message
+  // }
+  // in case of success,
+  // {
+  //   code: 0
+  // }
   try {
+    // \ validate example name
+    var checkValidExampleSpinner = messages.wait(messages.checkValidExample());
+    var checkValidExampleOut = await tasks.validate(repoOptions, example);
+    if (checkValidExampleOut.code) {
+      taskFailed(checkValidExampleSpinner, checkValidExampleOut.stderr);
+    }
+    checkValidExampleSpinner.succeed();
+
+    // \ create project directory
     var createDirSpinner = messages.wait(messages.createDir());
-    var createDirOut = await createDir(project);
+    var createDirOut = await tasks.createDir(project);
     if (createDirOut.code) {
       taskFailed(createDirSpinner, createDirOut.stderr);
     }
     createDirSpinner.succeed();
 
+    // \ download example
     var downloadSpinner = messages.wait(messages.downloadExample());
-    var downloadExampleOut = await downloadExample(project, example);
+    var downloadExampleOut = await tasks.download(project, example);
     if (downloadExampleOut.code) {
       taskFailed(downloadSpinner, downloadExampleOut.stderr);
     }
     downloadSpinner.succeed();
 
+    // \ install deps
     var installSpinner = messages.wait(messages.installDeps());
     var projectPath = `${process.cwd()}/${project}`;
-    var installDepsOut = await installDeps(projectPath);
+    var installDepsOut = await tasks.install(projectPath);
     if (installDepsOut.code) {
       taskFailed(installSpinner, installDepsOut.stderr);
     }
+
+    // \ succeed \o/
     installSpinner.succeed();
   } catch (err) {
     messages.error(err.message);
@@ -67,12 +94,6 @@ async function list() {
   //   - display examples
 
   console.log(messages.listExamples());
-  var repoOptions = {
-    owner: 'latticejs',
-    repo: 'lattice',
-    path: 'examples',
-    ref: 'master'
-  };
 
   var parseList = function parseList(listRawItem) {
     if (listRawItem.name === 'README.md') return;
@@ -80,7 +101,7 @@ async function list() {
   };
 
   try {
-    var examplesRaw = await listExamples(repoOptions);
+    var examplesRaw = await tasks.list(repoOptions);
     examplesRaw.data.forEach(parseList);
   } catch (err) {
     console.error(messages.error(err));
