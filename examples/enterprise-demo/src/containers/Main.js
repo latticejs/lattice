@@ -34,7 +34,7 @@ import { getUi, updateUi } from '../stores/ui';
 import routes, { routeByPath, navigation } from './routes';
 import Content from '../components/Content';
 import Lightbulb from '../components/icons/Lightbulb';
-import { withSignOut } from '../components/Auth';
+import { withSignOut } from './Auth';
 import PrivateRoute from './PrivateRoute';
 
 const styles = theme => ({

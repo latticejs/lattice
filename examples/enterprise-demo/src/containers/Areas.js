@@ -11,6 +11,9 @@ import Dag from '@latticejs/dag';
 // Store
 import { getAllAreas } from '../stores/area';
 
+// Ours
+import Loader from '../components/Loader';
+
 class Areas extends Component {
   state = {
     nodes: [],
@@ -40,17 +43,19 @@ class Areas extends Component {
     return null;
   }
 
+  handleAdded = (...args) => {
+    console.log(args);
+  };
+
   render() {
     const { loading } = this.props;
     const { nodes, edges } = this.state;
 
     return (
       <Grid container spacing={16}>
-        {loading ? (
-          <CircularProgress size={50} />
-        ) : (
+        <Loader loading={loading}>
           <Dag editable nodes={nodes} edges={edges} width={1000} height={1000} />
-        )}
+        </Loader>
       </Grid>
     );
   }

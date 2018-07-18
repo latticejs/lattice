@@ -16,7 +16,7 @@ import { Redirect } from 'react-router-dom';
 
 // Ours
 import { MAIN } from './routes';
-import { withSignIn } from '../components/Auth';
+import { withSignIn } from './Auth';
 import { TextField, Button } from '../components/MuiFormik';
 import { GraphqlErrorNotification } from '../components/Notification';
 
