@@ -8,14 +8,14 @@ const enterNode = (selection, props) => {
     return props.nodeRadius;
   });
 
-  insertTitleLinebreaks(selection, props.name);
+  insertTitleLinebreaks(selection, props.data.title);
 };
 
 const updateNode = selection => {
   selection.attr('transform', d => `translate(${d.x}, ${d.y})`);
 };
 
-const insertTitleLinebreaks = (gEl, title) => {
+const insertTitleLinebreaks = (gEl, title = '') => {
   const words = title.split(/\s+/g);
   const nwords = words.length;
 
@@ -73,9 +73,9 @@ export default class Node extends Component {
   };
 
   handleNodeClick = e => {
-    const { editable, editSelectedNode, onNodeClick, data, idx, name } = this.props;
+    const { editable, editSelectedNode, onNodeClick, data, idx } = this.props;
     const node = {
-      title: name,
+      data,
       x: data.x,
       y: data.y,
       idx: idx
@@ -85,9 +85,13 @@ export default class Node extends Component {
       return editSelectedNode(node);
     }
 
-    onNodeClick({ title: name });
+    onNodeClick(data);
     // add selected state
     this.setState(prevState => ({ selected: !prevState.selected }));
+  };
+
+  handleDoubleClick = e => {
+    e.stopPropagation();
   };
 
   onTextChange = e => {
@@ -137,7 +141,6 @@ export default class Node extends Component {
       outerEl,
       classes,
       editable,
-      name,
       data,
       selectedClass,
       children,
@@ -161,8 +164,9 @@ export default class Node extends Component {
       <g
         className={classNames(DEFAULTS.nodeClass, nodeClasses)}
         onClick={this.handleNodeClick}
+        onDoubleClick={this.handleDoubleClick}
         ref={node => (this.node = node)}
-        id={`dag__node--${name}`}
+        id={`dag__node--${idx}`}
       >
         <circle />
         <text ref={node => (this.label = node)} className={classes.dagNodeText} />
@@ -180,7 +184,7 @@ export default class Node extends Component {
         {showPanel &&
           showPanelIdx === idx &&
           nodePanel &&
-          nodePanel({ outerEl, title: name, x: data.x, y: data.y, actions: this.getActions() })}
+          nodePanel({ outerEl, data, x: data.x, y: data.y, actions: this.getActions() })}
       </g>
     );
   }
