@@ -74,15 +74,13 @@ export default class Node extends Component {
 
   handleNodeClick = e => {
     const { editable, editSelectedNode, onNodeClick, data, idx } = this.props;
-    const node = {
-      data,
-      x: data.x,
-      y: data.y,
-      idx: idx
-    };
 
     if (editable) {
-      return editSelectedNode(node);
+      return editSelectedNode({
+        x: data.x,
+        y: data.y,
+        idx: idx
+      });
     }
 
     onNodeClick(data);
