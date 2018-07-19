@@ -70,6 +70,14 @@ async function clap(example, project) {
     }
     downloadSpinner.succeed();
 
+    // \ rename pkg name
+    var renamePkgNameSpinner = messages.wait(messages.renamePkgName());
+    var renamePkgNameOut = await tasks.rename(project);
+    if (renamePkgNameOut.code) {
+      taskFailed(renamePkgNameSpinner, renamePkgNameOut.stderr);
+    }
+    renamePkgNameSpinner.succeed();
+
     // \ install deps
     var installSpinner = messages.wait(messages.installDeps());
     var projectPath = `${process.cwd()}/${project}`;
