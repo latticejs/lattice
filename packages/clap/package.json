@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/clap",
-  "version": "1.0.1-alpha.4",
+  "version": "1.0.1-alpha.5",
   "description": "Create Lattice App, the CLI for bootstraping your upcoming lattice app.",
   "main": "index.js",
   "preferGlobal": true,
