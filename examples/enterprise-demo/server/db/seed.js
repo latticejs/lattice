@@ -18,13 +18,13 @@ function getRandomInt(min, max) {
   const management = await areas.insert({ name: 'Management', dependsOn: [] }).write();
   const development = await areas.insert({ name: 'Development', dependsOn: [management.id] }).write();
   const production = await areas.insert({ name: 'Production', dependsOn: [management.id] }).write();
-  await areas.insert({ name: 'Sales', dependsOn: [management.id] }).write();
+  const areaSales = await areas.insert({ name: 'Sales', dependsOn: [management.id] }).write();
   await areas.insert({ name: 'Hardware', dependsOn: [development.id, production.id] }).write();
   await areas.insert({ name: 'Software', dependsOn: [development.id] }).write();
   await areas.insert({ name: 'Series', dependsOn: [production.id] }).write();
-  await areas.insert({ name: 'Parts', dependsOn: [production.id, sales.id] }).write();
-  await areas.insert({ name: 'North', dependsOn: [sales.id] }).write();
-  await areas.insert({ name: 'South', dependsOn: [sales.id] }).write();
+  await areas.insert({ name: 'Parts', dependsOn: [production.id, areaSales.id] }).write();
+  await areas.insert({ name: 'North', dependsOn: [areaSales.id] }).write();
+  await areas.insert({ name: 'South', dependsOn: [areaSales.id] }).write();
 
   for (let i = 0; i < 5000; i++) {
     const ran = getRandomInt(0, 10);
