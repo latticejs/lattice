@@ -45,6 +45,16 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
+        <clipPath
+          id="recharts68-clip"
+        >
+          <rect
+            height={60}
+            width={30}
+            x={65}
+            y={5}
+          />
+        </clipPath>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -755,6 +765,16 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
+        <clipPath
+          id="recharts53-clip"
+        >
+          <rect
+            height={60}
+            width={30}
+            x={65}
+            y={5}
+          />
+        </clipPath>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -1465,6 +1485,16 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (dark) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
+        <clipPath
+          id="recharts73-clip"
+        >
+          <rect
+            height={60}
+            width={30}
+            x={65}
+            y={5}
+          />
+        </clipPath>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -2045,6 +2075,16 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (light) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
+        <clipPath
+          id="recharts58-clip"
+        >
+          <rect
+            height={60}
+            width={30}
+            x={65}
+            y={5}
+          />
+        </clipPath>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -2625,6 +2665,16 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
+        <clipPath
+          id="recharts78-clip"
+        >
+          <rect
+            height={60}
+            width={30}
+            x={65}
+            y={5}
+          />
+        </clipPath>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -3269,6 +3319,16 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
+        <clipPath
+          id="recharts63-clip"
+        >
+          <rect
+            height={60}
+            width={30}
+            x={65}
+            y={5}
+          />
+        </clipPath>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -3916,6 +3976,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts28-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-area"
           >
@@ -4114,6 +4184,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts33-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-bar"
           >
@@ -4284,6 +4364,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts36-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-bar"
           >
@@ -4454,6 +4544,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts41-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-line"
           >
@@ -4586,6 +4686,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts44-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-pie"
           >
@@ -4782,6 +4892,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts48-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-area"
           >
@@ -4983,6 +5103,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts49-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-scatter"
             clipPath={null}
@@ -7123,6 +7253,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts3-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-area"
           >
@@ -7321,6 +7461,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts8-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-bar"
           >
@@ -7491,6 +7641,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts11-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-bar"
           >
@@ -7661,6 +7821,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts16-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-line"
           >
@@ -7793,6 +7963,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts19-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-pie"
           >
@@ -7989,6 +8169,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts23-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-area"
           >
@@ -8190,6 +8380,16 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
+          <clipPath
+            id="recharts24-clip"
+          >
+            <rect
+              height={90}
+              width={90}
+              x={5}
+              y={5}
+            />
+          </clipPath>
           <g
             className="recharts-layer recharts-scatter"
             clipPath={null}
