@@ -3,5 +3,6 @@ module.exports = {
   createDir: require('./createDir'),
   download: require('./downloadExample'),
   install: require('./installDeps'),
-  list: require('./listExamples')
+  list: require('./listExamples'),
+  rename: require('./renamePkgName')
 };
