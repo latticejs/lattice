@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
-export default gql`
-  query AllStats {
-    allStats @client {
+export const getAllStats = gql`
+  query GetAllStats {
+    getAllStats {
       label
       unit
       value

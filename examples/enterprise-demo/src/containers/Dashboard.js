@@ -6,32 +6,41 @@ import Grid from '@material-ui/core/Grid';
 // Apollo
 import { compose, graphql } from 'react-apollo';
 
+// @latticejs
+import { Loader } from '@latticejs/widgets';
+
+// Stores
+import { getAllStats } from '../stores/stat';
+import { getTopProductsSale } from '../stores/product';
+
 // Ours
 import AverageRevenue from '../components/dashboard/AverageRevenue';
 import NewCustomers from '../components/dashboard/NewCustomers';
-import Sales from '../components/dashboard/Sales';
-import Stats from '../components/dashboard/Stats';
 import TaskScheduler from '../components/dashboard/TaskScheduler';
 import Demographic from '../components/dashboard/Demographic';
-import allSales from '../queries/sales';
-import allStats from '../queries/stats';
+import Stats from '../components/dashboard/Stats';
+import TopProducts from '../components/dashboard/TopProducts';
 
 class Dashboard extends Component {
   render() {
-    const { sales = [], stats = [] } = this.props;
+    const { stats, loadingStats, topProducts, loadingTopProducts } = this.props;
     return (
       <Grid container spacing={16}>
         <Grid item xs={12}>
           <Grid container spacing={16}>
-            {stats.map((stat, idx) => (
-              <Grid key={`stat-${idx}`} item xs={6} lg={12 / stats.length}>
-                <Stats stat={stat} />
-              </Grid>
-            ))}
-            <Grid item xs={12}>
-              <Sales data={sales} />
-            </Grid>
+            <Loader loading={loadingStats}>
+              {stats.map((stat, idx) => (
+                <Grid key={`stat-${idx}`} item xs={6} lg={12 / stats.length}>
+                  <Stats stat={stat} />
+                </Grid>
+              ))}
+            </Loader>
           </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Loader loading={loadingTopProducts}>
+            <TopProducts data={topProducts} />
+          </Loader>
         </Grid>
         <Grid item xs={12}>
           <Grid container alignItems="stretch" spacing={16}>
@@ -59,6 +68,21 @@ class Dashboard extends Component {
 }
 
 export default compose(
-  graphql(allSales, { props: ({ data: { allSales } }) => ({ sales: allSales }) }),
-  graphql(allStats, { props: ({ data: { allStats } }) => ({ stats: allStats }) })
+  graphql(getAllStats, {
+    props: ({ data: { getAllStats = [], loading } }) => ({
+      stats: getAllStats,
+      loadingStats: loading
+    })
+  }),
+  graphql(getTopProductsSale, {
+    props: ({ data: { getTopProductsSale = [], loading } }) => ({
+      topProducts: getTopProductsSale,
+      loadingTopProducts: loading
+    }),
+    options: {
+      variables: {
+        limit: 4
+      }
+    }
+  })
 )(Dashboard);

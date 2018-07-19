@@ -1,27 +1,33 @@
 import ContentCopyIcon from '@material-ui/icons/ContentCopy';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ExtensionIcon from '@material-ui/icons/Extension';
-// import InsertChartIcon from 'material-ui-icons/InsertChart';
-// import MapIcon from 'material-ui-icons/Map'
-// import PageViewIcon from 'material-ui-icons/Pageview';
 import PeopleIcon from '@material-ui/icons/People';
-// import PersonIcon from '@material-ui/icons/Person';
 import TextFormatIcon from '@material-ui/icons/TextFormat';
 
 import Dashboard from './Dashboard';
-import Employees from './Employees';
+import Employees from './employees/List';
+import EmployeesForm from './employees/Form';
 import General from './theme/General';
 import Widgets from './theme/Widgets';
 
+export const MAIN = '/';
+export const SIGN_IN = '/login';
+export const DASHBOARD = '/dashboard';
+export const EMPLOYEES = '/employees';
+export const EMPLOYEES_CREATE = `${EMPLOYEES}/create`;
+export const EMPLOYEES_EDIT = `${EMPLOYEES}/:id/edit`;
+export const THEME_GENERAL = '/theme/general';
+export const THEME_WIDGETS = '/theme/widgets';
+
 export const navigation = [
   {
-    path: '/dashboard',
+    path: DASHBOARD,
     title: 'Dashboard',
     component: Dashboard,
     icon: DashboardIcon
   },
   {
-    path: '/employees',
+    path: EMPLOYEES,
     title: 'Employees',
     component: Employees,
     icon: PeopleIcon
@@ -31,13 +37,13 @@ export const navigation = [
     icon: ExtensionIcon,
     children: [
       {
-        path: '/theme/general',
+        path: THEME_GENERAL,
         title: 'General',
         component: General,
         icon: TextFormatIcon
       },
       {
-        path: '/theme/widgets',
+        path: THEME_WIDGETS,
         title: 'Widgets',
         component: Widgets,
         icon: ContentCopyIcon
@@ -63,6 +69,16 @@ const routes = [
   {
     path: '/',
     redirect: '/dashboard'
+  },
+  {
+    path: EMPLOYEES_CREATE,
+    title: 'Create Employee',
+    component: EmployeesForm
+  },
+  {
+    path: EMPLOYEES_EDIT,
+    title: 'Edit Employee',
+    component: EmployeesForm
   },
   ...routesInNavigation()
 ];

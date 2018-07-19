@@ -5,20 +5,37 @@
   "dependencies": {
     "@latticejs/react-scripts": "^1.0.1-alpha.4",
     "apollo-cache-inmemory": "^1.1.12",
-    "apollo-client": "^2.2.8",
+    "apollo-client": "^2.3.5",
     "apollo-link": "^1.2.1",
+    "apollo-link-error": "^1.1.0",
     "apollo-link-http": "^1.5.3",
     "apollo-link-state": "^0.4.1",
+    "cors": "^2.8.4",
+    "formik": "1.0.0-beta.4",
     "graphql": "^0.13.2",
+    "graphql-shield": "^2.2.5",
     "graphql-tag": "^2.8.0",
+    "graphql-yoga": "^1.14.10",
+    "jsonwebtoken": "^8.3.0",
+    "lodash-id": "^0.14.0",
+    "lodash.merge": "^4.6.1",
+    "lowdb": "^1.0.0",
     "react": "^16.4.1",
-    "react-apollo": "^2.1.2",
-    "react-dom": "^16.4.1"
+    "react-apollo": "^2.1.9",
+    "react-dom": "^16.4.1",
+    "yup": "^0.25.1"
   },
   "scripts": {
     "start": "lattice-react-scripts start",
     "build": "lattice-react-scripts build",
-    "test": "lattice-react-scripts test --env=jsdom",
-    "eject": "lattice-react-scripts eject"
+    "test": "echo 'test'",
+    "eject": "lattice-react-scripts eject",
+    "graphql": "NODE_PORT=3001 node server/index.js",
+    "graphql:seed": "node server/db/seed.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn graphql\" \"yarn start\""
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0",
+    "faker": "^4.1.0"
   }
 }

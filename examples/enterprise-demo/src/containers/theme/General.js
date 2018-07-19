@@ -4,12 +4,21 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 // @latticejs
 import Widget from '@latticejs/widgets/Widget';
 
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit
+  }
+});
+
 class General extends Component {
   render() {
+    const { classes } = this.props;
+
     return (
       <Grid container spacing={24}>
         <Grid item xs={12} lg={6}>
@@ -31,42 +40,48 @@ class General extends Component {
           <Grid container spacing={16}>
             <Grid item xs={12}>
               <Widget title="Buttons Primary">
-                <Button color="primary">Primary</Button>
-                <Button color="primary" variant="raised">
+                <Button color="primary" className={classes.button}>
+                  Primary
+                </Button>
+                <Button color="primary" variant="raised" className={classes.button}>
                   Primary Raised
                 </Button>
-                <Button color="primary" variant="fab">
+                <Button color="primary" variant="fab" className={classes.button}>
                   fab
                 </Button>
-                <Button color="primary" variant="fab" mini>
+                <Button color="primary" variant="fab" mini className={classes.button}>
                   -
                 </Button>
               </Widget>
             </Grid>
             <Grid item xs={12}>
               <Widget title="Buttons Secondary">
-                <Button color="secondary">Secondary</Button>
-                <Button color="secondary" variant="raised">
+                <Button color="secondary" className={classes.button}>
+                  Secondary
+                </Button>
+                <Button color="secondary" variant="raised" className={classes.button}>
                   Secondary Raised
                 </Button>
-                <Button color="secondary" variant="fab">
+                <Button color="secondary" variant="fab" className={classes.button}>
                   fab
                 </Button>
-                <Button color="secondary" variant="fab" mini>
+                <Button color="secondary" variant="fab" mini className={classes.button}>
                   -
                 </Button>
               </Widget>
             </Grid>
             <Grid item xs={12}>
               <Widget title="Buttons Default">
-                <Button color="default">Default</Button>
-                <Button color="default" variant="raised">
+                <Button color="default" className={classes.button}>
+                  Default
+                </Button>
+                <Button color="default" variant="raised" className={classes.button}>
                   Default Raised
                 </Button>
-                <Button color="default" variant="fab">
+                <Button color="default" variant="fab" className={classes.button}>
                   fab
                 </Button>
-                <Button color="default" variant="fab" mini>
+                <Button color="default" variant="fab" mini className={classes.button}>
                   -
                 </Button>
               </Widget>
@@ -78,4 +93,4 @@ class General extends Component {
   }
 }
 
-export default General;
+export default withStyles(styles)(General);

@@ -5,64 +5,55 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
+// Typeface
+import 'typeface-roboto';
+
 // Router
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Apollo
 import { compose, graphql } from 'react-apollo';
 
-// Typeface
-import 'typeface-roboto';
+// @latticejs
+import { Loader } from '@latticejs/widgets';
 
+// stores
+import { getUi } from '../stores/ui';
+
+// Ours
+import { SIGN_IN, MAIN } from './routes';
+import { withCurrentUser } from './Auth';
+import PrivateRoute from './PrivateRoute';
 import Login from './Login';
 import Main from './Main';
-import PrivateRoute from './PrivateRoute';
-import ui from '../queries/ui';
 
 class App extends Component {
-  state = {
-    muiTheme: {
+  createTheme() {
+    const { nightMode } = this.props;
+
+    return createMuiTheme({
       palette: {
-        type: this.props.nightMode ? 'dark' : 'light'
-      },
-      typography: {
-        title: {
-          fontWeight: 300
-        }
+        type: nightMode ? 'dark' : 'light'
       }
-    }
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { muiTheme } = prevState;
-    const { nightMode } = nextProps;
-    const type = nightMode ? 'dark' : 'light';
-
-    if (type !== muiTheme.palette.type) {
-      return {
-        muiTheme: {
-          ...muiTheme,
-          palette: {
-            ...muiTheme.palette,
-            type
-          }
-        }
-      };
-    }
-
-    return null;
+    });
   }
 
   render() {
-    const { muiTheme } = this.state;
+    const { refetchUser, currentUser, loadingUser } = this.props;
+
     return (
       <BrowserRouter>
-        <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
+        <MuiThemeProvider theme={this.createTheme()}>
           <CssBaseline>
-            <Switch>
-              <Route path="/login" component={Login} />
-              <PrivateRoute path="/" component={Main} />
-            </Switch>
+            <Loader loading={!currentUser && loadingUser}>
+              <Switch>
+                <Route
+                  path={SIGN_IN}
+                  component={props => <Login {...props} refetchUser={refetchUser} currentUser={currentUser} />}
+                />
+                <PrivateRoute path={MAIN} component={Main} />
+              </Switch>
+            </Loader>
           </CssBaseline>
         </MuiThemeProvider>
       </BrowserRouter>
@@ -71,11 +62,12 @@ class App extends Component {
 }
 
 export default compose(
-  graphql(ui, {
+  graphql(getUi, {
     props: ({
       data: {
         ui: { nightMode }
       }
     }) => ({ nightMode })
-  })
+  }),
+  withCurrentUser
 )(App);
