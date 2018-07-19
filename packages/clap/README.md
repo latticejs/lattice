@@ -8,12 +8,10 @@
 npm install -g @latticejs/clap
 ```
 
-:arrow_right: Or you can just use `npx` (see below)
-
 ## Usage
 
 ```bash
-npx clap myLaticceApp
+$ clap myLaticceApp
 cd myLaticceApp
 npm start
 ```
