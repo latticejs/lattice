@@ -1,4 +1,4 @@
-# lattice
+# Lattice
 
 [![Build Status](https://travis-ci.com/latticejs/lattice.svg?branch=master)](https://travis-ci.com/latticejs/lattice) [![Greenkeeper badge](https://badges.greenkeeper.io/latticejs/lattice.svg)](https://greenkeeper.io/)
 
@@ -26,18 +26,22 @@ _Note_: Lattice packages are scoped using `@latticejs`
 
 The easiest way to getting started with **Lattice** is using our CLI tool: `clap`
 
-### Running clap with npx
+### Start from an official example 
 
-`npx clap my-App`
+First, install `clap` if you don't have it yet.
+
+`npm i -g clap`
+
+Then, you can run:
+
+`clap my-App`
 
 This command will do the following:
 
 - Create a directory called `my-App`.
-- Download and install the default lattice example.
+- Download and install the default Lattice example.
 
 See more about clap [here](/packages/clap).
-
-`npx` comes with npm 5.2+, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f) 
 
 ## Using Lattice
 
@@ -51,6 +55,7 @@ Lattice is built using these technologies:
 - [Material UI](https://material-ui.com/)
 - [Recharts](http://recharts.org/en-US/)
 - [D3](https://d3js.org/)
+- [React-Virtualized](https://bvaughn.github.io/react-virtualized/)
 
 ## Contributing
 
