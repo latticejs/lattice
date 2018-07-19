@@ -25,28 +25,34 @@ const styles = theme => ({
   }, {})
 });
 
-class Sales extends Component {
+class TopProducts extends Component {
   render() {
     const { className, classes, data = [] } = this.props;
-    const total = data.reduce((prev, curr) => prev + curr.value, 0);
+
+    const pieData = data.map(entry => ({
+      name: entry.product.name,
+      value: entry.total
+    }));
+
+    const total = pieData.reduce((total, entry) => total + entry.value, 0);
 
     return (
-      <Widget title="Sales">
+      <Widget title={`Top ${pieData.length} Product Sales`}>
         <Grid container alignItems="center" justify="center" className={classnames(className, classes.root)}>
           <Grid item>
             <PieChart width={300} height={300}>
-              <Pie data={data} dataKey="value" innerRadius={40} fill="#8884d8">
-                {data.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]} />)}
+              <Pie data={pieData} dataKey="value" innerRadius={40} fill="#8884d8">
+                {pieData.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]} />)}
               </Pie>
             </PieChart>
           </Grid>
           <Grid item xs={4}>
-            {data.map((entry, index) => {
+            {pieData.map((entry, index) => {
               return (
                 <Fragment key={`legend-${index}`}>
                   <Typography variant="subheading">{entry.name}</Typography>
                   <Typography variant="caption">
-                    {entry.value} units - {Math.ceil((entry.value / total) * 100)}%
+                    $ {entry.value} - {Math.ceil((entry.value / total) * 100)}%
                   </Typography>
                   <LinearProgress
                     variant="determinate"
@@ -64,4 +70,4 @@ class Sales extends Component {
   }
 }
 
-export default withStyles(styles)(Sales);
+export default withStyles(styles)(TopProducts);

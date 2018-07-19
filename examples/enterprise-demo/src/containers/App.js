@@ -14,11 +14,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // Apollo
 import { compose, graphql } from 'react-apollo';
 
+// @latticejs
+import { Loader } from '@latticejs/widgets';
+
 // stores
 import { getUi } from '../stores/ui';
 
 // Ours
-import Loader from '../components/Loader';
 import { SIGN_IN, MAIN } from './routes';
 import { withCurrentUser } from './Auth';
 import PrivateRoute from './PrivateRoute';

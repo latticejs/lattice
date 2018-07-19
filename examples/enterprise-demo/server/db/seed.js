@@ -8,6 +8,8 @@ function getRandomInt(min, max) {
 (async () => {
   const { users, employees, areas, tasks, products, sales } = await db();
 
+  console.log('Starting to generate the database, please wait...\n');
+
   await users.remove().write();
   await employees.remove().write();
   await areas.remove().write();
@@ -58,7 +60,7 @@ function getRandomInt(min, max) {
   for (let i = 0; i < 100; i++) {
     const product = await products
       .insert({
-        name: faker.commerce.product(),
+        name: faker.commerce.productName(),
         department: faker.commerce.department(),
         price: parseFloat(faker.commerce.price())
       })
@@ -69,6 +71,7 @@ function getRandomInt(min, max) {
         .insert({
           productId: product.id,
           employeeId: employees.sample().value().id,
+          price: product.price,
           createdAt: faker.date.past().getTime()
         })
         .write();
@@ -86,4 +89,6 @@ function getRandomInt(min, max) {
       createdAt: faker.date.past().getTime()
     })
     .write();
+
+  console.log('Database generated!\n');
 })();

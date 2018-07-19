@@ -1,16 +1,10 @@
 import ContentCopyIcon from '@material-ui/icons/ContentCopy';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ExtensionIcon from '@material-ui/icons/Extension';
-// import InsertChartIcon from 'material-ui-icons/InsertChart';
-// import MapIcon from 'material-ui-icons/Map'
-// import PageViewIcon from 'material-ui-icons/Pageview';
 import PeopleIcon from '@material-ui/icons/People';
-import BusinessIcon from '@material-ui/icons/Business';
-// import PersonIcon from '@material-ui/icons/Person';
 import TextFormatIcon from '@material-ui/icons/TextFormat';
 
 import Dashboard from './Dashboard';
-import Areas from './Areas';
 import Employees from './employees/List';
 import EmployeesForm from './employees/Form';
 import General from './theme/General';
@@ -24,7 +18,6 @@ export const EMPLOYEES_CREATE = `${EMPLOYEES}/create`;
 export const EMPLOYEES_EDIT = `${EMPLOYEES}/:id/edit`;
 export const THEME_GENERAL = '/theme/general';
 export const THEME_WIDGETS = '/theme/widgets';
-export const AREAS = '/areas';
 
 export const navigation = [
   {
@@ -32,12 +25,6 @@ export const navigation = [
     title: 'Dashboard',
     component: Dashboard,
     icon: DashboardIcon
-  },
-  {
-    path: AREAS,
-    title: 'Areas',
-    component: Areas,
-    icon: BusinessIcon
   },
   {
     path: EMPLOYEES,

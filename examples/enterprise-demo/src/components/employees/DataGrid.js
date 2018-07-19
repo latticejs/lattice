@@ -8,11 +8,16 @@ import Input from '@material-ui/core/Input';
 import { withStyles } from '@material-ui/core/styles';
 
 // @latticejs
-import { Widget, Table, TableBody, TableHead, TableRow, TableCell } from '@latticejs/widgets';
-
-// Ours
-import TableOrderCell from '../TableOrderCell';
-import TableSearchCell from '../TableSearchCell';
+import { Widget } from '@latticejs/widgets';
+import {
+  Table,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableOrderCell,
+  TableSearchCell
+} from '@latticejs/infinite-list';
 
 const styles = theme => ({
   root: {

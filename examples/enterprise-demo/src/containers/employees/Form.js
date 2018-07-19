@@ -7,13 +7,15 @@ import { compose, graphql } from 'react-apollo';
 // Material-UI
 import Grid from '@material-ui/core/Grid';
 
+// @latticejs
+import { Loader } from '@latticejs/widgets';
+
 // Stores
 import { getAllAreas } from '../../stores/area';
 import { getEmployee, createEmployee, updateEmployee } from '../../stores/employee';
 
 // Ours
 import { EMPLOYEES } from '../routes';
-import Loader from '../../components/Loader';
 import EmployeesForm from '../../components/employees/Form';
 
 class Form extends Component {

@@ -6,11 +6,8 @@ const { typeDef: Employee, resolvers: employeeResolvers } = require('./employee.
 const { typeDef: Area, resolvers: areaResolvers } = require('./area.js');
 const { typeDef: Task, resolvers: taskResolvers } = require('./task.js');
 const { typeDef: Stat, resolvers: statResolvers } = require('./stat.js');
-
-// const {
-// typeDef: User,
-// resolvers: userResolvers
-// } = require('./user.js')
+const { typeDef: Product, resolvers: productResolvers } = require('./product.js');
+const { typeDef: Sale } = require('./sale.js');
 
 // If you had Query fields not associated with a
 // specific type you could put them here
@@ -32,6 +29,14 @@ const Query = `
 const resolvers = {};
 
 module.exports = {
-  typeDefs: [Query, Input, Auth, Employee, Area, Task, Stat],
-  resolvers: merge(resolvers, authResolvers, employeeResolvers, areaResolvers, taskResolvers, statResolvers)
+  typeDefs: [Query, Input, Auth, Employee, Area, Task, Stat, Product, Sale],
+  resolvers: merge(
+    resolvers,
+    authResolvers,
+    employeeResolvers,
+    areaResolvers,
+    taskResolvers,
+    statResolvers,
+    productResolvers
+  )
 };
