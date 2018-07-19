@@ -9,24 +9,28 @@ import { compose, graphql } from 'react-apollo';
 // Ours
 import AverageRevenue from '../components/dashboard/AverageRevenue';
 import NewCustomers from '../components/dashboard/NewCustomers';
-import Tasks from '../components/dashboard/Tasks';
 import TaskScheduler from '../components/dashboard/TaskScheduler';
 import Demographic from '../components/dashboard/Demographic';
+import Stats from '../components/dashboard/Stats';
+import Loader from '../components/Loader';
 
 // Stores
-import { tasksConnection } from '../stores/task';
+import { getAllStats } from '../stores/stat';
 
 class Dashboard extends Component {
   render() {
-    const { completedTasks } = this.props;
+    const { stats, loadingStats } = this.props;
     return (
       <Grid container spacing={16}>
         <Grid item xs={12}>
           <Grid container spacing={16}>
-            <Grid item xs={6} lg={12}>
-              <Tasks {...completedTasks} title="Completed Tasks" />
-            </Grid>
-            <Grid item xs={12} />
+            <Loader loading={loadingStats}>
+              {stats.map((stat, idx) => (
+                <Grid key={`stat-${idx}`} item xs={6} lg={12 / stats.length}>
+                  <Stats stat={stat} />
+                </Grid>
+              ))}
+            </Loader>
           </Grid>
         </Grid>
         <Grid item xs={12}>
@@ -55,20 +59,10 @@ class Dashboard extends Component {
 }
 
 export default compose(
-  graphql(tasksConnection, {
-    props: ({ data: { tasksConnection, loading, fetchMore } }) => ({
-      completedTasks: {
-        tasks: tasksConnection,
-        loading,
-        fetchMore
-      }
-    }),
-    options: props => ({
-      variables: {
-        filterBy: [{ field: 'completedAt', value: null, operator: 'NOT_EQUAL' }],
-        orderBy: [{ field: 'completedAt', direction: 'asc' }],
-        first: 10
-      }
+  graphql(getAllStats, {
+    props: ({ data: { getAllStats = [], loading, fetchMore } }) => ({
+      stats: getAllStats,
+      loadingStats: loading
     })
   })
 )(Dashboard);
