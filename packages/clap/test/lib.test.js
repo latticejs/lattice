@@ -4,7 +4,8 @@ jest.mock('../lib/tasks', () => ({
   validate: jest.fn(() => Promise.resolve({ code: 0 })),
   createDir: jest.fn(() => Promise.resolve({ code: 0 })),
   download: jest.fn(() => Promise.resolve({ code: 0 })),
-  install: jest.fn(() => Promise.resolve({ code: 0 }))
+  install: jest.fn(() => Promise.resolve({ code: 0 })),
+  rename: jest.fn(() => Promise.resolve({ code: 0 }))
 }));
 
 var process = require('process');
