@@ -1665,8 +1665,8 @@ aws-lambda@^0.1.2:
     dotenv "^0.4.0"
 
 aws-sdk@^*:
-  version "2.277.1"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.277.1.tgz#cbf0f740951ddad5a03402b2b499c4e537ea38bb"
+  version "2.278.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.278.1.tgz#eb4c696f53fca381fd8de9b26edd96bdb5c9e859"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -5493,8 +5493,8 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     is-extendable "^1.0.1"
 
 extend@~3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
 
 external-editor@^2.0.1, external-editor@^2.0.4, external-editor@^2.1.0:
   version "2.2.0"
@@ -10468,7 +10468,7 @@ react-docgen@^3.0.0-beta11:
     node-dir "^0.1.10"
     recast "^0.15.0"
 
-react-dom@^16.0.0, react-dom@^16.2.0, react-dom@^16.4.1:
+react-dom@^16.0.0, react-dom@^16.2.0, react-dom@^16.4.0, react-dom@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
   dependencies:
@@ -10654,7 +10654,7 @@ react-virtualized@^9.19.1:
     prop-types "^15.6.0"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.0.0, react@^16.2.0, react@^16.4.1:
+react@^16.0.0, react@^16.2.0, react@^16.4.0, react@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
   dependencies:
