@@ -1,9 +1,9 @@
 {
   "name": "enterprise-demo",
-  "version": "1.0.1-alpha.3",
+  "version": "1.0.1-alpha.4",
   "private": true,
   "dependencies": {
-    "@latticejs/react-scripts": "^1.0.1-alpha.3",
+    "@latticejs/react-scripts": "^1.0.1-alpha.4",
     "apollo-cache-inmemory": "^1.1.12",
     "apollo-client": "^2.2.8",
     "apollo-link": "^1.2.1",

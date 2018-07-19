@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/infinite-list",
-  "version": "1.0.1-alpha.3",
+  "version": "1.0.1-alpha.4",
   "license": "MIT",
   "main": "index.js",
   "module": "dist/es/infinite-list.es.js",
