@@ -83,6 +83,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--app"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -93,6 +94,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--lodash"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -103,6 +105,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--react"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -113,6 +116,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--react-dom"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -123,6 +127,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--apollo"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -133,6 +138,7 @@ exports[`Storyshots dag/basic editable mode 1`] = `
         className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--enzyme"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -227,6 +233,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         className="dag__node Dag-dagNode-2"
         id="dag__node--app"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -237,6 +244,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         className="dag__node Dag-dagNode-2"
         id="dag__node--lodash"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -247,6 +255,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         className="dag__node Dag-dagNode-2"
         id="dag__node--react"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -257,6 +266,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         className="dag__node Dag-dagNode-2"
         id="dag__node--react-dom"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -267,6 +277,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         className="dag__node Dag-dagNode-2"
         id="dag__node--apollo"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -277,6 +288,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         className="dag__node Dag-dagNode-2"
         id="dag__node--enzyme"
         onClick={[Function]}
+        onDoubleClick={[Function]}
       >
         <circle />
         <text
@@ -388,6 +400,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             className="dag__node Dag-dagNode-77"
             id="dag__node--app"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -398,6 +411,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             className="dag__node Dag-dagNode-77"
             id="dag__node--lodash"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -408,6 +422,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             className="dag__node Dag-dagNode-77"
             id="dag__node--react"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -418,6 +433,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             className="dag__node Dag-dagNode-77"
             id="dag__node--react-dom"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -428,6 +444,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             className="dag__node Dag-dagNode-77"
             id="dag__node--apollo"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -438,6 +455,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             className="dag__node Dag-dagNode-77"
             id="dag__node--enzyme"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -551,6 +569,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             className="dag__node Dag-dagNode-43"
             id="dag__node--app"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -561,6 +580,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             className="dag__node Dag-dagNode-43"
             id="dag__node--lodash"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -571,6 +591,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             className="dag__node Dag-dagNode-43"
             id="dag__node--react"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -581,6 +602,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             className="dag__node Dag-dagNode-43"
             id="dag__node--react-dom"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -591,6 +613,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             className="dag__node Dag-dagNode-43"
             id="dag__node--apollo"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text
@@ -601,6 +624,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             className="dag__node Dag-dagNode-43"
             id="dag__node--enzyme"
             onClick={[Function]}
+            onDoubleClick={[Function]}
           >
             <circle />
             <text

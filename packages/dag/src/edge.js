@@ -44,7 +44,11 @@ export default class Edge extends Component {
   }
 
   handleEdgeClick = e => {
-    const { editable, data, editSelectedEdge, onEdgeClick, idx } = this.props;
+    const { editable, data, editSelectedEdge, onEdgeClick, idx, getNodeIdx, ghostEdge } = this.props;
+
+    if (ghostEdge) {
+      return;
+    }
 
     if (editable) {
       return editSelectedEdge({
@@ -54,8 +58,8 @@ export default class Edge extends Component {
     }
 
     onEdgeClick({
-      source: data.source.title,
-      target: data.target.title
+      source: getNodeIdx(data.source),
+      target: getNodeIdx(data.target)
     });
     // add selected state
     this.setState(prevState => ({

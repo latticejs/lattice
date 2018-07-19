@@ -39,14 +39,14 @@ class GraphPanel extends Component {
     this.props.outerEl.removeChild(this.el);
   }
 
-  renderContentNode({ title }) {
+  renderContentNode({ node }) {
     return (
       <Grid item xs={12}>
         <Typography variant="caption" color="default">
           Node
         </Typography>
         <Typography variant="body2" color="inherit">
-          {title}
+          {node.title}
         </Typography>
       </Grid>
     );
@@ -76,14 +76,14 @@ class GraphPanel extends Component {
   }
 
   render() {
-    const { children, classes, title, source, target, style, actions = {} } = this.props;
+    const { children, classes, node, source, target, style, actions = {} } = this.props;
 
     return createPortal(
       <Card className={classes.panel} style={style}>
         <Grid item container alignItems="center">
           <Grid item xs={12} className={classes.details}>
             <CardContent className={classes.content}>
-              {title ? this.renderContentNode({ title }) : this.renderContentEdge({ source, target })}
+              {node ? this.renderContentNode({ node }) : this.renderContentEdge({ source, target })}
             </CardContent>
           </Grid>
           <Grid item xs={12}>

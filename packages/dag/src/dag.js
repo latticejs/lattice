@@ -40,7 +40,7 @@ const updateArrow = (arrow, line, nodeRadius) => {
 export default class DagCore {
   static DEFAULTS = DEFAULTS;
 
-  constructor(root, initialState) {
+  constructor(root, initialState, props = {}) {
     // root represents the svg element. It is required.
     this.state = {
       dragEnable: initialState.dragEnable || true,
@@ -50,6 +50,8 @@ export default class DagCore {
       width: initialState.width,
       nodes: initialState.nodes
     };
+
+    this.props = props;
 
     this.d3root = root;
     this.linesCache = [];
@@ -81,9 +83,7 @@ export default class DagCore {
       .force(
         'link',
         forceLink(edges)
-          .id(function(d) {
-            return d.title;
-          })
+          .id(this.props.getNodeIdx)
           .distance(nodeRadius)
           .strength(1)
       )

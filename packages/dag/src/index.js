@@ -109,6 +109,8 @@ const dagRenderNodeActions = ({ deleteAction, createEdgeAction }) => (
   </React.Fragment>
 );
 
+const getNodeIdx = node => node.title;
+
 class Dag extends Component {
   static displayName = 'Dag';
   static defaultProps = {
@@ -123,7 +125,8 @@ class Dag extends Component {
     nodes: [],
     edges: [],
     renderNodeActions: dagRenderNodeActions,
-    renderEdgeActions: dagRenderEdgeActions
+    renderEdgeActions: dagRenderEdgeActions,
+    getNodeIdx
   };
 
   constructor(props) {
@@ -151,14 +154,9 @@ class Dag extends Component {
   resetEditableState(e) {
     const { target } = e;
     const { editable } = this.props;
+    const { enableEdgeCreation } = this.state;
 
-    if (!editable) return;
-    // user is clicking on root svg === outside node/edge component
-    if (target !== this.root) return;
-
-    if (this.state.newNodeReady) this.dagcore.toggleDrag();
-
-    this.setState({
+    const reset = {
       newEdge: {},
       initNode: true,
       newNodeReady: false,
@@ -170,7 +168,21 @@ class Dag extends Component {
       nodePanelIdx: undefined,
       edgePanelIdx: undefined,
       panelPosition: {}
-    });
+    };
+
+    if (!editable) return;
+
+    if (enableEdgeCreation) {
+      this.setState(reset);
+      return;
+    }
+
+    // user is clicking on root svg === outside node/edge component
+    if (target !== this.root) return;
+
+    if (this.state.newNodeReady) this.dagcore.toggleDrag();
+
+    this.setState(reset);
   }
 
   componentDidMount() {
@@ -181,7 +193,7 @@ class Dag extends Component {
       { nodes: this.gnodes },
       { edges: this.gedges }
     );
-    this.dagcore = new DagCore(this.root, params);
+    this.dagcore = new DagCore(this.root, params, { getNodeIdx: this.props.getNodeIdx });
   }
 
   componentWillUnmount() {
@@ -250,9 +262,9 @@ class Dag extends Component {
       y: node.y
     };
 
-    newEdge[newEdgeKey] = node.title;
+    newEdge[newEdgeKey] = node.idx;
     // avoid self-directed nodes
-    if (enableEdgeCreation && newEdge.source && newEdgeKey === 'target' && node.title === newEdge.source) {
+    if (enableEdgeCreation && newEdge.source && newEdgeKey === 'target' && node.idx === newEdge.source) {
       this.setState(
         Object.assign(
           this.resetSelection(),
@@ -345,8 +357,8 @@ class Dag extends Component {
           left: this.state.panelPosition.x
         }}
         outerEl={this.graphContainer}
-        source={source.title}
-        target={target.title}
+        source={this.props.getNodeIdx(source)}
+        target={this.props.getNodeIdx(target)}
         actions={actions}
       >
         {this.props.renderEdgeActions}
@@ -354,7 +366,7 @@ class Dag extends Component {
     );
   };
 
-  renderNodePanel = ({ title, x, y, actions }) => {
+  renderNodePanel = ({ data, x, y, actions }) => {
     return (
       <GraphPanel
         style={{
@@ -363,7 +375,7 @@ class Dag extends Component {
           left: x
         }}
         outerEl={this.graphContainer}
-        title={title}
+        node={data}
         actions={actions}
       >
         {this.props.renderNodeActions}
@@ -391,6 +403,7 @@ class Dag extends Component {
     const newEdges = edges.slice(start, pivotA).concat(edges.slice(pivotB, end));
 
     onEdgeRemoved(newEdges);
+
     // close panel
     this.setState({
       edgePanel: false
@@ -416,6 +429,7 @@ class Dag extends Component {
 
     const newNodes = nodes.slice(start, pivotA).concat(nodes.slice(pivotB, end));
     onNodeRemoved(newNodes);
+
     // close panel
     this.setState({
       nodePanel: false
@@ -443,7 +457,8 @@ class Dag extends Component {
       onEdgeClick,
       nodeRadius,
       selectedNodeClass,
-      selectedEdgeClass
+      selectedEdgeClass,
+      getNodeIdx
     } = this.props;
 
     const rootClasses = [classes.root];
@@ -452,11 +467,10 @@ class Dag extends Component {
     const nodes = this.gnodes.map((node, i) => {
       return (
         <Node
-          idx={i}
+          idx={getNodeIdx(node)}
           key={`node-${i}`}
           nodeRadius={nodeRadius}
           data={node}
-          name={node.title}
           classes={classes}
           selectedClass={selectedNodeClass}
           editSelectedNode={this.editSelectedNode}
@@ -467,6 +481,7 @@ class Dag extends Component {
           showPanelIdx={this.state.nodePanelIdx}
           deleteNode={({ event, idx }) => this.deleteNode({ event, idx })}
           createEdge={event => this.createEdge({ event })}
+          getNodeIdx={getNodeIdx}
         />
       );
     });
@@ -486,6 +501,7 @@ class Dag extends Component {
           showEdgePanelIdx={this.state.edgePanelIdx}
           selectedClass={selectedEdgeClass}
           deleteEdge={({ event, idx }) => this.deleteEdge({ event, idx })}
+          getNodeIdx={getNodeIdx}
         >
           {data => this.renderEdgePanel(data)}
         </Edge>
@@ -508,9 +524,9 @@ class Dag extends Component {
             {nodes}
             {this.state.newNodeReady && (
               <Node
+                key={Date.now()}
                 nodeRadius={nodeRadius}
-                data={{ id: undefined, x: this.state.newNode.x, y: this.state.newNode.y }}
-                name={''}
+                data={{ x: this.state.newNode.x, y: this.state.newNode.y }}
                 classes={this.props.classes}
                 newNode={editable && this.state.newNodeReady}
                 onNodeAdded={this.props.onNodeAdded}
