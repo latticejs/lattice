@@ -77,3 +77,7 @@ exports.describeList = function describeList() {
 exports.checkValidExample = function checkValidExample() {
   return chalk.green('Validating example...');
 };
+
+exports.renamePkgName = function renamePkgName() {
+  return chalk.green('Renaming package.json name...');
+};
