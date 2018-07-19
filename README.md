@@ -30,7 +30,7 @@ The easiest way to getting started with **Lattice** is using our CLI tool: `clap
 
 First, install `clap` if you don't have it yet.
 
-`npm i -g clap`
+`npm i -g @latticejs/clap`
 
 Then, you can run:
 
