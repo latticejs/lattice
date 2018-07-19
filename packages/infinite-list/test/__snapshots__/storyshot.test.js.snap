@@ -1,0 +1,609 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots infinite-list/List basic 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-1 MuiGrid-spacing-xs-24-24"
+    >
+      <div
+        className="MuiGrid-item-2 MuiGrid-grid-xs-12-40"
+      >
+        <div
+          className="MuiPaper-root-97 MuiPaper-elevation2-101 MuiPaper-rounded-98"
+        >
+          <div
+            className="MuiList-root-124 MuiList-padding-125"
+          >
+            <div
+              style={
+                Object {
+                  "overflow": "visible",
+                  "width": 0,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": 400,
+                    "overflow": "hidden",
+                    "position": "relative",
+                    "width": 0,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitOverflowScrolling": "touch",
+                      "bottom": 0,
+                      "left": 0,
+                      "marginBottom": 0,
+                      "marginRight": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <div
+                    aria-label="grid"
+                    aria-readonly={true}
+                    className="ReactVirtualized__Grid ReactVirtualized__List"
+                    onScroll={[Function]}
+                    role="grid"
+                    style={
+                      Object {
+                        "WebkitOverflowScrolling": "touch",
+                        "boxSizing": "border-box",
+                        "direction": "ltr",
+                        "height": 400,
+                        "overflowX": false,
+                        "overflowY": false,
+                        "position": "relative",
+                        "width": 0,
+                        "willChange": "transform",
+                      }
+                    }
+                    tabIndex={0}
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderRadius": 3,
+                      "bottom": 2,
+                      "display": "none",
+                      "height": 6,
+                      "left": 2,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 2,
+                      "transition": "opacity 200ms",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,.2)",
+                        "borderRadius": "inherit",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "height": "100%",
+                        "position": "relative",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderRadius": 3,
+                      "bottom": 2,
+                      "display": "none",
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 2,
+                      "top": 2,
+                      "transition": "opacity 200ms",
+                      "width": 6,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,.2)",
+                        "borderRadius": "inherit",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots infinite-list/Table basic 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-128 MuiGrid-spacing-xs-24-151"
+    >
+      <div
+        className="MuiGrid-item-129 MuiGrid-grid-xs-12-167"
+      >
+        <div
+          className="MuiPaper-root-224 MuiPaper-elevation2-228 MuiPaper-rounded-225"
+        >
+          <div
+            className="MuiTable-root-251"
+          >
+            <div
+              className="MuiTableHead-root-253 Component-root-252"
+            >
+              <div
+                className="MuiTableRow-root-259 Component-root-254 MuiTableRow-head-262 Component-head-257"
+              >
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-272 InnerTableCell-root-264 MuiTableCell-head-273 InnerTableCell-head-265"
+                  scope="col"
+                >
+                  Index
+                </div>
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-272 InnerTableCell-root-264 MuiTableCell-head-273 InnerTableCell-head-265"
+                  scope="col"
+                >
+                  Title
+                </div>
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-272 InnerTableCell-root-264 MuiTableCell-head-273 InnerTableCell-head-265"
+                  scope="col"
+                >
+                  Timestamp
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "overflow": "visible",
+                  "width": 0,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": 400,
+                    "overflow": "hidden",
+                    "position": "relative",
+                    "width": 0,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitOverflowScrolling": "touch",
+                      "bottom": 0,
+                      "left": 0,
+                      "marginBottom": 0,
+                      "marginRight": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <div
+                    aria-label="grid"
+                    aria-readonly={true}
+                    className="ReactVirtualized__Grid ReactVirtualized__List InnerTableBody-root-280"
+                    onScroll={[Function]}
+                    role="grid"
+                    style={
+                      Object {
+                        "WebkitOverflowScrolling": "touch",
+                        "boxSizing": "border-box",
+                        "direction": "ltr",
+                        "height": 400,
+                        "overflowX": false,
+                        "overflowY": false,
+                        "position": "relative",
+                        "width": 0,
+                        "willChange": "transform",
+                      }
+                    }
+                    tabIndex={0}
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderRadius": 3,
+                      "bottom": 2,
+                      "display": "none",
+                      "height": 6,
+                      "left": 2,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 2,
+                      "transition": "opacity 200ms",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,.2)",
+                        "borderRadius": "inherit",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "height": "100%",
+                        "position": "relative",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderRadius": 3,
+                      "bottom": 2,
+                      "display": "none",
+                      "opacity": 0,
+                      "position": "absolute",
+                      "right": 2,
+                      "top": 2,
+                      "transition": "opacity 200ms",
+                      "width": 6,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,.2)",
+                        "borderRadius": "inherit",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots infinite-list/Table order 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-281 MuiGrid-spacing-xs-24-304"
+    >
+      <div
+        className="MuiGrid-item-282 MuiGrid-grid-xs-12-320"
+      >
+        <div
+          className="MuiPaper-root-377 MuiPaper-elevation2-381 MuiPaper-rounded-378"
+        >
+          <div
+            className="MuiTable-root-404"
+          >
+            <div
+              className="MuiTableHead-root-406 Component-root-405"
+            >
+              <div
+                className="MuiTableRow-root-412 Component-root-407 MuiTableRow-head-415 Component-head-410"
+              >
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-425 InnerTableCell-root-417 MuiTableCell-head-426 InnerTableCell-head-418"
+                  scope="col"
+                >
+                  Index
+                </div>
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-425 InnerTableCell-root-417 MuiTableCell-head-426 InnerTableCell-head-418"
+                  scope="col"
+                >
+                  <span
+                    aria-describedby={null}
+                    className="MuiButtonBase-root-445 MuiTableSortLabel-root-440"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    role="button"
+                    tabIndex="0"
+                    title="Title"
+                  >
+                    Title
+                    <svg
+                      aria-hidden="true"
+                      className="MuiSvgIcon-root-448 MuiTableSortLabel-icon-442 MuiTableSortLabel-iconDirectionAsc-444"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-425 InnerTableCell-root-417 MuiTableCell-head-426 InnerTableCell-head-418"
+                  scope="col"
+                >
+                  <span
+                    aria-describedby={null}
+                    className="MuiButtonBase-root-445 MuiTableSortLabel-root-440"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    role="button"
+                    tabIndex="0"
+                    title="Timestamp"
+                  >
+                    Timestamp
+                    <svg
+                      aria-hidden="true"
+                      className="MuiSvgIcon-root-448 MuiTableSortLabel-icon-442 MuiTableSortLabel-iconDirectionAsc-444"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            className="MuiTypography-root-455 MuiTypography-caption-465"
+            style={
+              Object {
+                "margin": 10,
+              }
+            }
+          >
+            - tip: use [shift + click] to sort by multiple fields
+          </span>
+          <aside
+            className="MuiTypography-root-455 MuiTypography-body2-463 MuiTypography-gutterBottom-472"
+            style={
+              Object {
+                "margin": 10,
+              }
+            }
+          >
+            Result: 
+            []
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots infinite-list/Table search 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-479 MuiGrid-spacing-xs-24-502"
+    >
+      <div
+        className="MuiGrid-item-480 MuiGrid-grid-xs-12-518"
+      >
+        <div
+          className="MuiPaper-root-575 MuiPaper-elevation2-579 MuiPaper-rounded-576"
+        >
+          <div
+            className="MuiTable-root-602"
+          >
+            <div
+              className="MuiTableHead-root-604 Component-root-603"
+            >
+              <div
+                className="MuiTableRow-root-610 Component-root-605 MuiTableRow-head-613 Component-head-608"
+              >
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  scope="col"
+                >
+                  Index
+                </div>
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  scope="col"
+                >
+                  Title
+                </div>
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  scope="col"
+                >
+                  Timestamp
+                </div>
+              </div>
+              <div
+                className="MuiTableRow-root-610 Component-root-605 MuiTableRow-head-613 Component-head-608"
+              >
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  scope="col"
+                />
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  scope="col"
+                >
+                  <div
+                    className="MuiInput-root-631 MuiInput-fullWidth-638 MuiInput-underline-635"
+                  >
+                    <input
+                      className="MuiInput-input-639"
+                      name="name"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  aria-sort={null}
+                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  scope="col"
+                >
+                  <div
+                    className="MuiInput-root-631 MuiInput-fullWidth-638 MuiInput-underline-635"
+                  >
+                    <input
+                      className="MuiInput-input-639"
+                      name="email"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside
+            className="MuiTypography-root-644 MuiTypography-body2-652 MuiTypography-gutterBottom-661"
+            style={
+              Object {
+                "margin": 10,
+              }
+            }
+          >
+            Result: 
+            []
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

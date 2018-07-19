@@ -1,7 +1,7 @@
 import React from 'react';
 import { default as MuiList } from '@material-ui/core/List';
 import { default as MuiListItem } from '@material-ui/core/ListItem';
-import ScrollLoader from './scroll-loader';
+import ScrollLoader from './ScrollLoader';
 
 const withDiv = WrappedComponent => props => <WrappedComponent {...props} component="div" />;
 

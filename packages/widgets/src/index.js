@@ -1,3 +1,3 @@
 export { default as Widget } from './Widget';
 export { default as SideMenu } from './SideMenu';
-export * from './infinite';
+export { default as Loader } from './Loader';

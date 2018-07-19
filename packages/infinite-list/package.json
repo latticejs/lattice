@@ -1,20 +1,20 @@
 {
-  "name": "@latticejs/widgets",
+  "name": "@latticejs/infinite-list",
   "version": "1.0.1-alpha.3",
   "license": "MIT",
   "main": "index.js",
-  "module": "dist/es/widgets.es.js",
+  "module": "dist/es/infinite-list.es.js",
   "files": [
     "dist",
-    "Widget.js",
-    "SideMenu.js",
-    "Loader.js"
+    "ScrollLoader.js",
+    "List.js",
+    "Table.js"
   ],
   "scripts": {
     "build": "taskr",
     "release": "taskr release",
     "prepublish": "npm run release",
-    "storybook": "start-storybook -p 9013 -c .storybook",
+    "storybook": "start-storybook -p 9014 -c .storybook",
     "test": "jest"
   },
   "peerDependencies": {
@@ -59,7 +59,11 @@
     "taskr-rollup": "^0.0.4"
   },
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "lodash.debounce": "^4.0.8",
+    "prop-types": "^15.6.2",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-virtualized": "^9.19.1"
   },
   "jest": {
     "setupFiles": [
