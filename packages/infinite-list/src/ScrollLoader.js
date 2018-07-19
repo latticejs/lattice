@@ -11,17 +11,40 @@ const disableScroll = (style = {}) => ({
 
 class ScrollLoader extends Component {
   list = null;
+  scroll = null;
 
   static defaultProps = {
     list: [],
-    rvInfiniteLoader: {},
+    rvInfiniteLoaderProps: {},
     rvAutoSizerProps: {},
-    rvListProps: {}
+    rvListProps: {},
+    rvScrollProps: {}
   };
 
   registerRef = (instance, registerChild) => {
     registerChild(instance);
+
     this.list = instance;
+
+    if (this.props.rvListProps.ref) {
+      this.props.rvListProps.ref(this.list);
+    }
+  };
+
+  registerScroll = instance => {
+    if (!instance) {
+      return;
+    }
+
+    this.scroll = instance;
+
+    this.scroll.scrollToRow = index => {
+      this.scroll.scrollTop(this.list.getOffsetForRow({ index }));
+    };
+
+    if (this.props.rvScrollProps.ref) {
+      this.props.rvScrollProps.ref(this.scroll);
+    }
   };
 
   handleScroll = ({ target }) => {
@@ -69,25 +92,28 @@ class ScrollLoader extends Component {
       isRowLoaded = this.defaultIsRowLoaded, // function
       width: parentWidth,
       height: parentHeight,
-      rvInfiniteLoader,
+      rvInfiniteLoaderProps,
       rvAutoSizerProps,
-      rvListProps
+      rvListProps,
+      rvScrollProps
     } = this.props;
 
     return (
-      <InfiniteLoader isRowLoaded={isRowLoaded} loadMoreRows={loadMore} rowCount={rowCount} {...rvInfiniteLoader}>
+      <InfiniteLoader isRowLoaded={isRowLoaded} loadMoreRows={loadMore} rowCount={rowCount} {...rvInfiniteLoaderProps}>
         {({ onRowsRendered, registerChild }) => (
           <AutoSizer disableWidth={!!parentWidth} disableHeight={!!parentHeight} {...rvAutoSizerProps}>
             {({ width, height }) => (
               <Scrollbars
                 autoHide
+                {...rvScrollProps}
+                ref={this.registerScroll}
                 style={{ width: parentWidth || width, height: parentHeight || height }}
                 onScroll={this.handleScroll}
               >
                 <List
                   {...rvListProps}
-                  onRowsRendered={onRowsRendered}
                   ref={instance => this.registerRef(instance, registerChild)}
+                  onRowsRendered={onRowsRendered}
                   rowCount={rowCount}
                   rowHeight={rowHeight}
                   rowRenderer={this.rowRenderer}
@@ -115,9 +141,10 @@ ScrollLoader.propTypes = {
   isRowLoaded: PropTypes.func,
   width: PropTypes.number,
   height: PropTypes.number,
-  rvInfiniteLoader: PropTypes.object,
+  rvInfiniteLoaderProps: PropTypes.object,
   rvAutoSizerProps: PropTypes.object,
-  rvListProps: PropTypes.object
+  rvListProps: PropTypes.object,
+  rvScrollProps: PropTypes.object
 };
 
 export default ScrollLoader;

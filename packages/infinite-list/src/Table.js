@@ -7,7 +7,7 @@ import { default as MuiTableHead } from '@material-ui/core/TableHead';
 import { default as MuiTableRow, styles as muiTableRowStyles } from '@material-ui/core/TableRow/TableRow';
 import { default as MuiTableCell, styles as muiTableCellStyles } from '@material-ui/core/TableCell/TableCell';
 
-import ScrollLoader from './scroll-loader';
+import ScrollLoader from './ScrollLoader';
 
 // possible variants head, body, footer
 const TableContext = React.createContext();
@@ -37,7 +37,13 @@ const stylesCell = theme => {
     root: {
       borderBottom: 'none',
       flex: 1,
-      minWidth: 5
+      minWidth: 40,
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      '&:last-child': {
+        paddingRight: 60
+      }
     }
   };
 };

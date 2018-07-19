@@ -6,7 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 
 // Ours
-import { List, ListItem, Table, TableBody, TableHead, TableRow, TableCell } from '../src';
+import { List, ListItem } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 
 // Decorators
@@ -97,63 +97,11 @@ class BasicList extends Basic {
   }
 }
 
-class BasicTable extends Basic {
-  render() {
-    const { height } = this.props;
-    const { items } = this.state;
-
-    return (
-      <Paper>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Index</TableCell>
-              <TableCell>Title</TableCell>
-              <TableCell>Timestamp</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody
-            loadMore={this.loadMore}
-            findItem={this.findItem}
-            list={items}
-            rowCount={1000}
-            rowHeight={48}
-            height={height}
-          >
-            {({ item, isEmpty, key, style }) => {
-              if (isEmpty) {
-                return <h4>Empty list</h4>;
-              }
-
-              if (!item) {
-                return (
-                  <TableRow key={key} style={style}>
-                    <TableCell>loading...</TableCell>
-                  </TableRow>
-                );
-              }
-
-              return (
-                <TableRow key={key} style={style}>
-                  <TableCell>{item.index}</TableCell>
-                  <TableCell>{item.title}</TableCell>
-                  <TableCell>{item.timestamp}</TableCell>
-                </TableRow>
-              );
-            }}
-          </TableBody>
-        </Table>
-      </Paper>
-    );
-  }
-}
-
 export default ({ storiesOf, action }) => {
-  storiesOf('InfiniteLoader', module)
+  storiesOf('infinite-list/List', module)
     .addDecorator(InGrid)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic list', () => <BasicList />)
-    .add('basic table', () => <BasicTable />);
+    .add('basic', () => <BasicList />);
 };
