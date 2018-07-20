@@ -28,9 +28,11 @@ The easiest way to getting started with **Lattice** is using our CLI tool: `clap
 
 ### Start from an official example 
 
+:warning: *Lattice is currently being released using the `alpha` channel. This means you should consider adding the `@alpha` tag to point to the latest versions when installing.*
+
 First, install `clap` if you don't have it yet.
 
-`npm i -g @latticejs/clap`
+`npm i -g @latticejs/clap@alpha`
 
 Then, you can run:
 
