@@ -35,7 +35,7 @@ export const TextField = connect(({ formik, children, loading, ...props }) => {
       InputProps={_InputProps}
       {...props}
     >
-      {!loading && children}
+      {children}
     </MuiTextField>
   );
 });

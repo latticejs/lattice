@@ -11,46 +11,30 @@ import Button from '@material-ui/core/Button';
 
 // stores
 import { employeesConnection } from '../../stores/employee';
+import { updateDatagrid, getDatagrid } from '../../stores/ui';
 
 // Ours
 import { offsetToCursor, mergeEdges } from '../../utils';
 import { EMPLOYEES_CREATE, EMPLOYEES_EDIT } from '../routes';
 import DataGrid from '../../components/employees/DataGrid';
 
-const getDatagridMeta = props => {
-  const { location } = props;
-
-  if (location.state && location.state.datagridMeta) {
-    return location.state.datagridMeta;
-  }
-
-  return null;
-};
-
 class List extends Component {
   static defaultProps = {
     employeesConnection: { totalCount: 0, edges: [] }
   };
 
-  constructor(props) {
-    super(props);
-
-    const datagridMeta = getDatagridMeta(props);
-    if (datagridMeta) {
-      this.scrollTop = datagridMeta.scrollTop;
-    }
-  }
-
   async componentDidMount() {
+    const { datagridInfo } = this.props;
     window.requestAnimationFrame(() => {
-      if (this.scrollTop) {
-        this.scroll.scrollTop(this.scrollTop);
+      if (datagridInfo) {
+        this.scroll.scrollTop(datagridInfo.scrollTop);
       }
     });
   }
 
   handleLoadMore = async ({ startIndex, stopIndex }) => {
-    await this.props.fetchMore({ first: stopIndex - startIndex, after: offsetToCursor(startIndex - 1) });
+    const { fetchMore } = this.props;
+    await fetchMore({ first: stopIndex - startIndex, after: offsetToCursor(startIndex - 1) });
   };
 
   findItem = ({ index }) => {
@@ -72,19 +56,20 @@ class List extends Component {
   };
 
   handleOrder = async orderBy => {
-    const { fetchData } = this.props;
-    const { dataLoader } = this;
-
-    await fetchData({ orderBy });
-
-    dataLoader.resetLoadMoreRowsCache(true);
+    return this.handleFetchData({ orderBy });
   };
 
   handleSearch = async filterBy => {
+    return this.handleFetchData({ filterBy });
+  };
+
+  handleFetchData = async data => {
     const { fetchData } = this.props;
     const { dataLoader } = this;
 
-    await fetchData({ filterBy });
+    await fetchData(data);
+
+    await this.updateDatagridInfo();
 
     dataLoader.resetLoadMoreRowsCache(true);
   };
@@ -95,27 +80,28 @@ class List extends Component {
     history.push(
       generatePath(EMPLOYEES_EDIT, {
         id: employee.id
-      }),
-      {
-        datagridMeta: this.datagridMeta()
-      }
+      })
     );
   };
 
   handleAdd = () => {
     const { history } = this.props;
 
-    history.push(generatePath(EMPLOYEES_CREATE), {
-      datagridMeta: this.datagridMeta()
-    });
+    history.push(generatePath(EMPLOYEES_CREATE));
   };
 
-  datagridMeta = () => {
-    const { variables } = this.props;
-    return {
+  handleScrollStop = async (...args) => {
+    return this.updateDatagridInfo();
+  };
+
+  updateDatagridInfo = async () => {
+    const { updateDatagrid, variables } = this.props;
+
+    return updateDatagrid({
+      id: 'employees',
       variables,
       scrollTop: this.scroll && this.scroll.getScrollTop()
-    };
+    });
   };
 
   render() {
@@ -146,6 +132,7 @@ class List extends Component {
             handleSelect={this.handleSelect}
             handleOrder={this.handleOrder}
             handleSearch={this.handleSearch}
+            handleScrollStop={this.handleScrollStop}
           />
         </Grid>
       </Grid>
@@ -154,6 +141,21 @@ class List extends Component {
 }
 
 export default compose(
+  graphql(updateDatagrid, {
+    props: ({ mutate }) => ({
+      updateDatagrid: variables => mutate({ variables })
+    })
+  }),
+  graphql(getDatagrid, {
+    props: ({ data: { getDatagrid } }) => ({
+      datagridInfo: getDatagrid
+    }),
+    options: {
+      variables: {
+        id: 'employees'
+      }
+    }
+  }),
   graphql(employeesConnection, {
     props: ({ data: { employeesConnection, loading, refetch, fetchMore, variables } }) => {
       return {
@@ -182,11 +184,10 @@ export default compose(
         }
       };
     },
-    options: props => {
-      const datagridMeta = getDatagridMeta(props);
+    options: ({ datagridInfo }) => {
       return {
-        variables: datagridMeta
-          ? datagridMeta.variables
+        variables: datagridInfo
+          ? datagridInfo.variables
           : {
               first: 10,
               orderBy: [{ field: 'name', direction: 'asc' }]
