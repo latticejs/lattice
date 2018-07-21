@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { generatePath } from 'react-router';
 
 // Apollo
 import { compose, graphql } from 'react-apollo';
@@ -15,20 +14,15 @@ import { getAllAreas } from '../../stores/area';
 import { getEmployee, createEmployee, updateEmployee } from '../../stores/employee';
 
 // Ours
-import { EMPLOYEES } from '../routes';
 import EmployeesForm from '../../components/employees/Form';
 
 class Form extends Component {
   handleSuccess = () => {
-    const { history } = this.props;
-    const { location } = history;
-    this.props.history.push(generatePath(EMPLOYEES), location.state);
+    this.props.history.goBack();
   };
 
   handleCancel = () => {
-    const { history } = this.props;
-    const { location } = history;
-    this.props.history.push(generatePath(EMPLOYEES), location.state);
+    this.props.history.goBack();
   };
 
   render() {

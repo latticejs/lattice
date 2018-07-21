@@ -61,7 +61,8 @@ class DataGrid extends Component {
       handleLoadMore,
       findItem,
       handleOrder,
-      handleSearch
+      handleSearch,
+      handleScrollStop
     } = this.props;
 
     return (
@@ -106,7 +107,8 @@ class DataGrid extends Component {
               ref: dataLoaderRef
             }}
             rvScrollProps={{
-              ref: scrollRef
+              ref: scrollRef,
+              onScrollStop: handleScrollStop
             }}
           >
             {({ item, isEmpty, key, style }) => {
