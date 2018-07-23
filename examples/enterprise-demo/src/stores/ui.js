@@ -63,12 +63,7 @@ export default {
           console.log(err.message);
         }
 
-        return {
-          __typename: 'Datagrid',
-          id,
-          variables: null,
-          scrollTop: null
-        };
+        return null;
       }
     },
     Mutation: {
