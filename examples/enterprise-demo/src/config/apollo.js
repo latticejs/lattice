@@ -25,17 +25,16 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
   }
 });
 
-const client = new ApolloClient({
-  link: ApolloLink.from([
-    authLink,
-    errorLink,
-    withClientState({
-      ...merge(...stores),
-      cache
-    }),
-    new HttpLink({ uri: 'http://localhost:3001' })
-  ]),
+const stateLink = withClientState({
+  ...merge(...stores),
   cache
 });
+
+const client = new ApolloClient({
+  link: ApolloLink.from([authLink, errorLink, stateLink, new HttpLink({ uri: 'http://localhost:3001' })]),
+  cache
+});
+
+client.onResetStore(stateLink.writeDefaults);
 
 export default client;

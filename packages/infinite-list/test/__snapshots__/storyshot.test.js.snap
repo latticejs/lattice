@@ -20,16 +20,16 @@ exports[`Storyshots infinite-list/List basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1 MuiGrid-spacing-xs-24-24"
+      className="MuiGrid-container-1 MuiGrid-spacing-xs-24-25"
     >
       <div
-        className="MuiGrid-item-2 MuiGrid-grid-xs-12-40"
+        className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
       >
         <div
-          className="MuiPaper-root-97 MuiPaper-elevation2-101 MuiPaper-rounded-98"
+          className="MuiPaper-root-98 MuiPaper-elevation2-102 MuiPaper-rounded-99"
         >
           <div
-            className="MuiList-root-124 MuiList-padding-125"
+            className="MuiList-root-125 MuiList-padding-126"
           >
             <div
               style={
@@ -172,40 +172,40 @@ exports[`Storyshots infinite-list/Table basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-128 MuiGrid-spacing-xs-24-151"
+      className="MuiGrid-container-129 MuiGrid-spacing-xs-24-153"
     >
       <div
-        className="MuiGrid-item-129 MuiGrid-grid-xs-12-167"
+        className="MuiGrid-item-130 MuiGrid-grid-xs-12-169"
       >
         <div
-          className="MuiPaper-root-224 MuiPaper-elevation2-228 MuiPaper-rounded-225"
+          className="MuiPaper-root-226 MuiPaper-elevation2-230 MuiPaper-rounded-227"
         >
           <div
-            className="MuiTable-root-251"
+            className="MuiTable-root-253"
           >
             <div
-              className="MuiTableHead-root-253 Component-root-252"
+              className="MuiTableHead-root-255 Component-root-254"
             >
               <div
-                className="MuiTableRow-root-259 Component-root-254 MuiTableRow-head-262 Component-head-257"
+                className="MuiTableRow-root-261 Component-root-256 MuiTableRow-head-264 Component-head-259"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-272 InnerTableCell-root-264 MuiTableCell-head-273 InnerTableCell-head-265"
+                  className="MuiTableCell-root-274 InnerTableCell-root-266 MuiTableCell-head-275 InnerTableCell-head-267"
                   scope="col"
                 >
                   Index
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-272 InnerTableCell-root-264 MuiTableCell-head-273 InnerTableCell-head-265"
+                  className="MuiTableCell-root-274 InnerTableCell-root-266 MuiTableCell-head-275 InnerTableCell-head-267"
                   scope="col"
                 >
                   Title
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-272 InnerTableCell-root-264 MuiTableCell-head-273 InnerTableCell-head-265"
+                  className="MuiTableCell-root-274 InnerTableCell-root-266 MuiTableCell-head-275 InnerTableCell-head-267"
                   scope="col"
                 >
                   Timestamp
@@ -248,7 +248,7 @@ exports[`Storyshots infinite-list/Table basic 1`] = `
                   <div
                     aria-label="grid"
                     aria-readonly={true}
-                    className="ReactVirtualized__Grid ReactVirtualized__List InnerTableBody-root-280"
+                    className="ReactVirtualized__Grid ReactVirtualized__List InnerTableBody-root-282"
                     onScroll={[Function]}
                     role="grid"
                     style={
@@ -353,38 +353,38 @@ exports[`Storyshots infinite-list/Table order 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-281 MuiGrid-spacing-xs-24-304"
+      className="MuiGrid-container-283 MuiGrid-spacing-xs-24-307"
     >
       <div
-        className="MuiGrid-item-282 MuiGrid-grid-xs-12-320"
+        className="MuiGrid-item-284 MuiGrid-grid-xs-12-323"
       >
         <div
-          className="MuiPaper-root-377 MuiPaper-elevation2-381 MuiPaper-rounded-378"
+          className="MuiPaper-root-380 MuiPaper-elevation2-384 MuiPaper-rounded-381"
         >
           <div
-            className="MuiTable-root-404"
+            className="MuiTable-root-407"
           >
             <div
-              className="MuiTableHead-root-406 Component-root-405"
+              className="MuiTableHead-root-409 Component-root-408"
             >
               <div
-                className="MuiTableRow-root-412 Component-root-407 MuiTableRow-head-415 Component-head-410"
+                className="MuiTableRow-root-415 Component-root-410 MuiTableRow-head-418 Component-head-413"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-425 InnerTableCell-root-417 MuiTableCell-head-426 InnerTableCell-head-418"
+                  className="MuiTableCell-root-428 InnerTableCell-root-420 MuiTableCell-head-429 InnerTableCell-head-421"
                   scope="col"
                 >
                   Index
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-425 InnerTableCell-root-417 MuiTableCell-head-426 InnerTableCell-head-418"
+                  className="MuiTableCell-root-428 InnerTableCell-root-420 MuiTableCell-head-429 InnerTableCell-head-421"
                   scope="col"
                 >
                   <span
                     aria-describedby={null}
-                    className="MuiButtonBase-root-445 MuiTableSortLabel-root-440"
+                    className="MuiButtonBase-root-448 MuiTableSortLabel-root-443"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onFocus={[Function]}
@@ -404,7 +404,7 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                     Title
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-448 MuiTableSortLabel-icon-442 MuiTableSortLabel-iconDirectionAsc-444"
+                      className="MuiSvgIcon-root-451 MuiTableSortLabel-icon-445 MuiTableSortLabel-iconDirectionAsc-447"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -416,12 +416,12 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-425 InnerTableCell-root-417 MuiTableCell-head-426 InnerTableCell-head-418"
+                  className="MuiTableCell-root-428 InnerTableCell-root-420 MuiTableCell-head-429 InnerTableCell-head-421"
                   scope="col"
                 >
                   <span
                     aria-describedby={null}
-                    className="MuiButtonBase-root-445 MuiTableSortLabel-root-440"
+                    className="MuiButtonBase-root-448 MuiTableSortLabel-root-443"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onFocus={[Function]}
@@ -441,7 +441,7 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                     Timestamp
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-448 MuiTableSortLabel-icon-442 MuiTableSortLabel-iconDirectionAsc-444"
+                      className="MuiSvgIcon-root-451 MuiTableSortLabel-icon-445 MuiTableSortLabel-iconDirectionAsc-447"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -455,7 +455,7 @@ exports[`Storyshots infinite-list/Table order 1`] = `
             </div>
           </div>
           <span
-            className="MuiTypography-root-455 MuiTypography-caption-465"
+            className="MuiTypography-root-458 MuiTypography-caption-468"
             style={
               Object {
                 "margin": 10,
@@ -465,7 +465,7 @@ exports[`Storyshots infinite-list/Table order 1`] = `
             - tip: use [shift + click] to sort by multiple fields
           </span>
           <aside
-            className="MuiTypography-root-455 MuiTypography-body2-463 MuiTypography-gutterBottom-472"
+            className="MuiTypography-root-458 MuiTypography-body2-466 MuiTypography-gutterBottom-475"
             style={
               Object {
                 "margin": 10,
@@ -502,63 +502,63 @@ exports[`Storyshots infinite-list/Table search 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-479 MuiGrid-spacing-xs-24-502"
+      className="MuiGrid-container-482 MuiGrid-spacing-xs-24-506"
     >
       <div
-        className="MuiGrid-item-480 MuiGrid-grid-xs-12-518"
+        className="MuiGrid-item-483 MuiGrid-grid-xs-12-522"
       >
         <div
-          className="MuiPaper-root-575 MuiPaper-elevation2-579 MuiPaper-rounded-576"
+          className="MuiPaper-root-579 MuiPaper-elevation2-583 MuiPaper-rounded-580"
         >
           <div
-            className="MuiTable-root-602"
+            className="MuiTable-root-606"
           >
             <div
-              className="MuiTableHead-root-604 Component-root-603"
+              className="MuiTableHead-root-608 Component-root-607"
             >
               <div
-                className="MuiTableRow-root-610 Component-root-605 MuiTableRow-head-613 Component-head-608"
+                className="MuiTableRow-root-614 Component-root-609 MuiTableRow-head-617 Component-head-612"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  className="MuiTableCell-root-627 InnerTableCell-root-619 MuiTableCell-head-628 InnerTableCell-head-620"
                   scope="col"
                 >
                   Index
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  className="MuiTableCell-root-627 InnerTableCell-root-619 MuiTableCell-head-628 InnerTableCell-head-620"
                   scope="col"
                 >
                   Title
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  className="MuiTableCell-root-627 InnerTableCell-root-619 MuiTableCell-head-628 InnerTableCell-head-620"
                   scope="col"
                 >
                   Timestamp
                 </div>
               </div>
               <div
-                className="MuiTableRow-root-610 Component-root-605 MuiTableRow-head-613 Component-head-608"
+                className="MuiTableRow-root-614 Component-root-609 MuiTableRow-head-617 Component-head-612"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  className="MuiTableCell-root-627 InnerTableCell-root-619 MuiTableCell-head-628 InnerTableCell-head-620"
                   scope="col"
                 />
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  className="MuiTableCell-root-627 InnerTableCell-root-619 MuiTableCell-head-628 InnerTableCell-head-620"
                   scope="col"
                 >
                   <div
-                    className="MuiInput-root-631 MuiInput-fullWidth-638 MuiInput-underline-635"
+                    className="MuiInput-root-635 MuiInput-fullWidth-642 MuiInput-underline-639"
                   >
                     <input
-                      className="MuiInput-input-639"
+                      className="MuiInput-input-643"
                       name="name"
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -570,14 +570,14 @@ exports[`Storyshots infinite-list/Table search 1`] = `
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root-623 InnerTableCell-root-615 MuiTableCell-head-624 InnerTableCell-head-616"
+                  className="MuiTableCell-root-627 InnerTableCell-root-619 MuiTableCell-head-628 InnerTableCell-head-620"
                   scope="col"
                 >
                   <div
-                    className="MuiInput-root-631 MuiInput-fullWidth-638 MuiInput-underline-635"
+                    className="MuiInput-root-635 MuiInput-fullWidth-642 MuiInput-underline-639"
                   >
                     <input
-                      className="MuiInput-input-639"
+                      className="MuiInput-input-643"
                       name="email"
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -591,7 +591,7 @@ exports[`Storyshots infinite-list/Table search 1`] = `
             </div>
           </div>
           <aside
-            className="MuiTypography-root-644 MuiTypography-body2-652 MuiTypography-gutterBottom-661"
+            className="MuiTypography-root-648 MuiTypography-body2-656 MuiTypography-gutterBottom-665"
             style={
               Object {
                 "margin": 10,

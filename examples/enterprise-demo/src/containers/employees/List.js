@@ -147,8 +147,8 @@ export default compose(
     })
   }),
   graphql(getDatagrid, {
-    props: ({ data: { getDatagrid } }) => ({
-      datagridInfo: getDatagrid
+    props: ({ data: { getDatagrid = {} } }) => ({
+      datagridInfo: getDatagrid.variables ? getDatagrid : null
     }),
     options: {
       variables: {
