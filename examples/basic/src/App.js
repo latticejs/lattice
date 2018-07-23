@@ -31,6 +31,9 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2,
     padding: theme.spacing.unit * 4
+  },
+  link: {
+    color: theme.palette.text.secondary
   }
 });
 
@@ -88,9 +91,14 @@ class App extends Component {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="subheading" align="center" color="inherit">
-              Want to learn more? Check the
-              <a href="https://github.com/latticejs/lattice" target="_blank" rel="noopener noreferrer">
+            <Typography variant="subheading" align="center">
+              Want to learn more? Check the&nbsp;
+              <a
+                className={classes.link}
+                href="https://github.com/latticejs/lattice"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 docs
               </a>!
             </Typography>
