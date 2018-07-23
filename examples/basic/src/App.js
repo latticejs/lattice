@@ -24,8 +24,8 @@ const styles = theme => ({
     flexGrow: 1
   },
   appBar: {
-    backgroundColor: theme.palette.type === 'dark' ? '#444' : '#fff',
-    color: theme.palette.type === 'dark' ? '#fafafa' : '#444'
+    backgroundColor: theme.palette.primary[theme.palette.type],
+    color: theme.palette.primary.contrastText
   },
   widget: {
     marginTop: theme.spacing.unit * 2,
@@ -58,7 +58,7 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <Grid container>
-          <Grid item xs={12} justify="center">
+          <Grid item xs={12}>
             <Grid container justify="space-around" spacing={Number('16')}>
               <Grid item>
                 <Widget className={classes.widget} title="Introduction" border="bottom">
