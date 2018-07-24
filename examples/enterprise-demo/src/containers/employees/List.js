@@ -141,11 +141,6 @@ class List extends Component {
 }
 
 export default compose(
-  graphql(updateDatagrid, {
-    props: ({ mutate }) => ({
-      updateDatagrid: variables => mutate({ variables })
-    })
-  }),
   graphql(getDatagrid, {
     props: ({ data: { getDatagrid } }) => ({
       datagridInfo: getDatagrid
@@ -154,6 +149,14 @@ export default compose(
       variables: {
         id: 'employees'
       }
+    }
+  }),
+  graphql(updateDatagrid, {
+    props: ({ mutate }) => ({
+      updateDatagrid: variables => mutate({ variables })
+    }),
+    options: {
+      refetchQueries: [{ query: getDatagrid, variables: { id: 'employees' } }]
     }
   }),
   graphql(employeesConnection, {
@@ -189,7 +192,7 @@ export default compose(
         variables: datagridInfo
           ? datagridInfo.variables
           : {
-              first: 10,
+              first: 40,
               orderBy: [{ field: 'name', direction: 'asc' }]
             },
         fetchPolicy: 'network'

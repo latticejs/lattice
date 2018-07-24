@@ -15,7 +15,7 @@ export const updateUi = gql`
   }
 `;
 
-export const GetAllDatagrids = gql`
+export const getAllDatagrids = gql`
   query GetAllDatagrids {
     datagrids @client {
       id
@@ -52,11 +52,15 @@ export default {
   resolvers: {
     Query: {
       getDatagrid: (_, { id }, { cache }) => {
-        const previous = cache.readQuery({ query: GetAllDatagrids });
-        const datagrid = previous.datagrids.find(datagrid => datagrid.id === id);
+        try {
+          const previous = cache.readQuery({ query: getAllDatagrids });
+          const datagrid = previous.datagrids.find(datagrid => datagrid.id === id);
 
-        if (datagrid) {
-          return datagrid;
+          if (datagrid) {
+            return datagrid;
+          }
+        } catch (err) {
+          console.log(err.message);
         }
 
         return null;
@@ -64,32 +68,43 @@ export default {
     },
     Mutation: {
       updateUi: (_, { nightMode }, { cache }) => {
-        const data = {
-          ui: {
-            __typename: 'ui',
-            nightMode
-          }
-        };
-        cache.writeData({ data });
+        try {
+          const data = {
+            ui: {
+              __typename: 'ui',
+              nightMode
+            }
+          };
+          cache.writeData({ data });
+        } catch (err) {
+          console.log(err.message);
+        }
         return null;
       },
       updateDatagrid: (_, { id, variables, scrollTop }, { cache }) => {
-        const previous = cache.readQuery({ query: GetAllDatagrids });
-        const datagrid = previous.datagrids.find(datagrid => datagrid.id === id) || {
-          id,
-          __typename: 'Datagrid'
-        };
+        try {
+          const query = getAllDatagrids;
+          const previous = cache.readQuery({ query });
+          const datagrid = previous.datagrids.find(datagrid => datagrid.id === id) || {
+            id,
+            __typename: 'Datagrid'
+          };
 
-        datagrid.variables = variables;
-        datagrid.scrollTop = scrollTop;
+          datagrid.variables = variables;
+          datagrid.scrollTop = scrollTop;
 
-        const datagrids = previous.datagrids.filter(datagrid => datagrid.id !== id);
-        const data = {
-          datagrids: datagrids.concat([datagrid])
-        };
-        cache.writeQuery({ query: GetAllDatagrids, data });
+          const datagrids = previous.datagrids.filter(datagrid => datagrid.id !== id);
+          const data = {
+            datagrids: datagrids.concat([datagrid])
+          };
+          cache.writeQuery({ query, data });
 
-        return datagrid;
+          return datagrid;
+        } catch (err) {
+          console.log(err.message);
+        }
+
+        return null;
       }
     }
   }
