@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withReadme } from 'storybook-readme';
 
 // Material UI
 import Grid from '@material-ui/core/Grid';
@@ -8,6 +9,17 @@ import Paper from '@material-ui/core/Paper';
 // Ours
 import { List, ListItem } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
+import Readme from '../README.md';
+
+const getSection = (html, id) => {
+  const start = `<!-- start:${id} -->`;
+  const end = `<!-- end:${id} -->`;
+  return html.slice(html.indexOf(start), html.indexOf(end) + end.length);
+};
+
+const concat = (html, sections = []) => {
+  return sections.map(id => getSection(html, id)).join('');
+};
 
 // Decorators
 
@@ -103,5 +115,5 @@ export default ({ storiesOf, action }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', () => <BasicList />);
+    .add('basic', withReadme(concat(Readme, ['list', 'scroll-loader']), () => <BasicList />));
 };
