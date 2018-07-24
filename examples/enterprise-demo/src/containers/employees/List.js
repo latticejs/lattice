@@ -142,9 +142,8 @@ class List extends Component {
 
 export default compose(
   graphql(getDatagrid, {
-    props: ({ data: { getDatagrid, refetch } }) => ({
-      datagridInfo: getDatagrid,
-      refetchDatagridInfo: refetch
+    props: ({ data: { getDatagrid } }) => ({
+      datagridInfo: getDatagrid
     }),
     options: {
       variables: {
@@ -153,12 +152,12 @@ export default compose(
     }
   }),
   graphql(updateDatagrid, {
-    props: ({ mutate, ownProps: { refetchDatagridInfo } }) => ({
-      updateDatagrid: async variables => {
-        await mutate({ variables });
-        await refetchDatagridInfo();
-      }
-    })
+    props: ({ mutate }) => ({
+      updateDatagrid: variables => mutate({ variables })
+    }),
+    options: {
+      refetchQueries: [{ query: getDatagrid, variables: { id: 'employees' } }]
+    }
   }),
   graphql(employeesConnection, {
     props: ({ data: { employeesConnection, loading, refetch, fetchMore, variables } }) => {
