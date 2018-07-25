@@ -149,13 +149,13 @@ Function responsible for tracking the loaded state of each row. By default it us
 
 > `number` | defaults to the `parent width`
 
-Set a fixed width for the list. If is undefined it will use `AutoSizer` to detect the width.
+Set a fixed width for the list. If it is undefined it will use `AutoSizer` to detect the width.
 
 #### height
 
 > `number` | defaults to the `parent height`
 
-Set a fixed height for the list. If is undefined it will use `AutoSizer` to detect the height.
+Set a fixed height for the list. If it is undefined it will use `AutoSizer` to detect the height.
 
 #### rvInfiniteLoaderProps
 
@@ -246,8 +246,7 @@ class App extends Component {
 
 ## <a name="table"></a> Table
 
-Our module provides a set of components to create a complete Table with `infinite loader pagination` support
-and as optional: `ordering` and `searching` features.
+Lattice's Table component provides support for displaying tabulated data with `infinite data loading` support.
 
 Since *react-virtualized* needs that each component were **div** tags we need to create wrappers
 and apply some custom styles for the next `Material-UI` components:
@@ -343,9 +342,9 @@ class App extends Component {
 Component created on top of `TableCell`, `TableSortLabel` and `Tooltip` to provide an easy way of create
 a table order cell.
 
-It supports multiple orders using `shift + click` out the box.
+It supports multiple orders using `shift + click` out of the box.
 
-Since extends from the Material-UI `TableCell` you can use their API.
+You can use Material-UI TableCell API.
 
 ### Usage
 
@@ -404,7 +403,7 @@ class App extends Component {
 
 > `string` | *required*
 
-The field prop is required to create the Array of `orderBy`.
+The field prop is required to create an Array of `orderBy`.
 
 #### orderBy
 
@@ -424,7 +423,7 @@ Callback function called when there is a new order.
 
 > `boolean` | defaults to: `true`
 
-Defines if you want to create allow multiple orders.
+Used to indicate if multiple orders are allowed.
 
 #### title
 
@@ -438,9 +437,9 @@ The title will be used by the `Tooltip` component.
 
 ## <a name="table-search-cell"></a> TableSearchCell
 
-Component created on top of `TableCell` to provide an easy way of create a table search cell.
+Component on top of `TableCell` to provide an easy way to create a table search cell.
 
-It supports input debounce out the box.
+It supports input debounce out of the box.
 
 Since extends from the Material-UI `TableCell` you can use their API.
 
@@ -503,7 +502,7 @@ class App extends Component {
 
 > `string` | *required*
 
-The field prop is required to create the Array of `filterBy`.
+The field prop is required to create an Array of `filterBy`.
 
 #### filterBy
 
@@ -526,7 +525,7 @@ Callback function called when there is a new filter.
 > `SearchProps: { inputProps: { name: string, value: string, onChange: function }, updateValue: function }`
 
 * inputProps: Set of props for an input component that has an `onChange` and `value` prop.
-* updateValue: Function to use it in case that the input component doesn't have support for `onChange`.
+* updateValue: Function to use in case of input component doesn't have `onChange` support.
 
 #### debounce
 
