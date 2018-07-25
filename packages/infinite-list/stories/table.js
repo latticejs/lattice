@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withReadme } from 'storybook-readme';
 
 // Material UI
 import Grid from '@material-ui/core/Grid';
@@ -9,6 +10,8 @@ import Input from '@material-ui/core/Input';
 // Ours
 import { Table, TableBody, TableHead, TableRow, TableCell, TableOrderCell, TableSearchCell } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
+import Readme from '../README.md';
+import { concatSections } from './utils';
 
 // Decorators
 
@@ -184,7 +187,7 @@ export default ({ storiesOf, action }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', () => <BasicTable />)
-    .add('order', () => <OrderTable />)
-    .add('search', () => <SearchTable />);
+    .add('basic', withReadme(concatSections(Readme, ['table', 'table-body', 'scroll-loader']), () => <BasicTable />))
+    .add('order', withReadme(concatSections(Readme, ['table-order-cell']), () => <OrderTable />))
+    .add('search', withReadme(concatSections(Readme, ['table-search-cell']), () => <SearchTable />));
 };

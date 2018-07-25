@@ -10,16 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import { List, ListItem } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import Readme from '../README.md';
-
-const getSection = (html, id) => {
-  const start = `<!-- start:${id} -->`;
-  const end = `<!-- end:${id} -->`;
-  return html.slice(html.indexOf(start), html.indexOf(end) + end.length);
-};
-
-const concat = (html, sections = []) => {
-  return sections.map(id => getSection(html, id)).join('');
-};
+import { concatSections } from './utils';
 
 // Decorators
 
@@ -115,5 +106,5 @@ export default ({ storiesOf, action }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', withReadme(concat(Readme, ['list', 'scroll-loader']), () => <BasicList />));
+    .add('basic', withReadme(concatSections(Readme, ['list', 'scroll-loader']), () => <BasicList />));
 };
