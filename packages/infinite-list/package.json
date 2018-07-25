@@ -1,5 +1,6 @@
 {
   "name": "@latticejs/infinite-list",
+  "description": "A set of material-ui components adapted to support infinite list feature.",
   "version": "1.0.1-alpha.4",
   "license": "MIT",
   "main": "index.js",
@@ -47,6 +48,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.1.0",
+    "markdown-loader-jest": "^0.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.4.0",
@@ -55,6 +57,7 @@
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
+    "storybook-readme": "^3.3.0",
     "taskr": "^1.1.0",
     "taskr-rollup": "^0.0.4"
   },
@@ -69,7 +72,11 @@
     "setupFiles": [
       "./test/shim.js"
     ],
-    "setupTestFrameworkScriptFile": "./setupTest.js"
+    "setupTestFrameworkScriptFile": "./setupTest.js",
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      "^.+\\.md?$": "markdown-loader-jest"
+    }
   },
   "publishConfig": {
     "access": "public"

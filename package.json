@@ -25,7 +25,8 @@
     "eslint-plugin-react-app": "^3.0.0",
     "husky": "^1.0.0-rc.8",
     "lerna": "^2.11.0",
-    "prettier": "^1.13.4"
+    "prettier": "^1.13.4",
+    "storybook-readme": "^3.3.0"
   },
   "workspaces": {
     "packages": [
