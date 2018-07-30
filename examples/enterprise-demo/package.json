@@ -3,7 +3,13 @@
   "version": "1.0.1-alpha.6",
   "private": true,
   "dependencies": {
-    "@latticejs/react-scripts": "^1.0.1-alpha.6",
+    "@material-ui/core": "^1.0.0",
+    "@latticejs/widgets": "^1.0.1-alpha.4",
+    "@latticejs/dag": "^1.0.1-alpha.4",
+    "@latticejs/mui-recharts": "^1.0.1-alpha.4",
+    "@latticejs/recharts-sunburst": "^1.0.1-alpha.4",
+    "@latticejs/infinite-list": "^1.0.1-alpha.4",
+    "@material-ui/core": "^1.0.0",
     "apollo-cache-inmemory": "^1.1.12",
     "apollo-client": "^2.3.5",
     "apollo-link": "^1.2.1",
@@ -23,19 +29,21 @@
     "react": "^16.4.1",
     "react-apollo": "^2.1.9",
     "react-dom": "^16.4.1",
+    "recharts": "^1.0.0-beta.10",
     "yup": "^0.25.1"
   },
   "scripts": {
-    "start": "lattice-react-scripts start",
-    "build": "lattice-react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "echo 'test'",
-    "eject": "lattice-react-scripts eject",
+    "eject": "react-scripts eject",
     "graphql": "NODE_PORT=3001 node server/index.js",
     "graphql:seed": "node server/db/seed.js",
     "dev": "concurrently --kill-others-on-fail \"yarn graphql\" \"yarn start\""
   },
   "devDependencies": {
     "concurrently": "^3.6.0",
-    "faker": "^4.1.0"
+    "faker": "^4.1.0",
+    "react-scripts": "^1.1.4"
   }
 }

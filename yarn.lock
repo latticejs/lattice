@@ -1673,8 +1673,8 @@ aws-lambda@^0.1.2:
     dotenv "^0.4.0"
 
 aws-sdk@^*:
-  version "2.282.1"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.282.1.tgz#3e425b76c9a98d3374c8d70660f83619f66c92fd"
+  version "2.283.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.283.1.tgz#bfee17080ba282097193863c4f32b134bedecef4"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -3133,8 +3133,8 @@ buffer-equal-constant-time@1.0.1:
   resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
 
 buffer-from@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.0.tgz#87fcaa3a298358e0ade6e442cfce840740d1ad04"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
 
 buffer-indexof@^1.0.0:
   version "1.1.1"
@@ -6284,9 +6284,9 @@ graphql-import@^0.6.0:
   dependencies:
     lodash "^4.17.4"
 
-graphql-middleware@1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-1.3.3.tgz#c6898df07c8d58a2f49c6ba3b0a49ec946f3d300"
+graphql-middleware@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-1.5.0.tgz#b539cbc34df8ea7b077415102e87fd704188d7ec"
   dependencies:
     graphql-tools "^3.0.2"
 
@@ -6332,7 +6332,7 @@ graphql-tag@^2.8.0:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.9.2.tgz#2f60a5a981375f430bf1e6e95992427dc18af686"
 
-graphql-tools@^2.23.1:
+graphql-tools@^2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-2.24.0.tgz#bbacaad03924012a0edb8735a5e65df5d5563675"
   dependencies:
@@ -6353,8 +6353,8 @@ graphql-tools@^3.0.2:
     uuid "^3.1.0"
 
 graphql-yoga@^1.14.10:
-  version "1.14.12"
-  resolved "https://registry.yarnpkg.com/graphql-yoga/-/graphql-yoga-1.14.12.tgz#d579bed16c43f2296b53b25f86075976cb714e92"
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/graphql-yoga/-/graphql-yoga-1.15.0.tgz#eb1ed4c96633fb14617412e474343a85a6c294d7"
   dependencies:
     "@types/cors" "^2.8.4"
     "@types/express" "^4.11.1"
@@ -6371,11 +6371,11 @@ graphql-yoga@^1.14.10:
     graphql "^0.11.0 || ^0.12.0 || ^0.13.0"
     graphql-deduplicator "^2.0.1"
     graphql-import "^0.6.0"
-    graphql-middleware "1.3.3"
+    graphql-middleware "1.5.0"
     graphql-playground-middleware-express "1.6.3"
     graphql-playground-middleware-lambda "1.6.1"
     graphql-subscriptions "^0.5.8"
-    graphql-tools "^2.23.1"
+    graphql-tools "^2.24.0"
     subscriptions-transport-ws "^0.9.8"
 
 "graphql@^0.11.0 || ^0.12.0 || ^0.13.0", graphql@^0.13.2:
@@ -6794,8 +6794,8 @@ ignore@^3.3.3, ignore@^3.3.5:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
 
 ignore@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.2.tgz#0a8dd228947ec78c2d7f736b1642a9f7317c1905"
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.3.tgz#e2d58c9654d75b542529fa28d80ac95b29e4f467"
 
 immutable@^3.8.1:
   version "3.8.2"
@@ -10502,7 +10502,7 @@ react-custom-scrollbars@^4.2.1:
     prop-types "^15.5.10"
     raf "^3.1.0"
 
-react-dev-utils@^5.0.0:
+react-dev-utils@^5.0.0, react-dev-utils@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.1.tgz#1f396e161fe44b595db1b186a40067289bf06613"
   dependencies:
@@ -10658,6 +10658,51 @@ react-router@^4.3.1:
     path-to-regexp "^1.7.0"
     prop-types "^15.6.1"
     warning "^4.0.1"
+
+react-scripts@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.1.4.tgz#d5c230e707918d6dd2d06f303b10f5222d017c88"
+  dependencies:
+    autoprefixer "7.1.6"
+    babel-core "6.26.0"
+    babel-eslint "7.2.3"
+    babel-jest "20.0.3"
+    babel-loader "7.1.2"
+    babel-preset-react-app "^3.1.1"
+    babel-runtime "6.26.0"
+    case-sensitive-paths-webpack-plugin "2.1.1"
+    chalk "1.1.3"
+    css-loader "0.28.7"
+    dotenv "4.0.0"
+    dotenv-expand "4.2.0"
+    eslint "4.10.0"
+    eslint-config-react-app "^2.1.0"
+    eslint-loader "1.9.0"
+    eslint-plugin-flowtype "2.39.1"
+    eslint-plugin-import "2.8.0"
+    eslint-plugin-jsx-a11y "5.1.1"
+    eslint-plugin-react "7.4.0"
+    extract-text-webpack-plugin "3.0.2"
+    file-loader "1.1.5"
+    fs-extra "3.0.1"
+    html-webpack-plugin "2.29.0"
+    jest "20.0.4"
+    object-assign "4.1.1"
+    postcss-flexbugs-fixes "3.2.0"
+    postcss-loader "2.0.8"
+    promise "8.0.1"
+    raf "3.4.0"
+    react-dev-utils "^5.0.1"
+    resolve "1.6.0"
+    style-loader "0.19.0"
+    sw-precache-webpack-plugin "0.11.4"
+    url-loader "0.6.2"
+    webpack "3.8.1"
+    webpack-dev-server "2.9.4"
+    webpack-manifest-plugin "1.3.2"
+    whatwg-fetch "2.0.3"
+  optionalDependencies:
+    fsevents "^1.1.3"
 
 react-smooth@1.0.0:
   version "1.0.0"
@@ -11200,6 +11245,12 @@ resolve-url@^0.2.1:
 resolve@1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
+
+resolve@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.6.0.tgz#0fbd21278b27b4004481c395349e7aba60a9ff5c"
+  dependencies:
+    path-parse "^1.0.5"
 
 resolve@^1.1.6, resolve@^1.3.2, resolve@^1.5.0, resolve@^1.6.0:
   version "1.8.1"
@@ -12331,8 +12382,8 @@ thunky@^1.0.2:
   resolved "https://registry.yarnpkg.com/thunky/-/thunky-1.0.2.tgz#a862e018e3fb1ea2ec3fce5d55605cf57f247371"
 
 time-stamp@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-2.0.0.tgz#95c6a44530e15ba8d6f4a3ecb8c3a3fac46da357"
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-2.0.1.tgz#708a89359c1fc50bd5e7b1c8aa750d08c9172232"
 
 time-zone@^1.0.0:
   version "1.0.0"

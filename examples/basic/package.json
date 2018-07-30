@@ -6,15 +6,19 @@
   "private": true,
   "scripts": {
     "test": "echo 'test'",
-    "start": "lattice-react-scripts start",
-    "build": "lattice-react-scripts build"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@latticejs/react-scripts": "^1.0.1-alpha.6",
+    "@latticejs/widgets": "^1.0.1-alpha.4",
+    "@material-ui/core": "^1.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.1.4"
   }
 }
