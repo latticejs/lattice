@@ -22,7 +22,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-AreaChart--rootChart-18"
+      className="recharts-wrapper MuiRechart-AreaChart--rootChart"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -742,7 +742,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-AreaChart--rootChart-15"
+      className="recharts-wrapper MuiRechart-AreaChart--rootChart"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -1462,7 +1462,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (dark) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-BarChart--rootChart-19"
+      className="recharts-wrapper MuiRechart-BarChart--rootChart"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -2052,7 +2052,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (light) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-BarChart--rootChart-16"
+      className="recharts-wrapper MuiRechart-BarChart--rootChart"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -2642,7 +2642,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-LineChart--rootChart-20"
+      className="recharts-wrapper MuiRechart-LineChart--rootChart"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -3296,7 +3296,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-LineChart--rootChart-17"
+      className="recharts-wrapper MuiRechart-LineChart--rootChart"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -3959,7 +3959,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-AreaChart--rootChart-8"
+        className="recharts-wrapper MuiRechart-AreaChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -4167,7 +4167,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-BarChart--rootChart-9"
+        className="recharts-wrapper MuiRechart-BarChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -4347,7 +4347,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-BarChart--rootChart-9"
+        className="recharts-wrapper MuiRechart-BarChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -4527,7 +4527,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-LineChart--rootChart-10"
+        className="recharts-wrapper MuiRechart-LineChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -4669,7 +4669,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-PieChart--rootChart-11"
+        className="recharts-wrapper MuiRechart-PieChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -4875,7 +4875,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-RadialBarChart--rootChart-12"
+        className="recharts-wrapper MuiRechart-RadialBarChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -5086,7 +5086,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-ScatterChart--rootChart-13"
+        className="recharts-wrapper MuiRechart-ScatterChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -5323,7 +5323,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-Treemap--rootChart-14"
+        className="recharts-wrapper MuiRechart-Treemap--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -7236,7 +7236,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-AreaChart--rootChart-1"
+        className="recharts-wrapper MuiRechart-AreaChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -7444,7 +7444,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-BarChart--rootChart-2"
+        className="recharts-wrapper MuiRechart-BarChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -7624,7 +7624,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-BarChart--rootChart-2"
+        className="recharts-wrapper MuiRechart-BarChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -7804,7 +7804,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-LineChart--rootChart-3"
+        className="recharts-wrapper MuiRechart-LineChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -7946,7 +7946,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-PieChart--rootChart-4"
+        className="recharts-wrapper MuiRechart-PieChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -8152,7 +8152,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-RadialBarChart--rootChart-5"
+        className="recharts-wrapper MuiRechart-RadialBarChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -8363,7 +8363,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-ScatterChart--rootChart-6"
+        className="recharts-wrapper MuiRechart-ScatterChart--rootChart"
         style={
           Object {
             "cursor": "default",
@@ -8600,7 +8600,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-Treemap--rootChart-7"
+        className="recharts-wrapper MuiRechart-Treemap--rootChart"
         style={
           Object {
             "cursor": "default",

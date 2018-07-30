@@ -1,10 +1,24 @@
 import React from 'react';
 import Dag from '../src';
+import JssProvider from 'react-jss/lib/JssProvider';
+import { createGenerateClassName } from '@material-ui/core/styles';
+
 // Material UI
 import { Paper } from '@material-ui/core';
+
 // Decorators
 import muiTheme from '../.storybook/decorator-material-ui';
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
+const JssDecorator = story => (
+  <JssProvider
+    generateClassName={createGenerateClassName({
+      dangerouslyUseGlobalCSS: true,
+      productionPrefix: 'c'
+    })}
+  >
+    {story()}
+  </JssProvider>
+);
 
 // simple fake props
 const getProps = (mix = {}) => {
@@ -58,6 +72,7 @@ const PaperWrap = ({ children }) => (
 
 export default ({ storiesOf, action, forceReRender }) => {
   storiesOf('dag/basic', module)
+    .addDecorator(JssDecorator)
     .add('no wrapper', () => {
       // TODO(dk): parse real pkg json deps.
       return (
@@ -83,6 +98,7 @@ export default ({ storiesOf, action, forceReRender }) => {
     });
 
   storiesOf('dag/themed', module)
+    .addDecorator(JssDecorator)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
     .add('paper wrapper (light)', () => {
@@ -96,6 +112,7 @@ export default ({ storiesOf, action, forceReRender }) => {
     });
 
   storiesOf('dag/themed', module)
+    .addDecorator(JssDecorator)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
     .add('paper wrapper (dark)', () => {

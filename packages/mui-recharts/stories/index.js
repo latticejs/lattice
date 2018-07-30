@@ -1,7 +1,9 @@
 import React from 'react';
+
 // Ours
 import { AreaChart, BarChart, LineChart, Area, Bar, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
+import { JssDecorator } from './utils.js';
 
 // Decorators
 const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
@@ -10,6 +12,7 @@ const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{
 export default ({ storiesOf, action }) => {
   storiesOf('mui-recharts/axis & tooltips', module)
     .addDecorator(AddResponsive)
+    .addDecorator(JssDecorator)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
     .add('Area (light)', () => <AreaChartBasic />)
@@ -18,6 +21,7 @@ export default ({ storiesOf, action }) => {
 
   storiesOf('mui-recharts/axis & tooltips', module)
     .addDecorator(AddResponsive)
+    .addDecorator(JssDecorator)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
     .add('Area (dark)', () => <AreaChartBasic />)

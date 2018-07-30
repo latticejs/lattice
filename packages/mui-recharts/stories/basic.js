@@ -1,4 +1,5 @@
 import React from 'react';
+
 // Ours
 import {
   AreaChart,
@@ -19,6 +20,7 @@ import {
   YAxis
 } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
+import { JssDecorator } from './utils.js';
 
 // Decorators
 const Flexed = story => (
@@ -28,12 +30,14 @@ const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{
 
 export default ({ storiesOf, action }) => {
   storiesOf('mui-recharts/basic', module)
+    .addDecorator(JssDecorator)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
     .add('Basic charts (light)', () => <BasicCharts />);
 
   storiesOf('mui-recharts/basic', module)
+    .addDecorator(JssDecorator)
     .addDecorator(Flexed)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)

@@ -51,6 +51,7 @@
     "markdown-loader-jest": "^0.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-jss": "^8.6.1",
     "react-test-renderer": "^16.4.0",
     "react-virtualized": "^9.19.1",
     "rollup": "^0.63.2",
@@ -76,7 +77,8 @@
     "transform": {
       "^.+\\.js?$": "babel-jest",
       "^.+\\.md?$": "markdown-loader-jest"
-    }
+    },
+    "testURL": "http://localhost"
   },
   "publishConfig": {
     "access": "public"

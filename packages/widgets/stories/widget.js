@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 // Ours
 import { Widget } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
+import { JssDecorator } from './utils';
 
 // Decorators
 
@@ -27,6 +28,7 @@ const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 
 export default ({ storiesOf, action }) => {
   storiesOf('widgets/Widget', module)
+    .addDecorator(JssDecorator)
     .addDecorator(InGrid)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
@@ -67,6 +69,7 @@ export default ({ storiesOf, action }) => {
     ));
 
   storiesOf('widgets/Widget (dark theme)', module)
+    .addDecorator(JssDecorator)
     .addDecorator(InGrid)
     .addDecorator(Flexed)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
