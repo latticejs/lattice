@@ -42,7 +42,9 @@ class TopProducts extends Component {
           <Grid item>
             <PieChart width={300} height={300}>
               <Pie data={pieData} dataKey="value" innerRadius={40} fill="#8884d8">
-                {pieData.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]} />)}
+                {pieData.map((entry, index) => (
+                  <Cell key={index} fill={COLORS[index % COLORS.length]} />
+                ))}
               </Pie>
             </PieChart>
           </Grid>

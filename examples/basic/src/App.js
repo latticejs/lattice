@@ -100,7 +100,8 @@ class App extends Component {
                 rel="noopener noreferrer"
               >
                 docs
-              </a>!
+              </a>
+              !
             </Typography>
           </Grid>
         </Grid>
