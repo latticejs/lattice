@@ -24,7 +24,7 @@
     "@latticejs/recharts-sunburst": "^1.0.1-alpha.4",
     "@latticejs/widgets": "^1.0.1-alpha.4",
     "@material-ui/core": "^1.0.0",
-    "@material-ui/icons": "^1.0.0",
+    "@material-ui/icons": "^2.0.0",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
