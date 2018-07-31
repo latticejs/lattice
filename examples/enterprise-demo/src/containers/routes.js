@@ -1,4 +1,4 @@
-import ContentCopyIcon from '@material-ui/icons/ContentCopy';
+import WidgetsIcon from '@material-ui/icons/Widgets';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ExtensionIcon from '@material-ui/icons/Extension';
 import PeopleIcon from '@material-ui/icons/People';
@@ -46,7 +46,7 @@ export const navigation = [
         path: THEME_WIDGETS,
         title: 'Widgets',
         component: Widgets,
-        icon: ContentCopyIcon
+        icon: WidgetsIcon
       }
     ]
   }

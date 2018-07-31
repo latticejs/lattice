@@ -14,7 +14,8 @@ import { withStyles } from '@material-ui/core/styles';
 
 // Material-UI Icons
 import Exit from '@material-ui/icons/ExitToApp';
-import LightbulbOutline from '@material-ui/icons/LightbulbOutline';
+import DayIcon from '@material-ui/icons/WbSunnyOutlined';
+import NightIcon from '@material-ui/icons/Brightness3Outlined';
 import MenuIcon from '@material-ui/icons/Menu';
 import MoreVerticalIcon from '@material-ui/icons/MoreVert';
 
@@ -33,7 +34,6 @@ import { getUi, updateUi } from '../stores/ui';
 // Ours
 import routes, { routeByPath, navigation } from './routes';
 import Content from '../components/Content';
-import Lightbulb from '../components/icons/Lightbulb';
 import { withSignOut } from './Auth';
 import PrivateRoute from './PrivateRoute';
 
@@ -168,7 +168,7 @@ class Main extends Component {
             <div className={classes.flexed} />
             <Tooltip id="appbar-theme" title="Toggle Night Mode" enterDelay={300}>
               <IconButton onClick={this.handleNightModeChange} color="inherit">
-                {nightMode ? <LightbulbOutline /> : <Lightbulb />}
+                {nightMode ? <DayIcon /> : <NightIcon />}
               </IconButton>
             </Tooltip>
             <Tooltip id="appbar-signout" title="Sign out" enterDelay={300}>

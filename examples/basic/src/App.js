@@ -7,8 +7,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+
 // Material icons
-import LightbulbIcon from '@material-ui/icons/LightbulbOutline';
+import DayIcon from '@material-ui/icons/WbSunnyOutlined';
+import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
 import 'typeface-roboto';
 
@@ -44,7 +46,7 @@ class App extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, nightMode } = this.props;
 
     return (
       <div className={classes.root}>
@@ -55,7 +57,7 @@ class App extends Component {
             </Typography>
             <Tooltip title="Toggle Night Mode" enterDelay={300}>
               <IconButton onClick={this.handleNightModeChange} color="inherit">
-                <LightbulbIcon />
+                {nightMode ? <DayIcon /> : <NightIcon />}
               </IconButton>
             </Tooltip>
           </Toolbar>
