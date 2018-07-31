@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import { List, ListItem } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import Readme from '../README.md';
-import { concatSections } from './utils';
+import { JssDecorator, concatSections } from './utils';
 
 // Decorators
 
@@ -102,6 +102,7 @@ class BasicList extends Basic {
 
 export default ({ storiesOf, action }) => {
   storiesOf('infinite-list/List', module)
+    .addDecorator(JssDecorator)
     .addDecorator(InGrid)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())

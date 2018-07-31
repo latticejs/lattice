@@ -11,7 +11,7 @@ import Input from '@material-ui/core/Input';
 import { Table, TableBody, TableHead, TableRow, TableCell, TableOrderCell, TableSearchCell } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import Readme from '../README.md';
-import { concatSections } from './utils';
+import { JssDecorator, concatSections } from './utils';
 
 // Decorators
 
@@ -183,6 +183,7 @@ class SearchTable extends Basic {
 
 export default ({ storiesOf, action }) => {
   storiesOf('infinite-list/Table', module)
+    .addDecorator(JssDecorator)
     .addDecorator(InGrid)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())

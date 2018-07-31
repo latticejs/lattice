@@ -1,5 +1,7 @@
 import React from 'react';
 import { Tooltip, ResponsiveContainer } from 'recharts';
+import JssProvider from 'react-jss/lib/JssProvider';
+import { createGenerateClassName } from '@material-ui/core/styles';
 
 // Ours
 import Sunburst from '../src';
@@ -47,11 +49,22 @@ const colors = {
 // Decorators
 const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
+const JssDecorator = story => (
+  <JssProvider
+    generateClassName={createGenerateClassName({
+      dangerouslyUseGlobalCSS: true,
+      productionPrefix: 'c'
+    })}
+  >
+    {story()}
+  </JssProvider>
+);
 
 export default ({ storiesOf, action }) => {
   storiesOf('recharts-sunburst', module)
     .addDecorator(AddResponsive)
     .addDecorator(FullViewport)
+    .addDecorator(JssDecorator)
     .add('basic sunburst', () => <Sunburst data={data} dataKey="size" fill="#8884d8" />)
     .add('basic sunburst animated', () => <Sunburst data={data} dataKey="size" fill="#8884d8" isAnimationActive />)
     .add('with customized colors', () => (

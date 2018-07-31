@@ -14,6 +14,7 @@ import PeopleIcon from '@material-ui/icons/People';
 // Ours
 import { SideMenu } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
+import { JssDecorator } from './utils';
 
 // Decorators
 
@@ -32,6 +33,7 @@ const FullViewport = story => <div style={{ height: '100vh', width: '100vw', pad
 
 export default ({ storiesOf, action }) => {
   storiesOf('widgets/SideMenu', module)
+    .addDecorator(JssDecorator)
     .addDecorator(InGrid)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())

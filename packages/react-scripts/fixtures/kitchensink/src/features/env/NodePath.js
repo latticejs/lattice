@@ -29,6 +29,12 @@ export default class extends Component {
   }
 
   render() {
-    return <div id="feature-node-path">{this.state.users.map(user => <div key={user.id}>{user.name}</div>)}</div>;
+    return (
+      <div id="feature-node-path">
+        {this.state.users.map(user => (
+          <div key={user.id}>{user.name}</div>
+        ))}
+      </div>
+    );
   }
 }

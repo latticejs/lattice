@@ -11,6 +11,7 @@ import purple from '@material-ui/core/colors/purple';
 // Ours
 import { Loader } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
+import { JssDecorator } from './utils';
 
 // Decorators
 
@@ -58,6 +59,7 @@ const Loaded = () => (
 
 export default ({ storiesOf, action }) => {
   storiesOf('widgets/Loader', module)
+    .addDecorator(JssDecorator)
     .addDecorator(InGrid)
     .addDecorator(muiTheme())
     .add('linear', () => (
