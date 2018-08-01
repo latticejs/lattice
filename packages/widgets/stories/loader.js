@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 // Material UI
 import Grid from '@material-ui/core/Grid';
@@ -23,26 +24,6 @@ const InGrid = story => (
   </Grid>
 );
 
-class LazyData extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: true
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 3000);
-  }
-
-  render() {
-    return this.props.children({ loading: this.state.loading });
-  }
-}
-
 const Loaded = () => (
   <Grid container alignItems="center" justify="center" style={{ height: '100vh' }}>
     <Grid item xs={2}>
@@ -57,36 +38,30 @@ const Loaded = () => (
   </Grid>
 );
 
+const dynamicProps = () => ({
+  loading: boolean('LOADING', true),
+  fullscreen: boolean('FULLSCREEN', false)
+});
+
 export default ({ storiesOf, action }) => {
   storiesOf('widgets/Loader', module)
+    .addDecorator(withKnobs)
     .addDecorator(JssDecorator)
     .addDecorator(InGrid)
     .addDecorator(muiTheme())
-    .add('linear', () => (
-      <LazyData>
-        {({ loading }) => (
-          <Loader loading={loading}>
-            <Loaded />
-          </Loader>
-        )}
-      </LazyData>
-    ))
     .add('circular', () => (
-      <LazyData>
-        {({ loading }) => (
-          <Loader loading={loading} component="circular">
-            <Loaded />
-          </Loader>
-        )}
-      </LazyData>
+      <Loader {...dynamicProps()}>
+        <Loaded />
+      </Loader>
+    ))
+    .add('linear', () => (
+      <Loader {...dynamicProps()} component="linear">
+        <Loaded />
+      </Loader>
     ))
     .add('custom', () => (
-      <LazyData>
-        {({ loading }) => (
-          <Loader loading={loading} component={() => <CircularProgress style={{ color: purple[500] }} thickness={7} />}>
-            <Loaded />
-          </Loader>
-        )}
-      </LazyData>
+      <Loader {...dynamicProps()} component={() => <CircularProgress style={{ color: purple[500] }} thickness={7} />}>
+        <Loaded />
+      </Loader>
     ));
 };
