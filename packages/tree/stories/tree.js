@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// Material UI
-import Grid from '@material-ui/core/Grid';
-
 // Ours
 import Tree from '../src/tree';
 import muiTheme from '../.storybook/decorator-material-ui';
