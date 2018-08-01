@@ -1,0 +1,32 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
+    "react",
+  ],
+  "plugins": [
+    "external-helpers",
+    "transform-runtime",
+    "transform-async-functions",
+    "transform-object-rest-spread",
+    "babel-plugin-transform-class-properties",
+    "babel-plugin-transform-export-extensions"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["env"],
+        "react",
+        "es2015"
+      ],
+      "plugins": [
+        "transform-object-rest-spread",
+        "babel-plugin-transform-class-properties"
+      ]
+    }
+  }
+}
