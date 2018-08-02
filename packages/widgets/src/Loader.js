@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 // Material-UI
 import { withStyles } from '@material-ui/core/styles';
@@ -8,15 +10,20 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 const styles = theme => ({
   root: {
-    height: '100vh',
+    height: '100%',
     flexGrow: 1
+  },
+  fullscreen: {
+    height: '100vh',
+    width: '100%',
+    position: 'absolute'
   },
   linear: {
     width: '100%'
   }
 });
 
-function Loader({ classes, loading, component = 'linear', children }) {
+function Loader({ classes, loading, component, fullscreen, className, children }) {
   let render;
   if (component === 'linear') {
     render = <LinearProgress className={classes.linear} />;
@@ -26,15 +33,35 @@ function Loader({ classes, loading, component = 'linear', children }) {
     render = component();
   }
 
+  const _className = classnames(className, classes.root, {
+    [classes.fullscreen]: fullscreen
+  });
+
   if (loading) {
     return (
-      <Grid container className={classes.root} alignItems="center" justify="center">
+      <Grid container className={_className} alignItems="center" justify="center">
         {render}
       </Grid>
     );
   }
 
-  return children;
+  if (children) {
+    return children;
+  }
+
+  return null;
 }
 
 export default withStyles(styles)(Loader);
+
+Loader.propTypes = {
+  component: PropTypes.oneOfType([PropTypes.oneOf(['circular', 'linear']), PropTypes.func]),
+  loading: PropTypes.bool,
+  fullscreen: PropTypes.bool,
+  children: PropTypes.element
+};
+
+Loader.defaultProps = {
+  component: 'circular',
+  fullscreen: false
+};

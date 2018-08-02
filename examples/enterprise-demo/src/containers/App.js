@@ -45,7 +45,7 @@ class App extends Component {
       <BrowserRouter>
         <MuiThemeProvider theme={this.createTheme()}>
           <CssBaseline>
-            <Loader loading={!currentUser && loadingUser}>
+            <Loader loading={!currentUser && loadingUser} component="linear" fullscreen>
               <Switch>
                 <Route
                   path={SIGN_IN}
