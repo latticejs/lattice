@@ -13,23 +13,17 @@ export const FolderClosed = () => <FolderClosedIcon />;
 
 export const FolderOpen = () => <FolderOpenIcon />;
 
-export const TreeIcon = ({ item, style, isChild, topIcon, lvl }) => {
-  console.log('---');
-  console.log('lvl', lvl);
-  console.log('isChild', isChild);
-  console.log('topIcon', topIcon);
-  console.log('item', item);
-  console.log('---');
-  if (topIcon && lvl === 1) return '';
-  if (topIcon && lvl > 1 && !item.label && isChild) return <Line style={style.lineIcon} />;
-  if ((topIcon && lvl <= 1) || !item.label) return <TopLevel style={style.topIcon} />;
-  if (!topIcon && lvl === 1) return <TopLevel style={style.topIcon} />;
+export const TreeIcon = ({ item, style, isChild, lvl, idx }) => {
+  // Note (dk): TreeIcon is a function helper to display the right "structural icon".
+  // What is a "structural icon"? It is a icon as a block to create the proper tree
+  // structure (with identation/hierarchy levels). It can be a Line (like a pipe) or
+  // a Hierarchy wich looks like and "L". It is not the element icon itself.
 
-  if (isChild || (!isChild && item.children)) return <Hierarchy style={style.hierarchyIcon} />;
-
-  if (item.children) {
-    if (item.expanded) return <FolderOpen />;
-    return <FolderClosed />;
-  }
+  // root lvl - no structural icon
+  if (lvl === 1) return '';
+  // icon is btw root and end of the row (this is the actual child or parent)
+  if (lvl > 1 && idx < lvl - 1) return <Line style={style.lineIcon} />;
+  // then finally, we apply the actual child/parent icon
+  if (item.children || isChild) return <Hierarchy style={style.hierarchyIcon} />;
   return '';
 };

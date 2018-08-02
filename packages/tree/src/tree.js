@@ -26,6 +26,9 @@ const styles = theme => ({
     width: '100%'
   },
   itemContainer: {
+    display: 'flex',
+    alignItems: 'flex-end',
+    height: theme.spacing.unit * 6,
     padding: '5px'
   },
   treeIconContainer: {
@@ -37,9 +40,9 @@ const styles = theme => ({
   },
   treeHierarchyIcon: {
     display: 'inline-flex',
+    border: '1px dotted #e0e0e0',
     height: theme.spacing.unit * 6,
     width: theme.spacing.unit * 6,
-    border: '1px dotted #e0e0e0',
     borderWidth: '0 0 1px 1px'
   },
   treeLineIcon: {
@@ -74,7 +77,7 @@ const renderGenericCreator = ({ parentFn, childFn, iconFn, style }) => {
         iconFn
       });
     } else {
-      return childFn({ item, childClass: style.child, isChild, topIcon: lvl === 1, lvl, iconFn });
+      return childFn({ item, childClass: style.child, isChild, lvl, iconFn });
     }
   };
   return iterator;
@@ -124,7 +127,7 @@ class Tree extends Component {
     return (
       <Grid container spacing={16}>
         <Grid item xs={12} md={12} className={classNames('tree-wrapper', rootClasses)}>
-          {treeData.map(datum => this.renderGenericItem(datum))}
+          {treeData.map(datum => this.renderGenericItem(datum, false, 0))}
         </Grid>
       </Grid>
     );

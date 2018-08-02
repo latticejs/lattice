@@ -6,8 +6,8 @@ const Parent = props => {
 
   return (
     <React.Fragment>
-      {ChildLabel({ item, childClass, topIcon: true, lvl, iconFn })}
-      {ChildChildren({ childrens, childClass, isChild, topIcon: true, lvl, iconFn })}
+      {ChildLabel({ item, childClass, isChild, lvl, iconFn })}
+      {ChildChildren({ childrens, childClass })}
     </React.Fragment>
   );
 };

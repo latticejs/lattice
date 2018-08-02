@@ -56,15 +56,17 @@ exports[`Storyshots tree basic 1`] = `
         <div
           className="Tree-treeChild-2"
         >
-          <div
-            className="Tree-treeIconContainer-4"
-          >
-            
-          </div>
           <div>
             <div
               className="Tree-treeChild-2"
             >
+              <div
+                className="Tree-treeIconContainer-4"
+              >
+                <div
+                  className="Tree-treeLineIcon-6"
+                />
+              </div>
               <div
                 className="Tree-treeIconContainer-4"
               >
@@ -85,6 +87,13 @@ exports[`Storyshots tree basic 1`] = `
                 className="Tree-treeIconContainer-4"
               >
                 <div
+                  className="Tree-treeLineIcon-6"
+                />
+              </div>
+              <div
+                className="Tree-treeIconContainer-4"
+              >
+                <div
                   className="Tree-treeHierarchyIcon-5"
                 />
               </div>
@@ -101,6 +110,13 @@ exports[`Storyshots tree basic 1`] = `
                 className="Tree-treeIconContainer-4"
               >
                 <div
+                  className="Tree-treeLineIcon-6"
+                />
+              </div>
+              <div
+                className="Tree-treeIconContainer-4"
+              >
+                <div
                   className="Tree-treeHierarchyIcon-5"
                 />
               </div>
@@ -113,17 +129,24 @@ exports[`Storyshots tree basic 1`] = `
             <div
               className="Tree-treeChild-2"
             >
-              <div
-                className="Tree-treeIconContainer-4"
-              >
-                <div
-                  className="Tree-treeLineIcon-6"
-                />
-              </div>
               <div>
                 <div
                   className="Tree-treeChild-2"
                 >
+                  <div
+                    className="Tree-treeIconContainer-4"
+                  >
+                    <div
+                      className="Tree-treeLineIcon-6"
+                    />
+                  </div>
+                  <div
+                    className="Tree-treeIconContainer-4"
+                  >
+                    <div
+                      className="Tree-treeLineIcon-6"
+                    />
+                  </div>
                   <div
                     className="Tree-treeIconContainer-4"
                   >
@@ -140,17 +163,31 @@ exports[`Storyshots tree basic 1`] = `
                 <div
                   className="Tree-treeChild-2"
                 >
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeLineIcon-6"
-                    />
-                  </div>
                   <div>
                     <div
                       className="Tree-treeChild-2"
                     >
+                      <div
+                        className="Tree-treeIconContainer-4"
+                      >
+                        <div
+                          className="Tree-treeLineIcon-6"
+                        />
+                      </div>
+                      <div
+                        className="Tree-treeIconContainer-4"
+                      >
+                        <div
+                          className="Tree-treeLineIcon-6"
+                        />
+                      </div>
+                      <div
+                        className="Tree-treeIconContainer-4"
+                      >
+                        <div
+                          className="Tree-treeLineIcon-6"
+                        />
+                      </div>
                       <div
                         className="Tree-treeIconContainer-4"
                       >
@@ -167,6 +204,27 @@ exports[`Storyshots tree basic 1`] = `
                     <div
                       className="Tree-treeChild-2"
                     >
+                      <div
+                        className="Tree-treeIconContainer-4"
+                      >
+                        <div
+                          className="Tree-treeLineIcon-6"
+                        />
+                      </div>
+                      <div
+                        className="Tree-treeIconContainer-4"
+                      >
+                        <div
+                          className="Tree-treeLineIcon-6"
+                        />
+                      </div>
+                      <div
+                        className="Tree-treeIconContainer-4"
+                      >
+                        <div
+                          className="Tree-treeLineIcon-6"
+                        />
+                      </div>
                       <div
                         className="Tree-treeIconContainer-4"
                       >
@@ -189,6 +247,20 @@ exports[`Storyshots tree basic 1`] = `
                     className="Tree-treeIconContainer-4"
                   >
                     <div
+                      className="Tree-treeLineIcon-6"
+                    />
+                  </div>
+                  <div
+                    className="Tree-treeIconContainer-4"
+                  >
+                    <div
+                      className="Tree-treeLineIcon-6"
+                    />
+                  </div>
+                  <div
+                    className="Tree-treeIconContainer-4"
+                  >
+                    <div
                       className="Tree-treeHierarchyIcon-5"
                     />
                   </div>
@@ -201,6 +273,20 @@ exports[`Storyshots tree basic 1`] = `
                 <div
                   className="Tree-treeChild-2"
                 >
+                  <div
+                    className="Tree-treeIconContainer-4"
+                  >
+                    <div
+                      className="Tree-treeLineIcon-6"
+                    />
+                  </div>
+                  <div
+                    className="Tree-treeIconContainer-4"
+                  >
+                    <div
+                      className="Tree-treeLineIcon-6"
+                    />
+                  </div>
                   <div
                     className="Tree-treeIconContainer-4"
                   >
