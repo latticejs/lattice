@@ -15,7 +15,8 @@ const styles = theme => ({
   },
   fullscreen: {
     height: '100vh',
-    width: '100vw'
+    width: '100%',
+    position: 'absolute'
   },
   linear: {
     width: '100%'
