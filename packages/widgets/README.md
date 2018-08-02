@@ -7,7 +7,7 @@ Set of small Lattice components for common tasks like loaders, side-menus and mo
 - [Install](#install)
 - [Loader](#loader)
 - [SideMenu](#sidemenu)
-- [Widget](#widget) 
+- [Widget](#widget)
 
 ## <a name="install"></a>Install
 
@@ -25,15 +25,15 @@ import { Loader } from '@latticejs/widgets';
 
 class App extends Component {
   state = {
-    isLoading: true 
+    isLoading: true
   };
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        isLoading: false 
+        isLoading: false
       });
-    }, 2000);    
+    }, 2000);
   }
 
   render() {
@@ -42,7 +42,7 @@ class App extends Component {
       <Loader loading={isLoading}>
         <h1>Loaded!</h1>
       </Loader>
-    );    
+    );
   }
 }
 ```
@@ -57,7 +57,7 @@ Used to indicate when the content is loaded and the loader should disappear.
 
 #### component
 
-> `string`/`function` | defaults to `linear`
+> `string`/`function` | defaults to `circular`
 
 Used to indicate the type of loader. `Loader` comes with a couple of predefined loaders, these are: `linear` and `circular`. It can also receive a custom function (stateless component) as a loader.
 
@@ -66,6 +66,12 @@ Used to indicate the type of loader. `Loader` comes with a couple of predefined 
 > `function` | defaults to `undefined`
 
 Used to indicate the content to be displayed after the loader.
+
+#### fullscreen
+
+> `boolean` | defaults to `false`
+
+Used to indicate if the loader needs to be resizer to the entire screen (100vh x 100vw)
 
 ## <a name="sidemenu"></a>SideMenu
 
@@ -93,9 +99,9 @@ const navigation = [
 class App extends Component {
   render() {
     return (
-      <SideMenu 
+      <SideMenu
         navigation={navigation}
-        onItemClick={(item) => console.log(item)} 
+        onItemClick={(item) => console.log(item)}
       />
     )
   }
@@ -114,7 +120,7 @@ Used to indicate navigable routes.
 
 > `object` | defaults to `undefined`
 
-Used to indicate if a route should be highlighted or selected. 
+Used to indicate if a route should be highlighted or selected.
 
 #### onItemClick
 
@@ -134,7 +140,7 @@ Used to indicate component's width.
 
 Used to indicate component's min width.
 
-## <a name="widget"></a>Widget 
+## <a name="widget"></a>Widget
 
 ### Usage
 
@@ -146,9 +152,9 @@ class App extends Component {
   render() {
     return (
       <Widget featured title="Title">
-        Basic Widget 
+        Basic Widget
       </Widget>
-    )    
+    )
   }
 }
 ```

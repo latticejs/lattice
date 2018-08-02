@@ -14,14 +14,15 @@ const styles = theme => ({
     flexGrow: 1
   },
   fullscreen: {
-    height: '100vh'
+    height: '100vh',
+    width: '100vw'
   },
   linear: {
     width: '100%'
   }
 });
 
-function Loader({ classes, loading, component, fullscreen, className, children }) {
+function InnerLoader({ classes, loading, component, fullscreen, className, children }) {
   let render;
   if (component === 'linear') {
     render = <LinearProgress className={classes.linear} />;
@@ -50,18 +51,20 @@ function Loader({ classes, loading, component, fullscreen, className, children }
   return null;
 }
 
+const LoaderStyled = withStyles(styles)(InnerLoader);
+
+const Loader = props => <LoaderStyled {...props} />;
+
+export default Loader;
+
 Loader.propTypes = {
   component: PropTypes.oneOfType([PropTypes.oneOf(['circular', 'linear']), PropTypes.func]),
   loading: PropTypes.bool,
-  classes: PropTypes.object,
   fullscreen: PropTypes.bool,
-  children: PropTypes.element,
-  className: PropTypes.string
+  children: PropTypes.element
 };
 
 Loader.defaultProps = {
   component: 'circular',
   fullscreen: false
 };
-
-export default withStyles(styles)(Loader);
