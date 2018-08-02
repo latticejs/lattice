@@ -22,7 +22,7 @@ const styles = theme => ({
   }
 });
 
-function InnerLoader({ classes, loading, component, fullscreen, className, children }) {
+function Loader({ classes, loading, component, fullscreen, className, children }) {
   let render;
   if (component === 'linear') {
     render = <LinearProgress className={classes.linear} />;
@@ -51,11 +51,7 @@ function InnerLoader({ classes, loading, component, fullscreen, className, child
   return null;
 }
 
-const LoaderStyled = withStyles(styles)(InnerLoader);
-
-const Loader = props => <LoaderStyled {...props} />;
-
-export default Loader;
+export default withStyles(styles)(Loader);
 
 Loader.propTypes = {
   component: PropTypes.oneOfType([PropTypes.oneOf(['circular', 'linear']), PropTypes.func]),

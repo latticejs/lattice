@@ -8,7 +8,7 @@ exports[`Storyshots widgets/Loader circular 1`] = `
     className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
   >
     <div
-      className="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 InnerLoader-root-1"
+      className="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 Loader-root-1"
     >
       <div
         className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
@@ -48,7 +48,7 @@ exports[`Storyshots widgets/Loader custom 1`] = `
     className="MuiGrid-item-196 MuiGrid-grid-xs-12-235"
   >
     <div
-      className="MuiGrid-container-195 MuiGrid-align-items-xs-center-203 MuiGrid-justify-xs-center-212 InnerLoader-root-1"
+      className="MuiGrid-container-195 MuiGrid-align-items-xs-center-203 MuiGrid-justify-xs-center-212 Loader-root-1"
     >
       <div
         className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
@@ -89,10 +89,10 @@ exports[`Storyshots widgets/Loader linear 1`] = `
     className="MuiGrid-item-99 MuiGrid-grid-xs-12-138"
   >
     <div
-      className="MuiGrid-container-98 MuiGrid-align-items-xs-center-106 MuiGrid-justify-xs-center-115 InnerLoader-root-1"
+      className="MuiGrid-container-98 MuiGrid-align-items-xs-center-106 MuiGrid-justify-xs-center-115 Loader-root-1"
     >
       <div
-        className="MuiLinearProgress-root MuiLinearProgress-colorPrimary InnerLoader-linear-3"
+        className="MuiLinearProgress-root MuiLinearProgress-colorPrimary Loader-linear-3"
         role="progressbar"
       >
         <div
