@@ -5,7 +5,7 @@ var program = require('commander');
 var clapi = require('./lib');
 var pkg = require('./package.json');
 
-var DEFAULT_EXAMPLE = (exports.DEFAULT_EXAMPLE = 'enterprise-demo');
+var DEFAULT_EXAMPLE = (exports.DEFAULT_EXAMPLE = 'basic');
 
 program
   .version(pkg.version)
@@ -26,7 +26,7 @@ program
 
 program.on('command:*', function(args) {
   // runs: clap projectName
-  // shortcut for clap example enterprise-demo projectName
+  // shortcut for clap example basic projectName
   clapi.clap(DEFAULT_EXAMPLE, args[0]);
 });
 
