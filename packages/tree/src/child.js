@@ -16,9 +16,9 @@ export class Item extends Component {
 
   cascadeCheckAll = ({ initial, item, checked, lvl, key = '' }) => {
     if (item.children) {
-      lvl = lvl + 1;
       initial.items.push(item);
-      initial.keys.push(key);
+      initial.keys.push(`lattice-tree-${item.label}-${lvl}`);
+      lvl = lvl + 1;
       return item.children.reduce((initial, subItem, idx) => {
         return {
           ...initial,
@@ -69,7 +69,12 @@ export class Item extends Component {
     } = this.props;
 
     return (
-      <ListItem button onClick={e => this.handleToggleFold({ e, item, toggleFold })} component="div">
+      <ListItem
+        key={this.getKey()}
+        button
+        onClick={e => this.handleToggleFold({ e, item, toggleFold })}
+        component="div"
+      >
         <ListItemIcon>{iconItem({ item, isChild, expanded: isExpanded(item) })}</ListItemIcon>
         <Checkbox
           checked={isChecked(this.getKey())}

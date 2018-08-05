@@ -50,6 +50,7 @@ const renderGenericCreator = ({
     if (item.children) {
       return parentFn({
         item,
+        key: `lattice-tree-${item.label}-${lvl}`,
         childClass: style,
         lvl,
         isChild,
@@ -65,6 +66,7 @@ const renderGenericCreator = ({
     } else {
       return (
         <ChildFn
+          key={`lattice-tree-${item.label}-${lvl}`}
           item={item}
           childClass={style}
           isChild={isChild}
