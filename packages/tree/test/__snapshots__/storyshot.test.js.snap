@@ -20,290 +20,169 @@ exports[`Storyshots tree basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-8 MuiGrid-spacing-xs-16-31"
+      className="MuiGrid-container-3 MuiGrid-spacing-xs-16-26"
     >
       <div
-        className="MuiGrid-item-9 MuiGrid-grid-xs-12-48 MuiGrid-grid-md-12-76 tree-wrapper Tree-root-1"
+        className="MuiGrid-item-4 MuiGrid-grid-xs-12-43 MuiGrid-grid-md-12-71 tree-wrapper Tree-root-1"
       >
-        <div
-          className="Tree-treeChild-2"
+        <nav
+          className="MuiList-root-100"
         >
           <div
-            className="Tree-treeIconContainer-4"
+            className="MuiButtonBase-root-114 MuiListItem-root-104 MuiListItem-default-107 MuiListItem-gutters-111 MuiListItem-button-112"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
           >
-            
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-118"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <g>
+                <path
+                  d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"
+                />
+              </g>
+            </svg>
+            <span
+              className="MuiButtonBase-root-114 MuiIconButton-root-134 MuiSwitchBase-root-130 MuiCheckbox-root-125 MuiCheckbox-colorSecondary-129"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
+            >
+              <span
+                className="MuiIconButton-label-139"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root-118"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                  />
+                </svg>
+                <input
+                  checked={false}
+                  className="MuiSwitchBase-input-133"
+                  onChange={[Function]}
+                  tabIndex={-1}
+                  type="checkbox"
+                />
+              </span>
+            </span>
+            <div
+              className="MuiListItemText-root-140"
+            >
+              <span
+                className="MuiTypography-root-146 MuiTypography-subheading-153 MuiListItemText-primary-143"
+              >
+                index.js
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-170"
+            />
           </div>
           <div
-            className="Tree-itemContainer-3"
+            className="MuiButtonBase-root-114 MuiListItem-root-104 MuiListItem-default-107 MuiListItem-gutters-111 MuiListItem-button-112"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
           >
-            index.js
-          </div>
-        </div>
-        <div
-          className="Tree-treeChild-2"
-        >
-          <div
-            className="Tree-treeIconContainer-4"
-          >
-            
-          </div>
-          <div
-            className="Tree-itemContainer-3"
-          >
-            assets
-          </div>
-        </div>
-        <div
-          className="Tree-treeChild-2"
-        >
-          <div>
-            <div
-              className="Tree-treeChild-2"
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-118"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
-              <div
-                className="Tree-treeIconContainer-4"
-              >
-                <div
-                  className="Tree-treeLineIcon-6"
+              <g>
+                <path
+                  d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"
                 />
-              </div>
-              <div
-                className="Tree-treeIconContainer-4"
-              >
-                <div
-                  className="Tree-treeHierarchyIcon-5"
-                />
-              </div>
-              <div
-                className="Tree-itemContainer-3"
-              >
-                index.css
-              </div>
-            </div>
-            <div
-              className="Tree-treeChild-2"
+              </g>
+            </svg>
+            <span
+              className="MuiButtonBase-root-114 MuiIconButton-root-134 MuiSwitchBase-root-130 MuiCheckbox-root-125 MuiCheckbox-colorSecondary-129"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
             >
-              <div
-                className="Tree-treeIconContainer-4"
+              <span
+                className="MuiIconButton-label-139"
               >
-                <div
-                  className="Tree-treeLineIcon-6"
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root-118"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                  />
+                </svg>
+                <input
+                  checked={false}
+                  className="MuiSwitchBase-input-133"
+                  onChange={[Function]}
+                  tabIndex={-1}
+                  type="checkbox"
                 />
-              </div>
-              <div
-                className="Tree-treeIconContainer-4"
-              >
-                <div
-                  className="Tree-treeHierarchyIcon-5"
-                />
-              </div>
-              <div
-                className="Tree-itemContainer-3"
-              >
-                logo.svg
-              </div>
-            </div>
+              </span>
+            </span>
             <div
-              className="Tree-treeChild-2"
+              className="MuiListItemText-root-140"
             >
-              <div
-                className="Tree-treeIconContainer-4"
+              <span
+                className="MuiTypography-root-146 MuiTypography-subheading-153 MuiListItemText-primary-143"
               >
-                <div
-                  className="Tree-treeLineIcon-6"
-                />
-              </div>
-              <div
-                className="Tree-treeIconContainer-4"
-              >
-                <div
-                  className="Tree-treeHierarchyIcon-5"
-                />
-              </div>
-              <div
-                className="Tree-itemContainer-3"
-              >
-                tmp
-              </div>
+                assets
+              </span>
             </div>
-            <div
-              className="Tree-treeChild-2"
-            >
-              <div>
-                <div
-                  className="Tree-treeChild-2"
-                >
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeLineIcon-6"
-                    />
-                  </div>
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeLineIcon-6"
-                    />
-                  </div>
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeHierarchyIcon-5"
-                    />
-                  </div>
-                  <div
-                    className="Tree-itemContainer-3"
-                  >
-                    foo
-                  </div>
-                </div>
-                <div
-                  className="Tree-treeChild-2"
-                >
-                  <div>
-                    <div
-                      className="Tree-treeChild-2"
-                    >
-                      <div
-                        className="Tree-treeIconContainer-4"
-                      >
-                        <div
-                          className="Tree-treeLineIcon-6"
-                        />
-                      </div>
-                      <div
-                        className="Tree-treeIconContainer-4"
-                      >
-                        <div
-                          className="Tree-treeLineIcon-6"
-                        />
-                      </div>
-                      <div
-                        className="Tree-treeIconContainer-4"
-                      >
-                        <div
-                          className="Tree-treeLineIcon-6"
-                        />
-                      </div>
-                      <div
-                        className="Tree-treeIconContainer-4"
-                      >
-                        <div
-                          className="Tree-treeHierarchyIcon-5"
-                        />
-                      </div>
-                      <div
-                        className="Tree-itemContainer-3"
-                      >
-                        beakman
-                      </div>
-                    </div>
-                    <div
-                      className="Tree-treeChild-2"
-                    >
-                      <div
-                        className="Tree-treeIconContainer-4"
-                      >
-                        <div
-                          className="Tree-treeLineIcon-6"
-                        />
-                      </div>
-                      <div
-                        className="Tree-treeIconContainer-4"
-                      >
-                        <div
-                          className="Tree-treeLineIcon-6"
-                        />
-                      </div>
-                      <div
-                        className="Tree-treeIconContainer-4"
-                      >
-                        <div
-                          className="Tree-treeLineIcon-6"
-                        />
-                      </div>
-                      <div
-                        className="Tree-treeIconContainer-4"
-                      >
-                        <div
-                          className="Tree-treeHierarchyIcon-5"
-                        />
-                      </div>
-                      <div
-                        className="Tree-itemContainer-3"
-                      >
-                        lester
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="Tree-treeChild-2"
-                >
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeLineIcon-6"
-                    />
-                  </div>
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeLineIcon-6"
-                    />
-                  </div>
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeHierarchyIcon-5"
-                    />
-                  </div>
-                  <div
-                    className="Tree-itemContainer-3"
-                  >
-                    ren
-                  </div>
-                </div>
-                <div
-                  className="Tree-treeChild-2"
-                >
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeLineIcon-6"
-                    />
-                  </div>
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeLineIcon-6"
-                    />
-                  </div>
-                  <div
-                    className="Tree-treeIconContainer-4"
-                  >
-                    <div
-                      className="Tree-treeHierarchyIcon-5"
-                    />
-                  </div>
-                  <div
-                    className="Tree-itemContainer-3"
-                  >
-                    stimpy
-                  </div>
-                </div>
-              </div>
-            </div>
+            <span
+              className="MuiTouchRipple-root-170"
+            />
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   </div>

@@ -32,18 +32,18 @@ class BasicTree extends Component {
                 label: 'foo',
                 children: [
                   {
-                    label: 'beakman'
+                    label: 'lambda'
                   },
                   {
-                    label: 'lester'
+                    label: 'gamma'
                   }
                 ]
               },
               {
-                label: 'ren'
+                label: 'bar'
               },
               {
-                label: 'stimpy'
+                label: 'baz'
               }
             ]
           }
@@ -53,7 +53,7 @@ class BasicTree extends Component {
   };
 
   render() {
-    return <Tree treeData={this.state.treeData} />;
+    return <Tree treeData={this.state.treeData} {...this.props} />;
   }
 }
 
@@ -62,5 +62,11 @@ export default ({ storiesOf, action }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', () => <BasicTree />);
+    .add('basic', () => (
+      <BasicTree
+        onCheckItem={action('checkItem')}
+        onFoldItem={action('onFoldItem')}
+        onUnfoldItem={action('onUnfoldItem')}
+      />
+    ));
 };

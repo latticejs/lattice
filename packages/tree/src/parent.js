@@ -1,13 +1,17 @@
 import React from 'react';
-import { ChildLabel, ChildChildren } from './child';
+import Collapse from '@material-ui/core/Collapse';
+
+import { Item, Childrens } from './child';
 
 const Parent = props => {
-  const { childClass = {}, item, childrens, isChild, lvl, iconFn } = props;
+  const { item, lvl, childClass = {}, childrens, isExpanded } = props;
 
   return (
     <React.Fragment>
-      {ChildLabel({ item, childClass, isChild, lvl, iconFn })}
-      {ChildChildren({ childrens, childClass })}
+      <Item key={`${item.label}-${lvl}`} {...props} />
+      <Collapse in={isExpanded(item)} timeout="auto" unmountOnExit>
+        {Childrens({ childrens, childClass })}
+      </Collapse>
     </React.Fragment>
   );
 };
