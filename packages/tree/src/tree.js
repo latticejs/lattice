@@ -11,8 +11,6 @@ import TreeParent from './parent';
 import { Item as TreeChild } from './child';
 import { TreeItemIcon } from './icons';
 
-import IconButton from '@material-ui/core/IconButton';
-import CommentIcon from '@material-ui/icons/Comment';
 // \ Tree Material style \
 const styles = theme => ({
   root: {
@@ -90,21 +88,6 @@ const renderGenericCreator = ({
   return iterator;
 };
 
-// \ default checkItem fn \
-const onTreeCheckItem = ({ check, items }) => {
-  console.log(items, check);
-};
-
-// \ default Fold fn \
-const onFoldItem = item => {
-  console.log(item);
-};
-
-// \ default unFold fn \
-const onUnfoldItem = item => {
-  console.log(item);
-};
-
 class Tree extends Component {
   static displayName = 'Tree';
   static defaultProps = {
@@ -114,9 +97,9 @@ class Tree extends Component {
     renderParentItem: TreeParent,
     renderChildItem: TreeChild,
     renderItemIcon: TreeItemIcon,
-    onFoldItem: onFoldItem,
-    onUnfoldItem: onUnfoldItem,
-    onCheckItem: onTreeCheckItem,
+    onFoldItem: () => {},
+    onUnfoldItem: () => {},
+    onCheckItem: () => {},
     expandedAll: true,
     cascadeCheck: true
   };
