@@ -3,11 +3,11 @@ import classNames from 'classnames';
 // \ Material-UI \
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 
-//export const ChildLabel = props => {
 export class Item extends Component {
   getKey() {
     const { item, lvl } = this.props;
@@ -55,6 +55,10 @@ export class Item extends Component {
     toggleFold(item);
   };
 
+  renderSecondaryActions = (actions, item) => {
+    return <ListItemSecondaryAction>{actions.map((action, idx) => action({ item, idx }))}</ListItemSecondaryAction>;
+  };
+
   render() {
     const {
       item = {},
@@ -65,6 +69,7 @@ export class Item extends Component {
       cascadeCheck,
       onCheckItem,
       toggleFold,
+      secondaryActions,
       lvl
     } = this.props;
 
@@ -83,6 +88,7 @@ export class Item extends Component {
           disableRipple
         />
         <ListItemText primary={item.label} />
+        {secondaryActions ? this.renderSecondaryActions(secondaryActions, item) : ''}
       </ListItem>
     );
   }

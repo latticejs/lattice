@@ -11,6 +11,8 @@ import TreeParent from './parent';
 import { Item as TreeChild } from './child';
 import { TreeItemIcon } from './icons';
 
+import IconButton from '@material-ui/core/IconButton';
+import CommentIcon from '@material-ui/icons/Comment';
 // \ Tree Material style \
 const styles = theme => ({
   root: {
@@ -38,6 +40,7 @@ const renderGenericCreator = ({
   childFn: ChildFn,
   iconItem,
   onCheckItem,
+  secondaryActions,
   toggleFold,
   expanded,
   isExpanded,
@@ -54,6 +57,7 @@ const renderGenericCreator = ({
         childClass: style,
         lvl,
         isChild,
+        secondaryActions,
         childrens: item.children.map(child => iterator(child, true, lvl)),
         iconItem,
         expanded,
@@ -68,6 +72,7 @@ const renderGenericCreator = ({
         <ChildFn
           key={`lattice-tree-${item.label}-${lvl}`}
           item={item}
+          secondaryActions={secondaryActions}
           childClass={style}
           isChild={isChild}
           lvl={lvl}
@@ -95,16 +100,16 @@ const onFoldItem = item => {
   console.log(item);
 };
 
+// \ default unFold fn \
 const onUnfoldItem = item => {
   console.log(item);
 };
-
-// \ default unFold fn \
 
 class Tree extends Component {
   static displayName = 'Tree';
   static defaultProps = {
     treeData: [],
+    secondaryActions: [],
     renderGenericItemCreator: renderGenericCreator,
     renderParentItem: TreeParent,
     renderChildItem: TreeChild,
@@ -131,7 +136,7 @@ class Tree extends Component {
     this.renderGenericItem = props.renderGenericItemCreator({
       parentFn: props.renderParentItem,
       childFn: props.renderChildItem,
-      iconFn: props.renderIcon,
+      secondaryActions: props.secondaryActions,
       iconItem: props.renderItemIcon,
       onCheckItem: this.toggleCheck,
       toggleFold: this.toggleFold,
