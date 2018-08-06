@@ -10586,7 +10586,7 @@ react-docgen@^3.0.0-beta11:
     node-dir "^0.1.10"
     recast "^0.15.0"
 
-react-dom@^16.0.0, react-dom@^16.2.0, react-dom@^16.4.0, react-dom@^16.4.1:
+react-dom@^16.0.0, react-dom@^16.2.0, react-dom@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
   dependencies:
@@ -10827,7 +10827,7 @@ react-virtualized@^9.19.1, react-virtualized@^9.20.1:
     prop-types "^15.6.0"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.0.0, react@^16.2.0, react@^16.4.0, react@^16.4.1:
+react@^16.0.0, react@^16.2.0, react@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
   dependencies:

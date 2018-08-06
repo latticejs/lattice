@@ -56,7 +56,8 @@
     "prop-types": "^15.6.2"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./setupTest.js"
+    "setupTestFrameworkScriptFile": "./setupTest.js",
+    "testURL": "http://localhost"
   },
   "publishConfig": {
     "access": "public"
