@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import Types from 'prop-types';
 // \ Material-UI \
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -9,15 +10,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 
 export class Item extends Component {
-  getKey() {
-    const { item, lvl } = this.props;
-    return `lattice-tree-${item.label}-${lvl}`;
-  }
-
-  cascadeCheckAll = ({ initial, item, checked, lvl, key = '' }) => {
+  cascadeCheckAll = ({ initial, item, checked, lvl, key = '', getItemKey }) => {
     if (item.children) {
       initial.items.push(item);
-      initial.keys.push(`lattice-tree-${item.label}-${lvl}`);
+      initial.keys.push(getItemKey({ item, lvl }));
       lvl = lvl + 1;
       return item.children.reduce((initial, subItem, idx) => {
         return {
@@ -26,33 +22,33 @@ export class Item extends Component {
             initial,
             item: subItem,
             checked,
-            key: `lattice-tree-${subItem.label}-${lvl}`,
-            lvl
+            key: getItemKey({ item, lvl }),
+            lvl,
+            getItemKey
           })
         };
       }, initial);
     } else {
-      // onCheckItem({ checked, item, key });
       initial.items.push(item);
       initial.keys.push(key);
       return initial;
     }
   };
 
-  handleOnCheckItem = ({ e, checked, item, cascadeCheck, onCheckItem, lvl }) => {
+  handleOnCheckItem = ({ e, checked, item, cascadeCheck, onCheckItem, lvl, getItemKey }) => {
     e.stopPropagation();
     if (item.children && cascadeCheck) {
       const initial = { items: [], keys: [] };
-      const checkedItems = this.cascadeCheckAll({ initial, item, checked, lvl, onCheckItem });
+      const checkedItems = this.cascadeCheckAll({ initial, item, checked, lvl, getItemKey });
       return onCheckItem({ checked, items: checkedItems.items, keys: checkedItems.keys });
     }
-    return onCheckItem({ checked, items: [item], keys: [this.getKey()] });
+    return onCheckItem({ checked, items: [item], keys: [getItemKey({ item, lvl })] });
   };
 
-  handleToggleFold = ({ e, item, toggleFold }) => {
+  handleToggleFold = ({ e, item, toggleFold, lvl }) => {
     if (typeof e.target.checked !== 'undefined') return false;
     if (!item.children) return;
-    toggleFold(item);
+    toggleFold({ item, lvl });
   };
 
   renderSecondaryActions = (actions, item) => {
@@ -70,20 +66,30 @@ export class Item extends Component {
       onCheckItem,
       toggleFold,
       secondaryActions,
-      lvl
+      lvl,
+      getItemKey
     } = this.props;
 
     return (
       <ListItem
-        key={this.getKey()}
+        key={getItemKey({ item, lvl })}
         button
-        onClick={e => this.handleToggleFold({ e, item, toggleFold })}
-        component="div"
+        onClick={e => this.handleToggleFold({ e, item, toggleFold, lvl })}
       >
-        <ListItemIcon>{iconItem({ item, isChild, expanded: isExpanded(item) })}</ListItemIcon>
+        <ListItemIcon>{iconItem({ item, isChild, expanded: isExpanded({ item, lvl }) })}</ListItemIcon>
         <Checkbox
-          checked={isChecked(this.getKey())}
-          onChange={(e, checked) => this.handleOnCheckItem({ e, checked, item, cascadeCheck, onCheckItem, lvl })}
+          checked={isChecked(getItemKey({ item, lvl }))}
+          onChange={(e, checked) =>
+            this.handleOnCheckItem({
+              e,
+              checked,
+              item,
+              cascadeCheck,
+              onCheckItem,
+              lvl,
+              getItemKey
+            })
+          }
           tabIndex={-1}
           disableRipple
         />
@@ -93,6 +99,20 @@ export class Item extends Component {
     );
   }
 }
+
+Item.propTypes = {
+  item: Types.object,
+  isChild: Types.bool,
+  iconItem: Types.func,
+  isExpanded: Types.func,
+  isChecked: Types.func,
+  cascadeCheck: Types.bool,
+  onCheckItem: Types.func,
+  toggleFold: Types.func,
+  secondaryActions: Types.array,
+  lvl: Types.number,
+  getItemKey: Types.func
+};
 
 export const Childrens = props => {
   const { childClass = {}, childrens } = props;
