@@ -27,10 +27,34 @@ const styles = theme => ({
 });
 
 // \ reset internal state helper \
-const defaultState = () => ({
-  expanded: [],
-  checked: []
-});
+const defaultState = ({ treeData, expandedAll, cascadeUnFold, getItemKey }) => {
+  let expandedAllData = [];
+  if (expandedAll) {
+    // Note (dk): if expandedAll prop is true then the tree should unfold all
+    // the container items (those with childrens). So we call cascadeUnFold fn
+    // from the top of treeData, and since treeData is an array we run it
+    // through all the root items.
+    expandedAllData = treeData.reduce(
+      (all, item) => {
+        return {
+          ...all,
+          ...cascadeUnFold({
+            initial: { items: [], keys: [] },
+            item,
+            lvl: 1,
+            getItemKey
+          })
+        };
+      },
+      { items: [], keys: [] }
+    );
+  }
+
+  return {
+    expanded: expandedAll ? expandedAllData.keys : [],
+    checked: []
+  };
+};
 
 // \ rendergeneric item internal fn \
 const renderGenericCreator = ({
@@ -39,6 +63,7 @@ const renderGenericCreator = ({
   iconItem,
   onCheckItem,
   secondaryActions,
+  getItemKey,
   toggleFold,
   expanded,
   isExpanded,
@@ -63,7 +88,8 @@ const renderGenericCreator = ({
         onCheckItem,
         isChecked,
         cascadeCheck,
-        toggleFold
+        toggleFold,
+        getItemKey
       });
     } else {
       return (
@@ -81,6 +107,7 @@ const renderGenericCreator = ({
           isChecked={isChecked}
           cascadeCheck={cascadeCheck}
           iconItem={iconItem}
+          getItemKey={getItemKey}
         />
       );
     }
@@ -97,16 +124,17 @@ class Tree extends Component {
     renderParentItem: TreeParent,
     renderChildItem: TreeChild,
     renderItemIcon: TreeItemIcon,
+    getItemKey: ({ item, lvl }) => `lattice-tree-${item.label}-${lvl}`,
     onFoldItem: () => {},
     onUnfoldItem: () => {},
     onCheckItem: () => {},
-    expandedAll: true,
+    expandedAll: false,
     cascadeCheck: true
   };
 
   constructor(props) {
     super(props);
-    this.state = defaultState();
+    this.state = defaultState({ ...props, cascadeUnFold: this.cascadeUnFold });
 
     const style = {
       treeItemNested: props.classes.treeItemNested
@@ -122,6 +150,7 @@ class Tree extends Component {
       secondaryActions: props.secondaryActions,
       iconItem: props.renderItemIcon,
       onCheckItem: this.toggleCheck,
+      getItemKey: props.getItemKey,
       toggleFold: this.toggleFold,
       expanded: props.expandedAll,
       isExpanded: this.isExpanded,
@@ -131,22 +160,23 @@ class Tree extends Component {
     });
   }
 
-  toggleFold = value => {
+  toggleFold = ({ item, lvl }) => {
     const { expanded } = this.state;
-    const currentIndex = expanded.indexOf(value);
+    const key = this.getItemKey({ item, lvl });
+    const currentIndex = expanded.indexOf(key);
     const newExpanded = [...expanded];
 
     if (currentIndex === -1) {
-      newExpanded.push(value);
+      newExpanded.push(key);
     } else {
       newExpanded.splice(currentIndex, 1);
     }
 
     this.setState({ expanded: newExpanded }, () => {
       if (currentIndex === -1) {
-        this.props.onUnfoldItem(value);
+        this.props.onUnfoldItem(item);
       } else {
-        this.props.onFoldItem(value);
+        this.props.onFoldItem(item);
       }
     });
   };
@@ -172,13 +202,42 @@ class Tree extends Component {
     });
   };
 
-  isExpanded = item => {
-    return this.state.expanded.indexOf(item) !== -1;
+  cascadeUnFold = ({ initial, item, lvl, key = '', getItemKey }) => {
+    // Note (dk): cascadeUnFold is a recursive fn used to generate the
+    // initial array of unfolded items (keys). This fn should be used
+    // only to initialize the expanded state at the constructor phase.
+    // Further modifications to the expanded state are handled through
+    // the toggleFold fn.
+    if (item.children) {
+      initial.items.push(item);
+      initial.keys.push(getItemKey({ item, lvl }));
+      lvl = lvl + 1;
+      return item.children.reduce((initial, subItem, idx) => {
+        return {
+          ...initial,
+          ...this.cascadeUnFold({
+            initial,
+            item: subItem,
+            key: getItemKey({ item, lvl }),
+            lvl,
+            getItemKey
+          })
+        };
+      }, initial);
+    }
+  };
+
+  isExpanded = ({ item, lvl }) => {
+    return this.state.expanded.indexOf(this.getItemKey({ item, lvl })) !== -1;
   };
 
   isChecked = item => {
     return this.state.checked.indexOf(item) !== -1;
   };
+
+  getItemKey(params) {
+    return this.props.getItemKey(params);
+  }
 
   render() {
     const { treeData, classes } = this.props;
@@ -187,7 +246,7 @@ class Tree extends Component {
     return (
       <Grid container spacing={16}>
         <Grid item xs={12} md={12} className={classNames('tree-wrapper', rootClasses)}>
-          <List component="nav" disablePadding>
+          <List component="div" disablePadding>
             {treeData.map(datum => this.renderGenericItem(datum, false, 0))}
           </List>
         </Grid>
@@ -198,8 +257,7 @@ class Tree extends Component {
 
 // \ Prop Types \
 let treeDataNode = Types.shape({
-  label: Types.string.isRequired,
-  expanded: Types.bool
+  label: Types.string.isRequired
 });
 
 treeDataNode.children = Types.arrayOf(treeDataNode);
@@ -208,7 +266,15 @@ Tree.propTypes = {
   treeData: Types.arrayOf(treeDataNode),
   renderGenericItemCreator: Types.func,
   renderParentItem: Types.func,
-  renderChildrenItem: Types.func
+  renderChildItem: Types.func,
+  secondaryActions: Types.array,
+  renderItemIcon: Types.func,
+  getItemKey: Types.func,
+  onFoldItem: Types.func,
+  onUnfoldItem: Types.func,
+  onCheckItem: Types.func,
+  expandedAll: Types.bool,
+  cascadeCheck: Types.bool
 };
 
 // \ Exported \
