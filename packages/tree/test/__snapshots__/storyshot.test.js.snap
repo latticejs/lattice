@@ -25,7 +25,7 @@ exports[`Storyshots tree basic 1`] = `
       <div
         className="MuiGrid-item-4 MuiGrid-grid-xs-12-43 MuiGrid-grid-md-12-71 tree-wrapper Tree-root-1"
       >
-        <nav
+        <div
           className="MuiList-root-100"
         >
           <li
@@ -200,7 +200,7 @@ exports[`Storyshots tree basic 1`] = `
               className="MuiListItemSecondaryAction-root-178"
             />
           </li>
-        </nav>
+        </div>
       </div>
     </div>
   </div>
