@@ -22,7 +22,7 @@ export class Item extends Component {
             initial,
             item: subItem,
             checked,
-            key: getItemKey({ item, lvl }),
+            key: getItemKey({ item: subItem, lvl }),
             lvl,
             getItemKey
           })
