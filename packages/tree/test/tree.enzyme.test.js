@@ -30,6 +30,17 @@ describe('<Tree />', () => {
     const wrapper = mount(<Tree treeData={sampleInput} expandedAll />);
     expect(wrapper.find('li').length).toBe(4);
   });
+  it('renders a <Tree cascadeCheck /> with 4 childrens (2 root lvl and 2 lvl-1)', () => {
+    const wrapper = mount(<Tree treeData={sampleInput} expandedAll cascadeCheck />);
+    expect(wrapper.find('input[type="checkbox"]').filterWhere(n => n.get(0).props.checked).length).toBe(0);
+    wrapper
+      .find('li')
+      .at(1)
+      .find('input[type="checkbox"]')
+      .simulate('change', { target: { checked: true } });
+
+    expect(wrapper.find('input[type="checkbox"]').filterWhere(n => n.get(0).props.checked).length).toBe(3);
+  });
   it('renders a <Tree onCheckItem={cb}/> with onCheckItem cb defined and triggered', () => {
     const onCheckItemCb = jest.fn();
     const item = { items: [sampleInput[0]], check: true };
