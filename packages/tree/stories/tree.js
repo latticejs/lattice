@@ -4,10 +4,6 @@ import React, { Component } from 'react';
 import Tree from '../src/tree';
 import muiTheme from '../.storybook/decorator-material-ui';
 
-import FolderClosed from '@material-ui/icons/Folder';
-import FolderOpen from '@material-ui/icons/FolderOpen';
-import File from '@material-ui/icons/InsertDriveFile';
-
 const Flexed = story => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
