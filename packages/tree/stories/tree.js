@@ -106,9 +106,6 @@ class CustomTree extends Component {
         </svg>
       );
     }
-    if (!item.children) return <File />;
-    if (item.children && expanded) return <FolderOpen />;
-    return <FolderClosed />;
   };
 
   render() {

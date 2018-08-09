@@ -350,7 +350,7 @@ exports[`Storyshots tree customized 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-315 MuiListItemIcon-root-299"
+                className="MuiSvgIcon-root-315"
                 focusable="false"
                 viewBox="0 0 24 24"
               >

@@ -9,7 +9,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 // \ Ours \
 import TreeParent from './parent';
 import { Item as TreeChild } from './child';
-import { TreeItemIcon } from './icons';
+import { withTreeItemIcon } from './icons';
 
 // \ Tree Material style \
 const styles = theme => ({
@@ -123,13 +123,13 @@ class Tree extends Component {
     renderGenericItemCreator: renderGenericCreator,
     renderParentItem: TreeParent,
     renderChildItem: TreeChild,
-    renderItemIcon: TreeItemIcon,
+    renderItemIcon: () => {},
     getItemKey: ({ item, lvl }) => `lattice-tree-${item.label}-${lvl}`,
     onFoldItem: () => {},
     onUnfoldItem: () => {},
     onCheckItem: () => {},
     expandedAll: false,
-    cascadeCheck: true
+    cascadeCheck: false
   };
 
   constructor(props) {
@@ -148,7 +148,7 @@ class Tree extends Component {
       parentFn: props.renderParentItem,
       childFn: props.renderChildItem,
       secondaryActions: props.secondaryActions,
-      iconItem: props.renderItemIcon,
+      iconItem: withTreeItemIcon(props.renderItemIcon),
       onCheckItem: this.toggleCheck,
       getItemKey: props.getItemKey,
       toggleFold: this.toggleFold,
@@ -183,17 +183,16 @@ class Tree extends Component {
 
   toggleCheck = ({ checked: check, items = [], keys = [] }) => {
     const { checked } = this.state;
-    const currentsIndexes = keys.map(key => ({ exists: checked.indexOf(key) !== -1, key }));
+    const currentsIndexes = keys.map(key => ({ pos: checked.indexOf(key), key }));
     const newChecked = [...checked];
-
     const length = currentsIndexes.length;
     let idx = 0;
     for (; idx < length; idx++) {
       let current = currentsIndexes[idx];
-      if (!current.exists) {
+      if (current.pos === -1) {
         newChecked.push(current.key);
       } else {
-        newChecked.splice(current.key, 1);
+        newChecked.splice(current.pos, 1);
       }
     }
 
