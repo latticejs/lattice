@@ -1,0 +1,423 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots tree basic 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-3 MuiGrid-spacing-xs-16-26"
+    >
+      <div
+        className="MuiGrid-item-4 MuiGrid-grid-xs-12-43 MuiGrid-grid-md-12-71 tree-wrapper Tree-root-1"
+      >
+        <div
+          className="MuiList-root-100"
+        >
+          <li
+            className="MuiListItem-container-105"
+          >
+            <div
+              className="MuiButtonBase-root-114 MuiListItem-root-104 MuiListItem-default-107 MuiListItem-gutters-111 MuiListItem-button-112 MuiListItem-secondaryAction-113"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-118"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+              <span
+                className="MuiButtonBase-root-114 MuiIconButton-root-134 MuiSwitchBase-root-130 MuiCheckbox-root-125 MuiCheckbox-colorSecondary-129"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={null}
+              >
+                <span
+                  className="MuiIconButton-label-139"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-118"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                  <input
+                    checked={false}
+                    className="MuiSwitchBase-input-133"
+                    onChange={[Function]}
+                    tabIndex={-1}
+                    type="checkbox"
+                  />
+                </span>
+              </span>
+              <div
+                className="MuiListItemText-root-140"
+              >
+                <span
+                  className="MuiTypography-root-146 MuiTypography-subheading-153 MuiListItemText-primary-143"
+                >
+                  index.js
+                </span>
+              </div>
+              <span
+                className="MuiTouchRipple-root-171"
+              />
+            </div>
+            <div
+              className="MuiListItemSecondaryAction-root-178"
+            />
+          </li>
+          <li
+            className="MuiListItem-container-105"
+          >
+            <div
+              className="MuiButtonBase-root-114 MuiListItem-root-104 MuiListItem-default-107 MuiListItem-gutters-111 MuiListItem-button-112 MuiListItem-secondaryAction-113"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-118"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+              <span
+                className="MuiButtonBase-root-114 MuiIconButton-root-134 MuiSwitchBase-root-130 MuiCheckbox-root-125 MuiCheckbox-colorSecondary-129"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={null}
+              >
+                <span
+                  className="MuiIconButton-label-139"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-118"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                  <input
+                    checked={false}
+                    className="MuiSwitchBase-input-133"
+                    onChange={[Function]}
+                    tabIndex={-1}
+                    type="checkbox"
+                  />
+                </span>
+              </span>
+              <div
+                className="MuiListItemText-root-140"
+              >
+                <span
+                  className="MuiTypography-root-146 MuiTypography-subheading-153 MuiListItemText-primary-143"
+                >
+                  assets
+                </span>
+              </div>
+              <span
+                className="MuiTouchRipple-root-171"
+              />
+            </div>
+            <div
+              className="MuiListItemSecondaryAction-root-178"
+            />
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots tree customized 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-185 MuiGrid-spacing-xs-16-208"
+    >
+      <div
+        className="MuiGrid-item-186 MuiGrid-grid-xs-12-225 MuiGrid-grid-md-12-253 tree-wrapper Tree-root-183"
+      >
+        <div
+          className="MuiList-root-282"
+        >
+          <li
+            className="MuiListItem-container-287"
+          >
+            <div
+              className="MuiButtonBase-root-296 MuiListItem-root-286 MuiListItem-default-289 MuiListItem-gutters-293 MuiListItem-button-294 MuiListItem-secondaryAction-295"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <svg
+                aria-labelledby="apksi-logos-javascript-title"
+                className="MuiListItemIcon-root-299"
+                height="1.5em"
+                id="si-logos-javascript"
+                preserveAspectRatio="xMidYMid"
+                viewBox="0 0 256 256"
+                width="1.5em"
+              >
+                <title
+                  id="apksi-logos-javascript-title"
+                >
+                  logo of javascript
+                </title>
+                <path
+                  d="M0 0h256v256H0V0z"
+                  fill="#F7DF1E"
+                />
+                <path
+                  d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574"
+                />
+              </svg>
+              <span
+                className="MuiButtonBase-root-296 MuiIconButton-root-309 MuiSwitchBase-root-305 MuiCheckbox-root-300 MuiCheckbox-colorSecondary-304"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={null}
+              >
+                <span
+                  className="MuiIconButton-label-314"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-315"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                  <input
+                    checked={false}
+                    className="MuiSwitchBase-input-308"
+                    onChange={[Function]}
+                    tabIndex={-1}
+                    type="checkbox"
+                  />
+                </span>
+              </span>
+              <div
+                className="MuiListItemText-root-322"
+              >
+                <span
+                  className="MuiTypography-root-328 MuiTypography-subheading-335 MuiListItemText-primary-325"
+                >
+                  index.js
+                </span>
+              </div>
+              <span
+                className="MuiTouchRipple-root-353"
+              />
+            </div>
+            <div
+              className="MuiListItemSecondaryAction-root-360"
+            />
+          </li>
+          <li
+            className="MuiListItem-container-287"
+          >
+            <div
+              className="MuiButtonBase-root-296 MuiListItem-root-286 MuiListItem-default-289 MuiListItem-gutters-293 MuiListItem-button-294 MuiListItem-secondaryAction-295"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-315"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+              <span
+                className="MuiButtonBase-root-296 MuiIconButton-root-309 MuiSwitchBase-root-305 MuiCheckbox-root-300 MuiCheckbox-colorSecondary-304"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={null}
+              >
+                <span
+                  className="MuiIconButton-label-314"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-315"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                  <input
+                    checked={false}
+                    className="MuiSwitchBase-input-308"
+                    onChange={[Function]}
+                    tabIndex={-1}
+                    type="checkbox"
+                  />
+                </span>
+              </span>
+              <div
+                className="MuiListItemText-root-322"
+              >
+                <span
+                  className="MuiTypography-root-328 MuiTypography-subheading-335 MuiListItemText-primary-325"
+                >
+                  assets
+                </span>
+              </div>
+              <span
+                className="MuiTouchRipple-root-353"
+              />
+            </div>
+            <div
+              className="MuiListItemSecondaryAction-root-360"
+            />
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
