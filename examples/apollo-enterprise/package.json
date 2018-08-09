@@ -1,5 +1,5 @@
 {
-  "name": "enterprise-demo",
+  "name": "apollo-enterprise",
   "version": "1.0.1-alpha.6",
   "private": true,
   "dependencies": {

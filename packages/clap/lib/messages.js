@@ -27,7 +27,7 @@ exports.describeClap = function describeClap() {
   return `
     ${chalk.cyan('download and bootstrap `exampleName` into your upcoming lattice project.')}
     Eg:
-      $ clap --example enterprise-demo myLatticeApp
+      $ clap example exampleName myLatticeApp
   `;
 };
 

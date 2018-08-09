@@ -17,7 +17,7 @@ $ clap myLaticceApp
 cd myLaticceApp
 npm start
 ```
-This will create a copy of `enterprise-demo` running on `http://localhost:3000`.
+This will create a copy of `basic` running on `http://localhost:3000`.
 
 ## Commands 
 
