@@ -1,0 +1,42 @@
+{
+  "name": "apollo-real-time-chart",
+  "version": "1.0.0",
+  "description": "A realtime Lattice App of charts using graphql subscriptions",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo 'test'",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "graphql": "node server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@latticejs/mui-recharts": "^1.0.1-alpha.6",
+    "@latticejs/widgets": "^1.0.1-alpha.4",
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^2.0.0",
+    "apollo-cache-inmemory": "^1.2.6",
+    "apollo-client": "^2.3.7",
+    "apollo-link": "^1.2.2",
+    "apollo-link-http": "^1.5.4",
+    "apollo-link-ws": "^1.0.8",
+    "apollo-utilities": "^1.0.17",
+    "classnames": "^2.2.6",
+    "cors": "^2.8.4",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "graphql-yoga": "^1.15.1",
+    "react": "^16.4.1",
+    "react-apollo": "^2.1.9",
+    "react-dom": "^16.4.1",
+    "recharts": "^1.1.0",
+    "systeminformation": "^3.42.9",
+    "typeface-roboto": "^0.0.54"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.1.4"
+  }
+}
