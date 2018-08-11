@@ -8,7 +8,8 @@
     "test": "echo 'test'",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "graphql": "node server"
+    "graphql": "node server",
+    "dev": "concurrently --kill-others-on-fail \"yarn graphql\" \"yarn start\""
   },
   "keywords": [],
   "author": "",
@@ -37,6 +38,7 @@
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
+    "concurrently": "^3.6.1",
     "react-scripts": "^1.1.4"
   }
 }

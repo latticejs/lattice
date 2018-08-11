@@ -51,3 +51,15 @@ export const psUpdated = gql`
     }
   }
 `;
+
+export const disksUpdated = gql`
+  subscription {
+    disksUpdated {
+      history {
+        timestamp
+        reads
+        writes
+      }
+    }
+  }
+`;

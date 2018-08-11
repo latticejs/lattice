@@ -2,7 +2,7 @@ const { GraphQLServer, PubSub } = require('graphql-yoga');
 const cors = require('cors');
 const si = require('systeminformation');
 
-const { cpuUsageUpdated, memoryUsageUpdated, psUsageUpdated } = require('./realtime-values');
+const { cpuUsageUpdated, memoryUsageUpdated, psUsageUpdated, disksUsageUpdated } = require('./realtime-values');
 
 const typeDefs = `
   type PlatformInfo {
@@ -37,11 +37,22 @@ const typeDefs = `
     latest: MemoryStat!
   }
 
+  type DisksHistory {
+    history: [DisksStat]!
+    latest: DisksStat!
+  }
+
   type Process {
     pid: Int!
     name: String!
     cpu: Float!
     memory: Float!
+  }
+
+  type DisksStat {
+    timestamp: Float!
+    reads: Float!
+    writes: Float!
   }
 
   type Query {
@@ -52,12 +63,14 @@ const typeDefs = `
     cpuUpdated: CPUHistory!
     memoryUpdated: MemoryHistory!
     psUpdated: [Process]!
+    disksUpdated: DisksHistory!
   }
 `;
 
 const CPU_UPDATED = 'CPU_UPDATED';
 const MEMORY_UPDATED = 'MEMORY_UPDATED';
 const PS_UPDATED = 'PS_UPDATED';
+const DISKS_UPDATED = 'DISKS_UPDATED';
 
 const resolvers = {
   Query: {
@@ -84,6 +97,9 @@ const resolvers = {
     },
     psUpdated: {
       subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(PS_UPDATED)
+    },
+    disksUpdated: {
+      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(DISKS_UPDATED)
     }
   }
 };
@@ -112,6 +128,10 @@ const opts = {
         memory: p.memory
       }))
     });
+  });
+
+  disksUsageUpdated(data => {
+    pubsub.publish(DISKS_UPDATED, { disksUpdated: data });
   });
 
   // context

@@ -3,8 +3,30 @@ const si = require('systeminformation');
 
 let cpuHistory = [];
 let memoryHistory = [];
+let disksHistory = [];
 
-// real-time data
+exports.disksUsageUpdated = cb =>
+  setInterval(async () => {
+    const disksIO = await si.disksIO();
+
+    const data = {
+      timestamp: Date.now(),
+      reads: disksIO.rIO_sec,
+      writes: disksIO.wIO_sec
+    };
+
+    if (disksHistory.length > 20) {
+      disksHistory.shift();
+    }
+
+    disksHistory.push(data);
+
+    cb({
+      history: disksHistory,
+      latest: data
+    });
+  }, 1000);
+
 exports.cpuUsageUpdated = cb =>
   setInterval(async () => {
     const usage = await si.currentLoad();

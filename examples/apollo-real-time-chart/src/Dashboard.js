@@ -3,17 +3,17 @@ import { Subscription, graphql, compose } from 'react-apollo';
 
 // Material-UI
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 
 // Lattice
 
-import { getPlatformInfo, cpuUpdated, memoryUpdated, psUpdated } from './stores/stat';
+import { getPlatformInfo, cpuUpdated, memoryUpdated, psUpdated, disksUpdated } from './stores/stat';
 import CPUUsage from './components/CPUUsage';
 import MemoryUsage from './components/MemoryUsage';
 import ProcessUsage from './components/ProcessUsage';
 import OSInfo from './components/OSInfo';
 import CPUInfo from './components/CPUInfo';
+import DisksUsage from './components/DisksUsage';
 
 // Custom Style
 const styles = theme => ({
@@ -46,7 +46,9 @@ class Dashboard extends Component {
           <Grid container justify="center" spacing={16}>
             <Grid item xs={8} className={classes.height400}>
               <Subscription subscription={cpuUpdated}>
-                {({ data = {}, loading }) => <CPUUsage data={data.cpuUpdated} loading={loading} />}
+                {({ data = {}, loading }) => (
+                  <CPUUsage data={data.cpuUpdated} loading={loading} cores={platformInfo.cpuCores} />
+                )}
               </Subscription>
             </Grid>
             <Grid item xs={4} className={classes.height400}>
@@ -70,7 +72,9 @@ class Dashboard extends Component {
               </Subscription>
             </Grid>
             <Grid item xs={3} className={classes.height300}>
-              <Paper>test</Paper>
+              <Subscription subscription={disksUpdated}>
+                {({ data = {}, loading }) => <DisksUsage data={data.disksUpdated} loading={loading} />}
+              </Subscription>
             </Grid>
           </Grid>
         </Grid>
