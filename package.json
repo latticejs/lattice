@@ -20,7 +20,7 @@
   "devDependencies": {
     "@storybook/react": "^3.4.6",
     "eslint": "^5.0.1",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^3.0.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react-app": "^3.0.0",
     "husky": "^1.0.0-rc.8",
