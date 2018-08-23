@@ -100,15 +100,12 @@ class App extends Component {
           <Grid item xs={12}>
             <Grid container justify="space-around" spacing={Number('16')}>
               <Grid item>
-                <Widget className={classes.widget} title="Minimal" border="bottom">
+                <Widget className={classes.widget} title="About" border="bottom">
                   <Typography variant="body1">
                     This is a minimal demo with respect to:
-                    <br />
-                    minimal tooling (webpack and babel),
-                    <br />
-                    no react-scripts,
-                    <br />
-                    consuming Lattice packages directly.
+                    <br />- minimal tooling (webpack and babel),
+                    <br />- no react-scripts,
+                    <br />- consuming Lattice packages directly.
                   </Typography>
                 </Widget>
               </Grid>
