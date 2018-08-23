@@ -10,12 +10,13 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@latticejs/widgets": "^1.0.1-alpha.7",
     "@latticejs/mui-recharts": "^1.0.1-alpha.7",
+    "@latticejs/widgets": "^1.0.1-alpha.7",
     "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^2.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "recharts": "^1.1.0",
     "typeface-roboto": "^0.0.54"
   },
   "keywords": [],
