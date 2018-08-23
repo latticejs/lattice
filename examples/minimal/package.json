@@ -1,0 +1,37 @@
+{
+  "name": "minimal",
+  "version": "1.0.1-alpha.7",
+  "description": "A minimal Lattice App",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo 'test'",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@latticejs/widgets": "^1.0.1-alpha.7",
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^2.0.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "typeface-roboto": "^0.0.54"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.17.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  }
+}
