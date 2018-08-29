@@ -6,10 +6,12 @@
     "bootstrap": "lerna bootstrap && lerna run prepublish",
     "clean": "lerna clean --yes",
     "create-react-app": "node tasks/cra.js",
-    "lint": "eslint --cache --ignore-path .gitignore .",
+    "lint": "eslint --cache --ignore-path .npmignore .",
     "lint:fix": "yarn run lint --fix",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:public": "build-storybook -c .storybook -o docs",
     "test": "lerna run test",
+    "prepublishOnly": "yarn run storybook:public",
     "posttest": "yarn lint"
   },
   "husky": {
