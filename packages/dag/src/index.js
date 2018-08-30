@@ -100,11 +100,11 @@ const dagRenderEdgeActions = ({ deleteAction }) => (
 // \\ default render method for edge actions \\
 const dagRenderNodeActions = ({ deleteAction, createEdgeAction }) => (
   <React.Fragment>
-    <IconButton>
-      <DeleteIcon onClick={deleteAction} />
+    <IconButton onClick={deleteAction}>
+      <DeleteIcon />
     </IconButton>
-    <IconButton>
-      <MultilineIcon onClick={createEdgeAction} />
+    <IconButton onClick={createEdgeAction}>
+      <MultilineIcon />
     </IconButton>
   </React.Fragment>
 );
@@ -438,7 +438,6 @@ class Dag extends Component {
 
   createEdge({ event }) {
     event.stopPropagation();
-
     this.setState({
       enableEdgeCreation: true,
       initNode: false,
