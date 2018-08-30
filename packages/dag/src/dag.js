@@ -18,6 +18,7 @@ export const DEFAULTS = {
 
 const updateArrow = (arrow, line, nodeRadius) => {
   const triangleSize = 10;
+  if (typeof line.getPointAtLength !== 'function') return;
 
   const totalLength = line.getTotalLength() - (nodeRadius + 11.5); // yes, 11.5 is a magic number
   const startPoint = line.getPointAtLength(totalLength - triangleSize);
