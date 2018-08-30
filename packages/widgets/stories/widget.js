@@ -26,7 +26,7 @@ const FullViewport = story => <div style={{ height: '100vh', width: '100vw', pad
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.`;
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('widgets/Widget', module)
     .addDecorator(JssDecorator)
     .addDecorator(InGrid)

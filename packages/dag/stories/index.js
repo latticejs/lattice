@@ -2,6 +2,7 @@ import React from 'react';
 import Dag from '../src';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { createGenerateClassName } from '@material-ui/core/styles';
+import { action } from '@storybook/addon-actions';
 
 // Material UI
 import { Paper } from '@material-ui/core';
@@ -70,7 +71,7 @@ const PaperWrap = ({ children }) => (
   </Paper>
 );
 
-export default ({ storiesOf, action, forceReRender }) => {
+export default ({ storiesOf, forceReRender }) => {
   storiesOf('dag/basic', module)
     .addDecorator(JssDecorator)
     .add('no wrapper', () => {

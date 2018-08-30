@@ -100,7 +100,7 @@ class BasicList extends Basic {
   }
 }
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('infinite-list/List', module)
     .addDecorator(JssDecorator)
     .addDecorator(InGrid)

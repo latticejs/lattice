@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { action } from '@storybook/addon-actions';
 
 // Ours
 import Tree from '../src/tree';
@@ -109,7 +110,7 @@ class CustomTree extends Component {
   }
 }
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('tree', module)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
