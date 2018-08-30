@@ -1,8 +1,10 @@
 # Minimal example
 
+![screenshot](screen.png?raw=true "Minimal Demo")
+
 ## How to use
 
-### with clap:
+### With clap
 
 `clap example minimal myMinimalApp`
 
