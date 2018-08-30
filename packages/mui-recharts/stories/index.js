@@ -9,7 +9,7 @@ import { JssDecorator } from './utils.js';
 const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('mui-recharts/axis & tooltips', module)
     .addDecorator(AddResponsive)
     .addDecorator(JssDecorator)

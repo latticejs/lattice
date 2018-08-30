@@ -28,7 +28,7 @@ const Flexed = story => (
 );
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('mui-recharts/basic', module)
     .addDecorator(JssDecorator)
     .addDecorator(Flexed)

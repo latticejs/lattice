@@ -181,7 +181,7 @@ class SearchTable extends Basic {
   }
 }
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('infinite-list/Table', module)
     .addDecorator(JssDecorator)
     .addDecorator(InGrid)

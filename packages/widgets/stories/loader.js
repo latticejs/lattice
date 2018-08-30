@@ -43,7 +43,7 @@ const dynamicProps = () => ({
   fullscreen: boolean('FULLSCREEN', false)
 });
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('widgets/Loader', module)
     .addDecorator(withKnobs)
     .addDecorator(JssDecorator)

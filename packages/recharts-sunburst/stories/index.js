@@ -60,7 +60,7 @@ const JssDecorator = story => (
   </JssProvider>
 );
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('recharts-sunburst', module)
     .addDecorator(AddResponsive)
     .addDecorator(FullViewport)

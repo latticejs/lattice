@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 
 // Material UI
 import Drawer from '@material-ui/core/Drawer';
@@ -31,7 +32,7 @@ const Flexed = story => (
 );
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
-export default ({ storiesOf, action }) => {
+export default ({ storiesOf }) => {
   storiesOf('widgets/SideMenu', module)
     .addDecorator(JssDecorator)
     .addDecorator(InGrid)
