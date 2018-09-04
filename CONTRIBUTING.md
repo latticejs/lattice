@@ -54,23 +54,7 @@ New packages must have a `README.md` file with at least the next main sections:
 If your package includes some component, you can include a [Storybook](https://github.com/storybooks/storybook) to show different usage ways (based on state, props, settings) of the component.
 
 ##### Install 
-If you not have (globally) installed storybook already: 
-```bash
-$ yarn global add @storybook/cli
-```
-
-##### Usage
-Run the following command in your project root to get started with storybook.
-```bash
-$ getstorybook
-```
-
-Example:
-```bash 
-$ cd /path/to/my-package && getstorybook
-```
-
-Here is a [basic slow start](https://storybook.js.org/basics/slow-start-guide/) with some help.
+Here is a [basic start guide](https://storybook.js.org/basics/guide-react/) with help about installing, configuring and running Storybook.
 
 ##### Addons 
 Storybook comes with a set of [Addons](https://storybook.js.org/addons/introduction/) wich can be very usefull to enhance your components stories. 
