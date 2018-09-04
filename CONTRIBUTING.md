@@ -103,7 +103,7 @@ Example:
 
 We are currently using two main testing tools (can be used together if needed):
 
-* [Enzime](http://airbnb.io/enzyme/): (only for React) Test tool for components output.
+* [Enzyme](http://airbnb.io/enzyme/): (only for React) Test tool for components output.
 * [Jest](https://jestjs.io/): Testing toolset. It can be used even to test non-web packages or libraries.
 
 
