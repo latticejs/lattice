@@ -38,6 +38,75 @@ and then run `yarn start` or `yarn build`.
 
 ## Development
 
+### Creating Lattice packages
+
+#### Readme
+New packages must have a `README.md` file with at least the next main sections:
+
+* Package **name** and **description**.
+* **Install**: How to install this package.
+* **Usage**: How to import/run/use this package.
+    * **Example**: Brief example (some code) showing the basics of your package.
+    * **API**: Package settings, methods and configuration.
+* **FAQs** If any. Some troubleshooting is welcome.
+
+#### Storybook
+If your package includes some component, you can include a [Storybook](https://github.com/storybooks/storybook) to show different usage ways (based on state, props, settings) of the component.
+
+##### Install 
+If you not have (globally) installed storybook already: 
+```bash
+$ yarn global add @storybook/cli
+```
+
+##### Usage
+Run the following command in your project root to get started with storybook.
+```bash
+$ getstorybook
+```
+
+Example:
+```bash 
+$ cd /path/to/my-package && getstorybook
+```
+
+Here is a [basic slow start](https://storybook.js.org/basics/slow-start-guide/) with some help.
+
+##### Addons 
+Storybook comes with a set of [Addons](https://storybook.js.org/addons/introduction/) wich can be very usefull to enhance your components stories. 
+
+Some of them:
+* [Actions](https://github.com/storybooks/storybook/tree/release/3.4/addons/actions): Log and inspect events of your component.
+* [Readme](https://github.com/tuchk4/storybook-readme): Adds a readme section.
+* [Notes](https://github.com/storybooks/storybook/tree/release/3.4/addons/notes): Notes tab with support for HTML.
+
+Check out the [Addons full list](https://storybook.js.org/addons/addon-gallery/). 
+
+#### Tests
+**Include tests for your package**. 
+
+1. Create a `test/` folder into your package with all your tests files.
+2. Add a `test` npm script in your `package.json` file.
+
+Example:
+
+`package.json`
+```diff
+    ...
+    "scripts": {
+-        "start": "node index.js"
++        "start": "node index.js",
++        "test": "jest"
+    },
+    ...
+```
+
+We are currently using two main testing tools (can be used together if needed):
+
+* [Enzime](http://airbnb.io/enzyme/): (only for React) Test tool for components output.
+* [Jest](https://jestjs.io/): Testing toolset. It can be used even to test non-web packages or libraries.
+
+
 ### Working in a specific latticejs module
 
 1. Run `cd pacakges/<module>`
