@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withReadme } from 'storybook-readme';
 
 // Material UI
 import Grid from '@material-ui/core/Grid';
@@ -10,7 +9,8 @@ import Paper from '@material-ui/core/Paper';
 import { List, ListItem } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import Readme from '../README.md';
-import { JssDecorator, concatSections } from './utils';
+import { JssDecorator } from './utils';
+import { withReadme } from '@latticejs/utils';
 
 // Decorators
 
@@ -100,6 +100,9 @@ class BasicList extends Basic {
   }
 }
 
+const loadReadmeSections = withReadme(Readme);
+const withReadmeSections = loadReadmeSections(['list', 'scroll-loader']);
+
 export default ({ storiesOf }) => {
   storiesOf('infinite-list/List', module)
     .addDecorator(JssDecorator)
@@ -107,5 +110,5 @@ export default ({ storiesOf }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', withReadme(concatSections(Readme, ['list', 'scroll-loader']), () => <BasicList />));
+    .add('basic', withReadmeSections(() => <BasicList />));
 };

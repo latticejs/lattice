@@ -25,6 +25,7 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@latticejs/utils": "file:../utils",
     "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^2.0.0",
     "@storybook/addon-storyshots": "^3.4.5",

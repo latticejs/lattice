@@ -1,0 +1,24 @@
+{
+    "name": "@latticejs/utils",
+    "version": "1.0.1-alpha.7",
+    "description": "Set of utils libraries used by @lattice projects.",
+    "repository": "latticejs/utils",
+    "license": "MIT",
+    "main": "dist/utils.cjs.js",
+    "module": "dist/utils.esm.js",
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -c -w"
+    },
+    "files": [
+        "dist"
+    ],
+    "devDependencies": {
+        "rollup": "^0.65.1",
+        "rollup-plugin-terser": "^2.0.2"
+    },
+    "peerDependencies": {
+        "storybook-readme": "^4.0.0-beta1"
+    },
+    "private": true
+}
