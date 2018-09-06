@@ -22,7 +22,7 @@
     "@material-ui/core": "^3.0.0",
     "@material-ui/icons": "^2.0.0",
     "react": "^16.5.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.5.0"
   },
   "devDependencies": {
     "@latticejs/storybook-readme": "^1.0.1-alpha.9",
@@ -51,7 +51,7 @@
     "jest": "^23.1.0",
     "markdown-loader-jest": "^0.1.1",
     "react": "^16.5.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.5.0",
     "react-jss": "^8.6.1",
     "react-test-renderer": "^16.4.0",
     "rollup": "^0.65.0",
