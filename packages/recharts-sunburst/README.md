@@ -98,9 +98,52 @@ const data = [
 ];
 ```
 
+<!-- start:api -->
 ## API
 
-// TBD
+### dataKey
+
+> `string` | defaults to `value`
+
+Key used to reference data into `data` prop.
+
+### nameKey
+
+> `string` | defaults to `name`
+
+Key used to reference names into `data` prop.
+
+### isAnimationActive
+
+> `boolean` | defaults to `false`
+
+Indicates wether to animate the sunburst.
+
+### isUpdateAnimationActive
+
+> `boolean` | defaults to `false`
+
+Indicates wether to animate the sunburst on data update.
+
+### animationBegin
+
+> `number` | defaults to `0`
+
+Animation delay time.
+
+### animationDuration
+
+> `number` | defaults to `600`
+
+Animation duration.
+
+### animationEasing
+
+> `string` | defaults to `ease-out`
+
+Animation timing function.
+
+<!-- end:api -->
 
 
 ## FAQs
