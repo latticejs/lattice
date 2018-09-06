@@ -9,6 +9,3 @@ module.exports = {
   plugins: [production && terser()],
   external: ['storybook-readme']
 };
-
-// `npm run build` -> `production` is true
-// `npm run dev` -> `production` is false

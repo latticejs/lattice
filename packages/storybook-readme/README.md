@@ -1,5 +1,5 @@
-# @latticejs/utils
-Private set of libraries/functions to be used within @latticejs packages.
+# @latticejs/storybook-readme
+Private set of storybook readme addon helpers to be used within @latticejs packages.
 
 ## Api
 * [`withReadme`](#withReadme)
@@ -19,7 +19,7 @@ You must include the tags `<!-- start:section_name -->` and `<!-- end:section_na
 
 To load some sections of your readme:
 ```jsx
-import { withReadme } from '@latticejs/utils';
+import { withReadme } from '@latticejs/storybook-readme';
 import Readme from 'path/to/your/README.md';
 
 const loadSections = withReadme(Readme);
@@ -39,7 +39,7 @@ export default ({ storiesOf }) => {
 
 To load all the content of Readme:
 ```jsx
-import { withReadme } from '@latticejs/utils';
+import { withReadme } from '@latticejs/storybook-readme';
 import Readme from 'path/to/your/README.md';
 
 const withAllReadme = withReadme(Readme);

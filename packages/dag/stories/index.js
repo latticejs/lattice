@@ -11,7 +11,7 @@ import { Paper } from '@material-ui/core';
 
 // Decorators
 import muiTheme from '../.storybook/decorator-material-ui';
-import { withReadme } from '@latticejs/utils';
+import { withReadme } from '@latticejs/storybook-readme';
 
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 const JssDecorator = story => (

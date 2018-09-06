@@ -11,7 +11,7 @@ import { Table, TableBody, TableHead, TableRow, TableCell, TableOrderCell, Table
 import muiTheme from '../.storybook/decorator-material-ui';
 import Readme from '../README.md';
 import { JssDecorator } from './utils';
-import { withReadme } from '@latticejs/utils';
+import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
 

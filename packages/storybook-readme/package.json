@@ -1,11 +1,11 @@
 {
-    "name": "@latticejs/utils",
+    "name": "@latticejs/storybook-readme",
     "version": "1.0.1-alpha.7",
-    "description": "Set of utils libraries used by @lattice projects.",
-    "repository": "latticejs/utils",
+    "description": "Storybook readme addon helpers.",
+    "repository": "latticejs/storybook-readme",
     "license": "MIT",
-    "main": "dist/utils.cjs.js",
-    "module": "dist/utils.esm.js",
+    "main": "dist/storybook-readme.cjs.js",
+    "module": "dist/storybook-readme.esm.js",
     "scripts": {
         "build": "rollup -c",
         "dev": "rollup -c -w",
@@ -18,15 +18,12 @@
     "devDependencies": {
         "rollup": "^0.65.1",
         "rollup-plugin-terser": "^2.0.2",
-        "jest": "^23.5.0",
-        "babel-jest": "^23.4.2"
+        "jest": "^23.5.0"
     },
     "peerDependencies": {
         "storybook-readme": "^4.0.0-beta1"
     },
-    "private": true,
     "jest": {
-        "verbose": true,
         "roots": [
           "<rootDir>/src/",
           "<rootDir>/test/"
