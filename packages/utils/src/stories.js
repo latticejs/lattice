@@ -1,6 +1,3 @@
-// import React from 'react';
-// import JssProvider from 'react-jss/lib/JssProvider';
-// import { createGenerateClassName } from '@material-ui/core/styles';
 import { withReadme as withReadmeBase } from 'storybook-readme';
 
 const getSection = (html, id) => {
@@ -13,9 +10,11 @@ const concatSections = (html, sections = []) => {
   return sections.map(id => getSection(html, id)).join('');
 };
 
-export const withReadme = readme => {
+export const withReadme = (readme = '') => {
   return (sections = []) => {
+    // Return final storybook readme HOC if not sections provided
     if (typeof sections === 'function') {
+      // sections = a component
       return withReadmeBase(readme, sections);
     }
 
@@ -28,14 +27,3 @@ export const withReadme = readme => {
     };
   };
 };
-
-// module.exports.JssDecorator = story => (
-//   <JssProvider
-//     generateClassName={createGenerateClassName({
-//       dangerouslyUseGlobalCSS: true,
-//       productionPrefix: 'c'
-//     })}
-//   >
-//     {story()}
-//   </JssProvider>
-// );

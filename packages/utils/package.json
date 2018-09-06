@@ -8,17 +8,28 @@
     "module": "dist/utils.esm.js",
     "scripts": {
         "build": "rollup -c",
-        "dev": "rollup -c -w"
+        "dev": "rollup -c -w",
+        "test": "jest",
+        "pretest": "npm run build"
     },
     "files": [
         "dist"
     ],
     "devDependencies": {
         "rollup": "^0.65.1",
-        "rollup-plugin-terser": "^2.0.2"
+        "rollup-plugin-terser": "^2.0.2",
+        "jest": "^23.5.0",
+        "babel-jest": "^23.4.2"
     },
     "peerDependencies": {
         "storybook-readme": "^4.0.0-beta1"
     },
-    "private": true
+    "private": true,
+    "jest": {
+        "verbose": true,
+        "roots": [
+          "<rootDir>/src/",
+          "<rootDir>/test/"
+        ]
+    }
 }
