@@ -47,6 +47,7 @@ class App extends Component {
 }
 ```
 
+<!-- start:loader-api -->
 ### API
 
 #### loader
@@ -72,6 +73,7 @@ Used to indicate the content to be displayed after the loader.
 > `boolean` | defaults to `false`
 
 Used to indicate if the loader needs to be resizer to the entire screen (100vh x 100vw)
+<!-- end:loader-api -->
 
 ## <a name="sidemenu"></a>SideMenu
 
@@ -108,6 +110,7 @@ class App extends Component {
 }
 ```
 
+<!-- start:sidemenu-api -->
 ### API
 
 #### navigation
@@ -139,8 +142,10 @@ Used to indicate component's width.
 > `number` | defaults to `80`
 
 Used to indicate component's min width.
+<!-- end:sidemenu-api -->
 
 ## <a name="widget"></a>Widget
+
 
 ### Usage
 
@@ -159,6 +164,7 @@ class App extends Component {
 }
 ```
 
+<!-- start:widget-api -->
 ### API
 
 #### title
@@ -191,7 +197,7 @@ Used to indicate if the widget should display a themed border. Values can be: `t
 > `object` | defaults to `undefined`
 
 Used to pass a JSS object for overwriting top or bottom style.
-
+<!-- end:widget-api -->
 
 ## FAQs
 

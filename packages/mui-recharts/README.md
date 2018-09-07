@@ -64,11 +64,12 @@ export class BasicLineChart extends React.Component {
 }
 
 ```
-
+<!-- start:api -->
 ## API
+**mui-recharts** exports same API configuration as [recharts](http://recharts.org).
 
-// TBD
-
+<a href="http://recharts.org/#/en-US/api" target="_blank">Refer to the official API</a>
+<!-- end:api -->
 
 ## FAQs
 

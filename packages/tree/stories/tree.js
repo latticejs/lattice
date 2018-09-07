@@ -4,6 +4,8 @@ import { action } from '@storybook/addon-actions';
 // Ours
 import Tree from '../src/tree';
 import muiTheme from '../.storybook/decorator-material-ui';
+import { withReadme } from '@latticejs/storybook-readme';
+import Readme from '../README.md';
 
 const Flexed = story => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
@@ -110,23 +112,32 @@ class CustomTree extends Component {
   }
 }
 
+const loadReadmeSections = withReadme(Readme);
+const withApiReadme = loadReadmeSections(['api']);
+
 export default ({ storiesOf }) => {
   storiesOf('tree', module)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', () => (
-      <BasicTree
-        onCheckItem={action('checkItem')}
-        onFoldItem={action('onFoldItem')}
-        onUnfoldItem={action('onUnfoldItem')}
-      />
-    ))
-    .add('customized', () => (
-      <CustomTree
-        onCheckItem={action('checkItem')}
-        onFoldItem={action('onFoldItem')}
-        onUnfoldItem={action('onUnfoldItem')}
-      />
-    ));
+    .add(
+      'basic',
+      withApiReadme(() => (
+        <BasicTree
+          onCheckItem={action('checkItem')}
+          onFoldItem={action('onFoldItem')}
+          onUnfoldItem={action('onUnfoldItem')}
+        />
+      ))
+    )
+    .add(
+      'customized',
+      withApiReadme(() => (
+        <CustomTree
+          onCheckItem={action('checkItem')}
+          onFoldItem={action('onFoldItem')}
+          onUnfoldItem={action('onUnfoldItem')}
+        />
+      ))
+    );
 };

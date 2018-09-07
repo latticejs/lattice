@@ -1,14 +1,18 @@
 import React from 'react';
-import Dag from '../src';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { createGenerateClassName } from '@material-ui/core/styles';
 import { action } from '@storybook/addon-actions';
+
+import Dag from '../src';
+import Readme from '../README.md';
 
 // Material UI
 import { Paper } from '@material-ui/core';
 
 // Decorators
 import muiTheme from '../.storybook/decorator-material-ui';
+import { withReadme } from '@latticejs/storybook-readme';
+
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 const JssDecorator = story => (
   <JssProvider
@@ -71,58 +75,73 @@ const PaperWrap = ({ children }) => (
   </Paper>
 );
 
+const loadReadmeSections = withReadme(Readme);
+const withApiReadme = loadReadmeSections(['api']);
+
 export default ({ storiesOf, forceReRender }) => {
   storiesOf('dag/basic', module)
     .addDecorator(JssDecorator)
-    .add('no wrapper', () => {
-      // TODO(dk): parse real pkg json deps.
-      return (
-        <Dag
-          onClick={action('clicked')}
-          onEdgeClick={action('onEdgeClick')}
-          onNodeClick={action('onNodeClick')}
-          {...getProps()}
-        />
-      );
-    })
-    .add('editable mode', () => {
-      return (
-        <Dag
-          editable={true}
-          onEdgeAdded={action('onEdgeAdded')}
-          onNodeAdded={action('onNodeAdded')}
-          onEdgeRemoved={action('onEdgeRemoved')}
-          onNodeRemoved={action('onNodeRemoved')}
-          {...getProps()}
-        />
-      );
-    });
+    .add(
+      'no wrapper',
+      withApiReadme(() => {
+        // TODO(dk): parse real pkg json deps.
+        return (
+          <Dag
+            onClick={action('clicked')}
+            onEdgeClick={action('onEdgeClick')}
+            onNodeClick={action('onNodeClick')}
+            {...getProps()}
+          />
+        );
+      })
+    )
+    .add(
+      'editable mode',
+      withApiReadme(() => {
+        return (
+          <Dag
+            editable={true}
+            onEdgeAdded={action('onEdgeAdded')}
+            onNodeAdded={action('onNodeAdded')}
+            onEdgeRemoved={action('onEdgeRemoved')}
+            onNodeRemoved={action('onNodeRemoved')}
+            {...getProps()}
+          />
+        );
+      })
+    );
 
   storiesOf('dag/themed', module)
     .addDecorator(JssDecorator)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('paper wrapper (light)', () => {
-      // TODO(dk): parse pkg json deps.
-      const props = getProps();
-      return (
-        <PaperWrap>
-          <Dag onClick={action('clicked')} {...props} />
-        </PaperWrap>
-      );
-    });
+    .add(
+      'paper wrapper (light)',
+      withApiReadme(() => {
+        // TODO(dk): parse pkg json deps.
+        const props = getProps();
+        return (
+          <PaperWrap>
+            <Dag onClick={action('clicked')} {...props} />
+          </PaperWrap>
+        );
+      })
+    );
 
   storiesOf('dag/themed', module)
     .addDecorator(JssDecorator)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
-    .add('paper wrapper (dark)', () => {
-      // TODO(dk): parse pkg json deps.
-      const props = getProps();
-      return (
-        <PaperWrap>
-          <Dag onClick={action('clicked')} {...props} />
-        </PaperWrap>
-      );
-    });
+    .add(
+      'paper wrapper (dark)',
+      withApiReadme(() => {
+        // TODO(dk): parse pkg json deps.
+        const props = getProps();
+        return (
+          <PaperWrap>
+            <Dag onClick={action('clicked')} {...props} />
+          </PaperWrap>
+        );
+      })
+    );
 };

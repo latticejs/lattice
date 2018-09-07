@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withReadme } from 'storybook-readme';
 
 // Material UI
 import Grid from '@material-ui/core/Grid';
@@ -11,7 +10,8 @@ import Input from '@material-ui/core/Input';
 import { Table, TableBody, TableHead, TableRow, TableCell, TableOrderCell, TableSearchCell } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import Readme from '../README.md';
-import { JssDecorator, concatSections } from './utils';
+import { JssDecorator } from './utils';
+import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
 
@@ -181,6 +181,11 @@ class SearchTable extends Basic {
   }
 }
 
+const loadReadmeSections = withReadme(Readme);
+const withReadmeForBasic = loadReadmeSections(['table', 'table-body', 'scroll-loader']);
+const withReadmeForOrder = loadReadmeSections(['table-order-cell']);
+const withReadmeForSearch = loadReadmeSections(['table-search-cell']);
+
 export default ({ storiesOf }) => {
   storiesOf('infinite-list/Table', module)
     .addDecorator(JssDecorator)
@@ -188,7 +193,7 @@ export default ({ storiesOf }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', withReadme(concatSections(Readme, ['table', 'table-body', 'scroll-loader']), () => <BasicTable />))
-    .add('order', withReadme(concatSections(Readme, ['table-order-cell']), () => <OrderTable />))
-    .add('search', withReadme(concatSections(Readme, ['table-search-cell']), () => <SearchTable />));
+    .add('basic', withReadmeForBasic(() => <BasicTable />))
+    .add('order', withReadmeForOrder(() => <OrderTable />))
+    .add('search', withReadmeForSearch(() => <SearchTable />));
 };

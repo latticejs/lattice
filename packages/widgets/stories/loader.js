@@ -13,9 +13,10 @@ import purple from '@material-ui/core/colors/purple';
 import { Loader } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { JssDecorator } from './utils';
+import Readme from '../README.md';
+import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
-
 const InGrid = story => (
   <Grid container>
     <Grid item xs={12}>
@@ -43,25 +44,36 @@ const dynamicProps = () => ({
   fullscreen: boolean('FULLSCREEN', false)
 });
 
+const withApiReadme = withReadme(Readme)(['loader-api']);
+
 export default ({ storiesOf }) => {
   storiesOf('widgets/Loader', module)
     .addDecorator(withKnobs)
     .addDecorator(JssDecorator)
     .addDecorator(InGrid)
     .addDecorator(muiTheme())
-    .add('circular', () => (
-      <Loader {...dynamicProps()}>
-        <Loaded />
-      </Loader>
-    ))
-    .add('linear', () => (
-      <Loader {...dynamicProps()} component="linear">
-        <Loaded />
-      </Loader>
-    ))
-    .add('custom', () => (
-      <Loader {...dynamicProps()} component={() => <CircularProgress style={{ color: purple[500] }} thickness={7} />}>
-        <Loaded />
-      </Loader>
-    ));
+    .add(
+      'circular',
+      withApiReadme(() => (
+        <Loader {...dynamicProps()}>
+          <Loaded />
+        </Loader>
+      ))
+    )
+    .add(
+      'linear',
+      withApiReadme(() => (
+        <Loader {...dynamicProps()} component="linear">
+          <Loaded />
+        </Loader>
+      ))
+    )
+    .add(
+      'custom',
+      withApiReadme(() => (
+        <Loader {...dynamicProps()} component={() => <CircularProgress style={{ color: purple[500] }} thickness={7} />}>
+          <Loaded />
+        </Loader>
+      ))
+    );
 };

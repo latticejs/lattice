@@ -16,6 +16,8 @@ import PeopleIcon from '@material-ui/icons/People';
 import { SideMenu } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { JssDecorator } from './utils';
+import Readme from '../README.md';
+import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
 
@@ -32,6 +34,8 @@ const Flexed = story => (
 );
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
+const withApiReadme = withReadme(Readme)(['sidemenu-api']);
+
 export default ({ storiesOf }) => {
   storiesOf('widgets/SideMenu', module)
     .addDecorator(JssDecorator)
@@ -39,36 +43,45 @@ export default ({ storiesOf }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', () => (
-      <Styled>
-        {classes => <SideMenu navigation={navigation} className={classes.flexed} onItemClick={action('click')} />}
-      </Styled>
-    ))
-    .add('selected', () => (
-      <Styled>
-        {classes => (
-          <SideMenu
-            navigation={navigation}
-            activeRoute={navigation[0]}
-            className={classes.flexed}
-            onItemClick={action('click')}
-          />
-        )}
-      </Styled>
-    ))
-    .add('mini selected', () => (
-      <Styled>
-        {classes => (
-          <SideMenu
-            mini
-            navigation={navigation}
-            activeRoute={navigation[0]}
-            className={classes.flexed}
-            onItemClick={action('click')}
-          />
-        )}
-      </Styled>
-    ));
+    .add(
+      'basic',
+      withApiReadme(() => (
+        <Styled>
+          {classes => <SideMenu navigation={navigation} className={classes.flexed} onItemClick={action('click')} />}
+        </Styled>
+      ))
+    )
+    .add(
+      'selected',
+      withApiReadme(() => (
+        <Styled>
+          {classes => (
+            <SideMenu
+              navigation={navigation}
+              activeRoute={navigation[0]}
+              className={classes.flexed}
+              onItemClick={action('click')}
+            />
+          )}
+        </Styled>
+      ))
+    )
+    .add(
+      'mini selected',
+      withApiReadme(() => (
+        <Styled>
+          {classes => (
+            <SideMenu
+              mini
+              navigation={navigation}
+              activeRoute={navigation[0]}
+              className={classes.flexed}
+              onItemClick={action('click')}
+            />
+          )}
+        </Styled>
+      ))
+    );
 };
 
 const styles = theme => ({
