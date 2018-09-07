@@ -24,6 +24,7 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@latticejs/storybook-readme": "1.0.1-alpha.7",
     "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^2.0.0",
     "@storybook/addon-knobs": "^3.4.8",
@@ -70,7 +71,11 @@
       "./test/shim.js"
     ],
     "setupTestFrameworkScriptFile": "./setupTest.js",
-    "testURL": "http://localhost"
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      "^.+\\.md?$": "markdown-loader-jest"
+    }
   },
   "publishConfig": {
     "access": "public"
