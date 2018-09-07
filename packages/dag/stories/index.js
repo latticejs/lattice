@@ -2,6 +2,7 @@ import React from 'react';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { createGenerateClassName } from '@material-ui/core/styles';
 import { action } from '@storybook/addon-actions';
+import { State, Store } from '@sambego/storybook-state';
 
 import Dag from '../src';
 import Readme from '../README.md';
@@ -78,6 +79,8 @@ const PaperWrap = ({ children }) => (
 const loadReadmeSections = withReadme(Readme);
 const withApiReadme = loadReadmeSections(['api']);
 
+let props = new Store({ ...getProps() });
+
 export default ({ storiesOf, forceReRender }) => {
   storiesOf('dag/basic', module)
     .addDecorator(JssDecorator)
@@ -94,22 +97,41 @@ export default ({ storiesOf, forceReRender }) => {
           />
         );
       })
-    )
-    .add(
-      'editable mode',
-      withApiReadme(() => {
-        return (
+    );
+
+  storiesOf('dag/advanced', module).add(
+    'editable mode 2',
+    withApiReadme(() => {
+      const addNode = node => {
+        node.fx = node.x;
+        node.fy = node.y;
+        const nodes = [...props.get('nodes'), node];
+        props.set({ nodes });
+      };
+      const addEdge = edge => {
+        const edges = [...props.get('edges'), edge];
+        props.set({ edges });
+      };
+      const removeNode = ({ nodes, edges }) => {
+        props.set({ nodes, edges });
+      };
+      const removeEdge = edges => {
+        props.set({ edges });
+      };
+      return (
+        <State store={props}>
           <Dag
             editable={true}
-            onEdgeAdded={action('onEdgeAdded')}
-            onNodeAdded={action('onNodeAdded')}
-            onEdgeRemoved={action('onEdgeRemoved')}
-            onNodeRemoved={action('onNodeRemoved')}
-            {...getProps()}
+            onNodeAdded={addNode}
+            onEdgeAdded={addEdge}
+            onNodeRemoved={removeNode}
+            onEdgeRemoved={removeEdge}
+            {...props}
           />
-        );
-      })
-    );
+        </State>
+      );
+    })
+  );
 
   storiesOf('dag/themed', module)
     .addDecorator(JssDecorator)
