@@ -49,7 +49,9 @@ export default class DagCore {
       nodeRadius: initialState.nodeRadius,
       height: initialState.height,
       width: initialState.width,
-      nodes: initialState.nodes
+      nodes: initialState.nodes,
+      edges: initialState.edges,
+      getNodeIdx: props.getNodeIdx
     };
 
     this.props = props;
@@ -135,6 +137,42 @@ export default class DagCore {
     });
   }
 
+  restartGraph({ nodes, edges }) {
+    this.linesCache = [];
+    this.state.nodes = nodes;
+    this.state.edges = edges;
+
+    this.simulation = forceSimulation(nodes)
+      .force(
+        'charge',
+        forceManyBody()
+          .strength(`-${this.state.nodeRadius}`)
+          .distanceMax(0)
+      )
+      .force(
+        'link',
+        forceLink(edges)
+          .id(this.state.getNodeIdx)
+          .distance(this.state.nodeRadius)
+          .strength(1)
+      )
+      .force(
+        'collide',
+        forceCollide()
+          .radius(this.state.nodeRadius * 1.4)
+          .strength(1)
+      )
+      .force('center', forceCenter(this.state.width / 2, this.state.height / 2));
+
+    this.setDragMode();
+    this.setZoomMode();
+    console.log('restartGraph simulation nodes', this.simulation.nodes());
+    this.simulation.on('tick', () => this.updateGraph());
+    const iterations = Math.pow(16, 2); // 16 === magic number
+    for (let i = iterations; i > 0; --i) this.simulation.tick();
+    this.cacheLines();
+  }
+
   updateGraph() {
     const { nodeRadius } = this.state;
     const that = this;
@@ -162,9 +200,9 @@ export default class DagCore {
   }
 
   destroyGraph() {
-    this.svg.selectAll('line').remove();
-    this.svg.selectAll('g.node').remove();
-    //this.simulation.stop();
+    this.nodes().remove();
+    this.edges().remove();
+    this.simulation.stop();
   }
 
   nodes() {
