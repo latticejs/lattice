@@ -1263,6 +1263,12 @@
     node-fetch "^2.1.1"
     url-template "^2.0.8"
 
+"@sambego/storybook-state@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@sambego/storybook-state/-/storybook-state-1.2.0.tgz#861bf76a35413d49d434e1dfddaad0f82ded815d"
+  dependencies:
+    uuid "^3.1.0"
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
