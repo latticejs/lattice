@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
-import Widget from './Widget';
+import { Widget } from '@latticejs/widgets';
 import { ResponsiveContainer, LineChart, Line, YAxis, Legend, Tooltip } from '@latticejs/mui-recharts';
 import { Loader } from '@latticejs/widgets';
 
@@ -29,7 +29,7 @@ function CPUUsage({ data, loading, classes, cores }) {
   }
 
   return (
-    <Widget title="CPU Usage" className={classes.root}>
+    <Widget title="CPU Usage" classes={classes}>
       <Loader loading={loading}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={parsedData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
