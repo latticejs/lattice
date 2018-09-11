@@ -100,7 +100,7 @@ export default ({ storiesOf, forceReRender }) => {
     );
 
   storiesOf('dag/advanced', module).add(
-    'editable mode 2',
+    'editable mode',
     withApiReadme(() => {
       const addNode = node => {
         node.fx = node.x;
