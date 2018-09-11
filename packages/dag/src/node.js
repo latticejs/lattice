@@ -64,12 +64,6 @@ export default class Node extends Component {
       .call(updateNode);
   }
 
-  componentWillUnmount() {
-    select(this.node)
-      .exit()
-      .remove();
-  }
-
   updateLabelBounds = () => {
     var rect = this.label.getBoundingClientRect();
     this.setState({
