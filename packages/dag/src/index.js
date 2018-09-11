@@ -143,12 +143,38 @@ class Dag extends Component {
       nodePanel: false,
       nodePanelIdx: undefined,
       edgePanelIdx: undefined,
-      panelPosition: {}
+      panelPosition: {},
+      gnodes: JSON.parse(JSON.stringify(props.nodes)),
+      gedges: JSON.parse(JSON.stringify(props.edges))
     };
+    // Note (dk): above gnodes and gedges are part of the state only to make things "easier" to understand.
+    // These properties are owned by d3.
+  }
 
-    // deep copy nodes and edges, d3 will work with this.
-    this.gnodes = JSON.parse(JSON.stringify(props.nodes));
-    this.gedges = JSON.parse(JSON.stringify(props.edges));
+  static getDerivedStateFromProps(props, state) {
+    if (state.gnodes.length !== props.nodes.length || state.gedges.length !== props.edges.length) {
+      const gnodes = JSON.parse(
+        JSON.stringify(
+          props.nodes.map((n, idx) => {
+            const mergeNode = state.gnodes.find(gn => gn.title === n.title);
+            if (mergeNode) {
+              // Note (dk): this is to maintain d3-managed elements positions
+              return { ...n, ...mergeNode };
+            }
+            return n;
+          })
+        )
+      );
+
+      const gedges = JSON.parse(JSON.stringify(props.edges));
+
+      return {
+        ...state,
+        gnodes,
+        gedges
+      };
+    }
+    return null; // no changes
   }
 
   resetEditableState(e) {
@@ -192,8 +218,8 @@ class Dag extends Component {
       height,
       classes,
       nodeRadius,
-      nodes: [...this.gnodes],
-      edges: [...this.gedges]
+      nodes: [...this.state.gnodes],
+      edges: [...this.state.gedges]
     };
     this.dagcore = new DagCore(this.root, params, { getNodeIdx: this.props.getNodeIdx });
   }
@@ -202,8 +228,8 @@ class Dag extends Component {
     if (prevProps.nodes.length === this.props.nodes.length && prevProps.edges.length === this.props.edges.length) {
       return;
     }
-    // NOTE (dk): gnodes and gedges are updated before render (on shouldComponentUpdate step)
-    this.dagcore.restartGraph({ nodes: this.gnodes, edges: this.gedges });
+    // NOTE (dk): gnodes and gedges are updated before render (getDerivedStateFromProps step)
+    this.dagcore.restartGraph({ nodes: this.state.gnodes, edges: this.state.gedges });
   }
 
   componentWillUnmount() {
@@ -218,22 +244,6 @@ class Dag extends Component {
     const newNodeReadyGoingOn = !this.state.newNodeReady && newNodeReady;
     const newNodeReadyGoingOff = !newNodeReadyGoingOn;
 
-    if (nextProps.nodes.length !== this.props.nodes.length || nextProps.edges.length !== this.props.edges.length) {
-      // Update deep copied nodes and edges, d3 will work with this.
-      this.gnodes = JSON.parse(
-        JSON.stringify(
-          nextProps.nodes.map(n => {
-            const mergeNode = this.gnodes.find(gn => gn.title === n.title);
-            if (mergeNode) {
-              // Note (dk): this is done to maintain d3-managed elements positions
-              return { ...n, ...mergeNode };
-            }
-            return n;
-          })
-        )
-      );
-      this.gedges = JSON.parse(JSON.stringify(nextProps.edges));
-    }
     // allow re-render when newNodeReady
     if (editable && newNodeReadyGoingOn) return true;
 
@@ -493,11 +503,11 @@ class Dag extends Component {
 
     const rootClasses = [classes.root];
     // NODES
-    const nodes = this.gnodes.map((node, i) => {
+    const nodes = this.state.gnodes.map((node, i) => {
       return (
         <Node
           idx={getNodeIdx(node)}
-          key={`node-${i}`}
+          key={`node-${getNodeIdx(node)}`}
           nodeRadius={nodeRadius}
           data={node}
           classes={classes}
@@ -516,7 +526,7 @@ class Dag extends Component {
     });
 
     // EDGES
-    const edges = this.gedges.map((edge, i) => {
+    const edges = this.state.gedges.map((edge, i) => {
       return (
         <Edge
           key={`dag__edge-${i}`}
