@@ -1,7 +1,7 @@
 import { select, selectAll, event } from 'd3-selection';
 import { drag } from 'd3-drag';
 import { zoom } from 'd3-zoom';
-import { forceSimulation, forceCollide, forceCenter, forceLink, forceManyBody } from 'd3-force';
+import { forceSimulation, forceCollide, forceCenter, forceLink, forceManyBody, forceX, forceY } from 'd3-force';
 
 export const DEFAULTS = {
   selectedNodeClass: 'dag__node-selected',
@@ -50,14 +50,12 @@ export default class DagCore {
       height: initialState.height,
       width: initialState.width,
       nodes: initialState.nodes,
-      edges: initialState.edges,
-      getNodeIdx: props.getNodeIdx
+      edges: initialState.edges
     };
 
     this.props = props;
 
     this.d3root = root;
-    this.linesCache = [];
 
     this.createGraph({
       root,
@@ -96,10 +94,13 @@ export default class DagCore {
           .radius(nodeRadius * 1.4)
           .strength(1)
       )
-      .force('center', forceCenter(width / 2, height / 2));
+      .force('center', forceCenter(width / 2, height / 2))
+      .force('forceX', forceX(10))
+      .force('forceY', forceY(10));
 
     this.setZoomMode();
     this.setDragMode();
+    this.cacheLines();
     this.simulation.on('tick', () => this.updateGraph());
     // Note (dk): here we are doing some custom and limited iterations
     // to the graph. The graph iterates calling the tick fn every 300ms or so.
@@ -108,7 +109,6 @@ export default class DagCore {
     // moving. The effect is noticed when the graph is mounted (on creation)
     const iterations = Math.pow(16, 2); // 16 === magic number
     for (let i = iterations; i > 0; --i) this.simulation.tick();
-    this.cacheLines();
   }
   // \\ drag functions \\
   dragstarted(d) {
@@ -129,7 +129,8 @@ export default class DagCore {
 
   cacheLines() {
     const that = this;
-    if (this.linesCache.length) return;
+    that.linesCache = [];
+    //if (this.linesCache.length > 0) return;
     selectAll(`.${DEFAULTS.arrowClass}`).each(function() {
       if (!that.linesCache[this.id]) {
         that.linesCache[this.id] = this.parentNode.querySelector('line');
@@ -138,7 +139,6 @@ export default class DagCore {
   }
 
   restartGraph({ nodes, edges }) {
-    this.linesCache = [];
     this.state.nodes = nodes;
     this.state.edges = edges;
 
@@ -152,7 +152,7 @@ export default class DagCore {
       .force(
         'link',
         forceLink(edges)
-          .id(this.state.getNodeIdx)
+          .id(this.props.getNodeIdx)
           .distance(this.state.nodeRadius)
           .strength(1)
       )
@@ -166,11 +166,11 @@ export default class DagCore {
 
     this.setDragMode();
     this.setZoomMode();
-    console.log('restartGraph simulation nodes', this.simulation.nodes());
+
+    this.cacheLines();
     this.simulation.on('tick', () => this.updateGraph());
     const iterations = Math.pow(16, 2); // 16 === magic number
     for (let i = iterations; i > 0; --i) this.simulation.tick();
-    this.cacheLines();
   }
 
   updateGraph() {
@@ -185,8 +185,11 @@ export default class DagCore {
 
     // add arrow heads using a polygon
     selectAll(`.${DEFAULTS.arrowClass}`).each(function() {
-      updateArrow(this, that.linesCache[this.id], nodeRadius);
+      if (that.linesCache[this.id]) {
+        updateArrow(this, that.linesCache[this.id], nodeRadius);
+      }
     });
+
     // move nodes
     selectAll(`.${DagCore.DEFAULTS.nodeClass}`).attr('transform', d => {
       d.fx = d.x;
@@ -200,8 +203,6 @@ export default class DagCore {
   }
 
   destroyGraph() {
-    this.nodes().remove();
-    this.edges().remove();
     this.simulation.stop();
   }
 
@@ -210,7 +211,7 @@ export default class DagCore {
   }
 
   edges() {
-    return selectAll(`.${DagCore.DEFAULTS.linkClass}`);
+    return selectAll(`line`);
   }
 
   graph() {
