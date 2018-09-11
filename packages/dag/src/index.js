@@ -143,12 +143,38 @@ class Dag extends Component {
       nodePanel: false,
       nodePanelIdx: undefined,
       edgePanelIdx: undefined,
-      panelPosition: {}
+      panelPosition: {},
+      gnodes: JSON.parse(JSON.stringify(props.nodes)),
+      gedges: JSON.parse(JSON.stringify(props.edges))
     };
+    // Note (dk): above gnodes and gedges are part of the state only to make things "easier" to understand.
+    // These properties are owned by d3.
+  }
 
-    // deep copy nodes and edges, d3 will work with this.
-    this.gnodes = JSON.parse(JSON.stringify(props.nodes));
-    this.gedges = JSON.parse(JSON.stringify(props.edges));
+  static getDerivedStateFromProps(props, state) {
+    if (state.gnodes.length !== props.nodes.length || state.gedges.length !== props.edges.length) {
+      const gnodes = JSON.parse(
+        JSON.stringify(
+          props.nodes.map((n, idx) => {
+            const mergeNode = state.gnodes.find(gn => gn.title === n.title);
+            if (mergeNode) {
+              // Note (dk): this is to maintain d3-managed elements positions
+              return { ...n, ...mergeNode };
+            }
+            return n;
+          })
+        )
+      );
+
+      const gedges = JSON.parse(JSON.stringify(props.edges));
+
+      return {
+        ...state,
+        gnodes,
+        gedges
+      };
+    }
+    return null; // no changes
   }
 
   resetEditableState(e) {
@@ -187,13 +213,23 @@ class Dag extends Component {
 
   componentDidMount() {
     const { width, height, classes, nodeRadius } = this.props;
-    const params = Object.assign(
-      {},
-      { width, height, classes, nodeRadius },
-      { nodes: this.gnodes },
-      { edges: this.gedges }
-    );
+    const params = {
+      width,
+      height,
+      classes,
+      nodeRadius,
+      nodes: [...this.state.gnodes],
+      edges: [...this.state.gedges]
+    };
     this.dagcore = new DagCore(this.root, params, { getNodeIdx: this.props.getNodeIdx });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.nodes.length === this.props.nodes.length && prevProps.edges.length === this.props.edges.length) {
+      return;
+    }
+    // NOTE (dk): gnodes and gedges are updated before render (getDerivedStateFromProps step)
+    this.dagcore.restartGraph({ nodes: this.state.gnodes, edges: this.state.gedges });
   }
 
   componentWillUnmount() {
@@ -412,23 +448,28 @@ class Dag extends Component {
 
   deleteNode({ event, idx }) {
     event.stopPropagation();
-    const { onNodeRemoved, nodes } = this.props;
+    const { onNodeRemoved, nodes, edges } = this.props;
+    const keyIdx = nodes.findIndex(n => n.title === idx);
     let start = 0;
     let pivotA = 1;
     let pivotB = 1;
     let end = nodes.length;
 
-    if (start === idx) {
+    if (start === keyIdx) {
       start = pivotA;
-    } else if (end === idx) {
-      end = idx - 1;
+    } else if (end === keyIdx) {
+      end = keyIdx - 1;
     } else {
-      pivotA = idx;
+      pivotA = keyIdx;
       pivotB = pivotA + 1;
     }
 
-    const newNodes = nodes.slice(start, pivotA).concat(nodes.slice(pivotB, end));
-    onNodeRemoved(newNodes);
+    const tmpNodes = [...nodes];
+    const tmpEdges = [...edges];
+    const newNodes = tmpNodes.slice(start, pivotA).concat(tmpNodes.slice(pivotB, end));
+    // also remove edges containing the node
+    const newEdges = tmpEdges.filter(e => e.source !== idx && e.target !== idx);
+    onNodeRemoved({ nodes: newNodes, edges: newEdges });
 
     // close panel
     this.setState({
@@ -461,13 +502,12 @@ class Dag extends Component {
     } = this.props;
 
     const rootClasses = [classes.root];
-
     // NODES
-    const nodes = this.gnodes.map((node, i) => {
+    const nodes = this.state.gnodes.map((node, i) => {
       return (
         <Node
           idx={getNodeIdx(node)}
-          key={`node-${i}`}
+          key={`node-${getNodeIdx(node)}`}
           nodeRadius={nodeRadius}
           data={node}
           classes={classes}
@@ -486,7 +526,7 @@ class Dag extends Component {
     });
 
     // EDGES
-    const edges = this.gedges.map((edge, i) => {
+    const edges = this.state.gedges.map((edge, i) => {
       return (
         <Edge
           key={`dag__edge-${i}`}
@@ -524,6 +564,7 @@ class Dag extends Component {
             {this.state.newNodeReady && (
               <Node
                 key={Date.now()}
+                idx={getNodeIdx({ title: 'new' })}
                 nodeRadius={nodeRadius}
                 data={{ x: this.state.newNode.x, y: this.state.newNode.y }}
                 classes={this.props.classes}
