@@ -20,10 +20,10 @@ exports[`Storyshots infinite-list/List basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1 MuiGrid-spacing-xs-24-25"
+      className="MuiGrid-container-01 MuiGrid-spacing-xs-24-025"
     >
       <div
-        className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+        className="MuiGrid-item-02 MuiGrid-grid-xs-12-041"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
@@ -172,10 +172,10 @@ exports[`Storyshots infinite-list/Table basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-98 MuiGrid-spacing-xs-24-122"
+      className="MuiGrid-container-098 MuiGrid-spacing-xs-24-0122"
     >
       <div
-        className="MuiGrid-item-99 MuiGrid-grid-xs-12-138"
+        className="MuiGrid-item-099 MuiGrid-grid-xs-12-0138"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
@@ -353,10 +353,10 @@ exports[`Storyshots infinite-list/Table order 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-195 MuiGrid-spacing-xs-24-219"
+      className="MuiGrid-container-0195 MuiGrid-spacing-xs-24-0219"
     >
       <div
-        className="MuiGrid-item-196 MuiGrid-grid-xs-12-235"
+        className="MuiGrid-item-0196 MuiGrid-grid-xs-12-0235"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
@@ -391,8 +391,8 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                     onKeyDown={[Function]}
                     onKeyUp={[Function]}
                     onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
                     onMouseUp={[Function]}
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
@@ -428,8 +428,8 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                     onKeyDown={[Function]}
                     onKeyUp={[Function]}
                     onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
                     onMouseUp={[Function]}
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
@@ -502,10 +502,10 @@ exports[`Storyshots infinite-list/Table search 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-292 MuiGrid-spacing-xs-24-316"
+      className="MuiGrid-container-0292 MuiGrid-spacing-xs-24-0316"
     >
       <div
-        className="MuiGrid-item-293 MuiGrid-grid-xs-12-332"
+        className="MuiGrid-item-0293 MuiGrid-grid-xs-12-0332"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
