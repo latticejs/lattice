@@ -20,14 +20,14 @@
   },
   "peerDependencies": {
     "@material-ui/core": "^1.0.0",
-    "@material-ui/icons": "^2.0.0",
+    "@material-ui/icons": "^3.0.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@latticejs/storybook-readme": "^1.0.1-alpha.7",
     "@material-ui/core": "^1.0.0",
-    "@material-ui/icons": "^2.0.0",
+    "@material-ui/icons": "^3.0.1",
     "@storybook/addon-storyshots": "^3.4.5",
     "@storybook/react": "^3.4.5",
     "@taskr/babel": "^1.1.0",
