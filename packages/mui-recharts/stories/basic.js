@@ -21,6 +21,8 @@ import {
 } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { JssDecorator } from './utils.js';
+import Readme from '../README.md';
+import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
 const Flexed = story => (
@@ -28,20 +30,22 @@ const Flexed = story => (
 );
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
-export default ({ storiesOf, action }) => {
+const withApiReadme = withReadme(Readme)(['api']);
+
+export default ({ storiesOf }) => {
   storiesOf('mui-recharts/basic', module)
     .addDecorator(JssDecorator)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('Basic charts (light)', () => <BasicCharts />);
+    .add('Basic charts (light)', withApiReadme(() => <BasicCharts />));
 
   storiesOf('mui-recharts/basic', module)
     .addDecorator(JssDecorator)
     .addDecorator(Flexed)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
-    .add('Basic charts (dark)', () => <BasicCharts />);
+    .add('Basic charts (dark)', withApiReadme(() => <BasicCharts />));
 };
 
 // Components

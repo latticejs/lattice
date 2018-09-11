@@ -1,8 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 
-import Widget from './Widget';
+import { Widget } from '@latticejs/widgets';
 import { ResponsiveContainer, AreaChart, Area, YAxis, Legend, Tooltip } from '@latticejs/mui-recharts';
 import { Loader } from '@latticejs/widgets';
 
@@ -23,7 +22,7 @@ function DiskUsage({ data, loading, classes }) {
   }
 
   return (
-    <Widget title="Disk IO" className={classNames(classes.root, classes.initial)}>
+    <Widget title="Disk IO" classes={classes}>
       <Loader loading={loading}>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={parsedData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>

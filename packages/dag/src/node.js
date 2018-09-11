@@ -52,14 +52,16 @@ export default class Node extends Component {
   }
 
   componentDidMount() {
-    this.d3Node = select(this.node)
+    select(this.node)
       .datum(this.props.data)
       .call(selection => enterNode(selection, { ...this.props, onTextChange: this.onTextChange }));
     this.updateLabelBounds();
   }
 
   componentDidUpdate() {
-    this.d3Node.datum(this.props.data).call(updateNode);
+    select(this.node)
+      .datum(this.props.data)
+      .call(updateNode);
   }
 
   updateLabelBounds = () => {

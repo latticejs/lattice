@@ -4,29 +4,33 @@ import React from 'react';
 import { AreaChart, BarChart, LineChart, Area, Bar, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { JssDecorator } from './utils.js';
+import Readme from '../README.md';
+import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
 const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
-export default ({ storiesOf, action }) => {
+const withApiReadme = withReadme(Readme)(['api']);
+
+export default ({ storiesOf }) => {
   storiesOf('mui-recharts/axis & tooltips', module)
     .addDecorator(AddResponsive)
     .addDecorator(JssDecorator)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('Area (light)', () => <AreaChartBasic />)
-    .add('Bar (light)', () => <BarChartBasic />)
-    .add('Line (light)', () => <LineChartBasic />);
+    .add('Area (light)', withApiReadme(() => <AreaChartBasic />))
+    .add('Bar (light)', withApiReadme(() => <BarChartBasic />))
+    .add('Line (light)', withApiReadme(() => <LineChartBasic />));
 
   storiesOf('mui-recharts/axis & tooltips', module)
     .addDecorator(AddResponsive)
     .addDecorator(JssDecorator)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
-    .add('Area (dark)', () => <AreaChartBasic />)
-    .add('Bar (dark)', () => <BarChartBasic />)
-    .add('Line (dark)', () => <LineChartBasic />);
+    .add('Area (dark)', withApiReadme(() => <AreaChartBasic />))
+    .add('Bar (dark)', withApiReadme(() => <BarChartBasic />))
+    .add('Line (dark)', withApiReadme(() => <LineChartBasic />));
 };
 
 const data = [

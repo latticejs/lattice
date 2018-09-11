@@ -2,6 +2,8 @@ import React from 'react';
 import { Tooltip, ResponsiveContainer } from 'recharts';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { createGenerateClassName } from '@material-ui/core/styles';
+import Readme from '../README.md';
+import { withReadme } from '@latticejs/storybook-readme';
 
 // Ours
 import Sunburst from '../src';
@@ -60,19 +62,28 @@ const JssDecorator = story => (
   </JssProvider>
 );
 
-export default ({ storiesOf, action }) => {
+const withApiReadme = withReadme(Readme)(['api']);
+
+export default ({ storiesOf }) => {
   storiesOf('recharts-sunburst', module)
     .addDecorator(AddResponsive)
     .addDecorator(FullViewport)
     .addDecorator(JssDecorator)
-    .add('basic sunburst', () => <Sunburst data={data} dataKey="size" fill="#8884d8" />)
-    .add('basic sunburst animated', () => <Sunburst data={data} dataKey="size" fill="#8884d8" isAnimationActive />)
-    .add('with customized colors', () => (
-      <Sunburst data={data} colors={colors} dataKey="size" nameKey="name" fill="#8884d8" />
-    ))
-    .add('with tooltip', () => (
-      <Sunburst data={data} dataKey="size" nameKey="name">
-        <Tooltip />
-      </Sunburst>
-    ));
+    .add('basic sunburst', withApiReadme(() => <Sunburst data={data} dataKey="size" fill="#8884d8" />))
+    .add(
+      'basic sunburst animated',
+      withApiReadme(() => <Sunburst data={data} dataKey="size" fill="#8884d8" isAnimationActive />)
+    )
+    .add(
+      'with customized colors',
+      withApiReadme(() => <Sunburst data={data} colors={colors} dataKey="size" nameKey="name" fill="#8884d8" />)
+    )
+    .add(
+      'with tooltip',
+      withApiReadme(() => (
+        <Sunburst data={data} dataKey="size" nameKey="name">
+          <Tooltip />
+        </Sunburst>
+      ))
+    );
 };

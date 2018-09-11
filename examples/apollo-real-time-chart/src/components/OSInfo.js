@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-import Widget from './Widget';
+import { Widget } from '@latticejs/widgets';
 
 const styles = theme => ({
   root: {
@@ -14,7 +14,7 @@ const styles = theme => ({
 
 function OSInfo({ data, classes }) {
   return (
-    <Widget title="Platform" className={classes.root}>
+    <Widget title="Platform" classes={classes}>
       <Grid container justify="center" alignItems="center" direction="column" spacing={16}>
         <Grid item>
           <Typography variant="display2">{data.osName}</Typography>

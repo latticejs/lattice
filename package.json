@@ -6,10 +6,12 @@
     "bootstrap": "lerna bootstrap && lerna run prepublish",
     "clean": "lerna clean --yes",
     "create-react-app": "node tasks/cra.js",
-    "lint": "eslint --cache --ignore-path .gitignore .",
+    "lint": "eslint --cache --ignore-path .npmignore .",
     "lint:fix": "yarn run lint --fix",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:public": "build-storybook -c .storybook -o docs",
     "test": "lerna run test",
+    "prepublishOnly": "yarn run storybook:public",
     "posttest": "yarn lint"
   },
   "husky": {
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.4.6",
+    "@storybook/addon-actions": "^3.4.10",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.0",
@@ -26,7 +29,7 @@
     "husky": "^1.0.0-rc.8",
     "lerna": "^3.1.2",
     "prettier": "^1.13.4",
-    "storybook-readme": "^3.3.0"
+    "storybook-readme": "^4.0.0-beta1"
   },
   "workspaces": {
     "packages": [

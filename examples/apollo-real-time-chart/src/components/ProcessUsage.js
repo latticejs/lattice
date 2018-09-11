@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Badge from '@material-ui/core/Badge';
 
-import Widget from './Widget';
+import { Widget } from '@latticejs/widgets';
 import { Pie, PieChart, Cell } from '@latticejs/mui-recharts';
 import { Loader } from '@latticejs/widgets';
 
@@ -58,7 +58,7 @@ function ProcessUsage({ data, loading, classes }) {
   }
 
   return (
-    <Widget title="Top 10 Process" className={classes.root} classes={{ content: classes.content }}>
+    <Widget title="Top 10 Process" classes={{ content: classes.content, root: classes.root }}>
       <Loader loading={loading}>
         <Table>
           <TableHead>

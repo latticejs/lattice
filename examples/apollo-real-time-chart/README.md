@@ -1,6 +1,8 @@
 # Apollo real-time charts
 > Dashboard create-react-app example using graphql subscriptions with apollo and @latticejs/mui-recharts
 
+![screenshot](screen.png?raw=true "Apollo Real-Time Demo")
+
 ## Features
 
 * graphql-yoga subscriptions server example

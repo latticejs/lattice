@@ -8,6 +8,7 @@ A directed graph component based on d3.
 npm install @latticejs/dag
 ```
 
+
 ## Usage
 
 The graph will expect nodes and edges as input. 
@@ -48,7 +49,7 @@ export class MyGraph extends React.Component {
 
 :arrow_right: Also, take a look to the `dag` stories.
 
-
+<!-- start:api -->
 ## API
 
 ### editable
@@ -108,6 +109,8 @@ When remove-node-action is executed this cb function will be called with a copy 
 Used to remove selected edge. On `editable` mode, click on an edge opens a _panel_ for trigger specific component actions, ie: remove element, etc.
 
 When remove-edge-action is executed this cb function will be called with a copy of input `edges` **excluding** selected edge.
+
+<!-- end:api -->
 
 ## FAQs
 

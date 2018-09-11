@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots dag/basic editable mode 1`] = `
+exports[`Storyshots dag/advanced editable mode 1`] = `
 <div
   style={
     Object {

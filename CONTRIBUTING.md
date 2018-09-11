@@ -38,6 +38,59 @@ and then run `yarn start` or `yarn build`.
 
 ## Development
 
+### Creating Lattice packages
+
+#### Readme
+New packages must have a `README.md` file with at least the next main sections:
+
+* Package **name** and **description**.
+* **Install**: How to install this package.
+* **Usage**: How to import/run/use this package.
+    * **Example**: Brief example (some code) showing the basics of your package.
+    * **API**: Package settings, methods and configuration.
+* **FAQs** If any. Some troubleshooting is welcome.
+
+#### Storybook
+If your package includes some component, you can include a [Storybook](https://github.com/storybooks/storybook) to show different usage ways (based on state, props, settings) of the component.
+
+##### Install 
+Here is a [basic start guide](https://storybook.js.org/basics/guide-react/) with help about installing, configuring and running Storybook.
+
+##### Addons 
+Storybook comes with a set of [Addons](https://storybook.js.org/addons/introduction/) wich can be very usefull to enhance your components stories. 
+
+Some of them:
+* [Actions](https://github.com/storybooks/storybook/tree/release/3.4/addons/actions): Log and inspect events of your component.
+* [Readme](https://github.com/tuchk4/storybook-readme): Adds a readme section.
+* [Notes](https://github.com/storybooks/storybook/tree/release/3.4/addons/notes): Notes tab with support for HTML.
+
+Check out the [Addons full list](https://storybook.js.org/addons/addon-gallery/). 
+
+#### Tests
+**Include tests for your package**. 
+
+1. Create a `test/` folder into your package with all your tests files.
+2. Add a `test` npm script in your `package.json` file.
+
+Example:
+
+`package.json`
+```diff
+    ...
+    "scripts": {
+-        "start": "node index.js"
++        "start": "node index.js",
++        "test": "jest"
+    },
+    ...
+```
+
+We are currently using two main testing tools (can be used together if needed):
+
+* [Enzyme](http://airbnb.io/enzyme/): (only for React) Test tool for components output.
+* [Jest](https://jestjs.io/): Testing toolset. It can be used even to test non-web packages or libraries.
+
+
 ### Working in a specific latticejs module
 
 1. Run `cd pacakges/<module>`

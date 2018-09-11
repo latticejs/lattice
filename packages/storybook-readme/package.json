@@ -1,0 +1,32 @@
+{
+    "name": "@latticejs/storybook-readme",
+    "version": "1.0.1-alpha.7",
+    "description": "Storybook readme addon helpers.",
+    "repository": "latticejs/storybook-readme",
+    "license": "MIT",
+    "main": "dist/storybook-readme.cjs.js",
+    "module": "dist/storybook-readme.esm.js",
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -c -w",
+        "test": "jest",
+        "pretest": "npm run build"
+    },
+    "files": [
+        "dist"
+    ],
+    "devDependencies": {
+        "rollup": "^0.65.1",
+        "rollup-plugin-terser": "^2.0.2",
+        "jest": "^23.5.0"
+    },
+    "peerDependencies": {
+        "storybook-readme": "^4.0.0-beta1"
+    },
+    "jest": {
+        "roots": [
+          "<rootDir>/src/",
+          "<rootDir>/test/"
+        ]
+    }
+}

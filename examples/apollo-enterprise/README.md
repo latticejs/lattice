@@ -1,6 +1,8 @@
 # Enterprise Demo Example
 > Dashboard create-react-app example using the entire suite of @latticejs components and integrated with the Apollo tools.
 
+![screenshot](screen.png?raw=true "Apollo Enterprise Demo")
+
 ## Features
 
 * Graphql server on top of `apollo-yoga` with the permissions middleware `apollo-shield` and `lowdb` as the database.

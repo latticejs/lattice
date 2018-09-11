@@ -3,8 +3,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-
-import Widget from './Widget';
+import { Widget } from '@latticejs/widgets';
 
 const styles = theme => ({
   root: {
@@ -14,7 +13,7 @@ const styles = theme => ({
 
 function CPUInfo({ data, classes }) {
   return (
-    <Widget title="CPU Info" className={classes.root}>
+    <Widget title="CPU Info" classes={classes}>
       <Grid container justify="center" alignItems="center" direction="column" spacing={8}>
         <Grid item>
           <Typography variant="body1">
