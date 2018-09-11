@@ -79,7 +79,7 @@ const PaperWrap = ({ children }) => (
 const loadReadmeSections = withReadme(Readme);
 const withApiReadme = loadReadmeSections(['api']);
 
-let props = new Store({ ...getProps() });
+const props = new Store({ ...getProps() });
 
 export default ({ storiesOf, forceReRender }) => {
   storiesOf('dag/basic', module)
