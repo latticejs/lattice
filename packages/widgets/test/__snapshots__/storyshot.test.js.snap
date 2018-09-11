@@ -763,20 +763,87 @@ exports[`Storyshots widgets/Widget (dark theme) basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-988 MuiGrid-spacing-xs-24-1012"
+      className="MuiGrid-container-1182 MuiGrid-spacing-xs-24-1206"
     >
       <div
-        className="MuiGrid-item-989 MuiGrid-grid-xs-12-1028"
+        className="MuiGrid-item-1183 MuiGrid-grid-xs-12-1222"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-1"
         >
-          <h2
-            className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+          <div
+            className="MuiGrid-container-1182 MuiGrid-direction-xs-column-1185 Widget-container-2"
           >
-            Title
-          </h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            <div
+              className="MuiGrid-item-1183"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                Title
+              </h2>
+            </div>
+            <div
+              className="MuiGrid-container-1182 MuiGrid-item-1183 Widget-content-3"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots widgets/Widget (dark theme) custom height 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-1570 MuiGrid-spacing-xs-24-1594"
+    >
+      <div
+        className="MuiGrid-item-1571 MuiGrid-grid-xs-12-1610"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4"
+        >
+          <div
+            className="MuiGrid-container-1570 MuiGrid-direction-xs-column-1573 Widget-container-5"
+          >
+            <div
+              className="MuiGrid-item-1571"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                Custom content height
+              </h2>
+            </div>
+            <div
+              className="MuiGrid-container-1570 MuiGrid-item-1571 Widget-content-6 Component-content-1"
+            >
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -804,20 +871,85 @@ exports[`Storyshots widgets/Widget (dark theme) featured 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1085 MuiGrid-spacing-xs-24-1109"
+      className="MuiGrid-container-1279 MuiGrid-spacing-xs-24-1303"
     >
       <div
-        className="MuiGrid-item-1086 MuiGrid-grid-xs-12-1125"
+        className="MuiGrid-item-1280 MuiGrid-grid-xs-12-1319"
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-1 Widget-featured-5"
+          className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-1 Widget-featured-7"
         >
-          <h2
-            className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+          <div
+            className="MuiGrid-container-1279 MuiGrid-direction-xs-column-1282 Widget-container-2"
           >
-            Title
-          </h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            <div
+              className="MuiGrid-item-1280"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                Title
+              </h2>
+            </div>
+            <div
+              className="MuiGrid-container-1279 MuiGrid-item-1280 Widget-content-3"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots widgets/Widget (dark theme) squared 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-1473 MuiGrid-spacing-xs-24-1497"
+    >
+      <div
+        className="MuiGrid-item-1474 MuiGrid-grid-xs-12-1513"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-1"
+        >
+          <div
+            className="MuiGrid-container-1473 MuiGrid-direction-xs-column-1476 Widget-container-2"
+          >
+            <div
+              className="MuiGrid-item-1474"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                I have no rounded borders
+              </h2>
+            </div>
+            <div
+              className="MuiGrid-container-1473 MuiGrid-item-1474 Widget-content-3"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -845,68 +977,116 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1182 MuiGrid-spacing-xs-24-1206"
+      className="MuiGrid-container-1376 MuiGrid-spacing-xs-24-1400"
     >
       <div
-        className="MuiGrid-item-1183 MuiGrid-grid-xs-12-1222"
+        className="MuiGrid-item-1377 MuiGrid-grid-xs-12-1416"
       >
         <div
-          className="MuiGrid-container-1182 MuiGrid-spacing-xs-24-1206"
+          className="MuiGrid-container-1376 MuiGrid-spacing-xs-24-1400"
         >
           <div
-            className="MuiGrid-item-1183 MuiGrid-grid-xs-6-1216"
+            className="MuiGrid-item-1377 MuiGrid-grid-xs-6-1410"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-3 Widget-border-4 Widget-border-top-5"
+              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4 Widget-border-7 Widget-border-top-8"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <div
+                className="MuiGrid-container-1376 MuiGrid-direction-xs-column-1379 Widget-container-5"
               >
-                Border top
-              </h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                <div
+                  className="MuiGrid-item-1377"
+                >
+                  <h2
+                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  >
+                    Border top
+                  </h2>
+                </div>
+                <div
+                  className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content-6"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                </div>
+              </div>
             </div>
           </div>
           <div
-            className="MuiGrid-item-1183 MuiGrid-grid-xs-6-1216"
+            className="MuiGrid-item-1377 MuiGrid-grid-xs-6-1410"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-3 Widget-border-4 Widget-border-bottom-6"
+              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4 Widget-border-7 Widget-border-bottom-9"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <div
+                className="MuiGrid-container-1376 MuiGrid-direction-xs-column-1379 Widget-container-5"
               >
-                Border bottom
-              </h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                <div
+                  className="MuiGrid-item-1377"
+                >
+                  <h2
+                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  >
+                    Border bottom
+                  </h2>
+                </div>
+                <div
+                  className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content-6"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                </div>
+              </div>
             </div>
           </div>
           <div
-            className="MuiGrid-item-1183 MuiGrid-grid-xs-6-1216"
+            className="MuiGrid-item-1377 MuiGrid-grid-xs-6-1410"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-3 Widget-border-4 Component-customTopBorder-1 Widget-border-top-5"
+              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4 Widget-border-7 Component-customTopBorder-2 Widget-border-top-8"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <div
+                className="MuiGrid-container-1376 MuiGrid-direction-xs-column-1379 Widget-container-5"
               >
-                Border top custom
-              </h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                <div
+                  className="MuiGrid-item-1377"
+                >
+                  <h2
+                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  >
+                    Border top custom
+                  </h2>
+                </div>
+                <div
+                  className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content-6"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                </div>
+              </div>
             </div>
           </div>
           <div
-            className="MuiGrid-item-1183 MuiGrid-grid-xs-6-1216"
+            className="MuiGrid-item-1377 MuiGrid-grid-xs-6-1410"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-3 Widget-border-4 Component-customBotomBorder-2 Widget-border-bottom-6"
+              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4 Widget-border-7 Component-customBotomBorder-3 Widget-border-bottom-9"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <div
+                className="MuiGrid-container-1376 MuiGrid-direction-xs-column-1379 Widget-container-5"
               >
-                Border bottom custom
-              </h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                <div
+                  className="MuiGrid-item-1377"
+                >
+                  <h2
+                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  >
+                    Border bottom custom
+                  </h2>
+                </div>
+                <div
+                  className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content-6"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -944,12 +1124,79 @@ exports[`Storyshots widgets/Widget basic 1`] = `
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-1"
         >
-          <h2
-            className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+          <div
+            className="MuiGrid-container-697 MuiGrid-direction-xs-column-700 Widget-container-2"
           >
-            Title
-          </h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            <div
+              className="MuiGrid-item-698"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                Title
+              </h2>
+            </div>
+            <div
+              className="MuiGrid-container-697 MuiGrid-item-698 Widget-content-3"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots widgets/Widget custom height 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-1085 MuiGrid-spacing-xs-24-1109"
+    >
+      <div
+        className="MuiGrid-item-1086 MuiGrid-grid-xs-12-1125"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4"
+        >
+          <div
+            className="MuiGrid-container-1085 MuiGrid-direction-xs-column-1088 Widget-container-5"
+          >
+            <div
+              className="MuiGrid-item-1086"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                Custom content height
+              </h2>
+            </div>
+            <div
+              className="MuiGrid-container-1085 MuiGrid-item-1086 Widget-content-6 Component-content-1"
+            >
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -983,14 +1230,79 @@ exports[`Storyshots widgets/Widget featured 1`] = `
         className="MuiGrid-item-795 MuiGrid-grid-xs-12-834"
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-1 Widget-featured-5"
+          className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-1 Widget-featured-7"
         >
-          <h2
-            className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+          <div
+            className="MuiGrid-container-794 MuiGrid-direction-xs-column-797 Widget-container-2"
           >
-            Title
-          </h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            <div
+              className="MuiGrid-item-795"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                Title
+              </h2>
+            </div>
+            <div
+              className="MuiGrid-container-794 MuiGrid-item-795 Widget-content-3"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots widgets/Widget squared 1`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "padding": 12,
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-container-988 MuiGrid-spacing-xs-24-1012"
+    >
+      <div
+        className="MuiGrid-item-989 MuiGrid-grid-xs-12-1028"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-1"
+        >
+          <div
+            className="MuiGrid-container-988 MuiGrid-direction-xs-column-991 Widget-container-2"
+          >
+            <div
+              className="MuiGrid-item-989"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              >
+                I have no rounded borders
+              </h2>
+            </div>
+            <div
+              className="MuiGrid-container-988 MuiGrid-item-989 Widget-content-3"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1030,56 +1342,104 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
             className="MuiGrid-item-892 MuiGrid-grid-xs-6-925"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-3 Widget-border-4 Widget-border-top-5"
+              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4 Widget-border-7 Widget-border-top-8"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <div
+                className="MuiGrid-container-891 MuiGrid-direction-xs-column-894 Widget-container-5"
               >
-                Border top
-              </h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                <div
+                  className="MuiGrid-item-892"
+                >
+                  <h2
+                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  >
+                    Border top
+                  </h2>
+                </div>
+                <div
+                  className="MuiGrid-container-891 MuiGrid-item-892 Widget-content-6"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                </div>
+              </div>
             </div>
           </div>
           <div
             className="MuiGrid-item-892 MuiGrid-grid-xs-6-925"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-3 Widget-border-4 Widget-border-bottom-6"
+              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4 Widget-border-7 Widget-border-bottom-9"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <div
+                className="MuiGrid-container-891 MuiGrid-direction-xs-column-894 Widget-container-5"
               >
-                Border bottom
-              </h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                <div
+                  className="MuiGrid-item-892"
+                >
+                  <h2
+                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  >
+                    Border bottom
+                  </h2>
+                </div>
+                <div
+                  className="MuiGrid-container-891 MuiGrid-item-892 Widget-content-6"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                </div>
+              </div>
             </div>
           </div>
           <div
             className="MuiGrid-item-892 MuiGrid-grid-xs-6-925"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-3 Widget-border-4 Component-customTopBorder-1 Widget-border-top-5"
+              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4 Widget-border-7 Component-customTopBorder-2 Widget-border-top-8"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <div
+                className="MuiGrid-container-891 MuiGrid-direction-xs-column-894 Widget-container-5"
               >
-                Border top custom
-              </h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                <div
+                  className="MuiGrid-item-892"
+                >
+                  <h2
+                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  >
+                    Border top custom
+                  </h2>
+                </div>
+                <div
+                  className="MuiGrid-container-891 MuiGrid-item-892 Widget-content-6"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                </div>
+              </div>
             </div>
           </div>
           <div
             className="MuiGrid-item-892 MuiGrid-grid-xs-6-925"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-3 Widget-border-4 Component-customBotomBorder-2 Widget-border-bottom-6"
+              className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root-4 Widget-border-7 Component-customBotomBorder-3 Widget-border-bottom-9"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <div
+                className="MuiGrid-container-891 MuiGrid-direction-xs-column-894 Widget-container-5"
               >
-                Border bottom custom
-              </h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                <div
+                  className="MuiGrid-item-892"
+                >
+                  <h2
+                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  >
+                    Border bottom custom
+                  </h2>
+                </div>
+                <div
+                  className="MuiGrid-container-891 MuiGrid-item-892 Widget-content-6"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
+                </div>
+              </div>
             </div>
           </div>
         </div>

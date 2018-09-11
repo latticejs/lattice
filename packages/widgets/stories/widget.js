@@ -30,108 +30,91 @@ const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 
 const withApiReadme = withReadme(Readme)(['widget-api']);
 
-export default ({ storiesOf }) => {
-  storiesOf('widgets/Widget', module)
-    .addDecorator(JssDecorator)
-    .addDecorator(InGrid)
-    .addDecorator(Flexed)
-    .addDecorator(muiTheme())
-    .addDecorator(FullViewport)
-    .add('basic', withApiReadme(() => <Widget title="Title">{lorem}</Widget>))
-    .add(
-      'featured',
-      withApiReadme(() => (
-        <Widget featured title="Title">
-          {lorem}
-        </Widget>
-      ))
-    )
-    .add(
-      'with borders',
-      withApiReadme(({ classes }) => (
-        <Styled>
-          {classes => (
-            <Grid container spacing={24}>
-              <Grid item xs={6}>
-                <Widget title="Border top" border="top">
-                  {lorem}
-                </Widget>
-              </Grid>
-              <Grid item xs={6}>
-                <Widget title="Border bottom" border="bottom">
-                  {lorem}
-                </Widget>
-              </Grid>
-              <Grid item xs={6}>
-                <Widget title="Border top custom" border="top" classes={{ border: classes.customTopBorder }}>
-                  {lorem}
-                </Widget>
-              </Grid>
-              <Grid item xs={6}>
-                <Widget title="Border bottom custom" border="bottom" classes={{ border: classes.customBotomBorder }}>
-                  {lorem}
-                </Widget>
-              </Grid>
-            </Grid>
-          )}
-        </Styled>
-      ))
-    );
+const stories = {
+  basic: () => <Widget title="Title">{lorem}</Widget>,
 
-  storiesOf('widgets/Widget (dark theme)', module)
-    .addDecorator(JssDecorator)
-    .addDecorator(InGrid)
-    .addDecorator(Flexed)
-    .addDecorator(muiTheme({ palette: { type: 'dark' } }))
-    .addDecorator(FullViewport)
-    .add('basic', withApiReadme(() => <Widget title="Title">{lorem}</Widget>))
-    .add(
-      'featured',
-      withApiReadme(() => (
-        <Widget featured title="Title">
-          {lorem}
+  featured: () => (
+    <Widget featured title="Title">
+      {lorem}
+    </Widget>
+  ),
+
+  'with borders': () => (
+    <Styled>
+      {classes => (
+        <Grid container spacing={24}>
+          <Grid item xs={6}>
+            <Widget title="Border top" border="top">
+              {lorem}
+            </Widget>
+          </Grid>
+          <Grid item xs={6}>
+            <Widget title="Border bottom" border="bottom">
+              {lorem}
+            </Widget>
+          </Grid>
+          <Grid item xs={6}>
+            <Widget title="Border top custom" border="top" classes={{ border: classes.customTopBorder }}>
+              {lorem}
+            </Widget>
+          </Grid>
+          <Grid item xs={6}>
+            <Widget title="Border bottom custom" border="bottom" classes={{ border: classes.customBotomBorder }}>
+              {lorem}
+            </Widget>
+          </Grid>
+        </Grid>
+      )}
+    </Styled>
+  ),
+
+  squared: () => (
+    <Widget title="I have no rounded borders" rounded={false}>
+      {lorem}
+    </Widget>
+  ),
+
+  'custom height': ({ classes }) => (
+    <Styled>
+      {classes => (
+        <Widget title="Custom content height" classes={{ content: classes.content }}>
+          <div>{lorem}</div>
         </Widget>
-      ))
-    )
-    .add(
-      'with borders',
-      withApiReadme(({ classes }) => (
-        <Styled>
-          {classes => (
-            <Grid container spacing={24}>
-              <Grid item xs={6}>
-                <Widget title="Border top" border="top">
-                  {lorem}
-                </Widget>
-              </Grid>
-              <Grid item xs={6}>
-                <Widget title="Border bottom" border="bottom">
-                  {lorem}
-                </Widget>
-              </Grid>
-              <Grid item xs={6}>
-                <Widget title="Border top custom" border="top" classes={{ border: classes.customTopBorder }}>
-                  {lorem}
-                </Widget>
-              </Grid>
-              <Grid item xs={6}>
-                <Widget title="Border bottom custom" border="bottom" classes={{ border: classes.customBotomBorder }}>
-                  {lorem}
-                </Widget>
-              </Grid>
-            </Grid>
-          )}
-        </Styled>
-      ))
-    );
+      )}
+    </Styled>
+  )
+};
+
+export default ({ storiesOf }) => {
+  const themes = [
+    { name: 'widgets/Widget' },
+    { name: 'widgets/Widget (dark theme)', theme: { palette: { type: 'dark' } } }
+  ];
+
+  themes.forEach(theme => {
+    const all = storiesOf(theme.name, module)
+      .addDecorator(JssDecorator)
+      .addDecorator(InGrid)
+      .addDecorator(Flexed)
+      .addDecorator(muiTheme(theme.theme))
+      .addDecorator(FullViewport);
+
+    Object.keys(stories).forEach(name => {
+      all.add(name, withApiReadme(stories[name]));
+    });
+  });
 };
 
 const styles = theme => ({
+  content: {
+    height: '300px',
+    'align-items': 'center'
+  },
   customTopBorder: {
     borderColor: 'red'
   },
   customBotomBorder: {
-    borderWidth: 2,
+    borderWidth: 15,
     borderColor: 'green'
   }
 });

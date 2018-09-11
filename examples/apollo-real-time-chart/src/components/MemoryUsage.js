@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 import { ResponsiveContainer, BarChart, Bar, Tooltip, Legend, YAxis } from '@latticejs/mui-recharts';
 import { Loader } from '@latticejs/widgets';
-import Widget from './Widget';
+import { Widget } from '@latticejs/widgets';
 
 const styles = theme => ({
   root: {
@@ -56,7 +56,7 @@ function MemoryUsage({ data, loading, classes }) {
   }
 
   return (
-    <Widget title="Platform" className={classes.root}>
+    <Widget title="Platform" classes={classes}>
       <Loader loading={loading}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={parsedData}>
