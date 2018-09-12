@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/recharts-sunburst",
-  "version": "1.0.1-alpha.8",
+  "version": "1.0.1-alpha.9",
   "license": "MIT",
   "main": "index.js",
   "module": "dist/es/recharts-sunburst.es.js",
@@ -20,7 +20,7 @@
     "recharts": "^1.1.0"
   },
   "devDependencies": {
-    "@latticejs/storybook-readme": "^1.0.1-alpha.8",
+    "@latticejs/storybook-readme": "^1.0.1-alpha.9",
     "@storybook/addon-storyshots": "^3.4.5",
     "@storybook/react": "^3.4.5",
     "@taskr/babel": "^1.1.0",
