@@ -36,6 +36,7 @@ const styles = theme => ({
   },
   dagEdge: {
     stroke: theme.palette.secondary[theme.palette.type],
+    fill: theme.palette.secondary[theme.palette.type],
     transition: 'stroke-width 0.3s ease-in',
     strokeWidth: 2
   },
