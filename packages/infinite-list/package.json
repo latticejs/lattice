@@ -1,7 +1,7 @@
 {
   "name": "@latticejs/infinite-list",
   "description": "A set of material-ui components adapted to support infinite list feature.",
-  "version": "1.0.1-alpha.7",
+  "version": "1.0.1-alpha.8",
   "license": "MIT",
   "main": "index.js",
   "module": "dist/es/infinite-list.es.js",
@@ -25,9 +25,9 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@latticejs/storybook-readme": "^1.0.1-alpha.8",
     "@material-ui/core": "^3.0.0",
     "@material-ui/icons": "^2.0.0",
-    "@latticejs/storybook-readme": "^1.0.1-alpha.7",
     "@storybook/addon-storyshots": "^3.4.5",
     "@storybook/react": "^3.4.5",
     "@taskr/babel": "^1.1.0",
