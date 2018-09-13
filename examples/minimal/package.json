@@ -12,10 +12,10 @@
   "dependencies": {
     "@latticejs/mui-recharts": "^1.0.1-alpha.10",
     "@latticejs/widgets": "^1.0.1-alpha.10",
-    "@material-ui/core": "^1.0.0",
-    "@material-ui/icons": "^2.0.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "@material-ui/core": "^3.0.0",
+    "@material-ui/icons": "^3.0.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
     "recharts": "^1.1.0",
     "typeface-roboto": "^0.0.54"
   },
