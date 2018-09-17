@@ -1,24 +1,9 @@
 const { ApolloServer, gql } = require('apollo-server');
 const search = require('libnpmsearch');
 
-const dummyDependencies = [
-  {
-    name: 'dep1',
-    version: '1.0.0',
-    description: 'sample dep 1',
-    homepage: 'www.example.com'
-  },
-  {
-    name: 'dep2',
-    version: '1.0.1',
-    description: 'sample dep 2',
-    homepage: 'www.example.com'
-  }
-];
-
 const dummyPkg = {
-  name: 'React',
-  dependencies: dummyDependencies
+  name: 'App',
+  dependencies: JSON.stringify({ react: '16.0.0', 'react-dom': '1.0.0' })
 };
 
 const typeDefs = gql`
@@ -31,12 +16,15 @@ const typeDefs = gql`
 
   type Pkg {
     name: String!
-    dependencies: [Dependency]
+    dependencies: String
   }
 
   type Query {
     pkg: Pkg
     dependency(name: String!): [Dependency]
+  }
+  type Mutation {
+    updatePkg(name: String!, dependencies: String!): Pkg
   }
 `;
 
@@ -46,6 +34,13 @@ const resolvers = {
       return search(name, { limit: 5 });
     },
     pkg: async (root, args, context, info) => {
+      return dummyPkg;
+    }
+  },
+  Mutation: {
+    updatePkg: (root, { name, dependencies }) => {
+      dummyPkg.name = name;
+      dummyPkg.dependencies = dependencies;
       return dummyPkg;
     }
   }
