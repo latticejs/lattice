@@ -6,17 +6,23 @@ import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
+import { withStyles } from '@material-ui/core/styles';
 // Material icons
 import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
-
+import NoteAdd from '@material-ui/icons/NoteAdd';
 import 'typeface-roboto';
-
+// GQL
+import { Query, Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
 // Lattice
 import Dag from '@latticejs/dag';
-import Widget from '@latticejs/widgets/Widget';
+import { Widget, Loader } from '@latticejs/widgets';
 
 // Custom Style
 const styles = theme => ({
@@ -26,18 +32,46 @@ const styles = theme => ({
   flex: {
     flexGrow: 1
   },
+  main: {
+    padding: 20
+  },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
     color: theme.palette.primary.contrastText
   },
-  widget: {
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2
+  customBorderNoResults: {
+    borderColor: 'yellow'
+  },
+  customBorderError: {
+    borderColor: 'red'
   },
   link: {
     color: theme.palette.text.secondary
   }
 });
+
+// gql:queries
+
+const QUERY_DEPS = gql`
+  query QueryDeps($name: String!) {
+    dependency(name: $name) {
+      name
+      version
+      description
+    }
+  }
+`;
+
+const UPDATE_DEPS = gql`
+  mutation UpdatePkg($name: String!, $dependencies: String!) {
+    updatePkg(name: $name, dependencies: $dependencies) {
+      name
+      dependencies
+    }
+  }
+`;
+
+// END gql:queries
 
 class App extends Component {
   static defaultProps = {
@@ -46,7 +80,7 @@ class App extends Component {
   };
 
   state = {
-    nodeData: false,
+    userDepName: '',
     results: []
   };
 
@@ -56,14 +90,32 @@ class App extends Component {
   };
 
   newDep = node => {
-    // call parent cb
-    this.props.newNode({
-      title: node.title
+    this.setState({
+      userDepName: node.title
     });
   };
 
+  selectDep = dep => {
+    // call parent cb
+    this.props.newNode({
+      title: dep.name
+    });
+  };
+
+  renderNoResults = () => (
+    <Widget className={[this.props.classes.customBorderNoResults]} border="bottom">
+      No results. :(
+    </Widget>
+  );
+
+  renderError = error => (
+    <Widget className={[this.props.classes.customBorderError]} border="bottom">
+      {error.message}
+    </Widget>
+  );
+
   render() {
-    const { classes, nightMode, pkg, width, height } = this.props;
+    const { classes, nightMode, pkg, width, height, originalPkg } = this.props;
     return (
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
@@ -78,33 +130,77 @@ class App extends Component {
             </Tooltip>
           </Toolbar>
         </AppBar>
-        <Grid container>
-          <Grid item xs={12}>
-            <Grid container justify="space-around" spacing={Number('16')}>
-              <Grid item>
-                <Widget title={pkg.name} className={classes.widget}>
-                  <Dag
-                    editable={true}
-                    width={width}
-                    height={height}
-                    nodes={pkg.data.nodes}
-                    edges={pkg.data.edges}
-                    onNodeAdded={this.newDep}
-                  />
-                </Widget>
-              </Grid>
-              <Grid item>
-                {this.state.nodeData ? (
-                  <Widget title="New dep" featured={true} className={classes.widget}>
-                    {this.state.nodeData.title}
-                  </Widget>
-                ) : (
-                  ''
-                )}
-              </Grid>
+        <div className={classes.main}>
+          <Grid container justify="space-between" alignItems="flex-start" spacing={8}>
+            <Grid item xs={12} md={8} lg={8}>
+              <Widget title={pkg.name}>
+                <Dag
+                  editable={true}
+                  width={width}
+                  height={height}
+                  nodes={pkg.data.nodes}
+                  edges={pkg.data.edges}
+                  onNodeAdded={this.newDep}
+                />
+              </Widget>
+            </Grid>
+            <Grid item xs={12} md={4} lg={4} zeroMinWidth>
+              {this.state.userDepName ? (
+                <Query query={QUERY_DEPS} variables={{ name: this.state.userDepName }}>
+                  {({ loading, error, data }) => {
+                    if (error) return this.renderError(error);
+                    const deps = data && data.dependency ? data.dependency : [];
+                    return (
+                      <Loader loading={loading} component="linear">
+                        <List>
+                          {deps.length ? (
+                            deps.map((dep, i) => (
+                              <Mutation mutation={UPDATE_DEPS} key={i}>
+                                {updatePkg => (
+                                  <ListItem
+                                    button
+                                    key={`npm-dep-${i}`}
+                                    onClick={() => {
+                                      originalPkg.dependencies[dep.name] = dep.version;
+                                      updatePkg({
+                                        variables: {
+                                          name: originalPkg.name,
+                                          dependencies: JSON.stringify(originalPkg.dependencies)
+                                        },
+                                        refetchQueries: [{ query: this.props.refreshQuery }]
+                                      });
+                                      this.setState({
+                                        userDepName: false
+                                      });
+                                    }}
+                                  >
+                                    <ListItemIcon>
+                                      <NoteAdd />
+                                    </ListItemIcon>
+                                    <ListItemText
+                                      primary={`${dep.name} - v${dep.version}`}
+                                      secondary={dep.description}
+                                    />
+                                  </ListItem>
+                                )}
+                              </Mutation>
+                            ))
+                          ) : (
+                            <ListItem>
+                              <ListItemText> No results </ListItemText>
+                            </ListItem>
+                          )}
+                        </List>
+                      </Loader>
+                    );
+                  }}
+                </Query>
+              ) : (
+                ''
+              )}
             </Grid>
           </Grid>
-        </Grid>
+        </div>
       </div>
     );
   }

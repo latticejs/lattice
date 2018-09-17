@@ -3,8 +3,32 @@ import React, { Component } from 'react';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
+// Apollo | gql deps
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider, Query } from 'react-apollo';
+import gql from 'graphql-tag';
+// Lattice
+import { Widget, Loader } from '@latticejs/widgets';
+
 // our App
 import App from './App';
+
+// gql: create the client
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql'
+});
+
+// gql:queries
+const QUERY_PKG = gql`
+  query QueryPkg {
+    pkg {
+      name
+      dependencies
+    }
+  }
+`;
+
+// END gql:queries
 
 export default class Main extends Component {
   constructor(props) {
@@ -37,14 +61,25 @@ export default class Main extends Component {
   };
 
   parsePackage = pkg => {
+    if (!pkg.dependencies) return;
+    const deps = JSON.parse(pkg.dependencies);
     return {
       name: pkg.name,
       data: {
-        nodes: Object.keys(pkg.dependencies)
+        nodes: Object.keys(deps)
           .map(p => ({ title: p }))
           .concat({ title: pkg.name }),
-        edges: Object.keys(pkg.dependencies).map(p => ({ source: pkg.name, target: p }))
+        edges: Object.keys(deps).map(p => ({ source: pkg.name, target: p }))
       }
+    };
+  };
+
+  parseOriginal = pkg => {
+    if (!pkg.dependencies) return;
+    const deps = JSON.parse(pkg.dependencies);
+    return {
+      name: pkg.name,
+      dependencies: deps
     };
   };
 
@@ -60,19 +95,38 @@ export default class Main extends Component {
   };
 
   // END GRAPH CRUD METHODS //
+  renderError = error => (
+    <Widget title="Error" classes={{ borderColor: 'red' }} border="bottom">
+      {error.message}
+    </Widget>
+  );
 
   render() {
     return (
-      <MuiThemeProvider theme={this.createTheme()}>
-        <CssBaseline />
-        <App
-          {...this.props}
-          updateTheme={this.updateTheme}
-          nightMode={this.state.nightMode}
-          pkg={this.parsePackage(this.state.pkg)}
-          newNode={this.newNode}
-        />
-      </MuiThemeProvider>
+      <ApolloProvider client={client}>
+        <MuiThemeProvider theme={this.createTheme()}>
+          <CssBaseline />
+          <Query query={QUERY_PKG}>
+            {({ loading, error, data }) => {
+              if (error) return this.renderError(error);
+              const pkg = data && data.pkg && data.pkg.dependencies ? data.pkg : {};
+              return (
+                <Loader loading={loading} component="linear">
+                  <App
+                    {...this.props}
+                    updateTheme={this.updateTheme}
+                    nightMode={this.state.nightMode}
+                    pkg={this.parsePackage(pkg)}
+                    newNode={this.newNode}
+                    originalPkg={this.parseOriginal(pkg)}
+                    refreshQuery={QUERY_PKG}
+                  />
+                </Loader>
+              );
+            }}
+          </Query>
+        </MuiThemeProvider>
+      </ApolloProvider>
     );
   }
 }
