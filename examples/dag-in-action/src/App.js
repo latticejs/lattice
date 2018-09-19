@@ -50,7 +50,10 @@ const styles = theme => ({
     flex: 1
   },
   footer: {
-    padding: 20
+    paddingTop: 0,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 20
   },
   flexColumnItem: {
     display: 'flex',
