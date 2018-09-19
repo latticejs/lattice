@@ -30,6 +30,7 @@
     "@storybook/addon-actions": "^3.4.10",
     "@storybook/addon-knobs": "^3.4.8",
     "@storybook/addon-storyshots": "^3.4.5",
+    "@storybook/addon-storysource": "^3.4.11",
     "@storybook/react": "^3.4.5",
     "@taskr/babel": "^1.1.0",
     "@taskr/clear": "^1.1.0",
