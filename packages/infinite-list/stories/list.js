@@ -31,12 +31,6 @@ const FullViewport = story => <div style={{ height: '100vh', width: '100vw', pad
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
 class Basic extends Component {
-  static defaultProps = {
-    limit: 10,
-    width: 200,
-    height: 400
-  };
-
   state = {
     items: Array.from(Array(10).keys()).map(v => ({ index: v, title: `title ${v}`, timestamp: Date.now() }))
   };
@@ -59,6 +53,12 @@ class Basic extends Component {
     });
   };
 }
+
+Basic.defaultProps = {
+  limit: 10,
+  width: 200,
+  height: 400
+};
 
 class BasicList extends Basic {
   render() {
