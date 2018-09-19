@@ -23,7 +23,24 @@ const QUERY_PKG = gql`
   query QueryPkg {
     pkg {
       name
+      version
+      description
       dependencies
+      devDependencies
+      scripts
+      author {
+        name
+      }
+      contributors {
+        name
+      }
+      keywords
+      repository {
+        url
+      }
+      bugs {
+        url
+      }
     }
   }
 `;
@@ -34,14 +51,7 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nightMode: false,
-      pkg: {
-        name: 'dummyApp',
-        dependencies: {
-          dep1: 'latest',
-          dep2: '1.0.0'
-        }
-      }
+      nightMode: false
     };
   }
 
@@ -76,11 +86,8 @@ export default class Main extends Component {
 
   parseOriginal = pkg => {
     if (!pkg.dependencies) return;
-    const deps = JSON.parse(pkg.dependencies);
-    return {
-      name: pkg.name,
-      dependencies: deps
-    };
+    pkg.dependencies = JSON.parse(pkg.dependencies);
+    return pkg;
   };
 
   // GRAPH CRUD METHODS //
@@ -96,7 +103,7 @@ export default class Main extends Component {
 
   // END GRAPH CRUD METHODS //
   renderError = error => (
-    <Widget title="Error" classes={{ borderColor: 'red' }} border="bottom">
+    <Widget title="Error" border="bottom">
       {error.message}
     </Widget>
   );
