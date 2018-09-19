@@ -1,7 +1,7 @@
 {
   "name": "dag-in-action",
-  "version": "1.0.1-alpha.7",
   "description": "See the dag in action",
+  "version": "1.0.1-alpha.7",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -21,11 +21,15 @@
     "@material-ui/icons": "^3.0.0",
     "apollo-boost": "^0.1.16",
     "apollo-server": "^2.0.7",
+    "classnames": "^2.2.6",
     "graphql": "^14.0.2",
     "libnpmsearch": "^2.0.0",
     "react": "^16.4.1",
     "react-apollo": "^2.1.11",
+    "react-container-dimensions": "^1.4.1",
     "react-dom": "^16.4.1",
+    "react-dropzone": "^5.1.0",
+    "react-json-view": "^1.19.1",
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
