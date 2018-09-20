@@ -71,7 +71,10 @@ const styles = theme => ({
   columnWidget: {
     display: 'flex',
     flex: 1,
-    overflow: 'scroll'
+    overflow: 'scroll',
+    '& > div': {
+      overflow: 'scroll'
+    }
   },
   columnItemTop: {
     marginBottom: 5
@@ -300,7 +303,12 @@ class App extends Component {
             <Grid item xs={12} md={4} lg={4} zeroMinWidth container direction="column" className={classes.columns}>
               <Grid item className={classnames([classes.flexColumnItem, classes.columnItemTop])}>
                 <Widget title="Exported Pkg" className={classes.columnWidget}>
-                  <ReactJson src={this.parseExport(this.props.originalPkg)} name={false} />
+                  <ReactJson
+                    src={this.parseExport(this.props.originalPkg)}
+                    name={false}
+                    style={{ width: '100%', overflow: 'scroll', backgroundColor: 'transparent' }}
+                    theme={nightMode ? 'tomorrow' : 'rjv-default'}
+                  />
                 </Widget>
               </Grid>
               <Grid item className={classnames([classes.flexColumnItem, classes.columnItemBottom])}>
