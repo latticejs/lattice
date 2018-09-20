@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   module: {
@@ -7,8 +7,9 @@ module.exports = {
         test: /\.jsx?$/,
         include: path.resolve('./stories'),
         loaders: [require.resolve('@storybook/addon-storysource/loader')],
-        enforce: 'pre',
-      },
-    ],
-  },
+        options: { prettierConfig: { parser: 'babylon' } },
+        enforce: 'pre'
+      }
+    ]
+  }
 };
