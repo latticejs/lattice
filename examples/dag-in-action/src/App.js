@@ -117,40 +117,12 @@ const QUERY_DEPS = gql`
 `;
 
 const UPDATE_DEPS = gql`
-  mutation UpdatePkg($pkg: PkgInput!) {
-    updatePkg(pkg: $pkg) {
+  mutation UpdatePkg($name: String!, $version: String, $description: String, $dependencies: String) {
+    updatePkg(name: $name, version: $version, description: $description, dependencies: $dependencies) {
       name
       version
       description
       dependencies
-      devDependencies
-      peerDependencies
-      optionalDependencies
-      bundledDependencies
-      engines
-      os
-      cpu
-      private
-      publishConfig
-      keywords
-      bugs {
-        url
-      }
-      license
-      author {
-        name
-      }
-      contributors {
-        name
-      }
-      files
-      main
-      browser
-      bin
-      repository {
-        url
-      }
-      scripts
     }
   }
 `;
@@ -165,7 +137,8 @@ class App extends Component {
 
   state = {
     userDepName: '',
-    results: []
+    results: [],
+    userPkg: {}
   };
 
   handleNightModeChange = () => {
@@ -209,28 +182,20 @@ class App extends Component {
       const { result } = event.target;
       const pkg = JSON.parse(result);
       pkg.dependencies = JSON.stringify(pkg.dependencies || {});
-      pkg.devDependencies = JSON.stringify(pkg.devDependencies || {});
-      pkg.peerDependencies = JSON.stringify(pkg.peerDependencies || {});
-      pkg.optionalDependencies = JSON.stringify(pkg.optionalDependencies || {});
-      if (pkg.bin) {
-        pkg.bin = JSON.stringify(pkg.bin);
-      }
-      if (pkg.scripts) {
-        pkg.scripts = JSON.stringify(pkg.scripts);
-      }
-      if (pkg.engines) {
-        pkg.engines = JSON.stringify(pkg.engines);
-      }
-      if (pkg.publishConfig) {
-        pkg.publishConfig = JSON.stringify(pkg.publishConfig);
-      }
-      pkg.author = pkg.author || {};
-      pkg.contributors = pkg.contributors || [];
-      pkg.bugs = pkg.bugs || {};
-      pkg.repository = pkg.repository || {};
 
+      // keep original pkg
+      this.setState({
+        userPkg: pkg
+      });
+
+      // run the gql mutation
       updatePkg({
-        variables: { pkg },
+        variables: {
+          name: pkg.name,
+          version: pkg.version,
+          dependencies: pkg.dependencies,
+          description: pkg.description
+        },
         refetchQueries: [{ query: this.props.refreshQuery }]
       });
     };
@@ -243,13 +208,8 @@ class App extends Component {
   };
 
   parseExport = pkg => {
-    const newPkg = JSON.parse(JSON.stringify(pkg));
+    const newPkg = { ...this.state.userPkg, ...pkg };
 
-    Object.keys(newPkg).forEach(key => {
-      if (!newPkg[key]) {
-        delete newPkg[key];
-      }
-    });
     delete newPkg['__typename'];
     return newPkg;
   };
@@ -332,10 +292,8 @@ class App extends Component {
                                           originalPkg.dependencies[dep.name] = dep.version;
                                           updatePkg({
                                             variables: {
-                                              pkg: {
-                                                name: originalPkg.name,
-                                                dependencies: JSON.stringify(originalPkg.dependencies)
-                                              }
+                                              name: originalPkg.name,
+                                              dependencies: JSON.stringify(originalPkg.dependencies)
                                             },
                                             refetchQueries: [{ query: this.props.refreshQuery }]
                                           });

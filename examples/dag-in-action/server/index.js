@@ -17,63 +17,11 @@ const typeDefs = gql`
     homepage: String
   }
 
-  type People {
-    name: String
-    email: String
-    url: String
-  }
-
-  type Repository {
-    url: String
-    email: String
-  }
-
-  type Bugs {
-    url: String
-    email: String
-  }
-
-  input PeopleInput {
-    name: String
-    email: String
-    url: String
-  }
-
-  input RepositoryInput {
-    url: String
-    email: String
-  }
-
-  input BugsInput {
-    url: String
-    email: String
-  }
-
   type Pkg {
     name: String!
     version: String
     description: String
     dependencies: String
-    devDependencies: String
-    peerDependencies: String
-    optionalDependencies: String
-    bundledDependencies: [String]
-    engines: String
-    os: [String]
-    cpu: [String]
-    private: Boolean
-    publishConfig: String
-    keywords: [String]
-    bugs: Bugs
-    license: String
-    author: People
-    contributors: [People]
-    files: [String]
-    main: String
-    browser: String
-    bin: String
-    repository: Repository
-    scripts: String
   }
 
   input PkgInput {
@@ -81,26 +29,6 @@ const typeDefs = gql`
     version: String
     description: String
     dependencies: String
-    devDependencies: String
-    peerDependencies: String
-    optionalDependencies: String
-    bundledDependencies: [String]
-    engines: String
-    os: [String]
-    cpu: [String]
-    private: Boolean
-    publishConfig: String
-    keywords: [String]
-    bugs: BugsInput
-    license: String
-    author: PeopleInput
-    contributors: [PeopleInput]
-    files: [String]
-    main: String
-    browser: String
-    bin: String
-    repository: RepositoryInput
-    scripts: String
   }
 
   type Query {
@@ -108,7 +36,7 @@ const typeDefs = gql`
     dependency(name: String!): [Dependency]
   }
   type Mutation {
-    updatePkg(pkg: PkgInput!): Pkg
+    updatePkg(name: String!, version: String, description: String, dependencies: String): Pkg
   }
 `;
 
@@ -122,8 +50,8 @@ const resolvers = {
     }
   },
   Mutation: {
-    updatePkg: (root, { pkg }) => {
-      dummyPkg = { ...dummyPkg, ...pkg };
+    updatePkg: (root, { name, version, description, dependencies }) => {
+      dummyPkg = { ...dummyPkg, ...{ name }, ...{ version }, ...{ description }, ...{ dependencies } };
       return dummyPkg;
     }
   }

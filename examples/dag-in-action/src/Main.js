@@ -26,21 +26,6 @@ const QUERY_PKG = gql`
       version
       description
       dependencies
-      devDependencies
-      scripts
-      author {
-        name
-      }
-      contributors {
-        name
-      }
-      keywords
-      repository {
-        url
-      }
-      bugs {
-        url
-      }
     }
   }
 `;
