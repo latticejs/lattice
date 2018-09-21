@@ -58,6 +58,18 @@ export class MyGraph extends React.Component {
 
 Indicates if the `dag` can be edited, eg: new edges can be added. This mode endables extra functionality.
 
+### zoomEnable
+
+> `boolean` | defaults to `false`
+
+Used to indicate if graph should be zoomable or not.
+
+### dragEnable
+
+> `boolean` | defaults to `true`
+
+Used to indicate if node drag is enabled or not.
+
 ### onNodeClick
 
 > `function(node: Object)` | defaults to: `noOp`
