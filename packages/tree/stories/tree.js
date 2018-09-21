@@ -6,6 +6,10 @@ import Tree from '../src/tree';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
+import pkg from '../package.json';
+import { JSONIcon } from './json-icons';
+import DeleteIcon from '@material-ui/icons/Delete';
+import { IconButton } from '@material-ui/core';
 
 const Flexed = story => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
@@ -112,6 +116,92 @@ class CustomTree extends Component {
   }
 }
 
+const isString = value => typeof value === 'string';
+const isDate = value => value instanceof Date;
+const isNumber = value => typeof value === 'number';
+const isArray = value => Array.isArray(value);
+const isObject = value => typeof value === 'object';
+
+const getType = value =>
+  isArray(value)
+    ? 'array'
+    : isObject(value)
+      ? 'object'
+      : isString(value)
+        ? 'string'
+        : isDate(value)
+          ? 'date'
+          : isNumber(value)
+            ? 'number'
+            : '';
+
+var transform = input => {
+  if (Array.isArray(input)) {
+    return input.map(key => transform(key));
+  }
+
+  if (typeof input === 'string') {
+    return { label: input, type: 'string' };
+  }
+
+  const result = [];
+
+  for (const key of Object.keys(input)) {
+    const value = input[key];
+    const valueType = getType(value);
+
+    if (['string', 'number', 'date'].includes(valueType)) {
+      result.push({
+        label: `${key}: ${value}`,
+        type: valueType
+      });
+    } else {
+      result.push({ label: key, children: transform(value), type: valueType });
+    }
+  }
+
+  return result;
+};
+
+class JSONTree extends Component {
+  state = {
+    treeData: []
+  };
+
+  customIcon = ({ item, isChild, expanded }) => {
+    return <JSONIcon type={item.type} bold={expanded} />;
+  };
+
+  UNSAFE_componentWillMount() {
+    console.clear();
+  }
+
+  componentDidMount() {
+    this.setState({
+      treeData: transform(pkg)
+    });
+  }
+
+  render() {
+    return (
+      <Tree
+        treeData={this.state.treeData}
+        {...this.props}
+        renderItemIcon={this.customIcon}
+        expandedAll
+        cascadeCheck
+        secondaryActions={[
+          item => (
+            <IconButton aria-label="Delete">
+              <DeleteIcon />
+            </IconButton>
+          )
+        ]}
+      />
+    );
+  }
+}
+
 const loadReadmeSections = withReadme(Readme);
 const withApiReadme = loadReadmeSections(['api']);
 
@@ -139,5 +229,6 @@ export default ({ storiesOf }) => {
           onUnfoldItem={action('onUnfoldItem')}
         />
       ))
-    );
+    )
+    .add('JSON tree', withApiReadme(() => <JSONTree />));
 };
