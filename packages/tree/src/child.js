@@ -60,6 +60,7 @@ export class Item extends Component {
       item = {},
       isChild = false,
       iconItem,
+      showCheck = true,
       isExpanded,
       isChecked,
       cascadeCheck,
@@ -77,22 +78,24 @@ export class Item extends Component {
         onClick={e => this.handleToggleFold({ e, item, toggleFold, lvl })}
       >
         <ListItemIcon>{iconItem({ item, isChild, expanded: isExpanded({ item, lvl }) })}</ListItemIcon>
-        <Checkbox
-          checked={isChecked(getItemKey({ item, lvl }))}
-          onChange={(e, checked) =>
-            this.handleOnCheckItem({
-              e,
-              checked,
-              item,
-              cascadeCheck,
-              onCheckItem,
-              lvl,
-              getItemKey
-            })
-          }
-          tabIndex={-1}
-          disableRipple
-        />
+        {showCheck && (
+          <Checkbox
+            checked={isChecked(getItemKey({ item, lvl }))}
+            onChange={(e, checked) =>
+              this.handleOnCheckItem({
+                e,
+                checked,
+                item,
+                cascadeCheck,
+                onCheckItem,
+                lvl,
+                getItemKey
+              })
+            }
+            tabIndex={-1}
+            disableRipple
+          />
+        )}
         <ListItemText primary={item.label} />
         {secondaryActions ? this.renderSecondaryActions(secondaryActions, item) : ''}
       </ListItem>
@@ -104,6 +107,7 @@ Item.propTypes = {
   item: Types.object,
   isChild: Types.bool,
   iconItem: Types.func,
+  showCheck: Types.bool,
   isExpanded: Types.func,
   isChecked: Types.func,
   cascadeCheck: Types.bool,

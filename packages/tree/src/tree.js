@@ -69,6 +69,7 @@ const renderGenericCreator = ({
   isExpanded,
   isChecked,
   cascadeCheck,
+  showCheck,
   style
 }) => {
   const iterator = (item, isChild = false, lvl = 0) => {
@@ -89,7 +90,8 @@ const renderGenericCreator = ({
         isChecked,
         cascadeCheck,
         toggleFold,
-        getItemKey
+        getItemKey,
+        showCheck
       });
     } else {
       return (
@@ -108,6 +110,7 @@ const renderGenericCreator = ({
           cascadeCheck={cascadeCheck}
           iconItem={iconItem}
           getItemKey={getItemKey}
+          showCheck={showCheck}
         />
       );
     }
@@ -128,6 +131,7 @@ class Tree extends Component {
     onFoldItem: () => {},
     onUnfoldItem: () => {},
     onCheckItem: () => {},
+    showChecks: true,
     expandedAll: false,
     cascadeCheck: false
   };
@@ -156,6 +160,7 @@ class Tree extends Component {
       isExpanded: this.isExpanded,
       isChecked: this.isChecked,
       cascadeCheck: props.cascadeCheck,
+      showCheck: props.showChecks,
       style
     });
   }
@@ -272,6 +277,7 @@ Tree.propTypes = {
   onFoldItem: Types.func,
   onUnfoldItem: Types.func,
   onCheckItem: Types.func,
+  showChecks: Types.bool,
   expandedAll: Types.bool,
   cascadeCheck: Types.bool
 };
