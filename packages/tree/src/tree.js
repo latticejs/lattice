@@ -70,19 +70,21 @@ const renderGenericCreator = ({
   isChecked,
   cascadeCheck,
   showCheck,
+  markUnfoldedParent,
   style
 }) => {
-  const iterator = (item, isChild = false, lvl = 0) => {
+  const iterator = (item, isChild = false, lvl = 0, idx) => {
     lvl = lvl + 1;
+    item.key = `lattice-tree-${idx}-${lvl}`;
     if (item.children) {
       return parentFn({
         item,
-        key: `lattice-tree-${item.label}-${lvl}`,
+        key: item.key,
         childClass: style,
         lvl,
         isChild,
         secondaryActions,
-        childrens: item.children.map(child => iterator(child, true, lvl)),
+        childrens: item.children.map((child, idx) => iterator(child, true, lvl, idx)),
         iconItem,
         expanded,
         isExpanded,
@@ -91,12 +93,13 @@ const renderGenericCreator = ({
         cascadeCheck,
         toggleFold,
         getItemKey,
-        showCheck
+        showCheck,
+        markUnfoldedParent
       });
     } else {
       return (
         <ChildFn
-          key={`lattice-tree-${item.label}-${lvl}`}
+          key={item.key}
           item={item}
           secondaryActions={secondaryActions}
           childClass={style}
@@ -127,13 +130,14 @@ class Tree extends Component {
     renderParentItem: TreeParent,
     renderChildItem: TreeChild,
     renderItemIcon: () => {},
-    getItemKey: ({ item, lvl }) => `lattice-tree-${item.label}-${lvl}`,
+    getItemKey: ({ item }) => item.key,
     onFoldItem: () => {},
     onUnfoldItem: () => {},
     onCheckItem: () => {},
     showChecks: true,
     expandedAll: false,
-    cascadeCheck: false
+    cascadeCheck: false,
+    markUnfoldedParent: false
   };
 
   constructor(props) {
@@ -161,6 +165,7 @@ class Tree extends Component {
       isChecked: this.isChecked,
       cascadeCheck: props.cascadeCheck,
       showCheck: props.showChecks,
+      markUnfoldedParent: props.markUnfoldedParent,
       style
     });
   }
@@ -251,7 +256,7 @@ class Tree extends Component {
       <Grid container spacing={16}>
         <Grid item xs={12} md={12} className={classNames('tree-wrapper', rootClasses)}>
           <List component="div" disablePadding>
-            {treeData.map(datum => this.renderGenericItem(datum, false, 0))}
+            {treeData.map((datum, idx) => this.renderGenericItem(datum, false, 0, idx))}
           </List>
         </Grid>
       </Grid>
@@ -261,7 +266,7 @@ class Tree extends Component {
 
 // \ Prop Types \
 let treeDataNode = Types.shape({
-  label: Types.string.isRequired
+  label: Types.oneOfType([Types.element, Types.string]).isRequired
 });
 
 treeDataNode.children = Types.arrayOf(treeDataNode);
@@ -278,6 +283,7 @@ Tree.propTypes = {
   onUnfoldItem: Types.func,
   onCheckItem: Types.func,
   showChecks: Types.bool,
+  markUnfoldedParent: Types.bool,
   expandedAll: Types.bool,
   cascadeCheck: Types.bool
 };

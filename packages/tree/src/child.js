@@ -68,7 +68,8 @@ export class Item extends Component {
       toggleFold,
       secondaryActions,
       lvl,
-      getItemKey
+      getItemKey,
+      markUnfoldedParent = false
     } = this.props;
 
     return (
@@ -76,6 +77,7 @@ export class Item extends Component {
         key={getItemKey({ item, lvl })}
         button
         onClick={e => this.handleToggleFold({ e, item, toggleFold, lvl })}
+        selected={markUnfoldedParent && isExpanded({ item, lvl })}
       >
         <ListItemIcon>{iconItem({ item, isChild, expanded: isExpanded({ item, lvl }) })}</ListItemIcon>
         {showCheck && (
