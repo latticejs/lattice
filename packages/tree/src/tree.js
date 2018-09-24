@@ -84,7 +84,7 @@ const renderGenericCreator = ({
         lvl,
         isChild,
         secondaryActions,
-        childrens: item.children.map((child, idx) => iterator(child, true, lvl, idx)),
+        childrens: item.children.map((child, idxChild) => iterator(child, true, lvl, idxChild)),
         iconItem,
         expanded,
         isExpanded,
