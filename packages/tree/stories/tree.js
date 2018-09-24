@@ -117,7 +117,7 @@ class CustomTree extends Component {
 }
 
 const isString = value => typeof value === 'string';
-const isDate = value => value instanceof Date;
+const isDate = value => value !== '' && (value instanceof Date || new Date(value).toString() !== 'Invalid Date');
 const isNumber = value => typeof value === 'number';
 const isArray = value => Array.isArray(value);
 const isObject = value => typeof value === 'object';
@@ -127,21 +127,21 @@ const getType = value =>
     ? 'array'
     : isObject(value)
       ? 'object'
-      : isString(value)
-        ? 'string'
+      : isNumber(value)
+        ? 'number'
         : isDate(value)
           ? 'date'
-          : isNumber(value)
-            ? 'number'
+          : isString(value)
+            ? 'string'
             : '';
 
-var transform = input => {
+var transform = (input, level = 0) => {
   if (Array.isArray(input)) {
-    return input.map(key => transform(key));
+    return input.map(key => transform(key, level + 1));
   }
 
   if (typeof input === 'string') {
-    return { label: input, type: 'string' };
+    return { label: <pre>{input}</pre>, type: 'string' };
   }
 
   const result = [];
@@ -149,15 +149,26 @@ var transform = input => {
   for (const key of Object.keys(input)) {
     const value = input[key];
     const valueType = getType(value);
+    const isString = valueType === 'string';
+
+    const item = {
+      type: valueType
+    };
 
     if (['string', 'number', 'date'].includes(valueType)) {
-      result.push({
-        label: `${key}: ${value}`,
-        type: valueType
-      });
+      item.label = (
+        <React.Fragment>
+          <b>{key}</b>: {isString ? ' "' : ' '}
+          <pre style={{ display: 'inline' }}>{value}</pre>
+          {isString ? '"' : ''}
+        </React.Fragment>
+      );
     } else {
-      result.push({ label: key, children: transform(value), type: valueType });
+      item.label = <b>{key}</b>;
+      item.children = transform(value, level + 1);
     }
+
+    result.push(item);
   }
 
   return result;
@@ -169,12 +180,8 @@ class JSONTree extends Component {
   };
 
   customIcon = ({ item, isChild, expanded }) => {
-    return <JSONIcon type={item.type} bold={expanded} />;
+    return <JSONIcon type={item.type} bold={expanded} item={item} />;
   };
-
-  UNSAFE_componentWillMount() {
-    console.clear();
-  }
 
   componentDidMount() {
     this.setState({
@@ -184,20 +191,7 @@ class JSONTree extends Component {
 
   render() {
     return (
-      <Tree
-        treeData={this.state.treeData}
-        {...this.props}
-        renderItemIcon={this.customIcon}
-        expandedAll
-        cascadeCheck
-        secondaryActions={[
-          item => (
-            <IconButton aria-label="Delete">
-              <DeleteIcon />
-            </IconButton>
-          )
-        ]}
-      />
+      <Tree treeData={this.state.treeData} {...this.props} renderItemIcon={this.customIcon} expandedAll cascadeCheck />
     );
   }
 }
