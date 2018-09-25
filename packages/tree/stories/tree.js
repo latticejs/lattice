@@ -122,18 +122,22 @@ const isNumber = value => typeof value === 'number';
 const isArray = value => Array.isArray(value);
 const isObject = value => typeof value === 'object';
 
-const getType = value =>
-  isArray(value)
-    ? 'array'
-    : isObject(value)
-      ? 'object'
-      : isNumber(value)
-        ? 'number'
-        : isDate(value)
-          ? 'date'
-          : isString(value)
-            ? 'string'
-            : '';
+const getType = value => {
+  switch (true) {
+    case isArray(value):
+      return 'array';
+    case isObject(value):
+      return 'object';
+    case isNumber(value):
+      return 'number';
+    case isDate(value):
+      return 'date';
+    case isString(value):
+      return 'string';
+    default:
+      return '';
+  }
+};
 
 var transform = (input, level = 0) => {
   if (Array.isArray(input)) {
