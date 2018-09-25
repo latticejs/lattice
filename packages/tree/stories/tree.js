@@ -6,6 +6,10 @@ import Tree from '../src/tree';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
+import pkg from '../package.json';
+import { JSONIcon } from './json-icons';
+import DeleteIcon from '@material-ui/icons/Delete';
+import { IconButton } from '@material-ui/core';
 
 const Flexed = story => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
@@ -112,6 +116,90 @@ class CustomTree extends Component {
   }
 }
 
+const isString = value => typeof value === 'string';
+const isDate = value => value !== '' && (value instanceof Date || new Date(value).toString() !== 'Invalid Date');
+const isNumber = value => typeof value === 'number';
+const isArray = value => Array.isArray(value);
+const isObject = value => typeof value === 'object';
+
+const getType = value => {
+  switch (true) {
+    case isArray(value):
+      return 'array';
+    case isObject(value):
+      return 'object';
+    case isNumber(value):
+      return 'number';
+    case isDate(value):
+      return 'date';
+    case isString(value):
+      return 'string';
+    default:
+      return '';
+  }
+};
+
+var transform = (input, level = 0) => {
+  if (Array.isArray(input)) {
+    return input.map(key => transform(key, level + 1));
+  }
+
+  if (typeof input === 'string') {
+    return { label: <pre>{input}</pre>, type: 'string' };
+  }
+
+  const result = [];
+
+  for (const key of Object.keys(input)) {
+    const value = input[key];
+    const valueType = getType(value);
+    const isString = valueType === 'string';
+
+    const item = {
+      type: valueType
+    };
+
+    if (['string', 'number', 'date'].includes(valueType)) {
+      item.label = (
+        <React.Fragment>
+          <b>{key}</b>: {isString ? ' "' : ' '}
+          <pre style={{ display: 'inline' }}>{value}</pre>
+          {isString ? '"' : ''}
+        </React.Fragment>
+      );
+    } else {
+      item.label = <b>{key}</b>;
+      item.children = transform(value, level + 1);
+    }
+
+    result.push(item);
+  }
+
+  return result;
+};
+
+class JSONTree extends Component {
+  state = {
+    treeData: []
+  };
+
+  customIcon = ({ item, isChild, expanded }) => {
+    return <JSONIcon type={item.type} bold={expanded} item={item} />;
+  };
+
+  componentDidMount() {
+    this.setState({
+      treeData: transform(pkg)
+    });
+  }
+
+  render() {
+    return (
+      <Tree treeData={this.state.treeData} {...this.props} renderItemIcon={this.customIcon} expandedAll cascadeCheck />
+    );
+  }
+}
+
 const loadReadmeSections = withReadme(Readme);
 const withApiReadme = loadReadmeSections(['api']);
 
@@ -139,5 +227,6 @@ export default ({ storiesOf }) => {
           onUnfoldItem={action('onUnfoldItem')}
         />
       ))
-    );
+    )
+    .add('JSON tree', withApiReadme(() => <JSONTree />));
 };

@@ -60,6 +60,7 @@ export class Item extends Component {
       item = {},
       isChild = false,
       iconItem,
+      showChecks = true,
       isExpanded,
       isChecked,
       cascadeCheck,
@@ -67,7 +68,8 @@ export class Item extends Component {
       toggleFold,
       secondaryActions,
       lvl,
-      getItemKey
+      getItemKey,
+      markUnfoldedParent = false
     } = this.props;
 
     return (
@@ -75,24 +77,27 @@ export class Item extends Component {
         key={getItemKey({ item, lvl })}
         button
         onClick={e => this.handleToggleFold({ e, item, toggleFold, lvl })}
+        selected={markUnfoldedParent && isExpanded({ item, lvl })}
       >
         <ListItemIcon>{iconItem({ item, isChild, expanded: isExpanded({ item, lvl }) })}</ListItemIcon>
-        <Checkbox
-          checked={isChecked(getItemKey({ item, lvl }))}
-          onChange={(e, checked) =>
-            this.handleOnCheckItem({
-              e,
-              checked,
-              item,
-              cascadeCheck,
-              onCheckItem,
-              lvl,
-              getItemKey
-            })
-          }
-          tabIndex={-1}
-          disableRipple
-        />
+        {showChecks && (
+          <Checkbox
+            checked={isChecked(getItemKey({ item, lvl }))}
+            onChange={(e, checked) =>
+              this.handleOnCheckItem({
+                e,
+                checked,
+                item,
+                cascadeCheck,
+                onCheckItem,
+                lvl,
+                getItemKey
+              })
+            }
+            tabIndex={-1}
+            disableRipple
+          />
+        )}
         <ListItemText primary={item.label} />
         {secondaryActions ? this.renderSecondaryActions(secondaryActions, item) : ''}
       </ListItem>
@@ -104,6 +109,7 @@ Item.propTypes = {
   item: Types.object,
   isChild: Types.bool,
   iconItem: Types.func,
+  showChecks: Types.bool,
   isExpanded: Types.func,
   isChecked: Types.func,
   cascadeCheck: Types.bool,
@@ -111,7 +117,8 @@ Item.propTypes = {
   toggleFold: Types.func,
   secondaryActions: Types.array,
   lvl: Types.number,
-  getItemKey: Types.func
+  getItemKey: Types.func,
+  markUnfoldedParent: Types.bool
 };
 
 export const Childrens = props => {

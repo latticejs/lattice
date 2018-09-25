@@ -9,47 +9,47 @@ List your data using a tree hierarchy.
 ## Usage
 
 ```jsx
-import React, { Component } from 'react';
-import Tree from '@latticejs/tree';
+import React, { Component } from "react";
+import Tree from "@latticejs/tree";
 
 class App extends Component {
   state = {
     treeData: [
       {
-        label: 'index.js'
+        label: "index.js"
       },
       {
-        label: 'demo',
+        label: "demo",
         children: [
           {
-            label: 'file1.txt'
+            label: "file1.txt"
           },
           {
-            label: 'file2.txt'
+            label: "file2.txt"
           },
           {
-            label: 'examples',
+            label: "examples",
             children: [
               {
-                label: 'example1.js'
+                label: "example1.js"
               }
-            ]    
+            ]
           }
         ]
       }
-    ]    
+    ]
   };
-  
+
   render() {
     const { treeData } = this.state;
     return (
-      <Tree 
+      <Tree
         data={treeData}
-        onCheckItem={(item) => console.log('Check: ', item)}
-        onUnfoldItem={(item) => console.log('Unfold: ', item)}
-        onFoldItem={(item) => console.log('Fold: ', item)}
+        onCheckItem={item => console.log("Check: ", item)}
+        onUnfoldItem={item => console.log("Unfold: ", item)}
+        onFoldItem={item => console.log("Fold: ", item)}
       />
-    )
+    );
   }
 }
 ```
@@ -62,7 +62,7 @@ class App extends Component {
 
 > `array<object>` | `required`
 
-The data that will be parsed by the component used to render the tree structure. Input data is expected to have a tree-like structure (ie: to have `children`). This is the only required parameter. 
+The data that will be parsed by the component used to render the tree structure. Input data is expected to have a tree-like structure (ie: to have `children`). This is the only required parameter.
 
 ### expandedAll
 
@@ -75,6 +75,18 @@ Used to show all the item containers unfolded by default.
 > `boolean` | defaults to `false`
 
 Used to indicate if `check` action should be dispatched to all the childrens recursively.
+
+### markUnfoldedParent
+
+> `boolean` | defaults to `false`
+
+Used to indicate if unfolded parent(s) item(s) should be shown as selected.
+
+### showChecks
+
+> `boolean` | defaults to `true`
+
+Set to false to hide checkboxes.
 
 ### onCheckItem
 
@@ -135,4 +147,3 @@ Every item needs to have a unique key for maintaining sanity on the component in
 ## FAQs
 
 TBD
-
