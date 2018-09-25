@@ -69,7 +69,7 @@ const renderGenericCreator = ({
   isExpanded,
   isChecked,
   cascadeCheck,
-  showCheck,
+  showChecks,
   markUnfoldedParent,
   style
 }) => {
@@ -93,7 +93,7 @@ const renderGenericCreator = ({
         cascadeCheck,
         toggleFold,
         getItemKey,
-        showCheck,
+        showChecks,
         markUnfoldedParent
       });
     } else {
@@ -113,7 +113,7 @@ const renderGenericCreator = ({
           cascadeCheck={cascadeCheck}
           iconItem={iconItem}
           getItemKey={getItemKey}
-          showCheck={showCheck}
+          showChecks={showChecks}
         />
       );
     }
@@ -164,7 +164,7 @@ class Tree extends Component {
       isExpanded: this.isExpanded,
       isChecked: this.isChecked,
       cascadeCheck: props.cascadeCheck,
-      showCheck: props.showChecks,
+      showChecks: props.showChecks,
       markUnfoldedParent: props.markUnfoldedParent,
       style
     });

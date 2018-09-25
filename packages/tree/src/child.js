@@ -60,7 +60,7 @@ export class Item extends Component {
       item = {},
       isChild = false,
       iconItem,
-      showCheck = true,
+      showChecks = true,
       isExpanded,
       isChecked,
       cascadeCheck,
@@ -80,7 +80,7 @@ export class Item extends Component {
         selected={markUnfoldedParent && isExpanded({ item, lvl })}
       >
         <ListItemIcon>{iconItem({ item, isChild, expanded: isExpanded({ item, lvl }) })}</ListItemIcon>
-        {showCheck && (
+        {showChecks && (
           <Checkbox
             checked={isChecked(getItemKey({ item, lvl }))}
             onChange={(e, checked) =>
@@ -109,7 +109,7 @@ Item.propTypes = {
   item: Types.object,
   isChild: Types.bool,
   iconItem: Types.func,
-  showCheck: Types.bool,
+  showChecks: Types.bool,
   isExpanded: Types.func,
   isChecked: Types.func,
   cascadeCheck: Types.bool,
@@ -117,7 +117,8 @@ Item.propTypes = {
   toggleFold: Types.func,
   secondaryActions: Types.array,
   lvl: Types.number,
-  getItemKey: Types.func
+  getItemKey: Types.func,
+  markUnfoldedParent: Types.bool
 };
 
 export const Childrens = props => {
