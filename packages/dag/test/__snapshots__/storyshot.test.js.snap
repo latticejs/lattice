@@ -13,7 +13,6 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
     height={500}
     onDoubleClick={[Function]}
     onMouseMove={[Function]}
-    onMouseUp={[Function]}
     width={500}
   >
     <g
@@ -163,7 +162,6 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
     height={500}
     onDoubleClick={[Function]}
     onMouseMove={[Function]}
-    onMouseUp={[Function]}
     width={500}
   >
     <g
@@ -330,7 +328,6 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
         height={500}
         onDoubleClick={[Function]}
         onMouseMove={[Function]}
-        onMouseUp={[Function]}
         width={500}
       >
         <g
@@ -499,7 +496,6 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
         height={500}
         onDoubleClick={[Function]}
         onMouseMove={[Function]}
-        onMouseUp={[Function]}
         width={500}
       >
         <g

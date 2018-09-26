@@ -54,7 +54,7 @@ export default class DagCore {
     };
 
     this.props = props;
-
+    this.container = select(initialState.container);
     this.d3root = root;
 
     this.createGraph({
@@ -220,7 +220,7 @@ export default class DagCore {
 
   setZoomMode() {
     const zoomGraph = zoom()
-      .scaleExtent([1 / 2, 8])
+      .scaleExtent([1 / 2, 3])
       .on('zoom', () => {
         if (this.state.dragEnable) {
           this.zoomed();

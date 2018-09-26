@@ -57,11 +57,18 @@ class SvgTextInput extends Component {
   constructor(props) {
     super(props);
     this.el = document.createElement('div');
+    this.state = { width: 50 };
   }
 
   componentDidMount() {
     this.props.outerEl.appendChild(this.el);
     if (this.svginput) this.svginput.focus();
+
+    const { width } = this.svginput.getBoundingClientRect();
+    console.log('input width', width);
+    this.setState({
+      width
+    });
   }
 
   componentWillUnmount() {
@@ -69,21 +76,24 @@ class SvgTextInput extends Component {
   }
 
   render() {
+    const { style } = this.props;
     return createPortal(
       <Input
         inputRef={svginput => (this.svginput = svginput)}
         type="text"
         autoFocus={true}
-        placeholder="name..."
+        placeholder="..."
+        fullWidth={true}
         value={this.props.value}
         onChange={this.props.onTextChange}
         onKeyDown={this.props.onKeyDown}
         style={{
           position: 'absolute',
-          top: this.props.labelY,
-          left: this.props.labelX,
-          width: this.props.labelWidth,
-          height: this.props.labelHeight
+          top: style.top,
+          left: style.left(this.state.width),
+          width: style.width(this.state.width),
+          height: style.height,
+          transform: `scale(${style.z})`
         }}
       />,
       this.el
@@ -116,6 +126,8 @@ class Dag extends Component {
   static displayName = 'Dag';
   static defaultProps = {
     nodeRadius: 50,
+    zoomEnable: false,
+    dragEnable: true,
     editable: false,
     selectedEdgeClass: DEFAULTS.selectedEdgeClass,
     selectedNodeClass: DEFAULTS.selectedNodeClass,
@@ -178,10 +190,10 @@ class Dag extends Component {
     return null; // no changes
   }
 
-  resetEditableState(e) {
+  resetEditableState(e, opts = {}) {
     const { target } = e;
-    const { editable } = this.props;
-    const { enableEdgeCreation } = this.state;
+    const { editable, zoomEnable } = this.props;
+    const { enableEdgeCreation, nodePanel } = this.state;
 
     const reset = {
       newEdge: {},
@@ -213,12 +225,14 @@ class Dag extends Component {
   }
 
   componentDidMount() {
-    const { width, height, classes, nodeRadius } = this.props;
+    const { width, height, classes, nodeRadius, zoomEnable, dragEnable } = this.props;
     const params = {
       width,
       height,
       classes,
       nodeRadius,
+      zoomEnable,
+      dragEnable,
       nodes: [...this.state.gnodes],
       edges: [...this.state.gedges]
     };
@@ -271,14 +285,33 @@ class Dag extends Component {
     };
   }
 
-  getMousePosition = (svg, clientX, clientY) => {
+  getComputedTranslateXYZ = obj => {
+    const transArr = [];
+    if (!window.getComputedStyle) return;
+    const style = getComputedStyle(obj),
+      transform = style.transform || style.webkitTransform || style.mozTransform;
+    let mat = transform.match(/^matrix3d\((.+)\)$/);
+    if (mat) return parseFloat(mat[1].split(', ')[13]);
+    mat = transform.match(/^matrix\((.+)\)$/);
+    mat ? transArr.push(parseFloat(mat[1].split(', ')[4])) : 0;
+    mat ? transArr.push(parseFloat(mat[1].split(', ')[5])) : 0;
+    mat ? transArr.push(parseFloat(mat[1].split(', ')[0])) : 1;
+    return transArr;
+  };
+
+  getMousePosition = ({ svg, g }, clientX, clientY) => {
     const pt = svg.createSVGPoint();
     pt.x = clientX;
     pt.y = clientY;
+    const trans = this.getComputedTranslateXYZ(g);
     const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+    const z = trans[2] || 1;
+    const dx = trans[0] || 0;
+    const dy = trans[1] || 0;
     return {
-      x: svgP.x,
-      y: svgP.y
+      x: (svgP.x - dx) / z,
+      y: (svgP.y - dy) / z,
+      z
     };
   };
 
@@ -350,7 +383,7 @@ class Dag extends Component {
   newNode = e => {
     this.setState({
       newNodeReady: !this.state.newNodeReady,
-      newNode: this.getMousePosition(this.root, e.clientX, e.clientY)
+      newNode: this.getMousePosition({ svg: this.root, g: this.g }, e.clientX, e.clientY)
     });
     this.dagcore.toggleDrag();
   };
@@ -362,7 +395,7 @@ class Dag extends Component {
 
   setMousePosition = e => {
     this.setState({
-      mouseMove: this.getMousePosition(this.root, e.clientX, e.clientY)
+      mouseMove: this.getMousePosition({ svg: this.root, g: this.g }, e.clientX, e.clientY)
     });
   };
 
@@ -414,6 +447,10 @@ class Dag extends Component {
         outerEl={this.graphContainer}
         node={data}
         actions={actions}
+        closePanel={e => {
+          e.stopPropagation();
+          this.setState({ nodePanel: false });
+        }}
       >
         {this.props.renderNodeActions}
       </GraphPanel>
@@ -557,9 +594,8 @@ class Dag extends Component {
           className={classNames('dag-wrapper', rootClasses)}
           onDoubleClick={editable ? this.newNode : () => {}}
           onMouseMove={editable && !this.state.newNodeReady ? this.setMousePosition : () => {}}
-          onMouseUp={e => this.resetEditableState(e)}
         >
-          <g className={DEFAULTS.graphClass}>
+          <g ref={node => (this.g = node)} className={DEFAULTS.graphClass}>
             {edges}
             {nodes}
             {this.state.newNodeReady && (
@@ -567,7 +603,7 @@ class Dag extends Component {
                 key={Date.now()}
                 idx={getNodeIdx({ title: 'new' })}
                 nodeRadius={nodeRadius}
-                data={{ x: this.state.newNode.x, y: this.state.newNode.y }}
+                data={{ ...this.state.newNode }}
                 classes={this.props.classes}
                 newNode={editable && this.state.newNodeReady}
                 onNodeAdded={this.props.onNodeAdded}

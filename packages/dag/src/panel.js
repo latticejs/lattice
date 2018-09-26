@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import { createPortal } from 'react-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 const styles = theme => ({
   card: {
@@ -22,6 +25,9 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit,
     paddingLeft: theme.spacing.unit,
     paddingBottom: theme.spacing.unit
+  },
+  close: {
+    padding: theme.spacing.unit / 2
   }
 });
 
@@ -75,16 +81,31 @@ class GraphPanel extends Component {
     );
   }
 
+  handleClose = e => {
+    this.props.closePanel(e);
+  };
+
   render() {
     const { children, classes, node, source, target, style, actions = {} } = this.props;
 
     return createPortal(
       <Card className={classes.panel} style={style}>
         <Grid item container alignItems="center">
-          <Grid item xs={12} className={classes.details}>
+          <Grid item xs={10} className={classes.details}>
             <CardContent className={classes.content}>
               {node ? this.renderContentNode({ node }) : this.renderContentEdge({ source, target })}
             </CardContent>
+          </Grid>
+          <Grid item xs={2} className={classes.details}>
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              className={classes.close}
+              onClick={this.handleClose}
+            >
+              <CloseIcon />
+            </IconButton>
           </Grid>
           <Grid item xs={12}>
             <div className={classes.controls}>{children && children({ ...actions })}</div>
