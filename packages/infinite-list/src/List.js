@@ -1,6 +1,7 @@
 import React from 'react';
 import { default as MuiList } from '@material-ui/core/List';
 import { default as MuiListItem } from '@material-ui/core/ListItem';
+import { default as MuiListItemSecondaryAction } from '@material-ui/core/ListItemSecondaryAction';
 import ScrollLoader from './ScrollLoader';
 
 const withDiv = WrappedComponent => props => <WrappedComponent {...props} component="div" />;
@@ -23,3 +24,4 @@ export const List = (props = {}) => {
 };
 
 export const ListItem = withDiv(MuiListItem);
+export const ListItemSecondaryAction = withDiv(MuiListItemSecondaryAction);
