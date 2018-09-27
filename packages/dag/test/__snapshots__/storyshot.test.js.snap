@@ -2,17 +2,22 @@
 
 exports[`Storyshots dag/advanced editable mode 1`] = `
 <div
+  contentEditable={true}
+  onKeyUp={[Function]}
   style={
     Object {
+      "outline": "none",
       "position": "relative",
     }
   }
+  suppressContentEditableWarning={true}
 >
   <svg
     className="dag-wrapper Dag-root-01"
     height={500}
     onDoubleClick={[Function]}
     onMouseMove={[Function]}
+    onMouseUp={[Function]}
     width={500}
   >
     <g
@@ -151,17 +156,22 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
 
 exports[`Storyshots dag/basic no wrapper 1`] = `
 <div
+  contentEditable={true}
+  onKeyUp={[Function]}
   style={
     Object {
+      "outline": "none",
       "position": "relative",
     }
   }
+  suppressContentEditableWarning={true}
 >
   <svg
     className="dag-wrapper Dag-root"
     height={500}
     onDoubleClick={[Function]}
     onMouseMove={[Function]}
+    onMouseUp={[Function]}
     width={500}
   >
     <g
@@ -317,17 +327,22 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
     }
   >
     <div
+      contentEditable={true}
+      onKeyUp={[Function]}
       style={
         Object {
+          "outline": "none",
           "position": "relative",
         }
       }
+      suppressContentEditableWarning={true}
     >
       <svg
         className="dag-wrapper Dag-root"
         height={500}
         onDoubleClick={[Function]}
         onMouseMove={[Function]}
+        onMouseUp={[Function]}
         width={500}
       >
         <g
@@ -485,17 +500,22 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
     }
   >
     <div
+      contentEditable={true}
+      onKeyUp={[Function]}
       style={
         Object {
+          "outline": "none",
           "position": "relative",
         }
       }
+      suppressContentEditableWarning={true}
     >
       <svg
         className="dag-wrapper Dag-root"
         height={500}
         onDoubleClick={[Function]}
         onMouseMove={[Function]}
+        onMouseUp={[Function]}
         width={500}
       >
         <g
