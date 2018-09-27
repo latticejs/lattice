@@ -44,8 +44,9 @@ export default class DagCore {
   constructor(root, initialState, props = {}) {
     // root represents the svg element. It is required.
     this.state = {
-      dragEnable: initialState.dragEnable || true,
-      zoomEnable: initialState.zoomEnable || false,
+      dragEnable: initialState.dragEnable,
+      panEnable: initialState.panEnable,
+      zoomEnable: initialState.zoomEnable,
       nodeRadius: initialState.nodeRadius,
       height: initialState.height,
       width: initialState.width,
@@ -98,8 +99,8 @@ export default class DagCore {
       .force('forceX', forceX(10))
       .force('forceY', forceY(10));
 
-    this.setZoomMode();
     this.setDragMode();
+    this.setZoomMode();
     this.cacheLines();
     this.simulation.on('tick', () => this.updateGraph());
     // Note (dk): here we are doing some custom and limited iterations
@@ -220,7 +221,7 @@ export default class DagCore {
 
   setZoomMode() {
     const zoomGraph = zoom()
-      .scaleExtent([1 / 2, 3])
+      .scaleExtent([this.state.zoomEnable ? 1 / 2 : 1, this.state.zoomEnable ? 3 : 1])
       .on('zoom', () => {
         if (this.state.dragEnable) {
           this.zoomed();
@@ -235,8 +236,9 @@ export default class DagCore {
       });
 
     select(this.d3root)
-      .call(this.state.zoomEnable ? zoomGraph : () => {})
-      .on('dblclick.zoom', null); // disable zoom on double click
+      .call(this.state.panEnable ? zoomGraph : () => {})
+      .on('dblclick.zoom', null) // disable zoom on double click
+      .on('mouseup.zoom', null);
   }
 
   setDragMode() {
