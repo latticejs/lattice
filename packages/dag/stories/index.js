@@ -90,6 +90,7 @@ export default ({ storiesOf, forceReRender }) => {
         return (
           <Dag
             onClick={action('clicked')}
+            zoomEnable={true}
             onEdgeClick={action('onEdgeClick')}
             onNodeClick={action('onNodeClick')}
             {...getProps()}
@@ -121,7 +122,8 @@ export default ({ storiesOf, forceReRender }) => {
         <State store={props}>
           <Dag
             editable={true}
-            zoomEnable={true}
+            panEnable={true}
+            zoomEnable={false}
             onNodeAdded={addNode}
             onEdgeAdded={addEdge}
             onNodeRemoved={removeNode}
