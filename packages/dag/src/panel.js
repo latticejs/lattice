@@ -10,6 +10,9 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 const styles = theme => ({
+  root: {
+    flex: 1
+  },
   card: {
     position: 'absolute'
   },
@@ -24,10 +27,14 @@ const styles = theme => ({
     alignItems: 'center',
     paddingTop: theme.spacing.unit,
     paddingLeft: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit
+    paddingBottom: theme.spacing.unit,
+    backgroundColor: theme.palette.background.default,
+    color: theme.palette.primary[theme.palette.type]
   },
   close: {
-    padding: theme.spacing.unit / 2
+    padding: theme.spacing.unit / 2,
+    maxHeight: '100%',
+    textAlign: 'right'
   }
 });
 
@@ -90,25 +97,27 @@ class GraphPanel extends Component {
 
     return createPortal(
       <Card className={classes.panel} style={style}>
-        <Grid item container alignItems="center">
-          <Grid item xs={10} className={classes.details}>
-            <CardContent className={classes.content}>
-              {node ? this.renderContentNode({ node }) : this.renderContentEdge({ source, target })}
-            </CardContent>
+        <Grid container className={classnames([classes.root, classes.details])}>
+          <Grid item container style={{ height: 100, maxHeight: '100%' }} alignItems="center">
+            <Grid item xs={8} className={classes.details}>
+              <CardContent className={classes.content}>
+                {node ? this.renderContentNode({ node }) : this.renderContentEdge({ source, target })}
+              </CardContent>
+            </Grid>
+            <Grid item xs={4} className={classnames([classes.close, classes.details])}>
+              <IconButton
+                key="close"
+                aria-label="Close"
+                color="inherit"
+                className={classes.close}
+                onClick={this.handleClose}
+              >
+                <CloseIcon />
+              </IconButton>
+            </Grid>
           </Grid>
-          <Grid item xs={2} className={classes.details}>
-            <IconButton
-              key="close"
-              aria-label="Close"
-              color="inherit"
-              className={classes.close}
-              onClick={this.handleClose}
-            >
-              <CloseIcon />
-            </IconButton>
-          </Grid>
-          <Grid item xs={12}>
-            <div className={classes.controls}>{children && children({ ...actions })}</div>
+          <Grid item xs={12} className={classes.controls}>
+            <div>{children && children({ ...actions })}</div>
           </Grid>
         </Grid>
       </Card>,
