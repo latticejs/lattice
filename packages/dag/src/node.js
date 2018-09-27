@@ -74,10 +74,9 @@ export default class Node extends Component {
     // Note (dk): this fn is a helper for getting node size/position.
     // This info will be used by the input  to accomodate inside the node.
     // input is an html element getting positioned inside an svg one.
-    var rect = this.label.getBoundingClientRect();
     if (!this.node) return;
     var node = this.node.getBoundingClientRect();
-    const { nodeRadius, data } = this.props;
+    const { data } = this.props;
     const width = (node.width / 2) * data.z;
     const height = Math.max(20, node.height / 5) * data.z;
 
@@ -86,9 +85,6 @@ export default class Node extends Component {
     };
 
     const getLeft = (dorigin, containerWidth, z) => inputWidth => {
-      console.log('distance to origin', dorigin);
-      console.log('containerWidth', containerWidth);
-      console.log('z', z);
       const center = containerWidth / 2;
       const halfInputWidth = inputWidth / 2;
       const magicNumber = 7 * z;
@@ -178,7 +174,8 @@ export default class Node extends Component {
       nodePanel,
       showPanel,
       showPanelIdx,
-      idx
+      idx,
+      panelPosition
     } = this.props;
 
     const nodeClasses = [classes.dagNode];
@@ -191,6 +188,7 @@ export default class Node extends Component {
       // TODO(dk): clear other selected nodes (allow multiple selection?)
       nodeClasses.push(selectedClass);
     }
+
     return (
       <g
         className={classNames(DEFAULTS.nodeClass, nodeClasses)}
@@ -213,7 +211,7 @@ export default class Node extends Component {
         {showPanel &&
           showPanelIdx === idx &&
           nodePanel &&
-          nodePanel({ outerEl, data, x: data.x, y: data.y, actions: this.getActions() })}
+          nodePanel({ outerEl, data, actions: this.getActions(), ...panelPosition(data.x, data.y) })}
       </g>
     );
   }
