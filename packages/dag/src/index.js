@@ -13,10 +13,28 @@ import Edge from './edge';
 import GraphPanel from './panel';
 
 const styles = theme => ({
+  '@global': {
+    span: {
+      cursor: 'default',
+      outline: 'none',
+      caretColor: 'transparent'
+    },
+    aside: {
+      cursor: 'default',
+      outline: 'none',
+      caretColor: 'transparent'
+    },
+    tspan: {
+      cursor: 'default',
+      outline: 'none',
+      caretColor: 'transparent'
+    }
+  },
   root: {
     color: theme.palette.text.secondary,
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.fontSize
+    fontSize: theme.typography.fontSize,
+    cursor: 'pointer'
   },
   dagNode: {
     stroke: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.secondary.dark,
@@ -25,7 +43,8 @@ const styles = theme => ({
     strokeWidth: 2,
     '&:hover': {
       backgroundColor: theme.palette.action.hover
-    }
+    },
+    cursor: 'pointer'
   },
   dagNodeText: {
     stroke: theme.palette.text.primary,
@@ -38,7 +57,8 @@ const styles = theme => ({
     stroke: theme.palette.secondary[theme.palette.type],
     fill: theme.palette.secondary[theme.palette.type],
     transition: 'stroke-width 0.3s ease-in',
-    strokeWidth: 2
+    strokeWidth: 2,
+    cursor: 'pointer'
   },
   dagEditable: {
     '&:hover': {
@@ -46,7 +66,8 @@ const styles = theme => ({
     }
   },
   dagEdgeMarker: {
-    fill: theme.palette.secondary[theme.palette.type]
+    fill: theme.palette.secondary[theme.palette.type],
+    cursor: 'pointer'
   },
   dagEdgeGhost: {
     'stroke-dasharray': 5
@@ -65,7 +86,6 @@ class SvgTextInput extends Component {
     if (this.svginput) this.svginput.focus();
 
     const { width } = this.svginput.getBoundingClientRect();
-    console.log('input width', width);
     this.setState({
       width
     });
@@ -126,8 +146,9 @@ class Dag extends Component {
   static displayName = 'Dag';
   static defaultProps = {
     nodeRadius: 50,
-    zoomEnable: false,
     dragEnable: true,
+    panEnable: true,
+    zoomEnable: false,
     editable: false,
     selectedEdgeClass: DEFAULTS.selectedEdgeClass,
     selectedNodeClass: DEFAULTS.selectedNodeClass,
@@ -190,10 +211,10 @@ class Dag extends Component {
     return null; // no changes
   }
 
-  resetEditableState(e, opts = {}) {
+  resetEditableState(e) {
     const { target } = e;
-    const { editable, zoomEnable } = this.props;
-    const { enableEdgeCreation, nodePanel } = this.state;
+    const { editable } = this.props;
+    const { enableEdgeCreation } = this.state;
 
     const reset = {
       newEdge: {},
@@ -225,14 +246,15 @@ class Dag extends Component {
   }
 
   componentDidMount() {
-    const { width, height, classes, nodeRadius, zoomEnable, dragEnable } = this.props;
+    const { width, height, classes, nodeRadius, editable, zoomEnable, panEnable, dragEnable } = this.props;
     const params = {
       width,
       height,
       classes,
       nodeRadius,
-      zoomEnable,
+      zoomEnable: zoomEnable && !editable, // Note (dk): zoom mode and interactions like add a node are not compatible
       dragEnable,
+      panEnable,
       nodes: [...this.state.gnodes],
       edges: [...this.state.gedges]
     };
@@ -293,9 +315,9 @@ class Dag extends Component {
     let mat = transform.match(/^matrix3d\((.+)\)$/);
     if (mat) return parseFloat(mat[1].split(', ')[13]);
     mat = transform.match(/^matrix\((.+)\)$/);
-    mat ? transArr.push(parseFloat(mat[1].split(', ')[4])) : 0;
-    mat ? transArr.push(parseFloat(mat[1].split(', ')[5])) : 0;
-    mat ? transArr.push(parseFloat(mat[1].split(', ')[0])) : 1;
+    transArr.push(mat ? parseFloat(mat[1].split(', ')[4]) : 0);
+    transArr.push(mat ? parseFloat(mat[1].split(', ')[5]) : 0);
+    transArr.push(mat ? parseFloat(mat[1].split(', ')[0]) : 1);
     return transArr;
   };
 
@@ -369,14 +391,16 @@ class Dag extends Component {
   // \\ END onClickNode \\
 
   editSelectedEdge = edge => {
+    const trans = this.getComputedTranslateXYZ(this.g);
+    const pos = {
+      x: (edge.source.x + trans[0] + edge.target.x + trans[0]) / 2,
+      y: (edge.source.y + trans[1] + edge.target.y + trans[1]) / 2
+    };
     this.setState({
       edgePanel: true,
       nodePanel: false,
       edgePanelIdx: edge.idx,
-      panelPosition: {
-        x: (edge.source.x + edge.target.x) / 2,
-        y: (edge.source.y + edge.target.y) / 2
-      }
+      panelPosition: pos
     });
   };
 
@@ -423,13 +447,17 @@ class Dag extends Component {
       <GraphPanel
         style={{
           position: 'absolute',
-          top: this.state.panelPosition.y,
-          left: this.state.panelPosition.x
+          top: this.state.panelPosition.y, // FIXME (dk): this applies only to edge's panel position. Rename it or
+          left: this.state.panelPosition.x // refactor and generalize.
         }}
         outerEl={this.graphContainer}
         source={this.props.getNodeIdx(source)}
         target={this.props.getNodeIdx(target)}
         actions={actions}
+        closePanel={e => {
+          e.stopPropagation();
+          this.setState({ edgePanel: false });
+        }}
       >
         {this.props.renderEdgeActions}
       </GraphPanel>
@@ -523,7 +551,27 @@ class Dag extends Component {
       nodePanel: false
     });
   }
+
+  getNodePanelPosition(x, y) {
+    // Note (dk): this fn works for translating positions for nodes (and possibly edges)
+    // there is no need to apply an extra transform like we do in getMousePosition
+    // because the original points are svg points.
+    const trans = this.getComputedTranslateXYZ(this.g);
+    return {
+      x: (x + trans[0]) / trans[2], // divide by trans[2] for scaling
+      y: (y + trans[1]) / trans[2]
+    };
+  }
+
   // \\ END GRAPH ACTIONS \\
+
+  handleKeyUp = e => {
+    e.stopPropagation();
+    const { keyCode } = e;
+    if (keyCode === 27) {
+      this.resetEditableState(e);
+    }
+  };
 
   render() {
     const {
@@ -556,6 +604,7 @@ class Dag extends Component {
           nodePanel={this.renderNodePanel}
           showPanel={this.state.nodePanel}
           showPanelIdx={this.state.nodePanelIdx}
+          panelPosition={(x, y) => this.getNodePanelPosition(x, y)}
           deleteNode={({ event, idx }) => this.deleteNode({ event, idx })}
           createEdge={event => this.createEdge({ event })}
           getNodeIdx={getNodeIdx}
@@ -586,7 +635,13 @@ class Dag extends Component {
     });
 
     return (
-      <div ref={container => (this.graphContainer = container)} style={{ position: 'relative' }}>
+      <div
+        ref={container => (this.graphContainer = container)}
+        style={{ position: 'relative', outline: 'none' }}
+        contentEditable={true}
+        suppressContentEditableWarning={true}
+        onKeyUp={this.handleKeyUp}
+      >
         <svg
           ref={node => (this.root = node)}
           width={width}
@@ -594,6 +649,7 @@ class Dag extends Component {
           className={classNames('dag-wrapper', rootClasses)}
           onDoubleClick={editable ? this.newNode : () => {}}
           onMouseMove={editable && !this.state.newNodeReady ? this.setMousePosition : () => {}}
+          onMouseUp={e => this.resetEditableState(e)}
         >
           <g ref={node => (this.g = node)} className={DEFAULTS.graphClass}>
             {edges}
