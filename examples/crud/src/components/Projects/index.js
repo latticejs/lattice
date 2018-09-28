@@ -3,8 +3,9 @@ import { observer, inject } from 'mobx-react';
 import ProjectList from './List';
 import ProjectForm from './Form';
 import { compose, withHandlers, withState } from 'recompose';
-import { Grid, Modal } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { Success } from '../Notification';
+import Modal from '../Modal';
 
 const enhance = compose(
   inject('uiStore'),
@@ -37,22 +38,9 @@ export default enhance(({ uiStore, editProject, cancel, saved, onSave }) => {
       <Grid item xs>
         <ProjectList onEditProject={editProject} />
       </Grid>
-      <Modal
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-        open={uiStore.projectForm.visible}
-        onClose={cancel}
-      >
-        <div
-          style={{
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            position: 'absolute'
-          }}
-        >
-          <ProjectForm onCancel={cancel} onSave={onSave} />
-        </div>
+
+      <Modal open={uiStore.projectForm.visible} onClose={cancel}>
+        <ProjectForm onCancel={cancel} onSave={onSave} />
       </Modal>
 
       <Success open={saved} message="Project saved!" />

@@ -1,0 +1,1 @@
+# Latticejs CRUD example
