@@ -12,7 +12,10 @@ const enterNode = (selection, props) => {
 };
 
 const updateNode = selection => {
-  selection.attr('transform', d => `translate(${d.x}, ${d.y})`);
+  selection.attr('transform', d => {
+    if (!d.x) return;
+    return `translate(${d.x}, ${d.y})`;
+  });
 };
 
 const insertTitleLinebreaks = (gEl, title = '') => {
@@ -42,6 +45,7 @@ export default class Node extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      iterations: 2,
       labelX: 0,
       labelY: 0,
       labelWidth: '50px',
@@ -54,24 +58,47 @@ export default class Node extends Component {
   componentDidMount() {
     select(this.node)
       .datum(this.props.data)
-      .call(selection => enterNode(selection, { ...this.props, onTextChange: this.onTextChange }));
-    this.updateLabelBounds();
+      .call(selection => enterNode(selection, { ...this.props, onTextChange: this.onTextChange }))
+      .call(updateNode);
+
+    this.updateNodeBounds();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevState, prevProps) {
     select(this.node)
       .datum(this.props.data)
       .call(updateNode);
   }
 
-  updateLabelBounds = () => {
-    var rect = this.label.getBoundingClientRect();
-    this.setState({
-      labelX: this.props.data.x - 20,
-      labelY: this.props.data.y - 8,
-      labelWidth: Math.max(50, rect.width),
-      labelHeight: Math.max(20, rect.height)
-    });
+  updateNodeBounds = () => {
+    // Note (dk): this fn is a helper for getting node size/position.
+    // This info will be used by the input  to accomodate inside the node.
+    // input is an html element getting positioned inside an svg one.
+    if (!this.node) return;
+    var node = this.node.getBoundingClientRect();
+    const { data } = this.props;
+    const width = (node.width / 2) * data.z;
+    const height = Math.max(20, node.height / 5) * data.z;
+
+    const getWidth = parentWidth => inputWidth => {
+      return parentWidth > inputWidth ? inputWidth : parentWidth;
+    };
+
+    const getLeft = (dorigin, containerWidth, z) => inputWidth => {
+      const center = containerWidth / 2;
+      const halfInputWidth = inputWidth / 2;
+      const magicNumber = 7 * z;
+      return dorigin + center - halfInputWidth - magicNumber;
+    };
+
+    const inputStyle = {
+      top: node.top + height + 7, // this.props.data.y - 8,
+      left: getLeft(node.left, node.width, data.z), // this.props.data.x - 20,
+      z: data.z, // this.props.data.y - 8,
+      width: getWidth(width),
+      height
+    };
+    this.setState({ inputStyle });
   };
 
   handleNodeClick = e => {
@@ -147,7 +174,8 @@ export default class Node extends Component {
       nodePanel,
       showPanel,
       showPanelIdx,
-      idx
+      idx,
+      panelPosition
     } = this.props;
 
     const nodeClasses = [classes.dagNode];
@@ -160,6 +188,7 @@ export default class Node extends Component {
       // TODO(dk): clear other selected nodes (allow multiple selection?)
       nodeClasses.push(selectedClass);
     }
+
     return (
       <g
         className={classNames(DEFAULTS.nodeClass, nodeClasses)}
@@ -171,20 +200,18 @@ export default class Node extends Component {
         <circle />
         <text ref={node => (this.label = node)} className={classes.dagNodeText} />
         {newNode &&
+          this.state.inputStyle &&
           children({
             outerEl,
             onTextChange: this.onTextChange,
             onKeyDown: this.onKeyDown,
             value: this.state.text,
-            labelX: this.state.labelX,
-            labelY: this.state.labelY,
-            labelWidth: this.state.labelWidth,
-            labelHeight: this.state.labelHeight
+            style: this.state.inputStyle
           })}
         {showPanel &&
           showPanelIdx === idx &&
           nodePanel &&
-          nodePanel({ outerEl, data, x: data.x, y: data.y, actions: this.getActions() })}
+          nodePanel({ outerEl, data, actions: this.getActions(), ...panelPosition(data.x, data.y) })}
       </g>
     );
   }

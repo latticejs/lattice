@@ -87,10 +87,10 @@ export default ({ storiesOf, forceReRender }) => {
     .add(
       'no wrapper',
       withApiReadme(() => {
-        // TODO(dk): parse real pkg json deps.
         return (
           <Dag
             onClick={action('clicked')}
+            zoomEnable={true}
             onEdgeClick={action('onEdgeClick')}
             onNodeClick={action('onNodeClick')}
             {...getProps()}
@@ -122,6 +122,8 @@ export default ({ storiesOf, forceReRender }) => {
         <State store={props}>
           <Dag
             editable={true}
+            panEnable={true}
+            zoomEnable={false}
             onNodeAdded={addNode}
             onEdgeAdded={addEdge}
             onNodeRemoved={removeNode}
