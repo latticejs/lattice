@@ -4,13 +4,13 @@ A set of [material-ui](https://material-ui.com/) components adapted to support i
 
 ## Table of contents
 
-* [Install](#install)
-* [ScrollLoader](#scroll-loader)
-* [List](#list)
-* [Table](#table)
-  * [TableBody](#table-body)
-  * [TableOrderCell](#table-order-cell)
-  * [TableSearchCell](#table-search-cell)
+- [Install](#install)
+- [ScrollLoader](#scroll-loader)
+- [List](#list)
+- [Table](#table)
+  - [TableBody](#table-body)
+  - [TableOrderCell](#table-order-cell)
+  - [TableSearchCell](#table-search-cell)
 
 ## <a name="install"></a> Install
 
@@ -33,13 +33,13 @@ ScrollLoader doesn't use the native scroll, it uses [react-custom-scrollbars](ht
 ### Usage
 
 ```jsx
-import React, { Component } from 'react';
-import { ScrollLoader } from '@latticejs/infinite-list';
+import React, { Component } from "react";
+import { ScrollLoader } from "@latticejs/infinite-list";
 
 class App extends Component {
   state = {
     // loaded items
-    list: [{ text: 'item 1' }, { text: 'item 2' }],
+    list: [{ text: "item 1" }, { text: "item 2" }],
     // total items (loaded & missing items)
     rowCount: 100
   };
@@ -53,7 +53,12 @@ class App extends Component {
 
     return (
       <div>
-        <ScrollLoader list={list} loadMore={this.loadMore} rowCount={rowCount} rowHeight={40}>
+        <ScrollLoader
+          list={list}
+          loadMore={this.loadMore}
+          rowCount={rowCount}
+          rowHeight={40}
+        >
           {({ item, isEmpty, key, style }) => {
             if (isEmpty) {
               return <h4>Empty list</h4>;
@@ -88,36 +93,38 @@ class App extends Component {
 
 #### children
 
-> `function(props: { item, isEmpty, key, style })` | *required*
+> `function(props: { item, isEmpty, key, style })` | _required_
 
 Children function prop to define how to render each item of the list.
 
-* item: Current item of the iteration, it can be null is the list is empty or is loading.
-* isEmpty: Boolean that defines if the list is empty.
-* key: Key of the current item.
-* style: Style props required to apply in each item. **It's really important to use it, otherwise the scroll it's never going to work**
+- item: Current item of the iteration, it can be null is the list is empty or is loading.
+- isEmpty: Boolean that defines if the list is empty.
+- key: Key of the current item.
+- style: Style props required to apply in each item. **It's really important to use it, otherwise the scroll it's never going to work**
 
 #### list
 
-> `Array` | *required*
+> `Array` | _required_
 
 List of items already loaded.
 
 #### rowCount
 
-> `number` | *required*
+> `number` | _required_
 
 Total count of items. This is necessary to create the entire list of items.
 
 You can think about it like the sql
+
 ```sql
 select count(*) from table
 ```
+
 it doesn't matter if you loaded only the first 10 items.
 
 #### loadMore
 
-> `function(props: { startIndex, stopIndex })` => Promise | *required*
+> `function(props: { startIndex, stopIndex })` => Promise | _required_
 
 This is a required callback to be invoked when more rows must be loaded
 because `ScrollLoader` can't find some item in the list.
@@ -128,7 +135,7 @@ in reaction to a single scroll event.
 
 #### rowHeight
 
-> `(number | function)` | *required*
+> `(number | function)` | _required_
 
 Either a fixed row height (number) or a function that returns the height of a
 row given its index: `({ index: number }) => number`
@@ -193,7 +200,7 @@ and our `ScrollLoader`.
 So it has the same API of `Material-UI List` and the `ScrollLoader`.
 
 > NOTE: react-virtualized needs that each component were **div** tags. So, we provide a
-> wrapper for Material-UI [ListItem](https://material-ui.com/api/list-item/) component too.
+> wrapper for Material-UI [ListItem](https://material-ui.com/api/list-item/) and [ListItemSecondaryAction](https://material-ui.com/api/list-item-secondary-action/) components too.
 
 ### Usage
 
@@ -248,14 +255,14 @@ class App extends Component {
 
 Lattice's Table component provides support for displaying tabulated data with `infinite data loading` support.
 
-Since *react-virtualized* needs that each component were **div** tags we need to create wrappers
+Since _react-virtualized_ needs that each component were **div** tags we need to create wrappers
 and apply some custom styles for the next `Material-UI` components:
 
-* [Table](https://material-ui.com/api/table/)
-* [TableBody](https://material-ui.com/api/table-body/)
-* [TableCell](https://material-ui.com/api/table-cell/)
-* [TableHead](https://material-ui.com/api/table-head/)
-* [TableRow](https://material-ui.com/api/table-row/)
+- [Table](https://material-ui.com/api/table/)
+- [TableBody](https://material-ui.com/api/table-body/)
+- [TableCell](https://material-ui.com/api/table-cell/)
+- [TableHead](https://material-ui.com/api/table-head/)
+- [TableRow](https://material-ui.com/api/table-row/)
 
 <!-- end:table -->
 
@@ -349,16 +356,16 @@ You can use Material-UI TableCell API.
 ### Usage
 
 ```jsx
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Table,
   TableHead,
   TableRow,
   TableCell,
   TableOrderCell
-} from '@latticejs/infinite-list';
+} from "@latticejs/infinite-list";
 
-import Paper from '@material-ui/core/Paper';
+import Paper from "@material-ui/core/Paper";
 
 class App extends Component {
   state = {
@@ -382,12 +389,14 @@ class App extends Component {
                 field="title"
                 title="Title"
                 orderBy={orderBy}
-                handleOrder={this.handleOrder} />
+                handleOrder={this.handleOrder}
+              />
               <TableOrderCell
                 field="timestamp"
                 title="Timestamp"
                 orderBy={orderBy}
-                handleOrder={this.handleOrder} />
+                handleOrder={this.handleOrder}
+              />
             </TableRow>
           </TableHead>
         </Table>
@@ -401,13 +410,13 @@ class App extends Component {
 
 #### field
 
-> `string` | *required*
+> `string` | _required_
 
 The field prop is required to create an Array of `orderBy`.
 
 #### orderBy
 
-> `Array<Order>` | *required*
+> `Array<Order>` | _required_
 
 > `Order: { field: string, direction: ('asc'|'desc') }`
 
@@ -415,7 +424,7 @@ The orderBy is the current `Order` object list of your table state.
 
 #### handleOrder
 
-> `function(orderBy: [])` | *required*
+> `function(orderBy: [])` | _required_
 
 Callback function called when there is a new order.
 
@@ -446,17 +455,17 @@ Since extends from the Material-UI `TableCell` you can use their API.
 ### Usage
 
 ```jsx
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Table,
   TableHead,
   TableRow,
   TableCell,
   TableSearchCell
-} from '@latticejs/infinite-list';
+} from "@latticejs/infinite-list";
 
-import Paper from '@material-ui/core/Paper';
-import Input from '@material-ui/core/Input';
+import Paper from "@material-ui/core/Paper";
+import Input from "@material-ui/core/Input";
 
 class App extends Component {
   state = {
@@ -481,10 +490,19 @@ class App extends Component {
             </TableRow>
             <TableRow>
               <TableCell />
-              <TableSearchCell field="name" debounce={200} filterBy={filterBy} handleSearch={this.handleSearch}>
+              <TableSearchCell
+                field="name"
+                debounce={200}
+                filterBy={filterBy}
+                handleSearch={this.handleSearch}
+              >
                 {({ inputProps }) => <Input fullWidth {...inputProps} />}
               </TableSearchCell>
-              <TableSearchCell field="email" filterBy={filterBy} handleSearch={this.handleSearch}>
+              <TableSearchCell
+                field="email"
+                filterBy={filterBy}
+                handleSearch={this.handleSearch}
+              >
                 {({ inputProps }) => <Input fullWidth {...inputProps} />}
               </TableSearchCell>
             </TableRow>
@@ -500,13 +518,13 @@ class App extends Component {
 
 #### field
 
-> `string` | *required*
+> `string` | _required_
 
 The field prop is required to create an Array of `filterBy`.
 
 #### filterBy
 
-> `Array<Filter>` | *required*
+> `Array<Filter>` | _required_
 
 > `Filter: { field: string, value: string }`
 
@@ -514,18 +532,18 @@ The filterBy is the current `Filter` object list of your table state.
 
 #### handleSearch
 
-> `function(filterBy: [])` | *required*
+> `function(filterBy: [])` | _required_
 
 Callback function called when there is a new filter.
 
 #### children
 
-> `function(props: SearchProps)` | *required*
+> `function(props: SearchProps)` | _required_
 
 > `SearchProps: { inputProps: { name: string, value: string, onChange: function }, updateValue: function }`
 
-* inputProps: Set of props for an input component that has an `onChange` and `value` prop.
-* updateValue: Function to use in case of input component doesn't have `onChange` support.
+- inputProps: Set of props for an input component that has an `onChange` and `value` prop.
+- updateValue: Function to use in case of input component doesn't have `onChange` support.
 
 #### debounce
 
