@@ -20,10 +20,10 @@ exports[`Storyshots infinite-list/List basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-01 MuiGrid-spacing-xs-24-025"
+      className="MuiGrid-container-1 MuiGrid-spacing-xs-24-25"
     >
       <div
-        className="MuiGrid-item-02 MuiGrid-grid-xs-12-041"
+        className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
@@ -172,10 +172,10 @@ exports[`Storyshots infinite-list/Table basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-098 MuiGrid-spacing-xs-24-0122"
+      className="MuiGrid-container-98 MuiGrid-spacing-xs-24-122"
     >
       <div
-        className="MuiGrid-item-099 MuiGrid-grid-xs-12-0138"
+        className="MuiGrid-item-99 MuiGrid-grid-xs-12-138"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
@@ -353,10 +353,10 @@ exports[`Storyshots infinite-list/Table order 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0195 MuiGrid-spacing-xs-24-0219"
+      className="MuiGrid-container-195 MuiGrid-spacing-xs-24-219"
     >
       <div
-        className="MuiGrid-item-0196 MuiGrid-grid-xs-12-0235"
+        className="MuiGrid-item-196 MuiGrid-grid-xs-12-235"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
@@ -406,6 +406,7 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                       aria-hidden="true"
                       className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
                       focusable="false"
+                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -443,6 +444,7 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                       aria-hidden="true"
                       className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
                       focusable="false"
+                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -502,10 +504,10 @@ exports[`Storyshots infinite-list/Table search 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0292 MuiGrid-spacing-xs-24-0316"
+      className="MuiGrid-container-292 MuiGrid-spacing-xs-24-316"
     >
       <div
-        className="MuiGrid-item-0293 MuiGrid-grid-xs-12-0332"
+        className="MuiGrid-item-293 MuiGrid-grid-xs-12-332"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
@@ -555,10 +557,11 @@ exports[`Storyshots infinite-list/Table search 1`] = `
                   scope="col"
                 >
                   <div
-                    className="MuiInput-root MuiInput-fullWidth MuiInput-underline"
+                    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth"
+                    onClick={[Function]}
                   >
                     <input
-                      className="MuiInput-input"
+                      className="MuiInputBase-input MuiInput-input"
                       name="name"
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -574,10 +577,11 @@ exports[`Storyshots infinite-list/Table search 1`] = `
                   scope="col"
                 >
                   <div
-                    className="MuiInput-root MuiInput-fullWidth MuiInput-underline"
+                    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth"
+                    onClick={[Function]}
                   >
                     <input
-                      className="MuiInput-input"
+                      className="MuiInputBase-input MuiInput-input"
                       name="email"
                       onBlur={[Function]}
                       onChange={[Function]}

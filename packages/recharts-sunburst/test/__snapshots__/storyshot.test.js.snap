@@ -1179,72 +1179,14 @@ exports[`Storyshots recharts-sunburst basic sunburst 1`] = `
     <div
       style={
         Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
+          "display": "none",
+          "height": 0,
           "position": "absolute",
-          "right": 0,
-          "top": 0,
           "visibility": "hidden",
-          "zIndex": -1,
+          "width": 0,
         }
       }
-    >
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": 454,
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": 343,
-            }
-          }
-        />
-      </div>
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "200%",
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": "200%",
-            }
-          }
-        />
-      </div>
-    </div>
+    />
   </div>
 </div>
 `;
@@ -2698,72 +2640,14 @@ exports[`Storyshots recharts-sunburst basic sunburst animated 1`] = `
     <div
       style={
         Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
+          "display": "none",
+          "height": 0,
           "position": "absolute",
-          "right": 0,
-          "top": 0,
           "visibility": "hidden",
-          "zIndex": -1,
+          "width": 0,
         }
       }
-    >
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": 454,
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": 343,
-            }
-          }
-        />
-      </div>
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "200%",
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": "200%",
-            }
-          }
-        />
-      </div>
-    </div>
+    />
   </div>
 </div>
 `;
@@ -3947,72 +3831,14 @@ exports[`Storyshots recharts-sunburst with customized colors 1`] = `
     <div
       style={
         Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
+          "display": "none",
+          "height": 0,
           "position": "absolute",
-          "right": 0,
-          "top": 0,
           "visibility": "hidden",
-          "zIndex": -1,
+          "width": 0,
         }
       }
-    >
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": 454,
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": 343,
-            }
-          }
-        />
-      </div>
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "200%",
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": "200%",
-            }
-          }
-        />
-      </div>
-    </div>
+    />
   </div>
 </div>
 `;
@@ -5235,72 +5061,14 @@ exports[`Storyshots recharts-sunburst with tooltip 1`] = `
     <div
       style={
         Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
+          "display": "none",
+          "height": 0,
           "position": "absolute",
-          "right": 0,
-          "top": 0,
           "visibility": "hidden",
-          "zIndex": -1,
+          "width": 0,
         }
       }
-    >
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": 454,
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": 343,
-            }
-          }
-        />
-      </div>
-      <div
-        onScroll={[Function]}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "visibility": "hidden",
-            "zIndex": -1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "200%",
-              "left": 0,
-              "position": "absolute",
-              "top": 0,
-              "width": "200%",
-            }
-          }
-        />
-      </div>
-    </div>
+    />
   </div>
 </div>
 `;
