@@ -2,13 +2,13 @@
 
 exports[`Storyshots widgets/Loader circular 1`] = `
 <div
-  className="MuiGrid-container-01"
+  className="MuiGrid-container-1"
 >
   <div
-    className="MuiGrid-item-02 MuiGrid-grid-xs-12-041"
+    className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
   >
     <div
-      className="MuiGrid-container-01 MuiGrid-align-items-xs-center-09 MuiGrid-justify-xs-center-018 Loader-root-1"
+      className="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 Loader-root-1"
     >
       <div
         className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
@@ -42,13 +42,13 @@ exports[`Storyshots widgets/Loader circular 1`] = `
 
 exports[`Storyshots widgets/Loader custom 1`] = `
 <div
-  className="MuiGrid-container-0195"
+  className="MuiGrid-container-195"
 >
   <div
-    className="MuiGrid-item-0196 MuiGrid-grid-xs-12-0235"
+    className="MuiGrid-item-196 MuiGrid-grid-xs-12-235"
   >
     <div
-      className="MuiGrid-container-0195 MuiGrid-align-items-xs-center-0203 MuiGrid-justify-xs-center-0212 Loader-root-1"
+      className="MuiGrid-container-195 MuiGrid-align-items-xs-center-203 MuiGrid-justify-xs-center-212 Loader-root-1"
     >
       <div
         className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
@@ -83,13 +83,13 @@ exports[`Storyshots widgets/Loader custom 1`] = `
 
 exports[`Storyshots widgets/Loader linear 1`] = `
 <div
-  className="MuiGrid-container-098"
+  className="MuiGrid-container-98"
 >
   <div
-    className="MuiGrid-item-099 MuiGrid-grid-xs-12-0138"
+    className="MuiGrid-item-99 MuiGrid-grid-xs-12-138"
   >
     <div
-      className="MuiGrid-container-098 MuiGrid-align-items-xs-center-0106 MuiGrid-justify-xs-center-0115 Loader-root-1"
+      className="MuiGrid-container-98 MuiGrid-align-items-xs-center-106 MuiGrid-justify-xs-center-115 Loader-root-1"
     >
       <div
         className="MuiLinearProgress-root MuiLinearProgress-colorPrimary Loader-linear-3"
@@ -129,13 +129,13 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0292 MuiGrid-spacing-xs-24-0316"
+      className="MuiGrid-container-292 MuiGrid-spacing-xs-24-316"
     >
       <div
-        className="MuiDrawer-docked-0389"
+        className="MuiDrawer-docked-389"
       >
         <div
-          className="MuiPaper-root-0400 MuiPaper-elevation0-0402 MuiDrawer-paper-0390 MuiDrawer-paperAnchorLeft-0391 MuiDrawer-paperAnchorDockedLeft-0395"
+          className="MuiPaper-root-400 MuiPaper-elevation0-402 MuiDrawer-paper-390 MuiDrawer-paperAnchorLeft-391 MuiDrawer-paperAnchorDockedLeft-395"
           direction="right"
           style={Object {}}
         >
@@ -172,6 +172,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -221,6 +222,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -270,6 +272,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -299,6 +302,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -347,13 +351,13 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0562 MuiGrid-spacing-xs-24-0586"
+      className="MuiGrid-container-562 MuiGrid-spacing-xs-24-586"
     >
       <div
-        className="MuiDrawer-docked-0659"
+        className="MuiDrawer-docked-659"
       >
         <div
-          className="MuiPaper-root-0670 MuiPaper-elevation0-0672 MuiDrawer-paper-0660 MuiDrawer-paperAnchorLeft-0661 MuiDrawer-paperAnchorDockedLeft-0665"
+          className="MuiPaper-root-670 MuiPaper-elevation0-672 MuiDrawer-paper-660 MuiDrawer-paperAnchorLeft-661 MuiDrawer-paperAnchorDockedLeft-665"
           direction="right"
           style={Object {}}
         >
@@ -390,6 +394,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -439,6 +444,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -488,6 +494,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -545,13 +552,13 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0427 MuiGrid-spacing-xs-24-0451"
+      className="MuiGrid-container-427 MuiGrid-spacing-xs-24-451"
     >
       <div
-        className="MuiDrawer-docked-0524"
+        className="MuiDrawer-docked-524"
       >
         <div
-          className="MuiPaper-root-0535 MuiPaper-elevation0-0537 MuiDrawer-paper-0525 MuiDrawer-paperAnchorLeft-0526 MuiDrawer-paperAnchorDockedLeft-0530"
+          className="MuiPaper-root-535 MuiPaper-elevation0-537 MuiDrawer-paper-525 MuiDrawer-paperAnchorLeft-526 MuiDrawer-paperAnchorDockedLeft-530"
           direction="right"
           style={Object {}}
         >
@@ -588,6 +595,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -637,6 +645,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -686,6 +695,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root MuiListItemIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -715,6 +725,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root"
                 focusable="false"
+                role="presentation"
                 style={
                   Object {
                     "color": "#fff",
@@ -763,19 +774,19 @@ exports[`Storyshots widgets/Widget (dark theme) basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-01182 MuiGrid-spacing-xs-24-01206"
+      className="MuiGrid-container-1182 MuiGrid-spacing-xs-24-1206"
     >
       <div
-        className="MuiGrid-item-01183 MuiGrid-grid-xs-12-01222"
+        className="MuiGrid-item-1183 MuiGrid-grid-xs-12-1222"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root"
         >
           <div
-            className="MuiGrid-container-01182 MuiGrid-direction-xs-column-01185 Widget-container"
+            className="MuiGrid-container-1182 MuiGrid-direction-xs-column-1185 Widget-container"
           >
             <div
-              className="MuiGrid-item-01183"
+              className="MuiGrid-item-1183"
             >
               <h2
                 className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -784,7 +795,7 @@ exports[`Storyshots widgets/Widget (dark theme) basic 1`] = `
               </h2>
             </div>
             <div
-              className="MuiGrid-container-01182 MuiGrid-item-01183 Widget-content"
+              className="MuiGrid-container-1182 MuiGrid-item-1183 Widget-content"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -816,19 +827,19 @@ exports[`Storyshots widgets/Widget (dark theme) custom height 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-01570 MuiGrid-spacing-xs-24-01594"
+      className="MuiGrid-container-1570 MuiGrid-spacing-xs-24-1594"
     >
       <div
-        className="MuiGrid-item-01571 MuiGrid-grid-xs-12-01610"
+        className="MuiGrid-item-1571 MuiGrid-grid-xs-12-1610"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root"
         >
           <div
-            className="MuiGrid-container-01570 MuiGrid-direction-xs-column-01573 Widget-container"
+            className="MuiGrid-container-1570 MuiGrid-direction-xs-column-1573 Widget-container"
           >
             <div
-              className="MuiGrid-item-01571"
+              className="MuiGrid-item-1571"
             >
               <h2
                 className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -837,7 +848,7 @@ exports[`Storyshots widgets/Widget (dark theme) custom height 1`] = `
               </h2>
             </div>
             <div
-              className="MuiGrid-container-01570 MuiGrid-item-01571 Widget-content Component-content-1"
+              className="MuiGrid-container-1570 MuiGrid-item-1571 Widget-content Component-content-1"
             >
               <div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
@@ -871,19 +882,19 @@ exports[`Storyshots widgets/Widget (dark theme) featured 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-01279 MuiGrid-spacing-xs-24-01303"
+      className="MuiGrid-container-1279 MuiGrid-spacing-xs-24-1303"
     >
       <div
-        className="MuiGrid-item-01280 MuiGrid-grid-xs-12-01319"
+        className="MuiGrid-item-1280 MuiGrid-grid-xs-12-1319"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-featured"
         >
           <div
-            className="MuiGrid-container-01279 MuiGrid-direction-xs-column-01282 Widget-container"
+            className="MuiGrid-container-1279 MuiGrid-direction-xs-column-1282 Widget-container"
           >
             <div
-              className="MuiGrid-item-01280"
+              className="MuiGrid-item-1280"
             >
               <h2
                 className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -892,7 +903,7 @@ exports[`Storyshots widgets/Widget (dark theme) featured 1`] = `
               </h2>
             </div>
             <div
-              className="MuiGrid-container-01279 MuiGrid-item-01280 Widget-content"
+              className="MuiGrid-container-1279 MuiGrid-item-1280 Widget-content"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -924,19 +935,19 @@ exports[`Storyshots widgets/Widget (dark theme) squared 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-01473 MuiGrid-spacing-xs-24-01497"
+      className="MuiGrid-container-1473 MuiGrid-spacing-xs-24-1497"
     >
       <div
-        className="MuiGrid-item-01474 MuiGrid-grid-xs-12-01513"
+        className="MuiGrid-item-1474 MuiGrid-grid-xs-12-1513"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 Widget-root"
         >
           <div
-            className="MuiGrid-container-01473 MuiGrid-direction-xs-column-01476 Widget-container"
+            className="MuiGrid-container-1473 MuiGrid-direction-xs-column-1476 Widget-container"
           >
             <div
-              className="MuiGrid-item-01474"
+              className="MuiGrid-item-1474"
             >
               <h2
                 className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -945,7 +956,7 @@ exports[`Storyshots widgets/Widget (dark theme) squared 1`] = `
               </h2>
             </div>
             <div
-              className="MuiGrid-container-01473 MuiGrid-item-01474 Widget-content"
+              className="MuiGrid-container-1473 MuiGrid-item-1474 Widget-content"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -977,25 +988,25 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-01376 MuiGrid-spacing-xs-24-01400"
+      className="MuiGrid-container-1376 MuiGrid-spacing-xs-24-1400"
     >
       <div
-        className="MuiGrid-item-01377 MuiGrid-grid-xs-12-01416"
+        className="MuiGrid-item-1377 MuiGrid-grid-xs-12-1416"
       >
         <div
-          className="MuiGrid-container-01376 MuiGrid-spacing-xs-24-01400"
+          className="MuiGrid-container-1376 MuiGrid-spacing-xs-24-1400"
         >
           <div
-            className="MuiGrid-item-01377 MuiGrid-grid-xs-6-01410"
+            className="MuiGrid-item-1377 MuiGrid-grid-xs-6-1410"
           >
             <div
               className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-border Widget-border-top"
             >
               <div
-                className="MuiGrid-container-01376 MuiGrid-direction-xs-column-01379 Widget-container"
+                className="MuiGrid-container-1376 MuiGrid-direction-xs-column-1379 Widget-container"
               >
                 <div
-                  className="MuiGrid-item-01377"
+                  className="MuiGrid-item-1377"
                 >
                   <h2
                     className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1004,7 +1015,7 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-container-01376 MuiGrid-item-01377 Widget-content"
+                  className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1012,16 +1023,16 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-01377 MuiGrid-grid-xs-6-01410"
+            className="MuiGrid-item-1377 MuiGrid-grid-xs-6-1410"
           >
             <div
               className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-border Widget-border-bottom"
             >
               <div
-                className="MuiGrid-container-01376 MuiGrid-direction-xs-column-01379 Widget-container"
+                className="MuiGrid-container-1376 MuiGrid-direction-xs-column-1379 Widget-container"
               >
                 <div
-                  className="MuiGrid-item-01377"
+                  className="MuiGrid-item-1377"
                 >
                   <h2
                     className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1030,7 +1041,7 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-container-01376 MuiGrid-item-01377 Widget-content"
+                  className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1038,16 +1049,16 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-01377 MuiGrid-grid-xs-6-01410"
+            className="MuiGrid-item-1377 MuiGrid-grid-xs-6-1410"
           >
             <div
               className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-border Component-customTopBorder-2 Widget-border-top"
             >
               <div
-                className="MuiGrid-container-01376 MuiGrid-direction-xs-column-01379 Widget-container"
+                className="MuiGrid-container-1376 MuiGrid-direction-xs-column-1379 Widget-container"
               >
                 <div
-                  className="MuiGrid-item-01377"
+                  className="MuiGrid-item-1377"
                 >
                   <h2
                     className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1056,7 +1067,7 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-container-01376 MuiGrid-item-01377 Widget-content"
+                  className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1064,16 +1075,16 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-01377 MuiGrid-grid-xs-6-01410"
+            className="MuiGrid-item-1377 MuiGrid-grid-xs-6-1410"
           >
             <div
               className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-border Component-customBotomBorder-3 Widget-border-bottom"
             >
               <div
-                className="MuiGrid-container-01376 MuiGrid-direction-xs-column-01379 Widget-container"
+                className="MuiGrid-container-1376 MuiGrid-direction-xs-column-1379 Widget-container"
               >
                 <div
-                  className="MuiGrid-item-01377"
+                  className="MuiGrid-item-1377"
                 >
                   <h2
                     className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1082,7 +1093,7 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-container-01376 MuiGrid-item-01377 Widget-content"
+                  className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1116,19 +1127,19 @@ exports[`Storyshots widgets/Widget basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0697 MuiGrid-spacing-xs-24-0721"
+      className="MuiGrid-container-697 MuiGrid-spacing-xs-24-721"
     >
       <div
-        className="MuiGrid-item-0698 MuiGrid-grid-xs-12-0737"
+        className="MuiGrid-item-698 MuiGrid-grid-xs-12-737"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root"
         >
           <div
-            className="MuiGrid-container-0697 MuiGrid-direction-xs-column-0700 Widget-container"
+            className="MuiGrid-container-697 MuiGrid-direction-xs-column-700 Widget-container"
           >
             <div
-              className="MuiGrid-item-0698"
+              className="MuiGrid-item-698"
             >
               <h2
                 className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1137,7 +1148,7 @@ exports[`Storyshots widgets/Widget basic 1`] = `
               </h2>
             </div>
             <div
-              className="MuiGrid-container-0697 MuiGrid-item-0698 Widget-content"
+              className="MuiGrid-container-697 MuiGrid-item-698 Widget-content"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -1169,19 +1180,19 @@ exports[`Storyshots widgets/Widget custom height 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-01085 MuiGrid-spacing-xs-24-01109"
+      className="MuiGrid-container-1085 MuiGrid-spacing-xs-24-1109"
     >
       <div
-        className="MuiGrid-item-01086 MuiGrid-grid-xs-12-01125"
+        className="MuiGrid-item-1086 MuiGrid-grid-xs-12-1125"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root"
         >
           <div
-            className="MuiGrid-container-01085 MuiGrid-direction-xs-column-01088 Widget-container"
+            className="MuiGrid-container-1085 MuiGrid-direction-xs-column-1088 Widget-container"
           >
             <div
-              className="MuiGrid-item-01086"
+              className="MuiGrid-item-1086"
             >
               <h2
                 className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1190,7 +1201,7 @@ exports[`Storyshots widgets/Widget custom height 1`] = `
               </h2>
             </div>
             <div
-              className="MuiGrid-container-01085 MuiGrid-item-01086 Widget-content Component-content-1"
+              className="MuiGrid-container-1085 MuiGrid-item-1086 Widget-content Component-content-1"
             >
               <div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
@@ -1224,19 +1235,19 @@ exports[`Storyshots widgets/Widget featured 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0794 MuiGrid-spacing-xs-24-0818"
+      className="MuiGrid-container-794 MuiGrid-spacing-xs-24-818"
     >
       <div
-        className="MuiGrid-item-0795 MuiGrid-grid-xs-12-0834"
+        className="MuiGrid-item-795 MuiGrid-grid-xs-12-834"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-featured"
         >
           <div
-            className="MuiGrid-container-0794 MuiGrid-direction-xs-column-0797 Widget-container"
+            className="MuiGrid-container-794 MuiGrid-direction-xs-column-797 Widget-container"
           >
             <div
-              className="MuiGrid-item-0795"
+              className="MuiGrid-item-795"
             >
               <h2
                 className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1245,7 +1256,7 @@ exports[`Storyshots widgets/Widget featured 1`] = `
               </h2>
             </div>
             <div
-              className="MuiGrid-container-0794 MuiGrid-item-0795 Widget-content"
+              className="MuiGrid-container-794 MuiGrid-item-795 Widget-content"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -1277,19 +1288,19 @@ exports[`Storyshots widgets/Widget squared 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0988 MuiGrid-spacing-xs-24-01012"
+      className="MuiGrid-container-988 MuiGrid-spacing-xs-24-1012"
     >
       <div
-        className="MuiGrid-item-0989 MuiGrid-grid-xs-12-01028"
+        className="MuiGrid-item-989 MuiGrid-grid-xs-12-1028"
       >
         <div
           className="MuiPaper-root MuiPaper-elevation2 Widget-root"
         >
           <div
-            className="MuiGrid-container-0988 MuiGrid-direction-xs-column-0991 Widget-container"
+            className="MuiGrid-container-988 MuiGrid-direction-xs-column-991 Widget-container"
           >
             <div
-              className="MuiGrid-item-0989"
+              className="MuiGrid-item-989"
             >
               <h2
                 className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1298,7 +1309,7 @@ exports[`Storyshots widgets/Widget squared 1`] = `
               </h2>
             </div>
             <div
-              className="MuiGrid-container-0988 MuiGrid-item-0989 Widget-content"
+              className="MuiGrid-container-988 MuiGrid-item-989 Widget-content"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -1330,25 +1341,25 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-0891 MuiGrid-spacing-xs-24-0915"
+      className="MuiGrid-container-891 MuiGrid-spacing-xs-24-915"
     >
       <div
-        className="MuiGrid-item-0892 MuiGrid-grid-xs-12-0931"
+        className="MuiGrid-item-892 MuiGrid-grid-xs-12-931"
       >
         <div
-          className="MuiGrid-container-0891 MuiGrid-spacing-xs-24-0915"
+          className="MuiGrid-container-891 MuiGrid-spacing-xs-24-915"
         >
           <div
-            className="MuiGrid-item-0892 MuiGrid-grid-xs-6-0925"
+            className="MuiGrid-item-892 MuiGrid-grid-xs-6-925"
           >
             <div
               className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-border Widget-border-top"
             >
               <div
-                className="MuiGrid-container-0891 MuiGrid-direction-xs-column-0894 Widget-container"
+                className="MuiGrid-container-891 MuiGrid-direction-xs-column-894 Widget-container"
               >
                 <div
-                  className="MuiGrid-item-0892"
+                  className="MuiGrid-item-892"
                 >
                   <h2
                     className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1357,7 +1368,7 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-container-0891 MuiGrid-item-0892 Widget-content"
+                  className="MuiGrid-container-891 MuiGrid-item-892 Widget-content"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1365,16 +1376,16 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-0892 MuiGrid-grid-xs-6-0925"
+            className="MuiGrid-item-892 MuiGrid-grid-xs-6-925"
           >
             <div
               className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-border Widget-border-bottom"
             >
               <div
-                className="MuiGrid-container-0891 MuiGrid-direction-xs-column-0894 Widget-container"
+                className="MuiGrid-container-891 MuiGrid-direction-xs-column-894 Widget-container"
               >
                 <div
-                  className="MuiGrid-item-0892"
+                  className="MuiGrid-item-892"
                 >
                   <h2
                     className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1383,7 +1394,7 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-container-0891 MuiGrid-item-0892 Widget-content"
+                  className="MuiGrid-container-891 MuiGrid-item-892 Widget-content"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1391,16 +1402,16 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-0892 MuiGrid-grid-xs-6-0925"
+            className="MuiGrid-item-892 MuiGrid-grid-xs-6-925"
           >
             <div
               className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-border Component-customTopBorder-2 Widget-border-top"
             >
               <div
-                className="MuiGrid-container-0891 MuiGrid-direction-xs-column-0894 Widget-container"
+                className="MuiGrid-container-891 MuiGrid-direction-xs-column-894 Widget-container"
               >
                 <div
-                  className="MuiGrid-item-0892"
+                  className="MuiGrid-item-892"
                 >
                   <h2
                     className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1409,7 +1420,7 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-container-0891 MuiGrid-item-0892 Widget-content"
+                  className="MuiGrid-container-891 MuiGrid-item-892 Widget-content"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1417,16 +1428,16 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-0892 MuiGrid-grid-xs-6-0925"
+            className="MuiGrid-item-892 MuiGrid-grid-xs-6-925"
           >
             <div
               className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Widget-root Widget-border Component-customBotomBorder-3 Widget-border-bottom"
             >
               <div
-                className="MuiGrid-container-0891 MuiGrid-direction-xs-column-0894 Widget-container"
+                className="MuiGrid-container-891 MuiGrid-direction-xs-column-894 Widget-container"
               >
                 <div
-                  className="MuiGrid-item-0892"
+                  className="MuiGrid-item-892"
                 >
                   <h2
                     className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
@@ -1435,7 +1446,7 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-container-0891 MuiGrid-item-0892 Widget-content"
+                  className="MuiGrid-container-891 MuiGrid-item-892 Widget-content"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
