@@ -1,13 +1,42 @@
-import { decorate, observable, action } from 'mobx';
+import { decorate, observable, action, computed } from 'mobx';
+import { Project } from './project';
+import { RootStore } from './utils';
 
-export class ProjectsList {
+export class ProjectsList extends RootStore {
   visibleRows = 50;
   checked = observable.map();
+
+  get allChecked() {
+    const projectIds = Array.from(this.rootStore.projectStore.projects.keys());
+    return projectIds.length === this.checked.size;
+  }
+
+  setChecked(projectIds, checked = true) {
+    const ids = Array.isArray(projectIds) ? projectIds : [projectIds];
+
+    ids.forEach(id => (checked ? this.checked.set(id, true) : this.checked.delete(id)));
+  }
+
+  isChecked(projectId) {
+    return this.checked.has(projectId);
+  }
+
+  selectAll() {
+    const projectIds = Array.from(this.rootStore.projectStore.projects.keys());
+    this.setChecked(projectIds);
+  }
+
+  unselectAll() {
+    this.checked.clear();
+  }
 }
 
 decorate(ProjectsList, {
   visibleRows: observable,
-  checked: observable
+  checked: observable,
+  setChecked: action,
+  allChecked: computed,
+  selectAll: action
 });
 
 export class ProjectForm {
@@ -30,7 +59,7 @@ export class ProjectForm {
   reset() {
     this.visible = false;
     this.type = 'create';
-    this.project = null;
+    this.project = new Project();
   }
 
   get isCreating() {
@@ -47,8 +76,8 @@ decorate(ProjectForm, {
   setProject: action
 });
 
-export class UiStore {
-  projectsList = new ProjectsList();
+export class UiStore extends RootStore {
+  projectsList = new ProjectsList(this.rootStore);
   projectForm = new ProjectForm();
 }
 

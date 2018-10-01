@@ -1,5 +1,5 @@
 import React from 'react';
-import Projects from './components/Projects';
+import Projects from './screens/projects';
 import Layout from './components/Layout';
 
 import createStore from './stores';
@@ -9,7 +9,7 @@ import faker from 'faker';
 
 const store = createStore();
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 50; i++) {
   store.projectStore.add({
     id: faker.random.uuid(),
     name: faker.random.words(),

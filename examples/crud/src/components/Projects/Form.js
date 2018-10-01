@@ -1,11 +1,13 @@
 import React from 'react';
 import { Widget } from '@latticejs/widgets';
 import { observer, inject } from 'mobx-react';
-import StoreComponent from '../StoreComponent';
 import { withStyles, FormControl, FormGroup, FormControlLabel, Switch, Button, Grid } from '@material-ui/core';
 import { compose } from 'recompose';
 import { withFormik } from 'formik';
 import { string, object } from 'yup';
+import faker from 'faker';
+
+import StoreComponent from '../StoreComponent';
 import TextInput from '../Form/TextInput';
 
 const formikEnhancer = withFormik({
@@ -14,7 +16,12 @@ const formikEnhancer = withFormik({
     author: string().required('Author is required.')
   }),
 
-  mapPropsToValues: ({ project }) => ({ ...project }),
+  mapPropsToValues: ({ project: { id = '', name = '', author = '', active = false } }) => ({
+    id,
+    name,
+    author,
+    active
+  }),
 
   handleSubmit: (payload, { props: { projectStore, onCancel, onSave }, setSubmitting }) => {
     const { id, ...data } = payload;
@@ -22,7 +29,7 @@ const formikEnhancer = withFormik({
     if (id) {
       projectStore.update(id, data);
     } else {
-      projectStore.add(data);
+      projectStore.add({ id: faker.random.uuid(), ...data });
     }
 
     setSubmitting(false);
@@ -41,7 +48,7 @@ const enhanceForm = compose(
 );
 
 const Form = enhanceForm(props => {
-  const { values, touched, errors, handleChange, handleSubmit, isSubmitting, classes, isCreating, onCancel } = props;
+  const { values, errors, handleChange, handleSubmit, isSubmitting, classes, isCreating, onCancel } = props;
 
   return (
     <form onSubmit={handleSubmit} noValidate autoComplete="off" className={classes.containerForm}>
@@ -53,7 +60,7 @@ const Form = enhanceForm(props => {
         value={values.name}
         onChange={handleChange}
         fullWidth
-        error={touched.name && errors.name}
+        error={errors.name}
       />
       <TextInput
         id="author"
@@ -63,7 +70,7 @@ const Form = enhanceForm(props => {
         value={values.author}
         onChange={handleChange}
         fullWidth
-        error={touched.author && errors.author}
+        error={errors.author}
       />
       <FormControl component="fieldset">
         <FormGroup>

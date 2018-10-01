@@ -1,23 +1,30 @@
 import { decorate, observable, action, computed, toJS } from 'mobx';
-import faker from 'faker';
+import { RootStore } from './utils';
+// import faker from 'faker';
 
 export class Project {
-  id = faker.random.uuid();
+  id;
   name;
   author;
   active = true;
   createdAt = new Date();
   updatedAt = new Date();
 
-  constructor({ id, name, author, active }) {
-    this.id = id;
-    this.name = name;
-    this.author = author;
-    this.active = active;
+  constructor(data = {}) {
+    this.update(data);
   }
 
   toggleActive() {
     this.active = !this.active;
+  }
+
+  update(data) {
+    for (const key in data) {
+      if (data.hasOwnProperty(key) && ['id', 'name', 'author', 'active'].includes(key)) {
+        this[key] = data[key];
+      }
+    }
+    this.updatedAt = new Date();
   }
 
   get toJS() {
@@ -33,7 +40,7 @@ decorate(Project, {
   toJS: computed
 });
 
-export class ProjectStore {
+export class ProjectStore extends RootStore {
   projects = observable.map();
 
   get asList() {
@@ -47,7 +54,7 @@ export class ProjectStore {
 
   update(id, projectData) {
     const project = this.projects.get(id);
-    this.projects.set(id, { ...project, ...projectData });
+    project.update(projectData);
   }
 
   remove(projectId) {

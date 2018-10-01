@@ -5,9 +5,9 @@ export class AppStore {
   projectStore;
   uiStore;
 
-  constructor({ projectStore, uiStore }) {
-    this.projectStore = projectStore;
-    this.uiStore = uiStore;
+  constructor() {
+    this.projectStore = new ProjectStore(this);
+    this.uiStore = new UiStore(this);
   }
 
   injectableStores() {
@@ -19,8 +19,4 @@ export class AppStore {
   }
 }
 
-export default () =>
-  new AppStore({
-    projectStore: new ProjectStore(),
-    uiStore: new UiStore()
-  });
+export default () => new AppStore();

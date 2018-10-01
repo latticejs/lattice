@@ -11,16 +11,11 @@ const enhance = compose(
   // withStyles(ListItemStyles),
   inject('uiStore', 'projectStore'),
   withHandlers({
-    toggleChecked: ({
-      uiStore: {
-        projectsList: { checked }
-      },
-      project
-    }) => () => {
-      if (checked.has(project.id)) {
-        return checked.delete(project.id);
+    toggleChecked: ({ uiStore: { projectsList }, project }) => () => {
+      if (projectsList.isChecked(project.id)) {
+        return projectsList.setChecked(project.id, false);
       }
-      checked.set(project.id, true);
+      projectsList.setChecked(project.id);
     },
     toggleActive: ({ project }) => e => {
       e.stopPropagation();
