@@ -44,7 +44,7 @@ const RemoveIcon = ({ onClick }) => (
 const ToggleActiveIcon = ({ checked, onClick }) => {
   return (
     <Tooltip title={`${checked ? 'Deactivate' : 'Activate'}`}>
-      <Switch onClick={onClick} checked={checked} />
+      <Switch onClick={onClick} checked={checked} color="primary" />
     </Tooltip>
   );
 };

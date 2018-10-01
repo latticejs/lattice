@@ -15,7 +15,11 @@ export class Project {
   }
 
   toggleActive() {
-    this.active = !this.active;
+    this.setActive(!this.active);
+  }
+
+  setActive(active = true) {
+    this.active = active;
   }
 
   update(data) {
@@ -52,8 +56,8 @@ export class ProjectStore extends RootStore {
     this.projects.set(project.id, project);
   }
 
-  update(id, projectData) {
-    const project = this.projects.get(id);
+  update(projectId, projectData) {
+    const project = this.projects.get(projectId);
     project.update(projectData);
   }
 
@@ -61,6 +65,10 @@ export class ProjectStore extends RootStore {
     if (!this.projects.has(projectId)) return;
 
     this.projects.delete(projectId);
+  }
+
+  setActive(projectId, active = true) {
+    this.projects.get(projectId).setActive(active);
   }
 }
 

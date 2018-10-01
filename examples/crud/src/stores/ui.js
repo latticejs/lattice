@@ -8,7 +8,7 @@ export class ProjectsList extends RootStore {
 
   get allChecked() {
     const projectIds = Array.from(this.rootStore.projectStore.projects.keys());
-    return projectIds.length === this.checked.size;
+    return projectIds.length > 0 && projectIds.length === this.checked.size;
   }
 
   setChecked(projectIds, checked = true) {

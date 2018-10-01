@@ -1,11 +1,12 @@
 import React from 'react';
 import { withStyles, FormControl, FormGroup, FormControlLabel, Checkbox } from '@material-ui/core';
 
-const SelectAll = ({ checked, onChange, classes }) => {
+const SelectAll = ({ checked, disabled, onChange, classes }) => {
   return (
     <FormControl component="fieldset" className={classes.formControl}>
       <FormGroup>
         <FormControlLabel
+          disabled={disabled}
           control={<Checkbox checked={checked} onChange={onChange} />}
           label="Select all"
           classes={{ root: classes.check, label: classes.label }}
