@@ -23,7 +23,7 @@ const formikEnhancer = withFormik({
     active
   }),
 
-  handleSubmit: (payload, { props: { projectStore, onCancel, onSave }, setSubmitting }) => {
+  handleSubmit: (payload, { props: { projectStore, onSave }, setSubmitting }) => {
     const { id, ...data } = payload;
 
     if (id) {

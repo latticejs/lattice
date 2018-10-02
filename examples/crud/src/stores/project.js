@@ -51,6 +51,10 @@ export class ProjectStore extends RootStore {
     return Array.from(this.projects.values());
   }
 
+  asSortedList(sortFn) {
+    return [...this.asList].sort(sortFn);
+  }
+
   add(projectData) {
     const project = new Project(projectData);
     this.projects.set(project.id, project);
@@ -76,5 +80,6 @@ decorate(ProjectStore, {
   projects: observable,
   add: action,
   remove: action,
-  asList: computed
+  asList: computed,
+  asSortedList: action
 });

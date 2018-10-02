@@ -12,20 +12,21 @@ const enhance = compose(
   withState('saved', 'setSaved', false),
   withHandlers({
     editProject: ({ uiStore }) => project => {
-      uiStore.projectForm.setType('edit');
-      uiStore.projectForm.setProject(project);
-      uiStore.projectForm.setVisible(true);
+      uiStore.projectForm.type = 'edit';
+      uiStore.projectForm.project = project;
+      uiStore.projectForm.visible = true;
     },
     addProject: ({ uiStore }) => () => {
       uiStore.projectForm.reset();
-      uiStore.projectForm.setVisible(true);
+      uiStore.projectForm.visible = true;
     },
     close: ({ uiStore }) => () => {
       uiStore.projectForm.reset();
     }
   }),
   withHandlers({
-    onSave: ({ setSaved, close }) => () => {
+    onSave: ({ uiStore, setSaved, close }) => () => {
+      // uiStore.projectList.updateList();
       setSaved(true);
       close();
       setTimeout(() => {

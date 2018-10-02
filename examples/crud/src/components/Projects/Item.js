@@ -11,18 +11,20 @@ const enhance = compose(
   // withStyles(ListItemStyles),
   inject('uiStore', 'projectStore'),
   withHandlers({
-    toggleChecked: ({ uiStore: { projectsList }, project }) => () => {
-      if (projectsList.isChecked(project.id)) {
-        return projectsList.setChecked(project.id, false);
+    toggleChecked: ({ uiStore: { projectList }, project }) => () => {
+      if (projectList.isChecked(project.id)) {
+        return projectList.setChecked(project.id, false);
       }
-      projectsList.setChecked(project.id);
+      projectList.setChecked(project.id);
     },
     toggleActive: ({ project }) => e => {
       e.stopPropagation();
       project.toggleActive();
     },
-    remove: ({ projectStore, project }) => () => {
-      return projectStore.remove(project.id);
+    remove: ({ uiStore, projectStore, project }) => e => {
+      e.stopPropagation();
+      projectStore.remove(project.id);
+      // return uiStore.projectList.updateList();
     },
     edit: ({ onEdit, project }) => e => {
       e.preventDefault();
@@ -67,11 +69,11 @@ ToggleActiveIcon.propTypes = {
 };
 
 export default enhance(({ project, uiStore, toggleChecked, toggleActive, remove, edit, style, classes }) => {
-  const isChecked = uiStore.projectsList.checked.has(project.id);
+  const isChecked = uiStore.projectList.checked.has(project.id);
 
   return (
     <ListItem button onClick={toggleChecked} selected={isChecked} style={style} classes={classes}>
-      <Checkbox checked={uiStore.projectsList.checked.has(project.id)} tabIndex={-1} disableRipple />
+      <Checkbox checked={uiStore.projectList.checked.has(project.id)} tabIndex={-1} disableRipple />
 
       <ListItemText primary={project.name} secondary={project.author} />
 
