@@ -104,12 +104,11 @@ export default compose(
   inject('projectStore', 'uiStore'),
   withHandlers({
     findItem: ({ uiStore }) => ({ index }) => {
-      const projects = uiStore.projectList.list;
-      return projects.get(Array.from(projects.keys())[index]);
+      return uiStore.projectList.list[index];
     },
 
-    loadMore: ({ uiStore }) => async () => {
-      return uiStore.projectList.list;
+    loadMore: ({ uiStore, setStartIndex, setStopIndex }) => async ({ startIndex, stopIndex }) => {
+      return uiStore.projectList.list.slice(startIndex, stopIndex);
     },
     selectedIds: ({ uiStore }) => () => Array.from(uiStore.projectList.checked.keys())
   }),
