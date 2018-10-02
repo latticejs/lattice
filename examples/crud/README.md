@@ -1,7 +1,9 @@
 # Latticejs CRUD example
-This is an example of a common CRUD dashboard, using some **@latticejs** packages, such as `infinite-list` and `widgets`.
+> Lattice CRUD example, using some **@latticejs** packages, such as `infinite-list` and `widgets`.
 
-## Startup guide
+![screenshot](screen.png?raw=true "CRUD Example")
+
+## How to start
 There are two options to get started with this example:
 - [Using clap](#using-clap)
 - [Clone this repo](clone-this-repo)
