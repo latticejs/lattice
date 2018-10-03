@@ -1426,6 +1426,11 @@ exports[`Storyshots tree customized 1`] = `
                 height="1.5em"
                 id="si-logos-javascript"
                 preserveAspectRatio="xMidYMid"
+                style={
+                  Object {
+                    "margin-right": 0,
+                  }
+                }
                 viewBox="0 0 256 256"
                 width="1.5em"
               >

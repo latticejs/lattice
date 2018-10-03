@@ -75,7 +75,7 @@ const renderGenericCreator = ({
 }) => {
   const iterator = (item, isChild = false, lvl = 0, idx) => {
     lvl = lvl + 1;
-    item.key = `lattice-tree-${idx}-${lvl}`;
+    item.key = getItemKey({ item, lvl }); // `lattice-tree-${idx}-${lvl}`;
     if (item.children) {
       return parentFn({
         item,
@@ -130,7 +130,7 @@ class Tree extends Component {
     renderParentItem: TreeParent,
     renderChildItem: TreeChild,
     renderItemIcon: () => {},
-    getItemKey: ({ item }) => item.key,
+    getItemKey: ({ item, lvl }) => `lattice-tree-${item.label}-${lvl}`,
     onFoldItem: () => {},
     onUnfoldItem: () => {},
     onCheckItem: () => {},
@@ -194,15 +194,29 @@ class Tree extends Component {
   toggleCheck = ({ checked: check, items = [], keys = [] }) => {
     const { checked } = this.state;
     const currentsIndexes = keys.map(key => ({ pos: checked.indexOf(key), key }));
-    const newChecked = [...checked];
-    const length = currentsIndexes.length;
-    let idx = 0;
-    for (; idx < length; idx++) {
-      let current = currentsIndexes[idx];
-      if (current.pos === -1) {
-        newChecked.push(current.key);
-      } else {
-        newChecked.splice(current.pos, 1);
+    let newChecked = [];
+
+    if (!checked.length) {
+      newChecked = newChecked.concat(currentsIndexes.map(c => c.key));
+    } else {
+      // Note (dk): we need to order desc the currentIndexes array
+      // because it will be splicing the array and if we did that
+      // from bottom to top, newChecked idxs will be changing and
+      // that will leave us with inconsistent results.
+      // If we splice from top to bottom, re-arrangements will cause
+      // no harm.
+      currentsIndexes.sort((a, b) => a.pos < b.pos);
+      let idx = 0;
+      const length = currentsIndexes.length;
+      newChecked = [...checked];
+      for (; idx < length; idx++) {
+        let current = currentsIndexes[idx];
+        let chck = this.isChecked(current.key);
+        if (chck) {
+          newChecked.splice(current.pos, 1);
+        } else {
+          newChecked.push(current.key);
+        }
       }
     }
 

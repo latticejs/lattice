@@ -52,6 +52,17 @@ describe('<Tree />', () => {
       .simulate('change', { target: { checked: true } });
     expect(onCheckItemCb).toBeCalledWith(item);
   });
+  it('renders a <Tree onCheckItem={cb}/> with onCheckItem cb defined and cascadeCheck enabled', () => {
+    const onCheckItemCb = jest.fn();
+    const item = { items: [sampleInput[1], ...sampleInput[1].children], check: true };
+    const wrapper = mount(<Tree treeData={sampleInput} onCheckItem={onCheckItemCb} cascadeCheck />);
+    wrapper
+      .find('li')
+      .at(1)
+      .find('input[type="checkbox"]')
+      .simulate('change', { target: { checked: true } });
+    expect(onCheckItemCb).toBeCalledWith(item);
+  });
   it('renders a <Tree onUnfoldItem={cb}/> with onUnfoldItem cb defined and triggered', () => {
     const onUnfoldItemCb = jest.fn();
     const item = sampleInput[1];
