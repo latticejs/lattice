@@ -11,12 +11,25 @@ var repoOptions = {
   ref: 'master'
 };
 
+function extractMessage(err) {
+  var msg = '';
+  try {
+    msg = JSON.parse(err.message).message;
+  } catch (error) {
+    msg = err.message ? err.message : err;
+  }
+
+  return msg;
+}
+
 function taskFailed(taskSpinner, err) {
-  taskSpinner.fail(messages.error(err.message ? err.message : err));
+  taskSpinner.fail(messages.error(extractMessage(err)));
   process.exit(1);
 }
 
-async function clap(example, project) {
+async function clap(example, project, cmd) {
+  var branch = null;
+
   // project name is missing -> abort
   if (!project) {
     console.log(messages.missingProjectName());
@@ -26,6 +39,11 @@ async function clap(example, project) {
   if (fs.existsSync(project) && project !== '.') {
     console.log(messages.alreadyExists(project));
     process.exit(1);
+  }
+
+  if (cmd.branch) {
+    branch = cmd.branch;
+    repoOptions.ref = cmd.branch;
   }
 
   // Tasks:
@@ -48,10 +66,23 @@ async function clap(example, project) {
   try {
     // \ validate example name
     var checkValidExampleSpinner = messages.wait(messages.checkValidExample());
-    var checkValidExampleOut = await tasks.validate(repoOptions, example);
+    var checkValidExampleOut;
+    try {
+      checkValidExampleOut = await tasks.validate(repoOptions, example);
+    } catch (error) {
+      checkValidExampleOut = error;
+
+      if (/^(No commit found)/.test(extractMessage(checkValidExampleOut.stderr))) {
+        checkValidExampleOut.stderr.message = `The branch "${
+          cmd.branch
+        }" does not exist on Lattice repo. Please see https://github.com/latticejs/lattice/branches.`;
+      }
+    }
+
     if (checkValidExampleOut.code) {
       taskFailed(checkValidExampleSpinner, checkValidExampleOut.stderr);
     }
+
     checkValidExampleSpinner.succeed();
 
     // \ create project directory
@@ -64,7 +95,7 @@ async function clap(example, project) {
 
     // \ download example
     var downloadSpinner = messages.wait(messages.downloadExample());
-    var downloadExampleOut = await tasks.download(project, example);
+    var downloadExampleOut = await tasks.download(project, example, branch);
     if (downloadExampleOut.code) {
       taskFailed(downloadSpinner, downloadExampleOut.stderr);
     }
@@ -95,11 +126,15 @@ async function clap(example, project) {
   console.log(messages.clapSucceed(project));
 }
 
-async function list() {
+async function list(cmd) {
   // Tasks:
   //   - get examples (gh content api)
   //   - parse
   //   - display examples
+
+  if (cmd.branch) {
+    repoOptions.ref = cmd.branch;
+  }
 
   console.log(messages.listExamples());
 
@@ -112,6 +147,12 @@ async function list() {
     var examplesRaw = await tasks.list(repoOptions);
     examplesRaw.data.forEach(parseList);
   } catch (err) {
+    if (/^(No commit found)/.test(extractMessage(err))) {
+      err.message = `The branch "${
+        cmd.branch
+      }" does not exist on Lattice repo. Please see https://github.com/latticejs/lattice/branches.`;
+    }
+
     console.error(messages.error(err));
     process.exit(1);
   }
