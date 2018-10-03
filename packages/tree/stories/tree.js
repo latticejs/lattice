@@ -6,7 +6,7 @@ import Tree from '../src/tree';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
-import pkg from '../package.json';
+import pkg from './pkg.json';
 import { JSONIcon } from './json-icons';
 
 const Flexed = story => (
