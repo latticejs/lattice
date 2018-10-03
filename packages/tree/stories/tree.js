@@ -8,8 +8,6 @@ import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
 import pkg from '../package.json';
 import { JSONIcon } from './json-icons';
-import DeleteIcon from '@material-ui/icons/Delete';
-import { IconButton } from '@material-ui/core';
 
 const Flexed = story => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
@@ -62,7 +60,7 @@ class BasicTree extends Component {
   };
 
   render() {
-    return <Tree treeData={this.state.treeData} {...this.props} />;
+    return <Tree treeData={this.state.treeData} cascadeCheck {...this.props} />;
   }
 }
 
@@ -84,6 +82,7 @@ class CustomTree extends Component {
           id="si-logos-javascript"
           width="1.5em"
           height="1.5em"
+          style={{ 'margin-right': 0 }}
         >
           <title id="apksi-logos-javascript-title">logo of javascript</title>
           <path d="M0 0h256v256H0V0z" fill="#F7DF1E" />
@@ -100,6 +99,7 @@ class CustomTree extends Component {
           id="si-logos-css-3_official"
           width="1.5em"
           height="1.5em"
+          style={{ 'margin-right': 0 }}
         >
           <title id="ahpsi-logos-css-3_official-title">logo of css-3_official</title>
           <path
@@ -156,7 +156,8 @@ var transform = (input, level = 0) => {
     const isString = valueType === 'string';
 
     const item = {
-      type: valueType
+      type: valueType,
+      id: key
     };
 
     if (['string', 'number', 'date'].includes(valueType)) {
@@ -193,9 +194,18 @@ class JSONTree extends Component {
     });
   }
 
+  getItemKey = ({ item, lvl }) => `custom-key-${item.id}-${lvl}`;
+
   render() {
     return (
-      <Tree treeData={this.state.treeData} {...this.props} renderItemIcon={this.customIcon} expandedAll cascadeCheck />
+      <Tree
+        treeData={this.state.treeData}
+        {...this.props}
+        getItemKey={this.getItemKey}
+        renderItemIcon={this.customIcon}
+        expandedAll
+        cascadeCheck
+      />
     );
   }
 }

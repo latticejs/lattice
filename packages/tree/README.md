@@ -136,11 +136,11 @@ Used to control how to render parent elements.
 
 Used to control which icon render.
 
-### getItemKey
+### getItemKey :rotating_light:
 
 > `function({item: object, lvl: number})` | defaults to: `lattice-tree-${item.label}-${lvl}`
 
-Every item needs to have a unique key for maintaining sanity on the component internal state (checked and expanded). You can use this fn to overwrite the default key if your data structure is different to what is expected (see [Usage](##usage)).
+Every item needs to have a unique key for maintaining sanity on the component internal state (checked and expanded). You can use this fn to overwrite the default key if your data structure is different to what is expected (see [JSON Tree story](stories/tree.js)).
 
 <!-- end:api -->
 
