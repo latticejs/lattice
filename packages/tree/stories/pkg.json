@@ -1,0 +1,76 @@
+{
+  "name": "@latticejs/tree",
+  "version": "1.0.1-alpha.10",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "dist/es/dag.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "taskr",
+    "release": "taskr release",
+    "prepublish": "npm run release",
+    "storybook": "start-storybook -p 9015 -c .storybook",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^3.0.0",
+    "@material-ui/icons": "^3.0.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "devDependencies": {
+    "@latticejs/storybook-readme": "^1.0.1-alpha.9",
+    "@material-ui/core": "^3.0.0",
+    "@material-ui/icons": "^3.0.0",
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-storyshots": "^3.4.5",
+    "@storybook/addon-storysource": "^3.4.11",
+    "@storybook/react": "^3.4.5",
+    "@taskr/babel": "^1.1.0",
+    "@taskr/clear": "^1.1.0",
+    "@taskr/esnext": "^1.1.0",
+    "@taskr/watch": "^1.1.0",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "8.2.6",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-async-functions": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "jest": "^23.1.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-test-renderer": "^16.5.0",
+    "rollup": "^0.63.2",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "storybook-readme": "^4.0.0-beta1",
+    "taskr": "^1.1.0",
+    "taskr-rollup": "^0.0.4"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./setupTest.js",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      "^.+\\.md?$": "markdown-loader-jest"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "c1aad20555302fad47d2d61d1ff0f48f6d566083"
+}
