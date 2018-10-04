@@ -28,7 +28,12 @@ exports.describeClap = function describeClap() {
     ${chalk.cyan('download and bootstrap `exampleName` into your upcoming lattice project.')}
     Eg:
       $ clap example exampleName myLatticeApp
+      $ clap example --branch=someBranch exampleName myLatticeApp
   `;
+};
+
+exports.helpClapBranch = function helpClapBranch() {
+  return 'download example from a branch (https://github.com/latticejs/lattice/branches).';
 };
 
 exports.runningClap = function runningClap() {
@@ -72,6 +77,10 @@ exports.describeList = function describeList() {
   return `
     ${chalk.cyan('list all the available lattice example projects.')}
   `;
+};
+
+exports.helpListBranch = function helpListBranch() {
+  return 'list examples from a branch (https://github.com/latticejs/lattice/branches).';
 };
 
 exports.checkValidExample = function checkValidExample() {
