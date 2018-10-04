@@ -310,15 +310,33 @@ class Dag extends Component {
   getComputedTranslateXYZ = obj => {
     const transArr = [];
     if (!window.getComputedStyle) return;
-    const style = getComputedStyle(obj),
-      transform = style.transform || style.webkitTransform || style.mozTransform;
-    let mat = transform.match(/^matrix3d\((.+)\)$/);
-    if (mat) return parseFloat(mat[1].split(', ')[13]);
-    mat = transform.match(/^matrix\((.+)\)$/);
-    transArr.push(mat ? parseFloat(mat[1].split(', ')[4]) : 0);
-    transArr.push(mat ? parseFloat(mat[1].split(', ')[5]) : 0);
-    transArr.push(mat ? parseFloat(mat[1].split(', ')[0]) : 1);
-    return transArr;
+    let style = window.getComputedStyle(obj, null);
+    let transform = style.transform || style.webkitTransform || style.mozTransform;
+
+    if (!transform || transform === 'none') {
+      // use another approach to get transform data
+      const parseTransform = attr => {
+        var b = {};
+        for (var i in (attr = attr.match(/(\w+\((\-?\d+\.?\d*e?\-?\d*,?)+\))+/g))) {
+          var c = attr[i].match(/[\w\.\-]+/g);
+          b[c.shift()] = c;
+        }
+        return b;
+      };
+
+      const t = obj.getAttribute('transform');
+      if (!t) return [0, 0, 1];
+      const parsed = parseTransform(t);
+      return [...parsed.translate.map(n => Number(n)), ...parsed.scale.map(n => Number(n))];
+    } else {
+      let mat = transform.match(/^matrix3d\((.+)\)$/);
+      if (mat) return parseFloat(mat[1].split(', ')[13]);
+      mat = transform.match(/^matrix\((.+)\)$/);
+      transArr.push(mat ? parseFloat(mat[1].split(', ')[4]) : 0);
+      transArr.push(mat ? parseFloat(mat[1].split(', ')[5]) : 0);
+      transArr.push(mat ? parseFloat(mat[1].split(', ')[0]) : 1);
+      return transArr;
+    }
   };
 
   getMousePosition = ({ svg, g }, clientX, clientY) => {
