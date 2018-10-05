@@ -6,6 +6,7 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
   onKeyUp={[Function]}
   style={
     Object {
+      "caretColor": "transparent",
       "outline": "none",
       "position": "relative",
     }
@@ -160,6 +161,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
   onKeyUp={[Function]}
   style={
     Object {
+      "caretColor": "transparent",
       "outline": "none",
       "position": "relative",
     }
@@ -331,6 +333,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
       onKeyUp={[Function]}
       style={
         Object {
+          "caretColor": "transparent",
           "outline": "none",
           "position": "relative",
         }
@@ -504,6 +507,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
       onKeyUp={[Function]}
       style={
         Object {
+          "caretColor": "transparent",
           "outline": "none",
           "position": "relative",
         }

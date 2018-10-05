@@ -34,7 +34,8 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.fontSize,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    caretColor: 'transparent'
   },
   dagNode: {
     stroke: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.secondary.dark,
@@ -113,7 +114,8 @@ class SvgTextInput extends Component {
           left: style.left(this.state.width),
           width: style.width(this.state.width),
           height: style.height,
-          transform: `scale(${style.z})`
+          transform: `scale(${style.z})`,
+          caretColor: 'initial'
         }}
       />,
       this.el
@@ -316,9 +318,9 @@ class Dag extends Component {
     if (!transform || transform === 'none') {
       // use another approach to get transform data
       const parseTransform = attr => {
-        var b = {};
-        for (var i in (attr = attr.match(/(\w+\((\-?\d+\.?\d*e?\-?\d*,?)+\))+/g))) {
-          var c = attr[i].match(/[\w\.\-]+/g);
+        const b = {};
+        for (let i in (attr = attr.match(/(\w+\((\-?\d+\.?\d*e?\-?\d*,?)+\))+/g))) {
+          const c = attr[i].match(/[\w\.\-]+/g);
           b[c.shift()] = c;
         }
         return b;
@@ -655,7 +657,7 @@ class Dag extends Component {
     return (
       <div
         ref={container => (this.graphContainer = container)}
-        style={{ position: 'relative', outline: 'none' }}
+        style={{ position: 'relative', outline: 'none', caretColor: 'transparent' }}
         contentEditable={true}
         suppressContentEditableWarning={true}
         onKeyUp={this.handleKeyUp}
