@@ -52,7 +52,6 @@ export default compose(
   inject('projectStore', 'uiStore'),
   withHandlers({
     findItem: ({ uiStore }) => ({ index }) => {
-      console.log('findItem');
       return uiStore.projectList.list[index];
     },
 

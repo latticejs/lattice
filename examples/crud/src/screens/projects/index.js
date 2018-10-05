@@ -9,36 +9,36 @@ import Modal from '../../components/Modal';
 
 const enhance = compose(
   inject('uiStore'),
-  withState('saved', 'setSaved', false),
+  withState('showSuccess', 'setShowSuccess', false),
   withHandlers({
-    editProject: ({ uiStore, setSaved }) => projectId => {
+    editProject: ({ uiStore, setShowSuccess }) => projectId => {
       uiStore.projectForm.type = 'edit';
       uiStore.projectForm.projectId = projectId;
       uiStore.projectForm.visible = true;
-      setSaved(false);
+      setShowSuccess(false);
     },
-    addProject: ({ uiStore, setSaved }) => () => {
+    addProject: ({ uiStore, setShowSuccess }) => () => {
       uiStore.projectForm.reset();
       uiStore.projectForm.visible = true;
-      setSaved(false);
+      setShowSuccess(false);
     },
     close: ({ uiStore }) => () => {
       uiStore.projectForm.reset();
     }
   }),
   withHandlers({
-    onSave: ({ setSaved, close }) => () => {
-      setSaved(true);
+    onSave: ({ setShowSuccess, close }) => () => {
+      setShowSuccess(true);
       close();
       setTimeout(() => {
-        setSaved(false);
+        setShowSuccess(false);
       }, 3000);
     }
   }),
   observer
 );
 
-export default enhance(({ uiStore, editProject, addProject, close, saved, onSave, setSaved }) => {
+export default enhance(({ uiStore, editProject, addProject, close, showSuccess, onSave, setShowSuccess }) => {
   return (
     <Grid container direction="column" justify="center" alignItems="stretch" spacing={16}>
       <Grid item xs>
@@ -49,7 +49,7 @@ export default enhance(({ uiStore, editProject, addProject, close, saved, onSave
         <ProjectForm onCancel={close} onSave={onSave} />
       </Modal>
 
-      <Success open={saved} message="Project saved!" onClose={() => setSaved(false)} />
+      <Success open={showSuccess} message="Project saved!" onClose={() => setShowSuccess(false)} />
     </Grid>
   );
 });

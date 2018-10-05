@@ -84,7 +84,7 @@ Widget.defaultProps = {
 };
 
 Widget.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
   featured: PropTypes.bool,
   elevation: PropTypes.number,
   classes: PropTypes.object,

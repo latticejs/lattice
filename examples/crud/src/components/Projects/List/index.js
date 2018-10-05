@@ -12,7 +12,7 @@ const List = props => {
   return (
     <Widget title={() => <ProjectTitle />} border="bottom" classes={{ root: classes.containerRoot }}>
       <Grid container direction="column" justify="center" alignItems="stretch">
-        <ProjectListActions onAdd={onAddProject} />
+        <ProjectListActions onAddProject={onAddProject} />
 
         <Grid item xs>
           <ProjectList onEditProject={onEditProject} />
