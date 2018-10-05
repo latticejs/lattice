@@ -94,7 +94,7 @@ const Base = withStyles(snackbarStyles)(({ classes, variant, message, open, onCl
     }}
     open={open}
     autoHideDuration={autoHideDuration}
-    onClose={onClose}
+    onClick={onClose}
   >
     <CustomSnackbarContentWrapper variant={variant} className={classes.margin} message={message} />
   </Snackbar>

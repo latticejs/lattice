@@ -9,7 +9,7 @@ import faker from 'faker';
 
 const store = createStore();
 
-for (let i = 0; i < 500; i++) {
+for (let i = 0; i < 5; i++) {
   store.projectStore.add({
     id: faker.random.uuid(),
     name: faker.random.words(),

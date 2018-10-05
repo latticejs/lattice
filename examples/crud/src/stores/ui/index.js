@@ -5,7 +5,7 @@ import { RootStore } from '../utils';
 
 export class UiStore extends RootStore {
   projectList = new ProjectList(this.rootStore);
-  projectForm = new ProjectForm();
+  projectForm = new ProjectForm(this.rootStore);
 }
 
 decorate(UiStore, {

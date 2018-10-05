@@ -24,10 +24,12 @@ export class ProjectList extends RootStore {
     super(rootStore);
 
     autorun(() => {
-      const { sortProperty, sortOrder, filterQuery } = this;
-      const list = this.rootStore.projectStore.asList;
-
-      this.updateList({ sortProperty, sortOrder, filterQuery, list });
+      this.updateList({
+        sortProperty: this.sortProperty,
+        sortOrder: this.sortOrder,
+        filterQuery: this.filterQuery,
+        projects: this.rootStore.projectStore.projects
+      });
     });
   }
 
@@ -46,15 +48,16 @@ export class ProjectList extends RootStore {
   }
 
   selectAll() {
-    this.setChecked(this.list.map(p => p.id));
+    this.setChecked(this.list);
   }
 
   unselectAll() {
     this.checked.clear();
   }
 
-  updateList({ sortProperty, sortOrder, filterQuery, list }) {
+  updateList({ sortProperty, sortOrder, filterQuery, projects }) {
     const sortFn = sortList(sortProperty, sortOrder);
+    let list = Array.from(projects.values());
 
     if (filterQuery.trim()) {
       const cleanedFilter = filterQuery.replace(/[^a-zA-Z0-9-]/gi, '|');
@@ -62,21 +65,21 @@ export class ProjectList extends RootStore {
       list = list.filter(p => filterReg.test([p.name, p.author].join()));
     }
 
-    this.list = list.sort(sortFn);
+    this.list = list.sort(sortFn).map(p => p.id);
   }
 }
 
 decorate(ProjectList, {
-  list: observable,
-  visibleRows: observable,
-  checked: observable,
-  sortProperty: observable,
-  sortOrder: observable,
-  filterQuery: observable,
-  setChecked: action,
   allChecked: computed,
+  checked: observable,
+  filterQuery: observable,
+  list: observable,
   selectAll: action,
+  setChecked: action,
+  setFilter: action,
   setSortOrder: action,
   setSortProperty: action,
-  setFilter: action
+  sortOrder: observable,
+  sortProperty: observable,
+  visibleRows: observable
 });

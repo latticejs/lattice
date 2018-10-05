@@ -30,8 +30,7 @@ export default enhanceListActions(
     sortProperty,
     sortOrderOnChange,
     sortPropertyOnChange,
-    filterOnChange,
-    filterValue
+    filterOnChange
   }) => {
     return (
       <Grid container direction="row" justify="flex-start" alignItems="center">
@@ -65,7 +64,7 @@ export default enhanceListActions(
           )}
         </Grid>
         <Grid item xs container justify="center">
-          <Filter onChange={filterOnChange} filter={filterValue} />
+          <Filter onChange={filterOnChange} />
         </Grid>
         <Grid item xs={3} container justify="flex-end">
           <Sort

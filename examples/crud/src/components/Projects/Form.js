@@ -105,7 +105,7 @@ const Form = enhanceForm(props => {
 class ProjectForm extends StoreComponent {
   render() {
     const { classes, uiStore, onCancel, onSave } = this.props;
-    const { isCreating } = uiStore.projectForm;
+    const { isCreating, project } = uiStore.projectForm;
 
     return (
       <Widget
@@ -113,13 +113,7 @@ class ProjectForm extends StoreComponent {
         border="bottom"
         classes={{ root: classes.containerRoot }}
       >
-        <Form
-          project={uiStore.projectForm.project}
-          classes={classes}
-          onCancel={onCancel}
-          isCreating={isCreating}
-          onSave={onSave}
-        />
+        <Form project={project} classes={classes} onCancel={onCancel} isCreating={isCreating} onSave={onSave} />
       </Widget>
     );
   }

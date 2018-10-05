@@ -11,25 +11,24 @@ const enhance = compose(
   // withStyles(ListItemStyles),
   inject('uiStore', 'projectStore'),
   withHandlers({
-    toggleChecked: ({ uiStore: { projectList }, project }) => () => {
-      if (projectList.isChecked(project.id)) {
-        return projectList.setChecked(project.id, false);
+    toggleChecked: ({ uiStore: { projectList }, projectId }) => () => {
+      if (projectList.isChecked(projectId)) {
+        return projectList.setChecked(projectId, false);
       }
-      projectList.setChecked(project.id);
+      projectList.setChecked(projectId);
     },
-    toggleActive: ({ project }) => e => {
+    toggleActive: ({ projectId, projectStore }) => e => {
       e.stopPropagation();
-      project.toggleActive();
+      projectStore.toggleActive(projectId);
     },
-    remove: ({ uiStore, projectStore, project }) => e => {
+    remove: ({ projectStore, projectId }) => e => {
       e.stopPropagation();
-      projectStore.remove(project.id);
-      // return uiStore.projectList.updateList();
+      projectStore.remove(projectId);
     },
-    edit: ({ onEdit, project }) => e => {
+    edit: ({ onEdit, projectId }) => e => {
       e.preventDefault();
       e.stopPropagation();
-      onEdit(project);
+      onEdit(projectId);
     }
   }),
   observer
@@ -68,22 +67,23 @@ ToggleActiveIcon.propTypes = {
   checked: Types.bool
 };
 
-export default enhance(({ project, uiStore, toggleChecked, toggleActive, remove, edit, style, classes }) => {
-  const isChecked = uiStore.projectList.checked.has(project.id);
+export default enhance(
+  ({ projectId, uiStore, projectStore, toggleChecked, toggleActive, remove, edit, style, classes }) => {
+    const isChecked = uiStore.projectList.checked.has(projectId);
+    const { name, author, active } = projectStore.projects.get(projectId);
 
-  return (
-    <ListItem button onClick={toggleChecked} selected={isChecked} style={style} classes={classes}>
-      <Checkbox checked={uiStore.projectList.checked.has(project.id)} tabIndex={-1} disableRipple />
+    return (
+      <ListItem button onClick={toggleChecked} selected={isChecked} style={style} classes={classes}>
+        <Checkbox checked={uiStore.projectList.checked.has(projectId)} tabIndex={-1} disableRipple />
 
-      <ListItemText primary={project.name} secondary={project.author} />
+        <ListItemText primary={name} secondary={author} />
 
-      <ListItemSecondaryAction>
-        <ShowEditIcon onClick={edit} />
-        <RemoveIcon onClick={remove} />
-        <ToggleActiveIcon onClick={toggleActive} checked={project.active} />
-      </ListItemSecondaryAction>
-    </ListItem>
-  );
-});
-
-// const ListItemStyles = () => ({});
+        <ListItemSecondaryAction>
+          <ShowEditIcon onClick={edit} />
+          <RemoveIcon onClick={remove} />
+          <ToggleActiveIcon onClick={toggleActive} checked={active} />
+        </ListItemSecondaryAction>
+      </ListItem>
+    );
+  }
+);

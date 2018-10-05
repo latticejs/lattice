@@ -23,6 +23,10 @@ export class Project {
   }
 
   update(data) {
+    if (!Object.keys(data).length) {
+      return;
+    }
+
     for (const key in data) {
       if (data.hasOwnProperty(key) && ['id', 'name', 'author', 'active'].includes(key)) {
         this[key] = data[key];
@@ -69,17 +73,24 @@ export class ProjectStore extends RootStore {
     if (!this.projects.has(projectId)) return;
 
     this.projects.delete(projectId);
+    this.rootStore.uiStore.projectList.setChecked(projectId, false);
   }
 
   setActive(projectId, active = true) {
     this.projects.get(projectId).setActive(active);
   }
+
+  toggleActive(projectId) {
+    this.projects.get(projectId).toggleActive();
+  }
 }
 
 decorate(ProjectStore, {
-  projects: observable,
   add: action,
-  remove: action,
   asList: computed,
-  asSortedList: action
+  asSortedList: action,
+  projects: observable,
+  remove: action,
+  setActive: action,
+  toggleActive: action
 });
