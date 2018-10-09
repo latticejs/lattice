@@ -28,7 +28,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react-app": "^3.0.0",
     "husky": "^1.0.0-rc.8",
-    "lerna": "^3.1.2",
+    "lerna": "^3.4.2",
     "prettier": "^1.13.4",
     "storybook-readme": "^4.0.0-beta1"
   },
