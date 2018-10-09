@@ -74,7 +74,7 @@ export default enhance(
 
     return (
       <ListItem button onClick={toggleChecked} selected={isChecked} style={style} classes={classes}>
-        <Checkbox checked={uiStore.projectList.checked.has(projectId)} tabIndex={-1} disableRipple />
+        <Checkbox checked={isChecked} tabIndex={-1} disableRipple />
 
         <ListItemText primary={name} secondary={author} />
 

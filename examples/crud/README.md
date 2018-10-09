@@ -36,9 +36,9 @@ We are using here the CRA tooling to get started. For this example CRA version ^
 ### [MobX](https://github.com/mobxjs/mobx)
 This is a lightweight and faster state management library with a easy interface. This allows us to create a completely observable root store that is composed by sub-stores like: `ui` and several `domain stores`.
 
-There are a lot of other libraries based on MobX but for this example project we try to minimize the overhead, using just the neccesary basic functionality provided by MobX (observable stores/values, computed values, etc).
+There are a lot of other libraries based on MobX but for this example project we try to minimize the overhead, using just the necessary basic functionality provided by MobX (observable stores/values, computed values, etc).
 
-Thanks to [`mobx-react`](https://github.com/mobxjs/mobx-react) we can inject/observe our store (also other sub-stores) among all the application. This is a good aproach to avoid passing down a lot of props to share the state.
+Thanks to [`mobx-react`](https://github.com/mobxjs/mobx-react) we can inject/observe our store (also other sub-stores) among all the application. This is a good approach to avoid passing down a lot of props to share the state.
 
 ### [Recompose](https://github.com/acdlite/recompose)
 This library help us to compose HOCs and add some state/handlers to some of our components.

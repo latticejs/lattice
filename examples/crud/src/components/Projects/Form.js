@@ -7,7 +7,6 @@ import { withFormik } from 'formik';
 import { string, object } from 'yup';
 import faker from 'faker';
 
-import StoreComponent from '../StoreComponent';
 import TextInput from '../Form/TextInput';
 
 const formikEnhancer = withFormik({
@@ -102,22 +101,20 @@ const Form = enhanceForm(props => {
   );
 });
 
-class ProjectForm extends StoreComponent {
-  render() {
-    const { classes, uiStore, onCancel, onSave } = this.props;
-    const { isCreating, project } = uiStore.projectForm;
+const ProjectForm = props => {
+  const { classes, uiStore, onCancel, onSave } = props;
+  const { isCreating, project } = uiStore.projectForm;
 
-    return (
-      <Widget
-        title={isCreating ? 'New project' : 'Edit project'}
-        border="bottom"
-        classes={{ root: classes.containerRoot }}
-      >
-        <Form project={project} classes={classes} onCancel={onCancel} isCreating={isCreating} onSave={onSave} />
-      </Widget>
-    );
-  }
-}
+  return (
+    <Widget
+      title={isCreating ? 'New project' : 'Edit project'}
+      border="bottom"
+      classes={{ root: classes.containerRoot }}
+    >
+      <Form project={project} classes={classes} onCancel={onCancel} isCreating={isCreating} onSave={onSave} />
+    </Widget>
+  );
+};
 
 const styles = theme => ({
   containerRoot: {

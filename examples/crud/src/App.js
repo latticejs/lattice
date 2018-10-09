@@ -4,12 +4,11 @@ import Layout from './components/Layout';
 
 import createStore from './stores';
 import { Provider } from 'mobx-react';
-import { toJS } from 'mobx';
 import faker from 'faker';
 
 const store = createStore();
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 100; i++) {
   store.projectStore.add({
     id: faker.random.uuid(),
     name: faker.random.words(),
@@ -17,9 +16,6 @@ for (let i = 0; i < 5; i++) {
     active: faker.random.boolean()
   });
 }
-
-window.store = store;
-window.toJS = toJS;
 
 export default () => (
   <Provider {...store.injectableStores()}>

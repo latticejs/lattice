@@ -12,8 +12,11 @@ const sortList = (property, order = 'asc') => (a, b) => {
   return noSorted.gt ? 1 : noSorted.lt ? -1 : 0;
 };
 
+const VISIBLE_ROWS = 20;
+
 export class ProjectList extends RootStore {
-  visibleRows = 50;
+  visibleRows = VISIBLE_ROWS;
+  availableItems = 0;
   checked = observable.map();
   list = [];
   sortProperty = 'name';
@@ -31,6 +34,14 @@ export class ProjectList extends RootStore {
         projects: this.rootStore.projectStore.projects
       });
     });
+  }
+
+  getItem(index) {
+    if (index < this.availableItems) {
+      return this.list[index];
+    }
+
+    return null;
   }
 
   get allChecked() {
@@ -81,5 +92,7 @@ decorate(ProjectList, {
   setSortProperty: action,
   sortOrder: observable,
   sortProperty: observable,
-  visibleRows: observable
+  visibleRows: observable,
+  availableItems: observable,
+  getItem: action
 });
