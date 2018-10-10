@@ -22,14 +22,14 @@ const enhance = compose(
       uiStore.projectForm.visible = true;
       setShowSuccess(false);
     },
-    close: ({ uiStore }) => () => {
+    closeModal: ({ uiStore }) => () => {
       uiStore.projectForm.reset();
     }
   }),
   withHandlers({
-    onSave: ({ setShowSuccess, close }) => () => {
+    onSave: ({ setShowSuccess, closeModal }) => () => {
       setShowSuccess(true);
-      close();
+      closeModal();
       setTimeout(() => {
         setShowSuccess(false);
       }, 3000);
@@ -38,15 +38,15 @@ const enhance = compose(
   observer
 );
 
-export default enhance(({ uiStore, editProject, addProject, close, showSuccess, onSave, setShowSuccess }) => {
+export default enhance(({ uiStore, editProject, addProject, closeModal, showSuccess, onSave, setShowSuccess }) => {
   return (
     <Grid container direction="column" justify="center" alignItems="stretch" spacing={16}>
       <Grid item xs>
         <ProjectList onEditProject={editProject} onAddProject={addProject} />
       </Grid>
 
-      <Modal open={uiStore.projectForm.visible} onClose={close}>
-        <ProjectForm onCancel={close} onSave={onSave} />
+      <Modal open={uiStore.projectForm.visible} onClose={closeModal}>
+        <ProjectForm onCancel={closeModal} onSave={onSave} />
       </Modal>
 
       <Success open={showSuccess} message="Project saved!" onClose={() => setShowSuccess(false)} />

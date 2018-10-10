@@ -13,7 +13,7 @@ const List = props => {
     <InfiniteList
       loadMore={loadMore}
       findItem={findItem}
-      list={list.slice(0, availableItems - 1)}
+      list={list.slice(0, availableItems)}
       rowCount={list.length}
       rowHeight={55}
       classes={{ root: classes.listRoot }}
@@ -21,7 +21,7 @@ const List = props => {
       {({ item, isEmpty, key, style }) => {
         if (isEmpty) {
           return (
-            <ListItem style={style}>
+            <ListItem key={key} style={style}>
               <ListItemText primary="No projects to show" />
             </ListItem>
           );

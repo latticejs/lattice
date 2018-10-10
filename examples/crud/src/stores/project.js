@@ -1,6 +1,5 @@
 import { decorate, observable, action, computed, toJS } from 'mobx';
 import { RootStore } from './utils';
-// import faker from 'faker';
 
 export class Project {
   id;
@@ -70,10 +69,14 @@ export class ProjectStore extends RootStore {
   }
 
   remove(projectId) {
-    if (!this.projects.has(projectId)) return;
+    const ids = Array.isArray(projectId) ? projectId : [projectId];
 
-    this.projects.delete(projectId);
-    this.rootStore.uiStore.projectList.setChecked(projectId, false);
+    ids.forEach(id => {
+      if (!this.projects.has(id)) return;
+
+      this.projects.delete(id);
+      this.rootStore.uiStore.projectList.setChecked(id, false);
+    });
   }
 
   setActive(projectId, active = true) {

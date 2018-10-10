@@ -1,5 +1,5 @@
 import { RootStore } from '../utils';
-import { observable, decorate, action, computed, autorun } from 'mobx';
+import { observable, decorate, action, computed } from 'mobx';
 
 const sortValues = (a, b) => ({
   gt: a > b,
@@ -18,23 +18,9 @@ export class ProjectList extends RootStore {
   visibleRows = VISIBLE_ROWS;
   availableItems = 0;
   checked = observable.map();
-  list = [];
   sortProperty = 'name';
   sortOrder = 'asc';
   filterQuery = '';
-
-  constructor(rootStore) {
-    super(rootStore);
-
-    autorun(() => {
-      this.updateList({
-        sortProperty: this.sortProperty,
-        sortOrder: this.sortOrder,
-        filterQuery: this.filterQuery,
-        projects: this.rootStore.projectStore.projects
-      });
-    });
-  }
 
   getItem(index) {
     if (index < this.availableItems) {
@@ -66,17 +52,17 @@ export class ProjectList extends RootStore {
     this.checked.clear();
   }
 
-  updateList({ sortProperty, sortOrder, filterQuery, projects }) {
-    const sortFn = sortList(sortProperty, sortOrder);
-    let list = Array.from(projects.values());
+  get list() {
+    const sortFn = sortList(this.sortProperty, this.sortOrder);
+    let list = Array.from(this.rootStore.projectStore.projects.values());
 
-    if (filterQuery.trim()) {
-      const cleanedFilter = filterQuery.replace(/[^a-zA-Z0-9-]/gi, '|');
-      const filterReg = new RegExp(`^.*(${cleanedFilter}).*$`, 'gi');
-      list = list.filter(p => filterReg.test([p.name, p.author].join()));
+    if (this.filterQuery.trim()) {
+      const cleanedFilter = this.filterQuery.replace(/[^a-zA-Z0-9-]/gi, '|');
+      const filterReg = new RegExp(`.*(${cleanedFilter}).*`, 'gi');
+      list = list.filter(p => filterReg.test(p.name) || filterReg.test(p.author));
     }
 
-    this.list = list.sort(sortFn).map(p => p.id);
+    return list.sort(sortFn).map(p => p.id);
   }
 }
 
@@ -84,7 +70,7 @@ decorate(ProjectList, {
   allChecked: computed,
   checked: observable,
   filterQuery: observable,
-  list: observable,
+  list: computed,
   selectAll: action,
   setChecked: action,
   setFilter: action,
@@ -93,6 +79,5 @@ decorate(ProjectList, {
   sortOrder: observable,
   sortProperty: observable,
   visibleRows: observable,
-  availableItems: observable,
-  getItem: action
+  availableItems: observable
 });
