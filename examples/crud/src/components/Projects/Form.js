@@ -47,8 +47,7 @@ const enhanceForm = compose(
 );
 
 const Form = enhanceForm(props => {
-  const { values, errors, handleChange, handleSubmit, isSubmitting, classes, isCreating, onCancel } = props;
-
+  const { values, errors, touched, handleChange, handleSubmit, isSubmitting, classes, isCreating, onCancel } = props;
   return (
     <form onSubmit={handleSubmit} noValidate autoComplete="off" className={classes.containerForm}>
       <TextInput
@@ -59,7 +58,7 @@ const Form = enhanceForm(props => {
         value={values.name}
         onChange={handleChange}
         fullWidth
-        error={errors.name}
+        error={touched['name'] && errors.name}
       />
       <TextInput
         id="author"
@@ -69,7 +68,7 @@ const Form = enhanceForm(props => {
         value={values.author}
         onChange={handleChange}
         fullWidth
-        error={errors.author}
+        error={touched['author'] && errors.author}
       />
       <FormControl component="fieldset">
         <FormGroup>

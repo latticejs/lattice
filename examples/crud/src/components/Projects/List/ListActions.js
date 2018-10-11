@@ -54,10 +54,24 @@ export default compose(
     selectAllOnUnselectAll: ({ uiStore: { projectList } }) => () => {
       projectList.unselectAll();
     },
-    selectionOnDelete: ({ uiStore: { projectList }, projectStore, selectedIds }) => () => {
-      selectedIds().forEach(id => {
-        projectStore.remove(id);
-        projectList.setChecked(id, false);
+    selectionOnDelete: ({ uiStore: { projectList, dialogs }, projectStore, selectedIds }) => () => {
+      dialogs.showConfirm({
+        content: (
+          <>
+            Are you sure to delete{' '}
+            <b>
+              {selectedIds().length} project
+              {selectedIds().length > 1 && 's'}
+            </b>
+            ?
+          </>
+        ),
+        onAccept: () => {
+          selectedIds().forEach(id => {
+            projectStore.remove(id);
+            projectList.setChecked(id, false);
+          });
+        }
       });
     },
     selectionOnActivate: ({ projectStore, selectedIds }) => (active = true) => {

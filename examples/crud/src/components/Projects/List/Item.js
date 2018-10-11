@@ -21,9 +21,17 @@ const enhance = compose(
       e.stopPropagation();
       projectStore.toggleActive(projectId);
     },
-    remove: ({ projectStore, projectId }) => e => {
+    remove: ({ uiStore, projectStore, projectId }) => e => {
       e.stopPropagation();
-      projectStore.remove(projectId);
+
+      uiStore.dialogs.showConfirm({
+        content: (
+          <>
+            Are you sure to delete <b>{projectStore.projects.get(projectId).name}?</b>
+          </>
+        ),
+        onAccept: () => projectStore.remove(projectId)
+      });
     },
     edit: ({ onEdit, projectId }) => e => {
       e.preventDefault();

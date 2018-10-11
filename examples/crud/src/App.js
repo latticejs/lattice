@@ -1,6 +1,6 @@
 import React from 'react';
 import Projects from './screens/projects';
-import Layout from './components/Layout';
+import { Layout } from './components/Layout';
 
 import createStore from './stores';
 import { Provider } from 'mobx-react';
