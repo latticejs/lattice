@@ -152,6 +152,47 @@ class App extends Component {
     });
   };
 
+  rebuildDeps = (data, pkgName) => {
+    // data eg:
+    // {
+    //   edges: [{source: 'nodeA', target: 'nodeB'}]
+    //   nodes: [ {title: 'nodeA'}, {title: 'nodeB'}]
+    // }
+    return {
+      dependencies: data.reduce((obj, dep) => {
+        if (dep.title === pkgName) return obj;
+        obj[dep.title] = 'latest';
+        return obj;
+      }, {})
+    };
+  };
+
+  removeDep = (data, updatePkg) => {
+    const { pkg, originalPkg } = this.props;
+
+    const appExists = data.nodes.find(dep => {
+      return dep.title === originalPkg.name;
+    });
+
+    if (!appExists) return;
+
+    const updatedPkg = {
+      ...originalPkg,
+      ...this.rebuildDeps(data.nodes, originalPkg.name)
+    };
+
+    // run the gql mutation
+    updatePkg({
+      variables: {
+        name: updatedPkg.name,
+        version: updatedPkg.version,
+        dependencies: JSON.stringify(updatedPkg.dependencies),
+        description: updatedPkg.description
+      },
+      refetchQueries: [{ query: this.props.refreshQuery }]
+    });
+  };
+
   selectDep = dep => {
     // call parent cb
     this.props.newNode({
@@ -251,6 +292,13 @@ class App extends Component {
                             nodes={pkg.data.nodes}
                             edges={pkg.data.edges}
                             onNodeAdded={this.newDep}
+                            onNodeRemoved={dependencies => this.removeDep(dependencies, updatePkg)}
+                            onEdgeAdded={() => {
+                              console.log('Not implemented');
+                            }}
+                            onEdgeRemoved={() => {
+                              console.log('Not implemented');
+                            }}
                             nodeRadius={45}
                           />
                         )}
