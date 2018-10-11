@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag';
+import Input from '@material-ui/core/Input';
 
 const enterNode = (selection, props) => {
   selection.select('circle').attr('r', d => {
@@ -61,7 +62,9 @@ export default class Node extends Component {
       .call(selection => enterNode(selection, { ...this.props, onTextChange: this.onTextChange }))
       .call(updateNode);
 
-    this.updateNodeBounds();
+    if (this.props.newNode) {
+      this.updateNodeBounds();
+    }
   }
 
   componentDidUpdate(prevState, prevProps) {
@@ -76,7 +79,7 @@ export default class Node extends Component {
     // input is an html element getting positioned inside an svg one.
     if (!this.node) return;
     var node = this.node.getBoundingClientRect();
-    const { data } = this.props;
+    const { data, overflow, dtt } = this.props;
     const width = (node.width / 2) * data.z;
     const height = Math.max(20, node.height / 5) * data.z;
 
@@ -84,17 +87,16 @@ export default class Node extends Component {
       return parentWidth > inputWidth ? inputWidth : parentWidth;
     };
 
-    const getLeft = (dorigin, containerWidth, z) => inputWidth => {
+    const getLeft = (dorigin, containerWidth, z, overx, dttx) => inputWidth => {
       const center = containerWidth / 2;
       const halfInputWidth = inputWidth / 2;
-      const magicNumber = 7 * z;
-      return dorigin + center - halfInputWidth - magicNumber;
+      return dorigin + overx + center - halfInputWidth - dttx;
     };
 
     const inputStyle = {
-      top: node.top + height + 7, // this.props.data.y - 8,
-      left: getLeft(node.left, node.width, data.z), // this.props.data.x - 20,
-      z: data.z, // this.props.data.y - 8,
+      top: node.top + overflow.y + height + 12 - dtt.y,
+      left: getLeft(node.left, node.width, data.z, overflow.x, dtt.x),
+      z: data.z,
       width: getWidth(width),
       height
     };
@@ -175,7 +177,9 @@ export default class Node extends Component {
       showPanel,
       showPanelIdx,
       idx,
-      panelPosition
+      panelPosition,
+      nodeRadius,
+      browser
     } = this.props;
 
     const nodeClasses = [classes.dagNode];
@@ -189,6 +193,22 @@ export default class Node extends Component {
       nodeClasses.push(selectedClass);
     }
 
+    // prepare position properties for newnode
+    let transform = '';
+    let posX = '';
+    let posY = '';
+    if (newNode && data.x && data.y && this.state.inputStyle) {
+      if (browser && browser.name === 'safari') {
+        posX = this.state.inputStyle.left(nodeRadius); // data.x - 20;
+        posY = this.state.inputStyle.top; //data.y - 10;
+        transform = `none`;
+      } else {
+        posX = null;
+        posY = null;
+        transform = 'translate(-20, -10)';
+      }
+    }
+
     return (
       <g
         className={classNames(DEFAULTS.nodeClass, nodeClasses)}
@@ -199,15 +219,30 @@ export default class Node extends Component {
       >
         <circle />
         <text ref={node => (this.label = node)} className={classes.dagNodeText} />
-        {newNode &&
-          this.state.inputStyle &&
-          children({
-            outerEl,
-            onTextChange: this.onTextChange,
-            onKeyDown: this.onKeyDown,
-            value: this.state.text,
-            style: this.state.inputStyle
-          })}
+        {data.x &&
+          data.y && (
+            <foreignObject width={nodeRadius} height={30} transform={transform} x={posX} y={posY}>
+              {newNode &&
+                this.state.inputStyle && (
+                  <Input
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    inputRef={svginput => (this.svginput = svginput)}
+                    type="text"
+                    autoFocus={true}
+                    placeholder="..."
+                    fullWidth={true}
+                    value={this.state.text}
+                    onChange={this.onTextChange}
+                    onKeyDown={this.onKeyDown}
+                    style={{
+                      height: '20px',
+                      width: this.state.inputStyle.width(50),
+                      caretColor: 'initial'
+                    }}
+                  />
+                )}
+            </foreignObject>
+          )}
         {showPanel &&
           showPanelIdx === idx &&
           nodePanel &&

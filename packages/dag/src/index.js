@@ -6,6 +6,7 @@ import Input from '@material-ui/core/Input';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MultilineIcon from '@material-ui/icons/Timeline';
+import { detect } from 'detect-browser';
 
 import DagCore, { DEFAULTS } from './dag';
 import Node from './node';
@@ -83,7 +84,7 @@ class SvgTextInput extends Component {
   }
 
   componentDidMount() {
-    this.props.outerEl.appendChild(this.el);
+    //this.props.outerEl.appendChild(this.el);
     if (this.svginput) this.svginput.focus();
 
     const { width } = this.svginput.getBoundingClientRect();
@@ -93,12 +94,12 @@ class SvgTextInput extends Component {
   }
 
   componentWillUnmount() {
-    this.props.outerEl.removeChild(this.el);
+    //this.props.outerEl.removeChild(this.el);
   }
 
   render() {
     const { style } = this.props;
-    return createPortal(
+    return (
       <Input
         inputRef={svginput => (this.svginput = svginput)}
         type="text"
@@ -110,15 +111,14 @@ class SvgTextInput extends Component {
         onKeyDown={this.props.onKeyDown}
         style={{
           position: 'absolute',
-          top: style.top,
-          left: style.left(this.state.width),
+          top: '-20px',
+          left: '-25px',
+          height: '20px',
           width: style.width(this.state.width),
-          height: style.height,
           transform: `scale(${style.z})`,
           caretColor: 'initial'
         }}
-      />,
-      this.el
+      />
     );
   }
 }
@@ -185,6 +185,9 @@ class Dag extends Component {
     };
     // Note (dk): above gnodes and gedges are part of the state only to make things "easier" to understand.
     // These properties are owned by d3.
+
+    // browser detection
+    this.browser = detect();
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -261,6 +264,8 @@ class Dag extends Component {
       edges: [...this.state.gedges]
     };
     this.dagcore = new DagCore(this.root, params, { getNodeIdx: this.props.getNodeIdx });
+
+    this.distanceToTop = this.getDTT(this.graphContainer);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -593,6 +598,19 @@ class Dag extends Component {
     }
   };
 
+  getDTT = el => {
+    let xPosition = 0;
+    let yPosition = 0;
+
+    while (el) {
+      xPosition += el.offsetLeft - el.scrollLeft + el.clientLeft;
+      yPosition += el.offsetTop - el.scrollTop + el.clientTop;
+      el = el.offsetParent;
+    }
+
+    return { x: Math.abs(xPosition), y: Math.abs(yPosition) };
+  };
+
   render() {
     const {
       width,
@@ -654,6 +672,10 @@ class Dag extends Component {
       );
     });
 
+    const overflow = {};
+    overflow.x = window.scrollX || 0;
+    overflow.y = window.scrollY || 0;
+
     return (
       <div
         ref={container => (this.graphContainer = container)}
@@ -678,6 +700,8 @@ class Dag extends Component {
               <Node
                 key={Date.now()}
                 idx={getNodeIdx({ title: 'new' })}
+                dtt={this.distanceToTop}
+                overflow={overflow}
                 nodeRadius={nodeRadius}
                 data={{ ...this.state.newNode }}
                 classes={this.props.classes}
@@ -685,6 +709,7 @@ class Dag extends Component {
                 onNodeAdded={this.props.onNodeAdded}
                 closeNode={this.closeNode}
                 outerEl={this.graphContainer}
+                browser={this.browser}
               >
                 {params => <SvgTextInput {...params} />}
               </Node>
