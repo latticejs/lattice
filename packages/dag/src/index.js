@@ -6,7 +6,6 @@ import Input from '@material-ui/core/Input';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MultilineIcon from '@material-ui/icons/Timeline';
-import { detect } from 'detect-browser';
 
 import DagCore, { DEFAULTS } from './dag';
 import Node from './node';
@@ -84,7 +83,7 @@ class SvgTextInput extends Component {
   }
 
   componentDidMount() {
-    //this.props.outerEl.appendChild(this.el);
+    this.props.outerEl.appendChild(this.el);
     if (this.svginput) this.svginput.focus();
 
     const { width } = this.svginput.getBoundingClientRect();
@@ -94,12 +93,12 @@ class SvgTextInput extends Component {
   }
 
   componentWillUnmount() {
-    //this.props.outerEl.removeChild(this.el);
+    this.props.outerEl.removeChild(this.el);
   }
 
   render() {
     const { style } = this.props;
-    return (
+    return createPortal(
       <Input
         inputRef={svginput => (this.svginput = svginput)}
         type="text"
@@ -111,14 +110,15 @@ class SvgTextInput extends Component {
         onKeyDown={this.props.onKeyDown}
         style={{
           position: 'absolute',
-          top: '-20px',
-          left: '-25px',
-          height: '20px',
+          top: style.top,
+          left: style.left(this.state.width),
           width: style.width(this.state.width),
+          height: style.height,
           transform: `scale(${style.z})`,
           caretColor: 'initial'
         }}
-      />
+      />,
+      this.el
     );
   }
 }
@@ -185,9 +185,6 @@ class Dag extends Component {
     };
     // Note (dk): above gnodes and gedges are part of the state only to make things "easier" to understand.
     // These properties are owned by d3.
-
-    // browser detection
-    this.browser = detect();
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -709,7 +706,6 @@ class Dag extends Component {
                 onNodeAdded={this.props.onNodeAdded}
                 closeNode={this.closeNode}
                 outerEl={this.graphContainer}
-                browser={this.browser}
               >
                 {params => <SvgTextInput {...params} />}
               </Node>

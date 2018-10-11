@@ -177,9 +177,7 @@ export default class Node extends Component {
       showPanel,
       showPanelIdx,
       idx,
-      panelPosition,
-      nodeRadius,
-      browser
+      panelPosition
     } = this.props;
 
     const nodeClasses = [classes.dagNode];
@@ -193,22 +191,6 @@ export default class Node extends Component {
       nodeClasses.push(selectedClass);
     }
 
-    // prepare position properties for newnode
-    let transform = '';
-    let posX = '';
-    let posY = '';
-    if (newNode && data.x && data.y && this.state.inputStyle) {
-      if (browser && browser.name === 'safari') {
-        posX = this.state.inputStyle.left(nodeRadius); // data.x - 20;
-        posY = this.state.inputStyle.top; //data.y - 10;
-        transform = `none`;
-      } else {
-        posX = null;
-        posY = null;
-        transform = 'translate(-20, -10)';
-      }
-    }
-
     return (
       <g
         className={classNames(DEFAULTS.nodeClass, nodeClasses)}
@@ -220,29 +202,16 @@ export default class Node extends Component {
         <circle />
         <text ref={node => (this.label = node)} className={classes.dagNodeText} />
         {data.x &&
-          data.y && (
-            <foreignObject width={nodeRadius} height={30} transform={transform} x={posX} y={posY}>
-              {newNode &&
-                this.state.inputStyle && (
-                  <Input
-                    xmlns="http://www.w3.org/1999/xhtml"
-                    inputRef={svginput => (this.svginput = svginput)}
-                    type="text"
-                    autoFocus={true}
-                    placeholder="..."
-                    fullWidth={true}
-                    value={this.state.text}
-                    onChange={this.onTextChange}
-                    onKeyDown={this.onKeyDown}
-                    style={{
-                      height: '20px',
-                      width: this.state.inputStyle.width(50),
-                      caretColor: 'initial'
-                    }}
-                  />
-                )}
-            </foreignObject>
-          )}
+          data.y &&
+          newNode &&
+          this.state.inputStyle &&
+          children({
+            outerEl,
+            onTextChange: this.onTextChange,
+            onKeyDown: this.onKeyDown,
+            value: this.state.text,
+            style: this.state.inputStyle
+          })}
         {showPanel &&
           showPanelIdx === idx &&
           nodePanel &&
