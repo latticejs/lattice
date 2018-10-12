@@ -22,6 +22,7 @@
     "mobx-react-devtools": "^6.0.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-jss": "^8.6.1",
     "react-scripts": "^2.0.4",
     "recompose": "^0.30.0",
     "yup": "^0.26.6"
