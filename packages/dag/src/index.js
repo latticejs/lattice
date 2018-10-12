@@ -261,6 +261,8 @@ class Dag extends Component {
       edges: [...this.state.gedges]
     };
     this.dagcore = new DagCore(this.root, params, { getNodeIdx: this.props.getNodeIdx });
+
+    this.distanceToTop = this.getDTT(this.graphContainer);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -593,6 +595,19 @@ class Dag extends Component {
     }
   };
 
+  getDTT = el => {
+    let xPosition = 0;
+    let yPosition = 0;
+
+    while (el) {
+      xPosition += el.offsetLeft - el.scrollLeft + el.clientLeft;
+      yPosition += el.offsetTop - el.scrollTop + el.clientTop;
+      el = el.offsetParent;
+    }
+
+    return { x: Math.abs(xPosition), y: Math.abs(yPosition) };
+  };
+
   render() {
     const {
       width,
@@ -654,6 +669,10 @@ class Dag extends Component {
       );
     });
 
+    const overflow = {};
+    overflow.x = window.scrollX || 0;
+    overflow.y = window.scrollY || 0;
+
     return (
       <div
         ref={container => (this.graphContainer = container)}
@@ -678,6 +697,8 @@ class Dag extends Component {
               <Node
                 key={Date.now()}
                 idx={getNodeIdx({ title: 'new' })}
+                dtt={this.distanceToTop}
+                overflow={overflow}
                 nodeRadius={nodeRadius}
                 data={{ ...this.state.newNode }}
                 classes={this.props.classes}

@@ -64,8 +64,8 @@ const getProps = (mix = {}) => {
         target: 'enzyme'
       }
     ],
-    width: 500,
-    height: 500
+    width: 800,
+    height: 800
   };
   return Object.assign(defaults, mix);
 };

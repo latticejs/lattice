@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag';
+import Input from '@material-ui/core/Input';
 
 const enterNode = (selection, props) => {
   selection.select('circle').attr('r', d => {
@@ -61,7 +62,9 @@ export default class Node extends Component {
       .call(selection => enterNode(selection, { ...this.props, onTextChange: this.onTextChange }))
       .call(updateNode);
 
-    this.updateNodeBounds();
+    if (this.props.newNode) {
+      this.updateNodeBounds();
+    }
   }
 
   componentDidUpdate(prevState, prevProps) {
@@ -76,7 +79,7 @@ export default class Node extends Component {
     // input is an html element getting positioned inside an svg one.
     if (!this.node) return;
     var node = this.node.getBoundingClientRect();
-    const { data } = this.props;
+    const { data, overflow, dtt } = this.props;
     const width = (node.width / 2) * data.z;
     const height = Math.max(20, node.height / 5) * data.z;
 
@@ -84,17 +87,16 @@ export default class Node extends Component {
       return parentWidth > inputWidth ? inputWidth : parentWidth;
     };
 
-    const getLeft = (dorigin, containerWidth, z) => inputWidth => {
+    const getLeft = (dorigin, containerWidth, z, overx, dttx) => inputWidth => {
       const center = containerWidth / 2;
       const halfInputWidth = inputWidth / 2;
-      const magicNumber = 7 * z;
-      return dorigin + center - halfInputWidth - magicNumber;
+      return dorigin + overx + center - halfInputWidth - dttx;
     };
 
     const inputStyle = {
-      top: node.top + height + 7, // this.props.data.y - 8,
-      left: getLeft(node.left, node.width, data.z), // this.props.data.x - 20,
-      z: data.z, // this.props.data.y - 8,
+      top: node.top + overflow.y + height + 12 - dtt.y,
+      left: getLeft(node.left, node.width, data.z, overflow.x, dtt.x),
+      z: data.z,
       width: getWidth(width),
       height
     };
@@ -199,7 +201,9 @@ export default class Node extends Component {
       >
         <circle />
         <text ref={node => (this.label = node)} className={classes.dagNodeText} />
-        {newNode &&
+        {data.x &&
+          data.y &&
+          newNode &&
           this.state.inputStyle &&
           children({
             outerEl,
