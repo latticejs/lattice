@@ -1,7 +1,7 @@
 {
   "name": "@latticejs/infinite-list",
   "description": "A set of material-ui components adapted to support infinite list feature.",
-  "version": "1.0.1-alpha.11",
+  "version": "1.0.1-alpha.12",
   "license": "MIT",
   "main": "index.js",
   "module": "dist/es/infinite-list.es.js",

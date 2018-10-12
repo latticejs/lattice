@@ -1,7 +1,7 @@
 {
   "name": "dag-in-action",
   "description": "See the dag in action",
-  "version": "1.0.1-alpha.11",
+  "version": "1.0.1-alpha.12",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -15,8 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@latticejs/dag": "^1.0.1-alpha.11",
-    "@latticejs/widgets": "^1.0.1-alpha.11",
+    "@latticejs/dag": "^1.0.1-alpha.12",
+    "@latticejs/widgets": "^1.0.1-alpha.12",
     "@material-ui/core": "^3.0.0",
     "@material-ui/icons": "^3.0.0",
     "apollo-boost": "^0.1.16",
