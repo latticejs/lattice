@@ -193,7 +193,7 @@ and our `ScrollLoader`.
 So it has the same API of `Material-UI List` and the `ScrollLoader`.
 
 > NOTE: react-virtualized needs that each component were **div** tags. So, we provide a
-> wrapper for Material-UI [ListItem](https://material-ui.com/api/list-item/) component too.
+> wrapper for Material-UI [ListItem](https://material-ui.com/api/list-item/) and [ListItemSecondaryAction](https://material-ui.com/api/list-item-secondary-action/) components too.
 
 ### Usage
 
