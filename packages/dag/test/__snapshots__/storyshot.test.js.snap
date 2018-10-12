@@ -323,8 +323,8 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
     className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
     style={
       Object {
-        "height": "500px",
-        "width": "500px",
+        "height": "800px",
+        "width": "800px",
       }
     }
   >
@@ -497,8 +497,8 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
     className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
     style={
       Object {
-        "height": "500px",
-        "width": "500px",
+        "height": "800px",
+        "width": "800px",
       }
     }
   >

@@ -71,7 +71,7 @@ const getProps = (mix = {}) => {
 };
 
 const PaperWrap = ({ children }) => (
-  <Paper elevation={2} style={{ width: '500px', height: '500px' }}>
+  <Paper elevation={2} style={{ width: '800px', height: '800px' }}>
     {children}
   </Paper>
 );
