@@ -59,6 +59,10 @@ class Layout extends Component {
         primary: blue,
         secondary: pink,
         type: nightMode ? 'dark' : 'light'
+      },
+      typography: {
+        useNextVariants: true,
+        suppressDeprecationWarnings: true
       }
     });
   }
