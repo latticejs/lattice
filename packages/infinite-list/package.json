@@ -59,7 +59,7 @@
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "storybook-readme": "^4.0.0",
+    "storybook-readme": "^4.0.2",
     "taskr": "^1.1.0",
     "taskr-rollup": "^0.0.4"
   },
