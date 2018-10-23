@@ -98,7 +98,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     name
@@ -195,7 +195,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     version
@@ -292,7 +292,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     license
@@ -389,7 +389,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     main
@@ -486,7 +486,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     module
@@ -583,7 +583,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     files
@@ -668,7 +668,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     scripts
@@ -753,7 +753,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     peerDependencies
@@ -838,7 +838,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     devDependencies
@@ -923,7 +923,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     dependencies
@@ -1008,7 +1008,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     jest
@@ -1093,7 +1093,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     publishConfig
@@ -1178,7 +1178,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
+                  className="MuiTypography-root-554 MuiTypography-subtitle1-572 MuiListItemText-primary-551"
                 >
                   <b>
                     gitHead
@@ -1264,7 +1264,7 @@ exports[`Storyshots tree basic 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-119"
+                  className="MuiSvgIcon-root-1"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -1279,7 +1279,7 @@ exports[`Storyshots tree basic 1`] = `
                 </svg>
               </div>
               <span
-                className="MuiButtonBase-root-115 MuiIconButton-root-138 MuiSwitchBase-root-134 MuiCheckbox-root-128 MuiCheckbox-colorSecondary-133"
+                className="MuiButtonBase-root-115 MuiIconButton-root-129 MuiSwitchBase-root-125 MuiCheckbox-root-119 MuiCheckbox-colorSecondary-124"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -1293,11 +1293,11 @@ exports[`Storyshots tree basic 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-143"
+                  className="MuiIconButton-label-134"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-119"
+                    className="MuiSvgIcon-root-135"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -1308,7 +1308,7 @@ exports[`Storyshots tree basic 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-137"
+                    className="MuiSwitchBase-input-128"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -1320,7 +1320,7 @@ exports[`Storyshots tree basic 1`] = `
                 className="MuiListItemText-root-144"
               >
                 <span
-                  className="MuiTypography-root-150 MuiTypography-subheading-157 MuiListItemText-primary-147"
+                  className="MuiTypography-root-150 MuiTypography-subtitle1-168 MuiListItemText-primary-147"
                 >
                   index.js
                 </span>
@@ -1357,7 +1357,7 @@ exports[`Storyshots tree basic 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-119"
+                  className="MuiSvgIcon-root-1"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -1372,7 +1372,7 @@ exports[`Storyshots tree basic 1`] = `
                 </svg>
               </div>
               <span
-                className="MuiButtonBase-root-115 MuiIconButton-root-138 MuiSwitchBase-root-134 MuiCheckbox-root-128 MuiCheckbox-colorSecondary-133"
+                className="MuiButtonBase-root-115 MuiIconButton-root-129 MuiSwitchBase-root-125 MuiCheckbox-root-119 MuiCheckbox-colorSecondary-124"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -1386,11 +1386,11 @@ exports[`Storyshots tree basic 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-143"
+                  className="MuiIconButton-label-134"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-119"
+                    className="MuiSvgIcon-root-135"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -1401,7 +1401,7 @@ exports[`Storyshots tree basic 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-137"
+                    className="MuiSwitchBase-input-128"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -1413,7 +1413,7 @@ exports[`Storyshots tree basic 1`] = `
                 className="MuiListItemText-root-144"
               >
                 <span
-                  className="MuiTypography-root-150 MuiTypography-subheading-157 MuiListItemText-primary-147"
+                  className="MuiTypography-root-150 MuiTypography-subtitle1-168 MuiListItemText-primary-147"
                 >
                   assets
                 </span>
@@ -1552,7 +1552,7 @@ exports[`Storyshots tree customized 1`] = `
                 className="MuiListItemText-root-340"
               >
                 <span
-                  className="MuiTypography-root-346 MuiTypography-subheading-353 MuiListItemText-primary-343"
+                  className="MuiTypography-root-346 MuiTypography-subtitle1-364 MuiListItemText-primary-343"
                 >
                   index.js
                 </span>
@@ -1589,7 +1589,7 @@ exports[`Storyshots tree customized 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-331"
+                  className="MuiSvgIcon-root-10"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -1645,7 +1645,7 @@ exports[`Storyshots tree customized 1`] = `
                 className="MuiListItemText-root-340"
               >
                 <span
-                  className="MuiTypography-root-346 MuiTypography-subheading-353 MuiListItemText-primary-343"
+                  className="MuiTypography-root-346 MuiTypography-subtitle1-364 MuiListItemText-primary-343"
                 >
                   assets
                 </span>
