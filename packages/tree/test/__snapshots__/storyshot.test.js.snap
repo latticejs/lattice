@@ -20,19 +20,19 @@ exports[`Storyshots tree JSON tree 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-377 MuiGrid-spacing-xs-16-400"
+      className="MuiGrid-container-395 MuiGrid-spacing-xs-16-418"
     >
       <div
-        className="MuiGrid-item-378 MuiGrid-grid-xs-12-417 MuiGrid-grid-md-12-445 tree-wrapper Tree-root-375"
+        className="MuiGrid-item-396 MuiGrid-grid-xs-12-435 MuiGrid-grid-md-12-463 tree-wrapper Tree-root-393"
       >
         <div
-          className="MuiList-root-474"
+          className="MuiList-root-492"
         >
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -47,13 +47,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-string-494"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                 String 
-              </pre>
+                <pre
+                  className="Component-root-511 Component-string-512"
+                >
+                   String 
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -67,11 +71,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -82,7 +86,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -91,10 +95,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     name
@@ -114,18 +118,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -140,13 +144,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-string-494"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                 String 
-              </pre>
+                <pre
+                  className="Component-root-511 Component-string-512"
+                >
+                   String 
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -160,11 +168,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -175,7 +183,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -184,10 +192,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     version
@@ -207,18 +215,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -233,13 +241,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-string-494"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                 String 
-              </pre>
+                <pre
+                  className="Component-root-511 Component-string-512"
+                >
+                   String 
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -253,11 +265,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -268,7 +280,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -277,10 +289,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     license
@@ -300,18 +312,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -326,13 +338,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-string-494"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                 String 
-              </pre>
+                <pre
+                  className="Component-root-511 Component-string-512"
+                >
+                   String 
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -346,11 +362,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -361,7 +377,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -370,10 +386,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     main
@@ -393,18 +409,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -419,13 +435,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-string-494"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                 String 
-              </pre>
+                <pre
+                  className="Component-root-511 Component-string-512"
+                >
+                   String 
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -439,11 +459,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -454,7 +474,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -463,10 +483,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     module
@@ -486,18 +506,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -512,13 +532,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-array-496"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                  [  ]  
-              </pre>
+                <pre
+                  className="Component-root-511 Component-array-514"
+                >
+                    [  ]  
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -532,11 +556,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -547,7 +571,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -556,10 +580,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     files
@@ -567,18 +591,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -593,13 +617,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-object-497"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                  {  }  
-              </pre>
+                <pre
+                  className="Component-root-511 Component-object-515"
+                >
+                    {  }  
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -613,11 +641,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -628,7 +656,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -637,10 +665,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     scripts
@@ -648,18 +676,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -674,13 +702,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-object-497"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                  {  }  
-              </pre>
+                <pre
+                  className="Component-root-511 Component-object-515"
+                >
+                    {  }  
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -694,11 +726,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -709,7 +741,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -718,10 +750,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     peerDependencies
@@ -729,18 +761,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -755,13 +787,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-object-497"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                  {  }  
-              </pre>
+                <pre
+                  className="Component-root-511 Component-object-515"
+                >
+                    {  }  
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -775,11 +811,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -790,7 +826,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -799,10 +835,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     devDependencies
@@ -810,18 +846,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -836,13 +872,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-object-497"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                  {  }  
-              </pre>
+                <pre
+                  className="Component-root-511 Component-object-515"
+                >
+                    {  }  
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -856,11 +896,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -871,7 +911,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -880,10 +920,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     dependencies
@@ -891,18 +931,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -917,13 +957,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-object-497"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                  {  }  
-              </pre>
+                <pre
+                  className="Component-root-511 Component-object-515"
+                >
+                    {  }  
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -937,11 +981,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -952,7 +996,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -961,10 +1005,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     jest
@@ -972,18 +1016,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -998,13 +1042,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-object-497"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                  {  }  
-              </pre>
+                <pre
+                  className="Component-root-511 Component-object-515"
+                >
+                    {  }  
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -1018,11 +1066,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -1033,7 +1081,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -1042,10 +1090,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     publishConfig
@@ -1053,18 +1101,18 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
           <li
-            className="MuiListItem-container-479"
+            className="MuiListItem-container-497"
           >
             <div
-              className="MuiButtonBase-root-489 MuiListItem-root-478 MuiListItem-default-481 MuiListItem-gutters-485 MuiListItem-button-486 MuiListItem-secondaryAction-487"
+              className="MuiButtonBase-root-507 MuiListItem-root-496 MuiListItem-default-499 MuiListItem-gutters-503 MuiListItem-button-504 MuiListItem-secondaryAction-505"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -1079,13 +1127,17 @@ exports[`Storyshots tree JSON tree 1`] = `
               role="button"
               tabIndex="0"
             >
-              <pre
-                className="MuiListItemIcon-root-492 Component-root-493 Component-string-494"
+              <div
+                className="MuiListItemIcon-root-510"
               >
-                 String 
-              </pre>
+                <pre
+                  className="Component-root-511 Component-string-512"
+                >
+                   String 
+                </pre>
+              </div>
               <span
-                className="MuiButtonBase-root-489 MuiIconButton-root-515 MuiSwitchBase-root-511 MuiCheckbox-root-505 MuiCheckbox-colorSecondary-510"
+                className="MuiButtonBase-root-507 MuiIconButton-root-533 MuiSwitchBase-root-529 MuiCheckbox-root-523 MuiCheckbox-colorSecondary-528"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -1099,11 +1151,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-520"
+                  className="MuiIconButton-label-538"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-521"
+                    className="MuiSvgIcon-root-539"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -1114,7 +1166,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-514"
+                    className="MuiSwitchBase-input-532"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -1123,10 +1175,10 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </span>
               <div
-                className="MuiListItemText-root-530"
+                className="MuiListItemText-root-548"
               >
                 <span
-                  className="MuiTypography-root-536 MuiTypography-subheading-543 MuiListItemText-primary-533"
+                  className="MuiTypography-root-554 MuiTypography-subheading-561 MuiListItemText-primary-551"
                 >
                   <b>
                     gitHead
@@ -1146,11 +1198,11 @@ exports[`Storyshots tree JSON tree 1`] = `
                 </span>
               </div>
               <span
-                className="MuiTouchRipple-root-562"
+                className="MuiTouchRipple-root-594"
               />
             </div>
             <div
-              className="MuiListItemSecondaryAction-root-569"
+              className="MuiListItemSecondaryAction-root-589"
             />
           </li>
         </div>
@@ -1436,6 +1488,11 @@ exports[`Storyshots tree customized 1`] = `
                   height="1.5em"
                   id="si-logos-javascript"
                   preserveAspectRatio="xMidYMid"
+                  style={
+                    Object {
+                      "margin-right": 0,
+                    }
+                  }
                   viewBox="0 0 256 256"
                   width="1.5em"
                 >
