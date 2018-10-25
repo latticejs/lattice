@@ -197,7 +197,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Dashboard
                 </span>
@@ -251,7 +251,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Employees
                 </span>
@@ -305,7 +305,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Theme
                 </span>
@@ -431,7 +431,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7 SideMenu-listItemHidden-8"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Dashboard
                 </span>
@@ -485,7 +485,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7 SideMenu-listItemHidden-8"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Employees
                 </span>
@@ -539,7 +539,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7 SideMenu-listItemHidden-8"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Theme
                 </span>
@@ -644,7 +644,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Dashboard
                 </span>
@@ -698,7 +698,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Employees
                 </span>
@@ -752,7 +752,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subheading MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Theme
                 </span>
@@ -824,11 +824,11 @@ exports[`Storyshots widgets/Widget (dark theme) basic 1`] = `
             <div
               className="MuiGrid-item-1183"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <h6
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Title
-              </h2>
+              </h6>
             </div>
             <div
               className="MuiGrid-container-1182 MuiGrid-item-1183 Widget-content"
@@ -877,11 +877,11 @@ exports[`Storyshots widgets/Widget (dark theme) custom height 1`] = `
             <div
               className="MuiGrid-item-1571"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <h6
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Custom content height
-              </h2>
+              </h6>
             </div>
             <div
               className="MuiGrid-container-1570 MuiGrid-item-1571 Widget-content Component-content-1"
@@ -932,11 +932,11 @@ exports[`Storyshots widgets/Widget (dark theme) featured 1`] = `
             <div
               className="MuiGrid-item-1280"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <h6
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Title
-              </h2>
+              </h6>
             </div>
             <div
               className="MuiGrid-container-1279 MuiGrid-item-1280 Widget-content"
@@ -985,11 +985,11 @@ exports[`Storyshots widgets/Widget (dark theme) squared 1`] = `
             <div
               className="MuiGrid-item-1474"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <h6
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 I have no rounded borders
-              </h2>
+              </h6>
             </div>
             <div
               className="MuiGrid-container-1473 MuiGrid-item-1474 Widget-content"
@@ -1044,11 +1044,11 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
                 <div
                   className="MuiGrid-item-1377"
                 >
-                  <h2
-                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  <h6
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border top
-                  </h2>
+                  </h6>
                 </div>
                 <div
                   className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content"
@@ -1070,11 +1070,11 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
                 <div
                   className="MuiGrid-item-1377"
                 >
-                  <h2
-                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  <h6
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border bottom
-                  </h2>
+                  </h6>
                 </div>
                 <div
                   className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content"
@@ -1096,11 +1096,11 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
                 <div
                   className="MuiGrid-item-1377"
                 >
-                  <h2
-                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  <h6
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border top custom
-                  </h2>
+                  </h6>
                 </div>
                 <div
                   className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content"
@@ -1122,11 +1122,11 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
                 <div
                   className="MuiGrid-item-1377"
                 >
-                  <h2
-                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  <h6
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border bottom custom
-                  </h2>
+                  </h6>
                 </div>
                 <div
                   className="MuiGrid-container-1376 MuiGrid-item-1377 Widget-content"
@@ -1177,11 +1177,11 @@ exports[`Storyshots widgets/Widget basic 1`] = `
             <div
               className="MuiGrid-item-698"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <h6
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Title
-              </h2>
+              </h6>
             </div>
             <div
               className="MuiGrid-container-697 MuiGrid-item-698 Widget-content"
@@ -1230,11 +1230,11 @@ exports[`Storyshots widgets/Widget custom height 1`] = `
             <div
               className="MuiGrid-item-1086"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <h6
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Custom content height
-              </h2>
+              </h6>
             </div>
             <div
               className="MuiGrid-container-1085 MuiGrid-item-1086 Widget-content Component-content-1"
@@ -1285,11 +1285,11 @@ exports[`Storyshots widgets/Widget featured 1`] = `
             <div
               className="MuiGrid-item-795"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <h6
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Title
-              </h2>
+              </h6>
             </div>
             <div
               className="MuiGrid-container-794 MuiGrid-item-795 Widget-content"
@@ -1338,11 +1338,11 @@ exports[`Storyshots widgets/Widget squared 1`] = `
             <div
               className="MuiGrid-item-989"
             >
-              <h2
-                className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+              <h6
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 I have no rounded borders
-              </h2>
+              </h6>
             </div>
             <div
               className="MuiGrid-container-988 MuiGrid-item-989 Widget-content"
@@ -1397,11 +1397,11 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
                 <div
                   className="MuiGrid-item-892"
                 >
-                  <h2
-                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  <h6
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border top
-                  </h2>
+                  </h6>
                 </div>
                 <div
                   className="MuiGrid-container-891 MuiGrid-item-892 Widget-content"
@@ -1423,11 +1423,11 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
                 <div
                   className="MuiGrid-item-892"
                 >
-                  <h2
-                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  <h6
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border bottom
-                  </h2>
+                  </h6>
                 </div>
                 <div
                   className="MuiGrid-container-891 MuiGrid-item-892 Widget-content"
@@ -1449,11 +1449,11 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
                 <div
                   className="MuiGrid-item-892"
                 >
-                  <h2
-                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  <h6
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border top custom
-                  </h2>
+                  </h6>
                 </div>
                 <div
                   className="MuiGrid-container-891 MuiGrid-item-892 Widget-content"
@@ -1475,11 +1475,11 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
                 <div
                   className="MuiGrid-item-892"
                 >
-                  <h2
-                    className="MuiTypography-root MuiTypography-title MuiTypography-colorInherit MuiTypography-gutterBottom"
+                  <h6
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border bottom custom
-                  </h2>
+                  </h6>
                 </div>
                 <div
                   className="MuiGrid-container-891 MuiGrid-item-892 Widget-content"

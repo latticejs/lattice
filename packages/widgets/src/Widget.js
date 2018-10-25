@@ -53,7 +53,7 @@ const Widget = ({ title, featured, elevation, classes, border, rounded, classNam
   if (title) {
     if (typeof title === 'string') {
       renderTitle = (
-        <Typography variant="title" color="inherit" gutterBottom>
+        <Typography variant="h6" color="inherit" gutterBottom>
           {title}
         </Typography>
       );
