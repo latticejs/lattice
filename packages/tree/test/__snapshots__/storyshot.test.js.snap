@@ -1264,7 +1264,7 @@ exports[`Storyshots tree basic 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-1"
+                  className="MuiSvgIcon-root-119"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -1279,7 +1279,7 @@ exports[`Storyshots tree basic 1`] = `
                 </svg>
               </div>
               <span
-                className="MuiButtonBase-root-115 MuiIconButton-root-129 MuiSwitchBase-root-125 MuiCheckbox-root-119 MuiCheckbox-colorSecondary-124"
+                className="MuiButtonBase-root-115 MuiIconButton-root-138 MuiSwitchBase-root-134 MuiCheckbox-root-128 MuiCheckbox-colorSecondary-133"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -1293,11 +1293,11 @@ exports[`Storyshots tree basic 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-134"
+                  className="MuiIconButton-label-143"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-135"
+                    className="MuiSvgIcon-root-119"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -1308,7 +1308,7 @@ exports[`Storyshots tree basic 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-128"
+                    className="MuiSwitchBase-input-137"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -1357,7 +1357,7 @@ exports[`Storyshots tree basic 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-1"
+                  className="MuiSvgIcon-root-119"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -1372,7 +1372,7 @@ exports[`Storyshots tree basic 1`] = `
                 </svg>
               </div>
               <span
-                className="MuiButtonBase-root-115 MuiIconButton-root-129 MuiSwitchBase-root-125 MuiCheckbox-root-119 MuiCheckbox-colorSecondary-124"
+                className="MuiButtonBase-root-115 MuiIconButton-root-138 MuiSwitchBase-root-134 MuiCheckbox-root-128 MuiCheckbox-colorSecondary-133"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -1386,11 +1386,11 @@ exports[`Storyshots tree basic 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-134"
+                  className="MuiIconButton-label-143"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-135"
+                    className="MuiSvgIcon-root-119"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -1401,7 +1401,7 @@ exports[`Storyshots tree basic 1`] = `
                   </svg>
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-128"
+                    className="MuiSwitchBase-input-137"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
@@ -1589,7 +1589,7 @@ exports[`Storyshots tree customized 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-10"
+                  className="MuiSvgIcon-root-331"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
