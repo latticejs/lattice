@@ -7,7 +7,7 @@
                 "plugins": ["module:fast-async"]
         },
         "test": {
-                "plugins": ["fast-async"]
+                "plugins": ["module:fast-async"]
         }
     }
 }

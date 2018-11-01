@@ -1,31 +1,25 @@
 {
   "presets": [
-    "react",
     [
-      "env",
+      "@babel/preset-env",
       {
         "modules": false
       }
-    ]
-    
+    ],
+    "@babel/preset-react"
   ],
   "plugins": [
-    "external-helpers",
-    "transform-runtime",
-    "transform-async-functions",
-    "transform-object-rest-spread",
-    "babel-plugin-transform-class-properties",
-    "babel-plugin-transform-export-extensions"
+    "@babel/plugin-proposal-class-properties"
   ],
   "env": {
     "test": {
       "presets": [
-        "react",
-        "es2015"
+        "@babel/preset-env",
+        "@babel/preset-react"
       ],
       "plugins": [
-        "transform-object-rest-spread",
-        "babel-plugin-transform-class-properties"    
+        "require-context-hook",
+        "@babel/plugin-proposal-object-rest-spread"
       ]
     }
   }
