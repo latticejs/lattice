@@ -1,4 +1,4 @@
-import { join } from 'path';
+import path from 'path';
 import { rollup } from 'rollup';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
@@ -6,96 +6,163 @@ import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
 import minify from 'rollup-plugin-babel-minify';
 
-const globals = {
+const FORMATS = {
+  ESM: 'esm',
+  CJS: 'cjs',
+  UMD: 'umd'
+};
+
+const COMMON_GLOBALS = {
   react: 'React',
   'react-dom': 'ReactDOM',
   'prop-types': 'PropTypes',
   classnames: 'classnames'
 };
 
-const commonExternals = ['@babel/runtime/helpers', '@material-ui/core/'];
+const COMMON_EXTERNALS = ['@babel/runtime/helpers', '@material-ui/core/'];
 
-export default async (input, { formats = ['cjs', 'esm', 'umd'], env = process.env.NODE_ENV }) => {
-  const baseDir = process.cwd();
-  let pkg;
+const onwarn = (warning, warn) => {
+  if (['MISSING_GLOBAL_NAME', 'UNUSED_EXTERNAL_IMPORT'].includes(warning.code)) return;
+  if (warning.code === 'NON_EXISTENT_EXPORT') throw new Error(warning.message);
 
-  try {
-    pkg = require(join(baseDir, 'package.json'));
-  } catch (error) {
-    throw Error(`No package.json file found on ${baseDir}`);
-  }
+  warn(warning);
+};
 
-  input = join(baseDir, input);
-  const name = pkg.name.split('/').pop();
+const DEFAULT_CONFIG = {
+  codeSplitting: []
+};
+
+export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD], env = process.env.NODE_ENV }) => {
   const production = env === 'production';
-
-  const dests = {
-    umd: pkg.browser,
-    cjs: pkg.main,
-    esm: pkg.module
-  };
-
-  const allExternals = Object.keys(pkg.peerDependencies)
-    .concat(Object.keys(pkg.dependencies))
-    .concat(commonExternals);
-
-  const external = id => allExternals.some(ex => id.startsWith(ex));
-
-  const plugins = [
-    babel({
-      exclude: /node_modules/,
-      runtimeHelpers: true
-    }),
-
-    resolve({
-      jsnext: true,
-      browser: true,
-      customResolveOptions: {
-        moduleDirectory: join(baseDir, 'src')
-      }
-    }),
-
-    commonjs({
-      include: /node_modules/,
-      namedExports: {
-        '@material-ui/core/styles': ['withStyles']
-      }
-    }),
-
-    replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
-
-    production && minify()
-  ];
+  const baseDir = process.cwd();
+  const { name, dests, external } = loadPkgInfo({ baseDir });
+  const plugins = getPlugins({ env, baseDir, production });
+  const config = loadConfig({ baseDir });
+  const codeSplitting = Boolean(config.codeSplitting);
 
   const inputOptions = {
-    input,
     external,
     plugins,
     treeshake: {
       pureExternalModules: true
     },
-    onwarn: (warning, warn) => {
-      if (['MISSING_GLOBAL_NAME', 'UNUSED_EXTERNAL_IMPORT'].includes(warning.code)) return;
-      if (warning.code === 'NON_EXISTENT_EXPORT') throw new Error(warning.message);
-
-      warn(warning);
-    }
+    onwarn
   };
 
-  const outputOptions = (format, file) => ({
-    format,
-    file,
+  const outputOptions = {
     name,
-    globals,
+    globals: COMMON_GLOBALS,
     sourcemap: !production,
     exports: 'named'
+  };
+
+  const jobs = formats.map(format => {
+    let bundleInputOptions = inputOptions;
+    let bundleOutputOptions = outputOptions;
+
+    if ([FORMATS.CJS, FORMATS.ESM].includes(format)) {
+      bundleInputOptions = {
+        ...inputOptions,
+        input: [input].concat(config.codeSplitting.map(file => path.join(baseDir, file))),
+        experimentalCodeSplitting: Boolean(config.codeSplitting.length)
+      };
+
+      bundleOutputOptions = {
+        ...outputOptions,
+        format,
+        ...(codeSplitting ? { dir: path.join(baseDir, 'dist', format) } : { file: dests[format] })
+      };
+    } else {
+      bundleInputOptions = { ...inputOptions, input };
+
+      bundleOutputOptions = {
+        ...outputOptions,
+        format,
+        file: dests[format]
+      };
+    }
+
+    return rollup(bundleInputOptions)
+      .then(bundle => bundle.write(bundleOutputOptions))
+      .then(result => ({ format, result }));
   });
 
-  const bundle = await rollup(inputOptions);
-  const result = {};
-  for (const format of formats) {
-    result[format] = await bundle.write(outputOptions(format, dests[format]));
-  }
+  const result = (await Promise.all(jobs)).reduce((acc, { format, result }) => {
+    acc[format] = result;
+    return acc;
+  }, {});
 
   return result;
+};
+
+const getExternalFn = ({ pkg }) => {
+  const allExternals = Object.keys(pkg.peerDependencies)
+    .concat(Object.keys(pkg.dependencies))
+    .concat(COMMON_EXTERNALS);
+
+  return id => allExternals.some(ex => id.startsWith(ex));
+};
+
+const getPlugins = ({ env, baseDir, production }) => [
+  babel({
+    exclude: /node_modules/,
+    runtimeHelpers: true
+  }),
+
+  resolve({
+    jsnext: true,
+    browser: true,
+    customResolveOptions: {
+      moduleDirectory: path.join(baseDir, 'src')
+    }
+  }),
+
+  commonjs({
+    include: /node_modules/,
+    namedExports: {
+      '@material-ui/core/styles': ['withStyles']
+    }
+  }),
+
+  replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
+
+  production && minify()
+];
+
+const loadPkgInfo = ({ baseDir }) => {
+  let pkg;
+
+  try {
+    pkg = require(path.join(baseDir, 'package.json'));
+  } catch (error) {
+    throw Error(`No package.json file found on ${baseDir}`);
+  }
+
+  const name = pkg.name.split('/').pop();
+
+  const dests = {
+    [FORMATS.UMD]: pkg.browser,
+    [FORMATS.CJS]: pkg.main,
+    [FORMATS.ESM]: pkg.module
+  };
+
+  const external = getExternalFn({ pkg });
+
+  return {
+    name,
+    dests,
+    external
+  };
+};
+
+const loadConfig = ({ baseDir }) => {
+  try {
+    const cfg = require(path.join(baseDir, 'lattice-scripts.config.js'));
+    return { ...DEFAULT_CONFIG, ...cfg.build };
+  } catch (error) {
+    console.log(error);
+    console.log(`No lattice-scripts.config.js file found on ${baseDir}`);
+  }
+
+  return {};
 };

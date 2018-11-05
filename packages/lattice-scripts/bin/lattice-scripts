@@ -3,8 +3,7 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var path = require('path');
-var path__default = _interopDefault(path);
+var path = _interopDefault(require('path'));
 var rollup = require('rollup');
 var resolve = _interopDefault(require('rollup-plugin-node-resolve'));
 var commonjs = _interopDefault(require('rollup-plugin-commonjs'));
@@ -14,17 +13,130 @@ var minify = _interopDefault(require('rollup-plugin-babel-minify'));
 var colors = _interopDefault(require('colors'));
 var program = _interopDefault(require('commander'));
 
-const globals = {
+const FORMATS = {
+  ESM: 'esm',
+  CJS: 'cjs',
+  UMD: 'umd'
+};
+
+const COMMON_GLOBALS = {
   react: 'React',
   'react-dom': 'ReactDOM',
   'prop-types': 'PropTypes',
   classnames: 'classnames'
 };
 
-const commonExternals = ['@babel/runtime/helpers', '@material-ui/core/'];
+const COMMON_EXTERNALS = ['@babel/runtime/helpers', '@material-ui/core/'];
 
-var build = async (input, { formats = ['cjs', 'esm', 'umd'], env = process.env.NODE_ENV }) => {
+const onwarn = (warning, warn) => {
+  if (['MISSING_GLOBAL_NAME', 'UNUSED_EXTERNAL_IMPORT'].includes(warning.code)) return;
+  if (warning.code === 'NON_EXISTENT_EXPORT') throw new Error(warning.message);
+
+  warn(warning);
+};
+
+const DEFAULT_CONFIG = {
+  codeSplitting: []
+};
+
+var build = async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD], env = process.env.NODE_ENV }) => {
+  const production = env === 'production';
   const baseDir = process.cwd();
+  const { name, dests, external } = loadPkgInfo({ baseDir });
+  const plugins = getPlugins({ env, baseDir, production });
+  const config = loadConfig({ baseDir });
+  const codeSplitting = Boolean(config.codeSplitting);
+
+  const inputOptions = {
+    external,
+    plugins,
+    treeshake: {
+      pureExternalModules: true
+    },
+    onwarn
+  };
+
+  const outputOptions = {
+    name,
+    globals: COMMON_GLOBALS,
+    sourcemap: !production,
+    exports: 'named'
+  };
+
+  const jobs = formats.map(format => {
+    let bundleInputOptions = inputOptions;
+    let bundleOutputOptions = outputOptions;
+
+    if ([FORMATS.CJS, FORMATS.ESM].includes(format)) {
+      bundleInputOptions = {
+        ...inputOptions,
+        input: [input].concat(config.codeSplitting.map(file => path.join(baseDir, file))),
+        experimentalCodeSplitting: Boolean(config.codeSplitting.length)
+      };
+
+      bundleOutputOptions = {
+        ...outputOptions,
+        format,
+        ...(codeSplitting ? { dir: path.join(baseDir, 'dist', format) } : { file: dests[format] })
+      };
+    } else {
+      bundleInputOptions = { ...inputOptions, input };
+
+      bundleOutputOptions = {
+        ...outputOptions,
+        format,
+        file: dests[format]
+      };
+    }
+
+    return rollup.rollup(bundleInputOptions)
+      .then(bundle => bundle.write(bundleOutputOptions))
+      .then(result => ({ format, result }));
+  });
+
+  const result = (await Promise.all(jobs)).reduce((acc, { format, result }) => {
+    acc[format] = result;
+    return acc;
+  }, {});
+
+  return result;
+};
+
+const getExternalFn = ({ pkg }) => {
+  const allExternals = Object.keys(pkg.peerDependencies)
+    .concat(Object.keys(pkg.dependencies))
+    .concat(COMMON_EXTERNALS);
+
+  return id => allExternals.some(ex => id.startsWith(ex));
+};
+
+const getPlugins = ({ env, baseDir, production }) => [
+  babel({
+    exclude: /node_modules/,
+    runtimeHelpers: true
+  }),
+
+  resolve({
+    jsnext: true,
+    browser: true,
+    customResolveOptions: {
+      moduleDirectory: path.join(baseDir, 'src')
+    }
+  }),
+
+  commonjs({
+    include: /node_modules/,
+    namedExports: {
+      '@material-ui/core/styles': ['withStyles']
+    }
+  }),
+
+  replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
+
+  production && minify()
+];
+
+const loadPkgInfo = ({ baseDir }) => {
   let pkg;
 
   try {
@@ -33,79 +145,33 @@ var build = async (input, { formats = ['cjs', 'esm', 'umd'], env = process.env.N
     throw Error(`No package.json file found on ${baseDir}`);
   }
 
-  input = path.join(baseDir, input);
   const name = pkg.name.split('/').pop();
-  const production = env === 'production';
 
   const dests = {
-    umd: pkg.browser,
-    cjs: pkg.main,
-    esm: pkg.module
+    [FORMATS.UMD]: pkg.browser,
+    [FORMATS.CJS]: pkg.main,
+    [FORMATS.ESM]: pkg.module
   };
 
-  const allExternals = Object.keys(pkg.peerDependencies)
-    .concat(Object.keys(pkg.dependencies))
-    .concat(commonExternals);
+  const external = getExternalFn({ pkg });
 
-  const external = id => allExternals.some(ex => id.startsWith(ex));
-
-  const plugins = [
-    babel({
-      exclude: /node_modules/,
-      runtimeHelpers: true
-    }),
-
-    resolve({
-      jsnext: true,
-      browser: true,
-      customResolveOptions: {
-        moduleDirectory: path.join(baseDir, 'src')
-      }
-    }),
-
-    commonjs({
-      include: /node_modules/,
-      namedExports: {
-        '@material-ui/core/styles': ['withStyles']
-      }
-    }),
-
-    replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
-
-    production && minify()
-  ];
-
-  const inputOptions = {
-    input,
-    external,
-    plugins,
-    treeshake: {
-      pureExternalModules: true
-    },
-    onwarn: (warning, warn) => {
-      if (['MISSING_GLOBAL_NAME', 'UNUSED_EXTERNAL_IMPORT'].includes(warning.code)) return;
-      if (warning.code === 'NON_EXISTENT_EXPORT') throw new Error(warning.message);
-
-      warn(warning);
-    }
-  };
-
-  const outputOptions = (format, file) => ({
-    format,
-    file,
+  return {
     name,
-    globals,
-    sourcemap: !production,
-    exports: 'named'
-  });
+    dests,
+    external
+  };
+};
 
-  const bundle = await rollup.rollup(inputOptions);
-  const result = {};
-  for (const format of formats) {
-    result[format] = await bundle.write(outputOptions(format, dests[format]));
+const loadConfig = ({ baseDir }) => {
+  try {
+    const cfg = require(path.join(baseDir, 'lattice-scripts.config.js'));
+    return { ...DEFAULT_CONFIG, ...cfg.build };
+  } catch (error) {
+    console.log(error);
+    console.log(`No lattice-scripts.config.js file found on ${baseDir}`);
   }
 
-  return result;
+  return {};
 };
 
 var registerBuild = program$$1 => {
@@ -113,11 +179,9 @@ var registerBuild = program$$1 => {
     .command('build')
     .description('Build your source files into cjs, esm or umd formats.')
     .usage('[options] <input>')
-    .option('-f, --formats <formats>', 'Output formats to build', (formats = ['umd', 'cjs', 'esm']) =>
-      formats.split(',')
-    )
-    .option('-e, --env <environment>', 'Environment', 'development')
-    .action(async (input, cmd = { formats: ['umd', 'cjs', 'esm'], env: 'development' }) => {
+    .option('-f, --formats <formats>', 'Output formats to build', (formats = []) => formats.split(','))
+    .option('-e, --env <environment>', 'Environment', 'production')
+    .action(async (input, cmd = { formats: ['umd', 'cjs', 'esm'], env: 'production' }) => {
       if (!process.argv.slice(3).length) {
         program$$1.outputHelp(colors.red);
         process.exit(1);
@@ -126,18 +190,30 @@ var registerBuild = program$$1 => {
       try {
         const outputs = await build(input, { formats: cmd.formats, env: cmd.env });
 
-        // console.log({ outputs });
-
         console.log(colors.green.bold('\n 🚀 Your bundle is ready! 🚀\n'));
 
         console.log(colors.underline('Generated files:'));
 
+        const files = [];
+
         for (const format in outputs) {
-          if (outputs.hasOwnProperty(format)) {
-            const { fileName } = outputs[format];
-            console.log(colors.cyan(`> ${colors.bold(format)}: ${path__default.join(process.cwd(), fileName)}`));
+          const { output, fileName } = outputs[format];
+
+          if (fileName) {
+            files.push([format, fileName]);
+            continue;
+          }
+
+          for (const file in output) {
+            const { fileName } = output[file];
+            files.push([format, fileName]);
           }
         }
+
+        for (const [format, fileName] of files) {
+          console.log(colors.cyan(`> ${colors.bold(format)}: ${path.join(process.cwd(), 'dist', format, fileName)}`));
+        }
+        console.log('');
       } catch (error) {
         console.error(colors.red(error));
         program$$1.outputHelp();
