@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "bootstrap": "lerna bootstrap && lerna run prepublish",
+    "chan": "chan",
     "clean": "lerna clean --yes",
     "create-react-app": "node tasks/cra.js",
     "lint": "eslint --cache --ignore-path .npmignore .",
