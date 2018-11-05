@@ -2,8 +2,8 @@
   "name": "@latticejs/dag",
   "version": "1.0.1-alpha.12",
   "license": "MIT",
-  "main": "dist/cjs/dag.js",
-  "module": "dist/es/dag.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "browser": "dist/umd/dag.js",
   "files": [
     "dist"
@@ -77,10 +77,10 @@
   },
   "bundlesize": [
     {
-      "path": "dist/cjs/dag.js"
+      "path": "dist/cjs/index.js"
     },
     {
-      "path": "dist/es/dag.js"
+      "path": "dist/esm/index.js"
     },
     {
       "path": "dist/umd/dag.js"
