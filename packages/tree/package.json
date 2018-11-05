@@ -2,15 +2,16 @@
   "name": "@latticejs/tree",
   "version": "1.0.1-alpha.11",
   "license": "MIT",
-  "main": "dist/tree.cjs.js",
-  "module": "dist/tree.es.js",
-  "browser": "dist/tree.umd.js",
+  "main": "dist/cjs/tree.js",
+  "module": "dist/es/tree.js",
+  "browser": "dist/umd/tree.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build:clean": "rimraf dist",
+    "build:clean": "rimraf dist/**",
     "build": "npm run build:clean && lattice-scripts build ./src/index.js",
+    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9015 -c .storybook",

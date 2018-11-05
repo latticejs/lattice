@@ -2,15 +2,16 @@
   "name": "@latticejs/dag",
   "version": "1.0.1-alpha.12",
   "license": "MIT",
-  "main": "dist/dag.cjs.js",
-  "module": "dist/dag.es.js",
-  "browser": "dist/dag.umd.js",
+  "main": "dist/cjs/dag.js",
+  "module": "dist/es/dag.js",
+  "browser": "dist/umd/dag.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build:clean": "rimraf dist",
+    "build:clean": "rimraf dist/**",
     "build": "npm run build:clean && lattice-scripts build ./src/index.js",
+    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9010 -c .storybook",

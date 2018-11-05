@@ -3,15 +3,16 @@
   "description": "A set of material-ui components adapted to support infinite list feature.",
   "version": "1.0.1-alpha.12",
   "license": "MIT",
-  "main": "dist/infinite-list.cjs.js",
-  "module": "dist/infinite-list.es.js",
-  "browser": "dist/infinite-list.umd.js",
+  "main": "dist/cjs/infinite-list.js",
+  "module": "dist/es/infinite-list.js",
+  "browser": "dist/umd/infinite-list.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build:clean": "rimraf dist",
+    "build:clean": "rimraf dist/**",
     "build": "npm run build:clean && lattice-scripts build ./src/index.js",
+    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9014 -c .storybook",

@@ -2,15 +2,16 @@
   "name": "@latticejs/recharts-sunburst",
   "version": "1.0.1-alpha.11",
   "license": "MIT",
-  "main": "dist/recharts-sunburst.cjs.js",
-  "module": "dist/recharts-sunburst.es.js",
-  "browser": "dist/recharts-sunburst.umd.js",
+  "main": "dist/cjs/recharts-sunburst.js",
+  "module": "dist/es/recharts-sunburst.js",
+  "browser": "dist/umd/recharts-sunburst.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build:clean": "rimraf dist",
+    "build:clean": "rimraf dist/**",
     "build": "npm run build:clean && lattice-scripts build ./src/index.js",
+    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9012 -c .storybook",

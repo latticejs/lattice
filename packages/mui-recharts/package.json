@@ -2,15 +2,16 @@
   "name": "@latticejs/mui-recharts",
   "version": "1.0.1-alpha.11",
   "license": "MIT",
-  "main": "dist/mui-recharts.cjs.js",
-  "module": "dist/mui-recharts.es.js",
-  "browser": "dist/mui-recharts.umd.js",
+  "main": "dist/cjs/mui-recharts.js",
+  "module": "dist/es/mui-recharts.js",
+  "browser": "dist/umd/mui-recharts.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build:clean": "rimraf dist",
+    "build:clean": "rimraf dist/**",
     "build": "npm run build:clean && lattice-scripts build ./src/index.js",
+    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9011 -c .storybook",
