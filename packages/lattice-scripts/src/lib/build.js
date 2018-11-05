@@ -29,7 +29,8 @@ const onwarn = (warning, warn) => {
 };
 
 const DEFAULT_CONFIG = {
-  codeSplitting: []
+  codeSplitting: [],
+  outputFolder: 'dist'
 };
 
 export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD], env = process.env.NODE_ENV }) => {
@@ -38,7 +39,7 @@ export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD]
   const { name, dests, external } = loadPkgInfo({ baseDir });
   const plugins = getPlugins({ env, baseDir, production });
   const config = loadConfig({ baseDir });
-  const codeSplitting = Boolean(config.codeSplitting);
+  const codeSplitting = Boolean(config.codeSplitting.length);
 
   const inputOptions = {
     external,
@@ -57,30 +58,20 @@ export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD]
   };
 
   const jobs = formats.map(format => {
-    let bundleInputOptions = inputOptions;
-    let bundleOutputOptions = outputOptions;
+    const notUMD = format !== FORMATS.UMD;
 
-    if ([FORMATS.CJS, FORMATS.ESM].includes(format)) {
-      bundleInputOptions = {
-        ...inputOptions,
-        input: [input].concat(config.codeSplitting.map(file => path.join(baseDir, file))),
-        experimentalCodeSplitting: Boolean(config.codeSplitting.length)
-      };
+    const bundleInputOptions = {
+      ...inputOptions,
+      input:
+        notUMD && codeSplitting ? [input].concat(config.codeSplitting.map(file => path.join(baseDir, file))) : input,
+      experimentalCodeSplitting: notUMD && codeSplitting
+    };
 
-      bundleOutputOptions = {
-        ...outputOptions,
-        format,
-        ...(codeSplitting ? { dir: path.join(baseDir, 'dist', format) } : { file: dests[format] })
-      };
-    } else {
-      bundleInputOptions = { ...inputOptions, input };
-
-      bundleOutputOptions = {
-        ...outputOptions,
-        format,
-        file: dests[format]
-      };
-    }
+    const bundleOutputOptions = {
+      ...outputOptions,
+      format,
+      ...(notUMD && codeSplitting ? { dir: path.join(baseDir, config.outputFolder, format) } : { file: dests[format] })
+    };
 
     return rollup(bundleInputOptions)
       .then(bundle => bundle.write(bundleOutputOptions))
@@ -157,12 +148,11 @@ const loadPkgInfo = ({ baseDir }) => {
 
 const loadConfig = ({ baseDir }) => {
   try {
-    const cfg = require(path.join(baseDir, 'lattice-scripts.config.js'));
-    return { ...DEFAULT_CONFIG, ...cfg.build };
+    const buildConfig = require(path.join(baseDir, 'lattice-scripts.config.js'));
+    return { ...DEFAULT_CONFIG, ...buildConfig.build };
   } catch (error) {
-    console.log(error);
-    console.log(`No lattice-scripts.config.js file found on ${baseDir}`);
+    console.log(`\nNo lattice-scripts.config.js file found on ${baseDir}.\n`);
   }
 
-  return {};
+  return DEFAULT_CONFIG;
 };
