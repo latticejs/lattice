@@ -2,9 +2,9 @@
   "name": "@latticejs/widgets",
   "version": "1.0.1-alpha.12",
   "license": "MIT",
-  "main": "dist/cjs/widgets.js",
-  "module": "dist/esm/widgets.js",
-  "browser": "dist/umd/widgets.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "browser": "dist/umd/index.js",
   "files": [
     "dist"
   ],
@@ -75,13 +75,13 @@
   },
   "bundlesize": [
     {
-      "path": "./dist/widgets.cjs.js"
+      "path": "./dist/cjs/index.js"
     },
     {
-      "path": "./dist/widgets.es.js"
+      "path": "./dist/esm/index.js"
     },
     {
-      "path": "./dist/widgets.umd.js"
+      "path": "./dist/umd/index.js"
     }
   ],
   "publishConfig": {

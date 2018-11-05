@@ -77,13 +77,13 @@
   },
   "bundlesize": [
     {
-      "path": "./dist/dag.cjs.js"
+      "path": "dist/cjs/dag.js"
     },
     {
-      "path": "./dist/dag.es.js"
+      "path": "dist/es/dag.js"
     },
     {
-      "path": "./dist/dag.umd.js"
+      "path": "dist/umd/dag.js"
     }
   ],
   "publishConfig": {

@@ -72,13 +72,13 @@
   },
   "bundlesize": [
     {
-      "path": "./dist/recharts-sunburst.cjs.js"
+      "path": "dist/cjs/recharts-sunburst.js"
     },
     {
-      "path": "./dist/recharts-sunburst.es.js"
+      "path": "dist/es/recharts-sunburst.js"
     },
     {
-      "path": "./dist/recharts-sunburst.umd.js"
+      "path": "dist/umd/recharts-sunburst.js"
     }
   ],
   "publishConfig": {

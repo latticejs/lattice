@@ -69,13 +69,13 @@
   },
   "bundlesize": [
     {
-      "path": "./dist/tree.cjs.js"
+      "path": "dist/cjs/tree.js"
     },
     {
-      "path": "./dist/tree.es.js"
+      "path": "dist/es/tree.js"
     },
     {
-      "path": "./dist/tree.umd.js"
+      "path": "dist/umd/tree.js"
     }
   ],
   "publishConfig": {

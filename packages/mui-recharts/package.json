@@ -72,13 +72,13 @@
   },
   "bundlesize": [
     {
-      "path": "./dist/mui-recharts.cjs.js"
+      "path": "dist/cjs/mui-recharts.js"
     },
     {
-      "path": "./dist/mui-recharts.es.js"
+      "path": "dist/es/mui-recharts.js"
     },
     {
-      "path": "./dist/mui-recharts.umd.js"
+      "path": "dist/umd/mui-recharts.js"
     }
   ],
   "publishConfig": {
