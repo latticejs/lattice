@@ -1,1 +1,1 @@
-module.exports = require('./dist/List.js');
+module.exports = require('./dist/cjs/List.js');

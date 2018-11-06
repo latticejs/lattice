@@ -1,1 +1,1 @@
-module.exports = require('./dist/SideMenu.js');
+module.exports = require('./dist/cjs/SideMenu');

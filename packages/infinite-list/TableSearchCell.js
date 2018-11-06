@@ -1,1 +1,1 @@
-module.exports = require('./dist/TableSearchCell.js');
+module.exports = require('./dist/cjs/TableSearchCell.js');

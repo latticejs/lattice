@@ -1,1 +1,1 @@
-module.exports = require('./dist/ScrollLoader.js');
+module.exports = require('./dist/cjs/ScrollLoader.js');
