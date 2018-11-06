@@ -36,9 +36,9 @@ const DEFAULT_CONFIG = {
 export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD], env = process.env.NODE_ENV }) => {
   const production = env === 'production';
   const baseDir = process.cwd();
-  const { name, dests, external } = loadPkgInfo({ baseDir });
-  const plugins = getPlugins({ env, baseDir, production });
   const config = loadConfig({ baseDir });
+  const { name, dests, external } = loadPkgInfo({ baseDir, config });
+  const plugins = getPlugins({ env, baseDir, production });
   const codeSplitting = Boolean(config.codeSplitting.length);
 
   const inputOptions = {
@@ -73,9 +73,12 @@ export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD]
       ...(notUMD && codeSplitting ? { dir: path.join(baseDir, config.outputFolder, format) } : { file: dests[format] })
     };
 
+    console.log({ bundleInputOptions, bundleOutputOptions });
+
     return rollup(bundleInputOptions)
       .then(bundle => bundle.write(bundleOutputOptions))
-      .then(result => ({ format, result }));
+      .then(result => ({ format, result }))
+      .catch(console.error);
   });
 
   const result = (await Promise.all(jobs)).reduce((acc, { format, result }) => {
@@ -87,8 +90,8 @@ export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD]
 };
 
 const getExternalFn = ({ pkg }) => {
-  const allExternals = Object.keys(pkg.peerDependencies)
-    .concat(Object.keys(pkg.dependencies))
+  const allExternals = Object.keys(pkg.peerDependencies || [])
+    .concat(Object.keys(pkg.dependencies || []))
     .concat(COMMON_EXTERNALS);
 
   return id => allExternals.some(ex => id.startsWith(ex));
@@ -120,7 +123,7 @@ const getPlugins = ({ env, baseDir, production }) => [
   production && minify()
 ];
 
-const loadPkgInfo = ({ baseDir }) => {
+const loadPkgInfo = ({ baseDir, config }) => {
   let pkg;
 
   try {
@@ -132,9 +135,9 @@ const loadPkgInfo = ({ baseDir }) => {
   const name = pkg.name.split('/').pop();
 
   const dests = {
-    [FORMATS.UMD]: pkg.browser,
-    [FORMATS.CJS]: pkg.main,
-    [FORMATS.ESM]: pkg.module
+    [FORMATS.UMD]: pkg.browser || `./${config.outputFolder}/umd/index.js`,
+    [FORMATS.CJS]: pkg.main || `./${config.outputFolder}/cjs/index.js`,
+    [FORMATS.ESM]: pkg.module || `./${config.outputFolder}/esm/index.js`
   };
 
   const external = getExternalFn({ pkg });
