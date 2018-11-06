@@ -1,1 +1,1 @@
-module.exports = require('./dist/TableOrderCell.js');
+module.exports = require('./dist/cjs/TableOrderCell.js');

@@ -1,1 +1,1 @@
-module.exports = require('./dist/Widget.js');
+module.exports = require('./dist/cjs/Widget');

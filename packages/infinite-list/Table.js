@@ -1,1 +1,1 @@
-module.exports = require('./dist/Table.js');
+module.exports = require('./dist/cjs/Table.js');
