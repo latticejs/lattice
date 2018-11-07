@@ -76,10 +76,8 @@ export default class Main extends Component {
 
   parseOriginal = pkg => {
     if (!pkg.dependencies) return;
-    try {
+    if (typeof pkg.dependencies === 'string') {
       pkg.dependencies = JSON.parse(pkg.dependencies);
-    } catch (e) {
-      console.log(e);
     }
     return pkg;
   };
