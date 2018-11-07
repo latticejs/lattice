@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - '8'
+  - "8"
+  - "10"
 cache:
   yarn: true
   directories:
@@ -12,3 +13,12 @@ before_script:
   - yarn run lerna run prepublish
 script:
   - yarn test
+before_deploy:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+deploy:
+  provider: script
+  script: "yarn run lerna:publish"
+  skip_cleanup: true
+  on:
+    node: "8"
+    tags: true
