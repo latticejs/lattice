@@ -57,7 +57,12 @@ export default class Main extends Component {
 
   parsePackage = pkg => {
     if (!pkg.dependencies) return;
-    const deps = JSON.parse(pkg.dependencies);
+    let deps = {};
+    try {
+      deps = JSON.parse(pkg.dependencies);
+    } catch (e) {
+      deps = pkg.dependencies;
+    }
     return {
       name: pkg.name,
       data: {
@@ -71,7 +76,11 @@ export default class Main extends Component {
 
   parseOriginal = pkg => {
     if (!pkg.dependencies) return;
-    pkg.dependencies = JSON.parse(pkg.dependencies);
+    try {
+      pkg.dependencies = JSON.parse(pkg.dependencies);
+    } catch (e) {
+      console.log(e);
+    }
     return pkg;
   };
 
