@@ -111,10 +111,12 @@ class App extends Component {
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="Bundle data" border="bottom">
-                  {Chart(this.state.data)}
-                  <Typography variant="caption" align="center">
-                    NOTE: Actual sizes might be smaller if only parts of the package are used.
-                  </Typography>
+                  <div>
+                    {Chart(this.state.data)}
+                    <Typography variant="caption" align="center">
+                      NOTE: Actual sizes might be smaller if only parts of the package are used.
+                    </Typography>
+                  </div>
                 </Widget>
               </Grid>
             </Grid>
