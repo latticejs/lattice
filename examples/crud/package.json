@@ -1,6 +1,6 @@
 {
   "name": "latticejs-crud",
-  "version": "1.0.1-alpha.12",
+  "version": "1.0.1-beta.0",
   "private": true,
   "keywords": [],
   "author": "",
@@ -11,8 +11,8 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@latticejs/widgets": "^1.0.1-alpha.12",
-    "@latticejs/infinite-list": "^1.0.1-alpha.12",
+    "@latticejs/infinite-list": "^1.0.1-beta.0",
+    "@latticejs/widgets": "^1.0.1-beta.0",
     "@material-ui/core": "^3.2.0",
     "@material-ui/icons": "^3.0.1",
     "faker": "^4.1.0",

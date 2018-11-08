@@ -1,6 +1,6 @@
 {
   "name": "apollo-real-time-chart",
-  "version": "1.0.1-alpha.12",
+  "version": "1.0.1-beta.0",
   "description": "A realtime Lattice App of charts using graphql subscriptions",
   "main": "index.js",
   "private": true,
@@ -15,8 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@latticejs/mui-recharts": "^1.0.1-alpha.11",
-    "@latticejs/widgets": "^1.0.1-alpha.12",
+    "@latticejs/mui-recharts": "^1.0.1-beta.0",
+    "@latticejs/widgets": "^1.0.1-beta.0",
     "@material-ui/core": "^3.0.0",
     "@material-ui/icons": "^3.0.0",
     "apollo-cache-inmemory": "^1.2.6",

@@ -1,6 +1,6 @@
 {
   "name": "basic",
-  "version": "1.0.1-alpha.12",
+  "version": "1.0.1-beta.0",
   "description": "A basic Lattice App",
   "main": "index.js",
   "private": true,
@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@latticejs/widgets": "^1.0.1-alpha.12",
+    "@latticejs/widgets": "^1.0.1-beta.0",
     "@material-ui/core": "^3.0.0",
     "@material-ui/icons": "^3.0.0",
     "react": "^16.5.0",
