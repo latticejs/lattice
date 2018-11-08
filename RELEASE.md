@@ -16,4 +16,4 @@ In the end, if everything is ok, it will be merged. :+1:
 
 ## RELEASES
 
-After some time and work a new release will emerge. To do this one can trigger, from the `master` branch, the `yarn run lerna:version` script. This will prompt for the new version, listing changes packages and after confirmation it will `tag` a new release, `commit` the new versions and then it will run a postversion for updating the changelog, `push`ing everything. :rocket:
+After some time and work a new release will emerge. To do this one can trigger, from the `master` branch, the `yarn run lerna:version` script. This will prompt for the new version, listing changes packages and after confirmation it will `tag` a new release, `commit` the new versions and then it will run a (custom) postversion hook for updating the changelog, `push`ing everything. :rocket:
