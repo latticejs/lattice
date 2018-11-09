@@ -23,3 +23,5 @@ deploy:
   on:
     node: "8"
     branch: master
+after_script:
+  - cat lerna-debug.log
