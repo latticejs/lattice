@@ -15,16 +15,10 @@ script:
   - yarn test
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
-  - npm whoami
 deploy:
   provider: script
   script: "yarn run lerna:publish"
   skip_cleanup: true
   on:
     node: "8"
-    branch: master
-after_script:
-  - cat lerna-debug.log
-  - cat yarn-debug.log
-  - cat yarn-error.log
-
+    tags: true
