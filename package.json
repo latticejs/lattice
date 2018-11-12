@@ -14,7 +14,7 @@
     "test": "lerna run test",
     "lerna:version": "lerna version prerelease --preid beta && yarn run lerna:postversion",
     "lerna:postversion": "chan release --group-changes $(node -p -e \"require('./lerna.json').version\") && git add CHANGELOG.md && git commit -m \"Update: changelog\" && git push --follow-tags",
-    "lerna:publish": "lerna publish from-git --yes --npm-client yarn --npm-tag beta --force-publish",
+    "lerna:publish": "lerna publish --yes --npm-client yarn --npm-tag beta --force-publish",
     "postpublish": "yarn run storybook:public",
     "posttest": "yarn lint"
   },
