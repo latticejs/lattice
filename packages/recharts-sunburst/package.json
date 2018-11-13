@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/recharts-sunburst",
-  "version": "1.0.1-beta.0",
+  "version": "1.0.1-beta.1",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -33,7 +33,7 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@latticejs/lattice-scripts": "^1.0.1-beta.0",
+    "@latticejs/lattice-scripts": "^1.0.1-beta.1",
     "@latticejs/storybook-readme": "^1.0.1-beta.0",
     "@storybook/addon-storyshots": "^4.0.2",
     "@storybook/addon-storysource": "^4.0.2",
