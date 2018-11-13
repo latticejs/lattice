@@ -4,7 +4,7 @@
 
 ## Install
 
-:warning: *Lattice is currently being released using the `alpha` channel. This means you should consider adding the `@alpha` tag to point to the latest versions when installing.*
+:warning: *Lattice is currently being released using the `beta` channel. This means you should consider adding the `@beta` tag to point to the latest versions when installing.*
 
 ```bash
 yarn add @latticejs/lattice-scripts
