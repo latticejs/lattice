@@ -4,10 +4,10 @@
 
 ## Install
 
-:warning: *Lattice is currently being released using the `alpha` channel. This means you should consider adding the `@alpha` tag to point to the latest versions when installing.*
+:warning: *Lattice is currently being released using the `beta` channel. This means you should consider adding the `@beta` tag to point to the latest versions when installing.*
 
 ```bash
-npm install -g @latticejs/clap@alpha
+npm install -g @latticejs/clap@beta
 ```
 
 ## Usage
