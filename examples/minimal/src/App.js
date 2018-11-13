@@ -15,7 +15,7 @@ import NightIcon from '@material-ui/icons/Brightness3Outlined';
 import 'typeface-roboto';
 
 // Lattice
-import Widget from '@latticejs/widgets/Widget';
+import { Widget } from '@latticejs/widgets';
 import { PieChart, Pie, Tooltip } from '@latticejs/mui-recharts';
 
 // Custom Style
