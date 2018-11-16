@@ -168,7 +168,7 @@ class App extends Component {
   };
 
   removeDep = (data, updatePkg) => {
-    const { pkg, originalPkg } = this.props;
+    const { originalPkg } = this.props;
 
     const appExists = data.nodes.find(dep => {
       return dep.title === originalPkg.name;
