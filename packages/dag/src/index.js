@@ -321,8 +321,8 @@ class Dag extends Component {
       // use another approach to get transform data
       const parseTransform = attr => {
         const b = {};
-        for (let i in (attr = attr.match(/(\w+\((\-?\d+\.?\d*e?\-?\d*,?)+\))+/g))) {
-          const c = attr[i].match(/[\w\.\-]+/g);
+        for (let i in (attr = attr.match(/(\w+\((-?\d+\.?\d*e?-?\d*,?)+\))+/g))) {
+          const c = attr[i].match(/[\w.-]+/g);
           b[c.shift()] = c;
         }
         return b;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { select } from 'd3-selection';
 import { DEFAULTS } from './dag';
-import Input from '@material-ui/core/Input';
 
 const enterNode = (selection, props) => {
   selection.select('circle').attr('r', d => {
