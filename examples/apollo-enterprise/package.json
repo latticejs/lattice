@@ -36,13 +36,12 @@
     "yup": "^0.26.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently --kill-others-on-fail \"yarn graphql\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "echo 'test'",
     "eject": "react-scripts eject",
     "graphql": "NODE_PORT=3001 node server/index.js",
-    "graphql:seed": "node server/db/seed.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn graphql\" \"yarn start\""
+    "graphql:seed": "node server/db/seed.js"
   },
   "devDependencies": {
     "concurrently": "^3.6.0",
