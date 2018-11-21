@@ -6,10 +6,9 @@
   "private": true,
   "scripts": {
     "test": "echo 'test'",
-    "start": "react-scripts start",
+    "start": "concurrently --kill-others-on-fail \"npm run graphql\" \"react-scripts start\"",
     "build": "react-scripts build",
-    "graphql": "node server/index.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run graphql\" \"npm start\""
+    "graphql": "node server/index.js"
   },
   "keywords": [],
   "author": "",
