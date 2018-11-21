@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - [examples] normalize start scripts
 
+### Fixed
+- [lattice-scripts] remove console.log call from lattice-script build step
+
 ## [1.0.1-beta.1] - 2018-11-13 [YANKED]
 
 ## 1.0.1-beta.0 - 2018-11-08

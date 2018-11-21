@@ -73,8 +73,6 @@ export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD]
       ...(notUMD && codeSplitting ? { dir: path.join(baseDir, config.outputFolder, format) } : { file: dests[format] })
     };
 
-    console.log({ bundleInputOptions, bundleOutputOptions });
-
     return rollup(bundleInputOptions)
       .then(bundle => bundle.write(bundleOutputOptions))
       .then(result => ({ format, result }))
