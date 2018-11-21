@@ -15,7 +15,7 @@ import NightIcon from '@material-ui/icons/Brightness3Outlined';
 import 'typeface-roboto';
 
 // Lattice
-import Widget from '@latticejs/widgets/Widget';
+import { Widget } from '@latticejs/widgets';
 
 // Custom Style
 const styles = theme => ({

@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import { ResponsiveContainer } from 'recharts';
 // Lattice
-import Widget from '@latticejs/widgets/Widget';
+import { Widget } from '@latticejs/widgets';
 import Sunburst from '@latticejs/recharts-sunburst';
 
 const COLORS = {

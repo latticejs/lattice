@@ -11,7 +11,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
 
 // @latticejs
-import Widget from '@latticejs/widgets/Widget';
+import { Widget } from '@latticejs/widgets';
 
 // Ours
 import { TextField, Button } from '../MuiFormik';

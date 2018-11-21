@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 // Lattice
-import Widget from '@latticejs/widgets/Widget';
+import { Widget } from '@latticejs/widgets';
 import { PieChart, Pie, Cell } from '@latticejs/mui-recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
