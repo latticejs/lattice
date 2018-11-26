@@ -1,9 +1,8 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
-import { Widget } from '@latticejs/widgets';
 import { ResponsiveContainer, LineChart, Line, YAxis, Legend, Tooltip } from '@latticejs/mui-recharts';
-import { Loader } from '@latticejs/widgets';
+import { Loader, Widget } from '@latticejs/widgets';
 
 const styles = theme => ({
   root: {

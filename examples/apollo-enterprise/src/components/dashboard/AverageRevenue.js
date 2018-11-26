@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 
 // Lattice
 import { LineChart, Line, ResponsiveContainer } from '@latticejs/mui-recharts';
-import Widget from '@latticejs/widgets/Widget';
+import { Widget } from '@latticejs/widgets';
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },

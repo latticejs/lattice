@@ -8,9 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Badge from '@material-ui/core/Badge';
 
-import { Widget } from '@latticejs/widgets';
 import { Pie, PieChart, Cell } from '@latticejs/mui-recharts';
-import { Loader } from '@latticejs/widgets';
+import { Loader, Widget } from '@latticejs/widgets';
 
 const styles = theme => ({
   root: {

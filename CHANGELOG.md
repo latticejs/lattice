@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
+- [examples] use named imports
 - [examples] normalize start scripts
 
 ### Fixed
