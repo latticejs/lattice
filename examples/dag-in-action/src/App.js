@@ -73,7 +73,11 @@ const styles = theme => ({
     flex: 1,
     overflow: 'scroll',
     '& > div': {
-      overflow: 'scroll'
+      overflow: 'scroll',
+      flexDirection: 'initial',
+      '& > div:first-child': {
+        width: '100%'
+      }
     }
   },
   columnItemTop: {
@@ -96,7 +100,7 @@ const styles = theme => ({
   },
   dropzone: {
     width: '100%',
-    height: '100%'
+    height: '90vh'
   },
   instructions: {
     width: '500px',

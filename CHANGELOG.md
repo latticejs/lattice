@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - [lattice-scripts] remove console.log call from lattice-script build step
+- [examples] dag-in-action height grows indefinitely on FF
 
 ## [1.0.1-beta.1] - 2018-11-13 [YANKED]
 
