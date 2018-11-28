@@ -73,7 +73,11 @@ const styles = theme => ({
     flex: 1,
     overflow: 'scroll',
     '& > div': {
-      overflow: 'scroll'
+      overflow: 'scroll',
+      flexDirection: 'initial',
+      '& > div:first-child': {
+        width: '100%'
+      }
     }
   },
   columnItemTop: {
