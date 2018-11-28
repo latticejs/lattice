@@ -96,7 +96,7 @@ const styles = theme => ({
   },
   dropzone: {
     width: '100%',
-    height: '100%'
+    height: '90vh'
   },
   instructions: {
     width: '500px',
