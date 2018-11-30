@@ -34,7 +34,7 @@
     "eslint-plugin-react-app": "^3.0.0",
     "husky": "^1.1.2",
     "lerna": "^3.1.2",
-    "prettier": "^1.14.3",
+    "prettier": "^1.15.3",
     "storybook-readme": "^4.0.2"
   },
   "workspaces": {
