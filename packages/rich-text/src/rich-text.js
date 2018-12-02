@@ -6,8 +6,21 @@ import { isKeyHotkey } from 'is-hotkey';
 import classNames from 'classnames';
 // Material UI
 import { withStyles } from '@material-ui/core';
+import Outlined from './outlined';
+import FormControl from '@material-ui/core/FormControl';
 import IconBold from '@material-ui/icons/FormatBold';
 import IconButton from '@material-ui/core/IconButton';
+
+const variantComponent = {
+  standard: props => (
+    <div className="standard">
+      {props.label}
+      {props.children}
+    </div>
+  ),
+  //filled: FilledInput,
+  outlined: Outlined
+};
 
 const initialValue = Value.fromJSON({
   document: {
@@ -38,6 +51,8 @@ const isCodeHotkey = isKeyHotkey('mod+`');
 // Style
 export const styles = theme => {
   const light = theme.palette.type === 'light';
+  const bottomLineColor = light ? 'rgba(0, 0, 0, 0.42)' : 'rgba(255, 255, 255, 0.7)';
+
   const placeholder = {
     color: 'currentColor',
     opacity: light ? 0.42 : 0.5,
@@ -55,6 +70,7 @@ export const styles = theme => {
   return {
     /* Styles applied to the root element. */
     root: {
+      position: 'relative',
       // Mimics the default input display property used by browsers for an input.
       fontFamily: theme.typography.fontFamily,
       color: theme.palette.text.primary,
@@ -62,14 +78,68 @@ export const styles = theme => {
       lineHeight: '1.1875em', // Reset (19px), match the native input line-height
       cursor: 'text',
       display: 'inline-flex',
-      alignItems: 'center',
       '&$disabled': {
         color: theme.palette.text.disabled,
         cursor: 'default'
       },
-      position: 'relative',
       padding: '15px 0 0',
-      marginTop: '10px'
+      marginTop: '10px',
+      '$label, & > .standard > $editorContainer:focus ~ $label': {
+        position: 'absolute',
+        top: 0,
+        display: 'block',
+        transition: theme.transitions.create('all', {
+          duration: theme.transitions.duration.shorter
+        }),
+        fontSize: '12px'
+      }
+    },
+    underline: {
+      '&:after': {
+        borderBottom: `2px solid ${theme.palette.primary[light ? 'dark' : 'light']}`,
+        left: 0,
+        bottom: 0,
+        // Doing the other way around crash on IE 11 "''" https://github.com/cssinjs/jss/issues/242
+        content: '""',
+        position: 'absolute',
+        right: 0,
+        transform: 'scaleX(0)',
+        transition: theme.transitions.create('transform', {
+          duration: theme.transitions.duration.shorter,
+          easing: theme.transitions.easing.easeOut
+        }),
+        pointerEvents: 'none' // Transparent to the hover style.
+      },
+      '&$focused:after': {
+        transform: 'scaleX(1)'
+      },
+      '&$error:after': {
+        borderBottomColor: theme.palette.error.main,
+        transform: 'scaleX(1)' // error is always underlined in red
+      },
+      '&:before': {
+        borderBottom: `1px solid ${bottomLineColor}`,
+        left: 0,
+        bottom: 0,
+        // Doing the other way around crash on IE 11 "''" https://github.com/cssinjs/jss/issues/242
+        content: '"\\00a0"',
+        position: 'absolute',
+        right: 0,
+        transition: theme.transitions.create('border-bottom-color', {
+          duration: theme.transitions.duration.shorter
+        }),
+        pointerEvents: 'none' // Transparent to the hover style.
+      },
+      '&:hover:not($disabled):not($focused):not($error):before': {
+        borderBottom: `2px solid ${theme.palette.text.primary}`,
+        // Reset on touch devices, it doesn't add specificity
+        '@media (hover: none)': {
+          borderBottom: `1px solid ${bottomLineColor}`
+        }
+      },
+      '&$disabled:before': {
+        borderBottom: `1px dotted ${bottomLineColor}`
+      }
     },
     /* Styles applied to the root element if the component is a descendant of `FormControl`. */
     formControl: {},
@@ -97,32 +167,24 @@ export const styles = theme => {
     editorContainer: {
       font: 'inherit',
       color: 'currentColor',
+      '-moz-appearance': 'textfield',
+      '-webkit-appearance': 'textfield',
       padding: `${8 - 2}px 0 ${8 - 1}px`,
-      border: 0,
       boxSizing: 'content-box',
-      background: 'transparent',
+      background: 'none',
       margin: 0, // Reset for Safari
       // Remove grey highlight
       WebkitTapHighlightColor: 'transparent',
       display: 'block',
       width: '100%',
-      borderBottom: '1px solid #d2d2d2',
       outline: 0,
       fontSize: theme.typography.pxToRem(16),
-      transition: theme.transitions.create('border-color', {
-        duration: theme.transitions.duration.shorter
-      }),
       // Make the flex item shrink with Firefox
       minWidth: '100px',
       '&::-webkit-input-placeholder': placeholder,
       '&::-moz-placeholder': placeholder, // Firefox 19+
       '&:-ms-input-placeholder': placeholder, // IE 11
       '&::-ms-input-placeholder': placeholder, // Edge
-      '&:focus': {
-        paddingBottom: '6px',
-        borderBottom: '2px solid #009788',
-        outline: 0
-      },
       // Reset Firefox invalid required input style
       '&:invalid': {
         boxShadow: 'none'
@@ -131,36 +193,32 @@ export const styles = theme => {
         // Remove the padding when type=search.
         '-webkit-appearance': 'none'
       },
+      '&:focus ~ $label': {
+        color: '#009788'
+      },
+      '&:focus': {
+        borderColor: `${theme.palette.primary[light ? 'dark' : 'light']}`
+      },
       // Show and hide the placeholder logic
       '&$disabled': {
         opacity: 1 // Reset iOS opacity
       },
       '&::placeholder': {
         color: 'transparent'
-      },
-      '$label, &:focus ~ $label': {
-        position: 'absolute',
-        top: 0,
-        display: 'block',
-        transition: theme.transitions.create('all', {
-          duration: theme.transitions.duration.shorter
-        }),
-        fontSize: '12px',
-        color: '#9b9b9b'
-      },
-      '&:focus ~ $label': {
-        color: '#009788'
       }
     },
     label: {
+      display: 'block',
       position: 'absolute',
       top: 0,
-      display: 'block',
       transition: theme.transitions.create('all', {
         duration: theme.transitions.duration.shorter
       }),
       fontSize: '12px',
       color: '#9b9b9b',
+      '&:focus': {
+        color: `${theme.palette.primary[light ? 'dark' : 'light']}`
+      },
       '&::-webkit-input-placeholder': placeholderHidden,
       '&::-moz-placeholder': placeholderHidden, // Firefox 19+
       '&:-ms-input-placeholder': placeholderHidden, // IE 11
@@ -196,6 +254,12 @@ export const styles = theme => {
 
 class RichText extends Component {
   static id = `lattice_editor_${Date.now()}`;
+  static defaultProps = {
+    error: false,
+    required: false,
+    variant: 'outlined'
+  };
+
   state = {
     value: initialValue
   };
@@ -223,12 +287,7 @@ class RichText extends Component {
   renderMarkButton = (type, icon) => {
     const isActive = this.hasMark(type);
     return (
-      <IconButton
-        color="secondary"
-        disabled={!isActive}
-        aria-label="do something"
-        onClick={event => this.onClickMark(event, type)}
-      >
+      <IconButton color="secondary" aria-label="do something" onClick={event => this.onClickMark(event, type)}>
         <IconBold />
       </IconButton>
     );
@@ -274,12 +333,23 @@ class RichText extends Component {
   };
 
   render() {
-    const { classes } = this.props;
-    return (
-      <div className={classes.root}>
+    const { classes, error, fullWidth, required, variant, ...other } = this.props;
+    const EditorWrapper = variantComponent[variant];
+    const editorClasses = [classes.editorContainer];
+
+    if (variant === 'standard') {
+      editorClasses.push(classes.underline);
+    }
+    const label = (
+      <label htmlFor={RichText.id} className={classes.label}>
+        Editor
+      </label>
+    );
+    const EditorComponent = (
+      <EditorWrapper {...other} label={label}>
         <Editor
           id={RichText.id}
-          className={classes.editorContainer}
+          className={classNames(editorClasses)}
           ref={node => (this.editor = node)}
           value={this.state.value}
           onKeyDown={this.onKeyDown}
@@ -288,10 +358,20 @@ class RichText extends Component {
           aria-multiline={true}
           aria-placeholder="Editor crazy"
         />
-        <label htmlFor={RichText.id} className={classes.label}>
-          Editor
-        </label>
-      </div>
+      </EditorWrapper>
+    );
+
+    return (
+      <FormControl
+        className={classes.root}
+        error={error}
+        fullWidth={fullWidth}
+        required={required}
+        variant={variant}
+        {...other}
+      >
+        {EditorComponent}
+      </FormControl>
     );
   }
 }
