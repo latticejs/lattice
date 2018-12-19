@@ -32,10 +32,6 @@ export const styles = theme => {
       },
       '&$disabled $notchedOutline': {
         borderColor: theme.palette.action.disabled
-      },
-      $label: {
-        position: 'relative',
-        padding: '18.5px 14px'
       }
     },
     /* Styles applied to the root element if the component is focused. */
@@ -75,15 +71,19 @@ export const styles = theme => {
 };
 
 function Outlined(props) {
-  const { classes, labelWidth = 35, notched, children, label, ...other } = props;
-
+  const { classes, classLabel, id, notched, children, labelValue, variant, labelOnClick, shrink, ...other } = props;
   return (
-    <div className={classNames(classes.root)} {...other}>
+    <div className={classNames(classes.root)}>
       <NotchedOutline
-        label={label}
+        labelValue={labelValue}
+        labelOnClick={labelOnClick}
+        shrink={shrink}
+        id={id}
         className={classes.notchedOutline}
-        labelWidth={labelWidth}
+        classLabel={classLabel}
+        variant={variant}
         notched={typeof notched !== 'undefined' ? notched : Boolean(true)}
+        {...other}
       />
       {children}
     </div>
@@ -102,6 +102,7 @@ Outlined.propTypes = {
    * If `true`, the input will be focused during the first mount.
    */
   autoFocus: PropTypes.bool,
+  labelValue: PropTypes.string,
   /**
    * Override or extend the styles applied to the component.
    * See [CSS API](#css-api) below for more details.

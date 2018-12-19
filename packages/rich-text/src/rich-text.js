@@ -8,14 +8,21 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core';
 import Outlined from './outlined';
 import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
 import IconBold from '@material-ui/icons/FormatBold';
 import IconButton from '@material-ui/core/IconButton';
+
+const label = ({ labelValue, id, shrink, labelOnClick, ...other }) => (
+  <InputLabel htmlFor={id} shrink={shrink} onClick={labelOnClick} {...other}>
+    {labelValue}
+  </InputLabel>
+);
 
 const variantComponent = {
   standard: props => (
     <div className="standard">
-      {props.label}
       {props.children}
+      {label(props)}
     </div>
   ),
   //filled: FilledInput,
@@ -84,14 +91,8 @@ export const styles = theme => {
       },
       padding: '15px 0 0',
       marginTop: '10px',
-      '$label, & > .standard > $editorContainer:focus ~ $label': {
-        position: 'absolute',
-        top: 0,
-        display: 'block',
-        transition: theme.transitions.create('all', {
-          duration: theme.transitions.duration.shorter
-        }),
-        fontSize: '12px'
+      '& > .standard $editorContainer': {
+        padding: `${8 - 2}px 0 ${8 - 1}px`
       }
     },
     underline: {
@@ -167,9 +168,10 @@ export const styles = theme => {
     editorContainer: {
       font: 'inherit',
       color: 'currentColor',
+      appearance: 'textfield',
       '-moz-appearance': 'textfield',
       '-webkit-appearance': 'textfield',
-      padding: `${8 - 2}px 0 ${8 - 1}px`,
+      outline: '0 solid transparent',
       boxSizing: 'content-box',
       background: 'none',
       margin: 0, // Reset for Safari
@@ -177,7 +179,6 @@ export const styles = theme => {
       WebkitTapHighlightColor: 'transparent',
       display: 'block',
       width: '100%',
-      outline: 0,
       fontSize: theme.typography.pxToRem(16),
       // Make the flex item shrink with Firefox
       minWidth: '100px',
@@ -193,10 +194,8 @@ export const styles = theme => {
         // Remove the padding when type=search.
         '-webkit-appearance': 'none'
       },
-      '&:focus ~ $label': {
-        color: '#009788'
-      },
-      '&:focus': {
+      borderColor: `${theme.palette.text.secondary}`,
+      '&$focused': {
         borderColor: `${theme.palette.primary[light ? 'dark' : 'light']}`
       },
       // Show and hide the placeholder logic
@@ -210,14 +209,19 @@ export const styles = theme => {
     label: {
       display: 'block',
       position: 'absolute',
-      top: 0,
       transition: theme.transitions.create('all', {
         duration: theme.transitions.duration.shorter
       }),
       fontSize: '12px',
-      color: '#9b9b9b',
-      '&:focus': {
-        color: `${theme.palette.primary[light ? 'dark' : 'light']}`
+      color: theme.palette.text.secondary,
+      '&$focused': {
+        color: theme.palette.primary[light ? 'dark' : 'light']
+      },
+      '&$disabled': {
+        color: theme.palette.text.disabled
+      },
+      '&$error': {
+        color: theme.palette.error.main
       },
       '&::-webkit-input-placeholder': placeholderHidden,
       '&::-moz-placeholder': placeholderHidden, // Firefox 19+
@@ -255,17 +259,32 @@ export const styles = theme => {
 class RichText extends Component {
   static id = `lattice_editor_${Date.now()}`;
   static defaultProps = {
+    labelValue: 'Editor',
     error: false,
     required: false,
-    variant: 'outlined'
+    variant: 'standard'
   };
+
+  constructor(props) {
+    super(props);
+
+    this.focusin = false;
+  }
+
+  state = {
+    focused: true
+  };
+
+  componentDidMount() {
+    this.focusin = true;
+  }
 
   state = {
     value: initialValue
   };
 
   onChangeFn = ({ value }) => {
-    this.setState({ value });
+    this.setState({ value, focused: this.focusin });
   };
 
   renderEditor = (props, editor, next) => {
@@ -332,38 +351,92 @@ class RichText extends Component {
     this.editor.toggleMark(type);
   };
 
+  _onBlur = event => {
+    this._timeoutID = setTimeout(() => {
+      if (this.state.focused) {
+        this.focusin = false;
+        this.editor.blur();
+      }
+
+      if (this.props.onBlur) {
+        this.props.onBlur(event);
+      }
+    }, 0);
+  };
+
+  _onFocus = event => {
+    clearTimeout(this._timeoutID);
+    if (!this.state.focused) {
+      setTimeout(() => {
+        this.focusin = true;
+        //this.setState({ focused: true });
+        if (this.props.onFocus) {
+          this.props.onFocus(event);
+        }
+      }, 0);
+    }
+  };
+
+  handleClick = event => {
+    this.focusin = true;
+    this.setState({ focused: this.focusin });
+    if (this.props.onClick) {
+      this.props.onClick(event);
+    }
+  };
+
+  labelOnClick = () => {
+    this.focusin = true;
+    this.setState({ focused: true }, () => {
+      this.editor.focus();
+    });
+  };
+
   render() {
-    const { classes, error, fullWidth, required, variant, ...other } = this.props;
+    const { classes, error, fullWidth, required, variant, labelValue, ...other } = this.props;
+    const { focused } = this.state;
     const EditorWrapper = variantComponent[variant];
     const editorClasses = [classes.editorContainer];
+
+    const rootClasses = classNames([
+      classes.root,
+      {
+        [classes.focused]: focused
+      }
+    ]);
 
     if (variant === 'standard') {
       editorClasses.push(classes.underline);
     }
-    const label = (
-      <label htmlFor={RichText.id} className={classes.label}>
-        Editor
-      </label>
-    );
+    const hasValue = this.state.value.document.text.length > 0;
     const EditorComponent = (
-      <EditorWrapper {...other} label={label}>
+      <EditorWrapper
+        focused={this.state.focused}
+        shrink={this.state.focused || hasValue}
+        variant={variant}
+        id={RichText.id}
+        labelValue={labelValue}
+        labelOnClick={this.labelOnClick}
+        {...other}
+      >
         <Editor
           id={RichText.id}
           className={classNames(editorClasses)}
           ref={node => (this.editor = node)}
           value={this.state.value}
-          onKeyDown={this.onKeyDown}
           renderMark={this.renderMark}
+          onKeyDown={this.onKeyDown}
+          onBlur={this._onBlur}
+          onFocus={this._onFocus}
+          onClick={this.handleClick}
           onChange={this.onChangeFn}
-          aria-multiline={true}
-          aria-placeholder="Editor crazy"
         />
       </EditorWrapper>
     );
 
     return (
       <FormControl
-        className={classes.root}
+        className={rootClasses}
         error={error}
         fullWidth={fullWidth}
         required={required}
