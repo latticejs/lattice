@@ -15,7 +15,7 @@
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9016 -c .storybook",
-    "test": "jest",
+    "test": "jest --no-cache",
     "size": "bundlesize"
   },
   "peerDependencies": {
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "canvas-gauges": "^2.1.5",
-    "canvas-prebuilt": "^2.0.0-alpha.14",
+    "canvas-prebuilt": "^1.6.11",
     "prop-types": "^15.6.2"
   },
   "jest": {
@@ -61,7 +61,12 @@
     "transform": {
       "^.+\\.js?$": "babel-jest",
       "^.+\\.md?$": "markdown-loader-jest"
-    }
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/images/",
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/"
+    ]
   },
   "bundlesize": [
     {
