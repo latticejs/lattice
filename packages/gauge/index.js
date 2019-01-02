@@ -1,4 +1,4 @@
 /**
  * Lattice Gauge Component
  */
-module.exports = require('./dist/gauge.cjs.js');
+module.exports = require('./dist/cjs/index.js');
