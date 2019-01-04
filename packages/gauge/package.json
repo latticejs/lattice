@@ -11,7 +11,7 @@
   "scripts": {
     "build:clean": "rimraf dist/**",
     "build": "npm run build:clean && lattice-scripts build ./src/index.js",
-    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
+  "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9016 -c .storybook",
@@ -48,14 +48,17 @@
     "react-dom": "^16.5.0",
     "react-test-renderer": "^16.5.0",
     "rimraf": "^2.6.2",
-    "storybook-readme": "^4.0.2"
+    "storybook-readme": "^4.0.2",
+    "canvas": "^2.2.0"
   },
   "dependencies": {
     "canvas-gauges": "^2.1.5",
-    "canvas-prebuilt": "^1.6.11",
     "prop-types": "^15.6.2"
   },
   "jest": {
+    "setupFiles": [
+      "./test/shim.js"
+    ],
     "setupTestFrameworkScriptFile": "./setupTest.js",
     "testURL": "http://localhost",
     "transform": {
