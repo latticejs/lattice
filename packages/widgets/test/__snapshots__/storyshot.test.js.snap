@@ -92,7 +92,7 @@ exports[`Storyshots widgets/Loader linear 1`] = `
       className="MuiGrid-container-98 MuiGrid-align-items-xs-center-106 MuiGrid-justify-xs-center-115 Loader-root-1"
     >
       <div
-        className="MuiLinearProgress-root MuiLinearProgress-colorPrimary Loader-linear-3"
+        className="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-indeterminate Loader-linear-3"
         role="progressbar"
       >
         <div
@@ -136,7 +136,6 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
       >
         <div
           className="MuiPaper-root-401 MuiPaper-elevation0-403 MuiDrawer-paper-391 MuiDrawer-paperAnchorLeft-392 MuiDrawer-paperAnchorDockedLeft-396"
-          direction="right"
           style={Object {}}
         >
           <nav
@@ -156,6 +155,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-listItem-4"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -197,7 +197,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Dashboard
                 </span>
@@ -210,6 +210,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-listItem-4"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -251,7 +252,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Employees
                 </span>
@@ -264,6 +265,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-listItem-4"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -305,7 +307,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Theme
                 </span>
@@ -370,7 +372,6 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
       >
         <div
           className="MuiPaper-root-673 MuiPaper-elevation0-675 MuiDrawer-paper-663 MuiDrawer-paperAnchorLeft-664 MuiDrawer-paperAnchorDockedLeft-668"
-          direction="right"
           style={Object {}}
         >
           <nav
@@ -390,6 +391,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-activeItem-10"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -431,7 +433,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7 SideMenu-listItemHidden-8"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Dashboard
                 </span>
@@ -444,6 +446,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-listItem-4"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -485,7 +488,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7 SideMenu-listItemHidden-8"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Employees
                 </span>
@@ -498,6 +501,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-listItem-4"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -539,7 +543,7 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7 SideMenu-listItemHidden-8"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Theme
                 </span>
@@ -583,7 +587,6 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
       >
         <div
           className="MuiPaper-root-537 MuiPaper-elevation0-539 MuiDrawer-paper-527 MuiDrawer-paperAnchorLeft-528 MuiDrawer-paperAnchorDockedLeft-532"
-          direction="right"
           style={Object {}}
         >
           <nav
@@ -603,6 +606,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-activeItem-10"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -644,7 +648,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Dashboard
                 </span>
@@ -657,6 +661,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-listItem-4"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -698,7 +703,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Employees
                 </span>
@@ -711,6 +716,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
               className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters SideMenu-listItemGutters-5 MuiListItem-button SideMenu-listItem-4"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -752,7 +758,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 className="MuiListItemText-root SideMenu-listItemText-7"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-subtitle1 MuiListItemText-primary SideMenu-listItemPrimary-6"
+                  className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary SideMenu-listItemPrimary-6"
                 >
                   Theme
                 </span>
