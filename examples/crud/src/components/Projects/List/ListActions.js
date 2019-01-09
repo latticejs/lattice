@@ -57,14 +57,14 @@ export default compose(
     selectionOnDelete: ({ uiStore: { projectList, dialogs }, projectStore, selectedIds }) => () => {
       dialogs.showConfirm({
         content: (
-          <>
+          <div>
             Are you sure to delete{' '}
             <b>
               {selectedIds().length} project
               {selectedIds().length > 1 && 's'}
             </b>
             ?
-          </>
+          </div>
         ),
         onAccept: () => {
           selectedIds().forEach(id => {
