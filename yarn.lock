@@ -3571,7 +3571,7 @@ babel-eslint@7.2.3:
     babel-types "^6.23.0"
     babylon "^6.17.0"
 
-babel-eslint@9.0.0:
+babel-eslint@9.0.0, babel-eslint@^9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-9.0.0.tgz#7d9445f81ed9f60aff38115f838970df9f2b6220"
   dependencies:
@@ -7217,7 +7217,7 @@ eslint-config-react-app@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-2.1.0.tgz#23c909f71cbaff76b945b831d2d814b8bde169eb"
 
-eslint-config-react-app@^3.0.6:
+eslint-config-react-app@^3.0.5, eslint-config-react-app@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-3.0.6.tgz#addcae1359235941e95f3c96970b7ac8552e1130"
   dependencies:
@@ -7359,6 +7359,17 @@ eslint-plugin-react-app@^3.0.0:
     eslint-plugin-import "^2.6.0"
     eslint-plugin-jsx-a11y "^6.0.2"
     eslint-plugin-react "^7.1.0"
+
+eslint-plugin-react-app@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-app/-/eslint-plugin-react-app-4.0.1.tgz#570ccf4fe15bef68564c98d5b7b4fa42a8ad6677"
+  dependencies:
+    babel-eslint "^9.0.0"
+    eslint-config-react-app "^3.0.5"
+    eslint-plugin-flowtype "2.50.1"
+    eslint-plugin-import "2.14.0"
+    eslint-plugin-jsx-a11y "6.1.2"
+    eslint-plugin-react "7.11.1"
 
 eslint-plugin-react@7.11.1:
   version "7.11.1"
