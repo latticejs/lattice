@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Gauge from '../src/';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { withReadme } from '@latticejs/storybook-readme';
+import { Paper } from '@material-ui/core';
 import Readme from '../README.md';
 
 const Flexed = story => (
@@ -12,9 +13,112 @@ const Flexed = story => (
 
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
+const PaperWrap = ({ children }) => (
+  <Paper elevation={2} style={{ width: '800px', height: '800px' }}>
+    {children}
+  </Paper>
+);
+
 class BasicGauge extends Component {
   render() {
     return <Gauge />;
+  }
+}
+
+class AdvancedGauge extends Component {
+  render() {
+    return (
+      <Gauge
+        value={30}
+        units={'mph'}
+        width={300}
+        height={300}
+        barWidth={'5'}
+        barShadow={'0'}
+        borderShadowWidth={'20'}
+        borderInnerWidth={'0'}
+        borderOuterWidth={'0'}
+        borderMiddleWidth={'0'}
+        highlights={'false'}
+        valueBoxStroke={'0'}
+        needleWidth={'3'}
+        animateOnInit={'true'}
+        animatedValue={'true'}
+        animationDuration={'1500'}
+        animationRule={'linear'}
+        colorValueBoxShadow={'0'}
+        valueBoxBorderRadius={'0'}
+        valueTextShadow={'0'}
+        needleType={'arrow'}
+        colorValueBoxBackground={'transparent'}
+      />
+    );
+  }
+}
+
+class BasicThemedGauge extends Component {
+  render() {
+    return (
+      <Gauge
+        width={250}
+        height={250}
+        minValue={0}
+        value={30}
+        startAngle={90}
+        ticksAngle={180}
+        needleStart={70}
+        needleEnd={95}
+        valueBox={false}
+        maxValue={100}
+        highlights={[]}
+        barWidth={20}
+        majorTicks={[]}
+        minorTicks={0}
+        strokeTicks={false}
+        colorPlate={'transparent'}
+        colorMajorTicks={'transparent'}
+        colorNumbers={'transparent'}
+        borderShadowWidth={0}
+        borders={false}
+        needleType={'line'}
+        needleWidth={3}
+        needleCircleOuter={false}
+        needleCircleInner={false}
+        animationDuration={1500}
+        animationRule={'linear'}
+      />
+    );
+  }
+}
+
+class AdvancedThemedGauge extends Component {
+  render() {
+    return (
+      <Gauge
+        value={30}
+        units={'mph'}
+        width={300}
+        height={300}
+        barWidth={'5'}
+        barShadow={'0'}
+        borderShadowWidth={'20'}
+        borderInnerWidth={'0'}
+        borderOuterWidth={'0'}
+        borderMiddleWidth={'0'}
+        highlights={'false'}
+        valueBoxStroke={'0'}
+        needleWidth={'3'}
+        animateOnInit={'true'}
+        animatedValue={'true'}
+        animationDuration={'1500'}
+        animationRule={'linear'}
+        colorValueBoxShadow={'0'}
+        valueBoxBorderRadius={'0'}
+        valueTextShadow={'0'}
+        needleType={'arrow'}
+        colorValueBoxBackground={'transparent'}
+      />
+    );
   }
 }
 
@@ -27,4 +131,36 @@ export default ({ storiesOf }) => {
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
     .add('basic', withApiReadme(() => <BasicGauge />));
+
+  storiesOf('gauge', module)
+    .addDecorator(Flexed)
+    .addDecorator(muiTheme())
+    .addDecorator(FullViewport)
+    .add('advanced', withApiReadme(() => <AdvancedGauge />));
+
+  storiesOf('gauge/themed', module)
+    .addDecorator(Flexed)
+    .addDecorator(muiTheme({ palette: { type: 'dark' } }))
+    .addDecorator(FullViewport)
+    .add(
+      'basic (dark)',
+      withApiReadme(() => (
+        <PaperWrap>
+          <BasicThemedGauge />
+        </PaperWrap>
+      ))
+    );
+
+  storiesOf('gauge/themed', module)
+    .addDecorator(Flexed)
+    .addDecorator(muiTheme({ palette: { type: 'dark' } }))
+    .addDecorator(FullViewport)
+    .add(
+      'advanced (dark)',
+      withApiReadme(() => (
+        <PaperWrap>
+          <AdvancedThemedGauge />
+        </PaperWrap>
+      ))
+    );
 };

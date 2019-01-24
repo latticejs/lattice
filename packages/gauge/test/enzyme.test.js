@@ -4,22 +4,24 @@ import React from 'react';
 
 describe('To test the Radial Gauge Component.', () => {
   let wrapper;
+  let childWrapper;
 
   beforeEach(() => {
     wrapper = mount(<RadialGaugeComponent value={50} />);
+    childWrapper = wrapper.find(RadialGaugeComponent).childAt(0);
   });
 
   it('test componentDidMount', () => {
-    wrapper.instance().componentDidMount();
-    expect(wrapper.instance().gauge.value).toEqual(50);
+    childWrapper.instance().componentDidMount();
+    expect(childWrapper.instance().gauge.value).toEqual(50);
   });
 
   it('test componentWillReceiveProps', () => {
-    expect(wrapper.instance().gauge.value).toEqual(50);
-    wrapper.instance().componentWillReceiveProps({ value: 50 });
-    expect(wrapper.instance().gauge.value).toEqual(50);
+    expect(childWrapper.instance().gauge.value).toEqual(50);
+    childWrapper.instance().componentWillReceiveProps({ value: 50 });
+    expect(childWrapper.instance().gauge.value).toEqual(50);
 
-    wrapper.instance().componentWillReceiveProps({ value: 10 });
-    expect(wrapper.instance().gauge.value).toEqual(10);
+    childWrapper.instance().componentWillReceiveProps({ value: 10 });
+    expect(childWrapper.instance().gauge.value).toEqual(10);
   });
 });
