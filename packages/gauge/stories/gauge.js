@@ -53,7 +53,7 @@ class AdvancedGauge extends Component {
     };
   }
   render() {
-    return <Gauge value={30} canvas={this.customGauge} />;
+    return <Gauge value={30} settings={this.customGauge} />;
   }
 }
 
@@ -90,7 +90,7 @@ class BasicThemedGauge extends Component {
     };
   }
   render() {
-    return <Gauge canvas={this.customGauge} />;
+    return <Gauge settings={this.customGauge} />;
   }
 }
 
@@ -123,7 +123,7 @@ class AdvancedThemedGauge extends Component {
     };
   }
   render() {
-    return <Gauge canvas={this.customGauge} />;
+    return <Gauge settings={this.customGauge} />;
   }
 }
 

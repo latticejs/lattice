@@ -4,9 +4,9 @@ import { withTheme } from '@material-ui/core/styles';
 
 class Gauge extends Component {
   componentDidMount() {
-    const { value, canvas, theme } = this.props;
-    canvas.value = canvas.value && !value ? canvas.value : value;
-    const options = { ...canvas, renderTo: this.el };
+    const { value, settings, theme } = this.props;
+    settings.value = settings.value && !value ? settings.value : value;
+    const options = { ...settings, renderTo: this.el };
 
     options.fontValue = theme.typography.fontFamily;
     options.fontNumbers = theme.typography.fontFamily;
@@ -58,7 +58,7 @@ class Gauge extends Component {
 }
 
 Gauge.defaultProps = {
-  canvas: {
+  settings: {
     width: 250,
     height: 250,
     minValue: 0,
