@@ -21,104 +21,109 @@ const PaperWrap = ({ children }) => (
 
 class BasicGauge extends Component {
   render() {
-    return <Gauge />;
+    return <Gauge value={45} />;
   }
 }
 
 class AdvancedGauge extends Component {
+  constructor() {
+    super();
+    this.customGauge = {
+      units: 'mph',
+      width: 300,
+      height: 300,
+      barWidth: '5',
+      barShadow: '0',
+      borderShadowWidth: '20',
+      borderInnerWidth: '0',
+      borderOuterWidth: '0',
+      borderMiddleWidth: '0',
+      highlights: 'false',
+      valueBoxStroke: '0',
+      needleWidth: '3',
+      animateOnInit: 'true',
+      animatedValue: 'true',
+      animationDuration: '1500',
+      animationRule: 'linear',
+      colorValueBoxShadow: '0',
+      valueBoxBorderRadius: '0',
+      valueTextShadow: '0',
+      needleType: 'arrow',
+      colorValueBoxBackground: 'transparent'
+    };
+  }
   render() {
-    return (
-      <Gauge
-        value={30}
-        units={'mph'}
-        width={300}
-        height={300}
-        barWidth={'5'}
-        barShadow={'0'}
-        borderShadowWidth={'20'}
-        borderInnerWidth={'0'}
-        borderOuterWidth={'0'}
-        borderMiddleWidth={'0'}
-        highlights={'false'}
-        valueBoxStroke={'0'}
-        needleWidth={'3'}
-        animateOnInit={'true'}
-        animatedValue={'true'}
-        animationDuration={'1500'}
-        animationRule={'linear'}
-        colorValueBoxShadow={'0'}
-        valueBoxBorderRadius={'0'}
-        valueTextShadow={'0'}
-        needleType={'arrow'}
-        colorValueBoxBackground={'transparent'}
-      />
-    );
+    return <Gauge value={30} canvas={this.customGauge} />;
   }
 }
 
 class BasicThemedGauge extends Component {
+  constructor() {
+    super();
+    this.customGauge = {
+      width: 250,
+      height: 250,
+      value: 30,
+      startAngle: 90,
+      ticksAngle: 180,
+      needleStart: 70,
+      needleEnd: 95,
+      valueBox: false,
+      maxValue: 100,
+      highlights: [],
+      barWidth: 20,
+      majorTicks: [],
+      minorTicks: 0,
+      strokeTicks: false,
+      colorPlate: 'transparent',
+      colorMajorTicks: 'transparent',
+      colorNumbers: 'transparent',
+      borderShadowWidth: 0,
+      borders: false,
+      needleType: 'line',
+      needleWidth: 3,
+      needleCircleOuter: false,
+      needleCircleInner: false,
+      animateOnInit: 'true',
+      animationDuration: 1500,
+      animationRule: 'linear'
+    };
+  }
   render() {
-    return (
-      <Gauge
-        width={250}
-        height={250}
-        minValue={0}
-        value={30}
-        startAngle={90}
-        ticksAngle={180}
-        needleStart={70}
-        needleEnd={95}
-        valueBox={false}
-        maxValue={100}
-        highlights={[]}
-        barWidth={20}
-        majorTicks={[]}
-        minorTicks={0}
-        strokeTicks={false}
-        colorPlate={'transparent'}
-        colorMajorTicks={'transparent'}
-        colorNumbers={'transparent'}
-        borderShadowWidth={0}
-        borders={false}
-        needleType={'line'}
-        needleWidth={3}
-        needleCircleOuter={false}
-        needleCircleInner={false}
-        animationDuration={1500}
-        animationRule={'linear'}
-      />
-    );
+    return <Gauge canvas={this.customGauge} />;
   }
 }
 
 class AdvancedThemedGauge extends Component {
+  constructor() {
+    super();
+    this.customGauge = {
+      value: 30,
+      units: 'mph',
+      width: 300,
+      height: 300,
+      barWidth: '5',
+      barShadow: '0',
+      borderShadowWidth: '20',
+      borderInnerWidth: '0',
+      borderOuterWidth: '0',
+      borderMiddleWidth: '0',
+      highlights: 'false',
+      valueBoxStroke: '0',
+      needleWidth: '3',
+      animateOnInit: 'true',
+      animatedValue: 'true',
+      animationDuration: '1500',
+      animationRule: 'linear',
+      colorValueBoxShadow: '0',
+      valueBoxBorderRadius: '0',
+      valueTextShadow: '0',
+      needleType: 'arrow',
+      colorValueBoxBackground: 'transparent'
+    };
+  }
   render() {
-    return (
-      <Gauge
-        value={30}
-        units={'mph'}
-        width={300}
-        height={300}
-        barWidth={'5'}
-        barShadow={'0'}
-        borderShadowWidth={'20'}
-        borderInnerWidth={'0'}
-        borderOuterWidth={'0'}
-        borderMiddleWidth={'0'}
-        highlights={'false'}
-        valueBoxStroke={'0'}
-        needleWidth={'3'}
-        animateOnInit={'true'}
-        animatedValue={'true'}
-        animationDuration={'1500'}
-        animationRule={'linear'}
-        colorValueBoxShadow={'0'}
-        valueBoxBorderRadius={'0'}
-        valueTextShadow={'0'}
-        needleType={'arrow'}
-        colorValueBoxBackground={'transparent'}
-      />
-    );
+    return <Gauge canvas={this.customGauge} />;
   }
 }
 
