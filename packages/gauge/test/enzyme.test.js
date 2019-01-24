@@ -13,15 +13,15 @@ describe('To test the Radial Gauge Component.', () => {
 
   it('test componentDidMount', () => {
     childWrapper.instance().componentDidMount();
-    expect(childWrapper.instance().gauge.value).toEqual(50);
+    expect(childWrapper.instance().gauge.options.value).toEqual(50);
   });
 
   it('test componentWillReceiveProps', () => {
-    expect(childWrapper.instance().gauge.value).toEqual(50);
-    childWrapper.instance().componentWillReceiveProps({ value: 50 });
-    expect(childWrapper.instance().gauge.value).toEqual(50);
+    expect(childWrapper.instance().gauge.options.value).toEqual(50);
+    childWrapper.instance().componentDidUpdate({ value: 50 });
+    expect(childWrapper.instance().gauge.options.value).toEqual(50);
 
-    childWrapper.instance().componentWillReceiveProps({ value: 10 });
-    expect(childWrapper.instance().gauge.value).toEqual(10);
+    childWrapper.instance().componentDidUpdate({ value: 10 });
+    expect(childWrapper.instance().gauge.options.value).toEqual(10);
   });
 });
