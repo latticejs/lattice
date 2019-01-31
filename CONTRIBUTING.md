@@ -12,6 +12,7 @@ Hi! First of all, thanks for taking some time to make a contribution to the proj
 - [How To Consume a Local Package](#how-to-consume-a-local-package)
 - [Troubleshooting](#troubleshooting)
 - [Cleaning the project](#cleaning-the-project)
+- [Solving greenkeeper issues](#solving-greenkeeper-issues)
 
 ## Setting Up a Local Copy
 
@@ -125,3 +126,19 @@ Now modules are linked and local changes can be seen instantly.
 Sometimes, after a major change in the source is preferable start with a new clean repository: `git clean -xdf`
 
 > Remember that you are going to lose your unversioned files.
+
+### Solving Greenkeeper issues
+
+Sometimes greenkeeper PRs fails for some reason and you can't immediately merge. When that happens we usually check the following steps:
+
+1. Check Travis output. Usually there, you would see what is happening. A common error is having 'different snapshots'.
+2. Review changes proposed by greenkeeper (GK). Check the changelog of the involved libraries/modules.
+3. Clone the GK branch.
+4. Fix the error. 
+    1. If the error is _'different snapshots'_ you should re-generate the snapshots locally, `cd` into the package dir, then run `yarn test -u`
+    2. Repeat this process if necessary.
+    3. Commit your changes.
+5. When you think that everything is working again. Run the global storybook command: `yarn storybook` at root level. This will help you see that all the components are working OK.
+6. Push your changes.
+7. Now checks should pass and you will be able to merge.
+
