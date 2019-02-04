@@ -62,7 +62,6 @@ Gauge.defaultProps = {
     width: 250,
     height: 250,
     minValue: 0,
-    value: 30,
     startAngle: 90,
     ticksAngle: 180,
     needleStart: 70,
