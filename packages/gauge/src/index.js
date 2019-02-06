@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { RadialGauge } from 'canvas-gauges';
 import { withTheme } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 class Gauge extends Component {
   componentDidMount() {
@@ -84,6 +85,12 @@ Gauge.defaultProps = {
     needleCircleInner: false,
     animationDuration: 1500
   }
+};
+
+Gauge.propTypes = {
+  settings: PropTypes.object,
+  value: PropTypes.number.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default withTheme()(Gauge);

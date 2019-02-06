@@ -63,7 +63,6 @@ class BasicThemedGauge extends Component {
     this.customGauge = {
       width: 250,
       height: 250,
-      value: 30,
       startAngle: 90,
       ticksAngle: 180,
       needleStart: 70,
@@ -90,7 +89,7 @@ class BasicThemedGauge extends Component {
     };
   }
   render() {
-    return <Gauge settings={this.customGauge} />;
+    return <Gauge value={30} settings={this.customGauge} />;
   }
 }
 
@@ -98,7 +97,6 @@ class AdvancedThemedGauge extends Component {
   constructor() {
     super();
     this.customGauge = {
-      value: 30,
       units: 'mph',
       width: 300,
       height: 300,
@@ -123,7 +121,7 @@ class AdvancedThemedGauge extends Component {
     };
   }
   render() {
-    return <Gauge settings={this.customGauge} />;
+    return <Gauge value={30} settings={this.customGauge} />;
   }
 }
 
