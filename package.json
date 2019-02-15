@@ -33,7 +33,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react-app": "^4.0.0",
     "husky": "^1.1.2",
-    "lerna": "^3.1.2",
+    "lerna": "^3.13.0",
     "prettier": "^1.14.3",
     "storybook-readme": "^4.0.2"
   },
