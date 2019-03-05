@@ -37,7 +37,7 @@
     "@material-ui/icons": "^3.0.1",
     "@sambego/storybook-state": "^1.2.0",
     "@storybook/addon-actions": "^5.0.0",
-    "@storybook/addon-storyshots": "^4.0.2",
+    "@storybook/addon-storyshots": "^5.0.0",
     "@storybook/addon-storysource": "^4.0.2",
     "@storybook/react": "^4.0.2",
     "babel-core": "^7.0.0-bridge.0",
