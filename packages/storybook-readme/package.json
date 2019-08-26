@@ -17,9 +17,9 @@
         "dist"
     ],
     "devDependencies": {
-        "jest": "^23.5.0",
-        "rollup": "^0.65.1",
-        "rollup-plugin-terser": "^2.0.2"
+        "jest": "^23.6.0",
+        "rollup": "^0.65.0",
+        "rollup-plugin-terser": "^2.0.0"
     },
     "peerDependencies": {
         "storybook-readme": "^4.0.2"
