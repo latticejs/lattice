@@ -16,10 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - react-scripts package
 
-## [1.0.1-beta.1] - 2018-11-13 [YANKED]
-
 ## [1.0.1-beta.2] - 2019-09-01
 - Package Dependency is updated. (#310)
+
+## [1.0.1-beta.1] - 2018-11-13 [YANKED]
 
 ## 1.0.1-beta.0 - 2018-11-08
 ### Added
