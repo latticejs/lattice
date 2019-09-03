@@ -60,13 +60,14 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "core-js": "^3.2.1",
     "prop-types": "^15.6.2"
   },
   "jest": {
     "setupFiles": [
       "./test/shim.js"
     ],
-    "setupFilesAfterEnv": ["./setupTest.js"],
+    "setupTestFrameworkScriptFile": "./setupTest.js",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.js?$": "babel-jest",
