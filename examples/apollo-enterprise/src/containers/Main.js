@@ -26,7 +26,7 @@ import { Redirect, withRouter } from 'react-router-dom';
 import { compose, graphql } from 'react-apollo';
 
 // @latticejs
-import SideMenu from '@latticejs/widgets/SideMenu';
+import { SideMenu } from '@latticejs/widgets';
 
 // Stores
 import { getUi, updateUi } from '../stores/ui';

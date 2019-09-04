@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 // @latticejs
-import Widget from '@latticejs/widgets/Widget';
+import { Widget } from '@latticejs/widgets';
 
 const styles = theme => ({
   button: {

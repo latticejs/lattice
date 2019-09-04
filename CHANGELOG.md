@@ -6,10 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
+- [examples] use named imports
 - [examples] normalize start scripts
 
 ### Fixed
 - [lattice-scripts] remove console.log call from lattice-script build step
+- [examples] dag-in-action height grows indefinitely on FF
+
+### Removed
+- react-scripts package
 
 ## [1.0.1-beta.1] - 2018-11-13 [YANKED]
 

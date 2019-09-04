@@ -26,9 +26,9 @@ const enhance = compose(
 
       uiStore.dialogs.showConfirm({
         content: (
-          <>
+          <div>
             Are you sure to delete <b>{projectStore.projects.get(projectId).name}?</b>
-          </>
+          </div>
         ),
         onAccept: () => projectStore.remove(projectId)
       });

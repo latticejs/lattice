@@ -5,8 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import { ResponsiveContainer, BarChart, Bar, Tooltip, Legend, YAxis } from '@latticejs/mui-recharts';
-import { Loader } from '@latticejs/widgets';
-import { Widget } from '@latticejs/widgets';
+import { Loader, Widget } from '@latticejs/widgets';
 
 const styles = theme => ({
   root: {
