@@ -5,7 +5,7 @@ var tasks = require('./tasks');
 
 // \ Lattice repo data \
 var repoOptions = {
-  owner: 'latticejs',
+  owner: 'CelestialSystem',
   repo: 'lattice',
   path: 'examples',
   ref: 'master'
@@ -143,6 +143,7 @@ async function list(cmd) {
 
   try {
     var examplesRaw = await tasks.list(repoOptions);
+    console.log(examplesRaw);
     examplesRaw.data.forEach(parseList);
   } catch (err) {
     if (/^(No commit found)/.test(extractMessage(err))) {
