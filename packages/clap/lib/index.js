@@ -5,7 +5,7 @@ var tasks = require('./tasks');
 
 // \ Lattice repo data \
 var repoOptions = {
-  owner: 'CelestialSystem',
+  owner: 'latticejs',
   repo: 'lattice',
   path: 'examples',
   ref: 'master'
@@ -133,8 +133,6 @@ async function list(cmd) {
   if (cmd.branch) {
     repoOptions.ref = cmd.branch;
   }
-
-  console.log(messages.listExamples());
 
   var parseList = function parseList(listRawItem) {
     if (listRawItem.name === 'README.md') return;
