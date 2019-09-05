@@ -134,8 +134,6 @@ async function list(cmd) {
     repoOptions.ref = cmd.branch;
   }
 
-  console.log(messages.listExamples());
-
   var parseList = function parseList(listRawItem) {
     if (listRawItem.name === 'README.md') return;
     console.log(`- ${listRawItem.name}`);
@@ -143,6 +141,7 @@ async function list(cmd) {
 
   try {
     var examplesRaw = await tasks.list(repoOptions);
+    console.log(examplesRaw);
     examplesRaw.data.forEach(parseList);
   } catch (err) {
     if (/^(No commit found)/.test(extractMessage(err))) {
