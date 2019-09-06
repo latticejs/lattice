@@ -2,11 +2,12 @@ import { MuiThemeProvider, createGenerateClassName } from '@material-ui/core/sty
 import { renderToString } from 'react-dom/server';
 import { SheetsRegistry } from 'react-jss/lib/jss';
 import App from './Components/App';
+import { createMuiTheme } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import express from 'express';
 import JssProvider from 'react-jss/lib/JssProvider';
 import React from 'react';
 import reload from 'reload';
-import theme from './theme';
 
 const app = express();
 
@@ -18,14 +19,12 @@ app.use(express.static('public'));
 
 app.use((req, res) => {
   const sheetsRegistry = new SheetsRegistry();
-
   const generateClassName = createGenerateClassName();
-
   const sheetsManager = new Map();
-
   const html = renderToString(
     <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
-      <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
+      <MuiThemeProvider theme={createMuiTheme({ palette: { type: 'light' } })} sheetsManager={sheetsManager}>
+        <CssBaseline />
         <App />
       </MuiThemeProvider>
     </JssProvider>
