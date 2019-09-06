@@ -149,7 +149,7 @@ class App extends Component {
         </AppBar>
         <Grid container className={classes.mainContainer}>
           <Grid item xs={12}>
-            <Grid container justify="space-around" spacing={Number('16')} alignItem="center">
+            <Grid container justify="space-around" spacing={Number('16')}>
               <Grid item>
                 <Widget className={classes.widget} title="Introduction" border="bottom">
                   <Typography variant="subtitle2">Welcome to Lattice</Typography>
@@ -197,14 +197,7 @@ class App extends Component {
                 </Widget>
               </Grid>
               <Grid item>
-                <Grid
-                  className={classes.chartsContainer}
-                  container
-                  alignItem="center"
-                  justify="center"
-                  spacing={0}
-                  direction="column"
-                >
+                <Grid className={classes.chartsContainer} container justify="center" spacing={0} direction="column">
                   <Grid item>
                     <Widget className={classes.charts} border="bottom">
                       <LineChart width={300} height={80} data={rechartsData}>
