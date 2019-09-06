@@ -1,16 +1,14 @@
 import React from 'react';
 import { hydrate } from 'react-dom';
 import JssProvider from 'react-jss/lib/JssProvider';
-import { createGenerateClassName, MuiThemeProvider } from '@material-ui/core/styles';
-import App from './Components/App';
-import theme from './theme';
+import { createGenerateClassName } from '@material-ui/core/styles';
+import Main from './Components/Main';
 
 const generateClassName = createGenerateClassName();
+
 hydrate(
   <JssProvider generateClassName={generateClassName}>
-    <MuiThemeProvider theme={theme}>
-      <App />
-    </MuiThemeProvider>
+    <Main />
   </JssProvider>,
   document.getElementById('root'),
   () => {

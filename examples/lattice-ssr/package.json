@@ -7,7 +7,7 @@
     "start": "node dist/main.js",
     "watch": "webpack --mode development --watch & nodemon dist/main",
     "dev": "rimraf dist && rimraf public && webpack --mode development --progress",
-    "build": "rimraf dist && webpack --mode production --progress",
+    "build": "rimraf dist && rimraf public && webpack --mode production --progress",
     "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json dist"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "@latticejs/recharts-sunburst": "^1.0.1-beta.1",
     "@latticejs/tree": "^1.0.1-beta.1",
     "@latticejs/widgets": "^1.0.1-beta.1",
+    "@latticejs/gauge": "1.0.1-beta.1",
     "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^3.0.1",
     "classnames": "^2.2.6",
@@ -44,7 +45,7 @@
     "standard": "^12.0.1",
     "webpack": "^4.27.1",
     "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "^3.1.2",
+    "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.1.10",
     "webpack-node-externals": "^1.7.2"
   },
