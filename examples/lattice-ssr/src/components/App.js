@@ -47,39 +47,6 @@ const styles = theme => ({
     minHeight: 500,
     minWidth: 385
   }
-  // appBar: {
-  //   backgroundColor: theme.palette.primary[theme.palette.type],
-  //   color: theme.palette.primary.contrastText
-  // },
-  // mainContainer2: {
-  //   backgroundColor: '#898989',
-  //   width: 300,
-  //   height: 300
-  // },
-  // mainContainerSB: {
-  //   height: 400,
-  //   backgroundColor: '#898989'
-  // },
-  // mainContainerTree: {
-  //   width: 500,
-  //   height: 400
-  // },
-  //
-  // widget: {
-  //   marginTop: theme.spacing.unit * 2,
-  //   marginBottom: theme.spacing.unit * 2,
-  //   padding: theme.spacing.unit * 4
-  // },
-  // link: {
-  //   color: theme.palette.text.secondary
-  // },
-  // tableHeadStyle: {
-  //   borderBottom: 0
-  // },
-  // tableCellStyle: {
-  //   borderBottom: 0,
-  //   width: 400
-  // }
 });
 
 class App extends Component {
@@ -89,10 +56,6 @@ class App extends Component {
     this.getTreeData = this.getTreeData.bind(this);
     this.getSunburstData = this.getSunburstData.bind(this);
     this.getGraphData = this.getGraphData.bind(this);
-
-    this.state = {
-      items: Array.from(Array(100).keys()).map(v => ({ index: v, title: `title ${v}`, timestamp: Date.now() }))
-    };
   }
   handleNightModeChange = () => {
     const { updateTheme, nightMode } = this.props;
@@ -169,11 +132,6 @@ class App extends Component {
     const sunburstData = this.getSunburstData();
     const treeData = this.getTreeData();
     const rechartsData = this.getGraphData();
-    // let color = '#898989';
-    //
-    // if (nightMode) {
-    //   color = '#424242';
-    // }
 
     return (
       <div className={classes.root}>
