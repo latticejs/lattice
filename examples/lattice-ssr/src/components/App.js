@@ -5,8 +5,13 @@ import { Widget } from '@latticejs/widgets';
 import { LineChart, Line } from '@latticejs/mui-recharts';
 import Sunburst from '@latticejs/recharts-sunburst';
 import { Tree } from '@latticejs/tree';
+import Tooltip from '@material-ui/core/Tooltip';
+import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableRow, TableCell } from '@latticejs/infinite-list';
+
+import DayIcon from '@material-ui/icons/WbSunnyOutlined';
+import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
 if (!global.window) {
   global.window = {};
@@ -80,6 +85,10 @@ class App extends Component {
       items: Array.from(Array(100).keys()).map(v => ({ index: v, title: `title ${v}`, timestamp: Date.now() }))
     };
   }
+  handleNightModeChange = () => {
+    const { updateTheme, nightMode } = this.props;
+    updateTheme(!nightMode);
+  };
 
   getSunburstData() {
     return [
@@ -195,10 +204,15 @@ class App extends Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, nightMode } = this.props;
     const sunburstData = this.getSunburstData();
     const treeData = this.getTreeData();
     const rechartsLineData = this.getLineData();
+    let color = '#fff';
+
+    if (nightMode) {
+      color = '#424242';
+    }
 
     return (
       <div className={classes.root}>
@@ -207,6 +221,11 @@ class App extends Component {
             <Typography variant="h6" color="inherit" className={classes.flex}>
               Server Side Rendering of Lattice Packages
             </Typography>
+            <Tooltip title="Toggle Night Mode" enterDelay={300}>
+              <IconButton onClick={this.handleNightModeChange} color="inherit">
+                {nightMode ? <DayIcon /> : <NightIcon />}
+              </IconButton>
+            </Tooltip>
           </Toolbar>
         </AppBar>
         <Grid container className={classes.mainContainer}>
@@ -240,57 +259,65 @@ class App extends Component {
             </Grid>
           </Grid>
         </Grid>
-        <Widget title="MUI Recharts">
+        <Widget style={{ padding: '1px' }}>
           <center className={classnames(classes.mainContainerLC)}>
-            <LineChart width={300} height={100} data={rechartsLineData}>
-              <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} isAnimationActive={false} />
+            <LineChart width={300} height={80} data={rechartsLineData}>
+              <Line type="monotone" dataKey="pv" stroke={color} strokeWidth={3} isAnimationActive={false} />
             </LineChart>
           </center>
         </Widget>
         <Grid container className={classes.mainContainer}>
           <Grid item xs={12}>
-            <Widget title="Recharts Sunburst">
-              <center className={classnames(classes.mainContainerSB)}>
-                <Sunburst
-                  data={sunburstData}
-                  dataKey="size"
-                  fill="#00C49F"
-                  stroke="#fff"
-                  isAnimationActive={false}
-                  animationBegin={0}
-                  animationDuration={0}
-                  width={400}
-                  height={400}
-                />
-              </center>
-            </Widget>
+            <Grid container justify="space-around">
+              <Grid item>
+                <Widget style={{ marginLeft: '-72px', padding: '1px' }}>
+                  <center className={classnames(classes.mainContainerSB)}>
+                    <Sunburst
+                      data={sunburstData}
+                      dataKey="size"
+                      fill="#00C49F"
+                      stroke="#fff"
+                      isAnimationActive={false}
+                      animationBegin={0}
+                      animationDuration={0}
+                      width={400}
+                      height={400}
+                    />
+                  </center>
+                </Widget>
+              </Grid>
+              <Grid item>
+                <Widget title="Tree">
+                  <Tree
+                    treeData={treeData}
+                    cascadeCheck
+                    onCheckItem={item => console.log('Check: ', item)}
+                    onUnfoldItem={item => console.log('Unfold: ', item)}
+                    onFoldItem={item => console.log('Fold: ', item)}
+                  />
+                </Widget>
+              </Grid>
+              <Grid item>
+                <Widget>
+                  <Table>
+                    <TableBody
+                      loadMore={this.loadMore}
+                      findItem={this.findItem}
+                      list={this.state.items}
+                      rowCount={1000}
+                      rowHeight={48}
+                      height={300}
+                      width={415}
+                      rvInfiniteLoaderProps={{ minimumBatchSize: 24 }}
+                    >
+                      {this.renderBody}
+                    </TableBody>
+                  </Table>
+                </Widget>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
-        <Widget title="Tree">
-          <Tree
-            treeData={treeData}
-            cascadeCheck
-            onCheckItem={item => console.log('Check: ', item)}
-            onUnfoldItem={item => console.log('Unfold: ', item)}
-            onFoldItem={item => console.log('Fold: ', item)}
-          />
-        </Widget>
-        <Widget title="Infinite List">
-          <Table>
-            <TableBody
-              loadMore={this.loadMore}
-              findItem={this.findItem}
-              list={this.state.items}
-              rowCount={1000}
-              rowHeight={48}
-              height={300}
-              width={window && window.innerWidth ? window.innerWidth - 50 : 1000}
-              rvInfiniteLoaderProps={{ minimumBatchSize: 24 }}
-            >
-              {this.renderBody}
-            </TableBody>
-          </Table>
-        </Widget>
       </div>
     );
   }
