@@ -1,6 +1,6 @@
 # Lattice Server Side Rendering Example.
 
-![screenshot](screen1.png?raw=true "Lattice Server Side Rendering Light")
+![screenshot](screen.png?raw=true "Lattice Server Side Rendering Light")
 
 ## How to use
 
