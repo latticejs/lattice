@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.0.1-beta.1] (Resumption Phase) - 2019-09-04
 - Resuming and completing gauge component
-- Adding the Lattice SSR example.
+- Adding the Lattice-SSR example.
 
 ## [1.0.1-beta.1] - 2018-11-13 [YANKED]
 
