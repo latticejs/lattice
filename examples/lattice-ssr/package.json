@@ -16,7 +16,7 @@
     "@latticejs/recharts-sunburst": "^1.0.1-beta.1",
     "@latticejs/tree": "^1.0.1-beta.1",
     "@latticejs/widgets": "^1.0.1-beta.1",
-    "@latticejs/gauge": "^1.0.1-beta.1",
+    "@latticejs/gauge": "1.0.1-beta.1",
     "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^3.0.1",
     "classnames": "^2.2.6",

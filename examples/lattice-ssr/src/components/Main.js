@@ -3,7 +3,6 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
 import App from './App';
-import GaugeComp from './GaugeComp';
 
 export default class Main extends Component {
   constructor(props) {
@@ -33,7 +32,6 @@ export default class Main extends Component {
       <MuiThemeProvider theme={this.createTheme()}>
         <CssBaseline />
         <App {...this.props} updateTheme={this.updateTheme} nightMode={this.state.nightMode} />
-        <GaugeComp {...this.props} nightMode={this.state.nightMode} />
       </MuiThemeProvider>
     );
   }

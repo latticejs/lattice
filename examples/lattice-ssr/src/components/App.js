@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { AppBar, Grid, Toolbar, Typography } from '@material-ui/core';
-import classnames from 'classnames';
 import { Widget } from '@latticejs/widgets';
-import { LineChart, Line } from '@latticejs/mui-recharts';
+import { AreaChart, Area, LineChart, Line, BarChart, Bar } from '@latticejs/mui-recharts';
 import Sunburst from '@latticejs/recharts-sunburst';
 import { Tree } from '@latticejs/tree';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
-import { Table, TableBody, TableRow, TableCell } from '@latticejs/infinite-list';
 
 import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
@@ -24,48 +22,64 @@ const styles = theme => ({
   flex: {
     flexGrow: 1
   },
-  appBar: {
-    backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText
-  },
-  mainContainer2: {
-    backgroundColor: '#898989',
-    width: 300,
-    height: 300
-  },
-  mainContainerSB: {
-    height: 400,
-    backgroundColor: '#898989'
-  },
-  mainContainerTree: {
-    width: 500,
-    height: 400
-  },
-  mainContainerLC: {
-    backgroundColor: '#898989',
-    paddingTop: '4%',
-    width: '100%',
-    height: 150
-  },
   mainContainer: {
-    backgroundColor: '#898989',
     height: '100%'
   },
   widget: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2,
-    padding: theme.spacing.unit * 4
+    padding: theme.spacing.unit * 4,
+    minHeight: 160
   },
-  link: {
-    color: theme.palette.text.secondary
+  charts: {
+    padding: theme.spacing.unit * 4,
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit
   },
-  tableHeadStyle: {
-    borderBottom: 0
+  chartsContainer: {
+    minHeight: 500,
+    marginTop: theme.spacing.unit * 2
   },
-  tableCellStyle: {
-    borderBottom: 0,
-    width: 400
+  componentWidget: {
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
+    padding: theme.spacing.unit * 4,
+    minHeight: 500,
+    minWidth: 385
   }
+  // appBar: {
+  //   backgroundColor: theme.palette.primary[theme.palette.type],
+  //   color: theme.palette.primary.contrastText
+  // },
+  // mainContainer2: {
+  //   backgroundColor: '#898989',
+  //   width: 300,
+  //   height: 300
+  // },
+  // mainContainerSB: {
+  //   height: 400,
+  //   backgroundColor: '#898989'
+  // },
+  // mainContainerTree: {
+  //   width: 500,
+  //   height: 400
+  // },
+  //
+  // widget: {
+  //   marginTop: theme.spacing.unit * 2,
+  //   marginBottom: theme.spacing.unit * 2,
+  //   padding: theme.spacing.unit * 4
+  // },
+  // link: {
+  //   color: theme.palette.text.secondary
+  // },
+  // tableHeadStyle: {
+  //   borderBottom: 0
+  // },
+  // tableCellStyle: {
+  //   borderBottom: 0,
+  //   width: 400
+  // }
 });
 
 class App extends Component {
@@ -74,12 +88,7 @@ class App extends Component {
 
     this.getTreeData = this.getTreeData.bind(this);
     this.getSunburstData = this.getSunburstData.bind(this);
-    this.getLineData = this.getLineData.bind(this);
-
-    this.renderBody = this.renderBody.bind(this);
-    this.findItem = this.findItem.bind(this);
-    this.delay = this.delay.bind(this);
-    this.loadMore = this.loadMore.bind(this);
+    this.getGraphData = this.getGraphData.bind(this);
 
     this.state = {
       items: Array.from(Array(100).keys()).map(v => ({ index: v, title: `title ${v}`, timestamp: Date.now() }))
@@ -116,7 +125,7 @@ class App extends Component {
     ];
   }
 
-  getLineData() {
+  getGraphData() {
     return [
       { name: 'Page A', pv: 2400, amt: 2400 },
       { name: 'Page B', pv: 1398, amt: 2210 },
@@ -155,64 +164,16 @@ class App extends Component {
     ];
   }
 
-  renderBody({ item, isEmpty, key, style }) {
-    const { classes } = this.props;
-
-    if (isEmpty) {
-      return <h4>Empty list</h4>;
-    }
-
-    if (!item) {
-      return (
-        <TableRow key={key} style={style}>
-          <TableCell>loading...</TableCell>
-        </TableRow>
-      );
-    }
-
-    style.width = 1000;
-
-    return (
-      <TableRow key={key} style={style}>
-        <TableCell classes={{ root: classes.tableCellStyle }}>{item.index}</TableCell>
-        <TableCell classes={{ root: classes.tableCellStyle }}>{item.title}</TableCell>
-        <TableCell classes={{ root: classes.tableCellStyle }}>{item.timestamp}</TableCell>
-      </TableRow>
-    );
-  }
-
-  findItem({ index }) {
-    return this.state.items.find(i => i.index === index);
-  }
-
-  delay(time) {
-    new Promise(resolve => setTimeout(resolve, time));
-  }
-
-  loadMore({ startIndex, stopIndex }) {
-    // await this.delay(500);
-
-    this.setState(state => {
-      const newItems = Array.from(Array(stopIndex - startIndex + 1).keys()).map(v => ({
-        index: startIndex + v,
-        title: `title ${startIndex + v}`,
-        timestamp: Date.now()
-      }));
-
-      return { items: [...state.items, ...newItems] };
-    });
-  }
-
   render() {
     const { classes, nightMode } = this.props;
     const sunburstData = this.getSunburstData();
     const treeData = this.getTreeData();
-    const rechartsLineData = this.getLineData();
-    let color = '#fff';
-
-    if (nightMode) {
-      color = '#424242';
-    }
+    const rechartsData = this.getGraphData();
+    // let color = '#898989';
+    //
+    // if (nightMode) {
+    //   color = '#424242';
+    // }
 
     return (
       <div className={classes.root}>
@@ -230,64 +191,87 @@ class App extends Component {
         </AppBar>
         <Grid container className={classes.mainContainer}>
           <Grid item xs={12}>
-            <Grid container justify="space-around" spacing={Number('16')}>
+            <Grid container justify="space-around" spacing={Number('16')} alignItem="center">
               <Grid item>
                 <Widget className={classes.widget} title="Introduction" border="bottom">
                   <Typography variant="subtitle2">Welcome to Lattice</Typography>
                 </Widget>
               </Grid>
               <Grid item>
-                <Widget className={classes.widget} title="Material" border="bottom">
-                  <Typography variant="subtitle2">Material UI integration</Typography>
+                <Widget className={classes.widget} title="Isomorphic" border="bottom">
+                  <Typography variant="subtitle2">Server Side Rendering</Typography>
                 </Widget>
               </Grid>
               <Grid item>
-                <Widget className={classes.widget} title="Recharts" border="bottom">
-                  <Typography variant="subtitle2">with Material style</Typography>
+                <Widget className={classes.widget} title="Material UI" border="bottom">
+                  <Typography variant="subtitle2">With Material UI</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="D3" border="bottom">
-                  <Typography variant="subtitle2">React + D3 integration</Typography>
+                  <Typography variant="subtitle2">Recharts + Sunburst</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="React Virtualized" border="bottom">
-                  <Typography variant="subtitle2">Infinite list support</Typography>
+                  <Typography variant="subtitle2">Tree Component</Typography>
                 </Widget>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Widget style={{ padding: '1px' }}>
-          <center className={classnames(classes.mainContainerLC)}>
-            <LineChart width={300} height={80} data={rechartsLineData}>
-              <Line type="monotone" dataKey="pv" stroke={color} strokeWidth={3} isAnimationActive={false} />
-            </LineChart>
-          </center>
-        </Widget>
         <Grid container className={classes.mainContainer}>
           <Grid item xs={12}>
-            <Grid container justify="space-around">
-              <Grid item>
-                <Widget style={{ marginLeft: '-72px', padding: '1px' }}>
-                  <center className={classnames(classes.mainContainerSB)}>
-                    <Sunburst
-                      data={sunburstData}
-                      dataKey="size"
-                      fill="#00C49F"
-                      stroke="#fff"
-                      isAnimationActive={false}
-                      animationBegin={0}
-                      animationDuration={0}
-                      width={400}
-                      height={400}
-                    />
-                  </center>
+            <Grid container justify="space-around" spacing={8}>
+              <Grid item className={classes.componentClasses}>
+                <Widget className={classes.componentWidget} border="bottom">
+                  <Sunburst
+                    data={sunburstData}
+                    dataKey="size"
+                    fill="#00C49F"
+                    stroke="#fff"
+                    isAnimationActive={false}
+                    animationBegin={0}
+                    animationDuration={0}
+                    width={400}
+                    height={400}
+                  />
                 </Widget>
               </Grid>
               <Grid item>
-                <Widget title="Tree">
+                <Grid
+                  className={classes.chartsContainer}
+                  container
+                  alignItem="center"
+                  justify="center"
+                  spacing={0}
+                  direction="column"
+                >
+                  <Grid item>
+                    <Widget className={classes.charts} border="bottom">
+                      <LineChart width={300} height={80} data={rechartsData}>
+                        <Line type="monotone" dataKey="pv" strokeWidth={3} isAnimationActive={false} />
+                      </LineChart>
+                    </Widget>
+                  </Grid>
+                  <Grid item>
+                    <Widget className={classes.charts} border="bottom">
+                      <BarChart width={300} height={80} data={rechartsData}>
+                        <Bar type="monotone" dataKey="pv" strokeWidth={3} isAnimationActive={false} />
+                      </BarChart>
+                    </Widget>
+                  </Grid>
+                  <Grid item>
+                    <Widget className={classes.charts} border="bottom">
+                      <AreaChart width={300} height={80} data={rechartsData}>
+                        <Area type="monotone" dataKey="pv" strokeWidth={3} isAnimationActive={false} />
+                      </AreaChart>
+                    </Widget>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item>
+                <Widget className={classes.componentWidget} border="bottom">
                   <Tree
                     treeData={treeData}
                     cascadeCheck
@@ -295,24 +279,6 @@ class App extends Component {
                     onUnfoldItem={item => console.log('Unfold: ', item)}
                     onFoldItem={item => console.log('Fold: ', item)}
                   />
-                </Widget>
-              </Grid>
-              <Grid item>
-                <Widget>
-                  <Table>
-                    <TableBody
-                      loadMore={this.loadMore}
-                      findItem={this.findItem}
-                      list={this.state.items}
-                      rowCount={1000}
-                      rowHeight={48}
-                      height={300}
-                      width={415}
-                      rvInfiniteLoaderProps={{ minimumBatchSize: 24 }}
-                    >
-                      {this.renderBody}
-                    </TableBody>
-                  </Table>
                 </Widget>
               </Grid>
             </Grid>
