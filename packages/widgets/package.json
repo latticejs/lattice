@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/widgets",
-  "version": "1.0.1-beta.1",
+  "version": "1.0.1-beta.2",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "core-js": "^3.2.1",
     "prop-types": "^15.6.2"
   },
   "jest": {
