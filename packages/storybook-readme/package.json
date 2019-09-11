@@ -1,6 +1,6 @@
 {
     "name": "@latticejs/storybook-readme",
-    "version": "1.0.1-beta.0",
+    "version": "1.0.1-beta.1",
     "description": "Storybook readme addon helpers.",
     "repository": "latticejs/storybook-readme",
     "license": "MIT",

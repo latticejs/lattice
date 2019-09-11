@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/lattice-scripts",
-  "version": "1.0.1-beta.1",
+  "version": "1.0.1-beta.2",
   "description": "Scripts for @latticejs/lattice packages",
   "repository": "latticejs/lattice",
   "license": "MIT",
