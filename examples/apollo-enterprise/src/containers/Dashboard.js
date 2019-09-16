@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 
 // Apollo
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
 
 // @latticejs
 import { Loader } from '@latticejs/widgets';

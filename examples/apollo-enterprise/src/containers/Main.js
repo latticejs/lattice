@@ -23,7 +23,8 @@ import MoreVerticalIcon from '@material-ui/icons/MoreVert';
 import { Redirect, withRouter } from 'react-router-dom';
 
 // Apollo
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
 
 // @latticejs
 import { SideMenu } from '@latticejs/widgets';

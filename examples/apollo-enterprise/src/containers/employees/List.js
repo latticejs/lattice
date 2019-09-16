@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { generatePath } from 'react-router';
 
 // Apollo
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
 
 // Material-UI
 import Grid from '@material-ui/core/Grid';

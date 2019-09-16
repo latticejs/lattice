@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 // Apollo
-import { compose } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
 
 // Router
 import { Redirect } from 'react-router-dom';
