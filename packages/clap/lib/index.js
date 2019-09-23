@@ -73,9 +73,7 @@ async function clap(example, project, cmd) {
       checkValidExampleOut = error;
 
       if (/^(No commit found)/.test(extractMessage(checkValidExampleOut.stderr))) {
-        checkValidExampleOut.stderr.message = `The branch "${
-          cmd.branch
-        }" does not exist on Lattice repo. Please see https://github.com/latticejs/lattice/branches.`;
+        checkValidExampleOut.stderr.message = `The branch "${cmd.branch}" does not exist on Lattice repo. Please see https://github.com/latticejs/lattice/branches.`;
       }
     }
 
@@ -136,8 +134,6 @@ async function list(cmd) {
     repoOptions.ref = cmd.branch;
   }
 
-  console.log(messages.listExamples());
-
   var parseList = function parseList(listRawItem) {
     if (listRawItem.name === 'README.md') return;
     console.log(`- ${listRawItem.name}`);
@@ -145,12 +141,11 @@ async function list(cmd) {
 
   try {
     var examplesRaw = await tasks.list(repoOptions);
+    console.log(examplesRaw);
     examplesRaw.data.forEach(parseList);
   } catch (err) {
     if (/^(No commit found)/.test(extractMessage(err))) {
-      err.message = `The branch "${
-        cmd.branch
-      }" does not exist on Lattice repo. Please see https://github.com/latticejs/lattice/branches.`;
+      err.message = `The branch "${cmd.branch}" does not exist on Lattice repo. Please see https://github.com/latticejs/lattice/branches.`;
     }
 
     console.error(messages.error(err));
