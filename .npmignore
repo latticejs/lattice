@@ -63,6 +63,7 @@ test-demo*
 # generated dist
 dist/
 build/
+examples/lattice-ssr/public/*
 
 # clap bin
 packages/clap/bin/

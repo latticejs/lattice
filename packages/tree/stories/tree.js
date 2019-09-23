@@ -82,7 +82,7 @@ class CustomTree extends Component {
           id="si-logos-javascript"
           width="1.5em"
           height="1.5em"
-          style={{ 'margin-right': 0 }}
+          style={{ marginRight: 0 }}
         >
           <title id="apksi-logos-javascript-title">logo of javascript</title>
           <path d="M0 0h256v256H0V0z" fill="#F7DF1E" />
@@ -99,7 +99,7 @@ class CustomTree extends Component {
           id="si-logos-css-3_official"
           width="1.5em"
           height="1.5em"
-          style={{ 'margin-right': 0 }}
+          style={{ marginRight: 0 }}
         >
           <title id="ahpsi-logos-css-3_official-title">logo of css-3_official</title>
           <path
