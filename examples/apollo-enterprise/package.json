@@ -40,7 +40,7 @@
     "build": "react-scripts build",
     "test": "echo 'test'",
     "eject": "react-scripts eject",
-    "graphql": "node server/index.js",
+    "graphql": "NODE_PORT=3001 node server/index.js",
     "graphql:seed": "node server/db/seed.js"
   },
   "devDependencies": {

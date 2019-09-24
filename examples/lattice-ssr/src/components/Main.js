@@ -17,6 +17,9 @@ export default class Main extends Component {
     return createMuiTheme({
       palette: {
         type: nightMode ? 'dark' : 'light'
+      },
+      typography: {
+        useNextVariants: true,
       }
     });
   }

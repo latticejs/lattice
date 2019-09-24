@@ -163,7 +163,7 @@ class Main extends Component {
                 <MenuIcon />
               </IconButton>
             </Hidden>
-            <Typography variant="title" color="inherit">
+            <Typography variant="h6" color="inherit">
               {activeRoute && (activeRoute.breadcrumb || activeRoute.title)}
             </Typography>
             <div className={classes.flexed} />

@@ -115,7 +115,7 @@ class List extends Component {
     return (
       <Grid container spacing={16}>
         <Grid item xs={8}>
-          <Button color="primary" variant="raised" onClick={this.handleAdd}>
+          <Button color="primary" variant="contained" onClick={this.handleAdd}>
             <AddIcon /> Add
           </Button>
         </Grid>

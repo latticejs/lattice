@@ -45,7 +45,6 @@
     "webpack": "^4.40.0",
     "webpack-bundle-analyzer": "^3.5.0",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.8.0",
     "webpack-node-externals": "^1.7.0"
   },
   "standard": {

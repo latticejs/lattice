@@ -22,7 +22,9 @@ app.use((req, res) => {
   const sheetsManager = new Map();
   const html = renderToString(
     <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
-      <MuiThemeProvider theme={createMuiTheme({ palette: { type: 'light' } })} sheetsManager={sheetsManager}>
+      <MuiThemeProvider theme={createMuiTheme({ palette: { type: 'light' }, typography: {
+        useNextVariants: true,
+      } })} sheetsManager={sheetsManager}>
         <CssBaseline />
         <App />
       </MuiThemeProvider>

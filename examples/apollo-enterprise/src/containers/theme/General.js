@@ -43,8 +43,8 @@ class General extends Component {
                 <Button color="primary" className={classes.button}>
                   Primary
                 </Button>
-                <Button color="primary" variant="raised" className={classes.button}>
-                  Primary Raised
+                <Button color="primary" variant="contained" className={classes.button}>
+                  Primary Contained
                 </Button>
                 <Button color="primary" variant="fab" className={classes.button}>
                   fab
@@ -59,8 +59,8 @@ class General extends Component {
                 <Button color="secondary" className={classes.button}>
                   Secondary
                 </Button>
-                <Button color="secondary" variant="raised" className={classes.button}>
-                  Secondary Raised
+                <Button color="secondary" variant="contained" className={classes.button}>
+                  Secondary Contained
                 </Button>
                 <Button color="secondary" variant="fab" className={classes.button}>
                   fab
@@ -75,8 +75,8 @@ class General extends Component {
                 <Button color="default" className={classes.button}>
                   Default
                 </Button>
-                <Button color="default" variant="raised" className={classes.button}>
-                  Default Raised
+                <Button color="default" variant="contained" className={classes.button}>
+                  Default Contained
                 </Button>
                 <Button color="default" variant="fab" className={classes.button}>
                   fab

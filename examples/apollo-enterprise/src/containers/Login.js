@@ -79,14 +79,14 @@ class Login extends Component {
             className={classes.form}
           >
             <Grid item xs={8}>
-              <Typography variant="display1">Sign In</Typography>
+              <Typography variant="h4">Sign In</Typography>
             </Grid>
             <Grid item xs={8} className={classes.containerField}>
               <TextField field="email" label="Email" type="text" fullWidth />
               <TextField field="password" label="Password" type="password" fullWidth />
             </Grid>
             <Grid item xs={8}>
-              <Button type="submit" variant="raised" color="primary">
+              <Button type="submit" variant="contained" color="primary">
                 Sign in
               </Button>
             </Grid>

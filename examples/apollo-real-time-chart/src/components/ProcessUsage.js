@@ -62,7 +62,7 @@ function ProcessUsage({ data, loading, classes }) {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell numeric>PID</TableCell>
+              <TableCell align="left">PID</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>CPU (%)</TableCell>
               <TableCell>Memory (%)</TableCell>
@@ -72,7 +72,7 @@ function ProcessUsage({ data, loading, classes }) {
             {parsedData.map(ps => {
               return (
                 <TableRow key={ps.pid}>
-                  <TableCell numeric>{ps.pid}</TableCell>
+                  <TableCell align="left">{ps.pid}</TableCell>
                   <TableCell>{ps.name}</TableCell>
                   <TableCell>
                     <UsagePie data={ps.cpuData} usage={ps.cpu} classes={classes} />
