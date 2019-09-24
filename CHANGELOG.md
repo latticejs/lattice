@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.0.1-beta.2] - 2019-09-11
 - Package Dependency is updated.(#310)
+- Changed Eslint version.
 
 ## [1.0.1-beta.1] (Resumption Phase) - 2019-09-04
 - Resuming and completing gauge component.
