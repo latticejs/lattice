@@ -14,7 +14,7 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
   suppressContentEditableWarning={true}
 >
   <svg
-    className="dag-wrapper Dag-root-1"
+    className="dag-wrapper Dag-root-8"
     height={800}
     onDoubleClick={[Function]}
     onMouseMove={[Function]}
@@ -25,7 +25,7 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
       className="dag__graph"
     >
       <g
-        className="dag__edge Dag-dagEdge-4 Dag-dagEditable-5"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
         onClick={[Function]}
       >
         <line />
@@ -35,7 +35,7 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge-4 Dag-dagEditable-5"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
         onClick={[Function]}
       >
         <line />
@@ -45,7 +45,7 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge-4 Dag-dagEditable-5"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
         onClick={[Function]}
       >
         <line />
@@ -55,7 +55,7 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge-4 Dag-dagEditable-5"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
         onClick={[Function]}
       >
         <line />
@@ -65,7 +65,7 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge-4 Dag-dagEditable-5"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
         onClick={[Function]}
       >
         <line />
@@ -75,7 +75,7 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge-4 Dag-dagEditable-5"
+        className="dag__edge Dag-dagEdge-11 Dag-dagEditable-12"
         onClick={[Function]}
       >
         <line />
@@ -85,69 +85,69 @@ exports[`Storyshots dag/advanced editable mode 1`] = `
         />
       </g>
       <g
-        className="dag__node Dag-dagNode-2 Dag-dagEditable-5"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--app"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-3"
+          className="Dag-dagNodeText-10"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode-2 Dag-dagEditable-5"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--lodash"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-3"
+          className="Dag-dagNodeText-10"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode-2 Dag-dagEditable-5"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--react"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-3"
+          className="Dag-dagNodeText-10"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode-2 Dag-dagEditable-5"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--react-dom"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-3"
+          className="Dag-dagNodeText-10"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode-2 Dag-dagEditable-5"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--apollo"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-3"
+          className="Dag-dagNodeText-10"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode-2 Dag-dagEditable-5"
+        className="dag__node Dag-dagNode-9 Dag-dagEditable-12"
         id="dag__node--enzyme"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText-3"
+          className="Dag-dagNodeText-10"
         />
       </g>
     </g>
@@ -169,7 +169,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
   suppressContentEditableWarning={true}
 >
   <svg
-    className="dag-wrapper Dag-root"
+    className="dag-wrapper Dag-root-1"
     height={800}
     onDoubleClick={[Function]}
     onMouseMove={[Function]}
@@ -180,7 +180,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
       className="dag__graph"
     >
       <g
-        className="dag__edge Dag-dagEdge"
+        className="dag__edge Dag-dagEdge-4"
         onClick={[Function]}
       >
         <line />
@@ -190,7 +190,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge"
+        className="dag__edge Dag-dagEdge-4"
         onClick={[Function]}
       >
         <line />
@@ -200,7 +200,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge"
+        className="dag__edge Dag-dagEdge-4"
         onClick={[Function]}
       >
         <line />
@@ -210,7 +210,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge"
+        className="dag__edge Dag-dagEdge-4"
         onClick={[Function]}
       >
         <line />
@@ -220,7 +220,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge"
+        className="dag__edge Dag-dagEdge-4"
         onClick={[Function]}
       >
         <line />
@@ -230,7 +230,7 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="dag__edge Dag-dagEdge"
+        className="dag__edge Dag-dagEdge-4"
         onClick={[Function]}
       >
         <line />
@@ -240,69 +240,69 @@ exports[`Storyshots dag/basic no wrapper 1`] = `
         />
       </g>
       <g
-        className="dag__node Dag-dagNode"
+        className="dag__node Dag-dagNode-2"
         id="dag__node--app"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText"
+          className="Dag-dagNodeText-3"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode"
+        className="dag__node Dag-dagNode-2"
         id="dag__node--lodash"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText"
+          className="Dag-dagNodeText-3"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode"
+        className="dag__node Dag-dagNode-2"
         id="dag__node--react"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText"
+          className="Dag-dagNodeText-3"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode"
+        className="dag__node Dag-dagNode-2"
         id="dag__node--react-dom"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText"
+          className="Dag-dagNodeText-3"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode"
+        className="dag__node Dag-dagNode-2"
         id="dag__node--apollo"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText"
+          className="Dag-dagNodeText-3"
         />
       </g>
       <g
-        className="dag__node Dag-dagNode"
+        className="dag__node Dag-dagNode-2"
         id="dag__node--enzyme"
         onClick={[Function]}
         onDoubleClick={[Function]}
       >
         <circle />
         <text
-          className="Dag-dagNodeText"
+          className="Dag-dagNodeText-3"
         />
       </g>
     </g>
@@ -320,7 +320,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
   }
 >
   <div
-    className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
+    className="MuiPaper-root-49 MuiPaper-elevation2-53 MuiPaper-rounded-50"
     style={
       Object {
         "height": "800px",
@@ -341,7 +341,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
       suppressContentEditableWarning={true}
     >
       <svg
-        className="dag-wrapper Dag-root"
+        className="dag-wrapper Dag-root-76"
         height={800}
         onDoubleClick={[Function]}
         onMouseMove={[Function]}
@@ -352,7 +352,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
           className="dag__graph"
         >
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-79"
             onClick={[Function]}
           >
             <line />
@@ -362,7 +362,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-79"
             onClick={[Function]}
           >
             <line />
@@ -372,7 +372,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-79"
             onClick={[Function]}
           >
             <line />
@@ -382,7 +382,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-79"
             onClick={[Function]}
           >
             <line />
@@ -392,7 +392,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-79"
             onClick={[Function]}
           >
             <line />
@@ -402,7 +402,7 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-79"
             onClick={[Function]}
           >
             <line />
@@ -412,69 +412,69 @@ exports[`Storyshots dag/themed paper wrapper (dark) 1`] = `
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-77"
             id="dag__node--app"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-78"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-77"
             id="dag__node--lodash"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-78"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-77"
             id="dag__node--react"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-78"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-77"
             id="dag__node--react-dom"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-78"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-77"
             id="dag__node--apollo"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-78"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-77"
             id="dag__node--enzyme"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-78"
             />
           </g>
         </g>
@@ -494,7 +494,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
   }
 >
   <div
-    className="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
+    className="MuiPaper-root-15 MuiPaper-elevation2-19 MuiPaper-rounded-16"
     style={
       Object {
         "height": "800px",
@@ -515,7 +515,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
       suppressContentEditableWarning={true}
     >
       <svg
-        className="dag-wrapper Dag-root"
+        className="dag-wrapper Dag-root-42"
         height={800}
         onDoubleClick={[Function]}
         onMouseMove={[Function]}
@@ -526,7 +526,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
           className="dag__graph"
         >
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-45"
             onClick={[Function]}
           >
             <line />
@@ -536,7 +536,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-45"
             onClick={[Function]}
           >
             <line />
@@ -546,7 +546,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-45"
             onClick={[Function]}
           >
             <line />
@@ -556,7 +556,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-45"
             onClick={[Function]}
           >
             <line />
@@ -566,7 +566,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-45"
             onClick={[Function]}
           >
             <line />
@@ -576,7 +576,7 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="dag__edge Dag-dagEdge"
+            className="dag__edge Dag-dagEdge-45"
             onClick={[Function]}
           >
             <line />
@@ -586,69 +586,69 @@ exports[`Storyshots dag/themed paper wrapper (light) 1`] = `
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-43"
             id="dag__node--app"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-44"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-43"
             id="dag__node--lodash"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-44"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-43"
             id="dag__node--react"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-44"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-43"
             id="dag__node--react-dom"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-44"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-43"
             id="dag__node--apollo"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-44"
             />
           </g>
           <g
-            className="dag__node Dag-dagNode"
+            className="dag__node Dag-dagNode-43"
             id="dag__node--enzyme"
             onClick={[Function]}
             onDoubleClick={[Function]}
           >
             <circle />
             <text
-              className="Dag-dagNodeText"
+              className="Dag-dagNodeText-44"
             />
           </g>
         </g>
