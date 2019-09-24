@@ -7,7 +7,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import express from 'express';
 import JssProvider from 'react-jss/lib/JssProvider';
 import React from 'react';
-import reload from 'reload';
 
 const app = express();
 
@@ -53,7 +52,3 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => console.log(`http://localhost:${port}`));
-
-if (dev) {
-  reload(app);
-}
