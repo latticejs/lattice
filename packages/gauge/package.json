@@ -1,10 +1,10 @@
 {
-  "name": "@latticejs/mui-recharts",
+  "name": "@latticejs/gauge",
   "version": "1.0.1-beta.2",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "browser": "dist/umd/mui-recharts.js",
+  "browser": "dist/umd/gauge.js",
   "files": [
     "dist"
   ],
@@ -14,15 +14,15 @@
     "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
-    "storybook": "start-storybook -p 9011 -c .storybook",
-    "test": "jest",
+    "storybook": "start-storybook -p 9016 -c .storybook",
+    "test": "jest --no-cache",
     "size": "bundlesize"
   },
   "peerDependencies": {
     "@material-ui/core": "^3.9.0",
+    "@material-ui/icons": "^3.0.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "recharts": "^1.7.0"
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
@@ -37,27 +37,23 @@
     "@latticejs/lattice-scripts": "^1.0.1-beta.2",
     "@latticejs/storybook-readme": "^1.0.1-beta.1",
     "@material-ui/core": "^3.9.0",
+    "@material-ui/icons": "^3.0.0",
     "@storybook/addon-storyshots": "^4.1.0",
     "@storybook/addon-storysource": "^4.1.0",
     "@storybook/react": "^4.1.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.0",
-    "babel-jest": "^23.6.0",
-    "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-plugin-transform-async-functions": "^6.22.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^23.6.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-jss": "^8.6.0",
     "react-test-renderer": "^16.9.0",
-    "recharts": "^1.7.0",
     "rimraf": "^2.7.0",
-    "storybook-readme": "^4.0.0"
+    "storybook-readme": "^4.0.0",
+    "canvas": "^2.6.0"
   },
   "dependencies": {
-    "classnames": "^2.2.0"
+    "canvas-gauges": "^2.1.0",
+    "prop-types": "^15.7.0"
   },
   "jest": {
     "setupFiles": [
@@ -68,7 +64,12 @@
     "transform": {
       "^.+\\.js?$": "babel-jest",
       "^.+\\.md?$": "markdown-loader-jest"
-    }
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/images/",
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/"
+    ]
   },
   "bundlesize": [
     {
@@ -78,11 +79,10 @@
       "path": "dist/esm/index.js"
     },
     {
-      "path": "dist/umd/mui-recharts.js"
+      "path": "dist/umd/gauge.js"
     }
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "c1aad20555302fad47d2d61d1ff0f48f6d566083"
+  }
 }
