@@ -12,6 +12,7 @@
         "endOfLine":"auto"
       }
     ],
-    "no-console": "off"
+    "no-console": "off",
+    "require-atomic-updates": "off"
   }
 }
