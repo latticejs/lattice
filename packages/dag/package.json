@@ -45,7 +45,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "bundlesize": "^0.17.0",
+    "bundlesize": "^0.18.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^23.6.0",
