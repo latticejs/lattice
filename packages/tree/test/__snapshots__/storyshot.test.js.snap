@@ -1521,7 +1521,7 @@ exports[`Storyshots tree customized 1`] = `
                   preserveAspectRatio="xMidYMid"
                   style={
                     Object {
-                      "margin-right": 0,
+                      "marginRight": 0,
                     }
                   }
                   viewBox="0 0 256 256"
