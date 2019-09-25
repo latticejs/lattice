@@ -1,5 +1,5 @@
 import React from 'react';
-import JssProvider from 'react-jss/lib/JssProvider';
+import { JssProvider } from 'react-jss';
 import { createGenerateClassName } from '@material-ui/core/styles';
 import { action } from '@storybook/addon-actions';
 import { State, Store } from '@sambego/storybook-state';
