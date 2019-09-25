@@ -1,0 +1,25 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": "> 1%, not ie 11, not op_mini all",
+          "node": 8
+        }
+      }
+    ], "@babel/react"
+  ],
+  "plugins": [
+    "@babel/proposal-class-properties",
+    "@babel/transform-runtime",
+    [
+      "import",
+      {
+        "libraryName": "@material-ui/icons",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false
+      }
+    ]
+  ]
+}
