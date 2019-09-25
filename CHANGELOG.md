@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [examples] dag-in-action height grows indefinitely on FF
 
 ### Removed
-- react-scripts package..
+- react-scripts package.
 
 ## [1.0.1-beta.2] - 2019-09-11
 - Package Dependency is updated.(#310)
@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 1.0.1-beta.0 - 2018-11-08
 ### Added
-- tasks for conditional releasing from travis
+- tasks for conditional releasing from travis.
 
 ### Changed
 - examples/minimal
