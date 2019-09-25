@@ -22,7 +22,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-AreaChart--rootChart"
+      className="recharts-wrapper MuiRechart-AreaChart--rootChart-18"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -45,16 +45,18 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
-        <clipPath
-          id="recharts68-clip"
-        >
-          <rect
-            height={60}
-            width={30}
-            x={65}
-            y={5}
-          />
-        </clipPath>
+        <defs>
+          <clipPath
+            id="recharts68-clip"
+          >
+            <rect
+              height={60}
+              width={30}
+              x={65}
+              y={5}
+            />
+          </clipPath>
+        </defs>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -684,7 +686,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-AreaChart--rootChart"
+      className="recharts-wrapper MuiRechart-AreaChart--rootChart-15"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -707,16 +709,18 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
-        <clipPath
-          id="recharts53-clip"
-        >
-          <rect
-            height={60}
-            width={30}
-            x={65}
-            y={5}
-          />
-        </clipPath>
+        <defs>
+          <clipPath
+            id="recharts53-clip"
+          >
+            <rect
+              height={60}
+              width={30}
+              x={65}
+              y={5}
+            />
+          </clipPath>
+        </defs>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -1346,7 +1350,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (dark) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-BarChart--rootChart"
+      className="recharts-wrapper MuiRechart-BarChart--rootChart-19"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -1369,16 +1373,18 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (dark) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
-        <clipPath
-          id="recharts73-clip"
-        >
-          <rect
-            height={60}
-            width={30}
-            x={65}
-            y={5}
-          />
-        </clipPath>
+        <defs>
+          <clipPath
+            id="recharts73-clip"
+          >
+            <rect
+              height={60}
+              width={30}
+              x={65}
+              y={5}
+            />
+          </clipPath>
+        </defs>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -1878,7 +1884,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (light) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-BarChart--rootChart"
+      className="recharts-wrapper MuiRechart-BarChart--rootChart-16"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -1901,16 +1907,18 @@ exports[`Storyshots mui-recharts/axis & tooltips Bar (light) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
-        <clipPath
-          id="recharts58-clip"
-        >
-          <rect
-            height={60}
-            width={30}
-            x={65}
-            y={5}
-          />
-        </clipPath>
+        <defs>
+          <clipPath
+            id="recharts58-clip"
+          >
+            <rect
+              height={60}
+              width={30}
+              x={65}
+              y={5}
+            />
+          </clipPath>
+        </defs>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -2410,7 +2418,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-LineChart--rootChart"
+      className="recharts-wrapper MuiRechart-LineChart--rootChart-20"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -2433,16 +2441,18 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
-        <clipPath
-          id="recharts78-clip"
-        >
-          <rect
-            height={60}
-            width={30}
-            x={65}
-            y={5}
-          />
-        </clipPath>
+        <defs>
+          <clipPath
+            id="recharts78-clip"
+          >
+            <rect
+              height={60}
+              width={30}
+              x={65}
+              y={5}
+            />
+          </clipPath>
+        </defs>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -3006,7 +3016,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
     }
   >
     <div
-      className="recharts-wrapper MuiRechart-LineChart--rootChart"
+      className="recharts-wrapper MuiRechart-LineChart--rootChart-17"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseMove={[Function]}
@@ -3029,16 +3039,18 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
         viewBox="0 0 100 100"
         width={100}
       >
-        <clipPath
-          id="recharts63-clip"
-        >
-          <rect
-            height={60}
-            width={30}
-            x={65}
-            y={5}
-          />
-        </clipPath>
+        <defs>
+          <clipPath
+            id="recharts63-clip"
+          >
+            <rect
+              height={60}
+              width={30}
+              x={65}
+              y={5}
+            />
+          </clipPath>
+        </defs>
         <g
           className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
         >
@@ -3611,7 +3623,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-AreaChart--rootChart"
+        className="recharts-wrapper MuiRechart-AreaChart--rootChart-8"
         style={
           Object {
             "cursor": "default",
@@ -3628,16 +3640,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts28-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts28-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-area"
           >
@@ -3761,7 +3775,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-BarChart--rootChart"
+        className="recharts-wrapper MuiRechart-BarChart--rootChart-9"
         style={
           Object {
             "cursor": "default",
@@ -3778,16 +3792,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts33-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts33-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-bar"
           >
@@ -3883,7 +3899,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-BarChart--rootChart"
+        className="recharts-wrapper MuiRechart-BarChart--rootChart-9"
         style={
           Object {
             "cursor": "default",
@@ -3900,16 +3916,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts36-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts36-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-bar"
           >
@@ -4005,7 +4023,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-LineChart--rootChart"
+        className="recharts-wrapper MuiRechart-LineChart--rootChart-10"
         style={
           Object {
             "cursor": "default",
@@ -4022,16 +4040,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts41-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts41-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-line"
           >
@@ -4089,7 +4109,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-PieChart--rootChart"
+        className="recharts-wrapper MuiRechart-PieChart--rootChart-11"
         style={
           Object {
             "cursor": "default",
@@ -4106,108 +4126,102 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts44-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts44-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-pie"
           >
             <g
-              clipPath="url(#recharts-pie-45)"
+              className="recharts-layer"
             >
               <g
-                className="recharts-layer"
-              >
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-              </g>
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
             </g>
           </g>
           <g
             className="recharts-layer recharts-pie"
           >
             <g
-              clipPath="url(#recharts-pie-46)"
+              className="recharts-layer"
             >
               <g
-                className="recharts-layer"
-              >
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-              </g>
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
             </g>
           </g>
         </svg>
@@ -4237,7 +4251,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-RadialBarChart--rootChart"
+        className="recharts-wrapper MuiRechart-RadialBarChart--rootChart-12"
         style={
           Object {
             "cursor": "default",
@@ -4254,16 +4268,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts48-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts48-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-area"
           >
@@ -4390,7 +4406,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-ScatterChart--rootChart"
+        className="recharts-wrapper MuiRechart-ScatterChart--rootChart-13"
         style={
           Object {
             "cursor": "default",
@@ -4407,16 +4423,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts49-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts49-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-scatter"
             clipPath={null}
@@ -4569,7 +4587,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-Treemap--rootChart"
+        className="recharts-wrapper MuiRechart-Treemap--rootChart-14"
         style={
           Object {
             "cursor": "default",
@@ -6658,7 +6676,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-AreaChart--rootChart"
+        className="recharts-wrapper MuiRechart-AreaChart--rootChart-1"
         style={
           Object {
             "cursor": "default",
@@ -6675,16 +6693,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts3-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts3-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-area"
           >
@@ -6808,7 +6828,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-BarChart--rootChart"
+        className="recharts-wrapper MuiRechart-BarChart--rootChart-2"
         style={
           Object {
             "cursor": "default",
@@ -6825,16 +6845,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts8-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts8-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-bar"
           >
@@ -6930,7 +6952,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-BarChart--rootChart"
+        className="recharts-wrapper MuiRechart-BarChart--rootChart-2"
         style={
           Object {
             "cursor": "default",
@@ -6947,16 +6969,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts11-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts11-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-bar"
           >
@@ -7052,7 +7076,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-LineChart--rootChart"
+        className="recharts-wrapper MuiRechart-LineChart--rootChart-3"
         style={
           Object {
             "cursor": "default",
@@ -7069,16 +7093,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts16-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts16-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-line"
           >
@@ -7136,7 +7162,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-PieChart--rootChart"
+        className="recharts-wrapper MuiRechart-PieChart--rootChart-4"
         style={
           Object {
             "cursor": "default",
@@ -7153,108 +7179,102 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts19-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts19-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-pie"
           >
             <g
-              clipPath="url(#recharts-pie-20)"
+              className="recharts-layer"
             >
               <g
-                className="recharts-layer"
-              >
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-              </g>
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
             </g>
           </g>
           <g
             className="recharts-layer recharts-pie"
           >
             <g
-              clipPath="url(#recharts-pie-21)"
+              className="recharts-layer"
             >
               <g
-                className="recharts-layer"
-              >
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-                <g
-                  className="recharts-layer recharts-pie-sector"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-              </g>
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
             </g>
           </g>
         </svg>
@@ -7284,7 +7304,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-RadialBarChart--rootChart"
+        className="recharts-wrapper MuiRechart-RadialBarChart--rootChart-5"
         style={
           Object {
             "cursor": "default",
@@ -7301,16 +7321,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts23-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts23-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-area"
           >
@@ -7437,7 +7459,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-ScatterChart--rootChart"
+        className="recharts-wrapper MuiRechart-ScatterChart--rootChart-6"
         style={
           Object {
             "cursor": "default",
@@ -7454,16 +7476,18 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
           viewBox="0 0 100 100"
           width={100}
         >
-          <clipPath
-            id="recharts24-clip"
-          >
-            <rect
-              height={90}
-              width={90}
-              x={5}
-              y={5}
-            />
-          </clipPath>
+          <defs>
+            <clipPath
+              id="recharts24-clip"
+            >
+              <rect
+                height={90}
+                width={90}
+                x={5}
+                y={5}
+              />
+            </clipPath>
+          </defs>
           <g
             className="recharts-layer recharts-scatter"
             clipPath={null}
@@ -7616,7 +7640,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
       }
     >
       <div
-        className="recharts-wrapper MuiRechart-Treemap--rootChart"
+        className="recharts-wrapper MuiRechart-Treemap--rootChart-7"
         style={
           Object {
             "cursor": "default",
