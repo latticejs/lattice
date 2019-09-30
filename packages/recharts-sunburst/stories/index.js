@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tooltip, ResponsiveContainer } from 'recharts';
-import JssProvider from 'react-jss/lib/JssProvider';
+import { JssProvider } from 'react-jss';
 import { createGenerateClassName } from '@material-ui/core/styles';
 import Readme from '../README.md';
 import { withReadme } from '@latticejs/storybook-readme';
