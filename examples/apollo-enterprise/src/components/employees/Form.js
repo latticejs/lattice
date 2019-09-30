@@ -68,12 +68,12 @@ class Form extends Component {
           <Toolbar>
             <Grid container spacing={16}>
               <Grid item>
-                <Button type="submit" variant="raised" color="primary">
+                <Button type="submit" variant="contained" color="primary">
                   Save
                 </Button>
               </Grid>
               <Grid item>
-                <Button variant="raised" onClick={this.handleCancel}>
+                <Button variant="contained" onClick={this.handleCancel}>
                   Cancel
                 </Button>
               </Grid>

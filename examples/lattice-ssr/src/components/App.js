@@ -152,27 +152,27 @@ class App extends Component {
             <Grid container justify="space-around" spacing={Number('16')}>
               <Grid item>
                 <Widget className={classes.widget} title="Introduction" border="bottom">
-                  <Typography variant="subtitle2">Welcome to Lattice</Typography>
+                  <Typography variant="subtitle1">Welcome to Lattice</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="Isomorphic" border="bottom">
-                  <Typography variant="subtitle2">Server Side Rendering</Typography>
+                  <Typography variant="subtitle1">Server Side Rendering</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="Material UI" border="bottom">
-                  <Typography variant="subtitle2">With Material UI</Typography>
+                  <Typography variant="subtitle1">With Material UI</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="D3" border="bottom">
-                  <Typography variant="subtitle2">Recharts + Sunburst</Typography>
+                  <Typography variant="subtitle1">Recharts + Sunburst</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="React Virtualized" border="bottom">
-                  <Typography variant="subtitle2">Tree Component</Typography>
+                  <Typography variant="subtitle1">Tree Component</Typography>
                 </Widget>
               </Grid>
             </Grid>

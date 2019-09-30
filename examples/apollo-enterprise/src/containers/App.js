@@ -12,7 +12,8 @@ import 'typeface-roboto';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Apollo
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
 
 // @latticejs
 import { Loader } from '@latticejs/widgets';
@@ -34,6 +35,9 @@ class App extends Component {
     return createMuiTheme({
       palette: {
         type: nightMode ? 'dark' : 'light'
+      },
+      typography: {
+        useNextVariants: true
       }
     });
   }

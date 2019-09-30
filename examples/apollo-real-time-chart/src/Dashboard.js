@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Subscription, graphql, compose } from 'react-apollo';
+import { Subscription, graphql } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
 
 // Material-UI
 import Grid from '@material-ui/core/Grid';
