@@ -37,7 +37,7 @@ class App extends Component {
         type: nightMode ? 'dark' : 'light'
       },
       typography: {
-        useNextVariants: true,
+        useNextVariants: true
       }
     });
   }

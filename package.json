@@ -18,11 +18,11 @@
     "postpublish": "yarn run storybook:public",
     "posttest": "yarn lint"
   },
-  // "husky": {
-  //   "hooks": {
-  //     "pre-commit": "yarn test"
-  //   }
-  // },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  },
   "devDependencies": {
     "@geut/chan": "^2.0.0",
     "@storybook/addon-actions": "^4.0.2",
@@ -39,6 +39,9 @@
     "lerna": "^3.1.2",
     "prettier": "^1.14.3",
     "storybook-readme": "^4.0.2"
+  },
+  "resolutions": { 
+    "babel-core": "^7.0.0-bridge"
   },
   "workspaces": {
     "packages": [

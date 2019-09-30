@@ -21,7 +21,7 @@ export default class Main extends Component {
         type: nightMode ? 'dark' : 'light'
       },
       typography: {
-        useNextVariants: true,
+        useNextVariants: true
       }
     });
   }
