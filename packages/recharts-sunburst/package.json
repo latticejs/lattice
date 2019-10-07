@@ -36,7 +36,7 @@
     "@latticejs/lattice-scripts": "^1.0.1-beta.2",
     "@latticejs/storybook-readme": "^1.0.1-beta.1",
     "@storybook/addon-storyshots": "^5.2.2",
-    "@storybook/addon-storysource": "^4.1.0",
+    "@storybook/addon-storysource": "^5.2.2",
     "@storybook/react": "^4.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.0",
