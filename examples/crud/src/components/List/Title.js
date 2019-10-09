@@ -9,7 +9,7 @@ const styles = theme => ({
 });
 
 export default withStyles(styles)(({ main, secondary, classes }) => (
-  <Typography variant="title" color="inherit" gutterBottom>
+  <Typography variant="h6" color="inherit" gutterBottom>
     {main}
     <Typography variant="body1" color="inherit" classes={classes}>
       {secondary}
