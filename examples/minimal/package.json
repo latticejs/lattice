@@ -11,7 +11,10 @@
     "test": "jest --no-cache --passWithNoTests",
     "start": "webpack-dev-server --mode=development --open",
     "prodQA": "webpack --mode=production",
-    "prod": " npm run test && webpack --mode=production"
+    "prod": " npm run test && webpack --mode=production",
+    "lint": "eslint --cache --ignore-path .npmignore .",
+    "clean": "rimraf dist/**",
+    "watch": "webpack --mode development --watch & nodemon dist/main"
   },
   "dependencies": {
     "@latticejs/mui-recharts": "^1.0.1-beta.2",
