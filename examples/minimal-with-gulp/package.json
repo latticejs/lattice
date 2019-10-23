@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo 'test'",
+    "test": "gulp jest",
     "start": "gulp startServer:dev --open",
     "build:dev": "gulp build:dev",
     "build:prod": "gulp build:prod",
@@ -43,6 +43,8 @@
     "css-loader": "^1.0.0",
     "del": "^5.1.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "file-loader": "^4.2.0",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",

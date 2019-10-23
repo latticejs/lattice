@@ -7,3 +7,5 @@ gulp.task('lint', () =>
     .pipe(eslint())
     .pipe(eslint.format())
 );
+
+export const lint = gulp.task('lint');

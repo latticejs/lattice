@@ -101,6 +101,7 @@ module.exports.prod = {
   devServer: {
     contentBase: './src'
   },
+  performance: { hints: false },
   optimization: {
     concatenateModules: true,
     minimizer: [
