@@ -3,13 +3,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const visualizer = require('webpack-visualizer-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './src/index.html',
-  filename: './index.html'
+  template: 'src/index.html'
 });
 
 module.exports = {
+  entry: './src/index.js',
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -72,6 +73,7 @@ module.exports = {
     new CompressionPlugin({
       test: /\.js/
     }),
-    htmlPlugin
+    htmlPlugin,
+    new visualizer()
   ]
 };
