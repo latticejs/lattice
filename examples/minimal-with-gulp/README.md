@@ -1,6 +1,6 @@
 # Minimal With Gulp example
 
-![screenshot](screen.png?raw=true "Minimal Demo")
+![screenshot](screen.png?raw=true "Minimal With Gulp Demo")
 
 ### With clap
 
