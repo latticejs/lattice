@@ -5,7 +5,13 @@
   "main": "index.js",
   "private": true,
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/docs/"
+    ]
   },
   "scripts": {
     "test": "jest --no-cache",
