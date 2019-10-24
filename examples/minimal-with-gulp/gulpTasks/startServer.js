@@ -1,7 +1,6 @@
 import express from 'express';
 import gulp from 'gulp';
 import helmet from 'helmet';
-// import https from 'https';
 import path from 'path';
 import rootDir from 'app-root-dir';
 import webpack from 'webpack';
@@ -14,7 +13,6 @@ gulp.task('startServer:dev', () => {
   const port = 3000;
   const baseDir = 'dist';
   const compiler = webpack(webpackConfig.dev);
-
   app.use(
     webpackMiddleware(compiler, {
       noInfo: true,
@@ -24,11 +22,9 @@ gulp.task('startServer:dev', () => {
     })
   );
   app.use(webpackHotMiddleware(compiler));
-
   app.get('*', (req, res) => {
     res.sendFile(path.join(rootDir.get(), baseDir, '/src/index.html'));
   });
-
   app.listen(port, () => {
     // eslint-disable-next-line no-console
     console.log(`Listening on ${port}...`);
@@ -39,7 +35,6 @@ gulp.task('startServer:prod', () => {
   const app = express();
   const port = 8080;
   const baseDir = 'build';
-
   app.use(helmet());
   app.get('*.js', (req, res) => {
     if (req.url.indexOf('bundle') > -1) {
@@ -49,7 +44,6 @@ gulp.task('startServer:prod', () => {
       res.sendFile(path.join(rootDir.get(), baseDir, '/bundle.js.gz'));
     }
   });
-
   app.get('*.css', (req, res) => {
     res.set('Content-Encoding', 'gzip');
     res.type('text/css; charset=UTF-8');
@@ -58,15 +52,12 @@ gulp.task('startServer:prod', () => {
     res.set('Vary', 'Accept-Encoding');
     res.sendFile(path.join(rootDir.get(), baseDir, '/bundle.css.gz'));
   });
-
   app.get('*', (req, res) => {
     res.sendFile(path.join(rootDir.get(), baseDir, '/src/index.html'));
   });
-
   app.listen(port, () => {
     // eslint-disable-next-line no-console
     console.log(`Listening on ${port}...`);
   });
 });
-
 gulp.task('startServer', () => gulp.series('startServer:prod', 'startServer:dev'));

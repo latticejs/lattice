@@ -5,7 +5,6 @@ import jest from 'gulp-jest';
 gulp.task('jest', () => {
   process.env.NODE_ENV = JSON.stringify('test');
   process.env.REACT_SPINKIT_NO_STYLES = JSON.stringify(true);
-
   return gulp.src('./').pipe(
     jest({
       automock: false,
@@ -38,7 +37,6 @@ gulp.task('jest:cc', () => {
 gulp.task('jest:ccs', () => {
   process.env.NODE_ENV = 'test';
   process.env.REACT_SPINKIT_NO_STYLES = JSON.stringify(true);
-
   return gulp.src(argv.folder).pipe(
     jest({
       testPathIgnorePatterns: [
@@ -56,7 +54,6 @@ gulp.task('jest:ccs', () => {
 gulp.task('jest:threshold', () => {
   process.env.NODE_ENV = JSON.stringify('test');
   process.env.REACT_SPINKIT_NO_STYLES = JSON.stringify(true);
-
   return gulp.src('./').pipe(
     jest({
       automock: false,
