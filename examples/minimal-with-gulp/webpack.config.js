@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import Visualizer from 'webpack-visualizer-plugin';
+
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -16,40 +17,40 @@ module.exports.dev = {
   mode: 'development',
   devtool: 'eval-source-map',
   entry: './src/index.js',
-  output: {
+    output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './src'
+        contentBase: './src'
   },
-  optimization: {
-    minimizer: [
+    optimization: {
+        minimizer: [
       new UglifyJsPlugin({
-        cache: true,
+                cache: true,
         parallel: true,
-        sourceMap: false,
+                sourceMap: false,
         uglifyOptions: {
           warnings: false,
-          comparisons: false,
-          dead_code: true,
+                    comparisons: false,
+                    dead_code: true,
           inline: 1,
-          unsafe_comps: true,
-          toplevel: true,
-          drop_debugger: true,
-          conditionals: true,
+                    unsafe_comps: true,
+                    toplevel: true,
+                    drop_debugger: true,
+                    conditionals: true,
           evaluate: true,
           drop_console: true,
-          sequences: true,
-          booleans: true,
-          output: {
+                    sequences: true,
+                    booleans: true,
+                    output: {
             ecma: 6,
             comments: false,
-            ascii_only: true
+                        ascii_only: true
           }
         }
       }),
-      new OptimizeCSSAssetsPlugin({})
+            new OptimizeCSSAssetsPlugin({})
     ]
   },
   module: {
@@ -76,13 +77,13 @@ module.exports.dev = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css'
+            filename: '[name].css',
+            chunkFilename: '[id].css'
     }),
-    new CompressionPlugin({
+        new CompressionPlugin({
       test: /\.js/
     }),
     htmlPlugin,
@@ -96,40 +97,40 @@ module.exports.prod = {
   output: {
     path: path.join(__dirname, '/build'),
     filename: 'bundle.js',
-    chunkFilename: '[name].js'
+        chunkFilename: '[name].js'
   },
   devServer: {
-    contentBase: './src'
+        contentBase: './src'
   },
-  performance: { hints: false },
+    performance: { hints: false },
   optimization: {
     concatenateModules: true,
-    minimizer: [
+        minimizer: [
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
         sourceMap: false,
-        uglifyOptions: {
-          warnings: false,
-          comparisons: false,
-          dead_code: true,
+                uglifyOptions: {
+                    warnings: false,
+                    comparisons: false,
+                    dead_code: true,
           inline: 1,
           unsafe_comps: true,
           toplevel: true,
-          drop_debugger: true,
-          conditionals: true,
+                    drop_debugger: true,
+                    conditionals: true,
           evaluate: true,
-          drop_console: true,
-          sequences: true,
-          booleans: true,
-          output: {
-            ecma: 6,
+                    drop_console: true,
+                    sequences: true,
+                    booleans: true,
+                    output: {
+                        ecma: 6,
             comments: false,
             ascii_only: true
           }
         }
       }),
-      new OptimizeCSSAssetsPlugin({})
+            new OptimizeCSSAssetsPlugin({})
     ]
   },
   module: {
@@ -141,41 +142,41 @@ module.exports.prod = {
           loader: 'babel-loader'
         }
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader']
       },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader']
       }
     ]
   },
-  plugins: [
+    plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: '[name].css',
-      chunkFilename: '[id].css'
+            chunkFilename: '[id].css'
     }),
-    new CompressionPlugin({
+        new CompressionPlugin({
       test: /\.js/
     }),
     htmlPlugin,
-    new webpack.LoaderOptionsPlugin({
+        new webpack.LoaderOptionsPlugin({
       debug: true
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new CompressionPlugin({
-      asset: '[path].gz[query]',
+            asset: '[path].gz[query]',
       algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$/,
+            test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
-      minRatio: 0.8
+            minRatio: 0.8
     }),
     new Visualizer()
   ]

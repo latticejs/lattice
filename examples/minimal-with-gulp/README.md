@@ -24,20 +24,20 @@
 
 1. To start the dev server, run
     ```sh
-    gulp startServer:dev
+    gulp start:dev
     ```
 
     Load the app in your browser: [http://localhost:3000](http://localhost:3000/).
 
 2. To start the Prod server, run
     ```sh
-    gulp startServer:prod
+    gulp start:prod
     ```
     Load the app in your browser: [http://localhost:8080](http://localhost:8080/).
 
 3. To start both the servers, run
     ```sh
-    gulp startServer
+    gulp start
     ```
     Load the app in your browser: For Prod Server [http://localhost:8080](http://localhost:8080/).
 
