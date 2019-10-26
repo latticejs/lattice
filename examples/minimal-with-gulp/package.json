@@ -26,8 +26,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "recharts": "^1.7.1",
-    "typeface-roboto": "^0.0.54",
-    "webpack-merge": "^4.2.2"
+    "typeface-roboto": "^0.0.54"
   },
   "keywords": [],
   "author": "",
