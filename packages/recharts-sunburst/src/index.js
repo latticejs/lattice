@@ -15,7 +15,7 @@ import {
 } from 'recharts/lib/util/ReactUtils';
 import Tooltip from 'recharts/lib/component/Tooltip';
 import { getValueByDataKey } from 'recharts/lib/util/ChartUtils';
-import { shallowEqual } from 'recharts/lib/util/shallowEqual';
+import { shallowEqual } from 'recharts/lib/util/ShallowEqual';
 
 import Animate from 'react-smooth'; // transitive dep
 
