@@ -23,7 +23,8 @@ import MoreVerticalIcon from '@material-ui/icons/MoreVert';
 import { Redirect, withRouter } from 'react-router-dom';
 
 // Apollo
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
 
 // @latticejs
 import { SideMenu } from '@latticejs/widgets';
@@ -162,7 +163,7 @@ class Main extends Component {
                 <MenuIcon />
               </IconButton>
             </Hidden>
-            <Typography variant="title" color="inherit">
+            <Typography variant="h6" color="inherit">
               {activeRoute && (activeRoute.breadcrumb || activeRoute.title)}
             </Typography>
             <div className={classes.flexed} />

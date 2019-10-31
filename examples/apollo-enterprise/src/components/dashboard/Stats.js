@@ -37,7 +37,7 @@ const Stats = ({ stat: { label, value, unit }, ...props }) => {
       border="bottom"
       classes={{ border: classes[label.toLowerCase()] }}
     >
-      <Typography variant="display2" align="center">
+      <Typography variant="h3" align="center">
         {reduceValue(value)}
       </Typography>
       <Typography variant="caption" align="center">

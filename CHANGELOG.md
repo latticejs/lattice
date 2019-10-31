@@ -10,17 +10,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [examples] normalize start scripts
 
 ### Fixed
-- [lattice-scripts] remove console.log call from lattice-script build step
-- [examples] dag-in-action height grows indefinitely on FF
+- [lattice-scripts] remove console.log call from lattice-script build step.
+- [examples] dag-in-action height grows indefinitely on FF.
 
 ### Removed
 - react-scripts package.
 
+## Update Phase - 2019-10-18
+- Updated minimal example with jest and lint configurations.
+
 ## [1.0.1-beta.2] - 2019-09-11
 - Package Dependency is updated.(#310)
-- Changed Eslint version.
-- Updated eslint-plugin-react-app
-- Resolved Conflict
+- Fixed Green Keeper issue.
 
 ## [1.0.1-beta.1] (Resumption Phase) - 2019-09-04
 - Resuming and completing gauge component.

@@ -26,7 +26,7 @@ class AverageRevenue extends Component {
             <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
-        <Typography variant="display1" align="center">
+        <Typography variant="h4" align="center">
           +{25.9}%
         </Typography>
         <Typography variant="caption" align="center">

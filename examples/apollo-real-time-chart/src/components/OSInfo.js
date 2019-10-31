@@ -17,10 +17,10 @@ function OSInfo({ data, classes }) {
     <Widget title="Platform" classes={classes}>
       <Grid container justify="center" alignItems="center" direction="column" spacing={16}>
         <Grid item>
-          <Typography variant="display2">{data.osName}</Typography>
+          <Typography variant="h3">{data.osName}</Typography>
         </Grid>
         <Grid item>
-          <Typography variant="display1">{data.osDistro}</Typography>
+          <Typography variant="h4">{data.osDistro}</Typography>
         </Grid>
       </Grid>
     </Widget>

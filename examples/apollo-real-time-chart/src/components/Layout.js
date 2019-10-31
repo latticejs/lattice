@@ -42,7 +42,7 @@ class Layout extends Component {
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
-            <Typography variant="title" color="inherit" className={classes.flex}>
+            <Typography variant="h6" color="inherit" className={classes.flex}>
               Dashboard
             </Typography>
             <Tooltip title="Toggle Night Mode" enterDelay={300}>

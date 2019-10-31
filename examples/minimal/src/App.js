@@ -12,8 +12,6 @@ import { withStyles } from '@material-ui/core/styles';
 import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
-import 'typeface-roboto';
-
 // Lattice
 import { Widget } from '@latticejs/widgets';
 import { PieChart, Pie, Tooltip } from '@latticejs/mui-recharts';
@@ -86,7 +84,7 @@ class App extends Component {
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
-            <Typography variant="title" color="inherit" className={classes.flex}>
+            <Typography variant="h6" color="inherit" className={classes.flex}>
               Minimal Example
             </Typography>
             <MuiTooltip title="Toggle Night Mode" enterDelay={300}>
@@ -122,7 +120,7 @@ class App extends Component {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="subheading" align="center">
+            <Typography variant="subtitle1" align="center">
               Want to learn more? Check the&nbsp;
               <a
                 className={classes.link}

@@ -52,7 +52,7 @@ class App extends Component {
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
-            <Typography variant="title" color="inherit" className={classes.flex}>
+            <Typography variant="h6" color="inherit" className={classes.flex}>
               Basic Example
             </Typography>
             <Tooltip title="Toggle Night Mode" enterDelay={300}>
@@ -67,33 +67,33 @@ class App extends Component {
             <Grid container justify="space-around" spacing={Number('16')}>
               <Grid item>
                 <Widget className={classes.widget} title="Introduction" border="bottom">
-                  <Typography variant="subheading">Welcome to Lattice</Typography>
+                  <Typography variant="subtitle1">Welcome to Lattice</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="Material" border="bottom">
-                  <Typography variant="subheading">Material UI integration</Typography>
+                  <Typography variant="subtitle1">Material UI integration</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="Recharts" border="bottom">
-                  <Typography variant="subheading">with Material style</Typography>
+                  <Typography variant="subtitle1">with Material style</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="D3" border="bottom">
-                  <Typography variant="subheading">React + D3 integration</Typography>
+                  <Typography variant="subtitle1">React + D3 integration</Typography>
                 </Widget>
               </Grid>
               <Grid item>
                 <Widget className={classes.widget} title="React Virtualized" border="bottom">
-                  <Typography variant="subheading">Infinite list support</Typography>
+                  <Typography variant="subtitle1">Infinite list support</Typography>
                 </Widget>
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="subheading" align="center">
+            <Typography variant="subtitle1" align="center">
               Want to learn more? Check the&nbsp;
               <a
                 className={classes.link}

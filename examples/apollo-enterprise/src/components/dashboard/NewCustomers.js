@@ -31,7 +31,7 @@ class NewCustomers extends Component {
       <Widget title="New Customers" featured {...props}>
         <Grid container alignItems="center" justify="space-around" className={className}>
           <Grid item className={classes.textItem}>
-            <Typography variant="display1" color="inherit">
+            <Typography variant="h4" color="inherit">
               {1700}
             </Typography>
             <Typography variant="caption" color="inherit">
@@ -39,7 +39,7 @@ class NewCustomers extends Component {
             </Typography>
           </Grid>
           <Grid item className={classes.textItem}>
-            <Typography variant="display1" color="inherit">
+            <Typography variant="h4" color="inherit">
               +{130}%
             </Typography>
             <Typography variant="caption" color="inherit">
