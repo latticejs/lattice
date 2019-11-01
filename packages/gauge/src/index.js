@@ -93,4 +93,4 @@ Gauge.propTypes = {
   theme: PropTypes.object.isRequired
 };
 
-export default withTheme()(Gauge);
+export default withTheme(Gauge);
