@@ -40,7 +40,7 @@
     "prettier": "^1.18.2",
     "storybook-readme": "^4.0.5"
   },
-  "resolutions": { 
+  "resolutions": {
     "babel-core": "^7.0.0-bridge"
   },
   "workspaces": {
