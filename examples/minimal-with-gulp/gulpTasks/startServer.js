@@ -61,6 +61,5 @@ gulp.task('start:prod', () => {
     console.log(`Listening on ${port}...`);
   });
 });
-gulp.task('start', () => gulp.series('start:prod', 'start:dev'));
-gulp.task('start:dev', gulp.series(buildDev, 'start:dev'));
+gulp.task('start', gulp.series(buildDev, 'start:dev'));
 gulp.task('start:prod', gulp.series(buildProd, 'start:prod'));
