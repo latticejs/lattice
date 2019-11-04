@@ -4,7 +4,7 @@ import React from 'react';
 const styles = theme => ({
   root: {
     display: 'inline',
-    marginLeft: theme.spacing.unit * 2
+    marginLeft: theme.spacing(2)
   }
 });
 

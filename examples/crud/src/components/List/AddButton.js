@@ -12,10 +12,10 @@ const AddButton = ({ classes, children, ...props }) => (
 const styles = withStyles(theme => ({
   button: {
     ...theme.palette.primary,
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   },
   leftIcon: {
-    marginRight: theme.spacing.unit
+    marginRight: theme.spacing(1)
   }
 }));
 

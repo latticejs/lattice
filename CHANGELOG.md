@@ -22,11 +22,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Update Phase - 2019-10-18
 - Updated minimal example with jest and lint configurations.
+- Upgraded MUI version in Minimal Example.
+- Upgraded MUI version in ARTC Example.
 
 ## [1.0.1-beta.2] - 2019-09-11
 - Package Dependency is updated.(#310)
 - Fixed Green Keeper issue.
 - Integrated Gulp in Minimal Example.
+- Updated MUI Version in Basic and CRUD Example.
 
 ## [1.0.1-beta.1] (Resumption Phase) - 2019-09-04
 - Resuming and completing gauge component.
