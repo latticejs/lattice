@@ -15,7 +15,7 @@ const styles = theme => ({
 function OSInfo({ data, classes }) {
   return (
     <Widget title="Platform" classes={classes}>
-      <Grid container justify="center" alignItems="center" direction="column" spacing={16}>
+      <Grid container justify="center" alignItems="center" direction="column" spacing={0}>
         <Grid item>
           <Typography variant="h3">{data.osName}</Typography>
         </Grid>

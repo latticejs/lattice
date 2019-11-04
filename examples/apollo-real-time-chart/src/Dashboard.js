@@ -19,9 +19,9 @@ import DisksUsage from './components/DisksUsage';
 // Custom Style
 const styles = theme => ({
   widget: {
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    padding: theme.spacing.unit * 4
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    padding: theme.spacing(4)
   },
   link: {
     color: theme.palette.text.secondary
@@ -42,9 +42,9 @@ class Dashboard extends Component {
     const { classes, platformInfo } = this.props;
 
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={0}>
         <Grid item xs={12}>
-          <Grid container justify="center" spacing={16}>
+          <Grid container justify="center" spacing={0}>
             <Grid item xs={8} className={classes.height400}>
               <Subscription subscription={cpuUpdated}>
                 {({ data = {}, loading }) => (
@@ -60,7 +60,7 @@ class Dashboard extends Component {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Grid container justify="center" spacing={16}>
+          <Grid container justify="center" spacing={0}>
             <Grid item xs={3} className={classes.height300}>
               <OSInfo data={platformInfo} />
             </Grid>
