@@ -41,7 +41,7 @@ const styles = theme => ({
   container: {
     flex: '1',
     display: 'flex',
-    padding: theme.spacing.unit,
+    padding: theme.spacing(1),
     flexDirection: 'row'
   }
 });

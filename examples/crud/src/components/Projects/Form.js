@@ -127,11 +127,11 @@ const styles = theme => ({
     flex: 1
   },
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
     flex: 0
   },
   textField: {
-    marginBottom: theme.spacing.unit * 3
+    marginBottom: theme.spacing(3)
   }
 });
 
