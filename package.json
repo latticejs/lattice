@@ -37,7 +37,7 @@
     "husky": "^3.0.8",
     "eslint-plugin-react-hooks": "^2.0.1",
     "lerna": "^3.16.4",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.0",
     "storybook-readme": "^4.0.5"
   },
   "resolutions": {
