@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 
 // Material-UI
-import { Collapse, List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { Collapse, List, ListItem, ListItemText, ListItemIcon, withStyles } from '@material-ui/core';
 
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
@@ -18,7 +17,7 @@ const styles = theme => ({
   },
   topSpacer: {
     ...theme.mixins.toolbar,
-    marginBottom: theme.spacing.unit
+    marginBottom: theme.spacing(0)
   },
   listItem: {
     '&:hover': {

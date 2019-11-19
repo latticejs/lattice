@@ -22,7 +22,7 @@ import { withReadme } from '@latticejs/storybook-readme';
 // Decorators
 
 const InGrid = story => (
-  <Grid container spacing={24}>
+  <Grid container spacing={3}>
     <Drawer open variant="persistent">
       {story()}
     </Drawer>

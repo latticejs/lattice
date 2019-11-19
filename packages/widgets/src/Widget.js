@@ -2,18 +2,14 @@ import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-// Material-UI
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import { Paper, Typography, withStyles, Grid } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     color: theme.palette.text.secondary,
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
   },
   container: {
     height: '100%'
