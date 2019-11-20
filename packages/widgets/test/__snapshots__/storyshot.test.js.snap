@@ -2,16 +2,16 @@
 
 exports[`Storyshots widgets/Loader circular 1`] = `
 <div
-  className="MuiGrid-container-1"
+  className="MuiGrid-root MuiGrid-container"
 >
   <div
-    className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
   >
     <div
-      className="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 Loader-root-98"
+      className="MuiGrid-root Loader-root-104 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
     >
       <div
-        className="MuiCircularProgress-root-101 MuiCircularProgress-colorPrimary-104 MuiCircularProgress-indeterminate-103"
+        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
         role="progressbar"
         style={
           Object {
@@ -21,11 +21,11 @@ exports[`Storyshots widgets/Loader circular 1`] = `
         }
       >
         <svg
-          className="MuiCircularProgress-svg-106"
+          className="MuiCircularProgress-svg"
           viewBox="22 22 44 44"
         >
           <circle
-            className="MuiCircularProgress-circle-107 MuiCircularProgress-circleIndeterminate-109"
+            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
             cx={44}
             cy={44}
             fill="none"
@@ -42,16 +42,16 @@ exports[`Storyshots widgets/Loader circular 1`] = `
 
 exports[`Storyshots widgets/Loader custom 1`] = `
 <div
-  className="MuiGrid-container-229"
+  className="MuiGrid-root MuiGrid-container"
 >
   <div
-    className="MuiGrid-item-230 MuiGrid-grid-xs-12-269"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
   >
     <div
-      className="MuiGrid-container-229 MuiGrid-align-items-xs-center-237 MuiGrid-justify-xs-center-246 Loader-root-326"
+      className="MuiGrid-root Loader-root-349 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
     >
       <div
-        className="MuiCircularProgress-root-329 MuiCircularProgress-colorPrimary-332 MuiCircularProgress-indeterminate-331"
+        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
         role="progressbar"
         style={
           Object {
@@ -62,11 +62,11 @@ exports[`Storyshots widgets/Loader custom 1`] = `
         }
       >
         <svg
-          className="MuiCircularProgress-svg-334"
+          className="MuiCircularProgress-svg"
           viewBox="22 22 44 44"
         >
           <circle
-            className="MuiCircularProgress-circle-335 MuiCircularProgress-circleIndeterminate-337"
+            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
             cx={44}
             cy={44}
             fill="none"
@@ -83,24 +83,24 @@ exports[`Storyshots widgets/Loader custom 1`] = `
 
 exports[`Storyshots widgets/Loader linear 1`] = `
 <div
-  className="MuiGrid-container-111"
+  className="MuiGrid-root MuiGrid-container"
 >
   <div
-    className="MuiGrid-item-112 MuiGrid-grid-xs-12-151"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
   >
     <div
-      className="MuiGrid-container-111 MuiGrid-align-items-xs-center-119 MuiGrid-justify-xs-center-128 Loader-root-208"
+      className="MuiGrid-root Loader-root-222 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
     >
       <div
-        className="MuiLinearProgress-root-211 MuiLinearProgress-colorPrimary-212 MuiLinearProgress-indeterminate-215 Loader-linear-210"
+        className="MuiLinearProgress-root MuiLinearProgress-colorPrimary Loader-linear-224 MuiLinearProgress-indeterminate"
         role="progressbar"
       >
         <div
-          className="MuiLinearProgress-bar-221 MuiLinearProgress-barColorPrimary-222 MuiLinearProgress-bar1Indeterminate-224"
+          className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate"
           style={Object {}}
         />
         <div
-          className="MuiLinearProgress-bar-221 MuiLinearProgress-barColorPrimary-222 MuiLinearProgress-bar2Indeterminate-227"
+          className="MuiLinearProgress-bar MuiLinearProgress-bar2Indeterminate MuiLinearProgress-barColorPrimary"
           style={Object {}}
         />
       </div>
@@ -129,17 +129,21 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-339 MuiGrid-spacing-xs-24-363"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiDrawer-root-436 MuiDrawer-docked-437"
+        className="MuiDrawer-root MuiDrawer-docked"
       >
         <div
-          className="MuiPaper-root-448 MuiPaper-elevation0-450 MuiDrawer-paper-438 MuiDrawer-paperAnchorLeft-439 MuiDrawer-paperAnchorDockedLeft-443"
-          style={Object {}}
+          className="MuiPaper-root MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft"
+          style={
+            Object {
+              "visibility": undefined,
+            }
+          }
         >
           <nav
-            className="MuiList-root-485 MuiList-padding-486 SideMenu-root-476 Component-flexed-475"
+            className="MuiList-root SideMenu-root-507 Component-flexed-506 MuiList-padding"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             style={
@@ -149,13 +153,14 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
             }
           >
             <div
-              className="SideMenu-topSpacer-477"
+              className="SideMenu-topSpacer-508"
             />
             <div
-              className="MuiButtonBase-root-501 MuiListItem-root-489 MuiListItem-default-492 MuiListItem-gutters-497 SideMenu-listItemGutters-479 MuiListItem-button-498 SideMenu-listItem-478"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-listItem-509 MuiListItem-gutters SideMenu-listItemGutters-510 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -166,14 +171,14 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-504"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-505"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -184,33 +189,27 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                   }
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
                   <path
                     d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
                   />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-514 SideMenu-listItemText-481"
+                className="MuiListItemText-root SideMenu-listItemText-512"
               >
                 <span
-                  className="MuiTypography-root-520 MuiTypography-body1-529 MuiListItemText-primary-517 SideMenu-listItemPrimary-480"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-511 MuiTypography-body1"
                 >
                   Dashboard
                 </span>
               </div>
-              <span
-                className="MuiTouchRipple-root-560"
-              />
             </div>
             <div
-              className="MuiButtonBase-root-501 MuiListItem-root-489 MuiListItem-default-492 MuiListItem-gutters-497 SideMenu-listItemGutters-479 MuiListItem-button-498 SideMenu-listItem-478"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-listItem-509 MuiListItem-gutters SideMenu-listItemGutters-510 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -221,14 +220,14 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-504"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-505"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -240,32 +239,26 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
-                  <path
                     d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
                   />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-514 SideMenu-listItemText-481"
+                className="MuiListItemText-root SideMenu-listItemText-512"
               >
                 <span
-                  className="MuiTypography-root-520 MuiTypography-body1-529 MuiListItemText-primary-517 SideMenu-listItemPrimary-480"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-511 MuiTypography-body1"
                 >
                   Employees
                 </span>
               </div>
-              <span
-                className="MuiTouchRipple-root-560"
-              />
             </div>
             <div
-              className="MuiButtonBase-root-501 MuiListItem-root-489 MuiListItem-default-492 MuiListItem-gutters-497 SideMenu-listItemGutters-479 MuiListItem-button-498 SideMenu-listItem-478"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-listItem-509 MuiListItem-gutters SideMenu-listItemGutters-510 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -276,14 +269,14 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-504"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-505"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -297,24 +290,20 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                   <path
                     d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
                   />
-                  <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-514 SideMenu-listItemText-481"
+                className="MuiListItemText-root SideMenu-listItemText-512"
               >
                 <span
-                  className="MuiTypography-root-520 MuiTypography-body1-529 MuiListItemText-primary-517 SideMenu-listItemPrimary-480"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-511 MuiTypography-body1"
                 >
                   Theme
                 </span>
               </div>
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-505"
+                className="MuiSvgIcon-root"
                 focusable="false"
                 role="presentation"
                 style={
@@ -328,14 +317,7 @@ exports[`Storyshots widgets/SideMenu basic 1`] = `
                 <path
                   d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
                 />
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
               </svg>
-              <span
-                className="MuiTouchRipple-root-560"
-              />
             </div>
           </nav>
         </div>
@@ -365,17 +347,21 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-795 MuiGrid-spacing-xs-24-819"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiDrawer-root-892 MuiDrawer-docked-893"
+        className="MuiDrawer-root MuiDrawer-docked"
       >
         <div
-          className="MuiPaper-root-904 MuiPaper-elevation0-906 MuiDrawer-paper-894 MuiDrawer-paperAnchorLeft-895 MuiDrawer-paperAnchorDockedLeft-899"
-          style={Object {}}
+          className="MuiPaper-root MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft"
+          style={
+            Object {
+              "visibility": undefined,
+            }
+          }
         >
           <nav
-            className="MuiList-root-941 MuiList-padding-942 SideMenu-root-932 Component-flexed-931"
+            className="MuiList-root SideMenu-root-933 Component-flexed-932 MuiList-padding"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             style={
@@ -385,13 +371,14 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
             }
           >
             <div
-              className="SideMenu-topSpacer-933"
+              className="SideMenu-topSpacer-934"
             />
             <div
-              className="MuiButtonBase-root-957 MuiListItem-root-945 MuiListItem-default-948 MuiListItem-gutters-953 SideMenu-listItemGutters-935 MuiListItem-button-954 SideMenu-activeItem-940"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-activeItem-941 MuiListItem-gutters SideMenu-listItemGutters-936 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -402,14 +389,14 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-960"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-961"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -420,33 +407,27 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                   }
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
                   <path
                     d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
                   />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-970 SideMenu-listItemText-937 SideMenu-listItemHidden-938"
+                className="MuiListItemText-root SideMenu-listItemText-938 SideMenu-listItemHidden-939"
               >
                 <span
-                  className="MuiTypography-root-976 MuiTypography-body1-985 MuiListItemText-primary-973 SideMenu-listItemPrimary-936"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-937 MuiTypography-body1"
                 >
                   Dashboard
                 </span>
               </div>
-              <span
-                className="MuiTouchRipple-root-1016"
-              />
             </div>
             <div
-              className="MuiButtonBase-root-957 MuiListItem-root-945 MuiListItem-default-948 MuiListItem-gutters-953 SideMenu-listItemGutters-935 MuiListItem-button-954 SideMenu-listItem-934"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-listItem-935 MuiListItem-gutters SideMenu-listItemGutters-936 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -457,14 +438,14 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-960"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-961"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -476,32 +457,26 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
-                  <path
                     d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
                   />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-970 SideMenu-listItemText-937 SideMenu-listItemHidden-938"
+                className="MuiListItemText-root SideMenu-listItemText-938 SideMenu-listItemHidden-939"
               >
                 <span
-                  className="MuiTypography-root-976 MuiTypography-body1-985 MuiListItemText-primary-973 SideMenu-listItemPrimary-936"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-937 MuiTypography-body1"
                 >
                   Employees
                 </span>
               </div>
-              <span
-                className="MuiTouchRipple-root-1016"
-              />
             </div>
             <div
-              className="MuiButtonBase-root-957 MuiListItem-root-945 MuiListItem-default-948 MuiListItem-gutters-953 SideMenu-listItemGutters-935 MuiListItem-button-954 SideMenu-listItem-934"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-listItem-935 MuiListItem-gutters SideMenu-listItemGutters-936 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -512,14 +487,14 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-960"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-961"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -533,24 +508,17 @@ exports[`Storyshots widgets/SideMenu mini selected 1`] = `
                   <path
                     d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
                   />
-                  <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-970 SideMenu-listItemText-937 SideMenu-listItemHidden-938"
+                className="MuiListItemText-root SideMenu-listItemText-938 SideMenu-listItemHidden-939"
               >
                 <span
-                  className="MuiTypography-root-976 MuiTypography-body1-985 MuiListItemText-primary-973 SideMenu-listItemPrimary-936"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-937 MuiTypography-body1"
                 >
                   Theme
                 </span>
               </div>
-              <span
-                className="MuiTouchRipple-root-1016"
-              />
             </div>
           </nav>
         </div>
@@ -580,17 +548,21 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-567 MuiGrid-spacing-xs-24-591"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiDrawer-root-664 MuiDrawer-docked-665"
+        className="MuiDrawer-root MuiDrawer-docked"
       >
         <div
-          className="MuiPaper-root-676 MuiPaper-elevation0-678 MuiDrawer-paper-666 MuiDrawer-paperAnchorLeft-667 MuiDrawer-paperAnchorDockedLeft-671"
-          style={Object {}}
+          className="MuiPaper-root MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft"
+          style={
+            Object {
+              "visibility": undefined,
+            }
+          }
         >
           <nav
-            className="MuiList-root-713 MuiList-padding-714 SideMenu-root-704 Component-flexed-703"
+            className="MuiList-root SideMenu-root-720 Component-flexed-719 MuiList-padding"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             style={
@@ -600,13 +572,14 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
             }
           >
             <div
-              className="SideMenu-topSpacer-705"
+              className="SideMenu-topSpacer-721"
             />
             <div
-              className="MuiButtonBase-root-729 MuiListItem-root-717 MuiListItem-default-720 MuiListItem-gutters-725 SideMenu-listItemGutters-707 MuiListItem-button-726 SideMenu-activeItem-712"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-activeItem-728 MuiListItem-gutters SideMenu-listItemGutters-723 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -617,14 +590,14 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-732"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-733"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -635,33 +608,27 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                   }
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
                   <path
                     d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
                   />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-742 SideMenu-listItemText-709"
+                className="MuiListItemText-root SideMenu-listItemText-725"
               >
                 <span
-                  className="MuiTypography-root-748 MuiTypography-body1-757 MuiListItemText-primary-745 SideMenu-listItemPrimary-708"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-724 MuiTypography-body1"
                 >
                   Dashboard
                 </span>
               </div>
-              <span
-                className="MuiTouchRipple-root-788"
-              />
             </div>
             <div
-              className="MuiButtonBase-root-729 MuiListItem-root-717 MuiListItem-default-720 MuiListItem-gutters-725 SideMenu-listItemGutters-707 MuiListItem-button-726 SideMenu-listItem-706"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-listItem-722 MuiListItem-gutters SideMenu-listItemGutters-723 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -672,14 +639,14 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-732"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-733"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -691,32 +658,26 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
-                  <path
                     d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
                   />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-742 SideMenu-listItemText-709"
+                className="MuiListItemText-root SideMenu-listItemText-725"
               >
                 <span
-                  className="MuiTypography-root-748 MuiTypography-body1-757 MuiListItemText-primary-745 SideMenu-listItemPrimary-708"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-724 MuiTypography-body1"
                 >
                   Employees
                 </span>
               </div>
-              <span
-                className="MuiTouchRipple-root-788"
-              />
             </div>
             <div
-              className="MuiButtonBase-root-729 MuiListItem-root-717 MuiListItem-default-720 MuiListItem-gutters-725 SideMenu-listItemGutters-707 MuiListItem-button-726 SideMenu-listItem-706"
+              aria-disabled={false}
+              className="MuiButtonBase-root MuiListItem-root SideMenu-listItem-722 MuiListItem-gutters SideMenu-listItemGutters-723 MuiListItem-button"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
+              onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -727,14 +688,14 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="button"
-              tabIndex="0"
+              tabIndex={0}
             >
               <div
-                className="MuiListItemIcon-root-732"
+                className="MuiListItemIcon-root"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-733"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   style={
@@ -748,24 +709,20 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                   <path
                     d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"
                   />
-                  <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
                 </svg>
               </div>
               <div
-                className="MuiListItemText-root-742 SideMenu-listItemText-709"
+                className="MuiListItemText-root SideMenu-listItemText-725"
               >
                 <span
-                  className="MuiTypography-root-748 MuiTypography-body1-757 MuiListItemText-primary-745 SideMenu-listItemPrimary-708"
+                  className="MuiTypography-root MuiListItemText-primary SideMenu-listItemPrimary-724 MuiTypography-body1"
                 >
                   Theme
                 </span>
               </div>
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-733"
+                className="MuiSvgIcon-root"
                 focusable="false"
                 role="presentation"
                 style={
@@ -779,14 +736,7 @@ exports[`Storyshots widgets/SideMenu selected 1`] = `
                 <path
                   d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
                 />
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
               </svg>
-              <span
-                className="MuiTouchRipple-root-788"
-              />
             </div>
           </nav>
         </div>
@@ -816,28 +766,28 @@ exports[`Storyshots widgets/Widget (dark theme) basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1864 MuiGrid-spacing-xs-24-1888"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-1865 MuiGrid-grid-xs-12-1904"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiPaper-root-1968 MuiPaper-elevation2-1972 MuiPaper-rounded-1969 Widget-root-1961"
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-1947 MuiPaper-rounded"
         >
           <div
-            className="MuiGrid-container-1864 MuiGrid-direction-xs-column-1867 Widget-container-1962"
+            className="MuiGrid-root Widget-container-1948 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <div
-              className="MuiGrid-item-1865"
+              className="MuiGrid-root MuiGrid-item"
             >
               <h6
-                className="MuiTypography-root-1995 MuiTypography-h6-2012 MuiTypography-colorInherit-2024 MuiTypography-gutterBottom-2022"
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Title
               </h6>
             </div>
             <div
-              className="MuiGrid-container-1864 MuiGrid-item-1865 Widget-content-1963"
+              className="MuiGrid-root Widget-content-1949 MuiGrid-container MuiGrid-item"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -869,28 +819,28 @@ exports[`Storyshots widgets/Widget (dark theme) custom height 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-2535 MuiGrid-spacing-xs-24-2559"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-2536 MuiGrid-grid-xs-12-2575"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiPaper-root-2642 MuiPaper-elevation2-2646 MuiPaper-rounded-2643 Widget-root-2635"
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-2621 MuiPaper-rounded"
         >
           <div
-            className="MuiGrid-container-2535 MuiGrid-direction-xs-column-2538 Widget-container-2636"
+            className="MuiGrid-root Widget-container-2622 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <div
-              className="MuiGrid-item-2536"
+              className="MuiGrid-root MuiGrid-item"
             >
               <h6
-                className="MuiTypography-root-2669 MuiTypography-h6-2686 MuiTypography-colorInherit-2698 MuiTypography-gutterBottom-2696"
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Custom content height
               </h6>
             </div>
             <div
-              className="MuiGrid-container-2535 MuiGrid-item-2536 Widget-content-2637 Component-content-2632"
+              className="MuiGrid-root Widget-content-2623 Component-content-2618 MuiGrid-container MuiGrid-item"
             >
               <div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
@@ -924,28 +874,28 @@ exports[`Storyshots widgets/Widget (dark theme) featured 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-2031 MuiGrid-spacing-xs-24-2055"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-2032 MuiGrid-grid-xs-12-2071"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiPaper-root-2135 MuiPaper-elevation2-2139 MuiPaper-rounded-2136 Widget-root-2128 Widget-featured-2134"
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-2114 Widget-featured-2120 MuiPaper-rounded"
         >
           <div
-            className="MuiGrid-container-2031 MuiGrid-direction-xs-column-2034 Widget-container-2129"
+            className="MuiGrid-root Widget-container-2115 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <div
-              className="MuiGrid-item-2032"
+              className="MuiGrid-root MuiGrid-item"
             >
               <h6
-                className="MuiTypography-root-2162 MuiTypography-h6-2179 MuiTypography-colorInherit-2191 MuiTypography-gutterBottom-2189"
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Title
               </h6>
             </div>
             <div
-              className="MuiGrid-container-2031 MuiGrid-item-2032 Widget-content-2130"
+              className="MuiGrid-root Widget-content-2116 MuiGrid-container MuiGrid-item"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -977,28 +927,28 @@ exports[`Storyshots widgets/Widget (dark theme) squared 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-2368 MuiGrid-spacing-xs-24-2392"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-2369 MuiGrid-grid-xs-12-2408"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiPaper-root-2472 MuiPaper-elevation2-2476 Widget-root-2465"
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-2451"
         >
           <div
-            className="MuiGrid-container-2368 MuiGrid-direction-xs-column-2371 Widget-container-2466"
+            className="MuiGrid-root Widget-container-2452 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <div
-              className="MuiGrid-item-2369"
+              className="MuiGrid-root MuiGrid-item"
             >
               <h6
-                className="MuiTypography-root-2499 MuiTypography-h6-2516 MuiTypography-colorInherit-2528 MuiTypography-gutterBottom-2526"
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 I have no rounded borders
               </h6>
             </div>
             <div
-              className="MuiGrid-container-2368 MuiGrid-item-2369 Widget-content-2467"
+              className="MuiGrid-root Widget-content-2453 MuiGrid-container MuiGrid-item"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -1030,34 +980,34 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-2198 MuiGrid-spacing-xs-24-2222"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-2199 MuiGrid-grid-xs-12-2238"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiGrid-container-2198 MuiGrid-spacing-xs-24-2222"
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
         >
           <div
-            className="MuiGrid-item-2199 MuiGrid-grid-xs-6-2232"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              className="MuiPaper-root-2305 MuiPaper-elevation2-2309 MuiPaper-rounded-2306 Widget-root-2298 Widget-border-2301 Widget-border-top-2302"
+              className="MuiPaper-root MuiPaper-elevation2 Widget-root-2284 Widget-border-2287 Widget-border-top-2288 MuiPaper-rounded"
             >
               <div
-                className="MuiGrid-container-2198 MuiGrid-direction-xs-column-2201 Widget-container-2299"
+                className="MuiGrid-root Widget-container-2285 MuiGrid-container MuiGrid-direction-xs-column"
               >
                 <div
-                  className="MuiGrid-item-2199"
+                  className="MuiGrid-root MuiGrid-item"
                 >
                   <h6
-                    className="MuiTypography-root-2332 MuiTypography-h6-2349 MuiTypography-colorInherit-2361 MuiTypography-gutterBottom-2359"
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border top
                   </h6>
                 </div>
                 <div
-                  className="MuiGrid-container-2198 MuiGrid-item-2199 Widget-content-2300"
+                  className="MuiGrid-root Widget-content-2286 MuiGrid-container MuiGrid-item"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1065,25 +1015,25 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-2199 MuiGrid-grid-xs-6-2232"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              className="MuiPaper-root-2305 MuiPaper-elevation2-2309 MuiPaper-rounded-2306 Widget-root-2298 Widget-border-2301 Widget-border-bottom-2303"
+              className="MuiPaper-root MuiPaper-elevation2 Widget-root-2284 Widget-border-2287 Widget-border-bottom-2289 MuiPaper-rounded"
             >
               <div
-                className="MuiGrid-container-2198 MuiGrid-direction-xs-column-2201 Widget-container-2299"
+                className="MuiGrid-root Widget-container-2285 MuiGrid-container MuiGrid-direction-xs-column"
               >
                 <div
-                  className="MuiGrid-item-2199"
+                  className="MuiGrid-root MuiGrid-item"
                 >
                   <h6
-                    className="MuiTypography-root-2332 MuiTypography-h6-2349 MuiTypography-colorInherit-2361 MuiTypography-gutterBottom-2359"
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border bottom
                   </h6>
                 </div>
                 <div
-                  className="MuiGrid-container-2198 MuiGrid-item-2199 Widget-content-2300"
+                  className="MuiGrid-root Widget-content-2286 MuiGrid-container MuiGrid-item"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1091,25 +1041,25 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-2199 MuiGrid-grid-xs-6-2232"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              className="MuiPaper-root-2305 MuiPaper-elevation2-2309 MuiPaper-rounded-2306 Widget-root-2298 Widget-border-2301 Component-customTopBorder-2296 Widget-border-top-2302"
+              className="MuiPaper-root MuiPaper-elevation2 Widget-root-2284 Widget-border-2287 Component-customTopBorder-2282 Widget-border-top-2288 MuiPaper-rounded"
             >
               <div
-                className="MuiGrid-container-2198 MuiGrid-direction-xs-column-2201 Widget-container-2299"
+                className="MuiGrid-root Widget-container-2285 MuiGrid-container MuiGrid-direction-xs-column"
               >
                 <div
-                  className="MuiGrid-item-2199"
+                  className="MuiGrid-root MuiGrid-item"
                 >
                   <h6
-                    className="MuiTypography-root-2332 MuiTypography-h6-2349 MuiTypography-colorInherit-2361 MuiTypography-gutterBottom-2359"
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border top custom
                   </h6>
                 </div>
                 <div
-                  className="MuiGrid-container-2198 MuiGrid-item-2199 Widget-content-2300"
+                  className="MuiGrid-root Widget-content-2286 MuiGrid-container MuiGrid-item"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1117,25 +1067,25 @@ exports[`Storyshots widgets/Widget (dark theme) with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-2199 MuiGrid-grid-xs-6-2232"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              className="MuiPaper-root-2305 MuiPaper-elevation2-2309 MuiPaper-rounded-2306 Widget-root-2298 Widget-border-2301 Component-customBotomBorder-2297 Widget-border-bottom-2303"
+              className="MuiPaper-root MuiPaper-elevation2 Widget-root-2284 Widget-border-2287 Component-customBotomBorder-2283 Widget-border-bottom-2289 MuiPaper-rounded"
             >
               <div
-                className="MuiGrid-container-2198 MuiGrid-direction-xs-column-2201 Widget-container-2299"
+                className="MuiGrid-root Widget-container-2285 MuiGrid-container MuiGrid-direction-xs-column"
               >
                 <div
-                  className="MuiGrid-item-2199"
+                  className="MuiGrid-root MuiGrid-item"
                 >
                   <h6
-                    className="MuiTypography-root-2332 MuiTypography-h6-2349 MuiTypography-colorInherit-2361 MuiTypography-gutterBottom-2359"
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border bottom custom
                   </h6>
                 </div>
                 <div
-                  className="MuiGrid-container-2198 MuiGrid-item-2199 Widget-content-2300"
+                  className="MuiGrid-root Widget-content-2286 MuiGrid-container MuiGrid-item"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1169,28 +1119,28 @@ exports[`Storyshots widgets/Widget basic 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1023 MuiGrid-spacing-xs-24-1047"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-1024 MuiGrid-grid-xs-12-1063"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiPaper-root-1127 MuiPaper-elevation2-1131 MuiPaper-rounded-1128 Widget-root-1120"
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-1106 MuiPaper-rounded"
         >
           <div
-            className="MuiGrid-container-1023 MuiGrid-direction-xs-column-1026 Widget-container-1121"
+            className="MuiGrid-root Widget-container-1107 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <div
-              className="MuiGrid-item-1024"
+              className="MuiGrid-root MuiGrid-item"
             >
               <h6
-                className="MuiTypography-root-1154 MuiTypography-h6-1171 MuiTypography-colorInherit-1183 MuiTypography-gutterBottom-1181"
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Title
               </h6>
             </div>
             <div
-              className="MuiGrid-container-1023 MuiGrid-item-1024 Widget-content-1122"
+              className="MuiGrid-root Widget-content-1108 MuiGrid-container MuiGrid-item"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -1222,28 +1172,28 @@ exports[`Storyshots widgets/Widget custom height 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1694 MuiGrid-spacing-xs-24-1718"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-1695 MuiGrid-grid-xs-12-1734"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiPaper-root-1801 MuiPaper-elevation2-1805 MuiPaper-rounded-1802 Widget-root-1794"
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-1780 MuiPaper-rounded"
         >
           <div
-            className="MuiGrid-container-1694 MuiGrid-direction-xs-column-1697 Widget-container-1795"
+            className="MuiGrid-root Widget-container-1781 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <div
-              className="MuiGrid-item-1695"
+              className="MuiGrid-root MuiGrid-item"
             >
               <h6
-                className="MuiTypography-root-1828 MuiTypography-h6-1845 MuiTypography-colorInherit-1857 MuiTypography-gutterBottom-1855"
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Custom content height
               </h6>
             </div>
             <div
-              className="MuiGrid-container-1694 MuiGrid-item-1695 Widget-content-1796 Component-content-1791"
+              className="MuiGrid-root Widget-content-1782 Component-content-1777 MuiGrid-container MuiGrid-item"
             >
               <div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
@@ -1277,28 +1227,28 @@ exports[`Storyshots widgets/Widget featured 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1190 MuiGrid-spacing-xs-24-1214"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-1191 MuiGrid-grid-xs-12-1230"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiPaper-root-1294 MuiPaper-elevation2-1298 MuiPaper-rounded-1295 Widget-root-1287 Widget-featured-1293"
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-1273 Widget-featured-1279 MuiPaper-rounded"
         >
           <div
-            className="MuiGrid-container-1190 MuiGrid-direction-xs-column-1193 Widget-container-1288"
+            className="MuiGrid-root Widget-container-1274 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <div
-              className="MuiGrid-item-1191"
+              className="MuiGrid-root MuiGrid-item"
             >
               <h6
-                className="MuiTypography-root-1321 MuiTypography-h6-1338 MuiTypography-colorInherit-1350 MuiTypography-gutterBottom-1348"
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 Title
               </h6>
             </div>
             <div
-              className="MuiGrid-container-1190 MuiGrid-item-1191 Widget-content-1289"
+              className="MuiGrid-root Widget-content-1275 MuiGrid-container MuiGrid-item"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -1330,28 +1280,28 @@ exports[`Storyshots widgets/Widget squared 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1527 MuiGrid-spacing-xs-24-1551"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-1528 MuiGrid-grid-xs-12-1567"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiPaper-root-1631 MuiPaper-elevation2-1635 Widget-root-1624"
+          className="MuiPaper-root MuiPaper-elevation2 Widget-root-1610"
         >
           <div
-            className="MuiGrid-container-1527 MuiGrid-direction-xs-column-1530 Widget-container-1625"
+            className="MuiGrid-root Widget-container-1611 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <div
-              className="MuiGrid-item-1528"
+              className="MuiGrid-root MuiGrid-item"
             >
               <h6
-                className="MuiTypography-root-1658 MuiTypography-h6-1675 MuiTypography-colorInherit-1687 MuiTypography-gutterBottom-1685"
+                className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
               >
                 I have no rounded borders
               </h6>
             </div>
             <div
-              className="MuiGrid-container-1527 MuiGrid-item-1528 Widget-content-1626"
+              className="MuiGrid-root Widget-content-1612 MuiGrid-container MuiGrid-item"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
             </div>
@@ -1383,34 +1333,34 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
     }
   >
     <div
-      className="MuiGrid-container-1357 MuiGrid-spacing-xs-24-1381"
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
     >
       <div
-        className="MuiGrid-item-1358 MuiGrid-grid-xs-12-1397"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiGrid-container-1357 MuiGrid-spacing-xs-24-1381"
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
         >
           <div
-            className="MuiGrid-item-1358 MuiGrid-grid-xs-6-1391"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              className="MuiPaper-root-1464 MuiPaper-elevation2-1468 MuiPaper-rounded-1465 Widget-root-1457 Widget-border-1460 Widget-border-top-1461"
+              className="MuiPaper-root MuiPaper-elevation2 Widget-root-1443 Widget-border-1446 Widget-border-top-1447 MuiPaper-rounded"
             >
               <div
-                className="MuiGrid-container-1357 MuiGrid-direction-xs-column-1360 Widget-container-1458"
+                className="MuiGrid-root Widget-container-1444 MuiGrid-container MuiGrid-direction-xs-column"
               >
                 <div
-                  className="MuiGrid-item-1358"
+                  className="MuiGrid-root MuiGrid-item"
                 >
                   <h6
-                    className="MuiTypography-root-1491 MuiTypography-h6-1508 MuiTypography-colorInherit-1520 MuiTypography-gutterBottom-1518"
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border top
                   </h6>
                 </div>
                 <div
-                  className="MuiGrid-container-1357 MuiGrid-item-1358 Widget-content-1459"
+                  className="MuiGrid-root Widget-content-1445 MuiGrid-container MuiGrid-item"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1418,25 +1368,25 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-1358 MuiGrid-grid-xs-6-1391"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              className="MuiPaper-root-1464 MuiPaper-elevation2-1468 MuiPaper-rounded-1465 Widget-root-1457 Widget-border-1460 Widget-border-bottom-1462"
+              className="MuiPaper-root MuiPaper-elevation2 Widget-root-1443 Widget-border-1446 Widget-border-bottom-1448 MuiPaper-rounded"
             >
               <div
-                className="MuiGrid-container-1357 MuiGrid-direction-xs-column-1360 Widget-container-1458"
+                className="MuiGrid-root Widget-container-1444 MuiGrid-container MuiGrid-direction-xs-column"
               >
                 <div
-                  className="MuiGrid-item-1358"
+                  className="MuiGrid-root MuiGrid-item"
                 >
                   <h6
-                    className="MuiTypography-root-1491 MuiTypography-h6-1508 MuiTypography-colorInherit-1520 MuiTypography-gutterBottom-1518"
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border bottom
                   </h6>
                 </div>
                 <div
-                  className="MuiGrid-container-1357 MuiGrid-item-1358 Widget-content-1459"
+                  className="MuiGrid-root Widget-content-1445 MuiGrid-container MuiGrid-item"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1444,25 +1394,25 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-1358 MuiGrid-grid-xs-6-1391"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              className="MuiPaper-root-1464 MuiPaper-elevation2-1468 MuiPaper-rounded-1465 Widget-root-1457 Widget-border-1460 Component-customTopBorder-1455 Widget-border-top-1461"
+              className="MuiPaper-root MuiPaper-elevation2 Widget-root-1443 Widget-border-1446 Component-customTopBorder-1441 Widget-border-top-1447 MuiPaper-rounded"
             >
               <div
-                className="MuiGrid-container-1357 MuiGrid-direction-xs-column-1360 Widget-container-1458"
+                className="MuiGrid-root Widget-container-1444 MuiGrid-container MuiGrid-direction-xs-column"
               >
                 <div
-                  className="MuiGrid-item-1358"
+                  className="MuiGrid-root MuiGrid-item"
                 >
                   <h6
-                    className="MuiTypography-root-1491 MuiTypography-h6-1508 MuiTypography-colorInherit-1520 MuiTypography-gutterBottom-1518"
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border top custom
                   </h6>
                 </div>
                 <div
-                  className="MuiGrid-container-1357 MuiGrid-item-1358 Widget-content-1459"
+                  className="MuiGrid-root Widget-content-1445 MuiGrid-container MuiGrid-item"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
@@ -1470,25 +1420,25 @@ exports[`Storyshots widgets/Widget with borders 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-item-1358 MuiGrid-grid-xs-6-1391"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              className="MuiPaper-root-1464 MuiPaper-elevation2-1468 MuiPaper-rounded-1465 Widget-root-1457 Widget-border-1460 Component-customBotomBorder-1456 Widget-border-bottom-1462"
+              className="MuiPaper-root MuiPaper-elevation2 Widget-root-1443 Widget-border-1446 Component-customBotomBorder-1442 Widget-border-bottom-1448 MuiPaper-rounded"
             >
               <div
-                className="MuiGrid-container-1357 MuiGrid-direction-xs-column-1360 Widget-container-1458"
+                className="MuiGrid-root Widget-container-1444 MuiGrid-container MuiGrid-direction-xs-column"
               >
                 <div
-                  className="MuiGrid-item-1358"
+                  className="MuiGrid-root MuiGrid-item"
                 >
                   <h6
-                    className="MuiTypography-root-1491 MuiTypography-h6-1508 MuiTypography-colorInherit-1520 MuiTypography-gutterBottom-1518"
+                    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-gutterBottom"
                   >
                     Border bottom custom
                   </h6>
                 </div>
                 <div
-                  className="MuiGrid-container-1357 MuiGrid-item-1358 Widget-content-1459"
+                  className="MuiGrid-root Widget-content-1445 MuiGrid-container MuiGrid-item"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.
                 </div>
