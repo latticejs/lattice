@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Mui-Recharts Package
 - Infinte-List Package
 - Widgets Package
+- Tree
 
 
 ## Update Phase - 2019-10-18
