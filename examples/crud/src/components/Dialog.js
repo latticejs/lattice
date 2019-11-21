@@ -40,7 +40,7 @@ const enhanceConfirmation = compose(
     paper: {
       borderBottomStyle: 'solid',
       borderBottomColor: theme.palette.primary[theme.palette.type],
-      borderBottomWidth: theme.spacing.unit / 2
+      borderBottomWidth: theme.spacing(0.5)
     }
   })),
   observer

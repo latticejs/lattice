@@ -25,14 +25,14 @@ const styles = theme => ({
   },
   controls: {
     alignItems: 'center',
-    paddingTop: theme.spacing.unit,
-    paddingLeft: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit,
-    backgroundColor: theme.palette.background.default,
+    paddingTop: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
+    backgroundColor: theme.palette.background.initial,
     color: theme.palette.primary[theme.palette.type]
   },
   close: {
-    padding: theme.spacing.unit / 2,
+    padding: theme.spacing(0.5),
     maxHeight: '100%',
     textAlign: 'right'
   }
@@ -55,7 +55,7 @@ class GraphPanel extends Component {
   renderContentNode({ node }) {
     return (
       <Grid item xs={12}>
-        <Typography variant="caption" color="default">
+        <Typography variant="caption" color="initial">
           Node
         </Typography>
         <Typography variant="body2" color="inherit">
@@ -69,7 +69,7 @@ class GraphPanel extends Component {
     return (
       <Grid container>
         <Grid item xs={12} md={6}>
-          <Typography variant="caption" color="default">
+          <Typography variant="caption" color="initial">
             Source
           </Typography>
           <Typography variant="body2" color="inherit">
@@ -77,7 +77,7 @@ class GraphPanel extends Component {
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="caption" color="default">
+          <Typography variant="caption" color="initial">
             Target
           </Typography>
           <Typography variant="body2" color="inherit">

@@ -18,14 +18,14 @@ const SelectAll = ({ checked, disabled, onChange, classes }) => {
 
 const styles = theme => ({
   formControl: {
-    marginLeft: theme.spacing.unit * 3
+    marginLeft: theme.spacing(3)
   },
   check: {
     marginLeft: 0
   },
   label: {
     ...theme.typography.button,
-    marginLeft: theme.spacing.unit * 2
+    marginLeft: theme.spacing(2)
   }
 });
 

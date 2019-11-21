@@ -53,7 +53,7 @@ const SortOrderSelect = ({ value, onChange }) => (
 );
 
 export default ({ sortItems, sortProperty, sortOrder = 'asc', sortOrderOnChange, sortPropertyOnChange }) => (
-  <Grid item xs container spacing={16}>
+  <Grid item xs container spacing={2}>
     <Grid item xs={9}>
       <SortPropertySelect sortItems={sortItems} value={sortProperty} onChange={sortPropertyOnChange} />
     </Grid>
