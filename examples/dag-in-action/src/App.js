@@ -265,7 +265,7 @@ class App extends Component {
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
-            <Typography variant="title" color="inherit" className={classes.flex}>
+            <Typography variant="subtitle1" color="inherit" className={classes.flex}>
               Dag in Action
             </Typography>
             <Tooltip title="Toggle Night Mode" enterDelay={300}>
@@ -276,7 +276,7 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <div className={classes.main}>
-          <Grid container justify="space-between" alignItems="stretch" spacing={8} className={classes.container}>
+          <Grid container justify="space-between" alignItems="stretch" spacing={1} className={classes.container}>
             <Grid item xs={12} md={8} lg={8}>
               <Widget title={pkg.name} className={classes.dagWidget}>
                 <Mutation mutation={UPDATE_DEPS}>
@@ -287,26 +287,28 @@ class App extends Component {
                       accept="application/json"
                       onDrop={(accept, rejected) => this.onDrop(accept, rejected, updatePkg)}
                     >
-                      <ContainerDimensions>
-                        {({ width, height }) => (
-                          <Dag
-                            editable={true}
-                            width={width}
-                            height={height}
-                            nodes={pkg.data.nodes}
-                            edges={pkg.data.edges}
-                            onNodeAdded={this.newDep}
-                            onNodeRemoved={dependencies => this.removeDep(dependencies, updatePkg)}
-                            onEdgeAdded={() => {
-                              console.log('Not implemented');
-                            }}
-                            onEdgeRemoved={() => {
-                              console.log('Not implemented');
-                            }}
-                            nodeRadius={45}
-                          />
-                        )}
-                      </ContainerDimensions>
+                      {({ getRootProps, getInputProps }) => (
+                        <ContainerDimensions>
+                          {({ width, height }) => (
+                            <Dag
+                              editable={true}
+                              width={width}
+                              height={height}
+                              nodes={pkg.data.nodes}
+                              edges={pkg.data.edges}
+                              onNodeAdded={this.newDep}
+                              onNodeRemoved={dependencies => this.removeDep(dependencies, updatePkg)}
+                              onEdgeAdded={() => {
+                                console.log('Not implemented');
+                              }}
+                              onEdgeRemoved={() => {
+                                console.log('Not implemented');
+                              }}
+                              nodeRadius={45}
+                            />
+                          )}
+                        </ContainerDimensions>
+                      )}
                     </Dropzone>
                   )}
                 </Mutation>

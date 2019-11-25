@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Infinte-List Package
 - Tree
 - Widgets
+- Dag-in-Action Example
 
 ## Update Phase - 2019-10-18
 - Updated minimal example with jest and lint configurations.
