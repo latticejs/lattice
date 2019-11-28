@@ -19,7 +19,6 @@ app.use(express.static('public'));
 app.use((req, res) => {
   const sheetsRegistry = new SheetsRegistry();
   const generateClassName = createGenerateClassName();
-  const sheetsManager = new Map();
   const html = renderToString(
     <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
       <MuiThemeProvider
@@ -29,7 +28,6 @@ app.use((req, res) => {
             useNextVariants: true
           }
         })}
-        sheetsManager={sheetsManager}
       >
         <CssBaseline />
         <App />
