@@ -1,4 +1,4 @@
-import { MuiThemeProvider, createGenerateClassName } from '@material-ui/core/styles';
+import { ThemeProvider as MuiThemeProvider, createGenerateClassName } from '@material-ui/core/styles';
 import { renderToString } from 'react-dom/server';
 import { SheetsRegistry } from 'react-jss/lib/jss';
 import App from './Components/App';
