@@ -193,7 +193,16 @@ export default ({ storiesOf }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', withReadmeForBasic(() => <BasicTable />))
-    .add('order', withReadmeForOrder(() => <OrderTable />))
-    .add('search', withReadmeForSearch(() => <SearchTable />));
+    .add(
+      'basic',
+      withReadmeForBasic(() => <BasicTable />)
+    )
+    .add(
+      'order',
+      withReadmeForOrder(() => <OrderTable />)
+    )
+    .add(
+      'search',
+      withReadmeForSearch(() => <SearchTable />)
+    );
 };
