@@ -1,0 +1,10 @@
+@import "./mapbox-gl-geocoder.css";
+@import "./mapbox-gl.css";
+
+.mapContainer {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}

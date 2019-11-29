@@ -48,8 +48,14 @@ function ProcessUsage({ data, loading, classes }) {
     parsedData = data.map(ps => {
       const result = {
         ...ps,
-        memoryData: [{ name: 'usage', value: ps.memory }, { name: 'free', value: 100 - ps.memory }],
-        cpuData: [{ name: 'usage', value: ps.cpu }, { name: 'free', value: 100 - ps.cpu }]
+        memoryData: [
+          { name: 'usage', value: ps.memory },
+          { name: 'free', value: 100 - ps.memory }
+        ],
+        cpuData: [
+          { name: 'usage', value: ps.cpu },
+          { name: 'free', value: 100 - ps.cpu }
+        ]
       };
 
       return result;
