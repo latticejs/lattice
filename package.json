@@ -55,5 +55,8 @@
       "**/jest**",
       "**/packages/clap"
     ]
+  },
+  "dependencies": {
+    "@latticejs/widgets": "^1.0.1-beta.0"
   }
 }

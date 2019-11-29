@@ -110,5 +110,8 @@ export default ({ storiesOf }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', withReadmeSections(() => <BasicList />));
+    .add(
+      'basic',
+      withReadmeSections(() => <BasicList />)
+    );
 };

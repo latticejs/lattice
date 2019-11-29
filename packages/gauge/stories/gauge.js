@@ -133,13 +133,19 @@ export default ({ storiesOf }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', withApiReadme(() => <BasicGauge />));
+    .add(
+      'basic',
+      withApiReadme(() => <BasicGauge />)
+    );
 
   storiesOf('gauge', module)
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('advanced', withApiReadme(() => <AdvancedGauge />));
+    .add(
+      'advanced',
+      withApiReadme(() => <AdvancedGauge />)
+    );
 
   storiesOf('gauge/themed', module)
     .addDecorator(Flexed)

@@ -520,44 +520,44 @@ exports[`Storyshots infinite-list/Table search 1`] = `
             className="MuiTable-root"
           >
             <div
-              className="MuiTableHead-root Component-root-659"
+              className="MuiTableHead-root Component-root-662"
             >
               <div
-                className="MuiTableRow-root Component-root-661 MuiTableRow-head Component-head-664"
+                className="MuiTableRow-root Component-root-664 MuiTableRow-head Component-head-667"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-671 MuiTableCell-head InnerTableCell-head-672"
+                  className="MuiTableCell-root InnerTableCell-root-674 MuiTableCell-head InnerTableCell-head-675"
                   scope="col"
                 >
                   Index
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-671 MuiTableCell-head InnerTableCell-head-672"
+                  className="MuiTableCell-root InnerTableCell-root-674 MuiTableCell-head InnerTableCell-head-675"
                   scope="col"
                 >
                   Title
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-671 MuiTableCell-head InnerTableCell-head-672"
+                  className="MuiTableCell-root InnerTableCell-root-674 MuiTableCell-head InnerTableCell-head-675"
                   scope="col"
                 >
                   Timestamp
                 </div>
               </div>
               <div
-                className="MuiTableRow-root Component-root-661 MuiTableRow-head Component-head-664"
+                className="MuiTableRow-root Component-root-664 MuiTableRow-head Component-head-667"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-671 MuiTableCell-head InnerTableCell-head-672"
+                  className="MuiTableCell-root InnerTableCell-root-674 MuiTableCell-head InnerTableCell-head-675"
                   scope="col"
                 />
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-671 MuiTableCell-head InnerTableCell-head-672"
+                  className="MuiTableCell-root InnerTableCell-root-674 MuiTableCell-head InnerTableCell-head-675"
                   scope="col"
                 >
                   <div
@@ -578,7 +578,7 @@ exports[`Storyshots infinite-list/Table search 1`] = `
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-671 MuiTableCell-head InnerTableCell-head-672"
+                  className="MuiTableCell-root InnerTableCell-root-674 MuiTableCell-head InnerTableCell-head-675"
                   scope="col"
                 >
                   <div
