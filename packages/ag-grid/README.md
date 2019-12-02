@@ -1,6 +1,6 @@
 # @latticejs/ag-grid
 
-A directed graph component based on d3. 
+An ag-Grid component to customise the behaviour of the grid.
 
 ## Install
 
@@ -8,39 +8,54 @@ A directed graph component based on d3.
 npm install @latticejs/ag-grid
 ```
 
-
 ## Usage
 
-The graph will expect nodes and edges as input. 
-
-Nodes and edges have the following structure: 
-
 ```javascript
-nodes: [
-    { title: 'Task A' },
-    { title: 'Task B' }
-]
-edges: [
-    { 
-        source: 'Task A',
-        target: 'Task B'
-    }
-]
-```
+import React, { Component } from 'react';
+import LatticeAgGgrid from '@latticejs/ag-grid';
+import '@latticejs/ag-grid/styles/lattice-ag-grid-style.css';
 
-**Note**: since this is a svg component `width` and `height` properties are required.
-
-### Example:  
-
-```javascript
-import React from 'react';
-import { LatticeAgGrid } from '@latticejs/ag-grid';
-
-export class MyGraph extends React.Component {
-  render () {
-    const { nodes, edges, ...props } = this.props;
+export class AgGrid extends Component {
+  render() {
     return (
-       <LatticeAgGrid nodes={nodes} edges={edges} {...props} />
+      <LatticeAgGgrid
+        animateRows
+        enableSorting
+        enableFilter
+        enableColResize
+        rowSelection="multiple"
+      >
+      </LatticeAgGgrid>
     );
   }
 }
+
+```
+
+The above snippet will render a basic ag-grid with a material _look'n'feel_. It also support themes (dark, light). 
+
+<!-- start:api -->
+
+## API
+
+
+### animateRows
+
+> `boolean` | Defaults to `true` 
+
+
+### enableSorting
+
+> `boolean` | Defaults to `true`
+        
+        
+### enableFilter
+
+> `boolean` | Defaults to `true`
+
+
+<!-- end:api -->
+
+## FAQs
+
+// TBD
