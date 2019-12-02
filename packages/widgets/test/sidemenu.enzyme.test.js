@@ -17,7 +17,7 @@ describe('<SideMenu />', () => {
     const wrapper = mount(<SideMenu width={200} navigation={navigation} onItemClick={sideMenuMockClick} />);
     expect(wrapper.find(SideMenu).length).toBe(1);
     // simulate click on item, finding children using displayname
-    wrapper.find('ButtonBase').simulate('click');
+    wrapper.find('.MuiButtonBase-root').simulate('click');
     expect(sideMenuMockClick.mock.calls.length).toEqual(1);
   });
 });
