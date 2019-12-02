@@ -14,7 +14,7 @@ import { withReadme } from '@latticejs/storybook-readme';
 // Decorators
 
 const InGrid = story => (
-  <Grid container spacing={24}>
+  <Grid container spacing={3}>
     <Grid item xs={12}>
       {story()}
     </Grid>
@@ -42,7 +42,7 @@ const stories = {
   'with borders': () => (
     <Styled>
       {classes => (
-        <Grid container spacing={24}>
+        <Grid container spacing={3}>
           <Grid item xs={6}>
             <Widget title="Border top" border="top">
               {lorem}
