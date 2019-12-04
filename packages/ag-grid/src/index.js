@@ -8,12 +8,16 @@ import { withTheme } from '@material-ui/core/styles';
 class LatticeAgGrid extends Component {
   constructor(props) {
     super(props);
-
+    this.agGridRef = this.agGridRef.bind(this);
     if (this.props.theme.palette.type === 'light') {
       this.state = { gridClass: 'ag-theme-material' };
     } else if (this.props.theme.palette.type === 'dark') {
       this.state = { gridClass: 'ag-theme-material-dark' };
     }
+  }
+
+  agGridRef(gridObj) {
+    this.props.afterGridCreated(gridObj);
   }
 
   render() {
@@ -27,7 +31,7 @@ class LatticeAgGrid extends Component {
           margin: '20px 20px'
         }}
       >
-        <AgGridReact {...this.props} />
+        <AgGridReact {...this.props} ref={this.agGridRef} />
       </Grid>
     );
   }

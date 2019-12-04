@@ -17,6 +17,7 @@ class AgGrid extends Component {
     super(props);
     this.gotData = this.gotData.bind(this);
     this.handlePagination = this.handlePagination.bind(this);
+    this.getGrid = this.getGrid.bind(this);
     this.state = {
       columnDefs: [
         {
@@ -83,6 +84,10 @@ class AgGrid extends Component {
     this.setState({ showPagination: !this.state.showPagination });
   }
 
+  getGrid(gridObj) {
+    console.log(gridObj);
+  }
+
   handleNightModeChange() {
     const { updateTheme, nightMode } = this.props;
     updateTheme(!nightMode);
@@ -102,6 +107,7 @@ class AgGrid extends Component {
         columnDefs={columnDefs}
         rowData={rowData}
         rowSelection="multiple"
+        afterGridCreated={this.getGrid}
       ></LatticeAgGrid>
     );
   }
