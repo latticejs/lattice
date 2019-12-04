@@ -1,14 +1,12 @@
-# Basic example
+# Map example
 
-![screenshot](screen.png?raw=true "Basic Demo")
+![screenshot](screen.png?raw=true "Map Demo")
 
 ## How to use
 
 ### With clap
 
 `clap myApp`
-
-_Note: `basic` is the default Lattice example_
 
 ## Features
 

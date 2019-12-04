@@ -55,9 +55,6 @@
     "mapbox-gl": "^1.5.0"
   },
   "jest": {
-    "setupFiles": [
-      "./test/shim.js"
-    ],
     "setupTestFrameworkScriptFile": "./setupTest.js",
     "testURL": "http://localhost",
     "transform": {

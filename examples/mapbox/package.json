@@ -28,7 +28,7 @@
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
-    "@latticejs/map": "file:../../packages/map",
+    "@latticejs/map": "^1.0.1-beta.2",
     "react-scripts": "^1.1.0"
   }
 }
