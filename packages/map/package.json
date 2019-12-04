@@ -15,7 +15,7 @@
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9016 -c .storybook",
-    "test": "echo 'test'",
+    "test": "jest --no-cache",
     "size": "bundlesize"
   },
   "peerDependencies": {

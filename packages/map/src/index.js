@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Mapboxgl from 'mapbox-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { withTheme } from '@material-ui/core/styles';
 
 class Map extends Component {
@@ -18,53 +17,28 @@ class Map extends Component {
   }
 
   componentDidMount() {
-    this.generateMap();
+    return this.generateMap();
   }
 
   generateMap() {
     this.mapContainer.innerHTML = '';
     const { longitude, latitude, zoom, mapStyle } = this.state;
-    const map = new Mapboxgl.Map({
+    this.map = new Mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/' + mapStyle,
       center: [longitude, latitude],
-      zoom
+      zoom,
+      ...this.props
     });
 
-    let navigation = new Mapboxgl.NavigationControl();
-    map.addControl(navigation, 'top-left');
-
-    map.addControl(
-      new MapboxGeocoder({
-        accessToken: Mapboxgl.accessToken,
-        mapboxgl: Mapboxgl
-      })
-    );
-
-    map.on('render', function(evt) {
-      //console.log(evt.target.getStyle().layers);
-      let layers = ['country-label-lg', 'place-city-sm'];
-      layers.map(layer => {
-        map.setLayoutProperty(layer, 'text-field', [
-          'format',
-          ['get', 'name_en'],
-          {
-            'font-scale': 1.2,
-            'text-font': ['literal', ['Roboto Bold']]
-          }
-        ]);
-        return null;
-      });
-    });
+    this.props.afterMapComplete(this.map);
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (JSON.stringify(nextProps.theme) !== JSON.stringify(prevState.theme)) {
-      return nextProps.theme;
-    }
-    return null;
-  }
-  componentDidUpdate(prevProps, prevState) {
+  getMap = () => {
+    return this.map;
+  };
+
+  componentDidUpdate(prevProps) {
     if (JSON.stringify(prevProps.theme) !== JSON.stringify(this.props.theme)) {
       if (this.props.theme.palette.type === 'light') {
         this.setState({ mapStyle: 'streets-v9' }, this.generateMap);

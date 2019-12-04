@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 // Ours
 import Map from '../src';
 import muiTheme from '../.storybook/decorator-material-ui';
+import Mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
 import '../css/style.css';
@@ -10,6 +12,32 @@ import '../css/style.css';
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 class BasicMap extends Component {
+  afterMapLoad = mapObj => {
+    let navigation = new Mapboxgl.NavigationControl();
+    mapObj.addControl(navigation, 'top-left');
+    mapObj.addControl(
+      new MapboxGeocoder({
+        accessToken: Mapboxgl.accessToken,
+        mapboxgl: Mapboxgl
+      })
+    );
+
+    mapObj.on('render', function(evt) {
+      let layers = ['country-label-lg', 'place-city-sm'];
+      layers.map(layer => {
+        mapObj.setLayoutProperty(layer, 'text-field', [
+          'format',
+          ['get', 'name_en'],
+          {
+            'font-scale': 1.2,
+            'text-font': ['literal', ['Roboto Bold']]
+          }
+        ]);
+        return null;
+      });
+    });
+  };
+
   render() {
     return (
       <Map
@@ -17,12 +45,39 @@ class BasicMap extends Component {
         latitude={34}
         zoom={1}
         accessToken="pk.eyJ1IjoiY2VsZXN0aWFsc3lzIiwiYSI6ImNrMzVoZTY2ZzA0ZmczY3J3cWlqbmptcXcifQ.0m0LKMmE9yGqFTXbZ-h4bQ"
+        afterMapComplete={this.afterMapLoad}
       />
     );
   }
 }
 
 class DarkMap extends Component {
+  afterMapLoad = mapObj => {
+    let navigation = new Mapboxgl.NavigationControl();
+    mapObj.addControl(navigation, 'top-left');
+    mapObj.addControl(
+      new MapboxGeocoder({
+        accessToken: Mapboxgl.accessToken,
+        mapboxgl: Mapboxgl
+      })
+    );
+
+    mapObj.on('render', function(evt) {
+      let layers = ['country-label-lg', 'place-city-sm'];
+      layers.map(layer => {
+        mapObj.setLayoutProperty(layer, 'text-field', [
+          'format',
+          ['get', 'name_en'],
+          {
+            'font-scale': 1.2,
+            'text-font': ['literal', ['Roboto Bold']]
+          }
+        ]);
+        return null;
+      });
+    });
+  };
+
   render() {
     return (
       <Map
@@ -31,6 +86,7 @@ class DarkMap extends Component {
         zoom={1}
         mapStyle="dark-v9"
         accessToken="pk.eyJ1IjoiY2VsZXN0aWFsc3lzIiwiYSI6ImNrMzVoZTY2ZzA0ZmczY3J3cWlqbmptcXcifQ.0m0LKMmE9yGqFTXbZ-h4bQ"
+        afterMapComplete={this.afterMapLoad}
       />
     );
   }

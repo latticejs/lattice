@@ -1,27 +1,65 @@
 import { mount } from 'enzyme';
-import MapComponent from '../src/index.js';
-import React from 'react';
 
-describe('To test the Map Component.', () => {
+import Map from '../src/index.js';
+import React from 'react';
+jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
+  Map: x => x
+}));
+
+describe('To test the Map Box Component.', () => {
   let wrapper;
   let childWrapper;
 
   beforeEach(() => {
-    wrapper = mount(<MapComponent longitude={5} latitude={34} zoom={1} />);
-    childWrapper = wrapper.find(MapComponent).childAt(0);
+    wrapper = mount(
+      <Map
+        longitude={5}
+        latitude={34}
+        zoom={1.5}
+        accessToken="pk.eyJ1IjoiY2VsZXN0aWFsc3lzIiwiYSI6ImNrMzVoZTY2ZzA0ZmczY3J3cWlqbmptcXcifQ.0m0LKMmE9yGqFTXbZ-h4bQ"
+        afterMapComplete={jest.fn()}
+      />
+    );
+    childWrapper = wrapper.find(Map).childAt(0);
+  });
+
+  it('test <Map /> Component render', () => {
+    expect(wrapper.find(Map).length).toBe(1);
   });
 
   it('test componentDidMount', () => {
     childWrapper.instance().componentDidMount();
-    expect(childWrapper.instance().map.longitude.value).toEqual(5);
+    expect(childWrapper.instance().map.zoom).toEqual(1.5);
   });
 
-  // it('test componentWillReceiveProps', () => {
-  //   expect(childWrapper.instance().gauge.options.value).toEqual(50);
-  //   childWrapper.instance().componentDidUpdate({ value: 50 });
-  //   expect(childWrapper.instance().gauge.options.value).toEqual(50);
+  it('test componentDidUpdate', () => {
+    childWrapper.instance().generateMap = jest.fn();
+    expect(childWrapper.instance().state.mapStyle).toMatch('streets-v9');
+    const newTheme = {
+      theme: {
+        palette: {
+          type: 'light'
+        }
+      }
+    };
 
-  //   childWrapper.instance().componentDidUpdate({ value: 10 });
-  //   expect(childWrapper.instance().gauge.options.value).toEqual(10);
-  // });
+    childWrapper.instance().componentDidUpdate(newTheme);
+    expect(childWrapper.instance().generateMap.mock.calls.length).toBe(1);
+    expect(childWrapper.instance().state.mapStyle).toMatch('streets-v9');
+    const updatedTheme = {
+      theme: {
+        palette: {
+          type: 'dark'
+        }
+      }
+    };
+    wrapper.setProps(updatedTheme);
+    wrapper.update();
+    expect(childWrapper.instance().state.mapStyle).toMatch('dark-v9');
+  });
+
+  it('test getMap', () => {
+    childWrapper.instance().generateMap = jest.fn();
+    expect(childWrapper.instance().getMap()).toHaveProperty('zoom', 1.5);
+  });
 });
