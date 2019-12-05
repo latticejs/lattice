@@ -12,7 +12,7 @@ npm install @latticejs/map --save-dev
 
 ```javascript
 import React from 'react';
-import Map from '@latticejs/map';
+import LatticeMap from '@latticejs/map';
 import Mapboxgl from 'mapbox-gl';
 import '@latticejs/map/css/style.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -44,7 +44,7 @@ afterMapLoad = mapObj => {
 };
 
 const MyMap = () => (
-  <Map
+  <LatticeMap
     longitude = {5}
     latitude = {34}
     zoom = {1.5}
@@ -67,10 +67,10 @@ The above snippet will render a basic Map with a material _look'n'feel_. It also
 >  `zoom`
 >  `accessToken`
 >  `afterMapComplete`
->  `heigth`
+>  `height`
 >  `width`
 
-you can also pass other props, Here are the refrence of props list [refrence](https://docs.mapbox.com/mapbox-gl-js/api/). Use this option to pass any specific configuration.
+you can also pass other props, Here are the refrence of props list [reference](https://docs.mapbox.com/mapbox-gl-js/api/). Use this option to pass any specific configuration.
 
 
 ### Get Map Object
@@ -109,4 +109,4 @@ you can also pass other props, Here are the refrence of props list [refrence](ht
 - We are passing `afterMapComplete={this.afterMapLoad}` as props
 - Once Map creation functionality completed it return `mapObj`.
 - In `afterMapLoad()` we have added `Navigation`and `Search` control.
-- You can also get more [Example](https://docs.mapbox.com/mapbox-gl-js/examples/) for refrence.
+- You can also get more [Example](https://docs.mapbox.com/mapbox-gl-js/examples/) for reference.
