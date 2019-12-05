@@ -74,7 +74,7 @@ class App extends Component {
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" color="inherit" className={classes.flex}>
-              Map Example
+              Lattice Map Example
             </Typography>
             <Tooltip title="Toggle Night Mode" enterDelay={300}>
               <IconButton onClick={this.handleNightModeChange} color="inherit">

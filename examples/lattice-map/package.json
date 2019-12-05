@@ -1,7 +1,7 @@
 {
-  "name": "@latticejs/mapbox",
+  "name": "@latticejs/lattice-map",
   "version": "1.0.1-beta.2",
-  "description": "A Map Lattice App",
+  "description": "Lattice Map Example",
   "main": "index.js",
   "private": true,
   "scripts": {
