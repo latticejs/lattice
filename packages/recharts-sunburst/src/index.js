@@ -95,10 +95,7 @@ export default class Sunburst extends Component {
   }
 
   shouldComponentUpdate(props, state) {
-    if (JSON.stringify(props) !== JSON.stringify(this.props) || JSON.stringify(state) !== JSON.stringify(this.state)) {
-      return true;
-    }
-    return false;
+    return !shallowEqual(props, this.props) || !shallowEqual(state, this.state);
   }
 
   handleMouseEnter(node, e) {
