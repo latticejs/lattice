@@ -59,7 +59,7 @@ describe('To test the Map Box Component.', () => {
   });
 
   it('test getMap', () => {
-    childWrapper.instance().generateMap = jest.fn();
-    expect(childWrapper.instance().getMap()).toHaveProperty('zoom', 1.5);
+    childWrapper.instance().map = { test: '1234' };
+    expect(childWrapper.instance().getMap()).toEqual({ test: '1234' });
   });
 });
