@@ -12,7 +12,9 @@ class Map extends Component {
       latitude: this.props.latitude,
       zoom: this.props.zoom,
       mapStyle: this.props.mapStyle ? this.props.mapStyle : 'streets-v9',
-      theme: this.props.theme
+      theme: this.props.theme,
+      height: this.props.height,
+      width: this.props.width
     };
   }
 
@@ -20,6 +22,10 @@ class Map extends Component {
     return this.generateMap();
   }
 
+  /**
+   * This function generate initial map and send mapObject to afterMapComplete()
+   * @params void
+   */
   generateMap() {
     this.mapContainer.innerHTML = '';
     const { longitude, latitude, zoom, mapStyle } = this.state;
@@ -34,6 +40,12 @@ class Map extends Component {
     this.props.afterMapComplete(this.map);
   }
 
+  /**
+   * This function return current mapObject. When ever we need to customize map
+   *  we can get the mapObject using getMap() and work on that object.
+   * @params void
+   * @returns Object
+   */
   getMap = () => {
     return this.map;
   };
@@ -49,7 +61,15 @@ class Map extends Component {
   }
 
   render() {
-    return <div ref={el => (this.mapContainer = el)} className="mapContainer" />;
+    const style = {
+      position: 'static',
+      height: this.state.height + 'vh',
+      width: this.state.width + '%'
+    };
+
+    console.log(style);
+
+    return <div ref={el => (this.mapContainer = el)} style={style} />;
   }
 }
 

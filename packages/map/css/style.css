@@ -1,7 +1,2 @@
 @import "./mapbox-gl-geocoder.css";
 @import "./mapbox-gl.css";
-
-.mapContainer {
-    position: static;
-    height: 100vh;
-}

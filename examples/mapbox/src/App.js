@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 // Material-UI
 import { AppBar, Toolbar, Tooltip, IconButton, Grid, Typography, withStyles } from '@material-ui/core';
-import Map from '@latticejs/map';
+import LatticeMap from '@latticejs/map';
 import Mapboxgl from 'mapbox-gl';
 import '@latticejs/map/css/style.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import { token } from '../config';
 
 // Material icons
 import DayIcon from '@material-ui/icons/WbSunnyOutlined';
@@ -83,12 +84,14 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <Grid>
-          <Map
+          <LatticeMap
             longitude={5}
             latitude={34}
             zoom={1.5}
-            accessToken="pk.eyJ1IjoiY2VsZXN0aWFsc3lzIiwiYSI6ImNrMzVoZTY2ZzA0ZmczY3J3cWlqbmptcXcifQ.0m0LKMmE9yGqFTXbZ-h4bQ"
+            accessToken={token}
             afterMapComplete={this.afterMapLoad}
+            height={91}
+            width={100}
           />
         </Grid>
       </div>

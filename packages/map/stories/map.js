@@ -8,6 +8,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
 import '../css/style.css';
+import { token } from '../config';
 
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
@@ -21,7 +22,6 @@ class BasicMap extends Component {
         mapboxgl: Mapboxgl
       })
     );
-
     mapObj.on('render', function(evt) {
       let layers = ['country-label-lg', 'place-city-sm'];
       layers.map(layer => {
@@ -44,8 +44,10 @@ class BasicMap extends Component {
         longitude={5}
         latitude={34}
         zoom={1}
-        accessToken="pk.eyJ1IjoiY2VsZXN0aWFsc3lzIiwiYSI6ImNrMzVoZTY2ZzA0ZmczY3J3cWlqbmptcXcifQ.0m0LKMmE9yGqFTXbZ-h4bQ"
+        accessToken={token}
         afterMapComplete={this.afterMapLoad}
+        height={91}
+        width={100}
       />
     );
   }
@@ -61,7 +63,6 @@ class DarkMap extends Component {
         mapboxgl: Mapboxgl
       })
     );
-
     mapObj.on('render', function(evt) {
       let layers = ['country-label-lg', 'place-city-sm'];
       layers.map(layer => {
@@ -85,8 +86,10 @@ class DarkMap extends Component {
         latitude={34}
         zoom={1}
         mapStyle="dark-v9"
-        accessToken="pk.eyJ1IjoiY2VsZXN0aWFsc3lzIiwiYSI6ImNrMzVoZTY2ZzA0ZmczY3J3cWlqbmptcXcifQ.0m0LKMmE9yGqFTXbZ-h4bQ"
+        accessToken={token}
         afterMapComplete={this.afterMapLoad}
+        height={91}
+        width={100}
       />
     );
   }
