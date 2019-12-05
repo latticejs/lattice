@@ -535,7 +535,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
               >
                 <path
                   className="recharts-curve recharts-area-area"
-                  d="M65,50.6L70,56.612L75,6.200000000000003L80,41.552L85,36.2L90,42.2L95,39.2L95,65L90,65L85,65L80,65L75,65L70,65L65,65Z"
+                  d="M65,50.6L70,56.611999999999995L75,6.200000000000001L80,41.552L85,36.2L90,42.199999999999996L95,39.2L95,65L90,65L85,65L80,65L75,65L70,65L65,65Z"
                   fill="#8884d8"
                   fillOpacity={0.6}
                   height={60}
@@ -544,7 +544,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
                 />
                 <path
                   className="recharts-curve recharts-area-curve"
-                  d="M65,50.6L70,56.612L75,6.200000000000003L80,41.552L85,36.2L90,42.2L95,39.2"
+                  d="M65,50.6L70,56.611999999999995L75,6.200000000000001L80,41.552L85,36.2L90,42.199999999999996L95,39.2"
                   fill="none"
                   fillOpacity={0.6}
                   height={60}
@@ -583,7 +583,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
               >
                 <path
                   className="recharts-curve recharts-area-area"
-                  d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.66L95,44.06L95,65L90,65L85,65L80,65L75,65L70,65L65,65Z"
+                  d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.660000000000004L95,44.06L95,65L90,65L85,65L80,65L75,65L70,65L65,65Z"
                   fill="#82ca9d"
                   fillOpacity={0.6}
                   height={60}
@@ -592,7 +592,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (dark) 1`] = `
                 />
                 <path
                   className="recharts-curve recharts-area-curve"
-                  d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.66L95,44.06"
+                  d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.660000000000004L95,44.06"
                   fill="none"
                   fillOpacity={0.6}
                   height={60}
@@ -1199,7 +1199,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
               >
                 <path
                   className="recharts-curve recharts-area-area"
-                  d="M65,50.6L70,56.612L75,6.200000000000003L80,41.552L85,36.2L90,42.2L95,39.2L95,65L90,65L85,65L80,65L75,65L70,65L65,65Z"
+                  d="M65,50.6L70,56.611999999999995L75,6.200000000000001L80,41.552L85,36.2L90,42.199999999999996L95,39.2L95,65L90,65L85,65L80,65L75,65L70,65L65,65Z"
                   fill="#8884d8"
                   fillOpacity={0.6}
                   height={60}
@@ -1208,7 +1208,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
                 />
                 <path
                   className="recharts-curve recharts-area-curve"
-                  d="M65,50.6L70,56.612L75,6.200000000000003L80,41.552L85,36.2L90,42.2L95,39.2"
+                  d="M65,50.6L70,56.611999999999995L75,6.200000000000001L80,41.552L85,36.2L90,42.199999999999996L95,39.2"
                   fill="none"
                   fillOpacity={0.6}
                   height={60}
@@ -1247,7 +1247,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
               >
                 <path
                   className="recharts-curve recharts-area-area"
-                  d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.66L95,44.06L95,65L90,65L85,65L80,65L75,65L70,65L65,65Z"
+                  d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.660000000000004L95,44.06L95,65L90,65L85,65L80,65L75,65L70,65L65,65Z"
                   fill="#82ca9d"
                   fillOpacity={0.6}
                   height={60}
@@ -1256,7 +1256,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Area (light) 1`] = `
                 />
                 <path
                   className="recharts-curve recharts-area-curve"
-                  d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.66L95,44.06"
+                  d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.660000000000004L95,44.06"
                   fill="none"
                   fillOpacity={0.6}
                   height={60}
@@ -2909,7 +2909,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
           <path
             className="recharts-curve recharts-line-curve"
             clipPath={null}
-            d="M65,50.6L70,56.612L75,6.200000000000003L80,41.552L85,36.2L90,42.2L95,39.2"
+            d="M65,50.6L70,56.611999999999995L75,6.200000000000001L80,41.552L85,36.2L90,42.199999999999996L95,39.2"
             fill="none"
             height={60}
             stroke="#8884d8"
@@ -2924,7 +2924,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (dark) 1`] = `
           <path
             className="recharts-curve recharts-line-curve"
             clipPath={null}
-            d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.66L95,44.06"
+            d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.660000000000004L95,44.06"
             fill="none"
             height={60}
             stroke="#82ca9d"
@@ -3507,7 +3507,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
           <path
             className="recharts-curve recharts-line-curve"
             clipPath={null}
-            d="M65,50.6L70,56.612L75,6.200000000000003L80,41.552L85,36.2L90,42.2L95,39.2"
+            d="M65,50.6L70,56.611999999999995L75,6.200000000000001L80,41.552L85,36.2L90,42.199999999999996L95,39.2"
             fill="none"
             height={60}
             stroke="#8884d8"
@@ -3522,7 +3522,7 @@ exports[`Storyshots mui-recharts/axis & tooltips Line (light) 1`] = `
           <path
             className="recharts-curve recharts-line-curve"
             clipPath={null}
-            d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.66L95,44.06"
+            d="M65,41L70,47L75,53L80,48.32L85,53.66L90,50.660000000000004L95,44.06"
             fill="none"
             height={60}
             stroke="#82ca9d"
@@ -3680,7 +3680,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
                 >
                   <path
                     className="recharts-curve recharts-area-area"
-                    d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
+                    d="M5,73.4L20,82.41799999999999L35,6.8000000000000025L50,59.827999999999996L65,51.8L80,60.8L95,56.300000000000004L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
                     fill="#8884d8"
                     fillOpacity={0.6}
                     height={90}
@@ -3689,7 +3689,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
                   />
                   <path
                     className="recharts-curve recharts-area-curve"
-                    d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3"
+                    d="M5,73.4L20,82.41799999999999L35,6.8000000000000025L50,59.827999999999996L65,51.8L80,60.8L95,56.300000000000004"
                     fill="none"
                     fillOpacity={0.6}
                     height={90}
@@ -3728,7 +3728,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
                 >
                   <path
                     className="recharts-curve recharts-area-area"
-                    d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
+                    d="M5,59L20,68L35,77L50,69.98L65,77.98999999999998L80,73.49L95,63.589999999999996L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
                     fill="#82ca9d"
                     fillOpacity={0.6}
                     height={90}
@@ -3737,7 +3737,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
                   />
                   <path
                     className="recharts-curve recharts-area-curve"
-                    d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59"
+                    d="M5,59L20,68L35,77L50,69.98L65,77.98999999999998L80,73.49L95,63.589999999999996"
                     fill="none"
                     fillOpacity={0.6}
                     height={90}
@@ -4058,7 +4058,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
             <path
               className="recharts-curve recharts-line-curve"
               clipPath={null}
-              d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3"
+              d="M5,73.4L20,82.41799999999999L35,6.8000000000000025L50,59.827999999999996L65,51.8L80,60.8L95,56.300000000000004"
               fill="none"
               height={90}
               stroke="#8884d8"
@@ -4073,7 +4073,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
             <path
               className="recharts-curve recharts-line-curve"
               clipPath={null}
-              d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59"
+              d="M5,59L20,68L35,77L50,69.98L65,77.98999999999998L80,73.49L95,63.589999999999996"
               fill="none"
               height={90}
               stroke="#82ca9d"
@@ -4455,9 +4455,9 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
                     d="M0,0"
                     fill="#8884d8"
                     height={9.0270333367641}
-                    transform="translate(26.599999999999998, 5)"
+                    transform="translate(26.6, 5)"
                     width={9.0270333367641}
-                    x={22.08648333161795}
+                    x={22.086483331617952}
                     y={0.48648333161794977}
                   />
                 </g>
@@ -4487,9 +4487,9 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
                     d="M0,0"
                     fill="#8884d8"
                     height={9.0270333367641}
-                    transform="translate(93.2, 50)"
+                    transform="translate(93.19999999999999, 50)"
                     width={9.0270333367641}
-                    x={88.68648333161795}
+                    x={88.68648333161794}
                     y={45.48648333161795}
                   />
                 </g>
@@ -4519,9 +4519,9 @@ exports[`Storyshots mui-recharts/basic Basic charts (dark) 1`] = `
                     d="M0,0"
                     fill="#8884d8"
                     height={9.0270333367641}
-                    transform="translate(48.199999999999996, 52.475)"
+                    transform="translate(48.2, 52.475)"
                     width={9.0270333367641}
-                    x={43.68648333161794}
+                    x={43.68648333161795}
                     y={47.96148333161795}
                   />
                 </g>
@@ -6733,7 +6733,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
                 >
                   <path
                     className="recharts-curve recharts-area-area"
-                    d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
+                    d="M5,73.4L20,82.41799999999999L35,6.8000000000000025L50,59.827999999999996L65,51.8L80,60.8L95,56.300000000000004L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
                     fill="#8884d8"
                     fillOpacity={0.6}
                     height={90}
@@ -6742,7 +6742,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
                   />
                   <path
                     className="recharts-curve recharts-area-curve"
-                    d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3"
+                    d="M5,73.4L20,82.41799999999999L35,6.8000000000000025L50,59.827999999999996L65,51.8L80,60.8L95,56.300000000000004"
                     fill="none"
                     fillOpacity={0.6}
                     height={90}
@@ -6781,7 +6781,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
                 >
                   <path
                     className="recharts-curve recharts-area-area"
-                    d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
+                    d="M5,59L20,68L35,77L50,69.98L65,77.98999999999998L80,73.49L95,63.589999999999996L95,95L80,95L65,95L50,95L35,95L20,95L5,95Z"
                     fill="#82ca9d"
                     fillOpacity={0.6}
                     height={90}
@@ -6790,7 +6790,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
                   />
                   <path
                     className="recharts-curve recharts-area-curve"
-                    d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59"
+                    d="M5,59L20,68L35,77L50,69.98L65,77.98999999999998L80,73.49L95,63.589999999999996"
                     fill="none"
                     fillOpacity={0.6}
                     height={90}
@@ -7111,7 +7111,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
             <path
               className="recharts-curve recharts-line-curve"
               clipPath={null}
-              d="M5,73.4L20,82.418L35,6.799999999999997L50,59.828L65,51.800000000000004L80,60.8L95,56.3"
+              d="M5,73.4L20,82.41799999999999L35,6.8000000000000025L50,59.827999999999996L65,51.8L80,60.8L95,56.300000000000004"
               fill="none"
               height={90}
               stroke="#8884d8"
@@ -7126,7 +7126,7 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
             <path
               className="recharts-curve recharts-line-curve"
               clipPath={null}
-              d="M5,59L20,68L35,77L50,69.97999999999999L65,77.99L80,73.49000000000001L95,63.59"
+              d="M5,59L20,68L35,77L50,69.98L65,77.98999999999998L80,73.49L95,63.589999999999996"
               fill="none"
               height={90}
               stroke="#82ca9d"
@@ -7508,9 +7508,9 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
                     d="M0,0"
                     fill="#8884d8"
                     height={9.0270333367641}
-                    transform="translate(26.599999999999998, 5)"
+                    transform="translate(26.6, 5)"
                     width={9.0270333367641}
-                    x={22.08648333161795}
+                    x={22.086483331617952}
                     y={0.48648333161794977}
                   />
                 </g>
@@ -7540,9 +7540,9 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
                     d="M0,0"
                     fill="#8884d8"
                     height={9.0270333367641}
-                    transform="translate(93.2, 50)"
+                    transform="translate(93.19999999999999, 50)"
                     width={9.0270333367641}
-                    x={88.68648333161795}
+                    x={88.68648333161794}
                     y={45.48648333161795}
                   />
                 </g>
@@ -7572,9 +7572,9 @@ exports[`Storyshots mui-recharts/basic Basic charts (light) 1`] = `
                     d="M0,0"
                     fill="#8884d8"
                     height={9.0270333367641}
-                    transform="translate(48.199999999999996, 52.475)"
+                    transform="translate(48.2, 52.475)"
                     width={9.0270333367641}
-                    x={43.68648333161794}
+                    x={43.68648333161795}
                     y={47.96148333161795}
                   />
                 </g>

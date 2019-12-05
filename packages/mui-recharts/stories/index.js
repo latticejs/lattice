@@ -19,18 +19,36 @@ export default ({ storiesOf }) => {
     .addDecorator(JssDecorator)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('Area (light)', withApiReadme(() => <AreaChartBasic />))
-    .add('Bar (light)', withApiReadme(() => <BarChartBasic />))
-    .add('Line (light)', withApiReadme(() => <LineChartBasic />));
+    .add(
+      'Area (light)',
+      withApiReadme(() => <AreaChartBasic />)
+    )
+    .add(
+      'Bar (light)',
+      withApiReadme(() => <BarChartBasic />)
+    )
+    .add(
+      'Line (light)',
+      withApiReadme(() => <LineChartBasic />)
+    );
 
   storiesOf('mui-recharts/axis & tooltips', module)
     .addDecorator(AddResponsive)
     .addDecorator(JssDecorator)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
-    .add('Area (dark)', withApiReadme(() => <AreaChartBasic />))
-    .add('Bar (dark)', withApiReadme(() => <BarChartBasic />))
-    .add('Line (dark)', withApiReadme(() => <LineChartBasic />));
+    .add(
+      'Area (dark)',
+      withApiReadme(() => <AreaChartBasic />)
+    )
+    .add(
+      'Bar (dark)',
+      withApiReadme(() => <BarChartBasic />)
+    )
+    .add(
+      'Line (dark)',
+      withApiReadme(() => <LineChartBasic />)
+    );
 };
 
 const data = [

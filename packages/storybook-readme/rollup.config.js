@@ -5,7 +5,10 @@ const production = !process.env.ROLLUP_WATCH;
 
 module.exports = {
   input: 'src/main.js',
-  output: [{ file: pkg.main, format: 'cjs', sourcemap: true }, { file: pkg.module, format: 'es', sourcemap: true }],
+  output: [
+    { file: pkg.main, format: 'cjs', sourcemap: true },
+    { file: pkg.module, format: 'es', sourcemap: true }
+  ],
   plugins: [production && terser()],
   external: ['storybook-readme']
 };
