@@ -124,8 +124,4 @@ const EnhancedForm = withFormik({
   displayName: 'BasicForm'
 });
 
-export default compose(
-  withSignIn,
-  EnhancedForm,
-  withStyles(styles)
-)(Login);
+export default compose(withSignIn, EnhancedForm, withStyles(styles))(Login);

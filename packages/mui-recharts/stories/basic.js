@@ -38,14 +38,20 @@ export default ({ storiesOf }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('Basic charts (light)', withApiReadme(() => <BasicCharts />));
+    .add(
+      'Basic charts (light)',
+      withApiReadme(() => <BasicCharts />)
+    );
 
   storiesOf('mui-recharts/basic', module)
     .addDecorator(JssDecorator)
     .addDecorator(Flexed)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
-    .add('Basic charts (dark)', withApiReadme(() => <BasicCharts />));
+    .add(
+      'Basic charts (dark)',
+      withApiReadme(() => <BasicCharts />)
+    );
 };
 
 // Components

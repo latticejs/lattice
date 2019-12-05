@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - react-scripts package.
 
+## Addition Phase - 2019-12-04
+- Added Map Package.
+
 ## Update MUI version
 - Updated MUI version in dag package to 4.5.1.
 - Gauge Package

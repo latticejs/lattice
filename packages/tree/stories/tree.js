@@ -238,5 +238,8 @@ export default ({ storiesOf }) => {
         />
       ))
     )
-    .add('JSON tree', withApiReadme(() => <JSONTree />));
+    .add(
+      'JSON tree',
+      withApiReadme(() => <JSONTree />)
+    );
 };
