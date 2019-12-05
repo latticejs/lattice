@@ -16,7 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - react-scripts package.
 
-## Addition Phase - 2019-12-01
+## Addition Phase - 2019-12-04
+- Added Map Package.
 - Added ag-grid package.
 
 ## Update MUI version
