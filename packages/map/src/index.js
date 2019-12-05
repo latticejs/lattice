@@ -67,8 +67,6 @@ class Map extends Component {
       width: this.state.width + '%'
     };
 
-    console.log(style);
-
     return <div ref={el => (this.mapContainer = el)} style={style} />;
   }
 }
