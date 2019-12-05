@@ -69,7 +69,10 @@ export default ({ storiesOf }) => {
     .addDecorator(AddResponsive)
     .addDecorator(FullViewport)
     .addDecorator(JssDecorator)
-    .add('basic sunburst', withApiReadme(() => <Sunburst data={data} dataKey="size" fill="#8884d8" />))
+    .add(
+      'basic sunburst',
+      withApiReadme(() => <Sunburst data={data} dataKey="size" fill="#8884d8" />)
+    )
     .add(
       'basic sunburst animated',
       withApiReadme(() => <Sunburst data={data} dataKey="size" fill="#8884d8" isAnimationActive />)
