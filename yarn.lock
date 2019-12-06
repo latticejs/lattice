@@ -1676,13 +1676,6 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@latticejs/widgets@file:packages/widgets":
-  version "1.0.1-beta.2"
-  dependencies:
-    classnames "^2.2.0"
-    core-js "^3.2.0"
-    prop-types "^15.7.0"
-
 "@lerna/add@3.19.0":
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.19.0.tgz#33b6251c669895f842c14f05961432d464166249"
@@ -2495,7 +2488,7 @@
     recompose "0.28.0 - 0.30.0"
     warning "^4.0.1"
 
-"@material-ui/core@^4.5.1", "@material-ui/core@^4.5.2", "@material-ui/core@^4.6.1":
+"@material-ui/core@^4.5.1", "@material-ui/core@^4.5.2", "@material-ui/core@^4.6.1", "@material-ui/core@^4.7.0":
   version "4.7.1"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.7.1.tgz#87b83da3f6adf45772c0a2be9fd9d162e026f10c"
   integrity sha512-gqbZqpwUT5/59KTrWyA9Mr9s8NaNyfWHlEQToM1tfpiHqrIJajLVg2ZgVDzExvN985v2YQIfbuTNVzJDOnM28Q==
@@ -2523,7 +2516,7 @@
     "@babel/runtime" "^7.2.0"
     recompose "0.28.0 - 0.30.0"
 
-"@material-ui/icons@^4.5.1":
+"@material-ui/icons@^4.5.0", "@material-ui/icons@^4.5.1":
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.5.1.tgz#6963bad139e938702ece85ca43067688018f04f8"
   integrity sha512-YZ/BgJbXX4a0gOuKWb30mBaHaoXRqPanlePam83JQPZ/y4kl+3aW0Wv9tlR70hB5EGAkEJGW5m4ktJwMgxQAeA==
@@ -2816,18 +2809,6 @@
     react-color "^2.14.1"
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
-
-"@storybook/addon-links@^4.1.13":
-  version "4.1.18"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-4.1.18.tgz#ad534625baa74c3a5ed97cb430f811a78dfe0f4e"
-  integrity sha512-qWmYl5nJKw8ozH3QdWIZ33MCmiKRBdeSMaY4Pi8v8mzEjTZKxznIFBYpY46uRwE0Rz4dA7/1486zI1r2uju0Xw==
-  dependencies:
-    "@storybook/addons" "4.1.18"
-    "@storybook/components" "4.1.18"
-    "@storybook/core-events" "4.1.18"
-    core-js "^2.5.7"
-    global "^4.3.2"
-    prop-types "^15.6.2"
 
 "@storybook/addon-storyshots@^4.1.13":
   version "4.1.18"
@@ -20447,6 +20428,16 @@ react-scripts@^3.1.0:
   optionalDependencies:
     fsevents "2.1.2"
 
+react-smooth@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-smooth/-/react-smooth-1.0.2.tgz#f7a2d932ece8db898646078c3c97f3e9533e0486"
+  integrity sha512-pIGzL1g9VGAsRsdZQokIK0vrCkcdKtnOnS1gyB2rrowdLy69lNSWoIjCTWAfgbiYvria8tm5hEZqj+jwXMkV4A==
+  dependencies:
+    lodash "~4.17.4"
+    prop-types "^15.6.0"
+    raf "^3.4.0"
+    react-transition-group "^2.5.0"
+
 react-smooth@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/react-smooth/-/react-smooth-1.0.5.tgz#94ae161d7951cdd893ccb7099d031d342cb762ad"
@@ -22028,9 +22019,9 @@ shallow-clone@^3.0.0:
     kind-of "^6.0.2"
 
 shallow-equal@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/shallow-equal/-/shallow-equal-1.2.0.tgz#fd828d2029ff4e19569db7e19e535e94e2d1f5cc"
-  integrity sha512-Z21pVxR4cXsfwpMKMhCEIO1PCi5sp7KEp+CmOpBQ+E8GpHwKOw2sEzk7sgblM3d/j4z4gakoWEoPcjK0VJQogA==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/shallow-equal/-/shallow-equal-1.2.1.tgz#4c16abfa56043aa20d050324efa68940b0da79da"
+  integrity sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==
 
 shallowequal@^1.1.0:
   version "1.1.0"

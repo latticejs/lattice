@@ -1,5 +1,3 @@
-const nodeExternals = require('webpack-node-externals');
-
 module.exports = [
   {
     devtool: 'cheap-module-source-map',
@@ -33,11 +31,6 @@ module.exports = [
       }
     },
     entry: './src/server',
-    target: 'node',
-    externals: [
-      nodeExternals({
-        whitelist: [/@material-ui\/core\/*./]
-      })
-    ]
+    target: 'node'
   }
 ];
