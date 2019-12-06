@@ -51,9 +51,8 @@ export class AgGrid extends Component {
 
 The above snippet will render a basic ag-Grid with a material _look'n'feel_. It also support themes (dark, light). 
 
-
-## PROPS
-
+<!-- start:api -->
+## API
 
 ### animateRows
 > `boolean` | Defaults to `true` 
@@ -88,4 +87,10 @@ The above snippet will render a basic ag-Grid with a material _look'n'feel_. It 
 ### afterGridCreated
 - This prop is used to get the reference of lattice ag-Grid so that user can use the properties of ag-Grid by using `getGrid()` function.
 
+### gridContainerStyle
+- To append inline style to the grid container.
+
 You can also pass other props. Here are the reference of props list [references](https://www.ag-grid.com/javascript-grid-properties/).
+
+
+<!-- end:api -->

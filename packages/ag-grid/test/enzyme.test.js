@@ -55,6 +55,10 @@ describe('<AgGrid />', () => {
         rowData={rowData}
         rowSelection="multiple"
         afterGridCreated={jest.fn()}
+        gridContainerStyle={{
+          height: window.innerHeight - 100,
+          margin: '10px 10px'
+        }}
       />
     );
 

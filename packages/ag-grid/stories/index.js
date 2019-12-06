@@ -108,6 +108,9 @@ class AgGrid extends Component {
         rowData={rowData}
         rowSelection="multiple"
         afterGridCreated={this.getGrid}
+        gridContainerStyle={{
+          height: window.innerHeight
+        }}
       />
     );
   }
