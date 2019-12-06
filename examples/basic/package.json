@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@latticejs/widgets": "file:../../packages/widgets",
+    "@latticejs/widgets": "^1.0.1-beta.2",
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
     "react": "^16.9.0",

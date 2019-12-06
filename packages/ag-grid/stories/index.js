@@ -108,7 +108,7 @@ class AgGrid extends Component {
         rowData={rowData}
         rowSelection="multiple"
         afterGridCreated={this.getGrid}
-      ></LatticeAgGrid>
+      />
     );
   }
 }
