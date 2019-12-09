@@ -1,1 +1,1 @@
-module.exports = require('./dist/infinite-liste.js');
+module.exports = require('./dist/cjs/index.js');
