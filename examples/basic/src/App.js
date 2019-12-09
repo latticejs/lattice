@@ -140,7 +140,6 @@ class App extends Component {
 
   gotData({ data }) {
     this.setState({ rowData: data });
-    console.log(this.state.rowData);
   }
 
   handlePagination() {
@@ -148,7 +147,6 @@ class App extends Component {
   }
 
   getGrid(gridObj) {
-    console.log('m here');
     console.log(gridObj);
   }
 
