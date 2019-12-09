@@ -45,8 +45,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*",
-      "examples/*"
+      "packages/*"
     ],
     "nohoist": [
       "**/taskr",

@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 // Material-UI
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import { AppBar, IconButton, Grid, Toolbar, Tooltip, Tab, Tabs, Typography } from '@material-ui/core';
+import httpHelper from './helper/httpHelper';
+import LatticeAgGrid from '@latticejs/ag-grid';
+import '@latticejs/ag-grid/styles/lattice-ag-grid-style.css';
 import { withStyles } from '@material-ui/core/styles';
+
+import PropTypes from 'prop-types';
+import PieChartIcon from '@material-ui/icons/PieChart';
+import GridOnIcon from '@material-ui/icons/GridOn';
+import MapIcon from '@material-ui/icons/Map';
+import Box from '@material-ui/core/Box';
 
 // Material icons
 import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
 import 'typeface-roboto';
-
-// Lattice
-import { Widget } from '@latticejs/widgets';
 
 // Custom Style
 const styles = theme => ({
@@ -39,21 +40,139 @@ const styles = theme => ({
   }
 });
 
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`scrollable-force-tabpanel-${index}`}
+      aria-labelledby={`scrollable-force-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box p={3}>{children}</Box>}
+    </Typography>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired
+};
+
+function a11yProps(index) {
+  return {
+    id: `scrollable-force-tab-${index}`,
+    'aria-controls': `scrollable-force-tabpanel-${index}`
+  };
+}
+
 class App extends Component {
-  handleNightModeChange = () => {
+  constructor(props) {
+    super(props);
+    this.gotData = this.gotData.bind(this);
+    this.handlePagination = this.handlePagination.bind(this);
+    this.getGrid = this.getGrid.bind(this);
+    this.handleNightModeChange = this.handleNightModeChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      selectedTab: 0,
+      columnDefs: [
+        {
+          headerName: 'Name',
+          field: 'name',
+          pinned: true,
+          filter: 'agTextColumnFilter',
+          rowDrag: true,
+          checkboxSelection: true
+        },
+        {
+          headerName: 'Native Name',
+          field: 'nativeName',
+          filter: 'agTextColumnFilter'
+        },
+        {
+          headerName: 'Capital',
+          field: 'capital',
+          filter: 'agTextColumnFilter'
+        },
+        {
+          headerName: 'Population',
+          field: 'population',
+          filter: 'agNumberColumnFilter'
+        },
+        {
+          headerName: 'Region Info',
+          children: [
+            {
+              headerName: 'Region',
+              field: 'region',
+              filter: 'agTextColumnFilter'
+            },
+            {
+              headerName: 'Sub-Region',
+              field: 'subregion',
+              filter: 'agTextColumnFilter'
+            },
+            {
+              headerName: 'Area',
+              field: 'area',
+              filter: 'agNumberColumnFilter'
+            }
+          ]
+        }
+      ],
+      rowData: [],
+      showPagination: false
+    };
+  }
+
+  componentDidMount() {
+    const httpObj = {
+      url: '/all?fields=name;capital;currencies;region;subregion;area;nativeName;languages;timezones;population',
+      method: 'get'
+    };
+    httpHelper(httpObj, this.gotData);
+  }
+
+  gotData({ data }) {
+    this.setState({ rowData: data });
+    console.log(this.state.rowData);
+  }
+
+  handlePagination() {
+    this.setState({ showPagination: !this.state.showPagination });
+  }
+
+  getGrid(gridObj) {
+    console.log('m here');
+    console.log(gridObj);
+  }
+
+  handleNightModeChange() {
     const { updateTheme, nightMode } = this.props;
     updateTheme(!nightMode);
-  };
+  }
+
+  handleChange(event, newTab) {
+    this.setState({
+      selectedTab: newTab
+    });
+  }
 
   render() {
     const { classes, nightMode } = this.props;
+    const { columnDefs, rowData, showPagination } = this.state;
 
     return (
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" color="inherit" className={classes.flex}>
-              Basic Example
+              Reacharts, Ag-Grid, Map Example
             </Typography>
             <Tooltip title="Toggle Night Mode" enterDelay={300}>
               <IconButton onClick={this.handleNightModeChange} color="inherit">
@@ -62,51 +181,45 @@ class App extends Component {
             </Tooltip>
           </Toolbar>
         </AppBar>
-        <Grid container>
-          <Grid item xs={12}>
-            <Grid container justify="space-around" spacing={Number('0')}>
-              <Grid item>
-                <Widget className={classes.widget} title="Introduction" border="bottom">
-                  <Typography variant="subtitle1">Welcome to Lattice</Typography>
-                </Widget>
-              </Grid>
-              <Grid item>
-                <Widget className={classes.widget} title="Material" border="bottom">
-                  <Typography variant="subtitle1">Material UI integration</Typography>
-                </Widget>
-              </Grid>
-              <Grid item>
-                <Widget className={classes.widget} title="Recharts" border="bottom">
-                  <Typography variant="subtitle1">with Material style</Typography>
-                </Widget>
-              </Grid>
-              <Grid item>
-                <Widget className={classes.widget} title="D3" border="bottom">
-                  <Typography variant="subtitle1">React + D3 integration</Typography>
-                </Widget>
-              </Grid>
-              <Grid item>
-                <Widget className={classes.widget} title="React Virtualized" border="bottom">
-                  <Typography variant="subtitle1">Infinite list support</Typography>
-                </Widget>
-              </Grid>
-            </Grid>
+        <AppBar position="static" color="default">
+          <Tabs
+            value={this.state.selectedTab}
+            onChange={this.handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            aria-label="scrollable force tabs example"
+          >
+            <Tab label="Rechart" icon={<PieChartIcon />} {...a11yProps(0)} />
+            <Tab label="Ag-Grid" icon={<GridOnIcon />} {...a11yProps(1)} />
+            <Tab label="Map" icon={<MapIcon />} {...a11yProps(2)} />
+          </Tabs>
+        </AppBar>
+        <TabPanel value={this.state.selectedTab} index={0}>
+          Rechart
+        </TabPanel>
+        <TabPanel value={this.state.selectedTab} index={1}>
+          <Grid container>
+            <LatticeAgGrid
+              animateRows
+              enableSorting
+              enableFilter
+              enableColResize
+              rowDragManaged={!showPagination}
+              pagination={showPagination}
+              paginationAutoPageSize={showPagination}
+              columnDefs={columnDefs}
+              rowData={rowData}
+              rowSelection="multiple"
+              afterGridCreated={this.getGrid}
+              gridContainerStyle={{
+                height: window.innerHeight
+              }}
+            />
           </Grid>
-          <Grid item xs={12}>
-            <Typography variant="subtitle1" align="center">
-              Want to learn more? Check the&nbsp;
-              <a
-                className={classes.link}
-                href="https://github.com/latticejs/lattice"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                docs
-              </a>
-              !
-            </Typography>
-          </Grid>
-        </Grid>
+        </TabPanel>
+        <TabPanel value={this.state.selectedTab} index={2}>
+          Map
+        </TabPanel>
       </div>
     );
   }

@@ -9,6 +9,7 @@ import App from './App';
 export default class Main extends Component {
   constructor(props) {
     super(props);
+    this.updateTheme = this.updateTheme.bind(this);
     this.state = {
       nightMode: false
     };
@@ -26,11 +27,11 @@ export default class Main extends Component {
     });
   }
 
-  updateTheme = mode => {
+  updateTheme(mode) {
     this.setState({
       nightMode: mode
     });
-  };
+  }
 
   render() {
     return (

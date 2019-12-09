@@ -1,26 +1,96 @@
 {
   "name": "basic",
   "version": "1.0.1-beta.2",
-  "description": "A basic Lattice App",
-  "main": "index.js",
-  "private": true,
-  "scripts": {
-    "test": "echo 'test'",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@latticejs/widgets": "^1.0.1-beta.2",
+  "private": true,
+  "module": "dist/esm/index.js",
+  "browser": "dist/umd/ag-grid.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build:clean": "rimraf dist/**",
+    "build": "npm run build:clean && lattice-scripts build ./src/index.js",
+    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
+    "release": "npm run build",
+    "prepublish": "npm run release",
+    "test": "jest --no-cache",
+    "size": "bundlesize"
+  },
+  "peerDependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "typeface-roboto": "^0.0.54"
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "ag-grid-community": "^19.1.4",
+    "ag-grid-react": "^19.1.2",
+    "typeface-roboto": "^0.0.54",
+    "apollo-boost": "^0.4.0",
+    "apollo-server": "^2.9.0",
+    "classnames": "^2.2.0",
+    "graphql": "^14.5.0",
+    "libnpmsearch": "^2.0.0",
+    "react-apollo": "^3.1.0",
+    "react-container-dimensions": "^1.4.0",
+    "react-dropzone": "^10.1.0",
+    "react-json-view": "^1.19.0",
+    "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.5.1"
   },
   "devDependencies": {
-    "react-scripts": "^1.1.0"
-  }
+    "@latticejs/ag-grid": "file:../../packages/ag-grid",
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-export-default-from": "^7.5.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.0",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "@latticejs/lattice-scripts": "file:../../packages/lattice-scripts",
+    "jest": "^23.6.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.9.0",
+    "rimraf": "^2.7.0",
+    "react-scripts": "^1.1.4",
+    "concurrently": "^4.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-react-app": "^6.0.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./setupTest.js",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      "^.+\\.md?$": "markdown-loader-jest"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/images/",
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "bundlesize": [
+    {
+      "path": "dist/cjs/index.js"
+    },
+    {
+      "path": "dist/esm/index.js"
+    },
+    {
+      "path": "dist/umd/gauge.js"
+    }
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Basic example of Lattice blended with Material UI",
+  "main": "dist/cjs/index.js",
+  "keywords": ["Lattice"],
+  "author": ""
 }

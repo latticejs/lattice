@@ -4,7 +4,7 @@ import muiTheme from '../.storybook/decorator-material-ui';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
 import '@latticejs/ag-grid/styles/lattice-ag-grid-style.css';
-import httpHelper from '../helper/httpHelper';
+import httpHelper from '../src/helper/httpHelper';
 
 const Flexed = story => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
