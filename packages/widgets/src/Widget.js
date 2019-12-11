@@ -90,7 +90,7 @@ Widget.propTypes = {
   classes: PropTypes.object,
   border: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
   rounded: PropTypes.bool,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.array])
 };
 
 export default withStyles(styles, { name: 'Widget' })(Widget);
