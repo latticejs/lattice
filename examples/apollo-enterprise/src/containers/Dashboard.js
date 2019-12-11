@@ -39,7 +39,7 @@ class Dashboard extends Component {
       // <Stats stat={stat}/>
     }
 
-    return view
+    return view;
   }
   //
   // {stats.map((stat, idx) => (
@@ -60,7 +60,7 @@ class Dashboard extends Component {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Grid container spacing={2}>
-              {statsView}
+            {statsView}
           </Grid>
         </Grid>
         <Grid item xs={12}>
