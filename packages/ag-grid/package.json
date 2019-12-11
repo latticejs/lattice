@@ -1,10 +1,9 @@
 {
-  "name": "@latticejs/mui-recharts",
+  "name": "@latticejs/ag-grid",
   "version": "1.0.1-beta.2",
   "license": "MIT",
-  "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "browser": "dist/umd/mui-recharts.js",
+  "browser": "dist/umd/ag-grid.js",
   "files": [
     "dist"
   ],
@@ -14,15 +13,20 @@
     "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
-    "storybook": "start-storybook -p 9011 -c .storybook",
-    "test": "jest",
+    "storybook": "start-storybook -p 9016 -c .storybook",
+    "test": "jest --no-cache",
     "size": "bundlesize"
   },
   "peerDependencies": {
-    "@material-ui/core": "^4.5.2",
+    "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.5.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "recharts": "^1.8.5"
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "ag-grid-community": "^19.1.4",
+    "ag-grid-react": "^19.1.2",
+    "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
@@ -34,41 +38,34 @@
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
+    "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.5.1",
     "@latticejs/lattice-scripts": "^1.0.1-beta.2",
-    "@latticejs/storybook-readme": "^1.0.1-beta.1",
-    "@material-ui/core": "^3.9.0",
     "@storybook/addon-storyshots": "^4.1.13",
     "@storybook/addon-storysource": "^4.1.13",
     "@storybook/react": "^4.1.13",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.0",
-    "babel-jest": "^24.9.0",
-    "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-plugin-transform-async-functions": "^6.22.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^23.6.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-jss": "^10.0.0",
     "react-test-renderer": "^16.9.0",
-    "recharts": "^1.7.1",
-    "rimraf": "^3.0.0",
-    "storybook-readme": "^4.0.5"
-  },
-  "dependencies": {
-    "classnames": "^2.2.0"
+    "rimraf": "^2.7.0",
+    "storybook-readme": "^4.0.5",
+    "react-scripts": "^1.1.4"
   },
   "jest": {
-    "setupFiles": [
-      "./test/shim.js"
-    ],
     "setupTestFrameworkScriptFile": "./setupTest.js",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.js?$": "babel-jest",
       "^.+\\.md?$": "markdown-loader-jest"
-    }
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/images/",
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/"
+    ]
   },
   "bundlesize": [
     {
@@ -78,11 +75,14 @@
       "path": "dist/esm/index.js"
     },
     {
-      "path": "dist/umd/mui-recharts.js"
+      "path": "dist/umd/gauge.js"
     }
   ],
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "c1aad20555302fad47d2d61d1ff0f48f6d566083"
+  "description": "Standalone Ag Grid Component of Lattice blended with Material UI",
+  "main": "dist/cjs/index.js",
+  "keywords": ["Lattice", "Ag-Grid", "Ag-Grid Lattice", "Lattice Ag-Grid", "Grid"],
+  "author": ""
 }
