@@ -23,19 +23,44 @@ import Stats from '../components/dashboard/Stats';
 import TopProducts from '../components/dashboard/TopProducts';
 
 class Dashboard extends Component {
+  getStats(stats, loadingStats) {
+    const view = [];
+    let counter = 0;
+
+    for (const stat of stats) {
+      view.push(
+        <Loader key={`stat-${counter}`} loading={loadingStats}>
+          <Grid item xs={6} lg={12 / stats.length}>
+            <Stats stat={stat} />
+          </Grid>
+        </Loader>
+      );
+      counter++;
+      // <Stats stat={stat}/>
+    }
+
+    return view
+  }
+  //
+  // {stats.map((stat, idx) => (
+  //   <Grid key={`stat-${idx}`} item xs={6} lg={12 / stats.length}>
+  //     <Stats stat={stat} />
+  //   </Grid>
+  // ))}
+
   render() {
     const { stats, loadingStats, topProducts, loadingTopProducts } = this.props;
+    if (loadingStats || loadingTopProducts) {
+      return null;
+    }
+
+    const statsView = this.getStats(stats, loadingStats);
+    console.log(stats);
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Grid container spacing={16}>
-            <Loader loading={loadingStats}>
-              {stats.map((stat, idx) => (
-                <Grid key={`stat-${idx}`} item xs={6} lg={12 / stats.length}>
-                  <Stats stat={stat} />
-                </Grid>
-              ))}
-            </Loader>
+          <Grid container spacing={2}>
+              {statsView}
           </Grid>
         </Grid>
         <Grid item xs={12}>
@@ -44,7 +69,7 @@ class Dashboard extends Component {
           </Loader>
         </Grid>
         <Grid item xs={12}>
-          <Grid container alignItems="stretch" spacing={16}>
+          <Grid container alignItems="stretch" spacing={2}>
             <Grid item xs={12} md={8}>
               <NewCustomers style={{ height: '100%' }} />
             </Grid>
@@ -54,7 +79,7 @@ class Dashboard extends Component {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Grid container alignItems="stretch" spacing={16}>
+          <Grid container alignItems="stretch" spacing={2}>
             <Grid item xs={12} md={8}>
               <TaskScheduler />
             </Grid>

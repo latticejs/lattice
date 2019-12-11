@@ -23,9 +23,9 @@ let lock = false;
 export const signOut = client => {
   lock = true;
   localStorage.removeItem('token');
-  client.resetStore().then(() => {
-    lock = false;
-  });
+  // client.resetStore().then(() => {
+  //   // lock = false;
+  // });
 };
 
 export const onQLAuthError = (client, message) => {

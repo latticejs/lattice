@@ -11,7 +11,7 @@ import { Widget } from '@latticejs/widgets';
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   }
 });
 
@@ -20,24 +20,28 @@ class General extends Component {
     const { classes } = this.props;
 
     return (
-      <Grid container spacing={24}>
+      <Grid container spacing={3}>
         <Grid item xs={12} lg={6}>
           <Widget title="Typography">
-            <Typography variant="display4">Display4</Typography>
-            <Typography variant="display3">Display3</Typography>
-            <Typography variant="display2">Display2</Typography>
-            <Typography variant="display1">Display1</Typography>
-            <Typography variant="headline">Headline</Typography>
-            <Typography variant="title">Title</Typography>
-            <Typography variant="subheading">SubHeading</Typography>
-            <Typography variant="caption">Caption</Typography>
+            <Typography variant="h1">h1</Typography>
+            <Typography variant="h2">h2</Typography>
+            <Typography variant="h3">h3</Typography>
+            <Typography variant="h4">h4</Typography>
+            <Typography variant="h5">h5</Typography>
+            <Typography variant="h6">h6</Typography>
+            <Typography variant="subtitle1">subtitle1</Typography>
+            <Typography variant="subtitle2">subtitle2</Typography>
             <Typography variant="body2">Body2</Typography>
             <Typography variant="body1">Body1</Typography>
-            <Typography variant="button">Button</Typography>
+            <Typography variant="caption">Button</Typography>
+            <Typography variant="button">button</Typography>
+            <Typography variant="overline">overline</Typography>
+            <Typography variant="srOnly">srOnly</Typography>
+            <Typography variant="inherit">inherit</Typography>
           </Widget>
         </Grid>
         <Grid item xs={12} lg={6}>
-          <Grid container spacing={16}>
+          <Grid container spacing={4}>
             <Grid item xs={12}>
               <Widget title="Buttons Primary">
                 <Button color="primary" className={classes.button}>
@@ -46,11 +50,8 @@ class General extends Component {
                 <Button color="primary" variant="contained" className={classes.button}>
                   Primary Contained
                 </Button>
-                <Button color="primary" variant="fab" className={classes.button}>
+                <Button color="primary" variant="outlined" className={classes.button}>
                   fab
-                </Button>
-                <Button color="primary" variant="fab" mini className={classes.button}>
-                  -
                 </Button>
               </Widget>
             </Grid>
@@ -62,11 +63,8 @@ class General extends Component {
                 <Button color="secondary" variant="contained" className={classes.button}>
                   Secondary Contained
                 </Button>
-                <Button color="secondary" variant="fab" className={classes.button}>
+                <Button color="secondary" variant="outlined" className={classes.button}>
                   fab
-                </Button>
-                <Button color="secondary" variant="fab" mini className={classes.button}>
-                  -
                 </Button>
               </Widget>
             </Grid>
@@ -78,11 +76,8 @@ class General extends Component {
                 <Button color="default" variant="contained" className={classes.button}>
                   Default Contained
                 </Button>
-                <Button color="default" variant="fab" className={classes.button}>
+                <Button color="default" variant="outlined" className={classes.button}>
                   fab
-                </Button>
-                <Button color="default" variant="fab" mini className={classes.button}>
-                  -
                 </Button>
               </Widget>
             </Grid>
