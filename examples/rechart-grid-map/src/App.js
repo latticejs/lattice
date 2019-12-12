@@ -19,7 +19,7 @@ import Box from '@material-ui/core/Box';
 import Sunburst from './components/Sunburst';
 import PieChart from './components/PieChart';
 import Mapbox from './components/Mapbox';
-
+import AgGrid from './components/AgGrid';
 // Lattice
 import { Widget } from '@latticejs/widgets';
 
@@ -99,7 +99,7 @@ class App extends Component {
       selectedTab: newTab
     });
   };
-
+  
   render() {
     const { classes, nightMode } = this.props;
 
@@ -131,7 +131,7 @@ class App extends Component {
           </Tabs>
         </AppBar>
         <TabPanel value={this.state.selectedTab} index={0}>
-          <Grid container justify="space-left" spacing={Number('4')}>
+          <Grid container justify="flex-start" spacing={Number('4')}>
             <Grid item xs={6}>
               <Widget className={classes.widget} title="State & County Data" border="top">
                 <Sunburst />
@@ -145,7 +145,13 @@ class App extends Component {
           </Grid>
         </TabPanel>
         <TabPanel value={this.state.selectedTab} index={1}>
-          Ag-Grid
+        <Grid container justify="space-center" spacing={Number(0)}>
+            <Grid item xs={12}>
+              <Widget className={classes.widget} title="State & County Population" border="top">
+                <AgGrid />
+              </Widget>
+            </Grid>
+          </Grid>
         </TabPanel>
         <TabPanel value={this.state.selectedTab} index={2}>
           <Grid container justify="space-center" spacing={Number(0)}>
