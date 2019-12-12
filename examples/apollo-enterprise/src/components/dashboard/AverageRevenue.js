@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 // Lattice
 import { LineChart, Line, ResponsiveContainer } from '@latticejs/mui-recharts';
 import { Widget } from '@latticejs/widgets';
+import Grid from '@material-ui/core/Grid';
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
@@ -20,18 +21,22 @@ class AverageRevenue extends Component {
   render() {
     return (
       <Widget title="Average Revenue">
-        <ResponsiveContainer aspect={2}>
-          <LineChart data={data}>
-            <Line variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-            <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
-          </LineChart>
-        </ResponsiveContainer>
-        <Typography variant="h4" align="center">
-          +{25.9}%
-        </Typography>
-        <Typography variant="caption" align="center">
-          USD {1.2}M
-        </Typography>
+        <Grid container>
+          <ResponsiveContainer aspect={2} height="85%">
+            <LineChart data={data}>
+              <Line variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+              <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
+            </LineChart>
+          </ResponsiveContainer>
+          <Grid container>
+            <Typography variant="h4" align="center">
+              +25.9%
+            </Typography>
+            <Typography variant="caption" align="center">
+              USD 1.2M
+            </Typography>
+          </Grid>
+        </Grid>
       </Widget>
     );
   }
