@@ -36,17 +36,10 @@ class Dashboard extends Component {
         </Loader>
       );
       counter++;
-      // <Stats stat={stat}/>
     }
 
     return view;
   }
-  //
-  // {stats.map((stat, idx) => (
-  //   <Grid key={`stat-${idx}`} item xs={6} lg={12 / stats.length}>
-  //     <Stats stat={stat} />
-  //   </Grid>
-  // ))}
 
   render() {
     const { stats, loadingStats, topProducts, loadingTopProducts } = this.props;
@@ -55,7 +48,6 @@ class Dashboard extends Component {
     }
 
     const statsView = this.getStats(stats, loadingStats);
-    console.log(stats);
     return (
       <Grid container spacing={2}>
         <Grid item xs={12}>
