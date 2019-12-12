@@ -66,7 +66,7 @@ class Form extends Component {
             </TextField>
           </Grid>
           <Toolbar>
-            <Grid container spacing={16}>
+            <Grid container spacing={4}>
               <Grid item>
                 <Button type="submit" variant="contained" color="primary">
                   Save

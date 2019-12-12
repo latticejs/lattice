@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Dag-in-Action Example
 - Lattice-SSR Example
 
+
 ## Update Phase - 2019-10-18
 - Updated minimal example with jest and lint configurations.
 - Upgraded MUI version in Minimal Example.

@@ -75,7 +75,7 @@ class Login extends Component {
             container
             alignContent="center"
             justify="center"
-            spacing={40}
+            spacing={10}
             className={classes.form}
           >
             <Grid item xs={8}>
