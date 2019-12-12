@@ -17,7 +17,7 @@ class AgGrid extends Component {
     super(props);
 
     this.gotData = this.gotData.bind(this);
-    
+
     this.state = {
       columnDefs: [
         {
