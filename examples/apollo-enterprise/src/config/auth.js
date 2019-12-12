@@ -30,8 +30,13 @@ export const signOut = client => {
 
 export const onQLAuthError = (client, message) => {
   if (!lock && message === 'Not Authorised!') {
-    // signOut(client);
+    localStorage.removeItem('token');
   }
+
+  if (window.location.pathname !== '/login') {
+    window.location.href = window.location.origin + '/login';
+  }
+  // signOut(client);
 };
 
 export const onNetworkAuthError = (client, networkError) => {
