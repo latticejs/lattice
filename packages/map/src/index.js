@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import Mapboxgl from 'mapbox-gl';
 import { withTheme } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 class Map extends Component {
   constructor(props) {
     super(props);
     Mapboxgl.accessToken = this.props.accessToken;
     this.generateMap = this.generateMap.bind(this);
+    this.getInitialMapStyle = this.getInitialMapStyle.bind(this);
+
     this.state = {
       longitude: this.props.longitude,
       latitude: this.props.latitude,
       zoom: this.props.zoom,
-      mapStyle: this.props.mapStyle ? this.props.mapStyle : 'streets-v9',
+      mapStyle: this.getInitialMapStyle(),
       theme: this.props.theme,
       height: this.props.height,
       width: this.props.width
@@ -20,6 +23,21 @@ class Map extends Component {
 
   componentDidMount() {
     return this.generateMap();
+  }
+
+  /**
+   * Return the initial mapStyle as per selected theme.
+   */
+  getInitialMapStyle() {
+    if (this.props.mapStyle) {
+      return this.props.mapStyle;
+    } else {
+      if (this.props.theme.palette.type === 'light') {
+        return this.props.lightTheme;
+      } else if (this.props.theme.palette.type === 'dark') {
+        return this.props.darkTheme;
+      }
+    }
   }
 
   /**
@@ -53,9 +71,9 @@ class Map extends Component {
   componentDidUpdate(prevProps) {
     if (JSON.stringify(prevProps.theme) !== JSON.stringify(this.props.theme)) {
       if (this.props.theme.palette.type === 'light') {
-        this.setState({ mapStyle: 'streets-v9' }, this.generateMap);
+        this.setState({ mapStyle: this.props.lightTheme }, this.generateMap);
       } else if (this.props.theme.palette.type === 'dark') {
-        this.setState({ mapStyle: 'dark-v9' }, this.generateMap);
+        this.setState({ mapStyle: this.props.darkTheme }, this.generateMap);
       }
     }
   }
@@ -70,5 +88,23 @@ class Map extends Component {
     return <div ref={el => (this.mapContainer = el)} style={style} />;
   }
 }
+
+Map.propTypes = {
+  darkTheme: PropTypes.string,
+  lightTheme: PropTypes.string,
+  theme: PropTypes.object,
+  longitude: PropTypes.number,
+  latitude: PropTypes.number,
+  zoom: PropTypes.number,
+  height: PropTypes.number,
+  width: PropTypes.number
+};
+
+Map.defaultProps = {
+  darkTheme: 'dark-v9',
+  lightTheme: 'streets-v9',
+  width: 200,
+  height: 200
+};
 
 export default withTheme(Map);

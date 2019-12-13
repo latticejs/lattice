@@ -15,9 +15,9 @@ const FullViewport = story => <div style={{ height: '100vh', width: '100vw', pad
 class AgGrid extends Component {
   constructor(props) {
     super(props);
+
     this.gotData = this.gotData.bind(this);
-    this.handlePagination = this.handlePagination.bind(this);
-    this.getGrid = this.getGrid.bind(this);
+
     this.state = {
       columnDefs: [
         {
@@ -80,19 +80,6 @@ class AgGrid extends Component {
     this.setState({ rowData: data });
   }
 
-  handlePagination() {
-    this.setState({ showPagination: !this.state.showPagination });
-  }
-
-  getGrid(gridObj) {
-    console.log(gridObj);
-  }
-
-  handleNightModeChange() {
-    const { updateTheme, nightMode } = this.props;
-    updateTheme(!nightMode);
-  }
-
   render() {
     const { columnDefs, rowData, showPagination } = this.state;
     return (
@@ -107,7 +94,6 @@ class AgGrid extends Component {
         columnDefs={columnDefs}
         rowData={rowData}
         rowSelection="multiple"
-        afterGridCreated={this.getGrid}
         gridContainerStyle={{
           height: window.innerHeight
         }}
