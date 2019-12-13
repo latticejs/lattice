@@ -25,6 +25,9 @@ class Map extends Component {
     return this.generateMap();
   }
 
+  /**
+   * Return the initial mapStyle as per selected theme.
+   */
   getInitialMapStyle() {
     if (this.props.mapStyle) {
       return this.props.mapStyle;

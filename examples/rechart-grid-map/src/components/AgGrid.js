@@ -52,9 +52,6 @@ class AgGrid extends Component {
         columnDefs={this.columnDefs}
         rowData={this.rowData}
         rowSelection="multiple"
-        gridContainerStyle={{
-          height: window.innerHeight - 315
-        }}
       />
     );
   }

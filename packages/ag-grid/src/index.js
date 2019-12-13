@@ -47,12 +47,16 @@ class LatticeAgGrid extends Component {
 
 LatticeAgGrid.propTypes = {
   darkTheme: PropTypes.string,
-  lightTheme: PropTypes.string
+  lightTheme: PropTypes.string,
+  gridContainerStyle: PropTypes.object
 };
 
 LatticeAgGrid.defaultProps = {
   darkTheme: 'ag-theme-material-dark',
-  lightTheme: 'ag-theme-material'
+  lightTheme: 'ag-theme-material',
+  gridContainerStyle: {
+    height: window.innerHeight - 315
+  }
 };
 
 export default withTheme(LatticeAgGrid);

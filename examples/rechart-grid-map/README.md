@@ -1,17 +1,23 @@
-# Basic example
+# Sunburst, Ag-Grid, Map example
 
-![screenshot](screen.png?raw=true "Basic Demo")
+![screenshot](Mapbox.png?raw=true "Lattice Map Demo")
+![screenshot](Sunburst.png?raw=true "Sunburst Demo")
+![screenshot](Ag-Grid.png?raw=true "Ag-Grid Demo")
 
 ## How to use
 
 ### With clap
 
-`clap myApp`
+`clap example rechart-gird-map myApp`
 
-_Note: `basic` is the default Lattice example_
+## Idea behind the example
 
-## Features
+## Map
+- To expose how a Lattice App would look without react-scripts nor other tooling.
+- The current example is using **mapbox** with: navigation, Search, tool MUI Theme (Dark/Night).
+- You can customize Map using Map instance.
 
-- Similar to CRA.
-- Create your upcoming Lattice App with one command!
+## Ag-Grid
+- Example with Lattice **Ag-grid** Package.
+- Ag-Gird with filter, sorting, rowDrag feature.
 
