@@ -89,6 +89,11 @@ The above snippet will render a basic ag-Grid with a material _look'n'feel_. It 
 
 ### gridContainerStyle
 - To append inline style to the grid container.
+  ```javascript
+  gridContainerStyle: {
+    height: Pass height..
+  }
+  ```
 
 You can also pass other props. Here are the reference of props list [references](https://www.ag-grid.com/javascript-grid-properties/).
 

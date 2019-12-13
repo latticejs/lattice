@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^4.5.0",
-    "mapbox-gl": "^1.5.0"
+    "mapbox-gl": "1.5.0"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./setupTest.js",
