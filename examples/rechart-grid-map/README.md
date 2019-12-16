@@ -2,7 +2,7 @@
 
 ![screenshot](Mapbox.png?raw=true "Lattice Map Demo")
 ![screenshot](Sunburst.png?raw=true "Sunburst Demo")
-![screenshot](Ag-Grid.png?raw=true "Ag-Grid Demo")
+![screenshot](AgGrid.png?raw=true "Ag-Grid Demo")
 
 ## How to use
 
