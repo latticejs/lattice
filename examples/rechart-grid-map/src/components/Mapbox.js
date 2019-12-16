@@ -21,10 +21,6 @@ class Mapbox extends Component {
 
     this.stateLegendView = this.getStateLegendView();
     this.countyLegendView = this.getCountyLegendView();
-
-    this.state = {
-      mapStyle: this.props.mapStyle
-    };
   }
 
   /**
@@ -48,19 +44,6 @@ class Mapbox extends Component {
    * Set the layer for county and state.
    */
   stateCountyLayerSetter() {
-    let layers = ['country-label-lg', 'place-city-sm'];
-    layers.map(layer => {
-      this.mapObj.setLayoutProperty(layer, 'text-field', [
-        'format',
-        ['get', 'name_en'],
-        {
-          'font-scale': 1.2,
-          'text-font': ['literal', ['Roboto Bold']]
-        }
-      ]);
-      return null;
-    });
-
     this.mapObj.addLayer(
       {
         id: 'state-population',

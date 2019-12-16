@@ -7,6 +7,8 @@ class Map extends Component {
   constructor(props) {
     super(props);
     Mapboxgl.accessToken = this.props.accessToken;
+    this.fontFamily = this.props.theme.typography.fontFamily;
+
     this.generateMap = this.generateMap.bind(this);
     this.getInitialMapStyle = this.getInitialMapStyle.bind(this);
 
@@ -55,8 +57,28 @@ class Map extends Component {
       ...this.props
     });
 
+    this.map.on('load', this.setLayerFont);
     this.props.afterMapComplete(this.map);
   }
+
+  /**
+   * Set the State and Country layer font.
+   */
+  setLayerFont = () => {
+    let fontArr = this.fontFamily.replace(/['"]+/g, '').split(',');
+    let layers = ['country-label-lg', 'place-city-sm'];
+    layers.map(layer => {
+      this.map.setLayoutProperty(layer, 'text-field', [
+        'format',
+        ['get', 'name_en'],
+        {
+          'font-scale': 1.2,
+          'text-font': ['literal', [`${fontArr[0]} Bold`]]
+        }
+      ]);
+      return null;
+    });
+  };
 
   /**
    * This function return current mapObject. When ever we need to customize map
