@@ -22,20 +22,6 @@ class BasicMap extends Component {
         mapboxgl: Mapboxgl
       })
     );
-    mapObj.on('render', function(evt) {
-      let layers = ['country-label-lg', 'place-city-sm'];
-      layers.map(layer => {
-        mapObj.setLayoutProperty(layer, 'text-field', [
-          'format',
-          ['get', 'name_en'],
-          {
-            'font-scale': 1.2,
-            'text-font': ['literal', ['Roboto Bold']]
-          }
-        ]);
-        return null;
-      });
-    });
   };
 
   render() {

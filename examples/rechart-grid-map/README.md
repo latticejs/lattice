@@ -10,7 +10,7 @@
 
 `clap example rechart-gird-map myApp`
 
-## Idea behind the example
+### Idea behind the example
 
 ## Map
 - To expose how a Lattice App would look without react-scripts nor other tooling.
