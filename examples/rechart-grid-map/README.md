@@ -10,14 +10,14 @@
 
 `clap example rechart-gird-map myApp`
 
-### Idea behind the example
+## Idea behind the example
 
-## Map
+### Map
 - To expose how a Lattice App would look without react-scripts nor other tooling.
 - The current example is using **mapbox** with: navigation, Search, tool MUI Theme (Dark/Night).
 - You can customize Map using Map instance.
 
-## Ag-Grid
+### Ag-Grid
 - Example with Lattice **Ag-grid** Package.
 - Ag-Gird with filter, sorting, rowDrag feature.
 
