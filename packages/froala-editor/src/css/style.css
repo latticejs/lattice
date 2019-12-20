@@ -8,3 +8,5 @@
 @import "./plugins/code_view.min.css";
 @import "./plugins/draggable.min.css";
 @import "./plugins/emoticons.min.css";
+@import "./advanced/materialDesignIcons.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css"

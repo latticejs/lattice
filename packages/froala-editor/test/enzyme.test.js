@@ -41,12 +41,12 @@ describe('To test the Froala Editor Component.', () => {
     expect(defaultConfig.fontFamily).toMatch(expectedConfig.fontFamily);
   });
 
-  it('test handleModelChange', () => {
-    expect(childWrapper.instance().state.model).toBe('');
+  // it('test handleModelChange', () => {
+  //   expect(childWrapper.instance().state.model).toBe('');
 
-    childWrapper.instance().handleModelChange('<p>Test model content</p>');
-    expect(childWrapper.instance().state.model).toBe('<p>Test model content</p>');
-  });
+  //   childWrapper.instance().handleModelChange('<p>Test model content</p>');
+  //   expect(childWrapper.instance().state.model).toBe('<p>Test model content</p>');
+  // });
 
   it('test handleManualController', () => {
     expect(childWrapper.instance().state.initControls).toHaveProperty('destroy');

@@ -1,5 +1,4 @@
 import Froalaeditor from 'froala-editor';
-import bold from '@material-ui/icons/WbSunnyOutlined';
 
 // import bold from '@material-ui/icons/WbSunnyOutlined';
 // Froalaeditor.DefineIcon('bold', {
@@ -16,27 +15,14 @@ import bold from '@material-ui/icons/WbSunnyOutlined';
 //   }
 // });
 
-Froalaeditor.DefineIcon('clear', { NAME: 'remove', SVG_KEY: 'remove' });
-Froalaeditor.RegisterCommand('clear', {
-  title: 'Clear HTML',
-  focus: false,
-  undo: true,
-  refreshAfterCallback: true,
-  callback: function() {
-    this.html.set('');
-    this.events.focus();
-  }
-});
-
-Froalaeditor.DefineIcon('insert', { NAME: 'plus', SVG_KEY: 'add' });
-Froalaeditor.RegisterCommand('insert', {
-  title: 'Insert HTML',
+Froalaeditor.DefineIconTemplate('material_design', '<i class="zmdi zmdi-[NAME]"></i>');
+// Froalaeditor.ICON_DEFAULT_TEMPLATE = 'material_design';
+Froalaeditor.DefineIcon('bold', { NAME: 'format-bold', template: 'material_design' });
+Froalaeditor.RegisterCommand('bold', {
+  title: 'Bold',
+  icon: 'bold',
   focus: true,
-  undo: true,
-  refreshAfterCallback: true,
-  callback: function() {
-    this.html.insert('My New HTML');
-  }
+  undo: true
 });
 
 export default Froalaeditor;

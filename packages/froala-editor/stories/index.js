@@ -11,7 +11,7 @@ const FullViewport = story => <div style={{ height: '100vh', width: '100vw', pad
 
 class BasicEditor extends Component {
   render() {
-    return <Editor />;
+    return <Editor isAdvanced />;
   }
 }
 

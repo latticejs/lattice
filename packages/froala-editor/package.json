@@ -53,15 +53,18 @@
   "dependencies": {
     "froala-editor": "^3.0.6",
     "identity-obj-proxy": "^3.0.0",
+    "material-design-icons": "^3.0.1",
     "react-froala-wysiwyg": "^3.0.6"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./setupTest.js",
     "testURL": "http://localhost",
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
     "transform": {
       "^.+\\.js?$": "babel-jest",
-      "^.+\\.md?$": "markdown-loader-jest",
-      ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy"
+      "^.+\\.md?$": "markdown-loader-jest"
     },
     "testPathIgnorePatterns": [
       "<rootDir>/images/",
