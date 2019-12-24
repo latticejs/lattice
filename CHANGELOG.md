@@ -12,15 +12,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - [lattice-scripts] remove console.log call from lattice-script build step.
 - [examples] dag-in-action height grows indefinitely on FF.
+- [packages] index.js files are fixed.
 
 ### Removed
 - react-scripts package.
+
+## Addition Phase - 2019-12-04
+- Added Map Package.
+- Added ag-grid package.
+- Added Example of Mapbox, Sunburst && PieChart
 
 ## Update MUI version
 - Updated MUI version in dag package to 4.5.1.
 - Gauge Package
 - Mui-Recharts Package
 - Infinte-List Package
+- Tree
+- Widgets
+- Dag-in-Action Example
+- Lattice-SSR Example
 
 
 ## Update Phase - 2019-10-18

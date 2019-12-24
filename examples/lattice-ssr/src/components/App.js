@@ -26,24 +26,24 @@ const styles = theme => ({
     height: '100%'
   },
   widget: {
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    padding: theme.spacing.unit * 4,
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    padding: theme.spacing(4),
     minHeight: 160
   },
   charts: {
-    padding: theme.spacing.unit * 4,
-    marginTop: theme.spacing.unit,
-    marginBottom: theme.spacing.unit
+    padding: theme.spacing(4),
+    marginTop: theme.spacing(0),
+    marginBottom: theme.spacing(0)
   },
   chartsContainer: {
     minHeight: 500,
-    marginTop: theme.spacing.unit * 2
+    marginTop: theme.spacing(2)
   },
   componentWidget: {
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    padding: theme.spacing.unit * 4,
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    padding: theme.spacing(4),
     minHeight: 500,
     minWidth: 385
   }
@@ -149,7 +149,7 @@ class App extends Component {
         </AppBar>
         <Grid container className={classes.mainContainer}>
           <Grid item xs={12}>
-            <Grid container justify="space-around" spacing={Number('16')}>
+            <Grid container justify="space-around" spacing={2}>
               <Grid item>
                 <Widget className={classes.widget} title="Introduction" border="bottom">
                   <Typography variant="subtitle1">Welcome to Lattice</Typography>
@@ -180,7 +180,7 @@ class App extends Component {
         </Grid>
         <Grid container className={classes.mainContainer}>
           <Grid item xs={12}>
-            <Grid container justify="space-around" spacing={8}>
+            <Grid container justify="space-around" spacing={1}>
               <Grid item className={classes.componentClasses}>
                 <Widget className={classes.componentWidget} border="bottom">
                   <Sunburst

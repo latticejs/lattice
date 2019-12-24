@@ -1,1 +1,1 @@
-module.exports = require('./dist/dag.cjs.js');
+module.exports = require('./dist/cjs/index.js');

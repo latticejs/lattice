@@ -114,7 +114,7 @@ class DataGrid extends Component {
             {({ item, isEmpty, key, style }) => {
               if (isEmpty) {
                 return (
-                  <Grid container spacing={16} alignItems="center" justify="center">
+                  <Grid container spacing={4} alignItems="center" justify="center">
                     <h4>Empty list...</h4>
                   </Grid>
                 );

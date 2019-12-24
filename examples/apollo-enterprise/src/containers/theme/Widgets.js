@@ -26,7 +26,7 @@ class Widgets extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Grid container spacing={24}>
+      <Grid container spacing={3}>
         <Grid item xs={6}>
           <Widget title="Normal Widget">
             <Typography variant="body1">{lorem}</Typography>

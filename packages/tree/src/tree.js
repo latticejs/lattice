@@ -22,7 +22,7 @@ const styles = theme => ({
     fontSize: theme.typography.fontSize
   },
   treeItemNested: {
-    paddingLeft: theme.spacing.unit * 4
+    paddingLeft: theme.spacing(4)
   }
 });
 
@@ -267,7 +267,7 @@ class Tree extends Component {
 
     const rootClasses = [classes.root];
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={2}>
         <Grid item xs={12} md={12} className={classNames('tree-wrapper', rootClasses)}>
           <List component="div" disablePadding>
             {treeData.map((datum, idx) => this.renderGenericItem(datum, false, 0, idx))}

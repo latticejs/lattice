@@ -12,8 +12,8 @@ const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     color: theme.palette.text.secondary,
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
   },
   container: {
     height: '100%'
@@ -90,7 +90,7 @@ Widget.propTypes = {
   classes: PropTypes.object,
   border: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
   rounded: PropTypes.bool,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.array])
 };
 
 export default withStyles(styles, { name: 'Widget' })(Widget);

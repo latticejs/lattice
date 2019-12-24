@@ -30,7 +30,7 @@ class Form extends Component {
     const { areas, createEmployee, updateEmployee, employee, loading } = this.props;
 
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={4}>
         <Grid item xs={12}>
           <Loader loading={loading} component="circular">
             <EmployeesForm
