@@ -58,7 +58,7 @@ Loader.propTypes = {
   component: PropTypes.oneOfType([PropTypes.oneOf(['circular', 'linear']), PropTypes.func]),
   loading: PropTypes.bool,
   fullscreen: PropTypes.bool,
-  children: PropTypes.element
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array])
 };
 
 Loader.defaultProps = {
