@@ -3,7 +3,10 @@ import { mount } from 'enzyme';
 import Map from '../src/index.js';
 import React from 'react';
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
-  Map: x => x
+  Map: x => ({
+    x: x,
+    on: jest.fn()
+  })
 }));
 
 describe('To test the Map Box Component.', () => {
@@ -29,7 +32,7 @@ describe('To test the Map Box Component.', () => {
 
   it('test componentDidMount', () => {
     childWrapper.instance().componentDidMount();
-    expect(childWrapper.instance().map.zoom).toEqual(1.5);
+    expect(childWrapper.instance().map.x.zoom).toEqual(1.5);
   });
 
   it('test componentDidUpdate', () => {

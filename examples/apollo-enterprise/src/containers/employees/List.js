@@ -113,7 +113,7 @@ class List extends Component {
     } = this.props;
 
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={4}>
         <Grid item xs={8}>
           <Button color="primary" variant="contained" onClick={this.handleAdd}>
             <AddIcon /> Add

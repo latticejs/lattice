@@ -52,7 +52,7 @@ class TopProducts extends Component {
             {pieData.map((entry, index) => {
               return (
                 <Fragment key={`legend-${index}`}>
-                  <Typography variant="subheading">{entry.name}</Typography>
+                  <Typography variant="subtitle1">{entry.name}</Typography>
                   <Typography variant="caption">
                     $ {entry.value} - {Math.ceil((entry.value / total) * 100)}%
                   </Typography>
