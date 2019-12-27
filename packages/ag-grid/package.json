@@ -5,7 +5,8 @@
   "module": "dist/esm/index.js",
   "browser": "dist/umd/ag-grid.js",
   "files": [
-    "dist"
+    "dist",
+    "styles"
   ],
   "scripts": {
     "build:clean": "rimraf dist/**",

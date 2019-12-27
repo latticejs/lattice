@@ -6,7 +6,8 @@
   "module": "dist/esm/index.js",
   "browser": "dist/umd/map.js",
   "files": [
-    "dist"
+    "dist",
+    "styles"
   ],
   "scripts": {
     "build:clean": "rimraf dist/**",
