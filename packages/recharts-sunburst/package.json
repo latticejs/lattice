@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/recharts-sunburst",
-  "version": "1.0.1-beta.2",
+  "version": "1.0.1-beta.3",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -21,7 +21,8 @@
   "peerDependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "recharts": "^1.8.5"
+    "recharts": "^1.8.5",
+    "react-smooth": "1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
