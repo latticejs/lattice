@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LatticeMap from '@latticejs/map';
 import Mapboxgl from 'mapbox-gl';
-import '@latticejs/map/css/style.css';
+import '@latticejs/map/styles/style.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { token } from '../config';
 import '../css/style.css';
