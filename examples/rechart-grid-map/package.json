@@ -23,7 +23,8 @@
     "recharts": "^1.8.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "typeface-roboto": "^0.0.54"
+    "typeface-roboto": "^0.0.54",
+    "react-smooth": "1.0.2"
   },
   "devDependencies": {
     "react-scripts": "^1.1.0"
