@@ -7,7 +7,7 @@ import Mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
-import '../css/style.css';
+import '../styles/style.css';
 import { token } from '../config';
 
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;

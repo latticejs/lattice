@@ -1,11 +1,12 @@
 {
   "name": "@latticejs/ag-grid",
-  "version": "1.0.1-beta.2",
+  "version": "1.0.1-beta.3",
   "license": "MIT",
   "module": "dist/esm/index.js",
   "browser": "dist/umd/ag-grid.js",
   "files": [
-    "dist"
+    "dist",
+    "styles"
   ],
   "scripts": {
     "build:clean": "rimraf dist/**",
