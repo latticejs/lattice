@@ -25,7 +25,7 @@
     "nodemon": "^1.19.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "recharts": "^1.7.1",
+    "recharts": "^1.8.5",
     "recompose": "^0.30.0",
     "react-smooth": "1.0.2"
   },
