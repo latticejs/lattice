@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.0",
-    "core-js": "^3.2.0",
+    "core-js": "^3.6.1",
     "prop-types": "^15.7.0"
   },
   "jest": {
