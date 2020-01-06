@@ -1,5 +1,5 @@
 @import "./themes/dark.min.css";
-@import "./froala_editor.min.css";
+@import "./froala_editor.css";
 @import "./froala_editor.pkgd.min.css";
 @import "./froala_style.min.css";
 @import "./advanced/code-mirror.min.css";
@@ -8,5 +8,5 @@
 @import "./plugins/code_view.min.css";
 @import "./plugins/draggable.min.css";
 @import "./plugins/emoticons.min.css";
-@import "./advanced/materialDesignIcons.css";
-@import "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css"
+@import "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css";
+
