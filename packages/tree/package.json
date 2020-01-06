@@ -54,7 +54,7 @@
     "react-dom": "^16.9.0",
     "react-test-renderer": "^16.9.0",
     "rimraf": "^2.7.0",
-    "storybook-readme": "^4.0.5"
+    "storybook-readme": "^5.0.8"
   },
   "dependencies": {
     "classnames": "^2.2.5",

@@ -22,7 +22,7 @@
         "rollup-plugin-terser": "^2.0.0"
     },
     "peerDependencies": {
-        "storybook-readme": "^4.0.5"
+        "storybook-readme": "^5.0.8"
     },
     "jest": {
         "roots": [

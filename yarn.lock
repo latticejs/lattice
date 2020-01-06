@@ -1115,6 +1115,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@base2/pretty-print-object@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@base2/pretty-print-object/-/pretty-print-object-1.0.0.tgz#860ce718b0b73f4009e153541faff2cb6b85d047"
+  integrity sha512-4Th98KlMHr5+JkxfcoDT//6vY8vM+iSPrLNpHhRyLx2CFYi8e2RfqPLdpbnpo0Q5lQC5hNB79yes07zb02fvCw==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"
@@ -2808,7 +2813,7 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/components@5.2.8":
+"@storybook/components@5.2.8", "@storybook/components@^5.0.6":
   version "5.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.2.8.tgz#f5d4a06ba4ba8c700b2d962deae182105b72fb99"
   integrity sha512-h9l/LAMaj+emUCOyY/+ETy/S3P0npwQU280J88uL4O9XJALJ72EKfyttBCvMLvpM50E+fAPeDzuYn0t5qzGGxg==
@@ -2833,7 +2838,7 @@
     react-textarea-autosize "^7.1.0"
     simplebar-react "^1.0.0-alpha.6"
 
-"@storybook/core-events@5.2.8":
+"@storybook/core-events@5.2.8", "@storybook/core-events@^5.0.6":
   version "5.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.2.8.tgz#93fc458ea0820ff1409d268b0fe51abba200f5a4"
   integrity sha512-NkQKC5doO/YL9gsO61bqaxgveKktkiJWZ3XyyhL1ZebgnO9wTlrU+i9b5aX73Myk1oxbicQw9KcwDGYk0qFuNQ==
@@ -8534,7 +8539,7 @@ d3-dispatch@1:
   resolved "https://registry.yarnpkg.com/d3-dispatch/-/d3-dispatch-1.0.6.tgz#00d37bcee4dd8cd97729dd893a0ac29caaba5d58"
   integrity sha512-fVjoElzjhCEy+Hbn8KygnmMS7Or0a9sI2UzGwoB7cCtvI1XpVN9GpoYlnb3xt2YV66oXYb1fLJ8GMvP4hdU1RA==
 
-d3-drag@1, d3-drag@^1.2.4:
+d3-drag@1, d3-drag@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/d3-drag/-/d3-drag-1.2.5.tgz#2537f451acd39d31406677b7dc77c82f7d988f70"
   integrity sha512-rD1ohlkKQwMZYkQlYVCrSFxsWPzI97+W+PaEIBNTMxRuxz9RF0Hi5nJWHGVJ3Om9d2fRTe1yOBINJyy/ahV95w==
@@ -10301,7 +10306,7 @@ eslint@4.10.0:
     table "^4.0.1"
     text-table "~0.2.0"
 
-eslint@^6.0.0, eslint@^6.5.1, eslint@^6.6.0:
+eslint@^6.0.0, eslint@^6.6.0, eslint@^6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.8.0.tgz#62262d6729739f9275723824302fb227c8c93ffb"
   integrity sha512-K+Iayyo2LtyYhDSYwz5D5QdWw0hCacNzyq1Y821Xna2xSJj7cijoLLYmLxTQgcgZ9mC61nryMy9S7GRbYpI5Ig==
@@ -13688,19 +13693,19 @@ is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
   integrity sha1-caUMhCnfync8kqOQpKA7OfzVHT4=
 
+is-plain-object@3.0.0, is-plain-object@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-3.0.0.tgz#47bfc5da1b5d50d64110806c199359482e75a928"
+  integrity sha512-tZIpofR+P05k8Aocp7UI/2UTa9lTJSebCXpFFoR9aibpokDj/uXBsJ8luUu0tTVYKkMU6URDUuOfJZ7koewXvg==
+  dependencies:
+    isobject "^4.0.0"
+
 is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
   integrity sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og==
   dependencies:
     isobject "^3.0.1"
-
-is-plain-object@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-3.0.0.tgz#47bfc5da1b5d50d64110806c199359482e75a928"
-  integrity sha512-tZIpofR+P05k8Aocp7UI/2UTa9lTJSebCXpFFoR9aibpokDj/uXBsJ8luUu0tTVYKkMU6URDUuOfJZ7koewXvg==
-  dependencies:
-    isobject "^4.0.0"
 
 is-posix-bracket@^0.1.0:
   version "0.1.1"
@@ -16376,13 +16381,13 @@ markdown-loader@^2.0.1:
     loader-utils "^1.1.0"
     marked "^0.3.9"
 
-markdown-loader@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/markdown-loader/-/markdown-loader-4.0.0.tgz#502eb94f5db1673beb1721bed82dac9e1d333b9a"
-  integrity sha512-9BCm8iyLF4AVYtjtybOTg8cTcpWYKsDGWWhsc7XaJlXQiddo3ztbZxLPJ28pmCxFI1BlMkT1wDVav1chPjTpdA==
+markdown-loader@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/markdown-loader/-/markdown-loader-5.1.0.tgz#4efd5006b1514ca966141c661a47e542a9836e6e"
+  integrity sha512-xtQNozLEL+55ZSPTNwro8epZqf1h7HjAZd/69zNe8lbckDiGVHeLQm849bXzocln2pwRK2A/GrW/7MAmwjcFog==
   dependencies:
-    loader-utils "^1.1.0"
-    marked "^0.5.0"
+    loader-utils "^1.2.3"
+    marked "^0.7.0"
 
 markdown-table@^1.1.0:
   version "1.1.3"
@@ -16402,10 +16407,10 @@ marked@^0.3.9:
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
   integrity sha512-ea2eGWOqNxPcXv8dyERdSr/6FmzvWwzjMxpfGB/sbMccXoct+xY+YukPD+QTUZwyvK7BZwcr4m21WBOW41pAkg==
 
-marked@^0.5.0:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.5.2.tgz#3efdb27b1fd0ecec4f5aba362bddcd18120e5ba9"
-  integrity sha512-fdZvBa7/vSQIZCi4uuwo2N3q+7jJURpMVCcbaX0S1Mg65WZ5ilXvC67MviJAsdjqqgD+CEq4RKo5AYGgINkVAA==
+marked@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.7.0.tgz#b64201f051d271b1edc10a04d1ae9b74bb8e5c0e"
+  integrity sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==
 
 matchdep@^2.0.0:
   version "2.0.0"
@@ -17138,10 +17143,10 @@ node-dir@^0.1.10, node-dir@^0.1.17:
   dependencies:
     minimatch "^3.0.2"
 
-node-emoji@1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.8.1.tgz#6eec6bfb07421e2148c75c6bba72421f8530a826"
-  integrity sha512-+ktMAh1Jwas+TnGodfCfjUbJKoANqPaJFN0z0iqh41eqD8dvguNzcitVSBSVK1pidz0AqGbLKcoVuVLRVZ/aVg==
+node-emoji@1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.10.0.tgz#8886abd25d9c7bb61802a658523d1f8d2a89b2da"
+  integrity sha512-Yt3384If5H6BYGVHiHwTL+99OzJKHhgp82S8/dktEK73T26BazdgZ4JZh92xSVtGNJvz9UbXdNAc5hcrXV42vw==
   dependencies:
     lodash.toarray "^4.4.0"
 
@@ -19680,7 +19685,12 @@ prettycli@^1.4.3:
   dependencies:
     chalk "2.1.0"
 
-prismjs@^1.8.4, prismjs@^1.9.0:
+prism-themes@^1.1.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/prism-themes/-/prism-themes-1.3.0.tgz#72e6833c3296a2112b989fa63208c0ce7a4da3a8"
+  integrity sha512-4hDQyNuBRyWVvwHeTH4yY5TIWrl6BHmhoh85kgfTFgwklGerWA3R2RFp7Sg0zPCnQS8SsloKsEIN3ao63KhiIw==
+
+prismjs@^1.16.0, prismjs@^1.8.4:
   version "1.18.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.18.0.tgz#8f04dd47fa232cbd27d1ca969107580ff43f06e4"
   integrity sha512-N0r3i/Cto516V8+GKKamhsPVZSFcO0TMUBtIDW6uq6BVqoC3FNtZVZ+cmH16N2XtGQlgRN+sFUTjOdCsEP51qw==
@@ -20298,6 +20308,14 @@ react-dropzone@^10.1.0:
     attr-accept "^2.0.0"
     file-selector "^0.1.12"
     prop-types "^15.7.2"
+
+react-element-to-jsx-string@^14.0.2:
+  version "14.2.0"
+  resolved "https://registry.yarnpkg.com/react-element-to-jsx-string/-/react-element-to-jsx-string-14.2.0.tgz#b2566145f994e0973429727130e207633355c834"
+  integrity sha512-dTeYuJnKCavqGx0tyeBGILXemmQcP8h6gyCsUG01fzepzB4wjfcjUSUluHOJanhzAiNybY+ASlASRTXUanaj/w==
+  dependencies:
+    "@base2/pretty-print-object" "1.0.0"
+    is-plain-object "3.0.0"
 
 react-error-overlay@^4.0.1:
   version "4.0.1"
@@ -22737,18 +22755,23 @@ store2@^2.7.1:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.10.0.tgz#46b82bb91878daf1b0d56dec2f1d41e54d5103cf"
   integrity sha512-tWEpK0snS2RPUq1i3R6OahfJNjWCQYNxq0+by1amCSuw0mXtymJpzmZIeYpA1UAa+7B0grCpNYIbDcd7AgTbFg==
 
-storybook-readme@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/storybook-readme/-/storybook-readme-4.0.5.tgz#e250d9b5e781ece567b861fbfb8027dc13e6aace"
-  integrity sha512-tsVSGLbejrNcAQGhOOw+jwmeWYiIUeV3iYhOYDPaeiencjNdDTqa4za4xr0B4dABQosFq+j1fGVqbfSbT8Lbig==
+storybook-readme@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/storybook-readme/-/storybook-readme-5.0.8.tgz#bc5bb9343191bb333cec2633555cec41f3ab6067"
+  integrity sha512-Ej3RotbnfFtk4yAFqJ/39RpaDO/1Yw81TzSHJIQDL7O4E/tKn51247zq3KvAC8b7JM5IY5GlNNjS4q8cBEeBAA==
   dependencies:
+    "@storybook/components" "^5.0.6"
+    "@storybook/core-events" "^5.0.6"
     html-loader "^0.5.5"
-    lodash "^4.17.4"
-    markdown-loader "^4.0.0"
-    marked "^0.5.0"
-    node-emoji "1.8.1"
-    prismjs "^1.9.0"
+    lodash "^4.17.11"
+    markdown-loader "^5.0.0"
+    marked "^0.7.0"
+    node-emoji "1.10.0"
+    prism-themes "^1.1.0"
+    prismjs "^1.16.0"
+    react-element-to-jsx-string "^14.0.2"
     string-raw "^1.0.1"
+    vuex "^3.1.0"
 
 stream-browserify@^2.0.1:
   version "2.0.2"
@@ -24594,6 +24617,11 @@ vt-pbf@^3.1.1:
     "@mapbox/point-geometry" "0.1.0"
     "@mapbox/vector-tile" "^1.3.1"
     pbf "^3.0.5"
+
+vuex@^3.1.0:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.2.tgz#a2863f4005aa73f2587e55c3fadf3f01f69c7d4d"
+  integrity sha512-ha3jNLJqNhhrAemDXcmMJMKf1Zu4sybMPr9KxJIuOpVcsDQlTBYLLladav2U+g1AvdYDG5Gs0xBTb0M5pXXYFQ==
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
