@@ -4,7 +4,7 @@ module.exports = config => {
   config.module.rules.push({
     test: /\.jsx?$/,
     include: /packages\/((?!node_modules).)*\/stories\/[^\/]+\.js$/,
-    loader: require.resolve('@storybook/addon-storysource/loader'),
+    loader: require.resolve('@storybook/source-loader'),
     options: {
       prettierConfig: {
         parser: 'babylon'
