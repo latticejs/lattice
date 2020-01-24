@@ -13,6 +13,8 @@ import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
 // Lattice
+import Editor from '@latticejs/froala-editor';
+import '@latticejs/froala-editor/styles/css/style.css';
 import { Widget } from '@latticejs/widgets';
 import { PieChart, Pie, Tooltip } from '@latticejs/mui-recharts';
 
@@ -97,27 +99,38 @@ class App extends Component {
         <Grid container>
           <Grid item xs={12}>
             <Grid container justify="space-around" spacing={Number(0)}>
-              <Grid item>
-                <Widget className={classes.widget} title="About" border="bottom">
-                  <Typography variant="body1">
-                    This is a minimal demo with respect to:
-                    <br />
-                    - minimal tooling (webpack and babel),
-                    <br />
-                    - no react-scripts,
-                    <br />- consuming Lattice packages directly.
-                  </Typography>
-                </Widget>
-              </Grid>
-              <Grid item>
-                <Widget className={classes.widget} title="Bundle data" border="bottom">
-                  <div>
-                    {Chart(this.state.data)}
-                    <Typography variant="caption" align="center">
-                      NOTE: Actual sizes might be smaller if only parts of the package are used.
+              <Grid item xs={7}>
+                <Grid item>
+                  <Widget className={classes.widget} title="About" border="bottom">
+                    <Typography variant="body1">
+                      This is a minimal demo with respect to:
+                      <br />
+                      - minimal tooling (webpack and babel),
+                      <br />
+                      - no react-scripts,
+                      <br />- consuming Lattice packages directly.
                     </Typography>
-                  </div>
-                </Widget>
+                  </Widget>
+                </Grid>
+                <Grid item>
+                  <Widget className={classes.widget} title="Froala Editor" border="bottom">
+                    <Typography variant="body1">
+                      <Editor />
+                    </Typography>
+                  </Widget>
+                </Grid>
+              </Grid>
+              <Grid item xs={5}>
+                <Grid item>
+                  <Widget className={classes.widget} title="Bundle data" border="bottom">
+                    <div>
+                      {Chart(this.state.data)}
+                      <Typography variant="caption" align="center">
+                        NOTE: Actual sizes might be smaller if only parts of the package are used.
+                      </Typography>
+                    </div>
+                  </Widget>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
+import { withTheme } from '@material-ui/core/styles';
 import FroalaEditor from 'react-froala-wysiwyg';
 import 'froala-editor/js/froala_editor.pkgd.min.js';
-import 'froala-editor/js/plugins/font_family.min.js';
-import 'froala-editor/js/plugins/code_view.min.js';
-import 'froala-editor/js/plugins/align.min.js';
-import 'froala-editor/js/plugins/char_counter.min.js';
-import 'froala-editor/js/plugins/code_beautifier.min.js';
-import 'froala-editor/js/plugins/colors.min.js';
-import 'froala-editor/js/plugins/emoticons.min.js';
-import PropTypes from 'prop-types';
-
+import '../plugins/supersetPlugins.js';
 import './customButton.js';
-import { withTheme } from '@material-ui/core/styles';
+
+import 'typeface-roboto/index.css';
+import 'typeface-montserrat/index.css';
 
 class Editor extends Component {
   constructor(props) {
@@ -58,103 +53,15 @@ class Editor extends Component {
    * This function is used to get config.
    */
   getConfig() {
-    const { theme, isAdvanced } = this.props;
+    const { theme } = this.state;
+    const { config } = this.props;
 
-    let config = {
-      theme: this.state.theme,
-      colorsButtons: ['colorsBack', '|', '-'],
-      codeMirror: true,
-      pluginsEnabled: [
-        'align',
-        'charCounter',
-        'codeBeautifier',
-        'codeView',
-        'colors',
-        'draggable',
-        'embedly',
-        'emoticons',
-        'entities',
-        'file',
-        'fontAwesome',
-        'fontFamily',
-        'fontSize',
-        'fullscreen',
-        'image',
-        'imageTUI',
-        'imageManager',
-        'inlineStyle',
-        'inlineClass',
-        'lineBreaker',
-        'lineHeight',
-        'link',
-        'lists',
-        'paragraphFormat',
-        'paragraphStyle',
-        'quickInsert',
-        'quote',
-        'save',
-        'table',
-        'url',
-        'video',
-        'wordPaste'
-      ],
-      ...this.props.config
+    const froalaConfig = {
+      theme,
+      ...config
     };
 
-    if (isAdvanced) {
-      config.toolbarButtons = [
-        'bold',
-        'italic',
-        'underline',
-        'strikeThrough',
-        'subscript',
-        'superscript',
-        '|',
-        'fontFamily',
-        'fontSize',
-        'color',
-        'inlineStyle',
-        'inlineClass',
-        'clearFormatting',
-        '|',
-        'emoticons',
-        'fontAwesome',
-        'specialCharacters',
-        '-',
-        'paragraphFormat',
-        'lineHeight',
-        'paragraphStyle',
-        'align',
-        'formatOL',
-        'formatUL',
-        'outdent',
-        'indent',
-        'quote',
-        '|',
-        'insertLink',
-        'insertImage',
-        'insertVideo',
-        'insertFile',
-        'insertTable',
-        '-',
-        'insertHR',
-        'selectAll',
-        'getPDF',
-        'print',
-        'help',
-        'html',
-        'fullscreen',
-        '|',
-        'undo',
-        'redo'
-      ];
-    }
-
-    if (theme.typography && theme.typography.fontFamily) {
-      config.fontFamily = theme.typography.fontFamily;
-    }
-
-    return config;
+    return froalaConfig;
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -182,18 +89,22 @@ class Editor extends Component {
   }
 
   render() {
+    const { model, onModelChange } = this.props;
     const config = this.getConfig();
-    return <FroalaEditor tag="textarea" config={config} onManualControllerReady={this.handleManualController} />;
+    return (
+      <FroalaEditor
+        tag="textarea"
+        config={config}
+        onManualControllerReady={this.handleManualController}
+        model={model}
+        onModelChange={onModelChange}
+      />
+    );
   }
 }
 
-Editor.propTypes = {
-  isAdvanced: PropTypes.bool
-};
-
 Editor.defaultProps = {
-  config: {},
-  isAdvanced: false
+  config: {}
 };
 
 export default withTheme(Editor);

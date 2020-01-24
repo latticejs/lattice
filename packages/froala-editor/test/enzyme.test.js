@@ -35,18 +35,29 @@ describe('To test the Froala Editor Component.', () => {
   it('test getConfig', () => {
     const defaultConfig = childWrapper.instance().getConfig();
     const expectedConfig = {
-      theme: 'royal',
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
+      theme: 'royal'
     };
-    expect(defaultConfig.fontFamily).toMatch(expectedConfig.fontFamily);
+    expect(defaultConfig.theme).toMatch(expectedConfig.theme);
   });
 
-  // it('test handleModelChange', () => {
-  //   expect(childWrapper.instance().state.model).toBe('');
-
-  //   childWrapper.instance().handleModelChange('<p>Test model content</p>');
-  //   expect(childWrapper.instance().state.model).toBe('<p>Test model content</p>');
-  // });
+  it('test getTheme', () => {
+    expect(childWrapper.instance().state.theme).toBe('royal');
+    const newTheme = {
+      theme: {
+        palette: {
+          type: 'dark'
+        }
+      }
+    };
+    wrapper.setProps(newTheme);
+    wrapper.update();
+    expect(
+      wrapper
+        .find(Editor)
+        .childAt(0)
+        .instance().state.theme
+    ).toBe('dark');
+  });
 
   it('test handleManualController', () => {
     expect(childWrapper.instance().state.initControls).toHaveProperty('destroy');

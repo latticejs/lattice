@@ -5,13 +5,13 @@ import Editor from '../src/index.js';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
-import '../src/css/style.css';
+import '../styles/css/style.css';
 
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 class BasicEditor extends Component {
   render() {
-    return <Editor isAdvanced />;
+    return <Editor />;
   }
 }
 
