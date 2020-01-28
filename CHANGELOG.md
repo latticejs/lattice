@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Addition Phase - 2019-12-04
 - Added Map Package.
 - Added ag-grid package.
-- Added Example of Mapbox, Sunburst && PieChart
+- Added Example of Mapbox, Sunburst && PieChart.
 
 ## Update MUI version
 - Updated MUI version in dag package to 4.5.1.
@@ -31,12 +31,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Widgets
 - Dag-in-Action Example
 - Lattice-SSR Example
+- Fixed greenkeerp bugs
 
 
 ## Update Phase - 2019-10-18
 - Updated minimal example with jest and lint configurations.
 - Upgraded MUI version in Minimal Example.
 - Upgraded MUI version in ARTC Example.
+
+## [1.0.1-beta.3] - 2019-12-27
+- Versions of Ag-Grid and Map is updated to 1.0.1-beta.4
 
 ## [1.0.1-beta.2] - 2019-09-11
 - Package Dependency is updated.(#310)
