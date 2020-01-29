@@ -13,7 +13,6 @@ import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
 // Lattice
-import Editor from '@latticejs/froala-editor';
 import '@latticejs/froala-editor/styles/css/style.css';
 import { Widget } from '@latticejs/widgets';
 import { PieChart, Pie, Tooltip } from '@latticejs/mui-recharts';
@@ -109,13 +108,6 @@ class App extends Component {
                       <br />
                       - no react-scripts,
                       <br />- consuming Lattice packages directly.
-                    </Typography>
-                  </Widget>
-                </Grid>
-                <Grid item>
-                  <Widget className={classes.widget} title="Froala Editor" border="bottom">
-                    <Typography variant="body1">
-                      <Editor />
                     </Typography>
                   </Widget>
                 </Grid>
