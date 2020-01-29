@@ -11,6 +11,9 @@ import '../styles/style.css';
 import { token } from '../config';
 
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const Flexed = story => (
+  <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
+);
 
 class BasicMap extends Component {
   afterMapLoad = mapObj => {
@@ -40,10 +43,11 @@ class BasicMap extends Component {
 }
 
 const loadReadmeSections = withReadme(Readme);
-const withApiReadme = loadReadmeSections(['api']);
+const withApiReadme = loadReadmeSections(['map']);
 
 export default ({ storiesOf }) => {
   storiesOf('Map', module)
+    .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
     .add(
@@ -52,6 +56,7 @@ export default ({ storiesOf }) => {
     );
 
   storiesOf('Map', module)
+    .addDecorator(Flexed)
     .addDecorator(muiTheme({ palette: { type: 'dark' } }))
     .addDecorator(FullViewport)
     .add(
