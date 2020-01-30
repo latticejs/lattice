@@ -126,7 +126,7 @@ class AdvancedThemedGauge extends Component {
 }
 
 const loadReadmeSections = withReadme(Readme);
-const withApiReadme = loadReadmeSections(['gauge']);
+const withApiReadme = loadReadmeSections(['api']);
 
 export default ({ storiesOf }) => {
   storiesOf('gauge', module)

@@ -8,9 +8,6 @@ A configurable map-like component built upon `mapbox`.
 npm install @latticejs/map --save-dev
 ```
 
-<!-- start:map -->
-## Map
-
 ## Usage
 
 ```javascript
@@ -73,7 +70,7 @@ The above snippet will render a basic Map with a material _look'n'feel_. It also
 >  `height`
 >  `width`
 
-you can also pass other props, Here are the reference of props list [reference](https://docs.mapbox.com/mapbox-gl-js/api/). Use this option to pass any specific configuration.
+you can also pass other props, Here are the refrence of props list [reference](https://docs.mapbox.com/mapbox-gl-js/api/). Use this option to pass any specific configuration.
 
 
 ### Get Map Object
@@ -113,5 +110,3 @@ you can also pass other props, Here are the reference of props list [reference](
 - Once Map creation functionality completed it return `mapObj`.
 - In `afterMapLoad()` we have added `Navigation`and `Search` control.
 - You can also get more [Example](https://docs.mapbox.com/mapbox-gl-js/examples/) for reference.
-
-<!-- end:map -->
