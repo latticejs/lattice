@@ -1,6 +1,6 @@
 # @latticejs/froala-editor
 
-A configurable map-like component built upon `froala-editor`.
+A editor component built upon `froala-editor`.
 
 ## Install
 
@@ -24,7 +24,7 @@ export default class EditorComponent extends React.Component {
 } 
 ```
 
-The above snippet will render a basic Map with a material _look'n'feel_. It also support themes (dark, light).
+The above snippet will render a basic Editor with a material _look'n'feel_. It also support themes (dark, light).
 
 <!-- start:api -->
 ### Props 
@@ -33,3 +33,6 @@ The above snippet will render a basic Map with a material _look'n'feel_. It also
 >  `onModelChange`
 
 <!-- end:api -->
+
+For detailed documentation of props , refer to following link :
+https://www.froala.com/wysiwyg-editor/docs/framework-plugins/react .
