@@ -19,9 +19,11 @@ class Chart extends Component {
    */
   getStateColorsView() {
     const colorSet = [];
+    let counter = 0;
 
     for (const state in this.colorArray) {
-      colorSet.push(<Cell fill={this.colorArray[state]} />);
+      counter++;
+      colorSet.push(<Cell key={counter} fill={this.colorArray[state]} />);
     }
 
     return colorSet;

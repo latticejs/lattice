@@ -7,7 +7,7 @@ import Mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
-import '../css/style.css';
+import '../styles/style.css';
 import { token } from '../config';
 
 const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
@@ -22,20 +22,6 @@ class BasicMap extends Component {
         mapboxgl: Mapboxgl
       })
     );
-    mapObj.on('render', function(evt) {
-      let layers = ['country-label-lg', 'place-city-sm'];
-      layers.map(layer => {
-        mapObj.setLayoutProperty(layer, 'text-field', [
-          'format',
-          ['get', 'name_en'],
-          {
-            'font-scale': 1.2,
-            'text-font': ['literal', ['Roboto Bold']]
-          }
-        ]);
-        return null;
-      });
-    });
   };
 
   render() {
