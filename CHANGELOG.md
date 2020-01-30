@@ -31,7 +31,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Widgets
 - Dag-in-Action Example
 - Lattice-SSR Example
-- Fixed greenkeerp bugs
 
 
 ## Update Phase - 2019-10-18
