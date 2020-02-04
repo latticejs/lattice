@@ -49,7 +49,7 @@
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
     "rimraf": "^2.7.0",
-    "storybook-readme": "^5.0.8"
+    "storybook-readme": "^4.0.5"
   },
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^4.5.0",
