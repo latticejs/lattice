@@ -99,7 +99,7 @@ class App extends Component {
         <Grid container>
           <Grid item xs={6}>
             <Grid container justify="space-around" spacing={Number(0)}>
-              <Grid item xs={10}>
+              <Grid item xs={9}>
                 <Widget className={classes.widget} title="About" border="bottom">
                   <Typography variant="body1">
                     This is a minimal demo with respect to:
@@ -111,7 +111,7 @@ class App extends Component {
                   </Typography>
                 </Widget>
               </Grid>
-              <Grid item>
+              <Grid item xs={9}>
                 <Widget className={classes.widget} title="Froala Editor" border="bottom">
                   <Editor />
                 </Widget>
