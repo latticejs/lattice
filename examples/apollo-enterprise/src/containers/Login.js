@@ -75,7 +75,7 @@ class Login extends Component {
             container
             alignContent="center"
             justify="center"
-            spacing={40}
+            spacing={10}
             className={classes.form}
           >
             <Grid item xs={8}>
@@ -124,8 +124,4 @@ const EnhancedForm = withFormik({
   displayName: 'BasicForm'
 });
 
-export default compose(
-  withSignIn,
-  EnhancedForm,
-  withStyles(styles)
-)(Login);
+export default compose(withSignIn, EnhancedForm, withStyles(styles))(Login);

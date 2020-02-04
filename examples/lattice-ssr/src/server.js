@@ -1,11 +1,14 @@
-import { MuiThemeProvider, createGenerateClassName } from '@material-ui/core/styles';
+import {
+  ThemeProvider as MuiThemeProvider,
+  StylesProvider,
+  ServerStyleSheets,
+  createGenerateClassName
+} from '@material-ui/core/styles';
 import { renderToString } from 'react-dom/server';
-import { SheetsRegistry } from 'react-jss/lib/jss';
 import App from './Components/App';
 import { createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import express from 'express';
-import JssProvider from 'react-jss/lib/JssProvider';
 import React from 'react';
 
 const app = express();
@@ -17,27 +20,27 @@ const dev = process.env.NODE_ENV === 'development';
 app.use(express.static('public'));
 
 app.use((req, res) => {
-  const sheetsRegistry = new SheetsRegistry();
+  const sheets = new ServerStyleSheets();
   const generateClassName = createGenerateClassName();
-  const sheetsManager = new Map();
   const html = renderToString(
-    <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
-      <MuiThemeProvider
-        theme={createMuiTheme({
-          palette: { type: 'light' },
-          typography: {
-            useNextVariants: true
-          }
-        })}
-        sheetsManager={sheetsManager}
-      >
-        <CssBaseline />
-        <App />
-      </MuiThemeProvider>
-    </JssProvider>
+    sheets.collect(
+      <StylesProvider generateClassName={generateClassName}>
+        <MuiThemeProvider
+          theme={createMuiTheme({
+            palette: { type: 'light' },
+            typography: {
+              useNextVariants: true
+            }
+          })}
+        >
+          <CssBaseline />
+          <App />
+        </MuiThemeProvider>
+      </StylesProvider>
+    )
   );
 
-  const css = sheetsRegistry.toString();
+  const css = sheets.toString();
 
   res.send(`<!DOCTYPE html>
   <html lang='en'>

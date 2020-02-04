@@ -11,7 +11,7 @@ const styles = theme => ({
       margin: '0 auto'
     })
   },
-  [theme.breakpoints.up(1200 + theme.spacing.unit * 6)]: {
+  [theme.breakpoints.up(1200 + theme.spacing(6))]: {
     root: {
       maxWidth: 1200
     }

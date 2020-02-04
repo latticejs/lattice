@@ -37,13 +37,13 @@ export default enhanceListActions(
         <Grid item>
           <SelectAllButton onChange={onChange} checked={selectAllChecked} disabled={selectAllDisabled} />
         </Grid>
-        <Grid item xs={4} container alignItems="center" spacing={16}>
+        <Grid item xs={4} container alignItems="center" spacing={2}>
           {selectedItems > 0 && (
             <React.Fragment>
               <Grid item xs={3} container justify="center">
                 <SelectionInfo selectedCount={selectedItems} />
               </Grid>
-              <Grid item container spacing={8} xs>
+              <Grid item container spacing={1} xs>
                 <Grid item>
                   <Button variant="outlined" color="secondary" onClick={selectionOnDelete}>
                     Delete

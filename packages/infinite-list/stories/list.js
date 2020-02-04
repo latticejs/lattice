@@ -15,7 +15,7 @@ import { withReadme } from '@latticejs/storybook-readme';
 // Decorators
 
 const InGrid = story => (
-  <Grid container spacing={24}>
+  <Grid container spacing={3}>
     <Grid item xs={12}>
       {story()}
     </Grid>
@@ -110,5 +110,8 @@ export default ({ storiesOf }) => {
     .addDecorator(Flexed)
     .addDecorator(muiTheme())
     .addDecorator(FullViewport)
-    .add('basic', withReadmeSections(() => <BasicList />));
+    .add(
+      'basic',
+      withReadmeSections(() => <BasicList />)
+    );
 };

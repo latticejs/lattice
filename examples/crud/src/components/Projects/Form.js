@@ -40,11 +40,7 @@ const formikEnhancer = withFormik({
   displayName: 'ProjectForm'
 });
 
-const enhanceForm = compose(
-  inject('projectStore'),
-  formikEnhancer,
-  observer
-);
+const enhanceForm = compose(inject('projectStore'), formikEnhancer, observer);
 
 const Form = enhanceForm(props => {
   const { values, errors, touched, handleChange, handleSubmit, isSubmitting, classes, isCreating, onCancel } = props;
@@ -127,16 +123,12 @@ const styles = theme => ({
     flex: 1
   },
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
     flex: 0
   },
   textField: {
-    marginBottom: theme.spacing.unit * 3
+    marginBottom: theme.spacing(3)
   }
 });
 
-export default compose(
-  withStyles(styles),
-  inject('projectStore', 'uiStore'),
-  observer
-)(ProjectForm);
+export default compose(withStyles(styles), inject('projectStore', 'uiStore'), observer)(ProjectForm);

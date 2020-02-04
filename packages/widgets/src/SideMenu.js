@@ -18,7 +18,7 @@ const styles = theme => ({
   },
   topSpacer: {
     ...theme.mixins.toolbar,
-    marginBottom: theme.spacing.unit
+    marginBottom: theme.spacing(0)
   },
   listItem: {
     '&:hover': {

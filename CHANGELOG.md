@@ -12,12 +12,41 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - [lattice-scripts] remove console.log call from lattice-script build step.
 - [examples] dag-in-action height grows indefinitely on FF.
+- [packages] index.js files are fixed.
 
 ### Removed
 - react-scripts package.
 
+## Addition Phase - 2019-12-04
+- Added Map Package.
+- Added ag-grid package.
+- Added Example of Mapbox, Sunburst && PieChart.
+
+## Update MUI version
+- Updated MUI version in dag package to 4.5.1.
+- Gauge Package
+- Mui-Recharts Package
+- Infinte-List Package
+- Tree
+- Widgets
+- Dag-in-Action Example
+- Lattice-SSR Example
+- Fixed greenkeeper bugs
+
+## Update Phase - 2019-10-18
+- Updated minimal example with jest and lint configurations.
+- Upgraded MUI version in Minimal Example.
+- Upgraded MUI version in ARTC Example.
+
+## [1.0.1-beta.3] - 2019-12-27
+- Versions of Ag-Grid and Map is updated to 1.0.1-beta.4
+
 ## [1.0.1-beta.2] - 2019-09-11
 - Package Dependency is updated.(#310)
+- Fixed Green Keeper issue.
+- Integrated Gulp in Minimal Example.
+- Updated MUI Version in Basic and CRUD Example.
+- Added the Froala Editor.
 
 ## [1.0.1-beta.1] (Resumption Phase) - 2019-09-04
 - Resuming and completing gauge component.

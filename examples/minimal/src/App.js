@@ -12,8 +12,6 @@ import { withStyles } from '@material-ui/core/styles';
 import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
-import 'typeface-roboto';
-
 // Lattice
 import { Widget } from '@latticejs/widgets';
 import { PieChart, Pie, Tooltip } from '@latticejs/mui-recharts';
@@ -31,9 +29,9 @@ const styles = theme => ({
     color: theme.palette.primary.contrastText
   },
   widget: {
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    padding: theme.spacing.unit * 4
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    padding: theme.spacing(4)
   },
   link: {
     color: theme.palette.text.secondary
@@ -98,7 +96,7 @@ class App extends Component {
         </AppBar>
         <Grid container>
           <Grid item xs={12}>
-            <Grid container justify="space-around" spacing={Number('16')}>
+            <Grid container justify="space-around" spacing={Number(0)}>
               <Grid item>
                 <Widget className={classes.widget} title="About" border="bottom">
                   <Typography variant="body1">

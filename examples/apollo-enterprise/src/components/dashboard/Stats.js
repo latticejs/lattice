@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 // Material UI
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 // Lattice
@@ -37,12 +38,14 @@ const Stats = ({ stat: { label, value, unit }, ...props }) => {
       border="bottom"
       classes={{ border: classes[label.toLowerCase()] }}
     >
-      <Typography variant="h3" align="center">
-        {reduceValue(value)}
-      </Typography>
-      <Typography variant="caption" align="center">
-        {unit}
-      </Typography>
+      <Grid container>
+        <Typography variant="h3" align="center">
+          {reduceValue(value)}
+        </Typography>
+        <Typography variant="caption" align="center">
+          {unit}
+        </Typography>
+      </Grid>
     </Widget>
   );
 };

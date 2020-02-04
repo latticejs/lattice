@@ -40,7 +40,7 @@ const enhance = compose(
 
 export default enhance(({ uiStore, editProject, addProject, closeModal, showSuccess, onSave, setShowSuccess }) => {
   return (
-    <Grid container direction="column" justify="center" alignItems="stretch" spacing={16}>
+    <Grid container direction="column" justify="center" alignItems="stretch" spacing={2}>
       <Grid item xs>
         <ProjectList onEditProject={editProject} onAddProject={addProject} />
       </Grid>
