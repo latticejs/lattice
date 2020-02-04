@@ -3,7 +3,6 @@ if (process.env.NODE_ENV === 'test') {
   registerRequireContextHook();
 }
 
-import "@babel/polyfill";
 import * as storybook from '@storybook/react';
 
 const req = require.context('../stories', true, /[^\/]+.js$/);
