@@ -10,7 +10,7 @@ const colorLevelBold = 700;
 const styles = theme => ({
   root: {
     ...theme.typography.button,
-    padding: theme.spacing.unit / 2,
+    padding: theme.spacing(0.5),
     width: 'auto',
     fontSize: '0.75rem',
     fontFamily: 'monospace',
