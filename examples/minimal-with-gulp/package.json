@@ -7,7 +7,7 @@
   "scripts": {
     "test": "gulp jest",
     "start": "gulp start:dev --open",
-    "startWithBuild": "npm build && npm start",
+    "start:dev": " gulp build:dev && gulp start:dev --open",
     "build:dev": "gulp build:dev",
     "build:prod": "gulp build:prod",
     "build": "gulp build",
