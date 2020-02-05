@@ -62,7 +62,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - examples/minimal
   - examples: update minimal example to babel 7 (#263)
 - examples/minimal-with-gulp
-  - examples: added froala-editor
+  - examples: added froala-editor in minimal-with-gulp example
 
 ### Fixed
 - examples/dag-in-action
