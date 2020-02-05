@@ -113,7 +113,7 @@ class App extends Component {
               </Grid>
               <Grid item xs={10}>
                 <Widget className={classes.widget} title="Froala Editor" border="bottom">
-                  <Editor />
+                  <Editor config={{ width: '100%' }} />
                 </Widget>
               </Grid>
             </Grid>
