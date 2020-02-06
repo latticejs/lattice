@@ -19,8 +19,8 @@
     "size": "bundlesize"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "recharts": "^1.8.5",
     "react-smooth": "1.0.2"
   },
@@ -45,13 +45,13 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-transform-async-functions": "^6.22.0",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "jest": "^23.6.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-jss": "^10.0.0",
-    "react-test-renderer": "^16.9.0",
-    "recharts": "^1.7.1",
+    "react-test-renderer": "^16.12.0",
+    "recharts": "^1.8.5",
     "rimraf": "^3.0.0",
     "storybook-readme": "^4.0.5"
   },

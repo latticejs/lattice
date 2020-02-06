@@ -22,8 +22,8 @@
   "peerDependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
@@ -43,11 +43,11 @@
     "@storybook/addon-storysource": "^4.1.13",
     "@storybook/react": "^4.1.13",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "jest": "^23.6.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-test-renderer": "^16.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-test-renderer": "^16.12.0",
     "rimraf": "^2.7.0",
     "storybook-readme": "^4.0.5"
   },
