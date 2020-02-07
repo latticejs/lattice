@@ -25,9 +25,9 @@
   },
   "devDependencies": {
     "@geut/chan": "^2.0.0",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-storysource": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/addon-actions": "^4.1.13",
+    "@storybook/addon-storysource": "^4.1.13",
+    "@storybook/react": "^4.1.13",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "eslint": "^6.8.0",
@@ -37,7 +37,7 @@
     "eslint-plugin-react-app": "^6.1.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^4.2.1",
-    "lerna": "^3.20.2",
+    "lerna": "^3.20.1",
     "prettier": "^1.19.1",
     "storybook-readme": "^4.0.5"
   },

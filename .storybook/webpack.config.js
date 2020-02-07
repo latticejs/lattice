@@ -7,11 +7,28 @@ module.exports = config => {
     loader: require.resolve('@storybook/addon-storysource/loader'),
     options: {
       prettierConfig: {
-        parser: 'babylon'
+        parser: 'babel'
       }
     },
     enforce: 'pre'
-  });
+  },
+  {
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader']
+  },
+  {
+    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'fonts/'
+        }
+      }
+    ]
+  }
+  );
 
   return config;
 };
