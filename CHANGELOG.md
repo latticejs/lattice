@@ -33,7 +33,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Lattice-SSR Example
 - Fixed greenkeeper bugs
 
-
 ## Update Phase - 2019-10-18
 - Updated minimal example with jest and lint configurations.
 - Upgraded MUI version in Minimal Example.
@@ -62,6 +61,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - examples/minimal
   - examples: update minimal example to babel 7 (#263)
+- examples/minimal-with-gulp
+  - examples: added froala-editor in minimal-with-gulp example
 
 ### Fixed
 - examples/dag-in-action

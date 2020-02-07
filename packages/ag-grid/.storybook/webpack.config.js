@@ -7,7 +7,7 @@ module.exports = {
         test: /\.jsx?$/,
         include: path.resolve('./stories'),
         loader: require.resolve('@storybook/addon-storysource/loader'),
-        options: { prettierConfig: { parser: 'babylon' } },
+        options: { prettierConfig: { parser: 'babel' } },
         enforce: 'pre'
       },
       {

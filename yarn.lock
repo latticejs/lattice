@@ -2504,7 +2504,7 @@
     "@babel/traverse" "^7.6.2"
     jscodeshift-add-imports "^1.0.1"
 
-"@material-ui/core@^4.5.1", "@material-ui/core@^4.5.2", "@material-ui/core@^4.6.1", "@material-ui/core@^4.7.0":
+"@material-ui/core@^4.8.2":
   version "4.9.1"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.9.1.tgz#8e57382b12a01b35a3fa2a45424528915aef2115"
   integrity sha512-wehQI0ahHDsZjK+uA8Q5Cs1K1/1HXYe2icwTqARaRCt7d9bTp0bJN/C9TLe/+sRWfRIkx6OIk7ABSJT1jBqxRg==
@@ -2524,7 +2524,7 @@
     react-is "^16.8.0"
     react-transition-group "^4.3.0"
 
-"@material-ui/icons@^4.5.0", "@material-ui/icons@^4.5.1":
+"@material-ui/icons@^4.5.1":
   version "4.9.1"
   resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.9.1.tgz#fdeadf8cb3d89208945b33dbc50c7c616d0bd665"
   integrity sha512-GBitL3oBWO0hzBhvA9KxqcowRUsA0qzwKkURyC8nppnC3fw54KPKZ+d4V1Eeg/UnDRSzDaI9nGCdel/eh9AQMg==
@@ -16985,9 +16985,9 @@ mobx-react-lite@^1.4.2:
   integrity sha512-PyZmARqqWtpuQaAoHF5pKX7h6TKNLwq6vtovm4zZvG6sEbMRHHSqioGXSeQbpRmG8Kw8uln3q/W1yMO5IfL5Sg==
 
 mobx-react@^6.1.0:
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-6.1.6.tgz#c75e3747a8bb622045d94d1a5e31dbe20e6691aa"
-  integrity sha512-1HjHkUKhvrFz0JvgaTHPHw0oCWvlM7EtMp1KlCiUaf6rY/JW855pKlQrkBJWXNqS+YvOEksiD8bfEyqp9ep8IQ==
+  version "6.1.7"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-6.1.7.tgz#2fe620851ef33df38e50645101321830a07fc4e2"
+  integrity sha512-TXwqweY7yEbMl+0F5jOO5bHWUbgeNJr8o1or+1NdhWWg6duIqsGW1D6ojNmn2RO27vRJHkZrp4kjv6919nHS0A==
   dependencies:
     mobx-react-lite "^1.4.2"
 
