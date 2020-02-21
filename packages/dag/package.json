@@ -39,7 +39,7 @@
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-storyshots": "^5.3.13",
     "@storybook/addon-storysource": "^5.3.13",
-    "@storybook/react": "^4.1.13",
+    "@storybook/react": "^5.3.13",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.0",
     "babel-jest": "^24.9.0",
