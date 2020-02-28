@@ -50,7 +50,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-jss": "^10.0.0",
-    "react-test-renderer": "^16.12.0",
+    "react-test-renderer": "^16.13.0",
     "recharts": "^1.8.5",
     "rimraf": "^3.0.0",
     "storybook-readme": "^4.0.5"
