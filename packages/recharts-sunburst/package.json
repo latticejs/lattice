@@ -19,7 +19,7 @@
     "size": "bundlesize"
   },
   "peerDependencies": {
-    "react": "^16.12.0",
+    "react": "^16.13.1",
     "react-dom": "^16.12.0",
     "recharts": "^1.8.5",
     "react-smooth": "1.0.2"
