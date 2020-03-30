@@ -39,7 +39,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Upgraded MUI version in ARTC Example.
 
 ## [1.0.1-beta.3] - 2019-12-27
-- Versions of Ag-Grid and Map is updated to 1.0.1-beta.4
+- Versions of Ag-Grid and Map is updated to 1.0.1-beta.4.
+- Clap deprecated functions are now updated.
 
 ## [1.0.1-beta.2] - 2019-09-11
 - Package Dependency is updated.(#310)
@@ -47,7 +48,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Integrated Gulp in Minimal Example.
 - Updated MUI Version in Basic and CRUD Example.
 - Added the Froala Editor.
-- Clap deprecated functions are now updated.
 
 ## [1.0.1-beta.1] (Resumption Phase) - 2019-09-04
 - Resuming and completing gauge component.
