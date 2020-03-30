@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "gulp jest",
-    "start": "gulp start:dev --open",
+    "start": " gulp build:dev && gulp start:dev --open",
     "build:dev": "gulp build:dev",
     "build:prod": "gulp build:prod",
     "build": "gulp build",
@@ -20,6 +20,7 @@
   "dependencies": {
     "@latticejs/mui-recharts": "^1.0.1-beta.2",
     "@latticejs/widgets": "^1.0.1-beta.2",
+    "@latticejs/froala-editor": "^1.0.1-beta.2",
     "@material-ui/core": "^4.8.2",
     "@material-ui/icons": "^4.5.1",
     "gulp": "^4.0.2",
@@ -45,7 +46,7 @@
     "css-loader": "^1.0.0",
     "del": "^5.1.0",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",

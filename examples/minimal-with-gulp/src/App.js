@@ -13,6 +13,8 @@ import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
 // Lattice
+import Editor from '@latticejs/froala-editor';
+import '@latticejs/froala-editor/styles/css/style.css';
 import { Widget } from '@latticejs/widgets';
 import { PieChart, Pie, Tooltip } from '@latticejs/mui-recharts';
 
@@ -95,9 +97,9 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <Grid container>
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <Grid container justify="space-around" spacing={Number(0)}>
-              <Grid item>
+              <Grid item xs={10}>
                 <Widget className={classes.widget} title="About" border="bottom">
                   <Typography variant="body1">
                     This is a minimal demo with respect to:
@@ -109,6 +111,15 @@ class App extends Component {
                   </Typography>
                 </Widget>
               </Grid>
+              <Grid item xs={10}>
+                <Widget className={classes.widget} title="Froala Editor" border="bottom">
+                  <Editor config={{ width: '100%' }} />
+                </Widget>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={6}>
+            <Grid container justify="space-around" spacing={Number(0)}>
               <Grid item>
                 <Widget className={classes.widget} title="Bundle data" border="bottom">
                   <div>
