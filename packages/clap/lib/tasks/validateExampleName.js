@@ -3,7 +3,7 @@ var octokit = require('@octokit/rest')();
 module.exports = function validateExampleName(repoData, example) {
   return new Promise(function(resolve, reject) {
     octokit.repos
-      .getContent({
+      .getContents({
         owner: repoData.owner,
         repo: repoData.repo,
         path: `${repoData.path}/${example}/package.json`,

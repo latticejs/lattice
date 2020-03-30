@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Integrated Gulp in Minimal Example.
 - Updated MUI Version in Basic and CRUD Example.
 - Added the Froala Editor.
+- Clap deprecated functions are now updated.
 
 ## [1.0.1-beta.1] (Resumption Phase) - 2019-09-04
 - Resuming and completing gauge component.
