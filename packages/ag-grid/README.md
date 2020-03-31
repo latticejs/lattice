@@ -5,8 +5,7 @@ An ag-Grid component to customise the behaviour of the grid.
 ## Install
 
 ```bash
-npm install @latticejs/ag-grid --save-dev
-
+npm install @latticejs/ag-grid --save
 ```
 
 ## Features
@@ -41,8 +40,7 @@ export class AgGrid extends Component {
         rowData="Pass your ag-grid data array coming from api here"
         rowSelection="multiple"
         afterGridCreated={this.getGrid}
-      >
-      </LatticeAgGgrid>
+      />
     );
   }
 }
