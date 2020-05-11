@@ -24,7 +24,7 @@
     }
   },
   "devDependencies": {
-    "@geut/chan": "^2.0.0",
+    "@geut/chan": "^2.2.1",
     "@storybook/addon-actions": "^4.1.13",
     "@storybook/addon-storysource": "^4.1.13",
     "@storybook/react": "^4.1.13",
