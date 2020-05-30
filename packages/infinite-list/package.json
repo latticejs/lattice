@@ -59,7 +59,7 @@
     "storybook-readme": "^4.0.5"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.0",
+    "@babel/polyfill": "^7.10.1",
     "classnames": "^2.2.0",
     "lodash.debounce": "^4.0.0",
     "prop-types": "^15.7.0",
