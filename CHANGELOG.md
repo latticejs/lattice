@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added Map Package.
 - Added ag-grid package.
 - Added Example of Mapbox, Sunburst && PieChart.
+- Readmes are updated.
 
 ## Update MUI version
 - Updated MUI version in dag package to 4.5.1.
@@ -39,7 +40,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Upgraded MUI version in ARTC Example.
 
 ## [1.0.1-beta.3] - 2019-12-27
-- Versions of Ag-Grid and Map is updated to 1.0.1-beta.4
+- Versions of Ag-Grid and Map is updated to 1.0.1-beta.4.
+- Clap deprecated functions are now updated.
 
 ## [1.0.1-beta.2] - 2019-09-11
 - Package Dependency is updated.(#310)
