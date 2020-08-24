@@ -32,7 +32,21 @@ const stateLink = withClientState({
 
 const client = new ApolloClient({
   link: ApolloLink.from([authLink, errorLink, stateLink, new HttpLink({ uri: 'http://localhost:3001' })]),
-  cache
+  cache,
+  resolvers: {
+    Mutation: {
+      updateNetworkStatus: (_, { isConnected }, { cache }) => {
+        const data = {
+          networkStatus: {
+            __typename: 'NetworkStatus',
+            isConnected
+          },
+        };
+        cache.writeData({ data });
+        return null;
+      },
+    },
+  }
 });
 
 client.onResetStore(stateLink.writeDefaults);
