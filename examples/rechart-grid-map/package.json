@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@latticejs/map": "^1.0.1-beta.4",
-    "@latticejs/mui-recharts": "^1.0.1-beta.2",
+    "@latticejs/mui-recharts": "^1.0.1-beta.3",
     "@latticejs/recharts-sunburst": "^1.0.1-beta.3",
     "@latticejs/widgets": "^1.0.1-beta.3",
     "@latticejs/ag-grid": "^1.0.1-beta.3",
