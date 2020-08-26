@@ -18,8 +18,8 @@ module.exports = [
     output: {
       path: `${__dirname}/public`
     },
-    performance : {
-      hints : false
+    performance: {
+      hints: false
     }
   },
   {
@@ -38,8 +38,8 @@ module.exports = [
     entry: './src/server',
     target: 'node',
     externals: [nodeExternals()],
-    performance : {
-      hints : false
+    performance: {
+      hints: false
     }
   }
 ];

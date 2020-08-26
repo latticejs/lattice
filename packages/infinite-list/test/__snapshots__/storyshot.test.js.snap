@@ -182,30 +182,36 @@ exports[`Storyshots infinite-list/Table basic 1`] = `
         >
           <div
             className="MuiTable-root"
+            role="table"
           >
             <div
-              className="MuiTableHead-root Component-root-269"
+              className="MuiTableHead-root Component-root-1"
+              role="rowgroup"
             >
               <div
-                className="MuiTableRow-root Component-root-271 MuiTableRow-head Component-head-274"
+                className="MuiTableRow-root Component-root-2 MuiTableRow-head Component-head-5"
+                role="row"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-281 MuiTableCell-head InnerTableCell-head-282"
+                  className="MuiTableCell-root InnerTableCell-root-7 MuiTableCell-head InnerTableCell-head-8"
+                  role="columnheader"
                   scope="col"
                 >
                   Index
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-281 MuiTableCell-head InnerTableCell-head-282"
+                  className="MuiTableCell-root InnerTableCell-root-7 MuiTableCell-head InnerTableCell-head-8"
+                  role="columnheader"
                   scope="col"
                 >
                   Title
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-281 MuiTableCell-head InnerTableCell-head-282"
+                  className="MuiTableCell-root InnerTableCell-root-7 MuiTableCell-head InnerTableCell-head-8"
+                  role="columnheader"
                   scope="col"
                 >
                   Timestamp
@@ -248,7 +254,7 @@ exports[`Storyshots infinite-list/Table basic 1`] = `
                   <div
                     aria-label="grid"
                     aria-readonly={true}
-                    className="ReactVirtualized__Grid ReactVirtualized__List InnerTableBody-root-305"
+                    className="ReactVirtualized__Grid ReactVirtualized__List InnerTableBody-root-19"
                     onScroll={[Function]}
                     role="grid"
                     style={
@@ -363,23 +369,28 @@ exports[`Storyshots infinite-list/Table order 1`] = `
         >
           <div
             className="MuiTable-root"
+            role="table"
           >
             <div
-              className="MuiTableHead-root Component-root-439"
+              className="MuiTableHead-root Component-root-20"
+              role="rowgroup"
             >
               <div
-                className="MuiTableRow-root Component-root-441 MuiTableRow-head Component-head-444"
+                className="MuiTableRow-root Component-root-21 MuiTableRow-head Component-head-24"
+                role="row"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-451 MuiTableCell-head InnerTableCell-head-452"
+                  className="MuiTableCell-root InnerTableCell-root-26 MuiTableCell-head InnerTableCell-head-27"
+                  role="columnheader"
                   scope="col"
                 >
                   Index
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-451 MuiTableCell-head InnerTableCell-head-452"
+                  className="MuiTableCell-root InnerTableCell-root-26 MuiTableCell-head InnerTableCell-head-27"
+                  role="columnheader"
                   scope="col"
                 >
                   <span
@@ -405,10 +416,9 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                   >
                     Title
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
                       focusable="false"
-                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -419,7 +429,8 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-451 MuiTableCell-head InnerTableCell-head-452"
+                  className="MuiTableCell-root InnerTableCell-root-26 MuiTableCell-head InnerTableCell-head-27"
+                  role="columnheader"
                   scope="col"
                 >
                   <span
@@ -445,10 +456,9 @@ exports[`Storyshots infinite-list/Table order 1`] = `
                   >
                     Timestamp
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
                       focusable="false"
-                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -518,46 +528,55 @@ exports[`Storyshots infinite-list/Table search 1`] = `
         >
           <div
             className="MuiTable-root"
+            role="table"
           >
             <div
-              className="MuiTableHead-root Component-root-666"
+              className="MuiTableHead-root Component-root-38"
+              role="rowgroup"
             >
               <div
-                className="MuiTableRow-root Component-root-668 MuiTableRow-head Component-head-671"
+                className="MuiTableRow-root Component-root-39 MuiTableRow-head Component-head-42"
+                role="row"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-678 MuiTableCell-head InnerTableCell-head-679"
+                  className="MuiTableCell-root InnerTableCell-root-44 MuiTableCell-head InnerTableCell-head-45"
+                  role="columnheader"
                   scope="col"
                 >
                   Index
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-678 MuiTableCell-head InnerTableCell-head-679"
+                  className="MuiTableCell-root InnerTableCell-root-44 MuiTableCell-head InnerTableCell-head-45"
+                  role="columnheader"
                   scope="col"
                 >
                   Title
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-678 MuiTableCell-head InnerTableCell-head-679"
+                  className="MuiTableCell-root InnerTableCell-root-44 MuiTableCell-head InnerTableCell-head-45"
+                  role="columnheader"
                   scope="col"
                 >
                   Timestamp
                 </div>
               </div>
               <div
-                className="MuiTableRow-root Component-root-668 MuiTableRow-head Component-head-671"
+                className="MuiTableRow-root Component-root-39 MuiTableRow-head Component-head-42"
+                role="row"
               >
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-678 MuiTableCell-head InnerTableCell-head-679"
+                  className="MuiTableCell-root InnerTableCell-root-44 MuiTableCell-head InnerTableCell-head-45"
+                  role="columnheader"
                   scope="col"
                 />
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-678 MuiTableCell-head InnerTableCell-head-679"
+                  className="MuiTableCell-root InnerTableCell-root-44 MuiTableCell-head InnerTableCell-head-45"
+                  role="columnheader"
                   scope="col"
                 >
                   <div
@@ -578,7 +597,8 @@ exports[`Storyshots infinite-list/Table search 1`] = `
                 </div>
                 <div
                   aria-sort={null}
-                  className="MuiTableCell-root InnerTableCell-root-678 MuiTableCell-head InnerTableCell-head-679"
+                  className="MuiTableCell-root InnerTableCell-root-44 MuiTableCell-head InnerTableCell-head-45"
+                  role="columnheader"
                   scope="col"
                 >
                   <div

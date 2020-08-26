@@ -40,12 +40,12 @@ const client = new ApolloClient({
           networkStatus: {
             __typename: 'NetworkStatus',
             isConnected
-          },
+          }
         };
         cache.writeData({ data });
         return null;
-      },
-    },
+      }
+    }
   }
 });
 
