@@ -22,8 +22,10 @@ import Demographic from '../components/dashboard/Demographic';
 import Stats from '../components/dashboard/Stats';
 import TopProducts from '../components/dashboard/TopProducts';
 
-class Dashboard extends Component {
-  getStats(stats, loadingStats) {
+const dashboard = (props) => {
+  const { stats, loadingStats, topProducts, loadingTopProducts } = props;
+
+  const getStats = (stats, loadingStats) => {
     const view = [];
     let counter = 0;
 
@@ -41,13 +43,11 @@ class Dashboard extends Component {
     return view;
   }
 
-  render() {
-    const { stats, loadingStats, topProducts, loadingTopProducts } = this.props;
     if (loadingStats || loadingTopProducts) {
       return null;
     }
 
-    const statsView = this.getStats(stats, loadingStats);
+    const statsView = getStats(stats, loadingStats);
     return (
       <Grid container spacing={2}>
         <Grid item xs={12}>
@@ -82,7 +82,6 @@ class Dashboard extends Component {
         </Grid>
       </Grid>
     );
-  }
 }
 
 export default compose(
@@ -103,4 +102,4 @@ export default compose(
       }
     }
   })
-)(Dashboard);
+)(dashboard);

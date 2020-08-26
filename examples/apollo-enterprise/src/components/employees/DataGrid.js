@@ -42,14 +42,13 @@ const styles = theme => ({
   }
 });
 
-class DataGrid extends Component {
-  handleRowClick = employee => {
-    const { handleSelect } = this.props;
+const dataGrid = (props) => {
+  const handleRowClick = employee => {
+    const { handleSelect } = props;
 
     handleSelect(employee);
   };
 
-  render() {
     const {
       dataLoaderRef,
       scrollRef,
@@ -63,7 +62,7 @@ class DataGrid extends Component {
       handleOrder,
       handleSearch,
       handleScrollStop
-    } = this.props;
+    } = props;
 
     return (
       <Widget className={classes.root}>
@@ -131,7 +130,7 @@ class DataGrid extends Component {
               }
 
               return (
-                <TableRow key={item.id} style={style} hover onDoubleClick={this.handleRowClick.bind(this, item)}>
+                <TableRow key={item.id} style={style} hover onDoubleClick={handleRowClick.bind(this, item)}>
                   <TableCell className={classes.cell}>{item.id}</TableCell>
                   <TableCell className={classes.cell}>{item.name}</TableCell>
                   <TableCell className={classes.cell}>{item.email}</TableCell>
@@ -145,7 +144,6 @@ class DataGrid extends Component {
         </Table>
       </Widget>
     );
-  }
 }
 
-export default withStyles(styles)(DataGrid);
+export default withStyles(styles)(dataGrid);

@@ -46,24 +46,22 @@ const defaultData = [
   }
 ];
 
-class Demographic extends Component {
-  render() {
-    const { className, classes, data = defaultData, fill = COLORS.fill, stroke = COLORS.stroke } = this.props;
+const demographic = (props) => {
+  const { className, classes, data = defaultData, fill = COLORS.fill, stroke = COLORS.stroke } = props;
 
-    return (
-      <Widget title="Demographic">
-        <ResponsiveContainer aspect={1}>
-          <Sunburst
-            data={data}
-            dataKey="size"
-            className={classnames(className, classes.root)}
-            fill={fill}
-            stroke={stroke}
-          />
-        </ResponsiveContainer>
-      </Widget>
-    );
-  }
+  return (
+    <Widget title="Demographic">
+      <ResponsiveContainer aspect={1}>
+        <Sunburst
+          data={data}
+          dataKey="size"
+          className={classnames(className, classes.root)}
+          fill={fill}
+          stroke={stroke}
+        />
+      </ResponsiveContainer>
+    </Widget>
+  );
 }
 
-export default withStyles(styles)(Demographic);
+export default withStyles(styles)(demographic);

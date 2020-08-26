@@ -24,39 +24,37 @@ const styles = theme => ({
   }
 });
 
-class NewCustomers extends Component {
-  render() {
-    const { className, classes, ...props } = this.props;
-    return (
-      <Widget title="New Customers" featured {...props}>
-        <Grid container alignItems="center" justify="space-around" className={className}>
-          <Grid item className={classes.textItem}>
-            <Typography variant="h4" color="inherit">
-              {1700}
-            </Typography>
-            <Typography variant="caption" color="inherit">
-              New Customers
-            </Typography>
-          </Grid>
-          <Grid item className={classes.textItem}>
-            <Typography variant="h4" color="inherit">
-              +{130}%
-            </Typography>
-            <Typography variant="caption" color="inherit">
-              Increment over last month
-            </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <ResponsiveContainer aspect={2}>
-              <BarChart data={data}>
-                <Bar dataKey="uv" fill="#8884d8" />
-              </BarChart>
-            </ResponsiveContainer>
-          </Grid>
+const newCustomers = (props) => {
+  const { className, classes, ...values } = props;
+  return (
+    <Widget title="New Customers" featured {...values}>
+      <Grid container alignItems="center" justify="space-around" className={className}>
+        <Grid item className={classes.textItem}>
+          <Typography variant="h4" color="inherit">
+            {1700}
+          </Typography>
+          <Typography variant="caption" color="inherit">
+            New Customers
+          </Typography>
         </Grid>
-      </Widget>
-    );
-  }
+        <Grid item className={classes.textItem}>
+          <Typography variant="h4" color="inherit">
+            +{130}%
+          </Typography>
+          <Typography variant="caption" color="inherit">
+            Increment over last month
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <ResponsiveContainer aspect={2}>
+            <BarChart data={data}>
+              <Bar dataKey="uv" fill="#8884d8" />
+            </BarChart>
+          </ResponsiveContainer>
+        </Grid>
+      </Grid>
+    </Widget>
+  );
 }
 
-export default withStyles(styles)(NewCustomers);
+export default withStyles(styles)(newCustomers);

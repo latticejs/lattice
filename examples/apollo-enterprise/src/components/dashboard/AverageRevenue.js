@@ -17,29 +17,28 @@ const data = [
   { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 }
 ];
 
-class AverageRevenue extends Component {
-  render() {
-    return (
-      <Widget title="Average Revenue">
+
+const averageRevenue = () => {
+  return (
+    <Widget title="Average Revenue">
+      <Grid container>
+        <ResponsiveContainer aspect={2} height="85%">
+          <LineChart data={data}>
+            <Line variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+            <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
+          </LineChart>
+        </ResponsiveContainer>
         <Grid container>
-          <ResponsiveContainer aspect={2} height="85%">
-            <LineChart data={data}>
-              <Line variant="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-              <Line variant="monotone" dataKey="uv" stroke="#82ca9d" />
-            </LineChart>
-          </ResponsiveContainer>
-          <Grid container>
-            <Typography variant="h4" align="center">
-              +25.9%
-            </Typography>
-            <Typography variant="caption" align="center">
-              USD 1.2M
-            </Typography>
-          </Grid>
+          <Typography variant="h4" align="center">
+            +25.9%
+          </Typography>
+          <Typography variant="caption" align="center">
+            USD 1.2M
+          </Typography>
         </Grid>
-      </Widget>
-    );
-  }
+      </Grid>
+    </Widget>
+  );
 }
 
-export default AverageRevenue;
+export default averageRevenue;

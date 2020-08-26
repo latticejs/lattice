@@ -24,19 +24,19 @@ const styles = theme => ({
   }
 });
 
-class Form extends Component {
-  handleSuccess = employee => {
-    const { handleSuccess } = this.props;
+const form = (props) => {
+  const { classes, className, status, areas, handleSubmit } = props;
+
+  const handleSuccess = employee => {
+    const { handleSuccess } = props;
     handleSuccess(employee);
   };
 
-  handleCancel = () => {
-    const { handleCancel, employee } = this.props;
+  const handleCancel = () => {
+    const { handleCancel, employee } = props;
     handleCancel(employee);
   };
 
-  render() {
-    const { classes, className, status, areas, handleSubmit } = this.props;
 
     return (
       <Widget
@@ -73,7 +73,7 @@ class Form extends Component {
                 </Button>
               </Grid>
               <Grid item>
-                <Button variant="contained" onClick={this.handleCancel}>
+                <Button variant="contained" onClick={handleCancel}>
                   Cancel
                 </Button>
               </Grid>
@@ -82,7 +82,6 @@ class Form extends Component {
         </Grid>
       </Widget>
     );
-  }
 }
 
 export default withStyles(styles)(
@@ -119,5 +118,5 @@ export default withStyles(styles)(
         setStatus(err);
       }
     }
-  })(Form)
+  })(form)
 );

@@ -44,84 +44,83 @@ const styles = theme => ({
   }
 });
 
-class Login extends Component {
-  render() {
-    const {
-      classes,
-      location: { state },
-      currentUser,
-      isSubmitting,
-      status,
-      handleSubmit
-    } = this.props;
+const login = (props) => {
 
-    if (!isSubmitting && currentUser) {
-      return <Redirect to={state ? state.from : MAIN} />;
-    }
+  const {
+    classes,
+    location: { state },
+    currentUser,
+    isSubmitting,
+    status,
+    handleSubmit
+  } = props;
 
-    return (
-      <Grid container direction="row" alignItems="stretch" spacing={0} className={classes.root}>
-        <GraphqlErrorNotification error={status} />
-        <Hidden xsDown>
-          <Grid item sm={4} className={classes.side}>
-            <img src="/images/sidebar-2.jpg" className={classes.img} alt="side" />
+  if (!isSubmitting && currentUser) {
+    return <Redirect to={state ? state.from : MAIN} />;
+  }
+
+  return (
+    <Grid container direction="row" alignItems="stretch" spacing={0} className={classes.root}>
+      <GraphqlErrorNotification error={status} />
+      <Hidden xsDown>
+        <Grid item sm={4} className={classes.side}>
+          <img src="/images/sidebar-2.jpg" className={classes.img} alt="side" />
+        </Grid>
+      </Hidden>
+      <Grid item xs={12} sm={8} className={classes.containerForm}>
+        <Grid
+          component="form"
+          autoComplete="off"
+          onSubmit={handleSubmit}
+          container
+          alignContent="center"
+          justify="center"
+          spacing={10}
+          className={classes.form}
+        >
+          <Grid item xs={8}>
+            <Typography variant="h4">Sign In</Typography>
           </Grid>
-        </Hidden>
-        <Grid item xs={12} sm={8} className={classes.containerForm}>
-          <Grid
-            component="form"
-            autoComplete="off"
-            onSubmit={handleSubmit}
-            container
-            alignContent="center"
-            justify="center"
-            spacing={10}
-            className={classes.form}
-          >
-            <Grid item xs={8}>
-              <Typography variant="h4">Sign In</Typography>
-            </Grid>
-            <Grid item xs={8} className={classes.containerField}>
-              <TextField field="email" label="Email" type="text" fullWidth />
-              <TextField field="password" label="Password" type="password" fullWidth />
-            </Grid>
-            <Grid item xs={8}>
-              <Button type="submit" variant="contained" color="primary">
-                Sign in
-              </Button>
-            </Grid>
+          <Grid item xs={8} className={classes.containerField}>
+            <TextField field="email" label="Email" type="text" fullWidth />
+            <TextField field="password" label="Password" type="password" fullWidth />
+          </Grid>
+          <Grid item xs={8}>
+            <Button type="submit" variant="contained" color="primary">
+              Sign in
+            </Button>
           </Grid>
         </Grid>
       </Grid>
-    );
-  }
+    </Grid>
+  );
 }
 
 const EnhancedForm = withFormik({
-  mapPropsToValues: () => ({ email: 'admin@lattice.com', password: '123456' }),
-  validationSchema: yup.object().shape({
-    email: yup
-      .string()
-      .email('Invalid email address')
-      .required('Email is required!'),
-    password: yup.string().required('Password is required!')
-  }),
-  handleSubmit: async (values, { setSubmitting, setStatus, props: { signIn, refetchUser } }) => {
-    try {
-      await signIn({
-        variables: {
-          email: values.email,
-          password: values.password
-        }
-      });
+mapPropsToValues: () => ({ email: 'admin@lattice.com', password: '123456' }),
+validationSchema: yup.object().shape({
+  email: yup
+    .string()
+    .email('Invalid email address')
+    .required('Email is required!'),
+  password: yup.string().required('Password is required!')
+}),
+handleSubmit: async (values, { setSubmitting, setStatus, props: { signIn, refetchUser } }) => {
+  try {
+    await signIn({
+      variables: {
+        email: values.email,
+        password: values.password
+      }
+    });
 
-      await refetchUser();
-    } catch (err) {
-      setSubmitting(false);
-      setStatus(err);
-    }
-  },
-  displayName: 'BasicForm'
+    await refetchUser();
+  } catch (err) {
+    setSubmitting(false);
+    setStatus(err);
+  }
+},
+displayName: 'BasicForm'
 });
 
-export default compose(withSignIn, EnhancedForm, withStyles(styles))(Login);
+export default compose(withSignIn, EnhancedForm, withStyles(styles))(login);

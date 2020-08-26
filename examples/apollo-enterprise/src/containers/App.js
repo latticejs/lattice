@@ -28,9 +28,11 @@ import PrivateRoute from './PrivateRoute';
 import Login from './Login';
 import Main from './Main';
 
-class App extends Component {
-  createTheme() {
-    const { nightMode } = this.props;
+const app = (props) => {
+  const { refetchUser, currentUser, loadingUser } = props;
+
+  const createTheme = () => {
+    const { nightMode } = props;
 
     return createMuiTheme({
       palette: {
@@ -42,12 +44,9 @@ class App extends Component {
     });
   }
 
-  render() {
-    const { refetchUser, currentUser, loadingUser } = this.props;
-
     return (
       <BrowserRouter>
-        <MuiThemeProvider theme={this.createTheme()}>
+        <MuiThemeProvider theme={createTheme()}>
           <CssBaseline>
             <Loader loading={!currentUser && loadingUser} component="linear" fullscreen>
               <Switch>
@@ -62,7 +61,6 @@ class App extends Component {
         </MuiThemeProvider>
       </BrowserRouter>
     );
-  }
 }
 
 export default compose(
@@ -74,4 +72,4 @@ export default compose(
     }) => ({ nightMode })
   }),
   withCurrentUser
-)(App);
+)(app);

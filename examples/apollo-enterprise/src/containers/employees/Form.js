@@ -17,17 +17,17 @@ import { getEmployee, createEmployee, updateEmployee } from '../../stores/employ
 // Ours
 import EmployeesForm from '../../components/employees/Form';
 
-class Form extends Component {
-  handleSuccess = () => {
-    this.props.history.goBack();
+const form = (props) => {
+  const { areas, createEmployee, updateEmployee, employee, loading } = props;
+
+  const handleSuccess = () => {
+    props.history.goBack();
   };
 
-  handleCancel = () => {
-    this.props.history.goBack();
+  const handleCancel = () => {
+    props.history.goBack();
   };
 
-  render() {
-    const { areas, createEmployee, updateEmployee, employee, loading } = this.props;
 
     return (
       <Grid container spacing={4}>
@@ -38,14 +38,13 @@ class Form extends Component {
               areas={areas}
               createEmployee={createEmployee}
               updateEmployee={updateEmployee}
-              handleCancel={this.handleCancel}
-              handleSuccess={this.handleSuccess}
+              handleCancel={handleCancel}
+              handleSuccess={handleSuccess}
             />
           </Loader>
         </Grid>
       </Grid>
     );
-  }
 }
 
 export default compose(
@@ -99,4 +98,4 @@ export default compose(
       };
     }
   })
-)(Form);
+)(form);

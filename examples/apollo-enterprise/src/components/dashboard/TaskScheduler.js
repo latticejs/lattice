@@ -26,16 +26,15 @@ const data = {
   ]
 };
 
-class TaskScheduler extends Component {
-  render() {
-    return (
-      <Widget title="Task Scheduler">
-        <ResponsiveContainer aspect={2}>
-          <Dag {...data} />
-        </ResponsiveContainer>
-      </Widget>
-    );
-  }
+const taskScheduler = () => {
+  
+  return (
+    <Widget title="Task Scheduler">
+      <ResponsiveContainer aspect={2}>
+        <Dag {...data} />
+      </ResponsiveContainer>
+    </Widget>
+  );
 }
 
-export default TaskScheduler;
+export default taskScheduler;
