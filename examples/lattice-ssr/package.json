@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "@latticejs/infinite-list": "^1.0.1-beta.2",
-    "@latticejs/mui-recharts": "^1.0.1-beta.2",
+    "@latticejs/mui-recharts": "^1.0.1-beta.3",
     "@latticejs/recharts-sunburst": "^1.0.1-beta.3",
     "@latticejs/tree": "^1.0.1-beta.2",
-    "@latticejs/widgets": "^1.0.1-beta.2",
+    "@latticejs/widgets": "^1.0.1-beta.3",
     "@material-ui/codemod": "^4.5.0",
     "@material-ui/core": "^4.8.2",
     "@material-ui/icons": "^4.5.1",

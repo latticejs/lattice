@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@latticejs/mui-recharts": "^1.0.1-beta.2",
-    "@latticejs/widgets": "^1.0.1-beta.2",
+    "@latticejs/mui-recharts": "^1.0.1-beta.3",
+    "@latticejs/widgets": "^1.0.1-beta.3",
     "@material-ui/core": "^4.8.2",
     "@material-ui/icons": "^4.5.1",
     "apollo-cache-inmemory": "^1.6.0",

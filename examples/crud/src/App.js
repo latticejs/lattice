@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 
 import createStore from './stores';
 import { Provider } from 'mobx-react';
+import 'mobx-react-lite/batchingForReactDom';
 import faker from 'faker';
 
 const store = createStore();
