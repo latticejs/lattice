@@ -11,17 +11,11 @@ import 'typeface-roboto';
 import Dashboard from './Dashboard';
 import Layout from './components/Layout';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
+const app = () => {
 
-    this.state = {
-      nightMode: false
-    };
-  }
+  const [nightMode, setNightMode] = useState(false);
 
-  createTheme() {
-    const { nightMode } = this.state;
+  const createTheme = () => {
 
     return createMuiTheme({
       palette: {
@@ -33,20 +27,19 @@ export default class App extends Component {
     });
   }
 
-  updateTheme = mode => {
-    this.setState({
-      nightMode: mode
-    });
+  const updateTheme = mode => {
+    setNightMode(mode)
   };
 
-  render() {
     return (
-      <MuiThemeProvider theme={this.createTheme()}>
-        <Layout nightMode={this.state.nightMode} handleUpdateTheme={this.updateTheme}>
+      <MuiThemeProvider theme={createTheme()}>
+        <Layout nightMode={nightMode} handleUpdateTheme={updateTheme}>
           <CssBaseline />
           <Dashboard {...this.props} />
         </Layout>
       </MuiThemeProvider>
     );
-  }
 }
+
+
+export default app;
