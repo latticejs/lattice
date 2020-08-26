@@ -17,6 +17,9 @@ module.exports = [
     entry: './src/client',
     output: {
       path: `${__dirname}/public`
+    },
+    performance : {
+      hints : false
     }
   },
   {
@@ -34,6 +37,9 @@ module.exports = [
     },
     entry: './src/server',
     target: 'node',
-    externals: [nodeExternals()]
+    externals: [nodeExternals()],
+    performance : {
+      hints : false
+    }
   }
 ];
