@@ -39,14 +39,14 @@ const styles = theme => ({
   }
 });
 
-class App extends Component {
-  handleNightModeChange = () => {
-    const { updateTheme, nightMode } = this.props;
+const app = (props) => {
+  const { classes, nightMode } = props;
+
+  const handleNightModeChange = () => {
+    const { updateTheme, nightMode } = props;
     updateTheme(!nightMode);
   };
 
-  render() {
-    const { classes, nightMode } = this.props;
 
     return (
       <div className={classes.root}>
@@ -56,7 +56,7 @@ class App extends Component {
               Basic Example
             </Typography>
             <Tooltip title="Toggle Night Mode" enterDelay={300}>
-              <IconButton onClick={this.handleNightModeChange} color="inherit">
+              <IconButton onClick={handleNightModeChange} color="inherit">
                 {nightMode ? <DayIcon /> : <NightIcon />}
               </IconButton>
             </Tooltip>
@@ -109,7 +109,6 @@ class App extends Component {
         </Grid>
       </div>
     );
-  }
 }
 
-export default withStyles(styles)(App);
+export default withStyles(styles)(app);
