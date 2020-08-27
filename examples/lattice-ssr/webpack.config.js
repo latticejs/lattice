@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals');
+
 module.exports = [
   {
     devtool: 'cheap-module-source-map',
@@ -9,12 +11,15 @@ module.exports = [
     },
     resolve: {
       alias: {
-        '@material-ui/core': '@material-ui/core/es'
+        '@material-ui/core/es': '@material-ui/core/es'
       }
     },
     entry: './src/client',
     output: {
       path: `${__dirname}/public`
+    },
+    performance: {
+      hints: false
     }
   },
   {
@@ -27,10 +32,14 @@ module.exports = [
     },
     resolve: {
       alias: {
-        '@material-ui/core': '@material-ui/core/es'
+        '@material-ui/core/es': '@material-ui/core/es'
       }
     },
     entry: './src/server',
-    target: 'node'
+    target: 'node',
+    externals: [nodeExternals()],
+    performance: {
+      hints: false
+    }
   }
 ];
