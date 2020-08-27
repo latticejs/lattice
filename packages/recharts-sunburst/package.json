@@ -19,8 +19,8 @@
     "size": "bundlesize"
   },
   "peerDependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "recharts": "^1.8.5",
     "react-smooth": "1.0.2"
   },
@@ -40,17 +40,17 @@
     "@storybook/addon-storysource": "^4.1.13",
     "@storybook/react": "^4.1.13",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.0",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-transform-async-functions": "^6.22.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "jest": "^23.6.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-jss": "^10.0.0",
-    "react-test-renderer": "^16.12.0",
+    "react-test-renderer": "^16.13.1",
     "recharts": "^1.8.5",
     "rimraf": "^3.0.0",
     "storybook-readme": "^4.0.5"
