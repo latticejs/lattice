@@ -24,8 +24,8 @@
     "@material-ui/core": "^4.8.2",
     "@material-ui/icons": "^4.5.1",
     "gulp": "^4.0.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "recharts": "^1.8.5",
     "typeface-roboto": "^0.0.54"
   },
@@ -39,7 +39,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.6.2",
     "app-root-dir": "^1.0.2",
-    "babel-loader": "^8.0.0",
+    "babel-loader": "^8.1.0",
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^1.1.0",
@@ -80,7 +80,6 @@
     "webpack-stream": "^5.2.1",
     "webpack-visualizer-plugin": "^0.1.11"
   },
-
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",

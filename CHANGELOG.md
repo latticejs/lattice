@@ -79,5 +79,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Versions of mui-recharts and widget is updated from 1.0.1-beta.2 to 1.0.1-beta.3.
 - examples: fix console warnings
 
+## Update Phase - 2020-08-27
+- Greenkeeper: Versions of packages has been upgraded to fix greenkeeper issues.
+
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
