@@ -11,7 +11,6 @@ const main = (props) => {
   const [nightMode, setNightMode] = useState(false);
 
   const createTheme = () => {
-
     return createMuiTheme({
       palette: {
         type: nightMode ? 'dark' : 'light'

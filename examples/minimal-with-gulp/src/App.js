@@ -50,8 +50,7 @@ const Chart = props => (
 
 const app = (props) => {
 
-  const [data, setData] = useState(
-                                   {
+  const [data, setData] = useState({
                                     deps: [
                                             { name: '@latticejs/widgets', value: 123369 },
                                             { name: '@material-ui/core', value: 392567 },
