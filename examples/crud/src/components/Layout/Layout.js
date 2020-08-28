@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Types from 'prop-types';
 
 // Material-UI
@@ -46,13 +46,13 @@ const styles = theme => ({
   }
 });
 
-class Layout extends Component {
-  state = {
-    nightMode: false
-  };
+const Layout = (props) => {
 
-  createTheme() {
-    const { nightMode } = this.state;
+  const [nightMode, setNightMode] = useState(false);
+
+  const { classes, children } = props;
+
+  const createTheme = () => {
 
     return createMuiTheme({
       palette: {
@@ -67,19 +67,14 @@ class Layout extends Component {
     });
   }
 
-  toggleTheme = () => {
-    this.setState({
-      nightMode: !this.state.nightMode
-    });
+  const toggleTheme = () => {
+    setNightMode(!nightMode)
   };
 
-  render() {
-    const { classes, children } = this.props;
-    const { nightMode } = this.state;
 
     return (
       <JssProvider generateClassName={generateClassName}>
-        <MuiThemeProvider theme={this.createTheme()}>
+        <MuiThemeProvider theme={createTheme()}>
           <CssBaseline />
 
           <div className={classes.root}>
@@ -89,7 +84,7 @@ class Layout extends Component {
                   Lattice CRUD
                 </Typography>
                 <Tooltip title="Toggle Night Mode" enterDelay={300}>
-                  <IconButton onClick={this.toggleTheme} color="inherit">
+                  <IconButton onClick={toggleTheme} color="inherit">
                     {nightMode ? <DayIcon /> : <NightIcon />}
                   </IconButton>
                 </Tooltip>
@@ -101,7 +96,6 @@ class Layout extends Component {
         </MuiThemeProvider>
       </JssProvider>
     );
-  }
 }
 
 Layout.propTypes = {
