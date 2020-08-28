@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 // Material-UI
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -48,39 +48,40 @@ const Chart = props => (
   </PieChart>
 );
 
-class App extends Component {
-  handleNightModeChange = () => {
-    const { updateTheme, nightMode } = this.props;
+const app = (props) => {
+
+  const [data, setData] = useState(
+                                   {
+                                    deps: [
+                                            { name: '@latticejs/widgets', value: 123369 },
+                                            { name: '@material-ui/core', value: 392567 },
+                                            { name: '@material-ui/icons', value: 3630161 },
+                                            { name: 'react', value: 5529 },
+                                            { name: 'react-dom', value: 92455 },
+                                            { name: 'typeface-roboto', value: 3064 }
+                                          ],
+                                    devDeps: [
+                                                { name: 'babel-core', value: 539213 },
+                                                { name: 'babel-loader', value: 46534 },
+                                                { name: 'babel-plugin-transform-class-properties', value: 371741 },
+                                                { name: 'babel-preset-env', value: 61171 },
+                                                { name: 'babel-preset-react', value: 129792 },
+                                                { name: 'css-loader', value: 214658 },
+                                                { name: 'file-loader', value: 179134 },
+                                                { name: 'html-webpack-plugin', value: 625851 },
+                                                { name: 'style-loader', value: 170557 },
+                                                { name: 'webpack', value: 1900109 }
+                                              ]
+                                    }
+                                  )
+  
+  const { classes, nightMode } = props;
+
+  const handleNightModeChange = () => {
+    const { updateTheme, nightMode } = props;
     updateTheme(!nightMode);
   };
 
-  state = {
-    data: {
-      deps: [
-        { name: '@latticejs/widgets', value: 123369 },
-        { name: '@material-ui/core', value: 392567 },
-        { name: '@material-ui/icons', value: 3630161 },
-        { name: 'react', value: 5529 },
-        { name: 'react-dom', value: 92455 },
-        { name: 'typeface-roboto', value: 3064 }
-      ],
-      devDeps: [
-        { name: 'babel-core', value: 539213 },
-        { name: 'babel-loader', value: 46534 },
-        { name: 'babel-plugin-transform-class-properties', value: 371741 },
-        { name: 'babel-preset-env', value: 61171 },
-        { name: 'babel-preset-react', value: 129792 },
-        { name: 'css-loader', value: 214658 },
-        { name: 'file-loader', value: 179134 },
-        { name: 'html-webpack-plugin', value: 625851 },
-        { name: 'style-loader', value: 170557 },
-        { name: 'webpack', value: 1900109 }
-      ]
-    }
-  };
-
-  render() {
-    const { classes, nightMode } = this.props;
 
     return (
       <div className={classes.root}>
@@ -90,7 +91,7 @@ class App extends Component {
               Minimal With Gulp Example
             </Typography>
             <MuiTooltip title="Toggle Night Mode" enterDelay={300}>
-              <IconButton onClick={this.handleNightModeChange} color="inherit">
+              <IconButton onClick={handleNightModeChange} color="inherit">
                 {nightMode ? <DayIcon /> : <NightIcon />}
               </IconButton>
             </MuiTooltip>
@@ -123,7 +124,7 @@ class App extends Component {
               <Grid item>
                 <Widget className={classes.widget} title="Bundle data" border="bottom">
                   <div>
-                    {Chart(this.state.data)}
+                    {Chart(data)}
                     <Typography variant="caption" align="center">
                       NOTE: Actual sizes might be smaller if only parts of the package are used.
                     </Typography>
@@ -149,7 +150,6 @@ class App extends Component {
         </Grid>
       </div>
     );
-  }
 }
 
-export default withStyles(styles)(App);
+export default withStyles(styles)(app);
