@@ -4,15 +4,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
 import App from './App';
 
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nightMode: false
-    };
-  }
+const main = (props) => {
 
-  createTheme() {
+  const [nightMode, setNightMode] = useState(false);
+
+  const createTheme = () => {
     const { nightMode } = this.state;
     return createMuiTheme({
       palette: {
@@ -24,18 +20,16 @@ export default class Main extends Component {
     });
   }
 
-  updateTheme = mode => {
-    this.setState({
-      nightMode: mode
-    });
+  const updateTheme = mode => {
+    setNightMode(mode);
   };
 
-  render() {
     return (
-      <MuiThemeProvider theme={this.createTheme()}>
+      <MuiThemeProvider theme={createTheme()}>
         <CssBaseline />
-        <App {...this.props} updateTheme={this.updateTheme} nightMode={this.state.nightMode} />
+        <App {...props} updateTheme={updateTheme} nightMode={nightMode} />
       </MuiThemeProvider>
     );
-  }
 }
+
+export default main;

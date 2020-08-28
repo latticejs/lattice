@@ -49,20 +49,14 @@ const styles = theme => ({
   }
 });
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const app = (props) => {
 
-    this.getTreeData = this.getTreeData.bind(this);
-    this.getSunburstData = this.getSunburstData.bind(this);
-    this.getGraphData = this.getGraphData.bind(this);
-  }
   handleNightModeChange = () => {
     const { updateTheme, nightMode } = this.props;
     updateTheme(!nightMode);
   };
 
-  getSunburstData() {
+  const getSunburstData = () => {
     return [
       {
         children: [
@@ -88,7 +82,7 @@ class App extends Component {
     ];
   }
 
-  getGraphData() {
+  const getGraphData = () => {
     return [
       { name: 'Page A', pv: 2400, amt: 2400 },
       { name: 'Page B', pv: 1398, amt: 2210 },
@@ -100,7 +94,7 @@ class App extends Component {
     ];
   }
 
-  getTreeData() {
+  const getTreeData = () => {
     return [
       {
         label: 'index.js'
@@ -127,11 +121,11 @@ class App extends Component {
     ];
   }
 
-  render() {
-    const { classes, nightMode } = this.props;
-    const sunburstData = this.getSunburstData();
-    const treeData = this.getTreeData();
-    const rechartsData = this.getGraphData();
+
+    const { classes, nightMode } = props;
+    const sunburstData = getSunburstData();
+    const treeData = getTreeData();
+    const rechartsData = getGraphData();
 
     return (
       <div className={classes.root}>
@@ -237,7 +231,6 @@ class App extends Component {
         </Grid>
       </div>
     );
-  }
 }
 
-export default withStyles(styles)(App);
+export default withStyles(styles)(app);
