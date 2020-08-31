@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // Material-UI
 import Grid from '@material-ui/core/Grid/Grid';
 import Typography from '@material-ui/core/Typography';
