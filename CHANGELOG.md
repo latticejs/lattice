@@ -82,5 +82,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Update Phase - 2020-08-28
 - Greenkeeper: Versions of packages has been upgraded to fix greenkeeper issues.
 
+## Update Phase - 2020-09-02
+- examples
+  - examples: upgrade apollo-enterprise example to hooks.
+
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1

@@ -15,7 +15,7 @@ import App from './App';
 
 // gql: create the client
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'http://localhost:4000/graphql',
 });
 
 // gql:queries
@@ -36,7 +36,7 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nightMode: false
+      nightMode: false,
     };
   }
 
@@ -44,18 +44,18 @@ export default class Main extends Component {
     const { nightMode } = this.state;
     return createMuiTheme({
       palette: {
-        type: nightMode ? 'dark' : 'light'
-      }
+        type: nightMode ? 'dark' : 'light',
+      },
     });
   }
 
-  updateTheme = mode => {
+  updateTheme = (mode) => {
     this.setState({
-      nightMode: mode
+      nightMode: mode,
     });
   };
 
-  parsePackage = pkg => {
+  parsePackage = (pkg) => {
     if (!pkg.dependencies) return;
     let deps = {};
     try {
@@ -67,14 +67,14 @@ export default class Main extends Component {
       name: pkg.name,
       data: {
         nodes: Object.keys(deps)
-          .map(p => ({ title: p }))
+          .map((p) => ({ title: p }))
           .concat({ title: pkg.name }),
-        edges: Object.keys(deps).map(p => ({ source: pkg.name, target: p }))
-      }
+        edges: Object.keys(deps).map((p) => ({ source: pkg.name, target: p })),
+      },
     };
   };
 
-  parseOriginal = pkg => {
+  parseOriginal = (pkg) => {
     if (!pkg.dependencies) return;
     if (typeof pkg.dependencies === 'string') {
       pkg.dependencies = JSON.parse(pkg.dependencies);
@@ -84,17 +84,17 @@ export default class Main extends Component {
 
   // GRAPH CRUD METHODS //
 
-  newNode = node => {
+  newNode = (node) => {
     this.setState((prevState, props) => {
       prevState.pkg.dependencies[node.title] = 'latest';
       return {
-        pkg: prevState.pkg
+        pkg: prevState.pkg,
       };
     });
   };
 
   // END GRAPH CRUD METHODS //
-  renderError = error => (
+  renderError = (error) => (
     <Widget title="Error" border="bottom">
       {error.message}
     </Widget>

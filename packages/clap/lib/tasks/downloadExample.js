@@ -19,13 +19,13 @@ module.exports = async function downloadExample(project, example, branch) {
     branch = 'master';
   }
 
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     got
       .stream(`${BASE_URL}${branch}`)
-      .on('error', function(err) {
+      .on('error', function (err) {
         reject({
           code: 1,
-          stderr: err
+          stderr: err,
         });
       })
       .pipe(
@@ -34,18 +34,18 @@ module.exports = async function downloadExample(project, example, branch) {
             // Extract to the project name
             cwd: project,
             // Strip the first 3 dirs
-            strip: 3
+            strip: 3,
           },
           [`lattice-${sanitizeBranchName(branch)}/examples/${example}`]
         )
       )
-      .on('error', function(err) {
+      .on('error', function (err) {
         reject({
           code: 1,
-          stderr: err
+          stderr: err,
         });
       })
-      .on('end', function() {
+      .on('end', function () {
         resolve({ code: 0 });
       });
   });

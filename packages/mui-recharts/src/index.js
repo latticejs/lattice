@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import * as recharts from 'recharts';
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
+const styles = (theme) => ({
   rootChart: {
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.fontSize,
-    color: theme.palette.text.primary
-  }
+    color: theme.palette.text.primary,
+  },
 });
 
-export const withMuiStyle = WrappedChart => {
+export const withMuiStyle = (WrappedChart) => {
   return withStyles(styles, { withTheme: true })(
     class extends Component {
       static displayName = `MuiRechart(${WrappedChart.displayName || WrappedChart.name})`;
@@ -18,13 +18,13 @@ export const withMuiStyle = WrappedChart => {
       applyStyleFor(element) {
         const { theme } = this.props;
         const {
-          type: { displayName }
+          type: { displayName },
         } = element; // TODO: check this in prod build
 
         switch (displayName) {
           case 'Tooltip': {
             const {
-              props: { wrapperStyle }
+              props: { wrapperStyle },
             } = element;
             return {
               wrapperStyle: {
@@ -32,8 +32,8 @@ export const withMuiStyle = WrappedChart => {
                 color: theme.palette.text.secondary,
                 border: 'none',
                 boxShadow: theme.shadows[1],
-                ...wrapperStyle
-              }
+                ...wrapperStyle,
+              },
             };
           }
           case 'XAxis':
@@ -42,10 +42,10 @@ export const withMuiStyle = WrappedChart => {
           case 'PolarAngleAxis':
           case 'PolarRadiusAxis': {
             const {
-              props: { stroke }
+              props: { stroke },
             } = element;
             return {
-              stroke: stroke || theme.palette.text.secondary
+              stroke: stroke || theme.palette.text.secondary,
             };
           }
           default:
@@ -54,9 +54,9 @@ export const withMuiStyle = WrappedChart => {
       }
 
       renderStyled(children) {
-        return React.Children.map(children, child =>
+        return React.Children.map(children, (child) =>
           React.cloneElement(child, {
-            ...this.applyStyleFor(child)
+            ...this.applyStyleFor(child),
           })
         );
       }

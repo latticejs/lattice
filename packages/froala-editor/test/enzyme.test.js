@@ -15,27 +15,22 @@ describe('To test the Froala Editor Component.', () => {
     const newTheme = {
       theme: {
         palette: {
-          type: 'dark'
-        }
-      }
+          type: 'dark',
+        },
+      },
     };
 
     expect(childWrapper.instance().state.theme).toBe('royal');
 
     wrapper.setProps(newTheme);
     wrapper.update();
-    expect(
-      wrapper
-        .find(Editor)
-        .childAt(0)
-        .instance().state.theme
-    ).toBe('dark');
+    expect(wrapper.find(Editor).childAt(0).instance().state.theme).toBe('dark');
   });
 
   it('test getConfig', () => {
     const defaultConfig = childWrapper.instance().getConfig();
     const expectedConfig = {
-      theme: 'royal'
+      theme: 'royal',
     };
     expect(defaultConfig.theme).toMatch(expectedConfig.theme);
   });
@@ -45,18 +40,13 @@ describe('To test the Froala Editor Component.', () => {
     const newTheme = {
       theme: {
         palette: {
-          type: 'dark'
-        }
-      }
+          type: 'dark',
+        },
+      },
     };
     wrapper.setProps(newTheme);
     wrapper.update();
-    expect(
-      wrapper
-        .find(Editor)
-        .childAt(0)
-        .instance().state.theme
-    ).toBe('dark');
+    expect(wrapper.find(Editor).childAt(0).instance().state.theme).toBe('dark');
   });
 
   it('test handleManualController', () => {
@@ -66,7 +56,7 @@ describe('To test the Froala Editor Component.', () => {
 
     const initControls = {
       testProp: '',
-      initialize: jest.fn()
+      initialize: jest.fn(),
     };
 
     childWrapper.instance().handleManualController(initControls);

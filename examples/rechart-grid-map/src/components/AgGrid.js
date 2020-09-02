@@ -17,24 +17,24 @@ class AgGrid extends Component {
         width: window.innerWidth / 3.3,
         filter: 'agTextColumnFilter',
         rowDrag: true,
-        checkboxSelection: true
+        checkboxSelection: true,
       },
       {
         headerName: 'County',
         field: 'county',
         width: window.innerWidth / 3.3,
-        filter: 'agTextColumnFilter'
+        filter: 'agTextColumnFilter',
       },
       {
         headerName: 'Population',
         field: 'size',
         width: window.innerWidth / 3.4,
-        filter: 'agTextColumnFilter'
-      }
+        filter: 'agTextColumnFilter',
+      },
     ];
 
     this.state = {
-      showPagination: false
+      showPagination: false,
     };
   }
 

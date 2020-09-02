@@ -23,14 +23,14 @@ const data = [
           { name: 'ArrowType', size: 698 },
           { name: 'EdgeRenderer', size: 5569 },
           { name: 'IRenderer', size: 353 },
-          { name: 'ShapeRenderer', size: 2247 }
-        ]
+          { name: 'ShapeRenderer', size: 2247 },
+        ],
       },
       { name: 'ScaleBinding', size: 11275 },
       { name: 'Tree', size: 7147 },
-      { name: 'TreeBuilder', size: 9930 }
-    ]
-  }
+      { name: 'TreeBuilder', size: 9930 },
+    ],
+  },
 ];
 
 const colors = {
@@ -45,17 +45,17 @@ const colors = {
   EdgeRenderer: '#de783b',
   IRenderer: '#6ab975',
   ShapeRenderer: '#a173d1',
-  ScaleBinding: '#bbbbbb'
+  ScaleBinding: '#bbbbbb',
 };
 
 // Decorators
-const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
-const JssDecorator = story => (
+const AddResponsive = (story) => <ResponsiveContainer>{story()}</ResponsiveContainer>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
+const JssDecorator = (story) => (
   <JssProvider
     generateClassName={createGenerateClassName({
       dangerouslyUseGlobalCSS: true,
-      productionPrefix: 'c'
+      productionPrefix: 'c',
     })}
   >
     {story()}

@@ -8,6 +8,6 @@ module.exports = function listExamples(options) {
     owner: options.owner,
     repo: options.repo,
     path: options.path,
-    ref: options.ref
+    ref: options.ref,
   });
 };

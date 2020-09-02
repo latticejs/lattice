@@ -38,7 +38,7 @@ exports.resolvers = {
     },
     employeesConnection: (...args) => {
       return handlerConnection(...args);
-    }
+    },
   },
   Mutation: {
     createEmployee: (_, args, { db }) => {
@@ -48,11 +48,11 @@ exports.resolvers = {
     updateEmployee: (_, args, { db }) => {
       const data = Object.assign({}, args, { createdAt: Date.now() });
       return db.employees.updateById(data.id, data).write();
-    }
+    },
   },
   Employee: {
     area: (_, args, { db }) => {
       return db.areas.getById(_.areaId).value();
-    }
-  }
+    },
+  },
 };
