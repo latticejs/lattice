@@ -36,40 +36,40 @@ const app = (props) => {
 
     return createMuiTheme({
       palette: {
-        type: nightMode ? 'dark' : 'light'
+        type: nightMode ? 'dark' : 'light',
       },
       typography: {
-        useNextVariants: true
-      }
+        useNextVariants: true,
+      },
     });
-  }
+  };
 
-    return (
-      <BrowserRouter>
-        <MuiThemeProvider theme={createTheme()}>
-          <CssBaseline>
-            <Loader loading={!currentUser && loadingUser} component="linear" fullscreen>
-              <Switch>
-                <Route
-                  path={SIGN_IN}
-                  component={props => <Login {...props} refetchUser={refetchUser} currentUser={currentUser} />}
-                />
-                <PrivateRoute path={MAIN} component={Main} />
-              </Switch>
-            </Loader>
-          </CssBaseline>
-        </MuiThemeProvider>
-      </BrowserRouter>
-    );
-}
+  return (
+    <BrowserRouter>
+      <MuiThemeProvider theme={createTheme()}>
+        <CssBaseline>
+          <Loader loading={!currentUser && loadingUser} component="linear" fullscreen>
+            <Switch>
+              <Route
+                path={SIGN_IN}
+                component={(props) => <Login {...props} refetchUser={refetchUser} currentUser={currentUser} />}
+              />
+              <PrivateRoute path={MAIN} component={Main} />
+            </Switch>
+          </Loader>
+        </CssBaseline>
+      </MuiThemeProvider>
+    </BrowserRouter>
+  );
+};
 
 export default compose(
   graphql(getUi, {
     props: ({
       data: {
-        ui: { nightMode }
-      }
-    }) => ({ nightMode })
+        ui: { nightMode },
+      },
+    }) => ({ nightMode }),
   }),
   withCurrentUser
 )(app);

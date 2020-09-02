@@ -28,42 +28,41 @@ const form = (props) => {
     props.history.goBack();
   };
 
-
-    return (
-      <Grid container spacing={4}>
-        <Grid item xs={12}>
-          <Loader loading={loading} component="circular">
-            <EmployeesForm
-              employee={employee}
-              areas={areas}
-              createEmployee={createEmployee}
-              updateEmployee={updateEmployee}
-              handleCancel={handleCancel}
-              handleSuccess={handleSuccess}
-            />
-          </Loader>
-        </Grid>
+  return (
+    <Grid container spacing={4}>
+      <Grid item xs={12}>
+        <Loader loading={loading} component="circular">
+          <EmployeesForm
+            employee={employee}
+            areas={areas}
+            createEmployee={createEmployee}
+            updateEmployee={updateEmployee}
+            handleCancel={handleCancel}
+            handleSuccess={handleSuccess}
+          />
+        </Loader>
       </Grid>
-    );
-}
+    </Grid>
+  );
+};
 
 export default compose(
   graphql(getEmployee, {
     skip: ({ match }) => !match.params.id,
     options: ({ match }) => ({
       variables: {
-        id: match.params.id
-      }
+        id: match.params.id,
+      },
     }),
     props: ({ data: { getEmployee, loading, error } }) => {
       return {
         employee: getEmployee && {
           ...getEmployee,
-          areaId: getEmployee.area.id
+          areaId: getEmployee.area.id,
         },
-        loading
+        loading,
       };
-    }
+    },
   }),
   graphql(getAllAreas, {
     props: ({ data: { getAllAreas = [], loading, error } }) => {
@@ -71,31 +70,31 @@ export default compose(
         areas: {
           items: getAllAreas,
           loading,
-          error
-        }
+          error,
+        },
       };
-    }
+    },
   }),
   graphql(createEmployee, {
     props({ mutate }) {
       return {
-        createEmployee: employee => {
+        createEmployee: (employee) => {
           return mutate({
-            variables: employee
+            variables: employee,
           });
-        }
+        },
       };
-    }
+    },
   }),
   graphql(updateEmployee, {
     props({ mutate }) {
       return {
-        updateEmployee: employee => {
+        updateEmployee: (employee) => {
           return mutate({
-            variables: employee
+            variables: employee,
           });
-        }
+        },
       };
-    }
+    },
   })
 )(form);

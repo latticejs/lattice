@@ -7,12 +7,11 @@ import { withCurrentUser } from './Auth';
 import { SIGN_IN } from './routes';
 
 const privateRoute = (props) => {
-
   const { currentUser, component: RouteComponent, render, ...rest } = props;
   return (
     <Route
       {...rest}
-      render={props => {
+      render={(props) => {
         const { location } = props;
         return currentUser ? (
           RouteComponent ? (
@@ -26,6 +25,6 @@ const privateRoute = (props) => {
       }}
     />
   );
-}
+};
 
 export default withCurrentUser(privateRoute);

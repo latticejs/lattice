@@ -10,16 +10,16 @@ import Sunburst from '@latticejs/recharts-sunburst';
 
 const COLORS = {
   fill: '#00C49F',
-  stroke: '#fff'
+  stroke: '#fff',
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    minHeight: 300
+    minHeight: 300,
   },
   progress: {
-    margin: '5px 0'
-  }
+    margin: '5px 0',
+  },
 });
 
 const defaultData = [
@@ -36,14 +36,14 @@ const defaultData = [
           { name: 'ArrowType', size: 698 },
           { name: 'EdgeRenderer', size: 5569 },
           { name: 'IRenderer', size: 353 },
-          { name: 'ShapeRenderer', size: 2247 }
-        ]
+          { name: 'ShapeRenderer', size: 2247 },
+        ],
       },
       { name: 'ScaleBinding', size: 11275 },
       { name: 'Tree', size: 7147 },
-      { name: 'TreeBuilder', size: 9930 }
-    ]
-  }
+      { name: 'TreeBuilder', size: 9930 },
+    ],
+  },
 ];
 
 const demographic = (props) => {
@@ -62,6 +62,6 @@ const demographic = (props) => {
       </ResponsiveContainer>
     </Widget>
   );
-}
+};
 
 export default withStyles(styles)(demographic);

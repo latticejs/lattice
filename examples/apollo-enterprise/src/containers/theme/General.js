@@ -9,10 +9,10 @@ import { withStyles } from '@material-ui/core/styles';
 // @latticejs
 import { Widget } from '@latticejs/widgets';
 
-const styles = theme => ({
+const styles = (theme) => ({
   button: {
-    margin: theme.spacing(1)
-  }
+    margin: theme.spacing(1),
+  },
 });
 
 const general = (props) => {
@@ -84,6 +84,6 @@ const general = (props) => {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default withStyles(styles)(general);

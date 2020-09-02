@@ -13,7 +13,7 @@ const data = {
     { title: 'Task D' },
     { title: 'Task E' },
     { title: 'Task F' },
-    { title: 'Task G' }
+    { title: 'Task G' },
   ],
   edges: [
     { source: 'Task A', target: 'Task B' },
@@ -22,12 +22,11 @@ const data = {
     { source: 'Task B', target: 'Task E' },
     { source: 'Task C', target: 'Task D' },
     { source: 'Task E', target: 'Task F' },
-    { source: 'Task E', target: 'Task G' }
-  ]
+    { source: 'Task E', target: 'Task G' },
+  ],
 };
 
 const taskScheduler = () => {
-  
   return (
     <Widget title="Task Scheduler">
       <ResponsiveContainer aspect={2}>
@@ -35,6 +34,6 @@ const taskScheduler = () => {
       </ResponsiveContainer>
     </Widget>
   );
-}
+};
 
 export default taskScheduler;

@@ -12,25 +12,25 @@ import { PieChart, Pie, Cell } from '@latticejs/mui-recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    minHeight: 300
+    minHeight: 300,
   },
   progress: {
-    margin: '5px 0'
+    margin: '5px 0',
   },
   ...COLORS.reduce((prev, curr, index) => {
     prev[`color${index}`] = { backgroundColor: curr };
     return prev;
-  }, {})
+  }, {}),
 });
 
 const topProducts = (props) => {
   const { className, classes, data = [] } = props;
 
-  const pieData = data.map(entry => ({
+  const pieData = data.map((entry) => ({
     name: entry.product.name,
-    value: entry.total
+    value: entry.total,
   }));
 
   const total = pieData.reduce((total, entry) => total + entry.value, 0);
@@ -68,6 +68,6 @@ const topProducts = (props) => {
       </Grid>
     </Widget>
   );
-}
+};
 
 export default withStyles(styles)(topProducts);

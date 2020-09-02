@@ -41,65 +41,65 @@ const dashboard = (props) => {
     }
 
     return view;
+  };
+
+  if (loadingStats || loadingTopProducts) {
+    return null;
   }
 
-    if (loadingStats || loadingTopProducts) {
-      return null;
-    }
-
-    const statsView = getStats(stats, loadingStats);
-    return (
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Grid container spacing={2}>
-            {statsView}
+  const statsView = getStats(stats, loadingStats);
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <Grid container spacing={2}>
+          {statsView}
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Loader loading={loadingTopProducts}>
+          <TopProducts data={topProducts} />
+        </Loader>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container alignItems="stretch" spacing={2}>
+          <Grid item xs={12} md={8}>
+            <NewCustomers style={{ height: '100%' }} />
           </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Loader loading={loadingTopProducts}>
-            <TopProducts data={topProducts} />
-          </Loader>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container alignItems="stretch" spacing={2}>
-            <Grid item xs={12} md={8}>
-              <NewCustomers style={{ height: '100%' }} />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <AverageRevenue />
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container alignItems="stretch" spacing={2}>
-            <Grid item xs={12} md={8}>
-              <TaskScheduler />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Demographic style={{ height: '100%' }} />
-            </Grid>
+          <Grid item xs={12} md={4}>
+            <AverageRevenue />
           </Grid>
         </Grid>
       </Grid>
-    );
-}
+      <Grid item xs={12}>
+        <Grid container alignItems="stretch" spacing={2}>
+          <Grid item xs={12} md={8}>
+            <TaskScheduler />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Demographic style={{ height: '100%' }} />
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
 
 export default compose(
   graphql(getAllStats, {
     props: ({ data: { getAllStats = [], loading } }) => ({
       stats: getAllStats,
-      loadingStats: loading
-    })
+      loadingStats: loading,
+    }),
   }),
   graphql(getTopProductsSale, {
     props: ({ data: { getTopProductsSale = [], loading } }) => ({
       topProducts: getTopProductsSale,
-      loadingTopProducts: loading
+      loadingTopProducts: loading,
     }),
     options: {
       variables: {
-        limit: 4
-      }
-    }
+        limit: 4,
+      },
+    },
   })
 )(dashboard);

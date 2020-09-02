@@ -17,17 +17,17 @@ import { Widget } from '@latticejs/widgets';
 import { TextField, Button } from '../MuiFormik';
 import { GraphqlErrorNotification } from '../Notification';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {},
   container: {
-    padding: '24px 8px'
-  }
+    padding: '24px 8px',
+  },
 });
 
 const form = (props) => {
   const { classes, className, status, areas, handleSubmit } = props;
 
-  const handleSuccess = employee => {
+  const handleSuccess = (employee) => {
     const { handleSuccess } = props;
     handleSuccess(employee);
   };
@@ -37,52 +37,46 @@ const form = (props) => {
     handleCancel(employee);
   };
 
-
-    return (
-      <Widget
-        className={classnames(classes.root, className)}
-        component="form"
-        autoComplete="off"
-        onSubmit={handleSubmit}
-      >
-        <GraphqlErrorNotification error={status} />
-        <Grid container className={classes.container} spacing={24}>
-          <Grid item xs={12}>
-            <TextField field="name" label="Name" type="text" fullWidth />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField field="email" label="Email" type="text" fullWidth />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField field="jobTitle" label="Job" type="text" fullWidth />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField select loading={areas.loading} field="areaId" label="Area" fullWidth>
-              {areas.items.map(option => (
-                <MenuItem key={option.id} value={option.id}>
-                  {option.name}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Toolbar>
-            <Grid container spacing={4}>
-              <Grid item>
-                <Button type="submit" variant="contained" color="primary">
-                  Save
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" onClick={handleCancel}>
-                  Cancel
-                </Button>
-              </Grid>
-            </Grid>
-          </Toolbar>
+  return (
+    <Widget className={classnames(classes.root, className)} component="form" autoComplete="off" onSubmit={handleSubmit}>
+      <GraphqlErrorNotification error={status} />
+      <Grid container className={classes.container} spacing={24}>
+        <Grid item xs={12}>
+          <TextField field="name" label="Name" type="text" fullWidth />
         </Grid>
-      </Widget>
-    );
-}
+        <Grid item xs={12}>
+          <TextField field="email" label="Email" type="text" fullWidth />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField field="jobTitle" label="Job" type="text" fullWidth />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField select loading={areas.loading} field="areaId" label="Area" fullWidth>
+            {areas.items.map((option) => (
+              <MenuItem key={option.id} value={option.id}>
+                {option.name}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+        <Toolbar>
+          <Grid container spacing={4}>
+            <Grid item>
+              <Button type="submit" variant="contained" color="primary">
+                Save
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant="contained" onClick={handleCancel}>
+                Cancel
+              </Button>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </Grid>
+    </Widget>
+  );
+};
 
 export default withStyles(styles)(
   withFormik({
@@ -91,16 +85,13 @@ export default withStyles(styles)(
       name,
       email,
       jobTitle,
-      areaId
+      areaId,
     }),
     validationSchema: yup.object().shape({
       name: yup.string().required('A name is required'),
-      email: yup
-        .string()
-        .email()
-        .required(),
+      email: yup.string().email().required(),
       jobTitle: yup.string().required(),
-      areaId: yup.string().required()
+      areaId: yup.string().required(),
     }),
     handleSubmit: async (values, { setSubmitting, setStatus, props }) => {
       const { createEmployee, updateEmployee, handleSuccess } = props;
@@ -117,6 +108,6 @@ export default withStyles(styles)(
         setSubmitting(false);
         setStatus(err);
       }
-    }
+    },
   })(form)
 );

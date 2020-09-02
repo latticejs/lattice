@@ -8,16 +8,16 @@ import { withStyles } from '@material-ui/core/styles';
 // @latticejs
 import { Widget } from '@latticejs/widgets';
 
-const styles = theme => ({
+const styles = (theme) => ({
   borderWidth: {
-    borderWidth: 8
+    borderWidth: 8,
   },
   borderRed: {
-    borderColor: 'red'
+    borderColor: 'red',
   },
   featuredRed: {
-    backgroundColor: 'red'
-  }
+    backgroundColor: 'red',
+  },
 });
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.`;
@@ -55,6 +55,6 @@ const widgets = (props) => {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default withStyles(styles)(widgets);
