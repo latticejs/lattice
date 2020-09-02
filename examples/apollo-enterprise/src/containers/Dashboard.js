@@ -22,7 +22,7 @@ import Demographic from '../components/dashboard/Demographic';
 import Stats from '../components/dashboard/Stats';
 import TopProducts from '../components/dashboard/TopProducts';
 
-const dashboard = (props) => {
+const Dashboard = (props) => {
   const { stats, loadingStats, topProducts, loadingTopProducts } = props;
 
   const getStats = (stats, loadingStats) => {
@@ -102,4 +102,4 @@ export default compose(
       },
     },
   })
-)(dashboard);
+)(Dashboard);

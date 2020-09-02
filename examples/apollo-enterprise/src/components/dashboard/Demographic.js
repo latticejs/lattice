@@ -46,7 +46,7 @@ const defaultData = [
   },
 ];
 
-const demographic = (props) => {
+const Demographic = (props) => {
   const { className, classes, data = defaultData, fill = COLORS.fill, stroke = COLORS.stroke } = props;
 
   return (
@@ -64,4 +64,4 @@ const demographic = (props) => {
   );
 };
 
-export default withStyles(styles)(demographic);
+export default withStyles(styles)(Demographic);

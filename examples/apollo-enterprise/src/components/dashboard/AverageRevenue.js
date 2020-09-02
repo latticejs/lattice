@@ -17,7 +17,7 @@ const data = [
   { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
-const averageRevenue = () => {
+const AverageRevenue = () => {
   return (
     <Widget title="Average Revenue">
       <Grid container>
@@ -40,4 +40,4 @@ const averageRevenue = () => {
   );
 };
 
-export default averageRevenue;
+export default AverageRevenue;

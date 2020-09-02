@@ -28,7 +28,7 @@ import PrivateRoute from './PrivateRoute';
 import Login from './Login';
 import Main from './Main';
 
-const app = (props) => {
+const App = (props) => {
   const { refetchUser, currentUser, loadingUser } = props;
 
   const createTheme = () => {
@@ -72,4 +72,4 @@ export default compose(
     }) => ({ nightMode }),
   }),
   withCurrentUser
-)(app);
+)(App);

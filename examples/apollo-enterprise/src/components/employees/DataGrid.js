@@ -42,7 +42,7 @@ const styles = (theme) => ({
   },
 });
 
-const dataGrid = (props) => {
+const DataGrid = (props) => {
   const handleRowClick = (employee) => {
     const { handleSelect } = props;
 
@@ -146,4 +146,4 @@ const dataGrid = (props) => {
   );
 };
 
-export default withStyles(styles)(dataGrid);
+export default withStyles(styles)(DataGrid);

@@ -22,7 +22,7 @@ const styles = (theme) => ({
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.`;
 
-const widgets = (props) => {
+const Widgets = (props) => {
   const { classes } = props;
   return (
     <Grid container spacing={3}>
@@ -57,4 +57,4 @@ const widgets = (props) => {
   );
 };
 
-export default withStyles(styles)(widgets);
+export default withStyles(styles)(Widgets);

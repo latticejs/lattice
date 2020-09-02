@@ -26,7 +26,7 @@ const data = {
   ],
 };
 
-const taskScheduler = () => {
+const TaskScheduler = () => {
   return (
     <Widget title="Task Scheduler">
       <ResponsiveContainer aspect={2}>
@@ -36,4 +36,4 @@ const taskScheduler = () => {
   );
 };
 
-export default taskScheduler;
+export default TaskScheduler;

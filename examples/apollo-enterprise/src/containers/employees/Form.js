@@ -17,7 +17,7 @@ import { getEmployee, createEmployee, updateEmployee } from '../../stores/employ
 // Ours
 import EmployeesForm from '../../components/employees/Form';
 
-const form = (props) => {
+const Form = (props) => {
   const { areas, createEmployee, updateEmployee, employee, loading } = props;
 
   const handleSuccess = () => {
@@ -97,4 +97,4 @@ export default compose(
       };
     },
   })
-)(form);
+)(Form);

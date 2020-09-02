@@ -15,7 +15,7 @@ const styles = (theme) => ({
   },
 });
 
-const general = (props) => {
+const General = (props) => {
   const { classes } = props;
 
   return (
@@ -86,4 +86,4 @@ const general = (props) => {
   );
 };
 
-export default withStyles(styles)(general);
+export default withStyles(styles)(General);

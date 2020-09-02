@@ -25,7 +25,7 @@ const styles = (theme) => ({
   }, {}),
 });
 
-const topProducts = (props) => {
+const TopProducts = (props) => {
   const { className, classes, data = [] } = props;
 
   const pieData = data.map((entry) => ({
@@ -70,4 +70,4 @@ const topProducts = (props) => {
   );
 };
 
-export default withStyles(styles)(topProducts);
+export default withStyles(styles)(TopProducts);

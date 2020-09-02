@@ -6,7 +6,7 @@ import { withCurrentUser } from './Auth';
 
 import { SIGN_IN } from './routes';
 
-const privateRoute = (props) => {
+const PrivateRoute = (props) => {
   const { currentUser, component: RouteComponent, render, ...rest } = props;
   return (
     <Route
@@ -27,4 +27,4 @@ const privateRoute = (props) => {
   );
 };
 
-export default withCurrentUser(privateRoute);
+export default withCurrentUser(PrivateRoute);

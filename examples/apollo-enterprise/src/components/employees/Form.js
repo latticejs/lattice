@@ -24,7 +24,7 @@ const styles = (theme) => ({
   },
 });
 
-const form = (props) => {
+const Form = (props) => {
   const { classes, className, status, areas, handleSubmit } = props;
 
   const handleSuccess = (employee) => {
@@ -109,5 +109,5 @@ export default withStyles(styles)(
         setStatus(err);
       }
     },
-  })(form)
+  })(Form)
 );

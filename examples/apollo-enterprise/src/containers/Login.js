@@ -44,7 +44,7 @@ const styles = (theme) => ({
   },
 });
 
-const login = (props) => {
+const Login = (props) => {
   const {
     classes,
     location: { state },
@@ -119,4 +119,4 @@ const EnhancedForm = withFormik({
   displayName: 'BasicForm',
 });
 
-export default compose(withSignIn, EnhancedForm, withStyles(styles))(login);
+export default compose(withSignIn, EnhancedForm, withStyles(styles))(Login);

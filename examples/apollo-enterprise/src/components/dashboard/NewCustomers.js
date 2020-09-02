@@ -24,7 +24,7 @@ const styles = (theme) => ({
   },
 });
 
-const newCustomers = (props) => {
+const NewCustomers = (props) => {
   const { className, classes, ...values } = props;
   return (
     <Widget title="New Customers" featured {...values}>
@@ -57,4 +57,4 @@ const newCustomers = (props) => {
   );
 };
 
-export default withStyles(styles)(newCustomers);
+export default withStyles(styles)(NewCustomers);
