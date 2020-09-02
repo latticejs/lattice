@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // Recharts
 import { ResponsiveContainer } from 'recharts';
 // Lattice

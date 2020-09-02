@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // Material-UI
 import { createMuiTheme } from '@material-ui/core/styles';
