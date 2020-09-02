@@ -145,7 +145,7 @@ class App extends Component {
           </Grid>
         </TabPanel>
         <TabPanel value={this.state.selectedTab} index={1}>
-          <Grid container justify="space-center" spacing={Number(0)}>
+          <Grid container justify="center" spacing={Number(0)}>
             <Grid item xs={12}>
               <Widget className={classes.widget} title="State & County Population" border="top">
                 <AgGrid />
@@ -154,7 +154,7 @@ class App extends Component {
           </Grid>
         </TabPanel>
         <TabPanel value={this.state.selectedTab} index={2}>
-          <Grid container justify="space-center" spacing={Number(0)}>
+          <Grid container justify="center" spacing={Number(0)}>
             <Grid item xs={12}>
               <Mapbox />
             </Grid>
