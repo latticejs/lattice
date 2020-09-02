@@ -50,7 +50,7 @@ class Gauge extends Component {
   render() {
     return (
       <canvas
-        ref={canvas => {
+        ref={(canvas) => {
           this.el = canvas;
         }}
       />
@@ -83,14 +83,14 @@ Gauge.defaultProps = {
     needleWidth: 3,
     needleCircleOuter: false,
     needleCircleInner: false,
-    animationDuration: 1500
-  }
+    animationDuration: 1500,
+  },
 };
 
 Gauge.propTypes = {
   settings: PropTypes.object,
   value: PropTypes.number.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default withTheme(Gauge);

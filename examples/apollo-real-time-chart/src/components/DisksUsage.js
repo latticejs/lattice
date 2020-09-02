@@ -4,19 +4,19 @@ import { withStyles } from '@material-ui/core/styles';
 import { ResponsiveContainer, AreaChart, Area, YAxis, Legend, Tooltip } from '@latticejs/mui-recharts';
 import { Loader, Widget } from '@latticejs/widgets';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 function DiskUsage({ data, loading, classes }) {
   let parsedData = [];
 
   if (data) {
-    parsedData = data.history.map(h => ({
+    parsedData = data.history.map((h) => ({
       reads: parseFloat(h.reads.toFixed(2)),
-      writes: parseFloat(h.writes.toFixed(2))
+      writes: parseFloat(h.writes.toFixed(2)),
     }));
   }
 

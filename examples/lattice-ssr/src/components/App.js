@@ -15,38 +15,38 @@ if (!global.window) {
   global.window = {};
 }
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   flex: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   mainContainer: {
-    height: '100%'
+    height: '100%',
   },
   widget: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
     padding: theme.spacing(4),
-    minHeight: 160
+    minHeight: 160,
   },
   charts: {
     padding: theme.spacing(4),
     marginTop: theme.spacing(0),
-    marginBottom: theme.spacing(0)
+    marginBottom: theme.spacing(0),
   },
   chartsContainer: {
     minHeight: 500,
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
   },
   componentWidget: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
     padding: theme.spacing(4),
     minHeight: 500,
-    minWidth: 385
-  }
+    minWidth: 385,
+  },
 });
 
 class App extends Component {
@@ -77,14 +77,14 @@ class App extends Component {
               { name: 'ArrowType', size: 698 },
               { name: 'EdgeRenderer', size: 5569 },
               { name: 'IRenderer', size: 353 },
-              { name: 'ShapeRenderer', size: 2247 }
-            ]
+              { name: 'ShapeRenderer', size: 2247 },
+            ],
           },
           { name: 'ScaleBinding', size: 11275 },
           { name: 'Tree', size: 7147 },
-          { name: 'TreeBuilder', size: 9930 }
-        ]
-      }
+          { name: 'TreeBuilder', size: 9930 },
+        ],
+      },
     ];
   }
 
@@ -96,34 +96,34 @@ class App extends Component {
       { name: 'Page D', pv: 3908, amt: 2000 },
       { name: 'Page E', pv: 4800, amt: 2181 },
       { name: 'Page F', pv: 3800, amt: 2500 },
-      { name: 'Page G', pv: 4300, amt: 2100 }
+      { name: 'Page G', pv: 4300, amt: 2100 },
     ];
   }
 
   getTreeData() {
     return [
       {
-        label: 'index.js'
+        label: 'index.js',
       },
       {
         label: 'demo',
         children: [
           {
-            label: 'file1.txt'
+            label: 'file1.txt',
           },
           {
-            label: 'file2.txt'
+            label: 'file2.txt',
           },
           {
             label: 'examples',
             children: [
               {
-                label: 'example1.js'
-              }
-            ]
-          }
-        ]
-      }
+                label: 'example1.js',
+              },
+            ],
+          },
+        ],
+      },
     ];
   }
 
@@ -226,9 +226,9 @@ class App extends Component {
                   <Tree
                     treeData={treeData}
                     cascadeCheck
-                    onCheckItem={item => console.log('Check: ', item)}
-                    onUnfoldItem={item => console.log('Unfold: ', item)}
-                    onFoldItem={item => console.log('Fold: ', item)}
+                    onCheckItem={(item) => console.log('Check: ', item)}
+                    onUnfoldItem={(item) => console.log('Unfold: ', item)}
+                    onFoldItem={(item) => console.log('Fold: ', item)}
                   />
                 </Widget>
               </Grid>

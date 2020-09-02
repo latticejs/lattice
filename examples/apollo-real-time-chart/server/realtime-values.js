@@ -5,14 +5,14 @@ let cpuHistory = [];
 let memoryHistory = [];
 let disksHistory = [];
 
-exports.disksUsageUpdated = cb =>
+exports.disksUsageUpdated = (cb) =>
   setInterval(async () => {
     const disksIO = await si.disksIO();
 
     const data = {
       timestamp: Date.now(),
       reads: disksIO.rIO_sec,
-      writes: disksIO.wIO_sec
+      writes: disksIO.wIO_sec,
     };
 
     if (disksHistory.length > 20) {
@@ -23,18 +23,18 @@ exports.disksUsageUpdated = cb =>
 
     cb({
       history: disksHistory,
-      latest: data
+      latest: data,
     });
   }, 1000);
 
-exports.cpuUsageUpdated = cb =>
+exports.cpuUsageUpdated = (cb) =>
   setInterval(async () => {
     const usage = await si.currentLoad();
 
     const data = {
       timestamp: Date.now(),
       totalUsage: usage.currentload,
-      cpusUsage: usage.cpus.map(cpu => cpu.load)
+      cpusUsage: usage.cpus.map((cpu) => cpu.load),
     };
 
     if (cpuHistory.length > 20) {
@@ -45,11 +45,11 @@ exports.cpuUsageUpdated = cb =>
 
     cb({
       history: cpuHistory,
-      latest: data
+      latest: data,
     });
   }, 2000);
 
-exports.memoryUsageUpdated = cb =>
+exports.memoryUsageUpdated = (cb) =>
   setInterval(async () => {
     const freemem = os.freemem();
     const totalmem = os.totalmem();
@@ -58,7 +58,7 @@ exports.memoryUsageUpdated = cb =>
       timestamp: Date.now(),
       usage,
       free: freemem,
-      total: totalmem
+      total: totalmem,
     };
 
     if (memoryHistory.length > 20) {
@@ -69,11 +69,11 @@ exports.memoryUsageUpdated = cb =>
 
     cb({
       history: memoryHistory,
-      latest: data
+      latest: data,
     });
   }, 2000);
 
-exports.psUsageUpdated = cb =>
+exports.psUsageUpdated = (cb) =>
   setInterval(async () => {
     const ps = await si.processes();
 
@@ -86,11 +86,11 @@ exports.psUsageUpdated = cb =>
           if (a.pmem < b.pmem) return 1;
           return 0;
         })
-        .map(p => ({
+        .map((p) => ({
           pid: p.pid,
           name: p.name,
           cpu: p.pcpu,
-          memory: p.pmem
+          memory: p.pmem,
         }))
     );
   }, 2000);

@@ -21,7 +21,7 @@ import DataGrid from '../../components/employees/DataGrid';
 
 class List extends Component {
   static defaultProps = {
-    employeesConnection: { totalCount: 0, edges: [] }
+    employeesConnection: { totalCount: 0, edges: [] },
   };
 
   async componentDidMount() {
@@ -40,12 +40,12 @@ class List extends Component {
 
   findItem = ({ index }) => {
     const {
-      employeesConnection: { edges }
+      employeesConnection: { edges },
     } = this.props;
 
     const findCursor = offsetToCursor(index);
 
-    const edge = edges.find(edge => {
+    const edge = edges.find((edge) => {
       return edge.cursor === findCursor;
     });
 
@@ -56,15 +56,15 @@ class List extends Component {
     return null;
   };
 
-  handleOrder = async orderBy => {
+  handleOrder = async (orderBy) => {
     return this.handleFetchData({ orderBy });
   };
 
-  handleSearch = async filterBy => {
+  handleSearch = async (filterBy) => {
     return this.handleFetchData({ filterBy });
   };
 
-  handleFetchData = async data => {
+  handleFetchData = async (data) => {
     const { fetchData } = this.props;
     const { dataLoader } = this;
 
@@ -75,12 +75,12 @@ class List extends Component {
     dataLoader.resetLoadMoreRowsCache(true);
   };
 
-  handleSelect = employee => {
+  handleSelect = (employee) => {
     const { history } = this.props;
 
     history.push(
       generatePath(EMPLOYEES_EDIT, {
-        id: employee.id
+        id: employee.id,
       })
     );
   };
@@ -101,7 +101,7 @@ class List extends Component {
     return updateDatagrid({
       id: 'employees',
       variables,
-      scrollTop: this.scroll && this.scroll.getScrollTop()
+      scrollTop: this.scroll && this.scroll.getScrollTop(),
     });
   };
 
@@ -109,7 +109,7 @@ class List extends Component {
     const {
       employeesConnection: { edges, totalCount },
       loading,
-      variables: { filterBy, orderBy }
+      variables: { filterBy, orderBy },
     } = this.props;
 
     return (
@@ -121,9 +121,9 @@ class List extends Component {
         </Grid>
         <Grid item xs={12}>
           <DataGrid
-            dataLoaderRef={instance => (this.dataLoader = instance)}
-            scrollRef={instance => (this.scroll = instance)}
-            list={edges.map(edge => edge.node)}
+            dataLoaderRef={(instance) => (this.dataLoader = instance)}
+            scrollRef={(instance) => (this.scroll = instance)}
+            list={edges.map((edge) => edge.node)}
             totalCount={totalCount}
             loading={loading}
             filterBy={filterBy}
@@ -144,21 +144,21 @@ class List extends Component {
 export default compose(
   graphql(getDatagrid, {
     props: ({ data: { getDatagrid } }) => ({
-      datagridInfo: getDatagrid
+      datagridInfo: getDatagrid,
     }),
     options: {
       variables: {
-        id: 'employees'
-      }
-    }
+        id: 'employees',
+      },
+    },
   }),
   graphql(updateDatagrid, {
     props: ({ mutate }) => ({
-      updateDatagrid: variables => mutate({ variables })
+      updateDatagrid: (variables) => mutate({ variables }),
     }),
     options: {
-      refetchQueries: [{ query: getDatagrid, variables: { id: 'employees' } }]
-    }
+      refetchQueries: [{ query: getDatagrid, variables: { id: 'employees' } }],
+    },
   }),
   graphql(employeesConnection, {
     props: ({ data: { employeesConnection, loading, refetch, fetchMore, variables } }) => {
@@ -177,15 +177,15 @@ export default compose(
               return {
                 employeesConnection: {
                   ...props,
-                  edges: mergeEdges(previousEdges, nextEdges)
-                }
+                  edges: mergeEdges(previousEdges, nextEdges),
+                },
               };
-            }
+            },
           });
         },
         fetchData(props) {
           return refetch({ ...variables, ...props });
-        }
+        },
       };
     },
     options: ({ datagridInfo }) => {
@@ -194,10 +194,10 @@ export default compose(
           ? datagridInfo.variables
           : {
               first: 40,
-              orderBy: [{ field: 'name', direction: 'asc' }]
+              orderBy: [{ field: 'name', direction: 'asc' }],
             },
-        fetchPolicy: 'network'
+        fetchPolicy: 'network',
       };
-    }
+    },
   })
 )(List);

@@ -2,7 +2,7 @@ import path from 'path';
 import { build } from '../lib';
 import colors from 'colors';
 
-export default program => {
+export default (program) => {
   program
     .command('build')
     .description('Build your source files into cjs, esm or umd formats.')

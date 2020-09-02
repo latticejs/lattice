@@ -8,41 +8,41 @@ import { withStyles } from '@material-ui/core/styles';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     backgroundColor: theme.palette.grey[800],
     paddingTop: 0,
     'transition-property': 'all',
     'transition-duration': '.35s',
-    'transition-timing-function': 'ease'
+    'transition-timing-function': 'ease',
   },
   topSpacer: {
     ...theme.mixins.toolbar,
-    marginBottom: theme.spacing(0)
+    marginBottom: theme.spacing(0),
   },
   listItem: {
     '&:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.08)'
-    }
+      backgroundColor: 'rgba(255, 255, 255, 0.08)',
+    },
   },
   listItemGutters: {
-    padding: '12px 25px'
+    padding: '12px 25px',
   },
   listItemPrimary: {
-    color: '#fff'
+    color: '#fff',
   },
   listItemText: {
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
   },
   listItemHidden: {
-    display: 'none'
+    display: 'none',
   },
   listItemTextInset: {
-    marginLeft: 8
+    marginLeft: 8,
   },
   activeItem: {
-    backgroundColor: 'rgba(255, 255, 255, 0.16)'
-  }
+    backgroundColor: 'rgba(255, 255, 255, 0.16)',
+  },
 });
 
 class SideMenu extends Component {
@@ -52,13 +52,13 @@ class SideMenu extends Component {
     this.state = {
       showMini: props.mini || false,
       mouseOver: false,
-      open: this.getActiveRouteGroup()
+      open: this.getActiveRouteGroup(),
     };
   }
 
   getActiveRouteGroup() {
     const { activeRoute, navigation } = this.props;
-    return navigation.filter(r => r.children && r.children.includes(activeRoute))[0] || null;
+    return navigation.filter((r) => r.children && r.children.includes(activeRoute))[0] || null;
   }
 
   handleMouseEnter = () => {
@@ -71,7 +71,7 @@ class SideMenu extends Component {
 
   toggleGroup(route) {
     this.setState({
-      open: this.isOpen(route) ? null : route
+      open: this.isOpen(route) ? null : route,
     });
   }
 
@@ -83,7 +83,7 @@ class SideMenu extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.mini !== prevState.showMini) {
       return {
-        showMini: nextProps.mini
+        showMini: nextProps.mini,
       };
     }
 
@@ -102,7 +102,7 @@ class SideMenu extends Component {
     const itemClassName = classnames([
       classes.listItemText,
       !showMini || mouseOver ? '' : classes.listItemHidden,
-      inset && classes.listItemTextInset
+      inset && classes.listItemTextInset,
     ]);
     return (
       <ListItem
@@ -111,7 +111,7 @@ class SideMenu extends Component {
         onClick={() => onItemClick(route)}
         className={classnames(this.isActive(route) ? classes.activeItem : classes.listItem)}
         classes={{
-          gutters: classes.listItemGutters
+          gutters: classes.listItemGutters,
         }}
       >
         {Icon && (
@@ -123,7 +123,7 @@ class SideMenu extends Component {
           primary={title}
           className={itemClassName}
           classes={{
-            primary: classes.listItemPrimary
+            primary: classes.listItemPrimary,
           }}
         />
       </ListItem>
@@ -146,7 +146,7 @@ class SideMenu extends Component {
           onClick={() => this.toggleGroup(route)}
           className={classnames(isActive ? classes.activeItem : classes.listItem)}
           classes={{
-            gutters: classes.listItemGutters
+            gutters: classes.listItemGutters,
           }}
         >
           <ListItemIcon>{Icon && <Icon style={{ margin: '0', color: '#fff' }} />}</ListItemIcon>
@@ -154,7 +154,7 @@ class SideMenu extends Component {
             primary={title}
             className={itemClassName}
             classes={{
-              primary: classes.listItemPrimary
+              primary: classes.listItemPrimary,
             }}
           />
           {(!showMini || mouseOver) &&

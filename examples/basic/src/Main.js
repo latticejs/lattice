@@ -10,7 +10,7 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nightMode: false
+      nightMode: false,
     };
   }
 
@@ -18,17 +18,17 @@ export default class Main extends Component {
     const { nightMode } = this.state;
     return createMuiTheme({
       palette: {
-        type: nightMode ? 'dark' : 'light'
+        type: nightMode ? 'dark' : 'light',
       },
       typography: {
-        useNextVariants: true
-      }
+        useNextVariants: true,
+      },
     });
   }
 
-  updateTheme = mode => {
+  updateTheme = (mode) => {
     this.setState({
-      nightMode: mode
+      nightMode: mode,
     });
   };
 
