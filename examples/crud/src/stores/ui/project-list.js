@@ -3,7 +3,7 @@ import { observable, decorate, action, computed } from 'mobx';
 
 const sortValues = (a, b) => ({
   gt: a > b,
-  lt: a < b
+  lt: a < b,
 });
 
 const sortList = (property, order = 'asc') => (a, b) => {
@@ -37,7 +37,7 @@ export class ProjectList extends RootStore {
   setChecked(projectIds, checked = true) {
     const ids = Array.isArray(projectIds) ? projectIds : [projectIds];
 
-    ids.forEach(id => (checked ? this.checked.set(id, true) : this.checked.delete(id)));
+    ids.forEach((id) => (checked ? this.checked.set(id, true) : this.checked.delete(id)));
   }
 
   isChecked(projectId) {
@@ -59,10 +59,10 @@ export class ProjectList extends RootStore {
     if (this.filterQuery.trim()) {
       const cleanedFilter = this.filterQuery.replace(/[^a-zA-Z0-9-]/gi, '|');
       const filterReg = new RegExp(`.*(${cleanedFilter}).*`, 'gi');
-      list = list.filter(p => filterReg.test(p.name) || filterReg.test(p.author));
+      list = list.filter((p) => filterReg.test(p.name) || filterReg.test(p.author));
     }
 
-    return list.sort(sortFn).map(p => p.id);
+    return list.sort(sortFn).map((p) => p.id);
   }
 }
 
@@ -79,5 +79,5 @@ decorate(ProjectList, {
   sortOrder: observable,
   sortProperty: observable,
   visibleRows: observable,
-  availableItems: observable
+  availableItems: observable,
 });

@@ -12,7 +12,7 @@ describe('<AgGrid />', () => {
       pinned: true,
       filter: 'agTextColumnFilter',
       rowDrag: true,
-      checkboxSelection: true
+      checkboxSelection: true,
     },
     { headerName: 'Native Name', field: 'nativeName', filter: 'agTextColumnFilter' },
     { headerName: 'Capital', field: 'capital', filter: 'agTextColumnFilter' },
@@ -22,9 +22,9 @@ describe('<AgGrid />', () => {
       children: [
         { headerName: 'Region', field: 'region', filter: 'agTextColumnFilter' },
         { headerName: 'Sub-Region', field: 'subregion', filter: 'agTextColumnFilter' },
-        { headerName: 'Area', field: 'area', filter: 'agNumberColumnFilter' }
-      ]
-    }
+        { headerName: 'Area', field: 'area', filter: 'agNumberColumnFilter' },
+      ],
+    },
   ];
 
   const rowData = [
@@ -35,10 +35,10 @@ describe('<AgGrid />', () => {
         {
           code: 'AFN',
           name: 'Afghan afghani',
-          symbol: '؋'
-        }
-      ]
-    }
+          symbol: '؋',
+        },
+      ],
+    },
   ];
 
   beforeEach(() => {
@@ -57,7 +57,7 @@ describe('<AgGrid />', () => {
         afterGridCreated={jest.fn()}
         gridContainerStyle={{
           height: window.innerHeight - 100,
-          margin: '10px 10px'
+          margin: '10px 10px',
         }}
       />
     );
@@ -103,9 +103,9 @@ describe('<AgGrid />', () => {
     const prevPropsForThemeLight = {
       theme: {
         palette: {
-          type: 'light'
-        }
-      }
+          type: 'light',
+        },
+      },
     };
     childWrapper.instance().agGridRef({ gridInfo: 'I am AG-Grid' });
     expect(wrapper.props().afterGridCreated.mock.calls.length).toEqual(callLength + 1);
@@ -116,9 +116,9 @@ describe('<AgGrid />', () => {
     const prevPropsForThemedark = {
       theme: {
         palette: {
-          type: 'dark'
-        }
-      }
+          type: 'dark',
+        },
+      },
     };
     wrapper.setProps(prevPropsForThemedark);
     wrapper.update();

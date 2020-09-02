@@ -38,51 +38,51 @@ import Content from '../components/Content';
 import { withSignOut } from './Auth';
 import PrivateRoute from './PrivateRoute';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     'transition-property': 'padding',
     'transition-duration': '.35s',
     'transition-timing-function': 'ease',
     margin: 0,
-    width: `100%`
+    width: `100%`,
   },
   'with-sidemenu': {
     [theme.breakpoints.up('sm')]: {
-      'padding-left': 200
-    }
+      'padding-left': 200,
+    },
   },
   'with-sidemenumini': {
     [theme.breakpoints.up('sm')]: {
-      'padding-left': 70
-    }
+      'padding-left': 70,
+    },
   },
   drawer: {
-    backgroundColor: '#444'
+    backgroundColor: '#444',
   },
   appBar: {
     backgroundColor: theme.palette.type === 'dark' ? '#444' : '#fff',
-    color: theme.palette.type === 'dark' ? '#fafafa' : '#444'
+    color: theme.palette.type === 'dark' ? '#fafafa' : '#444',
   },
   flexed: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 class Main extends Component {
   state = {
     sideMenuMini: false,
-    sideOpen: false
+    sideOpen: false,
   };
 
   handleDrawerMiniToggle = () => {
     this.setState({
-      sideMenuMini: !this.state.sideMenuMini
+      sideMenuMini: !this.state.sideMenuMini,
     });
   };
 
   handleDrawerToggle = () => {
     this.setState({
-      sideOpen: !this.state.sideOpen
+      sideOpen: !this.state.sideOpen,
     });
   };
 
@@ -90,7 +90,7 @@ class Main extends Component {
     const { history } = this.props;
     this.setState(
       {
-        sideOpen: false
+        sideOpen: false,
       },
       () => {
         history.push(path);
@@ -110,7 +110,7 @@ class Main extends Component {
 
   renderSideMenu() {
     const {
-      location: { pathname: activePath }
+      location: { pathname: activePath },
     } = this.props;
     const { sideMenuMini } = this.state;
     const activeRoute = routeByPath(activePath);
@@ -131,7 +131,7 @@ class Main extends Component {
     const {
       location: { pathname: activePath },
       classes,
-      nightMode
+      nightMode,
     } = this.props;
     const { sideMenuMini, sideOpen } = this.state;
     const activeRoute = routeByPath(activePath);
@@ -188,7 +188,7 @@ class Main extends Component {
                 key={`route-${index}`}
                 exact
                 path={path}
-                render={props => {
+                render={(props) => {
                   return redirect ? <Redirect to={redirect} /> : <RouteComponent {...props} />;
                 }}
               />
@@ -205,24 +205,24 @@ export default compose(
   graphql(getUi, {
     props: ({
       data: {
-        ui: { nightMode }
-      }
+        ui: { nightMode },
+      },
     }) => ({
-      nightMode
-    })
+      nightMode,
+    }),
   }),
   graphql(updateUi, {
     props({ mutate }) {
       return {
-        updateUi: nightMode => {
+        updateUi: (nightMode) => {
           return mutate({
             variables: {
-              nightMode
-            }
+              nightMode,
+            },
           });
-        }
+        },
       };
-    }
+    },
   }),
   withRouter,
   withStyles(styles)

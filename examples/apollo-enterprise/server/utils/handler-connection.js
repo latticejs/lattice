@@ -1,17 +1,17 @@
-module.exports = collection => (_, { filterBy = [], orderBy = [], first = 10, after }, { db }) => {
+module.exports = (collection) => (_, { filterBy = [], orderBy = [], first = 10, after }, { db }) => {
   let ordersField = [];
   let ordersDirection = [];
   let offset = 0;
 
   if (orderBy) {
-    orderBy.forEach(order => {
+    orderBy.forEach((order) => {
       ordersField.push(order.field);
       ordersDirection.push(order.direction);
     });
   }
 
   const list = db[collection]
-    .filter(row => {
+    .filter((row) => {
       return filterBy.reduce((result, next) => {
         const left = row[next.field];
         const right = next.value;
@@ -40,8 +40,8 @@ module.exports = collection => (_, { filterBy = [], orderBy = [], first = 10, af
       edges: [],
       pageInfo: {
         endCursor: null,
-        hasNextPage: false
-      }
+        hasNextPage: false,
+      },
     };
   }
 
@@ -57,7 +57,7 @@ module.exports = collection => (_, { filterBy = [], orderBy = [], first = 10, af
     .map((node, key) => ({
       node,
       cursor: Buffer.from((key + offset).toString()).toString('base64'),
-      position: key + offset
+      position: key + offset,
     }));
 
   const endCursor = edges[edges.length - 1].cursor;
@@ -68,7 +68,7 @@ module.exports = collection => (_, { filterBy = [], orderBy = [], first = 10, af
     edges,
     pageInfo: {
       endCursor,
-      hasNextPage
-    }
+      hasNextPage,
+    },
   };
 };

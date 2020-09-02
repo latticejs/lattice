@@ -7,7 +7,7 @@ import classnames from 'classnames';
 const colorLevel = 200;
 const colorLevelBold = 700;
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     ...theme.typography.button,
     padding: theme.spacing(0.5),
@@ -15,42 +15,42 @@ const styles = theme => ({
     fontSize: '0.75rem',
     fontFamily: 'monospace',
     borderRadius: '1rem',
-    color: '#ffffff !important'
+    color: '#ffffff !important',
   },
   string: {
-    backgroundColor: teal[colorLevel]
+    backgroundColor: teal[colorLevel],
   },
   number: {
-    backgroundColor: purple[colorLevel]
+    backgroundColor: purple[colorLevel],
   },
   array: {
-    backgroundColor: indigo[colorLevel]
+    backgroundColor: indigo[colorLevel],
   },
   object: {
-    backgroundColor: red[colorLevel]
+    backgroundColor: red[colorLevel],
   },
   date: {
-    backgroundColor: blue[colorLevel]
+    backgroundColor: blue[colorLevel],
   },
   bold: {
     fontWeight: 'bold',
-    color: '#ffffff !important'
+    color: '#ffffff !important',
   },
   bold_string: {
-    backgroundColor: teal[colorLevelBold]
+    backgroundColor: teal[colorLevelBold],
   },
   bold_number: {
-    backgroundColor: purple[colorLevelBold]
+    backgroundColor: purple[colorLevelBold],
   },
   bold_array: {
-    backgroundColor: indigo[colorLevelBold]
+    backgroundColor: indigo[colorLevelBold],
   },
   bold_object: {
-    backgroundColor: red[colorLevelBold]
+    backgroundColor: red[colorLevelBold],
   },
   bold_date: {
-    backgroundColor: blue[colorLevelBold]
-  }
+    backgroundColor: blue[colorLevelBold],
+  },
 });
 
 const Icon = withStyles(styles)(({ classes, bold = false, className, children, type }) => {
@@ -58,7 +58,7 @@ const Icon = withStyles(styles)(({ classes, bold = false, className, children, t
     <pre
       className={classnames(className, classes.root, classes[type], {
         [classes.bold]: bold,
-        [classes[`bold_${type}`]]: bold
+        [classes[`bold_${type}`]]: bold,
       })}
     >
       {children}
@@ -66,7 +66,7 @@ const Icon = withStyles(styles)(({ classes, bold = false, className, children, t
   );
 });
 
-export const JSONIcon = props => {
+export const JSONIcon = (props) => {
   let content = '';
   switch (props.type) {
     case 'string':

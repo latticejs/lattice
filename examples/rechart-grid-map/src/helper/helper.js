@@ -90,7 +90,7 @@ function evaluateChartData(isSunburst) {
 
   if (isSunburst) {
     for (const data of dataArr) {
-      const state = stateResult.filter(x => x.name === data.name);
+      const state = stateResult.filter((x) => x.name === data.name);
       const { county, name, size } = data;
 
       const countyCompleteName = `${county}, ${name}`;
@@ -105,7 +105,7 @@ function evaluateChartData(isSunburst) {
       } else {
         const newState = {
           name: name,
-          children: [entryInfo]
+          children: [entryInfo],
         };
         colorArray[countyCompleteName] = getCountyColor(size);
         newState.totalPopulation = size;
@@ -123,7 +123,7 @@ function evaluateChartData(isSunburst) {
     return { data: resultData, colorArray };
   } else {
     for (const data of dataArr) {
-      const state = stateResult.filter(x => x.name === data.name);
+      const state = stateResult.filter((x) => x.name === data.name);
       const { name, size } = data;
 
       if (state.length > 0) {

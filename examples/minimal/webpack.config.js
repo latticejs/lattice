@@ -6,7 +6,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const visualizer = require('webpack-visualizer-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: 'src/index.html'
+  template: 'src/index.html',
 });
 
 module.exports = {
@@ -33,12 +33,12 @@ module.exports = {
           output: {
             ecma: 6,
             comments: false,
-            ascii_only: true
-          }
-        }
+            ascii_only: true,
+          },
+        },
       }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+      new OptimizeCSSAssetsPlugin({}),
+    ],
   },
   module: {
     rules: [
@@ -46,34 +46,34 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
-      }
-    ]
+        use: ['file-loader'],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: '[name].css',
-      chunkFilename: '[id].css'
+      chunkFilename: '[id].css',
     }),
     new CompressionPlugin({
-      test: /\.js/
+      test: /\.js/,
     }),
     htmlPlugin,
-    new visualizer()
-  ]
+    new visualizer(),
+  ],
 };

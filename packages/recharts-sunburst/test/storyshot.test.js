@@ -15,9 +15,9 @@ function createNodeMock(element) {
         offsetWidth: 777,
         offsetHeight: 888,
         currentStyle: {
-          position: 'relative'
-        }
-      }
+          position: 'relative',
+        },
+      },
     };
   }
   return null;
@@ -25,6 +25,6 @@ function createNodeMock(element) {
 
 initStoryshots({
   test: snapshotWithOptions({
-    createNodeMock
-  })
+    createNodeMock,
+  }),
 });

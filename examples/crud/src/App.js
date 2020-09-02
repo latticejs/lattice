@@ -14,7 +14,7 @@ for (let i = 0; i < 100; i++) {
     id: faker.random.uuid(),
     name: faker.random.words(),
     author: faker.name.findName(),
-    active: faker.random.boolean()
+    active: faker.random.boolean(),
   });
 }
 

@@ -13,20 +13,20 @@ import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import NightIcon from '@material-ui/icons/Brightness3Outlined';
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
   flex: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   container: {
-    margin: 8
-  }
+    margin: 8,
+  },
 });
 
 class Layout extends Component {

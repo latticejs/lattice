@@ -24,6 +24,6 @@ module.exports = async () => {
     tasks,
     areas,
     products,
-    sales
+    sales,
   };
 };

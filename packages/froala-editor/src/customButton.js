@@ -27,7 +27,7 @@ Froalaeditor.RegisterCommand('fontFamily', {
   type: 'dropdown',
   focus: true,
   undo: true,
-  html: function() {
+  html: function () {
     return `<ul class="fr-dropdown-list" role="presentation">
   <li role="presentation">
     <a class="fr-command" tabindex="-1" role="option" data-cmd="fontFamily" data-param1="Roboto,sans-serif" style="font-family: Roboto,sans-serif" title="Roboto" aria-selected="false">
@@ -71,9 +71,9 @@ Froalaeditor.RegisterCommand('fontFamily', {
   </li>
 </ul>`;
   },
-  callback: function(cmd, val) {
+  callback: function (cmd, val) {
     this.fontFamily.apply(val);
-  }
+  },
 });
 Froalaeditor.DefineIcon('moreText', { NAME: 'text-format', template: 'material_design' });
 Froalaeditor.DefineIcon('formatOLSimple', { NAME: 'format-list-numbered', template: 'material_design' });

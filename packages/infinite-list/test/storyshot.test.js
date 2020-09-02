@@ -6,7 +6,7 @@ function createNodeMock(element) {
       scrollLeft: 200,
       scrollRight: 200,
       addEventListener: () => {},
-      removeEventListener: () => {}
+      removeEventListener: () => {},
     };
   }
   return null;
@@ -14,6 +14,6 @@ function createNodeMock(element) {
 
 initStoryshots({
   test: snapshotWithOptions({
-    createNodeMock
-  })
+    createNodeMock,
+  }),
 });

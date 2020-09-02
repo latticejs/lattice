@@ -6,7 +6,7 @@ import { TableCell } from './Table';
 export default class TableSearchCell extends Component {
   static defaultProps = {
     debounce: 300,
-    filterBy: []
+    filterBy: [],
   };
 
   constructor(props) {
@@ -14,25 +14,25 @@ export default class TableSearchCell extends Component {
 
     const { field, filterBy } = props;
 
-    const filter = filterBy.find(filter => filter.field === field);
+    const filter = filterBy.find((filter) => filter.field === field);
 
     this.state = {
-      value: filter ? filter.value : ''
+      value: filter ? filter.value : '',
     };
 
     this.search = debounce(this.search, props.debounce);
   }
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     const target = e.target;
     const value = target.value;
     this.updateValue(value);
   };
 
-  updateValue = value => {
+  updateValue = (value) => {
     this.setState(
       {
-        value
+        value,
       },
       () => {
         this.search();
@@ -45,7 +45,7 @@ export default class TableSearchCell extends Component {
     const { value } = this.state;
 
     const filter = { field, value };
-    const filters = filterBy.filter(filter => filter.field !== field);
+    const filters = filterBy.filter((filter) => filter.field !== field);
     handleSearch([...filters, filter]);
   };
 
@@ -58,9 +58,9 @@ export default class TableSearchCell extends Component {
           inputProps: {
             name: field,
             value: this.state.value,
-            onChange: this.handleInputChange
+            onChange: this.handleInputChange,
           },
-          updateValue: this.updateValue
+          updateValue: this.updateValue,
         })}
       </TableCell>
     );

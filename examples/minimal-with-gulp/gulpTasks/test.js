@@ -10,7 +10,12 @@ gulp.task('jest', () => {
       automock: false,
       verbose: true,
       collectCoverageFrom: ['src/.{js,jsx}'],
-      testPathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/build/', '<rootDir>/node_modules/', '<rootDir>/gulpTasks/']
+      testPathIgnorePatterns: [
+        '<rootDir>/dist/',
+        '<rootDir>/build/',
+        '<rootDir>/node_modules/',
+        '<rootDir>/gulpTasks/',
+      ],
     })
   );
 });
@@ -25,11 +30,11 @@ gulp.task('jest:cc', () => {
         '<rootDir>/dist/',
         '<rootDir>/build/',
         '<rootDir>/node_modules/',
-        '<rootDir>/gulpTasks/'
+        '<rootDir>/gulpTasks/',
       ],
       collectCoverage: true,
       automock: false,
-      coverageReporters: ['json', 'lcov', 'text', 'clover', 'cobertura']
+      coverageReporters: ['json', 'lcov', 'text', 'clover', 'cobertura'],
     })
   );
 });
@@ -43,10 +48,10 @@ gulp.task('jest:ccs', () => {
         '<rootDir>/dist/',
         '<rootDir>/build/',
         '<rootDir>/node_modules/',
-        '<rootDir>/gulpTasks/'
+        '<rootDir>/gulpTasks/',
       ],
       collectCoverageFrom: ['src/.{js,jsx}'],
-      automock: false
+      automock: false,
     })
   );
 });
@@ -63,7 +68,7 @@ gulp.task('jest:threshold', () => {
         '<rootDir>/dist/',
         '<rootDir>/build/',
         '<rootDir>/node_modules/',
-        '<rootDir>/gulpTasks/'
+        '<rootDir>/gulpTasks/',
       ],
       verbose: true,
       bail: true,
@@ -72,9 +77,9 @@ gulp.task('jest:threshold', () => {
           branches: 60,
           functions: 60,
           lines: 60,
-          statements: 60
-        }
-      }
+          statements: 60,
+        },
+      },
     })
   );
 });

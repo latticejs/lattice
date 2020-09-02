@@ -6,11 +6,11 @@ import Readme from '../README.md';
 import '@latticejs/ag-grid/styles/lattice-ag-grid-style.css';
 import httpHelper from '../helper/httpHelper';
 
-const Flexed = story => (
+const Flexed = (story) => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
 
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 class AgGrid extends Component {
   constructor(props) {
@@ -26,22 +26,22 @@ class AgGrid extends Component {
           pinned: true,
           filter: 'agTextColumnFilter',
           rowDrag: true,
-          checkboxSelection: true
+          checkboxSelection: true,
         },
         {
           headerName: 'Native Name',
           field: 'nativeName',
-          filter: 'agTextColumnFilter'
+          filter: 'agTextColumnFilter',
         },
         {
           headerName: 'Capital',
           field: 'capital',
-          filter: 'agTextColumnFilter'
+          filter: 'agTextColumnFilter',
         },
         {
           headerName: 'Population',
           field: 'population',
-          filter: 'agNumberColumnFilter'
+          filter: 'agNumberColumnFilter',
         },
         {
           headerName: 'Region Info',
@@ -49,29 +49,29 @@ class AgGrid extends Component {
             {
               headerName: 'Region',
               field: 'region',
-              filter: 'agTextColumnFilter'
+              filter: 'agTextColumnFilter',
             },
             {
               headerName: 'Sub-Region',
               field: 'subregion',
-              filter: 'agTextColumnFilter'
+              filter: 'agTextColumnFilter',
             },
             {
               headerName: 'Area',
               field: 'area',
-              filter: 'agNumberColumnFilter'
-            }
-          ]
-        }
+              filter: 'agNumberColumnFilter',
+            },
+          ],
+        },
       ],
       rowData: [],
-      showPagination: false
+      showPagination: false,
     };
   }
   componentDidMount() {
     const httpObj = {
       url: '/all?fields=name;capital;currencies;region;subregion;area;nativeName;languages;timezones;population',
-      method: 'get'
+      method: 'get',
     };
     httpHelper(httpObj, this.gotData);
   }
@@ -95,7 +95,7 @@ class AgGrid extends Component {
         rowData={rowData}
         rowSelection="multiple"
         gridContainerStyle={{
-          height: window.innerHeight
+          height: window.innerHeight,
         }}
       />
     );

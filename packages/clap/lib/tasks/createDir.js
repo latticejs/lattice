@@ -4,15 +4,15 @@ const makeDir = require('make-dir');
 module.exports = function createDir(projectName) {
   assert.ok(projectName);
   assert.strictEqual(typeof projectName, 'string', 'clap: createDir expects a string');
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     makeDir(projectName)
-      .then(function() {
+      .then(function () {
         resolve({ code: 0 });
       })
-      .catch(function(err) {
+      .catch(function (err) {
         reject({
           code: 1,
-          stderr: err
+          stderr: err,
         });
       });
   });

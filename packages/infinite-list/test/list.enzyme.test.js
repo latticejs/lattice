@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import { List, ListItem } from '../src';
 import ListItemText from '@material-ui/core/ListItemText';
 
-const list = Array.from(Array(10).keys()).map(v => ({ index: v, title: `title ${v}` }));
+const list = Array.from(Array(10).keys()).map((v) => ({ index: v, title: `title ${v}` }));
 
 const renderRow = ({ item, isEmpty, key, style }) => {
   if (isEmpty) {

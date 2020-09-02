@@ -1,4 +1,4 @@
 // \\ clap API \\
 module.exports = {
-  api: require('./lib')
+  api: require('./lib'),
 };

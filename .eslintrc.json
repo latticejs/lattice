@@ -1,11 +1,13 @@
 {
   "extends": ["eslint:recommended", "plugin:react-app/recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
   "rules": {
     "react-app/jsx-a11y/href-no-hash": "off",
     "prettier/prettier": [
       "error",
       {
         "singleQuote": true,
+        "parser": "flow",
         "semi": true,
         "bracketSpacing": true,
         "printWidth": 120,

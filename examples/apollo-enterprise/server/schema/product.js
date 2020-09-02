@@ -21,7 +21,7 @@ exports.resolvers = {
   Query: {
     getTopProductsSale: (_, { limit = 5 }, { db }) => {
       return db.products
-        .map(product => {
+        .map((product) => {
           const total = db.sales
             .filter({ productId: product.id })
             .reduce((total, sale) => {
@@ -31,17 +31,17 @@ exports.resolvers = {
 
           return {
             product,
-            total
+            total,
           };
         })
         .orderBy(['total'], ['desc'])
         .slice(0, limit)
         .value();
-    }
+    },
   },
   Product: {
     sales: (_, args, { db }) => {
       return db.sales.filter({ productId: _.id }).value();
-    }
-  }
+    },
+  },
 };

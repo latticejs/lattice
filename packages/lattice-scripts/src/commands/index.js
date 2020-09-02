@@ -4,10 +4,7 @@ import registerBuild from './build';
 
 import pkg from '../../package.json';
 
-program
-  .version(pkg.version)
-  .usage('command')
-  .description(pkg.description);
+program.version(pkg.version).usage('command').description(pkg.description);
 
 registerBuild(program);
 
