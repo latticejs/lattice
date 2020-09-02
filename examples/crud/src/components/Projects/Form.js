@@ -12,14 +12,14 @@ import TextInput from '../Form/TextInput';
 const formikEnhancer = withFormik({
   validationSchema: object().shape({
     name: string().required('Name is required.'),
-    author: string().required('Author is required.')
+    author: string().required('Author is required.'),
   }),
 
   mapPropsToValues: ({ project: { id = '', name = '', author = '', active = false } }) => ({
     id,
     name,
     author,
-    active
+    active,
   }),
 
   handleSubmit: (payload, { props: { projectStore, onSave }, setSubmitting }) => {
@@ -37,12 +37,12 @@ const formikEnhancer = withFormik({
 
   enableReinitialize: true,
 
-  displayName: 'ProjectForm'
+  displayName: 'ProjectForm',
 });
 
 const enhanceForm = compose(inject('projectStore'), formikEnhancer, observer);
 
-const Form = enhanceForm(props => {
+const Form = enhanceForm((props) => {
   const { values, errors, touched, handleChange, handleSubmit, isSubmitting, classes, isCreating, onCancel } = props;
   return (
     <form onSubmit={handleSubmit} noValidate autoComplete="off" className={classes.containerForm}>
@@ -96,7 +96,7 @@ const Form = enhanceForm(props => {
   );
 });
 
-const ProjectForm = props => {
+const ProjectForm = (props) => {
   const { classes, uiStore, onCancel, onSave } = props;
   const { isCreating, project } = uiStore.projectForm;
 
@@ -111,24 +111,24 @@ const ProjectForm = props => {
   );
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   containerRoot: {
     flex: 1,
-    height: '100%'
+    height: '100%',
   },
   containerForm: {
     display: 'flex',
     flexWrap: 'wrap',
     width: '100%',
-    flex: 1
+    flex: 1,
   },
   button: {
     margin: theme.spacing(1),
-    flex: 0
+    flex: 0,
   },
   textField: {
-    marginBottom: theme.spacing(3)
-  }
+    marginBottom: theme.spacing(3),
+  },
 });
 
 export default compose(withStyles(styles), inject('projectStore', 'uiStore'), observer)(ProjectForm);
