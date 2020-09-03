@@ -13,7 +13,7 @@ import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
 
-const InGrid = story => (
+const InGrid = (story) => (
   <Grid container spacing={3}>
     <Grid item xs={12}>
       {story()}
@@ -21,10 +21,10 @@ const InGrid = story => (
   </Grid>
 );
 
-const Flexed = story => (
+const Flexed = (story) => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec adipiscing tristique risus.`;
 
@@ -41,7 +41,7 @@ const stories = {
 
   'with borders': () => (
     <Styled>
-      {classes => (
+      {(classes) => (
         <Grid container spacing={3}>
           <Grid item xs={6}>
             <Widget title="Border top" border="top">
@@ -76,22 +76,22 @@ const stories = {
 
   'custom height': ({ classes }) => (
     <Styled>
-      {classes => (
+      {(classes) => (
         <Widget title="Custom content height" classes={{ content: classes.content }}>
           <div>{lorem}</div>
         </Widget>
       )}
     </Styled>
-  )
+  ),
 };
 
 export default ({ storiesOf }) => {
   const themes = [
     { name: 'widgets/Widget' },
-    { name: 'widgets/Widget (dark theme)', theme: { palette: { type: 'dark' } } }
+    { name: 'widgets/Widget (dark theme)', theme: { palette: { type: 'dark' } } },
   ];
 
-  themes.forEach(theme => {
+  themes.forEach((theme) => {
     const all = storiesOf(theme.name, module)
       .addDecorator(JssDecorator)
       .addDecorator(InGrid)
@@ -99,24 +99,24 @@ export default ({ storiesOf }) => {
       .addDecorator(muiTheme(theme.theme))
       .addDecorator(FullViewport);
 
-    Object.keys(stories).forEach(name => {
+    Object.keys(stories).forEach((name) => {
       all.add(name, withApiReadme(stories[name]));
     });
   });
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   content: {
     height: '300px',
-    'align-items': 'center'
+    'align-items': 'center',
   },
   customTopBorder: {
-    borderColor: 'red'
+    borderColor: 'red',
   },
   customBotomBorder: {
     borderWidth: 15,
-    borderColor: 'green'
-  }
+    borderColor: 'green',
+  },
 });
 
 const Styled = withStyles(styles)(({ classes, children }) => {

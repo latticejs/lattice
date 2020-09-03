@@ -5,7 +5,7 @@ function createNodeMock(element) {
     return {
       getBoundingClientRect() {
         return {};
-      }
+      },
     };
   }
   return null;
@@ -13,6 +13,6 @@ function createNodeMock(element) {
 
 initStoryshots({
   test: snapshotWithOptions({
-    createNodeMock
-  })
+    createNodeMock,
+  }),
 });

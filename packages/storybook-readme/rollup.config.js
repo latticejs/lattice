@@ -7,8 +7,8 @@ module.exports = {
   input: 'src/main.js',
   output: [
     { file: pkg.main, format: 'cjs', sourcemap: true },
-    { file: pkg.module, format: 'es', sourcemap: true }
+    { file: pkg.module, format: 'es', sourcemap: true },
   ],
   plugins: [production && terser()],
-  external: ['storybook-readme']
+  external: ['storybook-readme'],
 };

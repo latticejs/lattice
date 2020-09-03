@@ -84,66 +84,66 @@ const resolvers = {
         cpuManufacturer: cpuInfo.manufacturer,
         cpuBrand: cpuInfo.brand,
         cpuSpeed: cpuInfo.speed,
-        cpuCores: cpuInfo.cores
+        cpuCores: cpuInfo.cores,
       };
-    }
+    },
   },
   Subscription: {
     cpuUpdated: {
-      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(CPU_UPDATED)
+      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(CPU_UPDATED),
     },
     memoryUpdated: {
-      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(MEMORY_UPDATED)
+      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(MEMORY_UPDATED),
     },
     psUpdated: {
-      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(PS_UPDATED)
+      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(PS_UPDATED),
     },
     disksUpdated: {
-      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(DISKS_UPDATED)
-    }
-  }
+      subscribe: (_, args, { pubsub }) => pubsub.asyncIterator(DISKS_UPDATED),
+    },
+  },
 };
 
 const opts = {
-  port: process.env.NODE_PORT || 3001
+  port: process.env.NODE_PORT || 3001,
 };
 
 (async () => {
   const pubsub = new PubSub();
 
-  cpuUsageUpdated(data => {
+  cpuUsageUpdated((data) => {
     pubsub.publish(CPU_UPDATED, { cpuUpdated: data });
   });
 
-  memoryUsageUpdated(data => {
+  memoryUsageUpdated((data) => {
     pubsub.publish(MEMORY_UPDATED, { memoryUpdated: data });
   });
 
-  psUsageUpdated(list => {
+  psUsageUpdated((list) => {
     pubsub.publish(PS_UPDATED, {
-      psUpdated: list.slice(0, 10).map(p => ({
+      psUpdated: list.slice(0, 10).map((p) => ({
         pid: p.pid,
         name: p.name,
         cpu: p.cpu,
-        memory: p.memory
-      }))
+        memory: p.memory,
+      })),
     });
   });
 
-  disksUsageUpdated(data => {
+  disksUsageUpdated((data) => {
     pubsub.publish(DISKS_UPDATED, { disksUpdated: data });
   });
 
   // context
   const context = ({ request }) => ({
-    pubsub
+    pubsub,
   });
 
   // server
   const server = new GraphQLServer({
     typeDefs,
     resolvers,
-    context
+    context,
   });
 
   server.express.use(cors());

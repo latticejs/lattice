@@ -6,7 +6,7 @@ let dummyPkg = {
   version: '1.0.0',
   homepage: '',
   keywords: ['demo', 'example'],
-  dependencies: JSON.stringify({ react: '16.0.0', 'react-dom': '1.0.0' })
+  dependencies: JSON.stringify({ react: '16.0.0', 'react-dom': '1.0.0' }),
 };
 
 const typeDefs = gql`
@@ -47,14 +47,14 @@ const resolvers = {
     },
     pkg: async (root, args, context, info) => {
       return dummyPkg;
-    }
+    },
   },
   Mutation: {
     updatePkg: (root, { name, version, description, dependencies }) => {
       dummyPkg = { ...dummyPkg, ...{ name }, ...{ version }, ...{ description }, ...{ dependencies } };
       return dummyPkg;
-    }
-  }
+    },
+  },
 };
 
 // In the most basic sense, the ApolloServer can be started

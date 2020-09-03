@@ -8,18 +8,18 @@ export const withCurrentUser = graphql(currentUser, {
     currentUser,
     refetchUser: refetch,
     loadingUser: loading,
-    errorUser: error
+    errorUser: error,
   }),
   options: {
     fetchPolicy: 'cache-and-network',
-    errorPolicy: 'all'
-  }
+    errorPolicy: 'all',
+  },
 });
 
-export const withSignOut = Component => (props = {}) => {
-  return <ApolloConsumer>{client => <Component {...props} signOut={() => signOut(client)} />}</ApolloConsumer>;
+export const withSignOut = (Component) => (props = {}) => {
+  return <ApolloConsumer>{(client) => <Component {...props} signOut={() => signOut(client)} />}</ApolloConsumer>;
 };
 
 export const withSignIn = graphql(signIn, {
-  name: 'signIn'
+  name: 'signIn',
 });

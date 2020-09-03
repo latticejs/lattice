@@ -22,7 +22,7 @@ const handleExit = () => {
   process.exit();
 };
 
-const handleError = e => {
+const handleError = (e) => {
   console.error('ERROR! An error was encountered while executing\n', e);
   cleanup();
   console.log('Exiting with error.');
@@ -45,7 +45,7 @@ const packageJsonOrigPath = path.join(reactScriptsDir, 'package.json.orig');
 const lernaPath = path.join(rootDir, 'node_modules', '.bin', 'lerna');
 cp.execSync(`${lernaPath} bootstrap`, {
   cwd: rootDir,
-  stdio: 'inherit'
+  stdio: 'inherit',
 });
 
 // Save package.json because we're going to touch it
@@ -59,10 +59,7 @@ cp.execSync(`node ${replaceOwnDepsPath}`, { stdio: 'inherit' });
 // Finally, pack react-scripts
 // Don't redirect stdio as we want to capture the output that will be returned
 // from execSync(). In this case it will be the .tgz filename.
-const scriptsFileName = cp
-  .execSync(`npm pack`, { cwd: reactScriptsDir })
-  .toString()
-  .trim();
+const scriptsFileName = cp.execSync(`npm pack`, { cwd: reactScriptsDir }).toString().trim();
 const scriptsPath = path.join(rootDir, 'packages', 'react-scripts', scriptsFileName);
 
 // Restore package.json
@@ -92,7 +89,7 @@ const args = process.argv.slice(2);
 // );
 cp.execSync(`npx create-react-app --scripts-version="${scriptsPath}" ${args.join(' ')}`, {
   cwd: rootDir,
-  stdio: 'inherit'
+  stdio: 'inherit',
 });
 
 // Cleanup

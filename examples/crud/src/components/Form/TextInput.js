@@ -17,7 +17,7 @@ const TextInput = ({ type = 'text', error, ...props }) => {
 
 TextInput.propTypes = {
   type: Types.string,
-  error: Types.string
+  error: Types.string,
 };
 
 export default TextInput;

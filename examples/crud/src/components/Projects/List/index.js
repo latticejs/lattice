@@ -6,7 +6,7 @@ import ProjectList from './List';
 import ProjectListActions from './ListActions';
 import ProjectTitle from './Title';
 
-const List = props => {
+const List = (props) => {
   const { classes, onEditProject, onAddProject } = props;
 
   return (
@@ -25,12 +25,12 @@ const List = props => {
 const styles = () => ({
   containerRoot: {
     flex: 1,
-    height: '100%'
+    height: '100%',
   },
   listRoot: {
     flex: 1,
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 export default compose(withStyles(styles))(List);

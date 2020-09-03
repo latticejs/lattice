@@ -8,8 +8,8 @@ import Readme from '../README.md';
 import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
-const AddResponsive = story => <ResponsiveContainer>{story()}</ResponsiveContainer>;
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
+const AddResponsive = (story) => <ResponsiveContainer>{story()}</ResponsiveContainer>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
 
 const withApiReadme = withReadme(Readme)(['api']);
 
@@ -58,12 +58,12 @@ const data = [
   { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
   { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
   { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
-  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 }
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
 // Components
 
-const AreaChartBasic = props => (
+const AreaChartBasic = (props) => (
   <AreaChart data={data} {...props}>
     <XAxis dataKey="name" />
     <YAxis />
@@ -73,7 +73,7 @@ const AreaChartBasic = props => (
   </AreaChart>
 );
 
-const BarChartBasic = props => (
+const BarChartBasic = (props) => (
   <BarChart data={data} {...props}>
     <XAxis dataKey="name" />
     <YAxis />
@@ -83,7 +83,7 @@ const BarChartBasic = props => (
   </BarChart>
 );
 
-const LineChartBasic = props => (
+const LineChartBasic = (props) => (
   <LineChart data={data} {...props}>
     <XAxis dataKey="name" />
     <YAxis />

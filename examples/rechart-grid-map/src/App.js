@@ -30,25 +30,25 @@ import NightIcon from '@material-ui/icons/Brightness3Outlined';
 import 'typeface-roboto';
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   flex: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
   widget: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    padding: theme.spacing(4)
+    padding: theme.spacing(4),
   },
   link: {
-    color: theme.palette.text.secondary
-  }
+    color: theme.palette.text.secondary,
+  },
 });
 
 function TabPanel(props) {
@@ -71,18 +71,17 @@ function TabPanel(props) {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired
+  value: PropTypes.any.isRequired,
 };
 
 function a11yProps(index) {
   return {
     id: `scrollable-force-tab-${index}`,
-    'aria-controls': `scrollable-force-tabpanel-${index}`
+    'aria-controls': `scrollable-force-tabpanel-${index}`,
   };
 }
 
-const app = (props) => {
-
+const App = (props) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const { classes, nightMode } = props;
@@ -96,66 +95,65 @@ const app = (props) => {
     setSelectedTab(newTab);
   };
 
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" className={classes.flex}>
+            USA Census
+          </Typography>
+          <Tooltip title="Toggle Night Mode" enterDelay={300}>
+            <IconButton onClick={handleNightModeChange} color="inherit">
+              {nightMode ? <DayIcon /> : <NightIcon />}
+            </IconButton>
+          </Tooltip>
+        </Toolbar>
+      </AppBar>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={selectedTab}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          aria-label="scrollable force tabs example"
+        >
+          <Tab label="Rechart" icon={<PieChartIcon />} {...a11yProps(0)} />
+          <Tab label="Ag-Grid" icon={<GridOnIcon />} {...a11yProps(1)} />
+          <Tab label="Map" icon={<MapIcon />} {...a11yProps(2)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel value={selectedTab} index={0}>
+        <Grid container justify="flex-start" spacing={Number('4')}>
+          <Grid item xs={6}>
+            <Widget className={classes.widget} title="State & County Data" border="top">
+              <Sunburst />
+            </Widget>
+          </Grid>
+          <Grid item xs={6}>
+            <Widget className={classes.widget} title="State Data" border="top">
+              <PieChart />
+            </Widget>
+          </Grid>
+        </Grid>
+      </TabPanel>
+      <TabPanel value={selectedTab} index={1}>
+        <Grid container justify="center" spacing={Number(0)}>
+          <Grid item xs={12}>
+            <Widget className={classes.widget} title="State & County Population" border="top">
+              <AgGrid />
+            </Widget>
+          </Grid>
+        </Grid>
+      </TabPanel>
+      <TabPanel value={selectedTab} index={2}>
+        <Grid container justify="center" spacing={Number(0)}>
+          <Grid item xs={12}>
+            <Mapbox />
+          </Grid>
+        </Grid>
+      </TabPanel>
+    </div>
+  );
+};
 
-    return (
-      <div className={classes.root}>
-        <AppBar position="static" className={classes.appBar}>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" className={classes.flex}>
-              USA Census
-            </Typography>
-            <Tooltip title="Toggle Night Mode" enterDelay={300}>
-              <IconButton onClick={handleNightModeChange} color="inherit">
-                {nightMode ? <DayIcon /> : <NightIcon />}
-              </IconButton>
-            </Tooltip>
-          </Toolbar>
-        </AppBar>
-        <AppBar position="static" color="default">
-          <Tabs
-            value={selectedTab}
-            onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            aria-label="scrollable force tabs example"
-          >
-            <Tab label="Rechart" icon={<PieChartIcon />} {...a11yProps(0)} />
-            <Tab label="Ag-Grid" icon={<GridOnIcon />} {...a11yProps(1)} />
-            <Tab label="Map" icon={<MapIcon />} {...a11yProps(2)} />
-          </Tabs>
-        </AppBar>
-        <TabPanel value={selectedTab} index={0}>
-          <Grid container justify="flex-start" spacing={Number('4')}>
-            <Grid item xs={6}>
-              <Widget className={classes.widget} title="State & County Data" border="top">
-                <Sunburst />
-              </Widget>
-            </Grid>
-            <Grid item xs={6}>
-              <Widget className={classes.widget} title="State Data" border="top">
-                <PieChart />
-              </Widget>
-            </Grid>
-          </Grid>
-        </TabPanel>
-        <TabPanel value={selectedTab} index={1}>
-          <Grid container justify="center" spacing={Number(0)}>
-            <Grid item xs={12}>
-              <Widget className={classes.widget} title="State & County Population" border="top">
-                <AgGrid />
-              </Widget>
-            </Grid>
-          </Grid>
-        </TabPanel>
-        <TabPanel value={selectedTab} index={2}>
-          <Grid container justify="center" spacing={Number(0)}>
-            <Grid item xs={12}>
-              <Mapbox />
-            </Grid>
-          </Grid>
-        </TabPanel>
-      </div>
-    );
-}
-
-export default withStyles(styles)(app);
+export default withStyles(styles)(App);
