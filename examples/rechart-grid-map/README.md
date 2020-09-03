@@ -8,7 +8,7 @@
 
 ### With clap
 
-`clap example rechart-gird-map myApp`
+`clap example rechart-grid-map myApp`
 
 ## Idea behind the example
 

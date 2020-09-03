@@ -23,7 +23,7 @@ exports[`Storyshots tree JSON tree 1`] = `
       className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
     >
       <div
-        className="MuiGrid-root tree-wrapper Tree-root-391 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12"
+        className="MuiGrid-root tree-wrapper Tree-root-13 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12"
       >
         <div
           className="MuiList-root"
@@ -53,14 +53,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-string-517"
+                  className="Component-root-15 Component-string-16"
                 >
                    String 
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -79,17 +79,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -102,7 +101,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     name
@@ -151,14 +150,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-string-517"
+                  className="Component-root-15 Component-string-16"
                 >
                    String 
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -177,17 +176,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -200,7 +198,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     version
@@ -249,14 +247,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-string-517"
+                  className="Component-root-15 Component-string-16"
                 >
                    String 
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -275,17 +273,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -298,7 +295,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     license
@@ -347,14 +344,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-string-517"
+                  className="Component-root-15 Component-string-16"
                 >
                    String 
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -373,17 +370,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -396,7 +392,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     main
@@ -445,14 +441,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-string-517"
+                  className="Component-root-15 Component-string-16"
                 >
                    String 
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -471,17 +467,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -494,7 +489,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     module
@@ -543,14 +538,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-array-519"
+                  className="Component-root-15 Component-array-18"
                 >
                     [  ]  
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -569,17 +564,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -592,7 +586,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     files
@@ -629,14 +623,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-object-520"
+                  className="Component-root-15 Component-object-19"
                 >
                     {  }  
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -655,17 +649,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -678,7 +671,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     scripts
@@ -715,14 +708,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-object-520"
+                  className="Component-root-15 Component-object-19"
                 >
                     {  }  
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -741,17 +734,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -764,7 +756,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     peerDependencies
@@ -801,14 +793,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-object-520"
+                  className="Component-root-15 Component-object-19"
                 >
                     {  }  
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -827,17 +819,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -850,7 +841,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     devDependencies
@@ -887,14 +878,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-object-520"
+                  className="Component-root-15 Component-object-19"
                 >
                     {  }  
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -913,17 +904,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -936,7 +926,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     dependencies
@@ -973,14 +963,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-object-520"
+                  className="Component-root-15 Component-object-19"
                 >
                     {  }  
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -999,17 +989,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1022,7 +1011,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     jest
@@ -1059,14 +1048,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-object-520"
+                  className="Component-root-15 Component-object-19"
                 >
                     {  }  
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -1085,17 +1074,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1108,7 +1096,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     publishConfig
@@ -1145,14 +1133,14 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <pre
-                  className="Component-root-516 Component-string-517"
+                  className="Component-root-15 Component-string-16"
                 >
                    String 
                 </pre>
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-534 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-27 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -1171,17 +1159,16 @@ exports[`Storyshots tree JSON tree 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-537"
+                    className="PrivateSwitchBase-input-30"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1194,7 +1181,7 @@ exports[`Storyshots tree JSON tree 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   <b>
                     gitHead
@@ -1278,10 +1265,9 @@ exports[`Storyshots tree basic 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <svg
-                  aria-hidden="true"
+                  aria-hidden={true}
                   className="MuiSvgIcon-root"
                   focusable="false"
-                  role="presentation"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -1291,7 +1277,7 @@ exports[`Storyshots tree basic 1`] = `
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-141 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -1310,17 +1296,16 @@ exports[`Storyshots tree basic 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-144"
+                    className="PrivateSwitchBase-input-6"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1333,7 +1318,7 @@ exports[`Storyshots tree basic 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   index.js
                 </span>
@@ -1368,10 +1353,9 @@ exports[`Storyshots tree basic 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <svg
-                  aria-hidden="true"
+                  aria-hidden={true}
                   className="MuiSvgIcon-root"
                   focusable="false"
-                  role="presentation"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -1381,7 +1365,7 @@ exports[`Storyshots tree basic 1`] = `
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-141 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -1400,17 +1384,16 @@ exports[`Storyshots tree basic 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-144"
+                    className="PrivateSwitchBase-input-6"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1423,7 +1406,7 @@ exports[`Storyshots tree basic 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   assets
                 </span>
@@ -1463,7 +1446,7 @@ exports[`Storyshots tree customized 1`] = `
       className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
     >
       <div
-        className="MuiGrid-root tree-wrapper Tree-root-196 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12"
+        className="MuiGrid-root tree-wrapper Tree-root-7 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12"
       >
         <div
           className="MuiList-root"
@@ -1521,7 +1504,7 @@ exports[`Storyshots tree customized 1`] = `
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-327 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-9 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -1540,17 +1523,16 @@ exports[`Storyshots tree customized 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-330"
+                    className="PrivateSwitchBase-input-12"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1563,7 +1545,7 @@ exports[`Storyshots tree customized 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   index.js
                 </span>
@@ -1598,10 +1580,9 @@ exports[`Storyshots tree customized 1`] = `
                 className="MuiListItemIcon-root"
               >
                 <svg
-                  aria-hidden="true"
+                  aria-hidden={true}
                   className="MuiSvgIcon-root"
                   focusable="false"
-                  role="presentation"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -1611,7 +1592,7 @@ exports[`Storyshots tree customized 1`] = `
               </div>
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-327 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-9 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 onBlur={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
@@ -1630,17 +1611,16 @@ exports[`Storyshots tree customized 1`] = `
                 >
                   <input
                     checked={false}
-                    className="PrivateSwitchBase-input-330"
+                    className="PrivateSwitchBase-input-12"
                     data-indeterminate={false}
                     onChange={[Function]}
                     tabIndex={-1}
                     type="checkbox"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1653,7 +1633,7 @@ exports[`Storyshots tree customized 1`] = `
                 className="MuiListItemText-root"
               >
                 <span
-                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
                   assets
                 </span>
