@@ -81,7 +81,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Update Phase - 2020-09-03
 - examples
-  - examples: upgrade apollo-enterprise, apollo-real-time-chart example to hooks.
+  - examples: upgrade apollo-enterprise, apollo-real-time-chart, basic example to hooks.
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
