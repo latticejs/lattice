@@ -1,11 +1,11 @@
 import { Typography, withStyles } from '@material-ui/core';
 import React from 'react';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: 'inline',
-    marginLeft: theme.spacing(2)
-  }
+    marginLeft: theme.spacing(2),
+  },
 });
 
 export default withStyles(styles)(({ main, secondary, classes }) => (

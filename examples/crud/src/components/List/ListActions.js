@@ -10,7 +10,7 @@ import AddButton from './AddButton';
 const enhanceListActions = compose(
   withHandlers({
     onChange: ({ selectAllOnSelectAll, selectAllOnUnselectAll }) => (e, checked) =>
-      checked ? selectAllOnSelectAll() : selectAllOnUnselectAll()
+      checked ? selectAllOnSelectAll() : selectAllOnUnselectAll(),
   })
 );
 
@@ -30,7 +30,7 @@ export default enhanceListActions(
     sortProperty,
     sortOrderOnChange,
     sortPropertyOnChange,
-    filterOnChange
+    filterOnChange,
   }) => {
     return (
       <Grid container direction="row" justify="flex-start" alignItems="center">

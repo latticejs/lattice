@@ -5,19 +5,19 @@ import { Tree } from '../src';
 
 const sampleInput = [
   {
-    label: 'index.js'
+    label: 'index.js',
   },
   {
     label: 'assets',
     children: [
       {
-        label: 'index.css'
+        label: 'index.css',
       },
       {
-        label: 'logo.svg'
-      }
-    ]
-  }
+        label: 'logo.svg',
+      },
+    ],
+  },
 ];
 
 describe('<Tree />', () => {
@@ -32,14 +32,14 @@ describe('<Tree />', () => {
   });
   it('renders a <Tree cascadeCheck /> with 4 childrens (2 root lvl and 2 lvl-1)', () => {
     const wrapper = mount(<Tree treeData={sampleInput} expandedAll cascadeCheck />);
-    expect(wrapper.find('input[type="checkbox"]').filterWhere(n => n.get(0).props.checked).length).toBe(0);
+    expect(wrapper.find('input[type="checkbox"]').filterWhere((n) => n.get(0).props.checked).length).toBe(0);
     wrapper
       .find('li')
       .at(1)
       .find('input[type="checkbox"]')
       .simulate('change', { target: { checked: true } });
 
-    expect(wrapper.find('input[type="checkbox"]').filterWhere(n => n.get(0).props.checked).length).toBe(3);
+    expect(wrapper.find('input[type="checkbox"]').filterWhere((n) => n.get(0).props.checked).length).toBe(3);
   });
   it('renders a <Tree onCheckItem={cb}/> with onCheckItem cb defined and triggered', () => {
     const onCheckItemCb = jest.fn();
@@ -67,24 +67,14 @@ describe('<Tree />', () => {
     const onUnfoldItemCb = jest.fn();
     const item = sampleInput[1];
     const wrapper = mount(<Tree treeData={sampleInput} onUnfoldItem={onUnfoldItemCb} />);
-    wrapper
-      .find('li')
-      .at(1)
-      .find('div')
-      .first()
-      .simulate('click');
+    wrapper.find('li').at(1).find('div').first().simulate('click');
     expect(onUnfoldItemCb).toBeCalledWith(item);
   });
   it('renders a <Tree onFoldItem={cb}/> with onFoldItem cb defined and triggered', () => {
     const onFoldItemCb = jest.fn();
     const item = sampleInput[1];
     const wrapper = mount(<Tree treeData={sampleInput} expandedAll onFoldItem={onFoldItemCb} />);
-    wrapper
-      .find('li')
-      .at(1)
-      .find('div')
-      .first()
-      .simulate('click');
+    wrapper.find('li').at(1).find('div').first().simulate('click');
     expect(onFoldItemCb).toBeCalledWith(item);
   });
 });

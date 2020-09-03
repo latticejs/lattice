@@ -7,7 +7,7 @@ const getSection = (html, id) => {
 };
 
 const concatSections = (html, sections = []) => {
-  return sections.map(id => getSection(html, id)).join('');
+  return sections.map((id) => getSection(html, id)).join('');
 };
 
 export const withReadme = (readme = '') => {
@@ -18,7 +18,7 @@ export const withReadme = (readme = '') => {
       return withReadmeBase(readme, sections);
     }
 
-    return component => {
+    return (component) => {
       if (sections.length === 0) {
         return withReadmeBase(readme, component);
       }

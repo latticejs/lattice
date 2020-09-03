@@ -9,14 +9,14 @@ import minify from 'rollup-plugin-babel-minify';
 const FORMATS = {
   ESM: 'esm',
   CJS: 'cjs',
-  UMD: 'umd'
+  UMD: 'umd',
 };
 
 const COMMON_GLOBALS = {
   react: 'React',
   'react-dom': 'ReactDOM',
   'prop-types': 'PropTypes',
-  classnames: 'classnames'
+  classnames: 'classnames',
 };
 
 const COMMON_EXTERNALS = ['@babel/runtime/helpers', '@material-ui/core/'];
@@ -30,7 +30,7 @@ const onwarn = (warning, warn) => {
 
 const DEFAULT_CONFIG = {
   codeSplitting: [],
-  outputFolder: 'dist'
+  outputFolder: 'dist',
 };
 
 export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD], env = process.env.NODE_ENV }) => {
@@ -45,37 +45,37 @@ export default async (input, { formats = [FORMATS.CJS, FORMATS.ESM, FORMATS.UMD]
     external,
     plugins,
     treeshake: {
-      pureExternalModules: true
+      pureExternalModules: true,
     },
-    onwarn
+    onwarn,
   };
 
   const outputOptions = {
     name,
     globals: COMMON_GLOBALS,
     sourcemap: !production,
-    exports: 'named'
+    exports: 'named',
   };
 
-  const jobs = formats.map(format => {
+  const jobs = formats.map((format) => {
     const notUMD = format !== FORMATS.UMD;
 
     const bundleInputOptions = {
       ...inputOptions,
       input:
-        notUMD && codeSplitting ? [input].concat(config.codeSplitting.map(file => path.join(baseDir, file))) : input,
-      experimentalCodeSplitting: notUMD && codeSplitting
+        notUMD && codeSplitting ? [input].concat(config.codeSplitting.map((file) => path.join(baseDir, file))) : input,
+      experimentalCodeSplitting: notUMD && codeSplitting,
     };
 
     const bundleOutputOptions = {
       ...outputOptions,
       format,
-      ...(notUMD && codeSplitting ? { dir: path.join(baseDir, config.outputFolder, format) } : { file: dests[format] })
+      ...(notUMD && codeSplitting ? { dir: path.join(baseDir, config.outputFolder, format) } : { file: dests[format] }),
     };
 
     return rollup(bundleInputOptions)
-      .then(bundle => bundle.write(bundleOutputOptions))
-      .then(result => ({ format, result }))
+      .then((bundle) => bundle.write(bundleOutputOptions))
+      .then((result) => ({ format, result }))
       .catch(console.error);
   });
 
@@ -92,33 +92,33 @@ const getExternalFn = ({ pkg }) => {
     .concat(Object.keys(pkg.dependencies || []))
     .concat(COMMON_EXTERNALS);
 
-  return id => allExternals.some(ex => id.startsWith(ex));
+  return (id) => allExternals.some((ex) => id.startsWith(ex));
 };
 
 const getPlugins = ({ env, baseDir, production }) => [
   babel({
     exclude: /node_modules/,
-    runtimeHelpers: true
+    runtimeHelpers: true,
   }),
 
   resolve({
     jsnext: true,
     browser: true,
     customResolveOptions: {
-      moduleDirectory: path.join(baseDir, 'src')
-    }
+      moduleDirectory: path.join(baseDir, 'src'),
+    },
   }),
 
   commonjs({
     include: /node_modules/,
     namedExports: {
-      '@material-ui/core/styles': ['withStyles']
-    }
+      '@material-ui/core/styles': ['withStyles'],
+    },
   }),
 
   replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
 
-  production && minify()
+  production && minify(),
 ];
 
 const loadPkgInfo = ({ baseDir, config }) => {
@@ -135,7 +135,7 @@ const loadPkgInfo = ({ baseDir, config }) => {
   const dests = {
     [FORMATS.UMD]: pkg.browser || `./${config.outputFolder}/umd/index.js`,
     [FORMATS.CJS]: pkg.main || `./${config.outputFolder}/cjs/index.js`,
-    [FORMATS.ESM]: pkg.module || `./${config.outputFolder}/esm/index.js`
+    [FORMATS.ESM]: pkg.module || `./${config.outputFolder}/esm/index.js`,
   };
 
   const external = getExternalFn({ pkg });
@@ -143,7 +143,7 @@ const loadPkgInfo = ({ baseDir, config }) => {
   return {
     name,
     dests,
-    external
+    external,
   };
 };
 

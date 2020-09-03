@@ -18,13 +18,13 @@ const enhanceConfirmation = compose(
     onAccept: () => null,
     onCancel: () => null,
     acceptText: 'Confirm',
-    cancelText: 'Cancel'
+    cancelText: 'Cancel',
   }),
   withHandlers({
     close: ({ uiStore, id, onClose }) => () => {
       onClose();
       uiStore.dialogs.close(id);
-    }
+    },
   }),
   withHandlers({
     accept: ({ close, onAccept }) => () => {
@@ -34,14 +34,14 @@ const enhanceConfirmation = compose(
     cancel: ({ close, onCancel }) => () => {
       onCancel();
       close();
-    }
+    },
   }),
-  withStyles(theme => ({
+  withStyles((theme) => ({
     paper: {
       borderBottomStyle: 'solid',
       borderBottomColor: theme.palette.primary[theme.palette.type],
-      borderBottomWidth: theme.spacing(0.5)
-    }
+      borderBottomWidth: theme.spacing(0.5),
+    },
   })),
   observer
 );

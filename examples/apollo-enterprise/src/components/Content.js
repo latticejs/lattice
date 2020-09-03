@@ -2,20 +2,20 @@ import React from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     ...theme.mixins.gutters({
       padding: '30px 0',
       flex: '1 1 100%',
       maxWidth: '100%',
-      margin: '0 auto'
-    })
+      margin: '0 auto',
+    }),
   },
   [theme.breakpoints.up(1200 + theme.spacing(6))]: {
     root: {
-      maxWidth: 1200
-    }
-  }
+      maxWidth: 1200,
+    },
+  },
 });
 
 const Content = ({ classes, children }) => {

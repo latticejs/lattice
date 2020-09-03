@@ -7,10 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import { ResponsiveContainer, BarChart, Bar, Tooltip, Legend, YAxis } from '@latticejs/mui-recharts';
 import { Loader, Widget } from '@latticejs/widgets';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 const CustomTooltip = ({ payload }) => {
@@ -49,8 +49,8 @@ function MemoryUsage({ data, loading, classes }) {
     parsedData = [
       {
         usage,
-        free
-      }
+        free,
+      },
     ];
   }
 

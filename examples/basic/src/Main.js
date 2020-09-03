@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 // Material-UI
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -6,38 +6,31 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // our App
 import App from './App';
 
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nightMode: false
-    };
-  }
+const Main = (props) => {
+  const [nightMode, setNightMode] = useState(false);
 
-  createTheme() {
-    const { nightMode } = this.state;
+  const createTheme = () => {
+    // const { nightMode } = this.state;
     return createMuiTheme({
       palette: {
-        type: nightMode ? 'dark' : 'light'
+        type: nightMode ? 'dark' : 'light',
       },
       typography: {
-        useNextVariants: true
-      }
-    });
-  }
-
-  updateTheme = mode => {
-    this.setState({
-      nightMode: mode
+        useNextVariants: true,
+      },
     });
   };
 
-  render() {
-    return (
-      <MuiThemeProvider theme={this.createTheme()}>
-        <CssBaseline />
-        <App {...this.props} updateTheme={this.updateTheme} nightMode={this.state.nightMode} />
-      </MuiThemeProvider>
-    );
-  }
-}
+  const updateTheme = (mode) => {
+    setNightMode(mode);
+  };
+
+  return (
+    <MuiThemeProvider theme={createTheme()}>
+      <CssBaseline />
+      <App {...this.props} updateTheme={updateTheme} nightMode={nightMode} />
+    </MuiThemeProvider>
+  );
+};
+
+export default Main;

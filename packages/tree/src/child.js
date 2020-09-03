@@ -24,8 +24,8 @@ export class Item extends Component {
             checked,
             key: getItemKey({ item: subItem, lvl }),
             lvl,
-            getItemKey
-          })
+            getItemKey,
+          }),
         };
       }, initial);
     } else {
@@ -69,14 +69,14 @@ export class Item extends Component {
       secondaryActions,
       lvl,
       getItemKey,
-      markUnfoldedParent = false
+      markUnfoldedParent = false,
     } = this.props;
 
     return (
       <ListItem
         key={getItemKey({ item, lvl })}
         button
-        onClick={e => this.handleToggleFold({ e, item, toggleFold, lvl })}
+        onClick={(e) => this.handleToggleFold({ e, item, toggleFold, lvl })}
         selected={markUnfoldedParent && isExpanded({ item, lvl })}
       >
         <ListItemIcon>{iconItem({ item, isChild, expanded: isExpanded({ item, lvl }) })}</ListItemIcon>
@@ -91,7 +91,7 @@ export class Item extends Component {
                 cascadeCheck,
                 onCheckItem,
                 lvl,
-                getItemKey
+                getItemKey,
               })
             }
             tabIndex={-1}
@@ -118,10 +118,10 @@ Item.propTypes = {
   secondaryActions: Types.array,
   lvl: Types.number,
   getItemKey: Types.func,
-  markUnfoldedParent: Types.bool
+  markUnfoldedParent: Types.bool,
 };
 
-export const Childrens = props => {
+export const Childrens = (props) => {
   const { childClass = {}, childrens } = props;
 
   return (

@@ -14,7 +14,7 @@ export class AppStore {
     return {
       store: this,
       projectStore: this.projectStore,
-      uiStore: this.uiStore
+      uiStore: this.uiStore,
     };
   }
 }

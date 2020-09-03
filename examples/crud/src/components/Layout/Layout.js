@@ -21,34 +21,34 @@ import { CssBaseline } from '@material-ui/core';
 import Dialogs from './Dialogs';
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'c'
+  productionPrefix: 'c',
 });
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     height: '100%',
     display: 'flex',
     justifyItems: 'stretch',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   appBar: {
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
   flex: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   container: {
     flex: '1',
     display: 'flex',
     padding: theme.spacing(1),
-    flexDirection: 'row'
-  }
+    flexDirection: 'row',
+  },
 });
 
 class Layout extends Component {
   state = {
-    nightMode: false
+    nightMode: false,
   };
 
   createTheme() {
@@ -58,18 +58,18 @@ class Layout extends Component {
       palette: {
         primary: blue,
         secondary: pink,
-        type: nightMode ? 'dark' : 'light'
+        type: nightMode ? 'dark' : 'light',
       },
       typography: {
         useNextVariants: true,
-        suppressDeprecationWarnings: true
-      }
+        suppressDeprecationWarnings: true,
+      },
     });
   }
 
   toggleTheme = () => {
     this.setState({
-      nightMode: !this.state.nightMode
+      nightMode: !this.state.nightMode,
     });
   };
 
@@ -106,7 +106,7 @@ class Layout extends Component {
 
 Layout.propTypes = {
   children: Types.element,
-  classes: Types.object
+  classes: Types.object,
 };
 
 export default withStyles(styles)(Layout);
