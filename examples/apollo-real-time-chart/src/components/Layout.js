@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // Material-UI
 import AppBar from '@material-ui/core/AppBar';
@@ -29,33 +29,31 @@ const styles = (theme) => ({
   },
 });
 
-class Layout extends Component {
-  handleNightModeChange = () => {
-    const { handleUpdateTheme, nightMode } = this.props;
+const Layout = (props) => {
+  const { classes, nightMode, children } = props;
+
+  const handleNightModeChange = () => {
+    const { handleUpdateTheme, nightMode } = props;
     handleUpdateTheme(!nightMode);
   };
 
-  render() {
-    const { classes, nightMode, children } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <AppBar position="static" className={classes.appBar}>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" className={classes.flex}>
-              Dashboard
-            </Typography>
-            <Tooltip title="Toggle Night Mode" enterDelay={300}>
-              <IconButton onClick={this.handleNightModeChange} color="inherit">
-                {nightMode ? <DayIcon /> : <NightIcon />}
-              </IconButton>
-            </Tooltip>
-          </Toolbar>
-        </AppBar>
-        <div className={classes.container}>{children}</div>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" className={classes.flex}>
+            Dashboard
+          </Typography>
+          <Tooltip title="Toggle Night Mode" enterDelay={300}>
+            <IconButton onClick={handleNightModeChange} color="inherit">
+              {nightMode ? <DayIcon /> : <NightIcon />}
+            </IconButton>
+          </Tooltip>
+        </Toolbar>
+      </AppBar>
+      <div className={classes.container}>{children}</div>
+    </div>
+  );
+};
 
 export default withStyles(styles)(Layout);
