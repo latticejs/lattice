@@ -13,5 +13,5 @@ export class UiStore extends RootStore {
 decorate(UiStore, {
   projectList: observable,
   projectForm: observable,
-  dialogs: observable
+  dialogs: observable,
 });

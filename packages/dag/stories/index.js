@@ -14,12 +14,12 @@ import { Paper } from '@material-ui/core';
 import muiTheme from '../.storybook/decorator-material-ui';
 import { withReadme } from '@latticejs/storybook-readme';
 
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
-const JssDecorator = story => (
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
+const JssDecorator = (story) => (
   <JssProvider
     generateClassName={createGenerateClassName({
       dangerouslyUseGlobalCSS: true,
-      productionPrefix: 'c'
+      productionPrefix: 'c',
     })}
   >
     {story()}
@@ -36,36 +36,36 @@ const getProps = (mix = {}) => {
       { title: 'react' },
       { title: 'react-dom' },
       { title: 'apollo' },
-      { title: 'enzyme' }
+      { title: 'enzyme' },
     ],
     edges: [
       {
         source: 'app',
-        target: 'lodash'
+        target: 'lodash',
       },
       {
         source: 'app',
-        target: 'react'
+        target: 'react',
       },
       {
         source: 'app',
-        target: 'react-dom'
+        target: 'react-dom',
       },
       {
         source: 'react',
-        target: 'react-dom'
+        target: 'react-dom',
       },
       {
         source: 'app',
-        target: 'apollo'
+        target: 'apollo',
       },
       {
         source: 'app',
-        target: 'enzyme'
-      }
+        target: 'enzyme',
+      },
     ],
     width: 800,
-    height: 800
+    height: 800,
   };
   return Object.assign(defaults, mix);
 };
@@ -102,20 +102,20 @@ export default ({ storiesOf, forceReRender }) => {
   storiesOf('dag/advanced', module).add(
     'editable mode',
     withApiReadme(() => {
-      const addNode = node => {
+      const addNode = (node) => {
         node.fx = node.x;
         node.fy = node.y;
         const nodes = [...props.get('nodes'), node];
         props.set({ nodes });
       };
-      const addEdge = edge => {
+      const addEdge = (edge) => {
         const edges = [...props.get('edges'), edge];
         props.set({ edges });
       };
       const removeNode = ({ nodes, edges }) => {
         props.set({ nodes, edges });
       };
-      const removeEdge = edges => {
+      const removeEdge = (edges) => {
         props.set({ edges });
       };
       return (

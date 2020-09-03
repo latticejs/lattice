@@ -7,11 +7,11 @@ import { withReadme } from '@latticejs/storybook-readme';
 import { Paper } from '@material-ui/core';
 import Readme from '../README.md';
 
-const Flexed = story => (
+const Flexed = (story) => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
 
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 const PaperWrap = ({ children }) => (
   <Paper elevation={2} style={{ width: '800px', height: '800px' }}>
@@ -49,7 +49,7 @@ class AdvancedGauge extends Component {
       valueBoxBorderRadius: '0',
       valueTextShadow: '0',
       needleType: 'arrow',
-      colorValueBoxBackground: 'transparent'
+      colorValueBoxBackground: 'transparent',
     };
   }
   render() {
@@ -85,7 +85,7 @@ class BasicThemedGauge extends Component {
       needleCircleInner: false,
       animateOnInit: 'true',
       animationDuration: 1500,
-      animationRule: 'linear'
+      animationRule: 'linear',
     };
   }
   render() {
@@ -117,7 +117,7 @@ class AdvancedThemedGauge extends Component {
       valueBoxBorderRadius: '0',
       valueTextShadow: '0',
       needleType: 'arrow',
-      colorValueBoxBackground: 'transparent'
+      colorValueBoxBackground: 'transparent',
     };
   }
   render() {

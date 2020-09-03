@@ -24,13 +24,13 @@ export const navigation = [
     path: DASHBOARD,
     title: 'Dashboard',
     component: Dashboard,
-    icon: DashboardIcon
+    icon: DashboardIcon,
   },
   {
     path: EMPLOYEES,
     title: 'Employees',
     component: Employees,
-    icon: PeopleIcon
+    icon: PeopleIcon,
   },
   {
     title: 'Theme',
@@ -40,51 +40,51 @@ export const navigation = [
         path: THEME_GENERAL,
         title: 'General',
         component: General,
-        icon: TextFormatIcon
+        icon: TextFormatIcon,
       },
       {
         path: THEME_WIDGETS,
         title: 'Widgets',
         component: Widgets,
-        icon: WidgetsIcon
-      }
-    ]
-  }
+        icon: WidgetsIcon,
+      },
+    ],
+  },
 ];
 
 const routesInNavigation = () => {
   const sub = navigation
-    .filter(r => r.children)
-    .map(r => {
+    .filter((r) => r.children)
+    .map((r) => {
       const { title, children } = r;
-      children.map(c => (c.breadcrumb = `${title} | ${c.title}`));
+      children.map((c) => (c.breadcrumb = `${title} | ${c.title}`));
       return r;
     })
     .reduce((prev, curr) => prev.concat(...curr.children), []);
 
-  return navigation.filter(r => r.path).concat(...sub);
+  return navigation.filter((r) => r.path).concat(...sub);
 };
 
 const routes = [
   {
     path: '/',
-    redirect: '/dashboard'
+    redirect: '/dashboard',
   },
   {
     path: EMPLOYEES_CREATE,
     title: 'Create Employee',
-    component: EmployeesForm
+    component: EmployeesForm,
   },
   {
     path: EMPLOYEES_EDIT,
     title: 'Edit Employee',
-    component: EmployeesForm
+    component: EmployeesForm,
   },
-  ...routesInNavigation()
+  ...routesInNavigation(),
 ];
 
 export default routes;
 
-export const routeByPath = pathname => {
-  return routes.filter(route => !route.redirect && route.path === pathname)[0];
+export const routeByPath = (pathname) => {
+  return routes.filter((route) => !route.redirect && route.path === pathname)[0];
 };

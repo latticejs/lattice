@@ -15,7 +15,7 @@ import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
 
-const InGrid = story => (
+const InGrid = (story) => (
   <Grid container spacing={3}>
     <Grid item xs={12}>
       {story()}
@@ -23,44 +23,44 @@ const InGrid = story => (
   </Grid>
 );
 
-const Flexed = story => (
+const Flexed = (story) => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
 
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
-const delay = time => new Promise(resolve => setTimeout(resolve, time));
+const delay = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 class Basic extends Component {
   state = {
-    items: Array.from(Array(10).keys()).map(v => ({ index: v, title: `title ${v}`, timestamp: Date.now() })),
+    items: Array.from(Array(10).keys()).map((v) => ({ index: v, title: `title ${v}`, timestamp: Date.now() })),
     orderBy: [],
-    filterBy: []
+    filterBy: [],
   };
 
   findItem = ({ index }) => {
-    return this.state.items.find(i => i.index === index);
+    return this.state.items.find((i) => i.index === index);
   };
 
   loadMore = async ({ startIndex, stopIndex }) => {
     await delay(500);
 
-    this.setState(state => {
-      const newItems = Array.from(Array(stopIndex - startIndex + 1).keys()).map(v => ({
+    this.setState((state) => {
+      const newItems = Array.from(Array(stopIndex - startIndex + 1).keys()).map((v) => ({
         index: startIndex + v,
         title: `title ${startIndex + v}`,
-        timestamp: Date.now()
+        timestamp: Date.now(),
       }));
 
       return { items: [...state.items, ...newItems] };
     });
   };
 
-  handleOrder = orderBy => {
+  handleOrder = (orderBy) => {
     this.setState({ orderBy });
   };
 
-  handleSearch = filterBy => {
+  handleSearch = (filterBy) => {
     this.setState({ filterBy });
   };
 }
@@ -68,7 +68,7 @@ class Basic extends Component {
 Basic.defaultProps = {
   limit: 10,
   width: 200,
-  height: 400
+  height: 400,
 };
 
 const renderBody = ({ item, isEmpty, key, style }) => {

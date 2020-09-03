@@ -58,7 +58,7 @@ class Editor extends Component {
 
     const froalaConfig = {
       theme,
-      ...config
+      ...config,
     };
 
     return froalaConfig;
@@ -77,7 +77,7 @@ class Editor extends Component {
       this.state.initControls.destroy();
       this.setState(
         {
-          theme: selectedThemeName
+          theme: selectedThemeName,
         },
         () => {
           if (!this.state.initControls.getEditor()) {
@@ -104,7 +104,7 @@ class Editor extends Component {
 }
 
 Editor.defaultProps = {
-  config: {}
+  config: {},
 };
 
 export default withTheme(Editor);

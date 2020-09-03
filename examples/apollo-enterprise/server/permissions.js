@@ -24,7 +24,7 @@ const isAuthenticated = rule()(async (_, args, ctx, info) => {
 
 module.exports = shield({
   Query: {
-    currentUser: isAuthenticated
+    currentUser: isAuthenticated,
   },
-  Mutation: {}
+  Mutation: {},
 });
