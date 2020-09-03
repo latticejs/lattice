@@ -5,7 +5,7 @@ A configurable map-like component built upon `mapbox`.
 ## Install
 
 ```bash
-npm install @latticejs/map --save-dev
+npm install @latticejs/map --save
 ```
 
 <!-- start:map -->
@@ -81,33 +81,32 @@ you can also pass other props, Here are the reference of props list [reference](
 - use `getMap()` it will return the map object on which you can add other controls like marker, navigation ect.
 
 ## Ex:- 
-`
-  afterMapLoad = (mapObj) => {
+```
+afterMapLoad = (mapObj) => {
     let navigation = new Mapboxgl.NavigationControl();
     mapObj.addControl(navigation, 'top-left');
     mapObj.addControl(
-      new MapboxGeocoder({
-        accessToken: Mapboxgl.accessToken,
-        mapboxgl: Mapboxgl
-      })
+        new MapboxGeocoder({
+            accessToken: Mapboxgl.accessToken,
+            mapboxgl: Mapboxgl
+        })
     );
 
     mapObj.on('render', function(evt) {
-      let layers = ['country-label-lg', 'place-city-sm'];
-      layers.map(layer => {
-        mapObj.setLayoutProperty(layer, 'text-field', [
-          'format',
-          ['get', 'name_en'],
-          {
-            'font-scale': 1.2,
-            'text-font': ['literal', ['Roboto Bold']]
-          }
-        ]);
-        return null;
-      });
+        let layers = ['country-label-lg', 'place-city-sm'];
+        layers.map(layer => {
+            mapObj.setLayoutProperty(layer, 'text-field', [
+                'format', ['get', 'name_en'],
+                {
+                    'font-scale': 1.2,
+                    'text-font': ['literal', ['Roboto Bold']]
+                }
+            ]);
+            return null;
+        });
     });
-  }
-`
+}
+```
 
 - We are passing `afterMapComplete={this.afterMapLoad}` as props
 - Once Map creation functionality completed it return `mapObj`.

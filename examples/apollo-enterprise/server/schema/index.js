@@ -38,5 +38,5 @@ module.exports = {
     taskResolvers,
     statResolvers,
     productResolvers
-  )
+  ),
 };

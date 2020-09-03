@@ -16,11 +16,11 @@ export default function requestData(httpObj, successHandler, errorHandler, isJSO
       method: httpObj.method || 'post',
       baseURL: httpObj.baseURL || serverUrl,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       params: httpObj.params,
       timeout: 40000,
-      data: httpData
+      data: httpData,
     })
     .then(successHandler, errorHandler);
 }

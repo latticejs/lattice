@@ -12,10 +12,10 @@ const SortPropertySelect = ({ sortItems = [], value, onChange }) => (
       onChange={onChange}
       inputProps={{
         name: 'sort-property',
-        id: 'sort-property'
+        id: 'sort-property',
       }}
     >
-      {sortItems.map(sortItem => {
+      {sortItems.map((sortItem) => {
         let value, label;
         if (typeof sortItem === 'string') {
           label = sortItem;
@@ -43,7 +43,7 @@ const SortOrderSelect = ({ value, onChange }) => (
       onChange={onChange}
       inputProps={{
         name: 'sort-order',
-        id: 'sort-order'
+        id: 'sort-order',
       }}
     >
       <MenuItem value="asc">Asc</MenuItem>

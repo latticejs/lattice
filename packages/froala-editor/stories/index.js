@@ -7,7 +7,7 @@ import { withReadme } from '@latticejs/storybook-readme';
 import Readme from '../README.md';
 import '../styles/css/style.css';
 
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 class BasicEditor extends Component {
   render() {

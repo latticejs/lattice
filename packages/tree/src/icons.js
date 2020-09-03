@@ -10,7 +10,7 @@ export const FolderOpen = () => <FolderOpenIcon />;
 export const File = () => <FileIcon />;
 
 export const withTreeItemIcon = (treeItemIconFn = () => null) => {
-  return props => {
+  return (props) => {
     const icon = treeItemIconFn(props);
     if (!icon) return TreeItemIcon(props);
     return icon;

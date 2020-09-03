@@ -13,7 +13,7 @@ export const DEFAULTS = {
   BACKSPACE_KEY: 8,
   DELETE_KEY: 46,
   ENTER_KEY: 13,
-  nodeRadius: 50
+  nodeRadius: 50,
 };
 
 const updateArrow = (arrow, line, nodeRadius) => {
@@ -51,7 +51,7 @@ export default class DagCore {
       height: initialState.height,
       width: initialState.width,
       nodes: initialState.nodes,
-      edges: initialState.edges
+      edges: initialState.edges,
     };
 
     this.props = props;
@@ -65,30 +65,17 @@ export default class DagCore {
       nodes: initialState.nodes,
       edges: initialState.edges,
       theme: initialState.classes.dagEdgeMarker,
-      nodeRadius: initialState.nodeRadius
+      nodeRadius: initialState.nodeRadius,
     });
   }
 
   createGraph({ root, width, height, nodes, edges, theme, nodeRadius }) {
-    select(root)
-      .attr('class', theme)
-      .attr('orient', 'auto');
+    select(root).attr('class', theme).attr('orient', 'auto');
 
     this.svg = select(`.${DEFAULTS.graphClass}`);
     this.simulation = forceSimulation(nodes)
-      .force(
-        'charge',
-        forceManyBody()
-          .strength(`-${nodeRadius}`)
-          .distanceMax(0)
-      )
-      .force(
-        'link',
-        forceLink(edges)
-          .id(this.props.getNodeIdx)
-          .distance(nodeRadius)
-          .strength(1)
-      )
+      .force('charge', forceManyBody().strength(`-${nodeRadius}`).distanceMax(0))
+      .force('link', forceLink(edges).id(this.props.getNodeIdx).distance(nodeRadius).strength(1))
       .force(
         'collide',
         forceCollide()
@@ -132,7 +119,7 @@ export default class DagCore {
     const that = this;
     that.linesCache = [];
     //if (this.linesCache.length > 0) return;
-    selectAll(`.${DEFAULTS.arrowClass}`).each(function() {
+    selectAll(`.${DEFAULTS.arrowClass}`).each(function () {
       if (!that.linesCache[this.id]) {
         that.linesCache[this.id] = this.parentNode.querySelector('line');
       }
@@ -144,19 +131,8 @@ export default class DagCore {
     this.state.edges = edges;
 
     this.simulation = forceSimulation(nodes)
-      .force(
-        'charge',
-        forceManyBody()
-          .strength(`-${this.state.nodeRadius}`)
-          .distanceMax(0)
-      )
-      .force(
-        'link',
-        forceLink(edges)
-          .id(this.props.getNodeIdx)
-          .distance(this.state.nodeRadius)
-          .strength(1)
-      )
+      .force('charge', forceManyBody().strength(`-${this.state.nodeRadius}`).distanceMax(0))
+      .force('link', forceLink(edges).id(this.props.getNodeIdx).distance(this.state.nodeRadius).strength(1))
       .force(
         'collide',
         forceCollide()
@@ -179,20 +155,20 @@ export default class DagCore {
     const that = this;
     // move lines
     selectAll('line')
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y);
+      .attr('x1', (d) => d.source.x)
+      .attr('y1', (d) => d.source.y)
+      .attr('x2', (d) => d.target.x)
+      .attr('y2', (d) => d.target.y);
 
     // add arrow heads using a polygon
-    selectAll(`.${DEFAULTS.arrowClass}`).each(function() {
+    selectAll(`.${DEFAULTS.arrowClass}`).each(function () {
       if (that.linesCache[this.id]) {
         updateArrow(this, that.linesCache[this.id], nodeRadius);
       }
     });
 
     // move nodes
-    selectAll(`.${DagCore.DEFAULTS.nodeClass}`).attr('transform', d => {
+    selectAll(`.${DagCore.DEFAULTS.nodeClass}`).attr('transform', (d) => {
       d.fx = d.x;
       d.fy = d.y;
       return `translate(${d.x}, ${d.y})`;
@@ -228,10 +204,10 @@ export default class DagCore {
         }
         return true;
       })
-      .on('start', function() {
+      .on('start', function () {
         select('body').style('cursor', 'move');
       })
-      .on('end', function() {
+      .on('end', function () {
         select('body').style('cursor', 'auto');
       });
 
@@ -244,9 +220,9 @@ export default class DagCore {
   setDragMode() {
     selectAll(`.${DagCore.DEFAULTS.nodeClass}`).call(
       drag()
-        .on('start', d => (this.state.dragEnable ? this.dragstarted(d) : () => {}))
-        .on('drag', d => (this.state.dragEnable ? this.dragged(d) : () => {}))
-        .on('end', d => (this.state.dragEnable ? this.dragended(d) : () => {}))
+        .on('start', (d) => (this.state.dragEnable ? this.dragstarted(d) : () => {}))
+        .on('drag', (d) => (this.state.dragEnable ? this.dragged(d) : () => {}))
+        .on('end', (d) => (this.state.dragEnable ? this.dragended(d) : () => {}))
     );
   }
 

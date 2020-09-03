@@ -19,7 +19,7 @@ ${readmeUsage}
 const Component = () => null;
 
 describe('withReadme', () => {
-  it('must include all the readme file', done => {
+  it('must include all the readme file', (done) => {
     const allReadme = withReadme(Readme)(Component);
 
     expect(allReadme).toMatch(Readme);
@@ -27,7 +27,7 @@ describe('withReadme', () => {
     done();
   });
 
-  it('must include just some sections of the readme file', done => {
+  it('must include just some sections of the readme file', (done) => {
     const Component = () => null;
     const loadSections = withReadme(Readme);
     const usageReadmeSection = loadSections(['usage']);
@@ -38,7 +38,7 @@ describe('withReadme', () => {
     done();
   });
 
-  it('must include all joined sections of the readme file', done => {
+  it('must include all joined sections of the readme file', (done) => {
     const Component = () => null;
     const loadSections = withReadme(Readme);
     const allReadmeSections = loadSections(['api', 'usage']);

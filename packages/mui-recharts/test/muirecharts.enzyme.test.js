@@ -16,11 +16,6 @@ describe('mui-recharts', () => {
     const wrapper = shallow(<Wrapped />);
 
     expect(wrapper.find('MuiRechart(DummyComponent)').length).toBe(1);
-    expect(
-      wrapper
-        .find('MuiRechart(DummyComponent)')
-        .dive()
-        .props().theme
-    ).toBeDefined();
+    expect(wrapper.find('MuiRechart(DummyComponent)').dive().props().theme).toBeDefined();
   });
 });

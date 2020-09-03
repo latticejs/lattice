@@ -5,7 +5,7 @@ A editor component built upon `froala-editor`.
 ## Install
 
 ```bash
-npm install @latticejs/froala-editor --save-dev
+npm install @latticejs/froala-editor --save
 ```
 
 ## Usage
@@ -28,9 +28,9 @@ The above snippet will render a basic Editor with a material _look'n'feel_. It a
 
 <!-- start:api -->
 ### Props 
->  `config`
->  `model`
->  `onModelChange`
+>  `config`: This include the complete Froala configurations that can be used to modify the editor
+>  `model`: The binder of the Froala editor.
+>  `onModelChange`: On Model Change callback.
 
 <!-- end:api -->
 

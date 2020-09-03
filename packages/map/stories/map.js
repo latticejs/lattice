@@ -10,19 +10,19 @@ import Readme from '../README.md';
 import '../styles/style.css';
 import { token } from '../config';
 
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
-const Flexed = story => (
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const Flexed = (story) => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
 
 class BasicMap extends Component {
-  afterMapLoad = mapObj => {
+  afterMapLoad = (mapObj) => {
     let navigation = new Mapboxgl.NavigationControl();
     mapObj.addControl(navigation, 'top-left');
     mapObj.addControl(
       new MapboxGeocoder({
         accessToken: Mapboxgl.accessToken,
-        mapboxgl: Mapboxgl
+        mapboxgl: Mapboxgl,
       })
     );
   };
