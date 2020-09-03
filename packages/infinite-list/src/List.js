@@ -4,7 +4,7 @@ import { default as MuiListItem } from '@material-ui/core/ListItem';
 import { default as MuiListItemSecondaryAction } from '@material-ui/core/ListItemSecondaryAction';
 import ScrollLoader from './ScrollLoader';
 
-const withDiv = WrappedComponent => props => <WrappedComponent {...props} component="div" />;
+const withDiv = (WrappedComponent) => (props) => <WrappedComponent {...props} component="div" />;
 
 export const List = (props = {}) => {
   const { classes, className, dense, disablePadding, subheader, ...loaderProps } = props;

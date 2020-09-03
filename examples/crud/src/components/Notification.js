@@ -17,36 +17,36 @@ const variantIcon = {
   success: CheckCircleIcon,
   warning: WarningIcon,
   error: ErrorIcon,
-  info: InfoIcon
+  info: InfoIcon,
 };
 
-const styles1 = theme => ({
+const styles1 = (theme) => ({
   success: {
-    backgroundColor: green[600]
+    backgroundColor: green[600],
   },
   error: {
-    backgroundColor: theme.palette.error.dark
+    backgroundColor: theme.palette.error.dark,
   },
   info: {
-    backgroundColor: theme.palette.primary.dark
+    backgroundColor: theme.palette.primary.dark,
   },
   warning: {
-    backgroundColor: amber[700]
+    backgroundColor: amber[700],
   },
   icon: {
-    fontSize: 20
+    fontSize: 20,
   },
   iconVariant: {
     opacity: 0.9,
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   message: {
     display: 'flex',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
-const CustomSnackbarContent = props => {
+const CustomSnackbarContent = (props) => {
   const { classes, className, message, onClose, variant, ...other } = props;
   const Icon = variantIcon[variant];
 
@@ -63,7 +63,7 @@ const CustomSnackbarContent = props => {
       action={[
         <IconButton key="close" aria-label="Close" color="inherit" className={classes.close} onClick={onClose}>
           <CloseIcon className={classes.icon} />
-        </IconButton>
+        </IconButton>,
       ]}
       {...other}
     />
@@ -75,22 +75,22 @@ CustomSnackbarContent.propTypes = {
   className: PropTypes.string,
   message: PropTypes.node,
   onClose: PropTypes.func,
-  variant: PropTypes.oneOf(['success', 'warning', 'error', 'info']).isRequired
+  variant: PropTypes.oneOf(['success', 'warning', 'error', 'info']).isRequired,
 };
 
 const CustomSnackbarContentWrapper = withStyles(styles1)(CustomSnackbarContent);
 
-const snackbarStyles = theme => ({
+const snackbarStyles = (theme) => ({
   margin: {
-    margin: theme.spacing(1)
-  }
+    margin: theme.spacing(1),
+  },
 });
 
 const Base = withStyles(snackbarStyles)(({ classes, variant, message, open, onClose, autoHideDuration = 6000 }) => (
   <Snackbar
     anchorOrigin={{
       vertical: 'bottom',
-      horizontal: 'right'
+      horizontal: 'right',
     }}
     open={open}
     autoHideDuration={autoHideDuration}
@@ -100,4 +100,4 @@ const Base = withStyles(snackbarStyles)(({ classes, variant, message, open, onCl
   </Snackbar>
 ));
 
-export const Success = props => <Base variant="success" {...props} />;
+export const Success = (props) => <Base variant="success" {...props} />;

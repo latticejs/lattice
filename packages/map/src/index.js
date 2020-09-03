@@ -19,7 +19,7 @@ class Map extends Component {
       mapStyle: this.getInitialMapStyle(),
       theme: this.props.theme,
       height: this.props.height,
-      width: this.props.width
+      width: this.props.width,
     };
   }
 
@@ -54,7 +54,7 @@ class Map extends Component {
       style: 'mapbox://styles/mapbox/' + mapStyle,
       center: [longitude, latitude],
       zoom,
-      ...this.props
+      ...this.props,
     });
 
     this.map.on('load', this.setLayerFont);
@@ -67,14 +67,14 @@ class Map extends Component {
   setLayerFont = () => {
     let fontArr = this.fontFamily.replace(/['"]+/g, '').split(',');
     let layers = ['country-label-lg', 'place-city-sm'];
-    layers.map(layer => {
+    layers.map((layer) => {
       this.map.setLayoutProperty(layer, 'text-field', [
         'format',
         ['get', 'name_en'],
         {
           'font-scale': 1.2,
-          'text-font': ['literal', [`${fontArr[0]} Bold`]]
-        }
+          'text-font': ['literal', [`${fontArr[0]} Bold`]],
+        },
       ]);
       return null;
     });
@@ -104,10 +104,10 @@ class Map extends Component {
     const style = {
       position: 'static',
       height: this.state.height + 'vh',
-      width: this.state.width + '%'
+      width: this.state.width + '%',
     };
 
-    return <div ref={el => (this.mapContainer = el)} style={style} />;
+    return <div ref={(el) => (this.mapContainer = el)} style={style} />;
   }
 }
 
@@ -119,14 +119,14 @@ Map.propTypes = {
   latitude: PropTypes.number,
   zoom: PropTypes.number,
   height: PropTypes.number,
-  width: PropTypes.number
+  width: PropTypes.number,
 };
 
 Map.defaultProps = {
   darkTheme: 'dark-v9',
   lightTheme: 'streets-v9',
   width: 200,
-  height: 200
+  height: 200,
 };
 
 export default withTheme(Map);

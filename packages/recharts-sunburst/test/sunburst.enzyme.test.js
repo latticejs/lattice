@@ -17,14 +17,14 @@ const data = [
           { name: 'ArrowType', size: 698 },
           { name: 'EdgeRenderer', size: 5569 },
           { name: 'IRenderer', size: 353 },
-          { name: 'ShapeRenderer', size: 2247 }
-        ]
+          { name: 'ShapeRenderer', size: 2247 },
+        ],
       },
       { name: 'ScaleBinding', size: 11275 },
       { name: 'Tree', size: 7147 },
-      { name: 'TreeBuilder', size: 9930 }
-    ]
-  }
+      { name: 'TreeBuilder', size: 9930 },
+    ],
+  },
 ];
 
 class MyTooltip extends React.Component {

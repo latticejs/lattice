@@ -12,18 +12,18 @@ import { Item as TreeChild } from './child';
 import { withTreeItemIcon } from './icons';
 
 // \ Tree Material style \
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'column',
     color: theme.palette.text.secondary,
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.fontSize
+    fontSize: theme.typography.fontSize,
   },
   treeItemNested: {
-    paddingLeft: theme.spacing(4)
-  }
+    paddingLeft: theme.spacing(4),
+  },
 });
 
 // \ reset internal state helper \
@@ -42,8 +42,8 @@ const defaultState = ({ treeData, expandedAll, cascadeUnFold, getItemKey }) => {
             initial: { items: [], keys: [] },
             item,
             lvl: 1,
-            getItemKey
-          })
+            getItemKey,
+          }),
         };
       },
       { items: [], keys: [] }
@@ -52,7 +52,7 @@ const defaultState = ({ treeData, expandedAll, cascadeUnFold, getItemKey }) => {
 
   return {
     expanded: expandedAll ? expandedAllData.keys : [],
-    checked: []
+    checked: [],
   };
 };
 
@@ -71,7 +71,7 @@ const renderGenericCreator = ({
   cascadeCheck,
   showChecks,
   markUnfoldedParent,
-  style
+  style,
 }) => {
   const iterator = (item, isChild = false, lvl = 0, idx) => {
     lvl = lvl + 1;
@@ -94,7 +94,7 @@ const renderGenericCreator = ({
         toggleFold,
         getItemKey,
         showChecks,
-        markUnfoldedParent
+        markUnfoldedParent,
       });
     } else {
       return (
@@ -137,7 +137,7 @@ class Tree extends Component {
     showChecks: true,
     expandedAll: false,
     cascadeCheck: false,
-    markUnfoldedParent: false
+    markUnfoldedParent: false,
   };
 
   constructor(props) {
@@ -145,7 +145,7 @@ class Tree extends Component {
     this.state = defaultState({ ...props, cascadeUnFold: this.cascadeUnFold });
 
     const style = {
-      treeItemNested: props.classes.treeItemNested
+      treeItemNested: props.classes.treeItemNested,
     };
     // Note (dk): this will create our default renderGenericItem. What is a renderGenericItem? It's a function
     // used to know how to render the content, ie: how to render parent nodes and child nodes. While we are using
@@ -166,7 +166,7 @@ class Tree extends Component {
       cascadeCheck: props.cascadeCheck,
       showChecks: props.showChecks,
       markUnfoldedParent: props.markUnfoldedParent,
-      style
+      style,
     });
   }
 
@@ -193,11 +193,11 @@ class Tree extends Component {
 
   toggleCheck = ({ checked: check, items = [], keys = [] }) => {
     const { checked } = this.state;
-    const currentsIndexes = keys.map(key => ({ pos: checked.indexOf(key), key }));
+    const currentsIndexes = keys.map((key) => ({ pos: checked.indexOf(key), key }));
     let newChecked = [];
 
     if (!checked.length) {
-      newChecked = newChecked.concat(currentsIndexes.map(c => c.key));
+      newChecked = newChecked.concat(currentsIndexes.map((c) => c.key));
     } else {
       // Note (dk): we need to order desc the currentIndexes array
       // because it will be splicing the array and if we did that
@@ -243,8 +243,8 @@ class Tree extends Component {
             item: subItem,
             key: getItemKey({ item, lvl }),
             lvl,
-            getItemKey
-          })
+            getItemKey,
+          }),
         };
       }, initial);
     }
@@ -254,7 +254,7 @@ class Tree extends Component {
     return this.state.expanded.indexOf(this.getItemKey({ item, lvl })) !== -1;
   };
 
-  isChecked = item => {
+  isChecked = (item) => {
     return this.state.checked.indexOf(item) !== -1;
   };
 
@@ -280,7 +280,7 @@ class Tree extends Component {
 
 // \ Prop Types \
 let treeDataNode = Types.shape({
-  label: Types.oneOfType([Types.element, Types.string]).isRequired
+  label: Types.oneOfType([Types.element, Types.string]).isRequired,
 });
 
 treeDataNode.children = Types.arrayOf(treeDataNode);
@@ -299,7 +299,7 @@ Tree.propTypes = {
   showChecks: Types.bool,
   markUnfoldedParent: Types.bool,
   expandedAll: Types.bool,
-  cascadeCheck: Types.bool
+  cascadeCheck: Types.bool,
 };
 
 // \ Exported \

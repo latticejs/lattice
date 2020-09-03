@@ -5,10 +5,10 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { Widget } from '@latticejs/widgets';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 function CPUInfo({ data, classes }) {

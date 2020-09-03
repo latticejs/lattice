@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Subscription, graphql } from 'react-apollo';
 import { flowRight as compose } from 'lodash';
 
@@ -17,28 +17,27 @@ import CPUInfo from './components/CPUInfo';
 import DisksUsage from './components/DisksUsage';
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   widget: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    padding: theme.spacing(4)
+    padding: theme.spacing(4),
   },
   link: {
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
   title: {
-    padding: 15
+    padding: 15,
   },
   height400: {
-    height: 400
+    height: 400,
   },
   height300: {
-    height: 300
-  }
+    height: 300,
+  },
 });
 
 const dashboard = (props) => {
-  console.log("Dashboard",props);
   const { classes, platformInfo } = props;
 
   return (
@@ -81,13 +80,13 @@ const dashboard = (props) => {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default compose(
-graphql(getPlatformInfo, {
-  props: ({ data: { getPlatformInfo = {} } }) => ({
-    platformInfo: getPlatformInfo
-  })
-}),
-withStyles(styles)
+  graphql(getPlatformInfo, {
+    props: ({ data: { getPlatformInfo = {} } }) => ({
+      platformInfo: getPlatformInfo,
+    }),
+  }),
+  withStyles(styles)
 )(dashboard);

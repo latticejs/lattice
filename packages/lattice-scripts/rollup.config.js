@@ -12,12 +12,12 @@ const plugins = [
     browser: true,
     jsnext: true,
     customResolveOptions: {
-      moduleDirectory: './src'
-    }
+      moduleDirectory: './src',
+    },
   }),
   commonjs({
-    include: /node_modules/
-  })
+    include: /node_modules/,
+  }),
 ];
 
 export default [
@@ -27,8 +27,8 @@ export default [
     plugins,
     output: {
       file: pkg.bin,
-      format: 'cjs'
-    }
+      format: 'cjs',
+    },
   },
   {
     input: './index.js',
@@ -36,7 +36,7 @@ export default [
     plugins,
     output: {
       file: pkg.main,
-      format: 'cjs'
-    }
-  }
+      format: 'cjs',
+    },
+  },
 ];

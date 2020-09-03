@@ -30,11 +30,11 @@ exports.resolvers = {
   Query: {
     tasksConnection: async (...args) => {
       return handlerConnection(...args);
-    }
+    },
   },
   Task: {
     employees: (_, args, { db }) => {
-      return _.employees.map(id => db.employees.getById(id).value());
-    }
-  }
+      return _.employees.map((id) => db.employees.getById(id).value());
+    },
+  },
 };

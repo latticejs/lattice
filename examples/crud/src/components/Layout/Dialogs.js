@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 const Dialogs = ({ uiStore }) => {
   return (
     <React.Fragment>
-      {uiStore.dialogs.stack.map(dialog => (
+      {uiStore.dialogs.stack.map((dialog) => (
         <dialog.component key={`dialog-${dialog.id}`} {...dialog.renderProps} />
       ))}
     </React.Fragment>

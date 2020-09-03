@@ -6,20 +6,20 @@ import pkg from './package';
 const baseRollupPlugins = [
   babel({
     exclude: ['node_modules/**', '../../node_modules/**'],
-    runtimeHelpers: true
+    runtimeHelpers: true,
   }),
   commonjs({
     include: ['node_modules/**', '../../node_modules/**'],
     namedExports: {
       react: ['Children', 'Component', 'PropTypes', 'createElement'],
-      'react-dom': ['render', 'findDOMNode']
-    }
+      'react-dom': ['render', 'findDOMNode'],
+    },
   }),
   resolve({
     jsnext: true,
     main: true,
-    modulesOnly: true
-  })
+    modulesOnly: true,
+  }),
 ];
 
 const external = Object.keys(pkg.peerDependencies).concat(Object.keys(pkg.dependencies));
@@ -32,14 +32,14 @@ export async function cjs(task, opts) {
       external,
       output: {
         file: 'recharts-sunburst.js',
-        format: 'cjs'
+        format: 'cjs',
       },
-      onwarn: warning => {
+      onwarn: (warning) => {
         if (warning.code === 'CIRCULAR_DEPENDENCY') {
           // skip it
           return;
         }
-      }
+      },
     })
     .target('dist/');
 }
@@ -52,14 +52,14 @@ export async function es(task, opts) {
       external,
       output: {
         file: 'recharts-sunburst.es.js',
-        format: 'es'
+        format: 'es',
       },
-      onwarn: warning => {
+      onwarn: (warning) => {
         if (warning.code === 'CIRCULAR_DEPENDENCY') {
           // skip it
           return;
         }
-      }
+      },
     })
     .target('dist/es');
 }
@@ -79,7 +79,7 @@ export async function build(task) {
   await task.serial(['compile', 'modules']);
 }
 
-export default async function(task) {
+export default async function (task) {
   await task.start('build');
   await task.watch('src/**/*.js', ['compile', 'modules']);
 }

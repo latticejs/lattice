@@ -8,34 +8,34 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     ...theme.mixins.gutters(),
     color: theme.palette.text.secondary,
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
   },
   container: {
-    height: '100%'
+    height: '100%',
   },
   content: {
     fontFamily: theme.typography.fontFamily,
-    flex: 1
+    flex: 1,
   },
   border: {
     borderColor: theme.palette.primary.main,
-    borderWidth: 4
+    borderWidth: 4,
   },
   'border-top': {
-    borderTopStyle: 'solid'
+    borderTopStyle: 'solid',
   },
   'border-bottom': {
-    borderBottomStyle: 'solid'
+    borderBottomStyle: 'solid',
   },
   featured: {
     backgroundColor: theme.palette.primary.main,
-    color: theme.palette.getContrastText(theme.palette.primary.main)
-  }
+    color: theme.palette.getContrastText(theme.palette.primary.main),
+  },
 });
 
 const Widget = ({ title, featured, elevation, classes, border, rounded, className, children, ...props }) => {
@@ -80,7 +80,7 @@ Widget.defaultProps = {
   elevation: 2,
   classes: {},
   border: null,
-  rounded: true
+  rounded: true,
 };
 
 Widget.propTypes = {
@@ -90,7 +90,7 @@ Widget.propTypes = {
   classes: PropTypes.object,
   border: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
   rounded: PropTypes.bool,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.array])
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.array]),
 };
 
 export default withStyles(styles, { name: 'Widget' })(Widget);

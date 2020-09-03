@@ -6,7 +6,7 @@ import ListActions from '../../List/ListActions';
 
 const sortItems = ['Name', 'Author', { Status: 'active' }];
 
-const ProjectListActions = props => {
+const ProjectListActions = (props) => {
   const {
     uiStore: { projectList },
     onAddProject,
@@ -16,7 +16,7 @@ const ProjectListActions = props => {
     selectionOnActivate,
     sortOrderOnChange,
     sortPropertyOnChange,
-    filterOnChange
+    filterOnChange,
   } = props;
 
   return (
@@ -45,7 +45,7 @@ export default compose(
   inject('projectStore', 'uiStore'),
   withState('filterDebounce', 'setFilterDebounce', new Debounced(500)),
   withHandlers({
-    selectedIds: ({ uiStore: { projectList } }) => () => Array.from(projectList.checked.keys())
+    selectedIds: ({ uiStore: { projectList } }) => () => Array.from(projectList.checked.keys()),
   }),
   withHandlers({
     selectAllOnSelectAll: ({ uiStore: { projectList } }) => () => {
@@ -67,30 +67,30 @@ export default compose(
           </div>
         ),
         onAccept: () => {
-          selectedIds().forEach(id => {
+          selectedIds().forEach((id) => {
             projectStore.remove(id);
             projectList.setChecked(id, false);
           });
-        }
+        },
       });
     },
     selectionOnActivate: ({ projectStore, selectedIds }) => (active = true) => {
-      selectedIds().forEach(id => {
+      selectedIds().forEach((id) => {
         projectStore.setActive(id, active);
       });
     },
-    sortOrderOnChange: ({ uiStore: { projectList } }) => e => {
+    sortOrderOnChange: ({ uiStore: { projectList } }) => (e) => {
       projectList.sortOrder = e.target.value;
     },
-    sortPropertyOnChange: ({ uiStore: { projectList } }) => e => {
+    sortPropertyOnChange: ({ uiStore: { projectList } }) => (e) => {
       projectList.sortProperty = e.target.value;
     },
-    filterOnChange: ({ uiStore: { projectList }, filterDebounce }) => e => {
+    filterOnChange: ({ uiStore: { projectList }, filterDebounce }) => (e) => {
       const value = e.target.value;
       filterDebounce.run(() => {
         projectList.filterQuery = value;
       });
-    }
+    },
   }),
   observer
 )(ProjectListActions);

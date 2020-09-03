@@ -17,28 +17,28 @@ import { Widget } from '@latticejs/widgets';
 import { PieChart, Pie, Tooltip } from '@latticejs/mui-recharts';
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   flex: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
   widget: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    padding: theme.spacing(4)
+    padding: theme.spacing(4),
   },
   link: {
-    color: theme.palette.text.secondary
-  }
+    color: theme.palette.text.secondary,
+  },
 });
 
-const Chart = props => (
+const Chart = (props) => (
   <PieChart width={400} height={400}>
     <Pie data={props.deps} dataKey="value" cx={200} cy={200} outerRadius={60} fill="#8884d8" />
     <Pie data={props.devDeps} dataKey="value" cx={200} cy={200} innerRadius={70} outerRadius={90} fill="#82ca9d" />
@@ -60,7 +60,7 @@ class App extends Component {
         { name: '@material-ui/icons', value: 3630161 },
         { name: 'react', value: 5529 },
         { name: 'react-dom', value: 92455 },
-        { name: 'typeface-roboto', value: 3064 }
+        { name: 'typeface-roboto', value: 3064 },
       ],
       devDeps: [
         { name: 'babel-core', value: 539213 },
@@ -72,9 +72,9 @@ class App extends Component {
         { name: 'file-loader', value: 179134 },
         { name: 'html-webpack-plugin', value: 625851 },
         { name: 'style-loader', value: 170557 },
-        { name: 'webpack', value: 1900109 }
-      ]
-    }
+        { name: 'webpack', value: 1900109 },
+      ],
+    },
   };
 
   render() {

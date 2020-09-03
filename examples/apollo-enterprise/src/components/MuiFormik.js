@@ -20,7 +20,7 @@ export const TextField = connect(({ formik, children, loading, ...props }) => {
       <InputAdornment position="start">
         <CircularProgress size={24} />
       </InputAdornment>
-    )
+    ),
   };
 
   return (
@@ -40,13 +40,13 @@ export const TextField = connect(({ formik, children, loading, ...props }) => {
   );
 });
 
-const stylesButton = theme => ({
+const stylesButton = (theme) => ({
   buttonError: {
     backgroundColor: theme.palette.error.main,
     '&:hover': {
-      backgroundColor: theme.palette.error.dark
+      backgroundColor: theme.palette.error.dark,
     },
-    color: theme.palette.error.contrastText
+    color: theme.palette.error.contrastText,
   },
   buttonProgress: {
     color: theme.palette.primary.main,
@@ -54,8 +54,8 @@ const stylesButton = theme => ({
     top: '50%',
     left: '50%',
     marginTop: -12,
-    marginLeft: -12
-  }
+    marginLeft: -12,
+  },
 });
 
 export const Button = connect(
@@ -65,7 +65,7 @@ export const Button = connect(
 
     const buttonClassname = classNames(
       {
-        [classes.buttonError]: submitCount > 0 && !isValid
+        [classes.buttonError]: submitCount > 0 && !isValid,
       },
       className
     );
