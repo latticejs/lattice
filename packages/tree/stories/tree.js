@@ -9,24 +9,24 @@ import Readme from '../README.md';
 import pkg from './pkg.json';
 import { JSONIcon } from './json-icons';
 
-const Flexed = story => (
+const Flexed = (story) => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
 
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 const input = [
   {
-    label: 'index.js'
+    label: 'index.js',
   },
   {
     label: 'assets',
     children: [
       {
-        label: 'index.css'
+        label: 'index.css',
       },
       {
-        label: 'logo.svg'
+        label: 'logo.svg',
       },
       {
         label: 'tmp',
@@ -35,28 +35,28 @@ const input = [
             label: 'foo',
             children: [
               {
-                label: 'lambda'
+                label: 'lambda',
               },
               {
-                label: 'gamma'
-              }
-            ]
+                label: 'gamma',
+              },
+            ],
           },
           {
-            label: 'bar'
+            label: 'bar',
           },
           {
-            label: 'baz'
-          }
-        ]
-      }
-    ]
-  }
+            label: 'baz',
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 class BasicTree extends Component {
   state = {
-    treeData: input
+    treeData: input,
   };
 
   render() {
@@ -66,10 +66,10 @@ class BasicTree extends Component {
 
 class CustomTree extends Component {
   state = {
-    treeData: input
+    treeData: input,
   };
 
-  parseExt = label => label.split('.')[1];
+  parseExt = (label) => label.split('.')[1];
 
   customIcon = ({ item, isChild, expanded }) => {
     const ext = this.parseExt(item.label);
@@ -116,13 +116,13 @@ class CustomTree extends Component {
   }
 }
 
-const isString = value => typeof value === 'string';
-const isDate = value => value !== '' && (value instanceof Date || new Date(value).toString() !== 'Invalid Date');
-const isNumber = value => typeof value === 'number';
-const isArray = value => Array.isArray(value);
-const isObject = value => typeof value === 'object';
+const isString = (value) => typeof value === 'string';
+const isDate = (value) => value !== '' && (value instanceof Date || new Date(value).toString() !== 'Invalid Date');
+const isNumber = (value) => typeof value === 'number';
+const isArray = (value) => Array.isArray(value);
+const isObject = (value) => typeof value === 'object';
 
-const getType = value => {
+const getType = (value) => {
   switch (true) {
     case isArray(value):
       return 'array';
@@ -141,7 +141,7 @@ const getType = value => {
 
 var transform = (input, level = 0) => {
   if (Array.isArray(input)) {
-    return input.map(key => transform(key, level + 1));
+    return input.map((key) => transform(key, level + 1));
   }
 
   if (typeof input === 'string') {
@@ -157,7 +157,7 @@ var transform = (input, level = 0) => {
 
     const item = {
       type: valueType,
-      id: key
+      id: key,
     };
 
     if (['string', 'number', 'date'].includes(valueType)) {
@@ -181,7 +181,7 @@ var transform = (input, level = 0) => {
 
 class JSONTree extends Component {
   state = {
-    treeData: []
+    treeData: [],
   };
 
   customIcon = ({ item, isChild, expanded }) => {
@@ -190,7 +190,7 @@ class JSONTree extends Component {
 
   componentDidMount() {
     this.setState({
-      treeData: transform(pkg)
+      treeData: transform(pkg),
     });
   }
 

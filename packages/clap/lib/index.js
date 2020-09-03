@@ -8,7 +8,7 @@ var repoOptions = {
   owner: 'latticejs',
   repo: 'lattice',
   path: 'examples',
-  ref: 'master'
+  ref: 'master',
 };
 
 function extractMessage(err) {
@@ -157,5 +157,5 @@ async function list(cmd) {
 module.exports = {
   clap: clap,
   list: list,
-  messages: messages
+  messages: messages,
 };

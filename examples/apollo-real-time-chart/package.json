@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@latticejs/mui-recharts": "^1.0.1-beta.2",
-    "@latticejs/widgets": "^1.0.1-beta.2",
+    "@latticejs/mui-recharts": "^1.0.1-beta.3",
+    "@latticejs/widgets": "^1.0.1-beta.3",
     "@material-ui/core": "^4.8.2",
     "@material-ui/icons": "^4.5.1",
     "apollo-cache-inmemory": "^1.6.0",
@@ -29,9 +29,9 @@
     "graphql": "^14.5.0",
     "graphql-tag": "^2.10.0",
     "graphql-yoga": "^1.18.0",
-    "react": "^16.12.0",
+    "react": "^16.13.1",
     "react-apollo": "^3.1.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.13.1",
     "recharts": "^1.8.5",
     "systeminformation": "^3.54.0",
     "typeface-roboto": "^0.0.54"

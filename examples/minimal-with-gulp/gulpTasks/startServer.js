@@ -19,7 +19,7 @@ gulp.task('start:dev', () => {
       noInfo: true,
       hot: true,
       inline: true,
-      publicPath: webpackConfig.dev.output.publicPath
+      publicPath: webpackConfig.dev.output.publicPath,
     })
   );
   app.use(webpackHotMiddleware(compiler));

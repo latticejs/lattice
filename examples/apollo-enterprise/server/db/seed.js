@@ -37,7 +37,7 @@ function getRandomInt(min, max) {
         email: faker.internet.email().toLowerCase(),
         areaId: area.id,
         jobTitle: faker.name.jobTitle(),
-        createdAt: faker.date.past().getTime()
+        createdAt: faker.date.past().getTime(),
       })
       .write();
   }
@@ -52,7 +52,7 @@ function getRandomInt(min, max) {
         description: faker.lorem.paragraph(),
         employees: [employee1, employee2],
         createdAt: createdAt.getTime(),
-        completedAt: getRandomInt(0, 2) ? faker.date.between(createdAt, new Date()).getTime() : null
+        completedAt: getRandomInt(0, 2) ? faker.date.between(createdAt, new Date()).getTime() : null,
       })
       .write();
   }
@@ -62,7 +62,7 @@ function getRandomInt(min, max) {
       .insert({
         name: faker.commerce.productName(),
         department: faker.commerce.department(),
-        price: parseFloat(faker.commerce.price())
+        price: parseFloat(faker.commerce.price()),
       })
       .write();
 
@@ -72,7 +72,7 @@ function getRandomInt(min, max) {
           productId: product.id,
           employeeId: employees.sample().value().id,
           price: product.price,
-          createdAt: faker.date.past().getTime()
+          createdAt: faker.date.past().getTime(),
         })
         .write();
     }
@@ -86,7 +86,7 @@ function getRandomInt(min, max) {
       email: 'analyst@lattice.com',
       password: '123456',
       role: 'analyst',
-      createdAt: faker.date.past().getTime()
+      createdAt: faker.date.past().getTime(),
     })
     .write();
 

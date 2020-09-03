@@ -11,20 +11,20 @@ import Badge from '@material-ui/core/Badge';
 import { Pie, PieChart, Cell } from '@latticejs/mui-recharts';
 import { Loader, Widget } from '@latticejs/widgets';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    height: '100%'
+    height: '100%',
   },
   pid: {
-    padding: 5
+    padding: 5,
   },
   content: {
-    overflow: 'auto'
+    overflow: 'auto',
   },
   badge: {
     top: 19,
-    right: 18.5
-  }
+    right: 18.5,
+  },
 });
 
 function UsagePie({ data, usage, classes }) {
@@ -45,17 +45,17 @@ function ProcessUsage({ data, loading, classes }) {
   let parsedData = [];
 
   if (data) {
-    parsedData = data.map(ps => {
+    parsedData = data.map((ps) => {
       const result = {
         ...ps,
         memoryData: [
           { name: 'usage', value: ps.memory },
-          { name: 'free', value: 100 - ps.memory }
+          { name: 'free', value: 100 - ps.memory },
         ],
         cpuData: [
           { name: 'usage', value: ps.cpu },
-          { name: 'free', value: 100 - ps.cpu }
-        ]
+          { name: 'free', value: 100 - ps.cpu },
+        ],
       };
 
       return result;
@@ -75,7 +75,7 @@ function ProcessUsage({ data, loading, classes }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {parsedData.map(ps => {
+            {parsedData.map((ps) => {
               return (
                 <TableRow key={ps.pid}>
                   <TableCell align="left">{ps.pid}</TableCell>

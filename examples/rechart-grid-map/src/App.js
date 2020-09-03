@@ -30,25 +30,25 @@ import NightIcon from '@material-ui/icons/Brightness3Outlined';
 import 'typeface-roboto';
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   flex: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
   widget: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    padding: theme.spacing(4)
+    padding: theme.spacing(4),
   },
   link: {
-    color: theme.palette.text.secondary
-  }
+    color: theme.palette.text.secondary,
+  },
 });
 
 function TabPanel(props) {
@@ -71,13 +71,13 @@ function TabPanel(props) {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired
+  value: PropTypes.any.isRequired,
 };
 
 function a11yProps(index) {
   return {
     id: `scrollable-force-tab-${index}`,
-    'aria-controls': `scrollable-force-tabpanel-${index}`
+    'aria-controls': `scrollable-force-tabpanel-${index}`,
   };
 }
 
@@ -85,7 +85,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 0
+      selectedTab: 0,
     };
   }
 
@@ -96,7 +96,7 @@ class App extends Component {
 
   handleChange = (event, newTab) => {
     this.setState({
-      selectedTab: newTab
+      selectedTab: newTab,
     });
   };
 
@@ -145,7 +145,7 @@ class App extends Component {
           </Grid>
         </TabPanel>
         <TabPanel value={this.state.selectedTab} index={1}>
-          <Grid container justify="space-center" spacing={Number(0)}>
+          <Grid container justify="center" spacing={Number(0)}>
             <Grid item xs={12}>
               <Widget className={classes.widget} title="State & County Population" border="top">
                 <AgGrid />
@@ -154,7 +154,7 @@ class App extends Component {
           </Grid>
         </TabPanel>
         <TabPanel value={this.state.selectedTab} index={2}>
-          <Grid container justify="space-center" spacing={Number(0)}>
+          <Grid container justify="center" spacing={Number(0)}>
             <Grid item xs={12}>
               <Mapbox />
             </Grid>

@@ -34,9 +34,9 @@ exports.resolvers = {
       return {
         id: user.id,
         email: user.email,
-        role: user.role
+        role: user.role,
       };
-    }
+    },
   },
   Mutation: {
     signIn: async (_, { email, password }, { db }) => {
@@ -47,6 +47,6 @@ exports.resolvers = {
       }
 
       return { token: createToken(user, '30m') };
-    }
-  }
+    },
+  },
 };

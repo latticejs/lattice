@@ -4,10 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 import { ResponsiveContainer, LineChart, Line, YAxis, Legend, Tooltip } from '@latticejs/mui-recharts';
 import { Loader, Widget } from '@latticejs/widgets';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 const colors = ['#1769aa', '#ab003c', '#4dabf5', '#ff3d00', '#4caf50', '#ff9800', '#f44336', '#9c27b0'];
@@ -16,7 +16,7 @@ function CPUUsage({ data, loading, classes, cores }) {
   let parsedData = [];
 
   if (data) {
-    parsedData = data.history.map(h => {
+    parsedData = data.history.map((h) => {
       const result = {};
 
       h.cpusUsage.forEach((cpuUsage, key) => {
@@ -35,7 +35,7 @@ function CPUUsage({ data, loading, classes, cores }) {
             <YAxis type="number" domain={[0, 100]} />
             <Tooltip />
             <Legend verticalAlign="top" height={36} />
-            {[...Array(cores).keys()].map(c => (
+            {[...Array(cores).keys()].map((c) => (
               <Line
                 key={c}
                 dataKey={`cpu-${c}`}

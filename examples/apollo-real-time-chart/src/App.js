@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 // Material-UI
 import { MuiThemeProvider } from '@material-ui/core/styles';
@@ -11,35 +11,32 @@ import 'typeface-roboto';
 import Dashboard from './Dashboard';
 import Layout from './components/Layout';
 
-const app = () => {
-
+const App = () => {
   const [nightMode, setNightMode] = useState(false);
 
   const createTheme = () => {
-
     return createMuiTheme({
       palette: {
-        type: nightMode ? 'dark' : 'light'
+        type: nightMode ? 'dark' : 'light',
       },
       typography: {
-        useNextVariants: true
-      }
+        useNextVariants: true,
+      },
     });
-  }
-
-  const updateTheme = mode => {
-    setNightMode(mode)
   };
 
-    return (
-      <MuiThemeProvider theme={createTheme()}>
-        <Layout nightMode={nightMode} handleUpdateTheme={updateTheme}>
-          <CssBaseline />
-          <Dashboard {...this.props} />
-        </Layout>
-      </MuiThemeProvider>
-    );
-}
+  const updateTheme = (mode) => {
+    setNightMode(mode);
+  };
 
+  return (
+    <MuiThemeProvider theme={createTheme()}>
+      <Layout nightMode={nightMode} handleUpdateTheme={updateTheme}>
+        <CssBaseline />
+        <Dashboard {...this.props} />
+      </Layout>
+    </MuiThemeProvider>
+  );
+};
 
-export default app;
+export default App;
