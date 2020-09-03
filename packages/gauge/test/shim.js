@@ -3,35 +3,35 @@ HTMLCanvasElement.prototype.getContext = () => ({
   beginPath: () => {},
   arc: () => {},
   createLinearGradient: () => ({
-    addColorStop: () => {}
+    addColorStop: () => {},
   }),
   stroke: () => {},
   closePath: () => {},
   fill: () => {},
   rotate: () => {},
-  fillRect: function() {},
-  clearRect: function() {},
-  getImageData: function(x, y, w, h) {
+  fillRect: function () {},
+  clearRect: function () {},
+  getImageData: function (x, y, w, h) {
     return {
-      data: new Array(w * h * 4)
+      data: new Array(w * h * 4),
     };
   },
-  putImageData: function() {},
-  createImageData: function() {
+  putImageData: function () {},
+  createImageData: function () {
     return [];
   },
-  setTransform: function() {},
-  drawImage: function() {},
-  save: function() {},
-  fillText: function() {},
-  restore: function() {},
-  moveTo: function() {},
-  lineTo: function() {},
-  scale: function() {},
-  measureText: function() {
+  setTransform: function () {},
+  drawImage: function () {},
+  save: function () {},
+  fillText: function () {},
+  restore: function () {},
+  moveTo: function () {},
+  lineTo: function () {},
+  scale: function () {},
+  measureText: function () {
     return { width: 0 };
   },
-  transform: function() {},
-  rect: function() {},
-  clip: function() {}
+  transform: function () {},
+  rect: function () {},
+  clip: function () {},
 });

@@ -21,7 +21,7 @@ import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
 
-const InGrid = story => (
+const InGrid = (story) => (
   <Grid container spacing={3}>
     <Drawer open variant="persistent">
       {story()}
@@ -29,10 +29,10 @@ const InGrid = story => (
   </Grid>
 );
 
-const Flexed = story => (
+const Flexed = (story) => (
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
 );
-const FullViewport = story => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
 
 const withApiReadme = withReadme(Readme)(['sidemenu-api']);
 
@@ -47,7 +47,7 @@ export default ({ storiesOf }) => {
       'basic',
       withApiReadme(() => (
         <Styled>
-          {classes => <SideMenu navigation={navigation} className={classes.flexed} onItemClick={action('click')} />}
+          {(classes) => <SideMenu navigation={navigation} className={classes.flexed} onItemClick={action('click')} />}
         </Styled>
       ))
     )
@@ -55,7 +55,7 @@ export default ({ storiesOf }) => {
       'selected',
       withApiReadme(() => (
         <Styled>
-          {classes => (
+          {(classes) => (
             <SideMenu
               navigation={navigation}
               activeRoute={navigation[0]}
@@ -70,7 +70,7 @@ export default ({ storiesOf }) => {
       'mini selected',
       withApiReadme(() => (
         <Styled>
-          {classes => (
+          {(classes) => (
             <SideMenu
               mini
               navigation={navigation}
@@ -84,10 +84,10 @@ export default ({ storiesOf }) => {
     );
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   flexed: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 const Styled = withStyles(styles)(({ classes, children }) => {
@@ -98,12 +98,12 @@ const navigation = [
   {
     path: '/dashboard',
     title: 'Dashboard',
-    icon: DashboardIcon
+    icon: DashboardIcon,
   },
   {
     path: '/employees',
     title: 'Employees',
-    icon: PeopleIcon
+    icon: PeopleIcon,
   },
   {
     title: 'Theme',
@@ -112,13 +112,13 @@ const navigation = [
       {
         path: '/map',
         title: 'Maps',
-        icon: MapIcon
+        icon: MapIcon,
       },
       {
         path: '/pageview',
         title: 'Page Views',
-        icon: PageViewIcon
-      }
-    ]
-  }
+        icon: PageViewIcon,
+      },
+    ],
+  },
 ];

@@ -6,11 +6,11 @@ export const authLink = new ApolloLink((operation, forward) => {
   operation.setContext(({ headers = {} }) => ({
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : ''
-    }
+      authorization: token ? `Bearer ${token}` : '',
+    },
   }));
 
-  return forward(operation).map(data => {
+  return forward(operation).map((data) => {
     if (operation.operationName === 'SignIn' && !data.errors) {
       localStorage.setItem('token', data.data.signIn.token);
     }
@@ -20,7 +20,7 @@ export const authLink = new ApolloLink((operation, forward) => {
 
 let lock = false;
 
-export const signOut = client => {
+export const signOut = (client) => {
   lock = true;
   localStorage.removeItem('token');
   client.resetStore().then(() => {

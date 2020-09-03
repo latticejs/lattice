@@ -15,12 +15,12 @@ const formats = process.env.FORMAT ? process.env.FORMAT.split('-') : ['umd'];
 const dests = {
   umd: pkg.browser,
   cjs: pkg.main,
-  esm: pkg.module
+  esm: pkg.module,
 };
 
 const globals = {
   react: 'React',
-  'react-dom': 'ReactDOM'
+  'react-dom': 'ReactDOM',
 };
 
 const external = Object.keys(pkg.peerDependencies).concat(Object.keys(pkg.dependencies));
@@ -28,30 +28,30 @@ const external = Object.keys(pkg.peerDependencies).concat(Object.keys(pkg.depend
 const plugins = [
   babel({
     exclude: /node_modules/,
-    runtimeHelpers: true
+    runtimeHelpers: true,
   }),
 
   resolve({
     jsnext: true,
     browser: true,
     customResolveOptions: {
-      moduleDirectory: './src'
-    }
+      moduleDirectory: './src',
+    },
   }),
 
   commonjs({
     include: /node_modules/,
     namedExports: {
-      '@material-ui/core/styles': ['withStyles']
-    }
+      '@material-ui/core/styles': ['withStyles'],
+    },
   }),
 
   replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
 
   production &&
     terser({
-      sourcemap: !production
-    })
+      sourcemap: !production,
+    }),
 ];
 
 const rollupConf = {
@@ -61,12 +61,12 @@ const rollupConf = {
     name,
     globals,
     exports: 'named',
-    sourcemap: !production
+    sourcemap: !production,
   },
   plugins,
   treeshake: {
-    pureExternalModules: true
-  }
+    pureExternalModules: true,
+  },
 };
 
 const configFor = (file, format) => ({
@@ -74,8 +74,8 @@ const configFor = (file, format) => ({
   output: {
     ...rollupConf.output,
     file,
-    format
-  }
+    format,
+  },
 });
 
-export default formats.map(format => configFor(dests[format], format));
+export default formats.map((format) => configFor(dests[format], format));

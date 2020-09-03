@@ -19,24 +19,24 @@ exports.resolvers = {
         {
           label: 'Employees',
           unit: 'Total Employees',
-          value: employees.value().length
+          value: employees.value().length,
         },
         {
           label: 'Areas',
           unit: 'Total Areas',
-          value: areas.value().length
+          value: areas.value().length,
         },
         {
           label: 'Tasks',
           unit: 'Completed Tasks',
-          value: tasks.filter(task => task.completedAt !== null).value().length
+          value: tasks.filter((task) => task.completedAt !== null).value().length,
         },
         {
           label: 'Tasks',
           unit: 'Uncompleted Tasks',
-          value: tasks.filter(task => task.completedAt === null).value().length
-        }
+          value: tasks.filter((task) => task.completedAt === null).value().length,
+        },
       ];
-    }
-  }
+    },
+  },
 };

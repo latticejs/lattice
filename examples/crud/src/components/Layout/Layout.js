@@ -21,86 +21,83 @@ import { CssBaseline } from '@material-ui/core';
 import Dialogs from './Dialogs';
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'c'
+  productionPrefix: 'c',
 });
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     height: '100%',
     display: 'flex',
     justifyItems: 'stretch',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   appBar: {
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
   flex: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   container: {
     flex: '1',
     display: 'flex',
     padding: theme.spacing(1),
-    flexDirection: 'row'
-  }
+    flexDirection: 'row',
+  },
 });
 
 const Layout = (props) => {
-
   const [nightMode, setNightMode] = useState(false);
 
   const { classes, children } = props;
 
   const createTheme = () => {
-
     return createMuiTheme({
       palette: {
         primary: blue,
         secondary: pink,
-        type: nightMode ? 'dark' : 'light'
+        type: nightMode ? 'dark' : 'light',
       },
       typography: {
         useNextVariants: true,
-        suppressDeprecationWarnings: true
-      }
+        suppressDeprecationWarnings: true,
+      },
     });
-  }
-
-  const toggleTheme = () => {
-    setNightMode(!nightMode)
   };
 
+  const toggleTheme = () => {
+    setNightMode(!nightMode);
+  };
 
-    return (
-      <JssProvider generateClassName={generateClassName}>
-        <MuiThemeProvider theme={createTheme()}>
-          <CssBaseline />
+  return (
+    <JssProvider generateClassName={generateClassName}>
+      <MuiThemeProvider theme={createTheme()}>
+        <CssBaseline />
 
-          <div className={classes.root}>
-            <AppBar position="static" className={classes.appBar}>
-              <Toolbar>
-                <Typography variant="h6" color="inherit" className={classes.flex}>
-                  Lattice CRUD
-                </Typography>
-                <Tooltip title="Toggle Night Mode" enterDelay={300}>
-                  <IconButton onClick={toggleTheme} color="inherit">
-                    {nightMode ? <DayIcon /> : <NightIcon />}
-                  </IconButton>
-                </Tooltip>
-              </Toolbar>
-            </AppBar>
-            <div className={classes.container}>{children}</div>
-            <Dialogs />
-          </div>
-        </MuiThemeProvider>
-      </JssProvider>
-    );
-}
+        <div className={classes.root}>
+          <AppBar position="static" className={classes.appBar}>
+            <Toolbar>
+              <Typography variant="h6" color="inherit" className={classes.flex}>
+                Lattice CRUD
+              </Typography>
+              <Tooltip title="Toggle Night Mode" enterDelay={300}>
+                <IconButton onClick={toggleTheme} color="inherit">
+                  {nightMode ? <DayIcon /> : <NightIcon />}
+                </IconButton>
+              </Tooltip>
+            </Toolbar>
+          </AppBar>
+          <div className={classes.container}>{children}</div>
+          <Dialogs />
+        </div>
+      </MuiThemeProvider>
+    </JssProvider>
+  );
+};
 
 Layout.propTypes = {
   children: Types.element,
-  classes: Types.object
+  classes: Types.object,
 };
 
 export default withStyles(styles)(Layout);

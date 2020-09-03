@@ -9,14 +9,14 @@ const AddButton = ({ classes, children, ...props }) => (
   </Button>
 );
 
-const styles = withStyles(theme => ({
+const styles = withStyles((theme) => ({
   button: {
     ...theme.palette.primary,
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
   },
   leftIcon: {
-    marginRight: theme.spacing(1)
-  }
+    marginRight: theme.spacing(1),
+  },
 }));
 
 export default styles(AddButton);

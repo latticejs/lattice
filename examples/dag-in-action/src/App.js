@@ -32,41 +32,41 @@ import Dag from '@latticejs/dag';
 import { Widget, Loader } from '@latticejs/widgets';
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
     height: '100vh',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   flex: {
-    flex: 1
+    flex: 1,
   },
   main: {
     padding: 20,
-    flex: 1
+    flex: 1,
   },
   container: {
-    flex: 1
+    flex: 1,
   },
   footer: {
     paddingTop: 0,
     paddingBottom: 20,
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
   },
   flexColumnItem: {
     display: 'flex',
     flex: 1,
     height: 300,
-    maxHeight: '50vh'
+    maxHeight: '50vh',
   },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
   overflow: {
-    overflow: 'auto'
+    overflow: 'auto',
   },
   columnWidget: {
     display: 'flex',
@@ -76,36 +76,36 @@ const styles = theme => ({
       overflow: 'scroll',
       flexDirection: 'initial',
       '& > div:first-child': {
-        width: '100%'
-      }
-    }
+        width: '100%',
+      },
+    },
   },
   columnItemTop: {
-    marginBottom: 5
+    marginBottom: 5,
   },
   columnItemBottom: {
-    marginTop: 5
+    marginTop: 5,
   },
   dagWidget: {
-    height: '100vh'
+    height: '100vh',
   },
   customBorderNoResults: {
-    borderColor: 'yellow'
+    borderColor: 'yellow',
   },
   customBorderError: {
-    borderColor: 'red'
+    borderColor: 'red',
   },
   link: {
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
   dropzone: {
     width: '100%',
-    height: '90vh'
+    height: '90vh',
   },
   instructions: {
     width: '500px',
-    maxWidth: '100%'
-  }
+    maxWidth: '100%',
+  },
 });
 
 // gql:queries
@@ -136,13 +136,13 @@ const UPDATE_DEPS = gql`
 class App extends Component {
   static defaultProps = {
     width: 800,
-    height: 600
+    height: 600,
   };
 
   state = {
     userDepName: '',
     results: [],
-    userPkg: {}
+    userPkg: {},
   };
 
   handleNightModeChange = () => {
@@ -150,9 +150,9 @@ class App extends Component {
     updateTheme(!nightMode);
   };
 
-  newDep = node => {
+  newDep = (node) => {
     this.setState({
-      userDepName: node.title
+      userDepName: node.title,
     });
   };
 
@@ -167,14 +167,14 @@ class App extends Component {
         if (dep.title === pkgName) return obj;
         obj[dep.title] = 'latest';
         return obj;
-      }, {})
+      }, {}),
     };
   };
 
   removeDep = (data, updatePkg) => {
     const { originalPkg } = this.props;
 
-    const appExists = data.nodes.find(dep => {
+    const appExists = data.nodes.find((dep) => {
       return dep.title === originalPkg.name;
     });
 
@@ -182,7 +182,7 @@ class App extends Component {
 
     const updatedPkg = {
       ...originalPkg,
-      ...this.rebuildDeps(data.nodes, originalPkg.name)
+      ...this.rebuildDeps(data.nodes, originalPkg.name),
     };
 
     // run the gql mutation
@@ -191,16 +191,16 @@ class App extends Component {
         name: updatedPkg.name,
         version: updatedPkg.version,
         dependencies: JSON.stringify(updatedPkg.dependencies),
-        description: updatedPkg.description
+        description: updatedPkg.description,
       },
-      refetchQueries: [{ query: this.props.refreshQuery }]
+      refetchQueries: [{ query: this.props.refreshQuery }],
     });
   };
 
-  selectDep = dep => {
+  selectDep = (dep) => {
     // call parent cb
     this.props.newNode({
-      title: dep.name
+      title: dep.name,
     });
   };
 
@@ -210,7 +210,7 @@ class App extends Component {
     </Widget>
   );
 
-  renderError = error => (
+  renderError = (error) => (
     <Widget className={[this.props.classes.customBorderError]} border="bottom">
       {error.message}
     </Widget>
@@ -223,14 +223,14 @@ class App extends Component {
     const pkgFile = accepted[0];
     const reader = new FileReader();
 
-    reader.onload = event => {
+    reader.onload = (event) => {
       const { result } = event.target;
       const pkg = JSON.parse(result);
       pkg.dependencies = JSON.stringify(pkg.dependencies || {});
 
       // keep original pkg
       this.setState({
-        userPkg: pkg
+        userPkg: pkg,
       });
 
       // run the gql mutation
@@ -239,20 +239,20 @@ class App extends Component {
           name: pkg.name,
           version: pkg.version,
           dependencies: pkg.dependencies,
-          description: pkg.description
+          description: pkg.description,
         },
-        refetchQueries: [{ query: this.props.refreshQuery }]
+        refetchQueries: [{ query: this.props.refreshQuery }],
       });
     };
 
-    reader.onerror = err => {
+    reader.onerror = (err) => {
       console.log(err);
     };
 
     reader.readAsText(pkgFile);
   };
 
-  parseExport = pkg => {
+  parseExport = (pkg) => {
     const newPkg = { ...this.state.userPkg, ...pkg };
 
     delete newPkg['__typename'];
@@ -280,7 +280,7 @@ class App extends Component {
             <Grid item xs={12} md={8} lg={8}>
               <Widget title={pkg.name} className={classes.dagWidget}>
                 <Mutation mutation={UPDATE_DEPS}>
-                  {updatePkg => (
+                  {(updatePkg) => (
                     <Dropzone
                       disableClick
                       className={classes.dropzone}
@@ -297,7 +297,7 @@ class App extends Component {
                               nodes={pkg.data.nodes}
                               edges={pkg.data.edges}
                               onNodeAdded={this.newDep}
-                              onNodeRemoved={dependencies => this.removeDep(dependencies, updatePkg)}
+                              onNodeRemoved={(dependencies) => this.removeDep(dependencies, updatePkg)}
                               onEdgeAdded={() => {
                                 console.log('Not implemented');
                               }}
@@ -338,7 +338,7 @@ class App extends Component {
                               {deps.length ? (
                                 deps.map((dep, i) => (
                                   <Mutation mutation={UPDATE_DEPS} key={i}>
-                                    {updatePkg => (
+                                    {(updatePkg) => (
                                       <ListItem
                                         button
                                         key={`npm-dep-${i}`}
@@ -347,12 +347,12 @@ class App extends Component {
                                           updatePkg({
                                             variables: {
                                               name: originalPkg.name,
-                                              dependencies: JSON.stringify(originalPkg.dependencies)
+                                              dependencies: JSON.stringify(originalPkg.dependencies),
                                             },
-                                            refetchQueries: [{ query: this.props.refreshQuery }]
+                                            refetchQueries: [{ query: this.props.refreshQuery }],
                                           });
                                           this.setState({
-                                            userDepName: false
+                                            userDepName: false,
                                           });
                                         }}
                                       >

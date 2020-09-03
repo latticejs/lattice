@@ -3,10 +3,10 @@ import { mount } from 'enzyme';
 import Map from '../src/index.js';
 import React from 'react';
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
-  Map: x => ({
+  Map: (x) => ({
     x: x,
-    on: jest.fn()
-  })
+    on: jest.fn(),
+  }),
 }));
 
 describe('To test the Map Box Component.', () => {
@@ -41,9 +41,9 @@ describe('To test the Map Box Component.', () => {
     const newTheme = {
       theme: {
         palette: {
-          type: 'light'
-        }
-      }
+          type: 'light',
+        },
+      },
     };
 
     childWrapper.instance().componentDidUpdate(newTheme);
@@ -52,9 +52,9 @@ describe('To test the Map Box Component.', () => {
     const updatedTheme = {
       theme: {
         palette: {
-          type: 'dark'
-        }
-      }
+          type: 'dark',
+        },
+      },
     };
     wrapper.setProps(updatedTheme);
     wrapper.update();

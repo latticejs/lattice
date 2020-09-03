@@ -19,7 +19,7 @@ exports.resolvers = {
   Query: {
     getAllAreas: (_, args, { db }) => {
       return db.areas.value();
-    }
+    },
   },
   Mutation: {
     createArea: (_, args, { db }) => {
@@ -27,11 +27,11 @@ exports.resolvers = {
     },
     updateArea: (_, args, { db }) => {
       return db.areas.updateById(args.id, args).write();
-    }
+    },
   },
   Area: {
     dependsOn: (_, args, { db }) => {
-      return _.dependsOn.map(id => db.areas.getById(id).value());
-    }
-  }
+      return _.dependsOn.map((id) => db.areas.getById(id).value());
+    },
+  },
 };

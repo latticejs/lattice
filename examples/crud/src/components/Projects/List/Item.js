@@ -17,11 +17,11 @@ const enhance = compose(
       }
       projectList.setChecked(projectId);
     },
-    toggleActive: ({ projectId, projectStore }) => e => {
+    toggleActive: ({ projectId, projectStore }) => (e) => {
       e.stopPropagation();
       projectStore.toggleActive(projectId);
     },
-    remove: ({ uiStore, projectStore, projectId }) => e => {
+    remove: ({ uiStore, projectStore, projectId }) => (e) => {
       e.stopPropagation();
 
       uiStore.dialogs.showConfirm({
@@ -30,14 +30,14 @@ const enhance = compose(
             Are you sure to delete <b>{projectStore.projects.get(projectId).name}?</b>
           </div>
         ),
-        onAccept: () => projectStore.remove(projectId)
+        onAccept: () => projectStore.remove(projectId),
       });
     },
-    edit: ({ onEdit, projectId }) => e => {
+    edit: ({ onEdit, projectId }) => (e) => {
       e.preventDefault();
       e.stopPropagation();
       onEdit(projectId);
-    }
+    },
   }),
   observer
 );
@@ -67,12 +67,12 @@ const ShowEditIcon = ({ onClick }) => (
 );
 
 RemoveIcon.propTypes = ShowEditIcon.propTypes = {
-  onClick: Types.func
+  onClick: Types.func,
 };
 
 ToggleActiveIcon.propTypes = {
   onClick: Types.func,
-  checked: Types.bool
+  checked: Types.bool,
 };
 
 export default enhance(

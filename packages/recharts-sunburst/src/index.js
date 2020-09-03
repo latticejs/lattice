@@ -11,7 +11,7 @@ import {
   findChildByType,
   getPresentationAttributes,
   filterSvgElements,
-  validateWidthHeight
+  validateWidthHeight,
 } from 'recharts/lib/util/ReactUtils';
 import Tooltip from 'recharts/lib/component/Tooltip';
 import { getValueByDataKey } from 'recharts/lib/util/ChartUtils';
@@ -24,7 +24,7 @@ const computeData = (data, radius, dataKey) => {
 
   // Turn the data into a d3 hierarchy and calculate the sums.
   const root = hierarchy(data)
-    .sum(d => {
+    .sum((d) => {
       return d[dataKey];
     })
     .sort((a, b) => {
@@ -34,22 +34,22 @@ const computeData = (data, radius, dataKey) => {
   // For efficiency, filter nodes to keep only those large enough to see.
   return dataPartition(root)
     .descendants()
-    .filter(d => {
+    .filter((d) => {
       return d.x1 - d.x0 > 0.005; // 0.005 radians = 0.29 degrees
     });
 };
 
 const dataArc = arc()
-  .startAngle(d => {
+  .startAngle((d) => {
     return d.x0;
   })
-  .endAngle(d => {
+  .endAngle((d) => {
     return d.x1;
   })
-  .innerRadius(d => {
+  .innerRadius((d) => {
     return Math.sqrt(d.y0);
   })
-  .outerRadius(d => {
+  .outerRadius((d) => {
     return Math.sqrt(d.y1);
   });
 
@@ -63,12 +63,12 @@ export default class Sunburst extends Component {
     isUpdateAnimationActive: false,
     animationBegin: 0,
     animationDuration: 600,
-    animationEasing: 'ease-out'
+    animationEasing: 'ease-out',
   };
 
   state = {
     ...Sunburst.createDefaultState(),
-    data: this.props.data
+    data: this.props.data,
   };
 
   /**
@@ -79,7 +79,7 @@ export default class Sunburst extends Component {
     return {
       isTooltipActive: false,
       activeNode: null,
-      data: null
+      data: null,
     };
   }
 
@@ -87,7 +87,7 @@ export default class Sunburst extends Component {
     if (nextProps.data !== prevState.data) {
       return {
         ...Sunburst.createDefaultState(),
-        data: nextProps.data
+        data: nextProps.data,
       };
     }
 
@@ -104,7 +104,7 @@ export default class Sunburst extends Component {
     this.setState(
       {
         isTooltipActive: tooltipItem ? true : false,
-        activeNode: node
+        activeNode: node,
       },
       () => {
         if (onMouseEnter) {
@@ -119,7 +119,7 @@ export default class Sunburst extends Component {
     this.setState(
       {
         isTooltipActive: false,
-        activeNode: null
+        activeNode: null,
       },
       () => {
         if (onMouseLeave) {
@@ -143,13 +143,13 @@ export default class Sunburst extends Component {
       animationBegin,
       animationDuration,
       animationEasing,
-      isUpdateAnimationActive
+      isUpdateAnimationActive,
     } = this.props;
 
     const event = {
       onMouseEnter: this.handleMouseEnter.bind(this, node, nodeProps),
       onMouseLeave: this.handleMouseLeave.bind(this, node, nodeProps),
-      onClick: this.handleClick.bind(this, node, nodeProps)
+      onClick: this.handleClick.bind(this, node, nodeProps),
     };
     if (!node.depth) return;
     const position = node.depth ? node.parent.children.indexOf(node) : 0;
@@ -176,7 +176,7 @@ export default class Sunburst extends Component {
                 {this.renderContentItem(content, node, {
                   ...nodeProps,
                   isAnimationActive,
-                  isUpdateAnimationActive
+                  isUpdateAnimationActive,
                 })}
               </Layer>
             </Animate>
@@ -228,7 +228,7 @@ export default class Sunburst extends Component {
     let opacity = 1;
     if (activeNode) {
       const ancestors = activeNode.ancestors();
-      opacity = ancestors.filter(n => n.data[nameKey] === node.data[nameKey]).length > 0 ? 1 : 0.3;
+      opacity = ancestors.filter((n) => n.data[nameKey] === node.data[nameKey]).length > 0 ? 1 : 0.3;
     }
     const { depth, fill = 'purple', stroke = 'white' } = nodeProps;
     const name = node.data[nameKey];
@@ -292,7 +292,7 @@ export default class Sunburst extends Component {
 
       coordinate = {
         x: x + width / 2,
-        y: y + height / 2
+        y: y + height / 2,
       };
     }
 
@@ -302,8 +302,8 @@ export default class Sunburst extends Component {
             {
               payload: activeNode,
               name: getValueByDataKey(activeNode.data, nameKey, ''),
-              value: activeNode.value //getValueByDataKey(activeNode, dataKey),
-            }
+              value: activeNode.value, //getValueByDataKey(activeNode, dataKey),
+            },
           ]
         : [];
 
@@ -312,7 +312,7 @@ export default class Sunburst extends Component {
       active: isTooltipActive,
       coordinate,
       label: '',
-      payload
+      payload,
     });
   }
 

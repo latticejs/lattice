@@ -5,7 +5,7 @@ import { List as InfiniteList, ListItem } from '@latticejs/infinite-list';
 import { withStyles, ListItemText } from '@material-ui/core';
 import ProjectItem from './Item';
 
-const List = props => {
+const List = (props) => {
   const { loadMore, findItem, classes, uiStore, onEditProject } = props;
   const { availableItems, list } = uiStore.projectList;
 
@@ -44,12 +44,12 @@ const List = props => {
 const styles = () => ({
   containerRoot: {
     flex: 1,
-    height: '100%'
+    height: '100%',
   },
   listRoot: {
     flex: 1,
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 export default compose(
@@ -71,7 +71,7 @@ export default compose(
           uiStore.projectList.availableItems = Math.max(uiStore.projectList.availableItems, stopIndex + 1);
         }, Math.floor(Math.random() * 1000))
       );
-    }
+    },
   }),
   observer
 )(List);
