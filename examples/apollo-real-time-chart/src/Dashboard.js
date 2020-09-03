@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Subscription, graphql } from 'react-apollo';
 import { flowRight as compose } from 'lodash';
 
@@ -37,52 +37,50 @@ const styles = (theme) => ({
   },
 });
 
-class Dashboard extends Component {
-  render() {
-    const { classes, platformInfo } = this.props;
+const Dashboard = (props) => {
+  const { classes, platformInfo } = props;
 
-    return (
-      <Grid container spacing={0}>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={0}>
-            <Grid item xs={8} className={classes.height400}>
-              <Subscription subscription={cpuUpdated}>
-                {({ data = {}, loading }) => (
-                  <CPUUsage data={data.cpuUpdated} loading={loading} cores={platformInfo.cpuCores} />
-                )}
-              </Subscription>
-            </Grid>
-            <Grid item xs={4} className={classes.height400}>
-              <Subscription subscription={psUpdated}>
-                {({ data = {}, loading }) => <ProcessUsage data={data.psUpdated} loading={loading} />}
-              </Subscription>
-            </Grid>
+  return (
+    <Grid container spacing={0}>
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={0}>
+          <Grid item xs={8} className={classes.height400}>
+            <Subscription subscription={cpuUpdated}>
+              {({ data = {}, loading }) => (
+                <CPUUsage data={data.cpuUpdated} loading={loading} cores={platformInfo.cpuCores} />
+              )}
+            </Subscription>
           </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={0}>
-            <Grid item xs={3} className={classes.height300}>
-              <OSInfo data={platformInfo} />
-            </Grid>
-            <Grid item xs={3} className={classes.height300}>
-              <CPUInfo data={platformInfo} />
-            </Grid>
-            <Grid item xs={3} className={classes.height300}>
-              <Subscription subscription={memoryUpdated}>
-                {({ data = {}, loading }) => <MemoryUsage data={data.memoryUpdated} loading={loading} />}
-              </Subscription>
-            </Grid>
-            <Grid item xs={3} className={classes.height300}>
-              <Subscription subscription={disksUpdated}>
-                {({ data = {}, loading }) => <DisksUsage data={data.disksUpdated} loading={loading} />}
-              </Subscription>
-            </Grid>
+          <Grid item xs={4} className={classes.height400}>
+            <Subscription subscription={psUpdated}>
+              {({ data = {}, loading }) => <ProcessUsage data={data.psUpdated} loading={loading} />}
+            </Subscription>
           </Grid>
         </Grid>
       </Grid>
-    );
-  }
-}
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={0}>
+          <Grid item xs={3} className={classes.height300}>
+            <OSInfo data={platformInfo} />
+          </Grid>
+          <Grid item xs={3} className={classes.height300}>
+            <CPUInfo data={platformInfo} />
+          </Grid>
+          <Grid item xs={3} className={classes.height300}>
+            <Subscription subscription={memoryUpdated}>
+              {({ data = {}, loading }) => <MemoryUsage data={data.memoryUpdated} loading={loading} />}
+            </Subscription>
+          </Grid>
+          <Grid item xs={3} className={classes.height300}>
+            <Subscription subscription={disksUpdated}>
+              {({ data = {}, loading }) => <DisksUsage data={data.disksUpdated} loading={loading} />}
+            </Subscription>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
 
 export default compose(
   graphql(getPlatformInfo, {
