@@ -29,7 +29,7 @@ const styles = (theme) => ({
   },
 });
 
-const layout = (props) => {
+const Layout = (props) => {
   const { classes, nightMode, children } = props;
 
   const handleNightModeChange = () => {
@@ -56,4 +56,4 @@ const layout = (props) => {
   );
 };
 
-export default withStyles(styles)(layout);
+export default withStyles(styles)(Layout);

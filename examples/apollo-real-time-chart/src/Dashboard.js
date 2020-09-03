@@ -37,7 +37,7 @@ const styles = (theme) => ({
   },
 });
 
-const dashboard = (props) => {
+const Dashboard = (props) => {
   const { classes, platformInfo } = props;
 
   return (
@@ -89,4 +89,4 @@ export default compose(
     }),
   }),
   withStyles(styles)
-)(dashboard);
+)(Dashboard);
