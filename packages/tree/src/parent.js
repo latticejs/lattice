@@ -3,7 +3,7 @@ import Collapse from '@material-ui/core/Collapse';
 
 import { Item, Childrens } from './child';
 
-const Parent = props => {
+const Parent = (props) => {
   const { key, item, lvl, childClass = {}, childrens, isExpanded } = props;
 
   return (

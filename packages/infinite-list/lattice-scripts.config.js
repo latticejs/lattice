@@ -5,7 +5,7 @@ module.exports = {
       './src/TableOrderCell.js',
       './src/Table.js',
       './src/ScrollLoader.js',
-      './src/List.js'
-    ]
-  }
+      './src/List.js',
+    ],
+  },
 };

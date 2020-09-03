@@ -16,14 +16,14 @@ class Dialog {
   get renderProps() {
     return {
       title: this.title,
-      content: this.content
+      content: this.content,
     };
   }
 }
 
 decorate(Dialog, {
   title: observable,
-  content: observable
+  content: observable,
 });
 
 export class ConfirmDialog extends Dialog {
@@ -45,7 +45,7 @@ export class ConfirmDialog extends Dialog {
       ...super.renderProps,
       onAccept: this.onAccept,
       onCancel: this.onCancel,
-      onClose: this.onClose
+      onClose: this.onClose,
     };
   }
 }
@@ -58,12 +58,12 @@ export class Dialogs extends RootStore {
   }
 
   close(id) {
-    const index = this.stack.findIndex(dialog => dialog.id === id);
+    const index = this.stack.findIndex((dialog) => dialog.id === id);
     this.stack.splice(index, 1);
   }
 }
 
 decorate(Dialogs, {
   stack: observable,
-  close: action
+  close: action,
 });

@@ -44,7 +44,7 @@ decorate(Project, {
   author: observable,
   active: observable,
   toggleActive: action,
-  toJS: computed
+  toJS: computed,
 });
 
 export class ProjectStore extends RootStore {
@@ -71,7 +71,7 @@ export class ProjectStore extends RootStore {
   remove(projectId) {
     const ids = Array.isArray(projectId) ? projectId : [projectId];
 
-    ids.forEach(id => {
+    ids.forEach((id) => {
       if (!this.projects.has(id)) return;
 
       this.projects.delete(id);
@@ -95,5 +95,5 @@ decorate(ProjectStore, {
   projects: observable,
   remove: action,
   setActive: action,
-  toggleActive: action
+  toggleActive: action,
 });

@@ -5,7 +5,7 @@ const { typeDefs, resolvers } = require('./schema');
 const permissions = require('./permissions');
 
 const opts = {
-  port: process.env.NODE_PORT || 3001
+  port: process.env.NODE_PORT || 3001,
 };
 
 (async () => {
@@ -14,7 +14,7 @@ const opts = {
   // context
   const context = ({ request }) => ({
     db,
-    currentUser: request.currentUser
+    currentUser: request.currentUser,
   });
 
   // server
@@ -22,7 +22,7 @@ const opts = {
     typeDefs,
     resolvers,
     middlewares: [permissions],
-    context
+    context,
   });
 
   server.express.use(cors());

@@ -9,19 +9,19 @@ import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    flex: 1
+    flex: 1,
   },
   card: {
-    position: 'absolute'
+    position: 'absolute',
   },
   details: {
     backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.background.default
+    color: theme.palette.background.default,
   },
   content: {
-    flex: '1 0 auto'
+    flex: '1 0 auto',
   },
   controls: {
     alignItems: 'center',
@@ -29,13 +29,13 @@ const styles = theme => ({
     paddingLeft: theme.spacing(1),
     paddingBottom: theme.spacing(1),
     backgroundColor: theme.palette.background.initial,
-    color: theme.palette.primary[theme.palette.type]
+    color: theme.palette.primary[theme.palette.type],
   },
   close: {
     padding: theme.spacing(0.5),
     maxHeight: '100%',
-    textAlign: 'right'
-  }
+    textAlign: 'right',
+  },
 });
 
 class GraphPanel extends Component {
@@ -88,7 +88,7 @@ class GraphPanel extends Component {
     );
   }
 
-  handleClose = e => {
+  handleClose = (e) => {
     this.props.closePanel(e);
   };
 

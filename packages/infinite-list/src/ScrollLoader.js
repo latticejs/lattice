@@ -6,7 +6,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 const disableScroll = (style = {}) => ({
   ...style,
   overflowX: false,
-  overflowY: false
+  overflowY: false,
 });
 
 class ScrollLoader extends Component {
@@ -18,7 +18,7 @@ class ScrollLoader extends Component {
     rvInfiniteLoaderProps: {},
     rvAutoSizerProps: {},
     rvListProps: {},
-    rvScrollProps: {}
+    rvScrollProps: {},
   };
 
   registerRef = (instance, registerChild) => {
@@ -31,14 +31,14 @@ class ScrollLoader extends Component {
     }
   };
 
-  registerScroll = instance => {
+  registerScroll = (instance) => {
     if (!instance) {
       return;
     }
 
     this.scroll = instance;
 
-    this.scroll.scrollToRow = index => {
+    this.scroll.scrollToRow = (index) => {
       this.scroll.scrollTop(this.list.getOffsetForRow({ index }));
     };
 
@@ -75,7 +75,7 @@ class ScrollLoader extends Component {
       isEmpty: list.length === 0,
       index,
       key,
-      style
+      style,
     });
   };
 
@@ -95,7 +95,7 @@ class ScrollLoader extends Component {
       rvInfiniteLoaderProps,
       rvAutoSizerProps,
       rvListProps,
-      rvScrollProps
+      rvScrollProps,
     } = this.props;
 
     return (
@@ -112,7 +112,7 @@ class ScrollLoader extends Component {
               >
                 <List
                   {...rvListProps}
-                  ref={instance => this.registerRef(instance, registerChild)}
+                  ref={(instance) => this.registerRef(instance, registerChild)}
                   onRowsRendered={onRowsRendered}
                   rowCount={rowCount}
                   rowHeight={rowHeight}
@@ -144,7 +144,7 @@ ScrollLoader.propTypes = {
   rvInfiniteLoaderProps: PropTypes.object,
   rvAutoSizerProps: PropTypes.object,
   rvListProps: PropTypes.object,
-  rvScrollProps: PropTypes.object
+  rvScrollProps: PropTypes.object,
 };
 
 export default ScrollLoader;

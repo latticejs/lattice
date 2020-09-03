@@ -8,42 +8,42 @@ const enterEdge = (selection, ghostEdge) => {
   if (ghostEdge) {
     // Note (dk): ghostEdge mode refers to an extra edge which appears
     // when you try to connect two nodes while in editable mode.
-    selectAll(`.${DEFAULTS.nodeClass}`).each(function() {
+    selectAll(`.${DEFAULTS.nodeClass}`).each(function () {
       this.parentNode.appendChild(this);
     });
   }
 };
 
-const updateEdge = selection => {
+const updateEdge = (selection) => {
   selection
-    .attr('x1', d => d.source.x)
-    .attr('y1', d => d.source.y)
-    .attr('x2', d => d.target.x)
-    .attr('y2', d => d.target.y);
+    .attr('x1', (d) => d.source.x)
+    .attr('y1', (d) => d.source.y)
+    .attr('x2', (d) => d.target.x)
+    .attr('y2', (d) => d.target.y);
 };
 
 export default class Edge extends Component {
   static defaultProps = {
-    onEdgeClick: () => {}
+    onEdgeClick: () => {},
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      selected: false
+      selected: false,
     };
   }
   componentDidMount() {
     this.d3Edge = select(this.edge)
       .datum(this.props.data)
-      .call(selection => enterEdge(selection, this.props.ghostEdge));
+      .call((selection) => enterEdge(selection, this.props.ghostEdge));
   }
 
   componentDidUpdate() {
     this.d3Edge.datum(this.props.data).call(updateEdge);
   }
 
-  handleEdgeClick = e => {
+  handleEdgeClick = (e) => {
     const { editable, data, editSelectedEdge, onEdgeClick, idx, getNodeIdx, ghostEdge } = this.props;
 
     if (ghostEdge) {
@@ -53,17 +53,17 @@ export default class Edge extends Component {
     if (editable) {
       return editSelectedEdge({
         ...data,
-        idx
+        idx,
       });
     }
 
     onEdgeClick({
       source: getNodeIdx(data.source),
-      target: getNodeIdx(data.target)
+      target: getNodeIdx(data.target),
     });
     // add selected state
-    this.setState(prevState => ({
-      selected: !prevState.selected
+    this.setState((prevState) => ({
+      selected: !prevState.selected,
     }));
   };
 
@@ -74,7 +74,7 @@ export default class Edge extends Component {
 
   getActions() {
     return {
-      deleteAction: event => this.deleteAction(event)
+      deleteAction: (event) => this.deleteAction(event),
     };
   }
 
@@ -88,7 +88,7 @@ export default class Edge extends Component {
       showEdgePanel,
       showEdgePanelIdx,
       idx,
-      selectedClass
+      selectedClass,
     } = this.props;
     const edgeClasses = [classes.dagEdge];
 
@@ -107,7 +107,7 @@ export default class Edge extends Component {
 
     return (
       <g className={classNames(DEFAULTS.linkClass, edgeClasses)} onClick={this.handleEdgeClick}>
-        <line ref={edge => (this.edge = edge)}>
+        <line ref={(edge) => (this.edge = edge)}>
           {showEdgePanel && showEdgePanelIdx === idx && children && children({ ...data, actions: this.getActions() })}
         </line>
         {ghostEdge ? '' : <polygon id={`dag__line-${idx}`} className={DEFAULTS.arrowClass} />}

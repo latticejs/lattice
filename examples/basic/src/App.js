@@ -18,25 +18,25 @@ import 'typeface-roboto';
 import { Widget } from '@latticejs/widgets';
 
 // Custom Style
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   flex: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
   widget: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    padding: theme.spacing(4)
+    padding: theme.spacing(4),
   },
   link: {
-    color: theme.palette.text.secondary
-  }
+    color: theme.palette.text.secondary,
+  },
 });
 
 class App extends Component {

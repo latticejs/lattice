@@ -12,11 +12,11 @@ import ScrollLoader from './ScrollLoader';
 // possible variants head, body, footer
 const TableContext = React.createContext();
 
-const withDiv = WrappedComponent => ({ ...props }) => <WrappedComponent {...props} component="div" />;
+const withDiv = (WrappedComponent) => ({ ...props }) => <WrappedComponent {...props} component="div" />;
 
-const stylesHead = theme => ({ root: { display: 'block' } });
-const stylesBody = theme => ({ root: { display: 'block' } });
-const stylesRow = theme => {
+const stylesHead = (theme) => ({ root: { display: 'block' } });
+const stylesBody = (theme) => ({ root: { display: 'block' } });
+const stylesRow = (theme) => {
   const styles = muiTableRowStyles(theme);
   const { root: cellRoot } = muiTableCellStyles(theme);
 
@@ -26,11 +26,11 @@ const stylesRow = theme => {
       display: 'flex',
       boxSizing: 'border-box',
       alignItems: 'center',
-      borderBottom: cellRoot.borderBottom
-    }
+      borderBottom: cellRoot.borderBottom,
+    },
   };
 };
-const stylesCell = theme => {
+const stylesCell = (theme) => {
   const styles = muiTableCellStyles(theme);
   return {
     ...styles,
@@ -42,15 +42,15 @@ const stylesCell = theme => {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       '&:last-child': {
-        paddingRight: 60
-      }
-    }
+        paddingRight: 60,
+      },
+    },
   };
 };
 
 const withDivAndStyles = (WrappedComponent, styles) => withStyles(styles)(withDiv(WrappedComponent));
 
-const InnerTableBody = props => {
+const InnerTableBody = (props) => {
   const { classes, className, rvListProps = {}, ...loaderProps } = props;
 
   return (
@@ -63,12 +63,12 @@ const InnerTableBody = props => {
   );
 };
 
-const InnerTableCell = props => {
+const InnerTableCell = (props) => {
   const { ...cellProps } = props;
 
   return (
     <TableContext.Consumer>
-      {variant => <MuiTableCell variant={variant} {...cellProps} component="div" />}
+      {(variant) => <MuiTableCell variant={variant} {...cellProps} component="div" />}
     </TableContext.Consumer>
   );
 };

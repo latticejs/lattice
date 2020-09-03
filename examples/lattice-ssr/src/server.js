@@ -2,7 +2,7 @@ import {
   ThemeProvider as MuiThemeProvider,
   StylesProvider,
   ServerStyleSheets,
-  createGenerateClassName
+  createGenerateClassName,
 } from '@material-ui/core/styles';
 import { renderToString } from 'react-dom/server';
 import App from './Components/App';
@@ -29,8 +29,8 @@ app.use((req, res) => {
           theme={createMuiTheme({
             palette: { type: 'light' },
             typography: {
-              useNextVariants: true
-            }
+              useNextVariants: true,
+            },
           })}
         >
           <CssBaseline />

@@ -8,8 +8,8 @@ const navigation = [
   {
     path: '/employees',
     title: 'Employees',
-    component: () => <div>dummy</div>
-  }
+    component: () => <div>dummy</div>,
+  },
 ];
 
 describe('<SideMenu />', () => {

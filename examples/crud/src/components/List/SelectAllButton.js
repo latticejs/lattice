@@ -16,17 +16,17 @@ const SelectAll = ({ checked, disabled, onChange, classes }) => {
   );
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   formControl: {
-    marginLeft: theme.spacing(3)
+    marginLeft: theme.spacing(3),
   },
   check: {
-    marginLeft: 0
+    marginLeft: 0,
   },
   label: {
     ...theme.typography.button,
-    marginLeft: theme.spacing(2)
-  }
+    marginLeft: theme.spacing(2),
+  },
 });
 
 export default withStyles(styles)(SelectAll);

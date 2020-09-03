@@ -45,16 +45,16 @@ export default {
   defaults: {
     ui: {
       __typename: 'ui',
-      nightMode: false
+      nightMode: false,
     },
-    datagrids: []
+    datagrids: [],
   },
   resolvers: {
     Query: {
       getDatagrid: (_, { id }, { cache }) => {
         try {
           const previous = cache.readQuery({ query: getAllDatagrids });
-          const datagrid = previous.datagrids.find(datagrid => datagrid.id === id);
+          const datagrid = previous.datagrids.find((datagrid) => datagrid.id === id);
 
           if (datagrid) {
             return datagrid;
@@ -64,7 +64,7 @@ export default {
         }
 
         return null;
-      }
+      },
     },
     Mutation: {
       updateUi: (_, { nightMode }, { cache }) => {
@@ -72,8 +72,8 @@ export default {
           const data = {
             ui: {
               __typename: 'ui',
-              nightMode
-            }
+              nightMode,
+            },
           };
           cache.writeData({ data });
         } catch (err) {
@@ -85,17 +85,17 @@ export default {
         try {
           const query = getAllDatagrids;
           const previous = cache.readQuery({ query });
-          const datagrid = previous.datagrids.find(datagrid => datagrid.id === id) || {
+          const datagrid = previous.datagrids.find((datagrid) => datagrid.id === id) || {
             id,
-            __typename: 'Datagrid'
+            __typename: 'Datagrid',
           };
 
           datagrid.variables = variables;
           datagrid.scrollTop = scrollTop;
 
-          const datagrids = previous.datagrids.filter(datagrid => datagrid.id !== id);
+          const datagrids = previous.datagrids.filter((datagrid) => datagrid.id !== id);
           const data = {
-            datagrids: datagrids.concat([datagrid])
+            datagrids: datagrids.concat([datagrid]),
           };
           cache.writeQuery({ query, data });
 
@@ -105,7 +105,7 @@ export default {
         }
 
         return null;
-      }
-    }
-  }
+      },
+    },
+  },
 };

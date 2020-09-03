@@ -6,7 +6,7 @@ import pkg from './package';
 const baseRollupPlugins = [
   babel({
     exclude: ['node_modules/**', '../../node_modules/**'],
-    runtimeHelpers: true
+    runtimeHelpers: true,
   }),
   commonjs({
     include: ['node_modules/**', '../../node_modules/**'],
@@ -60,14 +60,14 @@ const baseRollupPlugins = [
         'ScatterChart',
         'AreaChart',
         'RadialBarChart',
-        'ComposedChart'
-      ]
-    }
+        'ComposedChart',
+      ],
+    },
   }),
   resolve({
     jsnext: true,
-    main: true
-  })
+    main: true,
+  }),
 ];
 
 const external = Object.keys(pkg.peerDependencies).concat(Object.keys(pkg.dependencies));
@@ -80,8 +80,8 @@ export async function cjs(task, opts) {
       external,
       output: {
         file: 'mui-recharts.js',
-        format: 'cjs'
-      }
+        format: 'cjs',
+      },
     })
     .target('dist/');
 }
@@ -94,8 +94,8 @@ export async function es(task, opts) {
       external,
       output: {
         file: 'mui-recharts.es.js',
-        format: 'es'
-      }
+        format: 'es',
+      },
     })
     .target('dist/es');
 }
@@ -115,7 +115,7 @@ export async function build(task) {
   await task.serial(['compile', 'modules']);
 }
 
-export default async function(task) {
+export default async function (task) {
   await task.start('build');
   await task.watch('src/**/*.js', ['compile', 'modules']);
 }
