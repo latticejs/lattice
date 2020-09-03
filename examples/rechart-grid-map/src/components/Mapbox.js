@@ -33,7 +33,7 @@ class Mapbox extends Component {
     this.mapObj.addControl(
       new MapboxGeocoder({
         accessToken: Mapboxgl.accessToken,
-        mapboxgl: Mapboxgl
+        mapboxgl: Mapboxgl,
       })
     );
     this.mapObj.on('load', this.stateCountyLayerSetter);
@@ -49,7 +49,7 @@ class Mapbox extends Component {
         id: 'state-population',
         source: {
           type: 'vector',
-          url: 'mapbox://mapbox.660ui7x6'
+          url: 'mapbox://mapbox.660ui7x6',
         },
         'source-layer': 'state_county_population_2014_cen',
         maxzoom: this.zoomThreshold,
@@ -77,10 +77,10 @@ class Mapbox extends Component {
             10000000,
             '#8B4225',
             25000000,
-            '#723122'
+            '#723122',
           ],
-          'fill-opacity': 0.75
-        }
+          'fill-opacity': 0.75,
+        },
       },
       'waterway-label'
     );
@@ -90,7 +90,7 @@ class Mapbox extends Component {
         id: 'county-population',
         source: {
           type: 'vector',
-          url: 'mapbox://mapbox.660ui7x6'
+          url: 'mapbox://mapbox.660ui7x6',
         },
         'source-layer': 'state_county_population_2014_cen',
         minzoom: this.zoomThreshold,
@@ -118,10 +118,10 @@ class Mapbox extends Component {
             500000,
             '#8B4225',
             1000000,
-            '#723122'
+            '#723122',
           ],
-          'fill-opacity': 0.75
-        }
+          'fill-opacity': 0.75,
+        },
       },
       'waterway-label'
     );

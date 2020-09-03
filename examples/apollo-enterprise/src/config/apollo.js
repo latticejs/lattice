@@ -27,7 +27,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 const stateLink = withClientState({
   ...merge(...stores),
-  cache
+  cache,
 });
 
 const client = new ApolloClient({
@@ -39,14 +39,14 @@ const client = new ApolloClient({
         const data = {
           networkStatus: {
             __typename: 'NetworkStatus',
-            isConnected
-          }
+            isConnected,
+          },
         };
         cache.writeData({ data });
         return null;
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 client.onResetStore(stateLink.writeDefaults);

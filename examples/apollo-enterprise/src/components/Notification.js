@@ -16,33 +16,33 @@ const variantIcon = {
   success: CheckCircleIcon,
   warning: WarningIcon,
   error: ErrorIcon,
-  info: InfoIcon
+  info: InfoIcon,
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   success: {
-    backgroundColor: green[600]
+    backgroundColor: green[600],
   },
   error: {
-    backgroundColor: theme.palette.error.dark
+    backgroundColor: theme.palette.error.dark,
   },
   info: {
-    backgroundColor: theme.palette.primary.dark
+    backgroundColor: theme.palette.primary.dark,
   },
   warning: {
-    backgroundColor: amber[700]
+    backgroundColor: amber[700],
   },
   icon: {
-    fontSize: 20
+    fontSize: 20,
   },
   iconVariant: {
     opacity: 0.9,
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   message: {
     display: 'flex',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
 function InnerNotification(props) {
@@ -56,7 +56,7 @@ function InnerNotification(props) {
     autoHideDuration = 2000,
     anchorOrigin = {
       vertical: 'bottom',
-      horizontal: 'right'
+      horizontal: 'right',
     },
     ...other
   } = props;
@@ -75,7 +75,7 @@ function InnerNotification(props) {
         action={[
           <IconButton key="close" aria-label="Close" color="inherit" className={classes.close} onClick={onClose}>
             <CloseIcon className={classes.icon} />
-          </IconButton>
+          </IconButton>,
         ]}
         {...other}
       />
@@ -88,14 +88,14 @@ const Notification = withStyles(styles)(InnerNotification);
 export class GraphqlErrorNotification extends Component {
   state = {
     message: null,
-    lastError: null
+    lastError: null,
   };
 
   static getDerivedStateFromProps({ error }, state) {
     let message = null;
 
     if (error && error.graphQLErrors) {
-      message = error.graphQLErrors.map(error => error.message).join('\n');
+      message = error.graphQLErrors.map((error) => error.message).join('\n');
     }
 
     if (state.lastError === error) {
@@ -105,7 +105,7 @@ export class GraphqlErrorNotification extends Component {
     if (message && !state.message) {
       return {
         lastError: error,
-        message
+        message,
       };
     }
 

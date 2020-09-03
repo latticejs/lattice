@@ -30,5 +30,5 @@ decorate(ProjectForm, {
   visible: observable,
   type: observable,
   projectId: observable,
-  project: computed
+  project: computed,
 });

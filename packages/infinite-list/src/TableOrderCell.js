@@ -6,7 +6,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { TableCell } from './Table';
 
 const checkOrder = (field, orderBy) => {
-  const order = orderBy.find(o => o.field === field);
+  const order = orderBy.find((o) => o.field === field);
 
   let direction = 'asc';
   let active = false;
@@ -21,7 +21,7 @@ export default class TableOrderCell extends Component {
   static defaultProps = {
     multiSort: true,
     title: '',
-    orderBy: []
+    orderBy: [],
   };
 
   handleOrder = ({ active, direction }, e) => {
@@ -35,7 +35,7 @@ export default class TableOrderCell extends Component {
     const nextOrder = { field, direction: newDirection };
     let nextOrderBy;
     if (multiSort && e.shiftKey) {
-      nextOrderBy = [...orderBy.filter(o => o.field !== field), nextOrder];
+      nextOrderBy = [...orderBy.filter((o) => o.field !== field), nextOrder];
     } else {
       nextOrderBy = [nextOrder];
     }

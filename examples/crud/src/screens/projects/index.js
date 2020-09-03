@@ -11,7 +11,7 @@ const enhance = compose(
   inject('uiStore'),
   withState('showSuccess', 'setShowSuccess', false),
   withHandlers({
-    editProject: ({ uiStore, setShowSuccess }) => projectId => {
+    editProject: ({ uiStore, setShowSuccess }) => (projectId) => {
       uiStore.projectForm.type = 'edit';
       uiStore.projectForm.projectId = projectId;
       uiStore.projectForm.visible = true;
@@ -24,7 +24,7 @@ const enhance = compose(
     },
     closeModal: ({ uiStore }) => () => {
       uiStore.projectForm.reset();
-    }
+    },
   }),
   withHandlers({
     onSave: ({ setShowSuccess, closeModal }) => () => {
@@ -33,7 +33,7 @@ const enhance = compose(
       setTimeout(() => {
         setShowSuccess(false);
       }, 3000);
-    }
+    },
   }),
   observer
 );

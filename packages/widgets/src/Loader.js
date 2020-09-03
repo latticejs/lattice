@@ -8,19 +8,19 @@ import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     height: '100%',
-    flexGrow: 1
+    flexGrow: 1,
   },
   fullscreen: {
     height: '100vh',
     width: '100%',
-    position: 'absolute'
+    position: 'absolute',
   },
   linear: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 function Loader({ classes, loading, component, fullscreen, className, children }) {
@@ -34,7 +34,7 @@ function Loader({ classes, loading, component, fullscreen, className, children }
   }
 
   const _className = classnames(className, classes.root, {
-    [classes.fullscreen]: fullscreen
+    [classes.fullscreen]: fullscreen,
   });
 
   if (loading) {
@@ -58,10 +58,10 @@ Loader.propTypes = {
   component: PropTypes.oneOfType([PropTypes.oneOf(['circular', 'linear']), PropTypes.func]),
   loading: PropTypes.bool,
   fullscreen: PropTypes.bool,
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array])
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
 };
 
 Loader.defaultProps = {
   component: 'circular',
-  fullscreen: false
+  fullscreen: false,
 };

@@ -7,10 +7,7 @@ var pkg = require('./package.json');
 
 var DEFAULT_EXAMPLE = (exports.DEFAULT_EXAMPLE = 'basic');
 
-program
-  .version(pkg.version)
-  .usage('[options] command')
-  .description(pkg.description);
+program.version(pkg.version).usage('[options] command').description(pkg.description);
 
 program
   .command('example <exampleName> <projectName>')
@@ -30,7 +27,7 @@ if (!process.argv.slice(2).length) {
   program.help();
 }
 
-program.on('command:*', function(args) {
+program.on('command:*', function (args) {
   // runs: clap projectName
   // shortcut for clap example basic projectName
   clapi.clap(DEFAULT_EXAMPLE, args[0]);

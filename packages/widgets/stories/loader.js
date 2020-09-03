@@ -17,7 +17,7 @@ import Readme from '../README.md';
 import { withReadme } from '@latticejs/storybook-readme';
 
 // Decorators
-const InGrid = story => (
+const InGrid = (story) => (
   <Grid container>
     <Grid item xs={12}>
       {story()}
@@ -41,7 +41,7 @@ const Loaded = () => (
 
 const dynamicProps = () => ({
   loading: boolean('LOADING', true),
-  fullscreen: boolean('FULLSCREEN', false)
+  fullscreen: boolean('FULLSCREEN', false),
 });
 
 const withApiReadme = withReadme(Readme)(['loader-api']);

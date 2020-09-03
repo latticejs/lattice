@@ -14,8 +14,8 @@ const httpLink = new HttpLink({ uri: `http://${API_URL}` });
 const wsLink = new WebSocketLink({
   uri: `ws://${API_URL}`,
   options: {
-    reconnect: true
-  }
+    reconnect: true,
+  },
 });
 
 const terminatingLink = split(
@@ -30,7 +30,7 @@ const terminatingLink = split(
 
 const client = new ApolloClient({
   link: ApolloLink.from([terminatingLink]),
-  cache
+  cache,
 });
 
 export default client;
