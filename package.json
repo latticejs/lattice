@@ -25,9 +25,9 @@
   },
   "devDependencies": {
     "@geut/chan": "^2.2.1",
-    "@storybook/addon-actions": "^4.1.13",
-    "@storybook/addon-storysource": "^4.1.13",
-    "@storybook/react": "^4.1.13",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-storysource": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
