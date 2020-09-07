@@ -84,7 +84,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Update Phase - 2020-09-03
 - examples
-  - examples: upgrade apollo-enterprise, apollo-real-time-chart, basic example to hooks.
+  - examples: upgrade apollo-enterprise, apollo-real-time-chart, basic, rechart-grid-map example to hooks.
 
 ## Update Phase - 2020-08-31
 - Greenkeeper: Versions of packages has been upgraded to fix greenkeeper PR issues.
