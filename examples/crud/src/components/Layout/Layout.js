@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Types from 'prop-types';
 
 // Material-UI
@@ -46,14 +46,12 @@ const styles = (theme) => ({
   },
 });
 
-class Layout extends Component {
-  state = {
-    nightMode: false,
-  };
+const Layout = (props) => {
+  const [nightMode, setNightMode] = useState(false);
 
-  createTheme() {
-    const { nightMode } = this.state;
+  const { classes, children } = props;
 
+  const createTheme = () => {
     return createMuiTheme({
       palette: {
         primary: blue,
@@ -65,44 +63,37 @@ class Layout extends Component {
         suppressDeprecationWarnings: true,
       },
     });
-  }
-
-  toggleTheme = () => {
-    this.setState({
-      nightMode: !this.state.nightMode,
-    });
   };
 
-  render() {
-    const { classes, children } = this.props;
-    const { nightMode } = this.state;
+  const toggleTheme = () => {
+    setNightMode(!nightMode);
+  };
 
-    return (
-      <JssProvider generateClassName={generateClassName}>
-        <MuiThemeProvider theme={this.createTheme()}>
-          <CssBaseline />
+  return (
+    <JssProvider generateClassName={generateClassName}>
+      <MuiThemeProvider theme={createTheme()}>
+        <CssBaseline />
 
-          <div className={classes.root}>
-            <AppBar position="static" className={classes.appBar}>
-              <Toolbar>
-                <Typography variant="h6" color="inherit" className={classes.flex}>
-                  Lattice CRUD
-                </Typography>
-                <Tooltip title="Toggle Night Mode" enterDelay={300}>
-                  <IconButton onClick={this.toggleTheme} color="inherit">
-                    {nightMode ? <DayIcon /> : <NightIcon />}
-                  </IconButton>
-                </Tooltip>
-              </Toolbar>
-            </AppBar>
-            <div className={classes.container}>{children}</div>
-            <Dialogs />
-          </div>
-        </MuiThemeProvider>
-      </JssProvider>
-    );
-  }
-}
+        <div className={classes.root}>
+          <AppBar position="static" className={classes.appBar}>
+            <Toolbar>
+              <Typography variant="h6" color="inherit" className={classes.flex}>
+                Lattice CRUD
+              </Typography>
+              <Tooltip title="Toggle Night Mode" enterDelay={300}>
+                <IconButton onClick={toggleTheme} color="inherit">
+                  {nightMode ? <DayIcon /> : <NightIcon />}
+                </IconButton>
+              </Tooltip>
+            </Toolbar>
+          </AppBar>
+          <div className={classes.container}>{children}</div>
+          <Dialogs />
+        </div>
+      </MuiThemeProvider>
+    </JssProvider>
+  );
+};
 
 Layout.propTypes = {
   children: Types.element,
