@@ -17,11 +17,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - react-scripts package.
 
+## Reinforcement
+- Upgrade the version of Widget and MUI-Recharts packages to Beta-1.0.3
+
 ## Addition Phase - 2019-12-04
 - Added Map Package.
 - Added ag-grid package.
 - Added Example of Mapbox, Sunburst && PieChart.
-- Readmes are updated.
+- Readmes are updated
 
 ## Update MUI version
 - Updated MUI version in dag package to 4.5.1.

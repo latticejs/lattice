@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/mui-recharts",
-  "version": "1.0.1-beta.2",
+  "version": "1.0.1-beta.3",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
