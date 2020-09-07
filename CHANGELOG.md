@@ -88,7 +88,10 @@ Following examples are now upgraded to use Hooks.
   - apollo-real-time-chart
   - basic
   - lattice-ssr
+  - minimal
+  - minimal-with-gulp
   - rechart-grid-map
+  - crud
 
 ## Update Phase - 2020-08-31
 - Greenkeeper: Versions of packages has been upgraded to fix greenkeeper PR issues.

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 // Material-UI
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -48,108 +48,104 @@ const Chart = (props) => (
   </PieChart>
 );
 
-class App extends Component {
-  handleNightModeChange = () => {
-    const { updateTheme, nightMode } = this.props;
+const App = (props) => {
+  const [data] = useState({
+    deps: [
+      { name: '@latticejs/widgets', value: 123369 },
+      { name: '@material-ui/core', value: 392567 },
+      { name: '@material-ui/icons', value: 3630161 },
+      { name: 'react', value: 5529 },
+      { name: 'react-dom', value: 92455 },
+      { name: 'typeface-roboto', value: 3064 },
+    ],
+    devDeps: [
+      { name: 'babel-core', value: 539213 },
+      { name: 'babel-loader', value: 46534 },
+      { name: 'babel-plugin-transform-class-properties', value: 371741 },
+      { name: 'babel-preset-env', value: 61171 },
+      { name: 'babel-preset-react', value: 129792 },
+      { name: 'css-loader', value: 214658 },
+      { name: 'file-loader', value: 179134 },
+      { name: 'html-webpack-plugin', value: 625851 },
+      { name: 'style-loader', value: 170557 },
+      { name: 'webpack', value: 1900109 },
+    ],
+  });
+
+  const { classes, nightMode } = props;
+
+  const handleNightModeChange = () => {
+    const { updateTheme, nightMode } = props;
     updateTheme(!nightMode);
   };
 
-  state = {
-    data: {
-      deps: [
-        { name: '@latticejs/widgets', value: 123369 },
-        { name: '@material-ui/core', value: 392567 },
-        { name: '@material-ui/icons', value: 3630161 },
-        { name: 'react', value: 5529 },
-        { name: 'react-dom', value: 92455 },
-        { name: 'typeface-roboto', value: 3064 },
-      ],
-      devDeps: [
-        { name: 'babel-core', value: 539213 },
-        { name: 'babel-loader', value: 46534 },
-        { name: 'babel-plugin-transform-class-properties', value: 371741 },
-        { name: 'babel-preset-env', value: 61171 },
-        { name: 'babel-preset-react', value: 129792 },
-        { name: 'css-loader', value: 214658 },
-        { name: 'file-loader', value: 179134 },
-        { name: 'html-webpack-plugin', value: 625851 },
-        { name: 'style-loader', value: 170557 },
-        { name: 'webpack', value: 1900109 },
-      ],
-    },
-  };
-
-  render() {
-    const { classes, nightMode } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <AppBar position="static" className={classes.appBar}>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" className={classes.flex}>
-              Minimal With Gulp Example
-            </Typography>
-            <MuiTooltip title="Toggle Night Mode" enterDelay={300}>
-              <IconButton onClick={this.handleNightModeChange} color="inherit">
-                {nightMode ? <DayIcon /> : <NightIcon />}
-              </IconButton>
-            </MuiTooltip>
-          </Toolbar>
-        </AppBar>
-        <Grid container>
-          <Grid item xs={6}>
-            <Grid container justify="space-around" spacing={Number(0)}>
-              <Grid item xs={10}>
-                <Widget className={classes.widget} title="About" border="bottom">
-                  <Typography variant="body1">
-                    This is a minimal demo with respect to:
-                    <br />
-                    - minimal tooling (webpack and babel),
-                    <br />
-                    - no react-scripts,
-                    <br />- consuming Lattice packages directly.
-                  </Typography>
-                </Widget>
-              </Grid>
-              <Grid item xs={10}>
-                <Widget className={classes.widget} title="Froala Editor" border="bottom">
-                  <Editor config={{ width: '100%' }} />
-                </Widget>
-              </Grid>
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" className={classes.flex}>
+            Minimal With Gulp Example
+          </Typography>
+          <MuiTooltip title="Toggle Night Mode" enterDelay={300}>
+            <IconButton onClick={handleNightModeChange} color="inherit">
+              {nightMode ? <DayIcon /> : <NightIcon />}
+            </IconButton>
+          </MuiTooltip>
+        </Toolbar>
+      </AppBar>
+      <Grid container>
+        <Grid item xs={6}>
+          <Grid container justify="space-around" spacing={Number(0)}>
+            <Grid item xs={10}>
+              <Widget className={classes.widget} title="About" border="bottom">
+                <Typography variant="body1">
+                  This is a minimal demo with respect to:
+                  <br />
+                  - minimal tooling (webpack and babel),
+                  <br />
+                  - no react-scripts,
+                  <br />- consuming Lattice packages directly.
+                </Typography>
+              </Widget>
             </Grid>
-          </Grid>
-          <Grid item xs={6}>
-            <Grid container justify="space-around" spacing={Number(0)}>
-              <Grid item>
-                <Widget className={classes.widget} title="Bundle data" border="bottom">
-                  <div>
-                    {Chart(this.state.data)}
-                    <Typography variant="caption" align="center">
-                      NOTE: Actual sizes might be smaller if only parts of the package are used.
-                    </Typography>
-                  </div>
-                </Widget>
-              </Grid>
+            <Grid item xs={10}>
+              <Widget className={classes.widget} title="Froala Editor" border="bottom">
+                <Editor config={{ width: '100%' }} />
+              </Widget>
             </Grid>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="subtitle1" align="center">
-              Want to learn more? Check the&nbsp;
-              <a
-                className={classes.link}
-                href="https://github.com/latticejs/lattice"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                docs
-              </a>
-              !
-            </Typography>
           </Grid>
         </Grid>
-      </div>
-    );
-  }
-}
+        <Grid item xs={6}>
+          <Grid container justify="space-around" spacing={Number(0)}>
+            <Grid item>
+              <Widget className={classes.widget} title="Bundle data" border="bottom">
+                <div>
+                  {Chart(data)}
+                  <Typography variant="caption" align="center">
+                    NOTE: Actual sizes might be smaller if only parts of the package are used.
+                  </Typography>
+                </div>
+              </Widget>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="subtitle1" align="center">
+            Want to learn more? Check the&nbsp;
+            <a
+              className={classes.link}
+              href="https://github.com/latticejs/lattice"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              docs
+            </a>
+            !
+          </Typography>
+        </Grid>
+      </Grid>
+    </div>
+  );
+};
 
 export default withStyles(styles)(App);
