@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 // Material-UI
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -81,88 +81,79 @@ function a11yProps(index) {
   };
 }
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedTab: 0,
-    };
-  }
+const App = (props) => {
+  const [selectedTab, setSelectedTab] = useState(0);
 
-  handleNightModeChange = () => {
-    const { updateTheme, nightMode } = this.props;
+  const { classes, nightMode } = props;
+
+  const handleNightModeChange = () => {
+    const { updateTheme, nightMode } = props;
     updateTheme(!nightMode);
   };
 
-  handleChange = (event, newTab) => {
-    this.setState({
-      selectedTab: newTab,
-    });
+  const handleChange = (event, newTab) => {
+    setSelectedTab(newTab);
   };
 
-  render() {
-    const { classes, nightMode } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <AppBar position="static" className={classes.appBar}>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" className={classes.flex}>
-              USA Census
-            </Typography>
-            <Tooltip title="Toggle Night Mode" enterDelay={300}>
-              <IconButton onClick={this.handleNightModeChange} color="inherit">
-                {nightMode ? <DayIcon /> : <NightIcon />}
-              </IconButton>
-            </Tooltip>
-          </Toolbar>
-        </AppBar>
-        <AppBar position="static" color="default">
-          <Tabs
-            value={this.state.selectedTab}
-            onChange={this.handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            aria-label="scrollable force tabs example"
-          >
-            <Tab label="Rechart" icon={<PieChartIcon />} {...a11yProps(0)} />
-            <Tab label="Ag-Grid" icon={<GridOnIcon />} {...a11yProps(1)} />
-            <Tab label="Map" icon={<MapIcon />} {...a11yProps(2)} />
-          </Tabs>
-        </AppBar>
-        <TabPanel value={this.state.selectedTab} index={0}>
-          <Grid container justify="flex-start" spacing={Number('4')}>
-            <Grid item xs={6}>
-              <Widget className={classes.widget} title="State & County Data" border="top">
-                <Sunburst />
-              </Widget>
-            </Grid>
-            <Grid item xs={6}>
-              <Widget className={classes.widget} title="State Data" border="top">
-                <PieChart />
-              </Widget>
-            </Grid>
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" className={classes.flex}>
+            USA Census
+          </Typography>
+          <Tooltip title="Toggle Night Mode" enterDelay={300}>
+            <IconButton onClick={handleNightModeChange} color="inherit">
+              {nightMode ? <DayIcon /> : <NightIcon />}
+            </IconButton>
+          </Tooltip>
+        </Toolbar>
+      </AppBar>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={selectedTab}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          aria-label="scrollable force tabs example"
+        >
+          <Tab label="Rechart" icon={<PieChartIcon />} {...a11yProps(0)} />
+          <Tab label="Ag-Grid" icon={<GridOnIcon />} {...a11yProps(1)} />
+          <Tab label="Map" icon={<MapIcon />} {...a11yProps(2)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel value={selectedTab} index={0}>
+        <Grid container justify="flex-start" spacing={Number('4')}>
+          <Grid item xs={6}>
+            <Widget className={classes.widget} title="State & County Data" border="top">
+              <Sunburst />
+            </Widget>
           </Grid>
-        </TabPanel>
-        <TabPanel value={this.state.selectedTab} index={1}>
-          <Grid container justify="center" spacing={Number(0)}>
-            <Grid item xs={12}>
-              <Widget className={classes.widget} title="State & County Population" border="top">
-                <AgGrid />
-              </Widget>
-            </Grid>
+          <Grid item xs={6}>
+            <Widget className={classes.widget} title="State Data" border="top">
+              <PieChart />
+            </Widget>
           </Grid>
-        </TabPanel>
-        <TabPanel value={this.state.selectedTab} index={2}>
-          <Grid container justify="center" spacing={Number(0)}>
-            <Grid item xs={12}>
-              <Mapbox />
-            </Grid>
+        </Grid>
+      </TabPanel>
+      <TabPanel value={selectedTab} index={1}>
+        <Grid container justify="center" spacing={Number(0)}>
+          <Grid item xs={12}>
+            <Widget className={classes.widget} title="State & County Population" border="top">
+              <AgGrid />
+            </Widget>
           </Grid>
-        </TabPanel>
-      </div>
-    );
-  }
-}
+        </Grid>
+      </TabPanel>
+      <TabPanel value={selectedTab} index={2}>
+        <Grid container justify="center" spacing={Number(0)}>
+          <Grid item xs={12}>
+            <Mapbox />
+          </Grid>
+        </Grid>
+      </TabPanel>
+    </div>
+  );
+};
 
 export default withStyles(styles)(App);
