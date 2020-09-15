@@ -1,4 +1,4 @@
-var octokit = require('@octokit/rest')();
+var octokit = require('@octokit/rest');
 
 module.exports = function validateExampleName(repoData, example) {
   return new Promise(function (resolve, reject) {

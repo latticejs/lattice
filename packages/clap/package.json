@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/clap",
-  "version": "1.0.1-beta.3",
+  "version": "1.0.1-beta.4",
   "description": "Create Lattice App, the CLI for bootstraping your upcoming lattice app.",
   "main": "index.js",
   "preferGlobal": true,
@@ -31,7 +31,7 @@
     "jest": "^23.4.0"
   },
   "dependencies": {
-    "@octokit/rest": "^15.18.0",
+    "@octokit/rest": "^18.0.5",
     "chalk": "^2.4.0",
     "commander": "^2.20.0",
     "execa": "^1.0.0",

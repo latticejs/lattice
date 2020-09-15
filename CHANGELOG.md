@@ -17,11 +17,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - react-scripts package.
 
+## Reinforcement
+- Upgrade the version of Widget and MUI-Recharts packages to Beta-1.0.3
+
 ## Addition Phase - 2019-12-04
 - Added Map Package.
 - Added ag-grid package.
 - Added Example of Mapbox, Sunburst && PieChart.
-- Readmes are updated.
+- Readmes are updated
 
 ## Update MUI version
 - Updated MUI version in dag package to 4.5.1.
@@ -92,6 +95,10 @@ Following examples are now upgraded to use Hooks.
 
 ## Update Phase - 2020-08-31
 - Greenkeeper: Versions of packages has been upgraded to fix greenkeeper PR issues.
+
+## Update Phase - 2020-09-11
+- packages
+  - clap: upgrade @octokit/rest to 18.0.5.
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
