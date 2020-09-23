@@ -8,22 +8,22 @@ const ora = require('ora');
  * @return {string} describing project name is required
  *
  */
-exports.missingProjectName = function missingProjectName() {
+function missingProjectName() {
   return `${chalk.red('error:')} please specify the project name.
     Eg:
       $ clap <projectName>
   `;
 };
 
-exports.alreadyExists = function alreadyExists() {
+function alreadyExists() {
   return `${chalk.red('error:')} project name already exists.`;
 };
 
-exports.error = function error(msg) {
+function error(msg) {
   return `${chalk.red(msg)}`;
 };
 
-exports.describeClap = function describeClap() {
+function describeClap() {
   return `
     ${chalk.cyan('download and bootstrap `exampleName` into your upcoming lattice project.')}
     Eg:
@@ -32,15 +32,15 @@ exports.describeClap = function describeClap() {
   `;
 };
 
-exports.helpClapBranch = function helpClapBranch() {
+function helpClapBranch() {
   return 'download example from a branch (https://github.com/latticejs/lattice/branches).';
 };
 
-exports.runningClap = function runningClap() {
+function runningClap() {
   return `${chalk.green('Creating your upcoming lattice project!')}`;
 };
 
-exports.clapSucceed = function clapSucceed(project) {
+function clapSucceed(project) {
   return `${chalk.green('Your lattice project is ready!')}
     Next steps:
       - ${chalk.cyan(`cd ${project}`)}
@@ -50,43 +50,62 @@ exports.clapSucceed = function clapSucceed(project) {
   `;
 };
 
-exports.createDir = function createDir() {
+function createDir() {
   return `${chalk.green('Creating project directory...')}`;
 };
 
-exports.downloadExample = function downloadExample() {
+function downloadExample() {
   return `${chalk.green('Downloading lattice example...')}`;
 };
 
-exports.installDeps = function installDeps() {
+function installDeps() {
   return `${chalk.green('Installing deps...')}`;
 };
 
-exports.wait = function wait(message) {
+function wait(message) {
   var spinner = ora(message);
   spinner.color = 'blue';
   spinner.start();
   return spinner;
 };
 
-exports.listExamples = function listExamples() {
+function listExamples() {
   return chalk.green('Lattice example projects: ');
 };
 
-exports.describeList = function describeList() {
+function describeList() {
   return `
     ${chalk.cyan('list all the available lattice example projects.')}
   `;
 };
 
-exports.helpListBranch = function helpListBranch() {
+function helpListBranch() {
   return 'list examples from a branch (https://github.com/latticejs/lattice/branches).';
 };
 
-exports.checkValidExample = function checkValidExample() {
+function checkValidExample() {
   return chalk.green('Validating example...');
 };
 
-exports.renamePkgName = function renamePkgName() {
+function renamePkgName() {
   return chalk.green('Renaming package.json name...');
+};
+
+export default {
+  renamePkgName: renamePkgName,
+  checkValidExample: checkValidExample,
+  helpListBranch: helpListBranch,
+  describeList: describeList,
+  listExamples: listExamples,
+  wait: wait,
+  installDeps: installDeps,
+  downloadExample: downloadExample,
+  createDir: createDir,
+  clapSucceed: clapSucceed,
+  runningClap: runningClap,
+  helpClapBranch: helpClapBranch,
+  describeClap: describeClap,
+  error: error,
+  alreadyExists: alreadyExists,
+  missingProjectName: missingProjectName
 };

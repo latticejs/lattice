@@ -1,9 +1,8 @@
-#!/usr/bin/env node
 // \\ CLAP => Create Lattice App \\
 
-var program = require('commander');
-var clapi = require('./lib');
-var pkg = require('./package.json');
+import program from 'commander';
+import clapi from './lib';
+import pkg from './package.json';
 
 var DEFAULT_EXAMPLE = (exports.DEFAULT_EXAMPLE = 'basic');
 

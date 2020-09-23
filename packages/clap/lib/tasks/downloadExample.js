@@ -8,7 +8,7 @@ function sanitizeBranchName(name) {
   return name.replace(/\//, '-').toLowerCase();
 }
 
-module.exports = async function downloadExample(project, example, branch) {
+export default async function downloadExample(project, example, branch) {
   assert.ok(project);
   assert.ok(example);
   assert.strictEqual(typeof project, 'string', 'clap: project should be a string');
