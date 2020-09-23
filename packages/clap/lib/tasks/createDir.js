@@ -1,7 +1,7 @@
 const assert = require('assert');
 const makeDir = require('make-dir');
 
-module.exports = function createDir(projectName) {
+export default function createDir(projectName) {
   assert.ok(projectName);
   assert.strictEqual(typeof projectName, 'string', 'clap: createDir expects a string');
   return new Promise(function (resolve, reject) {
@@ -16,4 +16,4 @@ module.exports = function createDir(projectName) {
         });
       });
   });
-};
+}

@@ -2,7 +2,7 @@ const assert = require('assert');
 const readFileSync = require('fs').readFileSync;
 const writeFileSync = require('fs').writeFileSync;
 
-module.exports = function renamePkgName(pkgName) {
+export default function renamePkgName(pkgName) {
   assert.ok(pkgName);
   assert.equal(typeof pkgName, 'string', 'clap: renamePkgName expects a string');
 
@@ -15,4 +15,4 @@ module.exports = function renamePkgName(pkgName) {
   } catch (err) {
     return Promise.reject({ code: 1, stderr: err });
   }
-};
+}

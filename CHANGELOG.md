@@ -100,5 +100,9 @@ Following examples are now upgraded to use Hooks.
 - packages
   - clap: upgrade @octokit/rest to 18.0.5.
 
+  ## Update Phase - 2020-09-23
+- packages
+  - clap: fixed clap terminal warnings.
+
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
