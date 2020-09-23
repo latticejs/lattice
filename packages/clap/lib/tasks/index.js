@@ -6,10 +6,10 @@ import list from './listExamples';
 import rename from './renamePkgName';
 
 export default {
-  validate: validate,
-  createDir: createDir,
-  download: download,
-  install: install,
-  list: list,
-  rename: rename,
+  validate,
+  createDir,
+  download,
+  install,
+  list,
+  rename,
 };
