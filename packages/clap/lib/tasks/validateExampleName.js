@@ -1,9 +1,10 @@
-var octokit = require('@octokit/rest');
+const { Octokit } = require('@octokit/rest');
+const octokit = new Octokit();
 
-module.exports = function validateExampleName(repoData, example) {
+export default function validateExampleName(repoData, example) {
   return new Promise(function (resolve, reject) {
     octokit.repos
-      .getContents({
+      .getContent({
         owner: repoData.owner,
         repo: repoData.repo,
         path: `${repoData.path}/${example}/package.json`,
@@ -19,4 +20,4 @@ module.exports = function validateExampleName(repoData, example) {
         });
       });
   });
-};
+}

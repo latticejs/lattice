@@ -1,7 +1,7 @@
 // \\ CLAP API \\
-var fs = require('fs');
-var messages = require('./messages');
-var tasks = require('./tasks');
+import fs from 'fs';
+import messages from './messages';
+import tasks from './tasks';
 
 // \ Lattice repo data \
 var repoOptions = {
@@ -154,7 +154,7 @@ async function list(cmd) {
 }
 
 // exported
-module.exports = {
+export default {
   clap: clap,
   list: list,
   messages: messages,
