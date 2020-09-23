@@ -49,4 +49,4 @@ export default async function downloadExample(project, example, branch) {
         resolve({ code: 0 });
       });
   });
-};
+}

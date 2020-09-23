@@ -1,4 +1,4 @@
-const { Octokit } = require("@octokit/rest");
+const { Octokit } = require('@octokit/rest');
 const octokit = new Octokit();
 
 export default function validateExampleName(repoData, example) {
@@ -20,4 +20,4 @@ export default function validateExampleName(repoData, example) {
         });
       });
   });
-};
+}

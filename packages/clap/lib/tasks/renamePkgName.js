@@ -15,4 +15,4 @@ export default function renamePkgName(pkgName) {
   } catch (err) {
     return Promise.reject({ code: 1, stderr: err });
   }
-};
+}

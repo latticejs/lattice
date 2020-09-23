@@ -1,5 +1,5 @@
 var assert = require('assert');
-const { Octokit } = require("@octokit/rest");
+const { Octokit } = require('@octokit/rest');
 const octokit = new Octokit();
 
 export default function listExamples(options) {
@@ -11,4 +11,4 @@ export default function listExamples(options) {
     path: options.path,
     ref: options.ref,
   });
-};
+}
