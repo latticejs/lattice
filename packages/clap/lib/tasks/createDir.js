@@ -1,5 +1,5 @@
-const assert = require('assert');
-const makeDir = require('make-dir');
+import assert from 'assert';
+import makeDir from 'make-dir';
 
 export default function createDir(projectName) {
   assert.ok(projectName);

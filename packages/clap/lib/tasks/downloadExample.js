@@ -1,6 +1,6 @@
-var assert = require('assert');
-var got = require('got');
-var tar = require('tar');
+import assert from 'assert';
+import got from 'got';
+import tar from 'tar';
 
 var BASE_URL = 'https://codeload.github.com/latticejs/lattice/tar.gz/';
 

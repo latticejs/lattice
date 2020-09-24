@@ -1,5 +1,5 @@
-var assert = require('assert');
-const { Octokit } = require('@octokit/rest');
+import assert from 'assert';
+import { Octokit } from '@octokit/rest';
 const octokit = new Octokit();
 
 export default function listExamples(options) {
