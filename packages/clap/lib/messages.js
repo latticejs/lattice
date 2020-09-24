@@ -1,6 +1,6 @@
 // \\ CLAP output messages \\
-const chalk = require('chalk');
-const ora = require('ora');
+import chalk from 'chalk';
+import ora from 'ora';
 
 /**
  * Message function for describing project name is required
