@@ -102,8 +102,8 @@ Following examples are now upgraded to use Hooks.
 
   ## Update Phase - 2020-09-23
 - packages
-  - clap: fixed clap terminal warnings.
-  - clap: added shebang line in cli.js.
+  - clap: Fixed clap terminal warnings. Also Upgraded the version of clap package to 1.0.1-beta.6
+  - clap: Added shebang line in cli.js.
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
