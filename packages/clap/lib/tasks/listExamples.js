@@ -1,7 +1,7 @@
-var assert = require('assert');
-const { Octokit } = require('@octokit/rest');
-const octokit = new Octokit();
+import assert from 'assert';
+import { Octokit } from '@octokit/rest';
 
+const octokit = new Octokit();
 export default function listExamples(options) {
   assert.equal(typeof options, 'object', 'clap: listExamples expects an object');
 

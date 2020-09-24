@@ -1,5 +1,5 @@
-var assert = require('assert');
-var exec = require('execa');
+import assert from 'assert';
+import exec from 'execa';
 
 export default function installDeps(projectPath) {
   assert.ok(projectPath);

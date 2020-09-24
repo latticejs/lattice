@@ -1,8 +1,8 @@
 {
   "name": "@latticejs/clap",
-  "version": "1.0.1-beta.6",
+  "version": "1.0.1-beta.11",
   "description": "Create Lattice App, the CLI for bootstraping your upcoming lattice app.",
-  "main": "index.js",
+  "main": "./bin/clap.bin.js",
   "preferGlobal": true,
   "bin": {
     "clap": "./bin/clap.bin.js",
@@ -28,8 +28,7 @@
     "bili": "^3.1.0",
     "del-cli": "^1.1.0",
     "fast-async": "^6.3.0",
-    "jest": "^23.4.0",
-    "@babel/plugin-transform-runtime": "^7.11.5"
+    "jest": "^23.4.0"
   },
   "dependencies": {
     "@octokit/rest": "^18.0.6",

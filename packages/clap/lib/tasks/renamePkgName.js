@@ -1,6 +1,5 @@
-const assert = require('assert');
-const readFileSync = require('fs').readFileSync;
-const writeFileSync = require('fs').writeFileSync;
+import assert from 'assert';
+import { readFileSync, writeFileSync } from 'fs';
 
 export default function renamePkgName(pkgName) {
   assert.ok(pkgName);

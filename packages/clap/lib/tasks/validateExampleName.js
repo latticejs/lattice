@@ -1,6 +1,6 @@
-const { Octokit } = require('@octokit/rest');
-const octokit = new Octokit();
+import { Octokit } from '@octokit/rest';
 
+const octokit = new Octokit();
 export default function validateExampleName(repoData, example) {
   return new Promise(function (resolve, reject) {
     octokit.repos
