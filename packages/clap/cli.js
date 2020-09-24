@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // \\ CLAP => Create Lattice App \\
 
 import program from 'commander';
