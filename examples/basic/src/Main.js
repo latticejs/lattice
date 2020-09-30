@@ -28,7 +28,7 @@ const Main = (props) => {
   return (
     <MuiThemeProvider theme={createTheme()}>
       <CssBaseline />
-      <App {...this.props} updateTheme={updateTheme} nightMode={nightMode} />
+      <App {...props} updateTheme={updateTheme} nightMode={nightMode} />
     </MuiThemeProvider>
   );
 };
