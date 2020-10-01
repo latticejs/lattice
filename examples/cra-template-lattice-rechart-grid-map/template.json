@@ -1,0 +1,23 @@
+{
+    "package": {
+        "scripts": {
+            "test": "echo 'test'",
+            "start": "react-scripts start",
+            "build": "react-scripts build"
+          },
+          "dependencies": {
+            "@latticejs/map": "^1.0.1-beta.4",
+            "@latticejs/mui-recharts": "^1.0.1-beta.3",
+            "@latticejs/recharts-sunburst": "^1.0.1-beta.3",
+            "@latticejs/widgets": "^1.0.1-beta.3",
+            "@latticejs/ag-grid": "^1.0.1-beta.3",
+            "@material-ui/core": "^4.8.2",
+            "@material-ui/icons": "^4.5.1",
+            "recharts": "^1.8.5",
+            "react": "^16.13.1",
+            "react-dom": "^16.13.1",
+            "typeface-roboto": "^0.0.54",
+            "react-smooth": "1.0.2"
+          }
+    }
+}
