@@ -4,9 +4,14 @@
 ![screenshot](screen.png?raw=true "CRUD Example")
 
 ## How to start
-There are two options to get started with this example:
+There are three options to get started with this example:
+- [Using CRA Template](#using-cra-template)
 - [Using clap](#using-clap)
 - [Clone this repo](clone-this-repo)
+
+### With CRA
+
+`npx create-react-app my-app --template cra-template-lattice-crud`
 
 ### Using `clap` (recommended) 
 [Clap](https://github.com/latticejs/lattice/tree/master/packages/clap) is the recommended way to get started with this example. It makes all required steps _automagically_ 🚀:
