@@ -1,0 +1,25 @@
+{
+  "name": "cra-template-lattice-basic",
+  "version": "1.0.1-beta.2",
+  "description": "A basic Lattice CRA App",
+  "main": "template.json",
+  "scripts": {
+    "test": "echo 'test'",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@latticejs/widgets": "^1.0.1-beta.3",
+    "@material-ui/core": "^4.8.2",
+    "@material-ui/icons": "^4.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typeface-roboto": "^0.0.54"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.1.0"
+  }
+}
