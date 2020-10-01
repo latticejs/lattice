@@ -100,14 +100,21 @@ Following examples are now upgraded to use Hooks.
 - packages
   - clap: upgrade @octokit/rest to 18.0.5.
 
-  ## Update Phase - 2020-09-23
+## Update Phase - 2020-09-23
 - packages
   - clap: Fixed clap terminal warnings. Also Upgraded the version of clap package to 1.0.1-beta.11
   - clap: Added shebang line in cli.js.
 
-  ### Fixed
+### Fixed
 - examples/basic
   - examples: fix basic example
+
+### Development Phase - 2020-10-01
+CRA Templates has been created for following examples.
+  - basic
+  - crud
+  - dag-in-action
+  - rechart-grid-map
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
