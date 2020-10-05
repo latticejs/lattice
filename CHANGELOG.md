@@ -115,6 +115,8 @@ CRA Templates has been created for following examples.
   - crud
   - dag-in-action
   - rechart-grid-map
+  - apollo-enterprise
+  - apollo-real-time-chart
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
