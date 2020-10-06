@@ -115,6 +115,7 @@ CRA Templates has been created for following examples.
   - crud
   - dag-in-action
   - rechart-grid-map
+  - minimal
   - minimal-with-gulp
   - apollo-enterprise
   - apollo-real-time-chart

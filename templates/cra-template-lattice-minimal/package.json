@@ -1,0 +1,19 @@
+{
+  "name": "cra-template-lattice-minimal",
+  "version": "1.0.0",
+  "description": "A minimal Lattice App",
+  "main": "template.json",
+  "private": true,
+  "jest": {
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/docs/"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
