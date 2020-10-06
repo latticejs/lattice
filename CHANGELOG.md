@@ -119,8 +119,10 @@ CRA Templates has been created for following examples.
   - apollo-enterprise
   - apollo-real-time-chart
 
-  ### Fixed
+### Fixed - 2020-10-01
+- examples/apollo-real-time-chart
 - examples/lattice-ssr
+- examples: fix apollo-real-time-chart example
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
