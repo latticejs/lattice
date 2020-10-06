@@ -9,8 +9,5 @@ hydrate(
   <StylesProvider generateClassName={generateClassName}>
     <Main />
   </StylesProvider>,
-  document.getElementById('root'),
-  () => {
-    document.getElementById('jss-styles').parentNode.removeChild(document.getElementById('jss-styles'));
-  }
+  document.getElementById('root')
 );
