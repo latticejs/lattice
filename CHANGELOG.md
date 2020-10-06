@@ -118,6 +118,7 @@ CRA Templates has been created for following examples.
   - minimal-with-gulp
   - apollo-enterprise
   - apollo-real-time-chart
+  - lattice-ssr
 
 ### Fixed - 2020-10-01
 - examples/apollo-real-time-chart

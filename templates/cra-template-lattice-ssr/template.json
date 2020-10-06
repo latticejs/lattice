@@ -1,0 +1,47 @@
+{
+    "package": {
+        "scripts": {
+            "start": "node dist/main.js",
+            "watch": "webpack --mode development --watch & nodemon dist/main",
+            "dev": "rimraf dist && rimraf public && webpack --mode development --progress",
+            "build": "rimraf dist && rimraf public && webpack --mode production --progress",
+            "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json dist"
+          },
+          "dependencies": {
+            "@latticejs/infinite-list": "^1.0.1-beta.2",
+            "@latticejs/mui-recharts": "^1.0.1-beta.3",
+            "@latticejs/recharts-sunburst": "^1.0.1-beta.3",
+            "@latticejs/tree": "^1.0.1-beta.2",
+            "@latticejs/widgets": "^1.0.1-beta.3",
+            "@material-ui/codemod": "^4.5.0",
+            "@material-ui/core": "^4.8.2",
+            "@material-ui/icons": "^4.5.1",
+            "classnames": "^2.2.0",
+            "express": "^4.17.0",
+            "file-loader": "^4.2.0",
+            "nodemon": "^1.19.0",
+            "react": "^16.13.1",
+            "react-dom": "^16.13.1",
+            "recharts": "^1.8.5",
+            "recompose": "^0.30.0",
+            "react-smooth": "1.0.2",
+            "@babel/core": "^7.10.2",
+            "@babel/plugin-proposal-class-properties": "^7.10.1",
+            "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+            "@babel/plugin-transform-runtime": "^7.10.1",
+            "@babel/preset-env": "^7.10.2",
+            "@babel/preset-react": "^7.10.1",
+            "babel-eslint": "^10.1.0",
+            "babel-loader": "^8.1.0",
+            "babel-plugin-import": "^1.12.0",
+            "html-webpack-plugin": "^3.2.0",
+            "reload": "^3.0.0",
+            "rimraf": "^3.0.0",
+            "standard": "^14.3.0",
+            "webpack": "^4.40.0",
+            "webpack-bundle-analyzer": "^3.5.0",
+            "webpack-cli": "^3.3.0",
+            "webpack-node-externals": "^1.7.0"
+          }
+    }
+}
