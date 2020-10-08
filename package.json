@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "@jest/reporters": "^26.4.1",
+    "import-local": "^3.0.2",
     "jest": "^26.4.2"
   }
 }

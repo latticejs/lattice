@@ -25060,9 +25060,9 @@ symbol.prototype.description@^1.0.0:
     has-symbols "^1.0.1"
 
 synchronous-promise@^2.0.6:
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.14.tgz#86b3b3284ad8567b69dc0b2d51c6fd446ddc2d91"
-  integrity sha512-XassJA855Rbhsggr5Yr1sms+iDDzkmwfhqPJzl7Lq544+7fjo9NmCpetrvQc33S/HE1JnoI2zA3CLDxTQTpWHA==
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.15.tgz#07ca1822b9de0001f5ff73595f3d08c4f720eb8e"
+  integrity sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==
 
 systeminformation@^3.54.0:
   version "3.54.0"
