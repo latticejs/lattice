@@ -38,6 +38,7 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "husky": "^4.2.5",
     "lerna": "^3.22.1",
+    "markdown-loader-jest": "^0.1.1",
     "prettier": "2.0.0",
     "storybook-readme": "^4.0.5"
   },
