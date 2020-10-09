@@ -1,0 +1,48 @@
+   { 
+    "parser": "babel-eslint",
+    "plugins": ["import", "prettier", "react"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "prettier"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js"]
+            }
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "jest": true
+    },
+    "rules": {
+        "quotes": 0,
+        "no-console": 1,
+        "no-debugger": 1,
+        "no-var": 1,
+        "no-trailing-spaces": 0,
+        "eol-last": 0,
+        "no-underscore-dangle": 0,
+        "no-alert": 0,
+        "no-lone-blocks": 0,
+        "import/extensions": 1,
+        "import/no-named-as-default": 0,
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true
+            }
+        ],
+        "react-app/react-hooks/rules-of-hooks": "off",
+        "react-app/react-hooks/exhaustive-deps": "off"
+    },
+    "globals": {
+        "Atomics": false,
+        "SharedArrayBuffer": false
+    }
+}
