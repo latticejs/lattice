@@ -1,12 +1,11 @@
-# Setup Project SaaSStarter
+# Setup Project saas-starter
 
-Clone the application from `git clone https://github.com/CelestialSystem/SaaSStarter.git`
+### With clap
+
+`clap example saas-starter my-app`
 
 ### Change Directory
-`cd SaaSStarter`
-
-### Install dependency
-`npm install`
+`cd my-app`
 
 ### Start the Dev server
 `npm start`
