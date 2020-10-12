@@ -127,7 +127,7 @@ CRA Templates has been created for following examples.
 - examples: fix apollo-real-time-chart example
 
 ## Addition Phase - 2020-10-08
-- Added SaaSStarter example.
+- Added saas-starter example.
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
