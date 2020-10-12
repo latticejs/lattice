@@ -1,3 +1,3 @@
 # lattice examples
 
-This workspace contains a serie of examples that can be used as boilerplates.
+This workspace contains a series of examples that can be used as boilerplates.
