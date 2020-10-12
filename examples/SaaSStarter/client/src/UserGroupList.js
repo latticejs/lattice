@@ -119,9 +119,7 @@ const useStyles = makeStyles((theme) => ({
  */
 const UserGroupList = ({ showLoader }) => {
   const classes = useStyles();
-  const { userGroupsLoading, userGroupsData, deleteGroupCotext } = useContext(
-    UserGroupContext
-  );
+  const { userGroupsLoading, userGroupsData, deleteGroupCotext } = useContext(UserGroupContext);
   const { selectedOrg, userOrgRoles, isSuperAdmin } = useContext(OrgContext);
   const [selectedUserGroup, setUserGroup] = useState({});
   const [open, setOpen] = useState(false);
@@ -141,10 +139,7 @@ const UserGroupList = ({ showLoader }) => {
    * To open and close the drawer
    */
   const toggleDrawer = (anchor, open, userGroup = {}) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
     setUserGroup(userGroup);
@@ -272,29 +267,18 @@ const UserGroupList = ({ showLoader }) => {
                 <TableBody>
                   {userGroupsList.map((row) => (
                     <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-                      <TableCell
-                        key={`${row.id}1`}
-                        className={classes.dataColumn}
-                      >
+                      <TableCell key={`${row.id}1`} className={classes.dataColumn}>
                         {row.group_details.name}
                       </TableCell>
-                      <TableCell
-                        key={`${row.id}2`}
-                        className={classes.dataColumn}
-                      >
+                      <TableCell key={`${row.id}2`} className={classes.dataColumn}>
                         {row.users.map((user, userIndex) => (
                           <span className={classes.userLabel} key={user.value}>
-                            {userIndex < row.users.length - 1
-                              ? `${user.label},`
-                              : user.label}
+                            {userIndex < row.users.length - 1 ? `${user.label},` : user.label}
                           </span>
                         ))}
                       </TableCell>
                       {isUserAdmin ? (
-                        <TableCell
-                          key={`${row.id}5`}
-                          className={classes.actionColumn}
-                        >
+                        <TableCell key={`${row.id}5`} className={classes.actionColumn}>
                           <ActionComponent userGroup={row} />
                         </TableCell>
                       ) : null}
@@ -318,29 +302,18 @@ const UserGroupList = ({ showLoader }) => {
             showLoader={showLoader}
           />
         </Drawer>
-        <Dialog
-          onClose={handleClose}
-          aria-labelledby="customized-dialog-title"
-          open={open}
-        >
+        <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
           <MuiDialogTitle disableTypography className={classes.root}>
             <Typography variant="h6">Delete User</Typography>
           </MuiDialogTitle>
           <MuiDialogContent className={classes.dialogContent} dividers>
-            <Typography gutterBottom>
-              Are you sure want to delete group ?
-            </Typography>
+            <Typography gutterBottom>Are you sure want to delete group ?</Typography>
           </MuiDialogContent>
           <MuiDialogActions>
             <Button variant="contained" color="default" onClick={handleClose}>
               No
             </Button>
-            <Button
-              className={classes.buttonMargin}
-              variant="contained"
-              color="primary"
-              onClick={onDeleteUser}
-            >
+            <Button className={classes.buttonMargin} variant="contained" color="primary" onClick={onDeleteUser}>
               Yes
             </Button>
           </MuiDialogActions>

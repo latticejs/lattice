@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Grid,
-  IconButton,
-  InputAdornment,
-  TextField,
-  Typography,
-} from '@material-ui/core';
+import { Box, Button, Divider, Grid, IconButton, InputAdornment, TextField, Typography } from '@material-ui/core';
 import { OrgContext } from './context';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { passwordValidator } from './helper/commonHelper';
@@ -83,9 +74,7 @@ const ChangePassword = ({ userId }) => {
       errorStatus = !(value.length > 0);
     }
 
-    const isMatch = !!(
-      name === 'confirmPassword' && state.newPassword !== value
-    );
+    const isMatch = !!(name === 'confirmPassword' && state.newPassword !== value);
 
     setState({
       ...state,
@@ -178,8 +167,7 @@ const ChangePassword = ({ userId }) => {
             </Box>
             <Box order={2} ml={2}>
               <Typography variant="h5">
-                Your Password should be at least 7-8 characters long — longer is
-                better.
+                Your Password should be at least 7-8 characters long — longer is better.
               </Typography>
             </Box>
           </Box>
@@ -191,8 +179,7 @@ const ChangePassword = ({ userId }) => {
             </Box>
             <Box order={2} ml={2}>
               <Typography variant="h5">
-                Should contain alphanumeric with lower-case letters, upper-case
-                letter, numeric and special character.
+                Should contain alphanumeric with lower-case letters, upper-case letter, numeric and special character.
               </Typography>
             </Box>
           </Box>
@@ -214,28 +201,15 @@ const ChangePassword = ({ userId }) => {
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="Toggle password visibility"
-                      onClick={() =>
-                        handleClickShowPassword(
-                          setShowCurrentPassword,
-                          isShowCurrentPassword
-                        )
-                      }
+                      onClick={() => handleClickShowPassword(setShowCurrentPassword, isShowCurrentPassword)}
                     >
-                      {isShowCurrentPassword ? (
-                        <VisibilityOff />
-                      ) : (
-                        <Visibility />
-                      )}
+                      {isShowCurrentPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 ),
               }}
             />
-            {state.isErrorCurrentPass && (
-              <span className={classes.errorColor}>
-                Please enter the current password{' '}
-              </span>
-            )}
+            {state.isErrorCurrentPass && <span className={classes.errorColor}>Please enter the current password </span>}
           </Box>
         </Grid>
         <Grid item md={7} lg={7}>
@@ -255,12 +229,7 @@ const ChangePassword = ({ userId }) => {
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="Toggle password visibility"
-                      onClick={() =>
-                        handleClickShowPassword(
-                          setShowNewPassword,
-                          isShowNewPassword
-                        )
-                      }
+                      onClick={() => handleClickShowPassword(setShowNewPassword, isShowNewPassword)}
                     >
                       {isShowNewPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
@@ -268,11 +237,7 @@ const ChangePassword = ({ userId }) => {
                 ),
               }}
             />
-            {state.isErrorNewPass && (
-              <span className={classes.errorColor}>
-                Please enter the valid password
-              </span>
-            )}
+            {state.isErrorNewPass && <span className={classes.errorColor}>Please enter the valid password</span>}
           </Box>
         </Grid>
         <Grid item md={7} lg={7}>
@@ -292,45 +257,25 @@ const ChangePassword = ({ userId }) => {
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="Toggle password visibility"
-                      onClick={() =>
-                        handleClickShowPassword(
-                          setShowConfirmPassword,
-                          isShowConfirmPassword
-                        )
-                      }
+                      onClick={() => handleClickShowPassword(setShowConfirmPassword, isShowConfirmPassword)}
                     >
-                      {isShowConfirmPassword ? (
-                        <VisibilityOff />
-                      ) : (
-                        <Visibility />
-                      )}
+                      {isShowConfirmPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 ),
               }}
             />
-            {state.isErrorConfirmPass && (
-              <span className={classes.errorColor}>
-                Please enter the valid password
-              </span>
-            )}
+            {state.isErrorConfirmPass && <span className={classes.errorColor}>Please enter the valid password</span>}
             <br />
             {state.isErrorMatchPass && (
-              <span className={classes.errorColor}>
-                New password and confirm password should be same
-              </span>
+              <span className={classes.errorColor}>New password and confirm password should be same</span>
             )}
           </Box>
         </Grid>
       </Box>
       <Box py={2} px={4} className={classes.actionBtnDiv}>
         <Grid item md={12} lg={12}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={onSubmitPassword}
-            className={classes.primaryBtn}
-          >
+          <Button variant="contained" color="primary" onClick={onSubmitPassword} className={classes.primaryBtn}>
             Change Password
           </Button>
         </Grid>

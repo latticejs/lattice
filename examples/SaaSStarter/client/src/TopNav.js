@@ -1,10 +1,6 @@
 import { Link } from 'react-router-dom';
 import { OrgContext } from './context';
-import {
-  bindMenu,
-  bindTrigger,
-  usePopupState,
-} from 'material-ui-popup-state/hooks';
+import { bindMenu, bindTrigger, usePopupState } from 'material-ui-popup-state/hooks';
 import { makeStyles } from '@material-ui/core/styles';
 
 import './css/font.css';
@@ -41,13 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TopNav = () => {
-  const {
-    userOrgs,
-    selectedOrg,
-    changeOrg,
-    isSuperAdmin,
-    orgMatch,
-  } = useContext(OrgContext);
+  const { userOrgs, selectedOrg, changeOrg, isSuperAdmin, orgMatch } = useContext(OrgContext);
   const orgPopupState = usePopupState({
     variant: 'popover',
     popupId: 'orgSwitcher',
@@ -60,8 +50,7 @@ const TopNav = () => {
   const { logout } = useAuth0();
   let orgLogo = LatticeLogo;
   let headerColor = '';
-  const selectedOrgCode =
-    orgMatch && orgMatch.params.orgCode ? orgMatch.params.orgCode : '';
+  const selectedOrgCode = orgMatch && orgMatch.params.orgCode ? orgMatch.params.orgCode : '';
 
   if (!isSuperAdmin && selectedOrg && selectedOrgCode) {
     orgLogo = selectedOrg.logo_url ? selectedOrg.logo_url : LatticeLogo;
@@ -78,11 +67,7 @@ const TopNav = () => {
   if (userOrgs && selectedOrg) {
     orgSelector = (
       <React.Fragment key="key">
-        <Button
-          className={classes.NavButtons}
-          color="inherit"
-          {...bindTrigger(orgPopupState)}
-        >
+        <Button className={classes.NavButtons} color="inherit" {...bindTrigger(orgPopupState)}>
           {selectedOrg.name}
           <ExpandMoreIcon fontSize="small" />
         </Button>

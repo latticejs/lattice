@@ -110,9 +110,7 @@ const useStyles = makeStyles(() => ({
  * @param {boolean} showLoader [recieved from props for showing loader]
  */
 const Org = ({ showLoader }) => {
-  const { userOrgs, isSuperAdmin, deleteOrgMemberDetail } = useContext(
-    OrgContext
-  );
+  const { userOrgs, isSuperAdmin, deleteOrgMemberDetail } = useContext(OrgContext);
 
   const { countList } = useContext(CommonContext);
   const classes = useStyles();
@@ -147,10 +145,7 @@ const Org = ({ showLoader }) => {
       event.preventDefault();
     }
 
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
     setState({ ...state, [anchor]: open });
@@ -248,11 +243,7 @@ const Org = ({ showLoader }) => {
     if (userOrgs) {
       return userOrgs.map((org) => (
         <Grid key={org.orgCode} item md={6} lg={4}>
-          <NavLink
-            to={`/${org.orgCode}/`}
-            className={classes.navLinkText}
-            onClick={routePath}
-          >
+          <NavLink to={`/${org.orgCode}/`} className={classes.navLinkText} onClick={routePath}>
             <div className={classes.orgCard}>
               <Box clone mt={2}>
                 <Grid container>
@@ -273,31 +264,18 @@ const Org = ({ showLoader }) => {
                   <Grid item md={4} lg={4} className={classes.orgLogoDiv}>
                     <Box display="flex">
                       <Box order={1}>
-                        <Typography
-                          color="primary"
-                          className={classes.orgIconFont}
-                        >
+                        <Typography color="primary" className={classes.orgIconFont}>
                           B
                         </Typography>
                       </Box>
                       <Box order={2} ml={0.5}>
                         <Grid container>
-                          <Grid
-                            item
-                            md={12}
-                            lg={12}
-                            className={classes.alignCenter}
-                          >
+                          <Grid item md={12} lg={12} className={classes.alignCenter}>
                             <Typography variant="h4">
                               <Box color="secondary.main">{org.usersCount}</Box>
                             </Typography>
                           </Grid>
-                          <Grid
-                            item
-                            md={12}
-                            lg={12}
-                            className={classes.alignCenter}
-                          >
+                          <Grid item md={12} lg={12} className={classes.alignCenter}>
                             <Typography variant="subtitle1">
                               <Box color="secondary.light">User</Box>
                             </Typography>
@@ -309,33 +287,18 @@ const Org = ({ showLoader }) => {
                   <Grid item md={4} lg={4} className={classes.orgLogoDiv}>
                     <Box display="flex">
                       <Box order={1}>
-                        <Typography
-                          color="primary"
-                          className={classes.orgIconFont}
-                        >
+                        <Typography color="primary" className={classes.orgIconFont}>
                           B
                         </Typography>
                       </Box>
                       <Box order={2} ml={0.5}>
                         <Grid container>
-                          <Grid
-                            item
-                            md={12}
-                            lg={12}
-                            className={classes.alignCenter}
-                          >
+                          <Grid item md={12} lg={12} className={classes.alignCenter}>
                             <Typography variant="h4">
-                              <Box color="secondary.main">
-                                {org.groupsCount}
-                              </Box>
+                              <Box color="secondary.main">{org.groupsCount}</Box>
                             </Typography>
                           </Grid>
-                          <Grid
-                            item
-                            md={12}
-                            lg={12}
-                            className={classes.alignCenter}
-                          >
+                          <Grid item md={12} lg={12} className={classes.alignCenter}>
                             <Typography variant="subtitle1">
                               <Box color="secondary.light">User Group</Box>
                             </Typography>
@@ -375,10 +338,7 @@ const Org = ({ showLoader }) => {
             classes={{ paper: classes.moreMenu }}
           >
             <MenuItem onClick={toggleDrawer(anchor, true)}>Edit</MenuItem>
-            <MenuItem
-              className={classes.deleteCls}
-              onClick={(e) => onConfirmOpenDialog(e, org)}
-            >
+            <MenuItem className={classes.deleteCls} onClick={(e) => onConfirmOpenDialog(e, org)}>
               Delete
             </MenuItem>
           </Menu>
@@ -399,11 +359,7 @@ const Org = ({ showLoader }) => {
   return (
     <div>
       <Box px={4} mt={12}>
-        <Grid
-          container
-          className={classes.titleContainer}
-          style={{ marginBottom: '30px' }}
-        >
+        <Grid container className={classes.titleContainer} style={{ marginBottom: '30px' }}>
           <Grid item md={6} lg={6} className={classes.alignItems}>
             <Typography variant="h2">
               <Box display="flex" color="secondary.main">
@@ -425,39 +381,20 @@ const Org = ({ showLoader }) => {
           onClose={toggleDrawer(anchor, false)}
           classes={{ paper: classes.sideDrawerPaper }}
         >
-          <OrgEditorDrawer
-            toggleDrawer={toggleDrawer(anchor, false)}
-            orgData={orgData}
-            showLoader={showLoader}
-          />
+          <OrgEditorDrawer toggleDrawer={toggleDrawer(anchor, false)} orgData={orgData} showLoader={showLoader} />
         </Drawer>
-        <Dialog
-          onClose={handleClose}
-          aria-labelledby="customized-dialog-title"
-          open={open}
-        >
+        <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
           <MuiDialogTitle disableTypography className={classes.root}>
             <Typography variant="h6">Delete User</Typography>
           </MuiDialogTitle>
           <MuiDialogContent className={classes.dialogContent} dividers>
-            <Typography gutterBottom>
-              Are you sure want to delete Org ?
-            </Typography>
+            <Typography gutterBottom>Are you sure want to delete Org ?</Typography>
           </MuiDialogContent>
           <MuiDialogActions>
-            <Button
-              variant="contained"
-              color="default"
-              onClick={closeConfirmDialog}
-            >
+            <Button variant="contained" color="default" onClick={closeConfirmDialog}>
               No
             </Button>
-            <Button
-              className={classes.buttonMargin}
-              variant="contained"
-              color="primary"
-              onClick={onDeleteOrg}
-            >
+            <Button className={classes.buttonMargin} variant="contained" color="primary" onClick={onDeleteOrg}>
               Yes
             </Button>
           </MuiDialogActions>

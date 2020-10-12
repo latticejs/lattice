@@ -17,14 +17,8 @@ const OrgBreadcrumbs = ({ current }) => {
   const classes = useStyles();
 
   return (
-    <Breadcrumbs
-      separator={<NavigateNextIcon fontSize="small" />}
-      aria-label="breadcrumb"
-    >
-      <Link
-        className={classes.breadcrumbsNavlink}
-        to={`/${selectedOrg.orgCode}`}
-      >
+    <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+      <Link className={classes.breadcrumbsNavlink} to={`/${selectedOrg.orgCode}`}>
         {selectedOrg.name}
       </Link>
       <Typography color="textPrimary">{current}</Typography>

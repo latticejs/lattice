@@ -317,10 +317,7 @@ const UserProfile = ({ showLoader }) => {
         </Typography>
         <Grid item md={12} lg={12}>
           <Box mb={2}>
-            <Breadcrumbs
-              separator={<NavigateNextIcon fontSize="small" />}
-              aria-label="breadcrumb"
-            >
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
               <NavLink className={classes.breadcrumbsNavlink} to="/">
                 Organisation List
               </NavLink>
@@ -352,9 +349,7 @@ const UserProfile = ({ showLoader }) => {
                         <AccountIcon style={{ verticalAlign: 'middle' }} />
                       </Box>
                       <Box order={2} mx={2} display="flex" alignItems="center">
-                        <Typography variant="h4">
-                          Profile Information
-                        </Typography>
+                        <Typography variant="h4">Profile Information</Typography>
                       </Box>
                     </Box>
                   }
@@ -397,11 +392,7 @@ const UserProfile = ({ showLoader }) => {
                   {...a11yProps(2)}
                 />
               </Tabs>
-              <TabPanel
-                className={classes.tabContainer}
-                value={selectedTab}
-                index={0}
-              >
+              <TabPanel className={classes.tabContainer} value={selectedTab} index={0}>
                 <Box mb={2}>
                   <Grid item md={12} lg={12}>
                     <Typography variant="h3" color="primary">
@@ -416,11 +407,7 @@ const UserProfile = ({ showLoader }) => {
                   <Grid item md={12} lg={12}>
                     <Box display="flex">
                       <Box order={1}>
-                        <Avatar
-                          variant="rounded"
-                          className={classes.userProfileAvatar}
-                          src={userProfile}
-                        />
+                        <Avatar variant="rounded" className={classes.userProfileAvatar} src={userProfile} />
                       </Box>
                       <Box order={2} ml={3}>
                         <Box component="span" display="block">
@@ -435,10 +422,7 @@ const UserProfile = ({ showLoader }) => {
                             <Button
                               component="span"
                               variant="contained"
-                              className={classNames(
-                                classes.secondaryBtn,
-                                classes.btnLightColor
-                              )}
+                              className={classNames(classes.secondaryBtn, classes.btnLightColor)}
                             >
                               Upload New
                             </Button>
@@ -447,10 +431,7 @@ const UserProfile = ({ showLoader }) => {
                         <Box component="span" display="block" mt={2}>
                           <Button
                             variant="contained"
-                            className={classNames(
-                              classes.secondaryBtn,
-                              classes.errorColor
-                            )}
+                            className={classNames(classes.secondaryBtn, classes.errorColor)}
                             onClick={removeImageHandler}
                           >
                             Remove
@@ -458,9 +439,7 @@ const UserProfile = ({ showLoader }) => {
                         </Box>
                       </Box>
                     </Box>
-                    <span className={classes.showError}>
-                      {error.message ? error.message : ''}
-                    </span>
+                    <span className={classes.showError}>{error.message ? error.message : ''}</span>
                   </Grid>
                 </Box>
                 <Box py={2} px={4}>
@@ -478,9 +457,7 @@ const UserProfile = ({ showLoader }) => {
                           onChange={inputChangeHandler}
                         />
                       </Box>
-                      <span className={classes.showError}>
-                        {validateState.userError.name ? 'Enter the name.' : ''}
-                      </span>
+                      <span className={classes.showError}>{validateState.userError.name ? 'Enter the name.' : ''}</span>
                     </Grid>
                     <Grid item md={1} lg={1} />
                     <Grid item md={5} lg={5}>
@@ -488,42 +465,23 @@ const UserProfile = ({ showLoader }) => {
                         <Typography> Email Address</Typography>
                       </Box>
                       <Box component="span" display="block">
-                        <TextField
-                          fullWidth
-                          variant="outlined"
-                          name="email"
-                          value={userValue.email}
-                          disabled
-                        />
+                        <TextField fullWidth variant="outlined" name="email" value={userValue.email} disabled />
                       </Box>
                     </Grid>
                   </Grid>
                 </Box>
                 <Box py={2} px={4} className={classes.actionBtnDiv}>
                   <Grid item md={12} lg={12}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      className={classes.primaryBtn}
-                      onClick={submitProfile}
-                    >
+                    <Button variant="contained" color="primary" className={classes.primaryBtn} onClick={submitProfile}>
                       Save Changes
                     </Button>
                   </Grid>
                 </Box>
               </TabPanel>
-              <TabPanel
-                className={classes.tabContainer}
-                value={selectedTab}
-                index={1}
-              >
+              <TabPanel className={classes.tabContainer} value={selectedTab} index={1}>
                 <ChangePassword userId={loggedInUserDetails.id} />
               </TabPanel>
-              <TabPanel
-                className={classes.tabContainer}
-                value={selectedTab}
-                index={2}
-              >
+              <TabPanel className={classes.tabContainer} value={selectedTab} index={2}>
                 <Box mb={2}>
                   <Grid item md={12} lg={12}>
                     <Typography variant="h3" color="primary">
@@ -537,16 +495,11 @@ const UserProfile = ({ showLoader }) => {
                 <Box py={4} px={4}>
                   <Grid item md={8} lg={8}>
                     <TableContainer component={Paper}>
-                      <Table
-                        className={classes.table}
-                        aria-label="simple table"
-                      >
+                      <Table className={classes.table} aria-label="simple table">
                         <TableHead>
                           <TableRow>
                             <TableCell>
-                              <Typography variant="h5">
-                                Organisation Name
-                              </Typography>
+                              <Typography variant="h5">Organisation Name</Typography>
                             </TableCell>
                             <TableCell>
                               <Typography variant="h5">Your Role</Typography>
@@ -554,14 +507,12 @@ const UserProfile = ({ showLoader }) => {
                           </TableRow>
                         </TableHead>
                         <TableBody>
-                          {loggedInUserDetails.organization_member.map(
-                            (org, index) => (
-                              <TableRow key={index}>
-                                <TableCell>{org.organization.name}</TableCell>
-                                <TableCell>{org.role}</TableCell>
-                              </TableRow>
-                            )
-                          )}
+                          {loggedInUserDetails.organization_member.map((org, index) => (
+                            <TableRow key={index}>
+                              <TableCell>{org.organization.name}</TableCell>
+                              <TableCell>{org.role}</TableCell>
+                            </TableRow>
+                          ))}
                         </TableBody>
                       </Table>
                     </TableContainer>

@@ -89,14 +89,8 @@ const VALIDATE_USER_EMAIL = gql`
  * query to Add reference of user to organiozation member
  */
 const ADD_TO_ORGANIZATION_MEMBER = gql`
-  mutation insertOrganizationMember(
-    $userID: uuid
-    $orgID: uuid
-    $userRole: String
-  ) {
-    insert_organization_member(
-      objects: { user_id: $userID, organization_id: $orgID, role: $userRole }
-    ) {
+  mutation insertOrganizationMember($userID: uuid, $orgID: uuid, $userRole: String) {
+    insert_organization_member(objects: { user_id: $userID, organization_id: $orgID, role: $userRole }) {
       affected_rows
       returning {
         user_id
@@ -109,11 +103,7 @@ const ADD_TO_ORGANIZATION_MEMBER = gql`
  * query to update the organiozation member
  */
 const UPDATE_TO_ORGANIZATION_MEMBER = gql`
-  mutation updateOrganizationMember(
-    $userID: uuid
-    $orgID: uuid
-    $userRole: String
-  ) {
+  mutation updateOrganizationMember($userID: uuid, $orgID: uuid, $userRole: String) {
     update_organization_member(
       where: { user_id: { _eq: $userID }, organization_id: { _eq: $orgID } }
       _set: { role: $userRole }
@@ -144,12 +134,7 @@ const UPDATE_USER = gql`
  * query to add new user
  */
 const ADD_NEW_USER = gql`
-  mutation createUser(
-    $email: String
-    $name: String
-    $orgId: uuid
-    $role: String
-  ) {
+  mutation createUser($email: String, $name: String, $orgId: uuid, $role: String) {
     signup(email: $email, name: $name, orgId: $orgId, role: $role) {
       id
     }
@@ -175,9 +160,7 @@ export const Provider = ({ children, currentOrg }) => {
   const usersLoading = usersResponse.loading;
   const userError = usersResponse.error;
   const users = !usersResponse.loading ? usersResponse.data.user : undefined;
-  const totalUser = !usersResponse.loading
-    ? usersResponse.data.user_aggregate.aggregate.count
-    : 0;
+  const totalUser = !usersResponse.loading ? usersResponse.data.user_aggregate.aggregate.count : 0;
   let userOptions = [];
   if (users) {
     userOptions = getSelectOptions(users, 'name', 'id');
@@ -203,8 +186,7 @@ export const Provider = ({ children, currentOrg }) => {
    * @function refetchUserDetails
    * @returns get updated response
    */
-  const refetchUserDetails = (emailQuery = '') =>
-    usersResponse.refetch(emailQuery);
+  const refetchUserDetails = (emailQuery = '') => usersResponse.refetch(emailQuery);
 
   /**
    * @function validateUserEmail

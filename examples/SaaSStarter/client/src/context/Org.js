@@ -41,18 +41,8 @@ const USER_ROLE = gql`
  * query to update user
  */
 const UPDATE_USER = gql`
-  mutation updateUserDetail(
-    $id: uuid
-    $name: String
-    $profile_photo: String
-    $email: String
-  ) {
-    changeEmail(
-      userId: $id
-      name: $name
-      profilePictureUrl: $profile_photo
-      newEmail: $email
-    ) {
+  mutation updateUserDetail($id: uuid, $name: String, $profile_photo: String, $email: String) {
+    changeEmail(userId: $id, name: $name, profilePictureUrl: $profile_photo, newEmail: $email) {
       user_id
     }
   }
@@ -62,15 +52,8 @@ const UPDATE_USER = gql`
  * query to update the user password
  */
 const UPDATE_USER_PASSWORD = gql`
-  mutation changePassword(
-    $oldPass: String!
-    $newPass: String!
-    $userId: uuid!
-  ) {
-    changePassword(
-      credentials: { newPassword: $newPass, oldPassword: $oldPass }
-      userId: $userId
-    ) {
+  mutation changePassword($oldPass: String!, $newPass: String!, $userId: uuid!) {
+    changePassword(credentials: { newPassword: $newPass, oldPassword: $oldPass }, userId: $userId) {
       user_id
     }
   }
@@ -80,21 +63,10 @@ const UPDATE_USER_PASSWORD = gql`
  * query to Update Org
  */
 const UPDATE_ORG = gql`
-  mutation updateOrg(
-    $id: uuid
-    $name: String
-    $orgCode: String
-    $skin_color: String
-    $logo_url: String
-  ) {
+  mutation updateOrg($id: uuid, $name: String, $orgCode: String, $skin_color: String, $logo_url: String) {
     update_organization(
       where: { id: { _eq: $id } }
-      _set: {
-        name: $name
-        orgCode: $orgCode
-        skin_color: $skin_color
-        logo_url: $logo_url
-      }
+      _set: { name: $name, orgCode: $orgCode, skin_color: $skin_color, logo_url: $logo_url }
     ) {
       affected_rows
       returning {
@@ -108,20 +80,8 @@ const UPDATE_ORG = gql`
  * query to insert new Org
  */
 const INSERT_ORG = gql`
-  mutation insertOrg(
-    $name: String
-    $orgCode: String
-    $skin_color: String
-    $logo_url: String
-  ) {
-    insert_organization(
-      objects: {
-        name: $name
-        orgCode: $orgCode
-        skin_color: $skin_color
-        logo_url: $logo_url
-      }
-    ) {
+  mutation insertOrg($name: String, $orgCode: String, $skin_color: String, $logo_url: String) {
+    insert_organization(objects: { name: $name, orgCode: $orgCode, skin_color: $skin_color, logo_url: $logo_url }) {
       affected_rows
       returning {
         id
@@ -135,9 +95,7 @@ const INSERT_ORG = gql`
  */
 const INSERT_MEMBER = gql`
   mutation insertOrgMemeber($userId: uuid, $orgId: uuid, $role: String) {
-    insert_organization_member(
-      objects: { user_id: $userId, organization_id: $orgId, role: $role }
-    ) {
+    insert_organization_member(objects: { user_id: $userId, organization_id: $orgId, role: $role }) {
       affected_rows
     }
   }
@@ -148,12 +106,7 @@ const INSERT_MEMBER = gql`
  */
 const DELETE_MEMBER = gql`
   mutation deleteOrgMember($id: uuid, $organization_id: uuid) {
-    delete_organization_member(
-      where: {
-        _and: { user_id: { _eq: $id } }
-        organization_id: { _eq: $organization_id }
-      }
-    ) {
+    delete_organization_member(where: { _and: { user_id: { _eq: $id } }, organization_id: { _eq: $organization_id } }) {
       affected_rows
     }
   }

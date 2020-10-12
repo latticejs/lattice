@@ -35,11 +35,7 @@ export default class Main extends Component {
     return (
       <ThemeProvider theme={this.createTheme()}>
         <CssBaseline />
-        <App
-          {...this.props}
-          updateTheme={this.updateTheme}
-          nightMode={this.state.nightMode}
-        />
+        <App {...this.props} updateTheme={this.updateTheme} nightMode={this.state.nightMode} />
       </ThemeProvider>
     );
   }

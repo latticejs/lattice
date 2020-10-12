@@ -2,11 +2,7 @@ import React, { useContext } from 'react';
 
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import {
-  OrgContext,
-  UserContextProvider,
-  UserGroupContextProvider,
-} from './context';
+import { OrgContext, UserContextProvider, UserGroupContextProvider } from './context';
 
 import OrgLandingPage from './OrgLandingPage';
 

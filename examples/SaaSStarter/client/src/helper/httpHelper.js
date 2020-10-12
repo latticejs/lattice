@@ -8,13 +8,7 @@ import axios from 'axios';
  * @param  {Function} errorHandler   [Failure Callback]
  * @return {Objet Callback}          [Return Object Callback]
  */
-export default function requestData(
-  httpObj,
-  successHandler,
-  errorHandler,
-  isJSON = true,
-  updateProgressBarValue
-) {
+export default function requestData(httpObj, successHandler, errorHandler, isJSON = true, updateProgressBarValue) {
   let hostName = process.env.REACT_APP_IMAGE_SERVER_HOST;
   let port = process.env.REACT_APP_IMAGE_SERVER_PORT || '';
 

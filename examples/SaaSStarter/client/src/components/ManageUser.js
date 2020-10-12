@@ -83,12 +83,7 @@ const useStyles = makeStyles((theme: Theme) =>
  */
 const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
   const classes = useStyles();
-  const {
-    validateUserEmail,
-    userDetailsContext,
-    updateUserOrganizationContext,
-    addNewUser,
-  } = useContext(UserContext);
+  const { validateUserEmail, userDetailsContext, updateUserOrganizationContext, addNewUser } = useContext(UserContext);
   let userData = !userDetailsContext ? [] : userDetailsContext;
   const [state, setState] = useState({
     formData: {
@@ -166,19 +161,11 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
       userEmail: state.formData.userEmail,
     };
 
-    if (
-      state.error.userName ||
-      state.error.userRole ||
-      !state.formData.userName ||
-      !state.formData.userRole
-    ) {
+    if (state.error.userName || state.error.userRole || !state.formData.userName || !state.formData.userRole) {
       return false;
     }
 
-    if (
-      (userData && userData.user && userData.user.length > 0) ||
-      Object.values(selectedUser).length > 0
-    ) {
+    if ((userData && userData.user && userData.user.length > 0) || Object.values(selectedUser).length > 0) {
       requestObj.isUserFromSameOrg = state.isUserFromSameOrg;
       requestObj.userID = state.userID;
       response = updateUserOrganizationContext(requestObj);
@@ -187,9 +174,7 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
     }
 
     if (response) {
-      const message = state.isUserFromSameOrg
-        ? 'User Updated successfully'
-        : 'User added successfully';
+      const message = state.isUserFromSameOrg ? 'User Updated successfully' : 'User added successfully';
       toast.info(message);
       toggleDrawer('right', false);
     } else {
@@ -200,15 +185,9 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
   };
 
   const changeAndSetState = () => {
-    const userDataCount =
-      userData && userData.user && userData.user.length
-        ? userData.user.length
-        : 0;
+    const userDataCount = userData && userData.user && userData.user.length ? userData.user.length : 0;
 
-    if (
-      (state.isEmailVerified && userDataCount > 0) ||
-      Object.values(selectedUser).length > 0
-    ) {
+    if ((state.isEmailVerified && userDataCount > 0) || Object.values(selectedUser).length > 0) {
       let validatedData;
       let checkOrgCount = [];
 
@@ -218,9 +197,9 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
         validatedData.role = selectedUser.organization_members[0].role;
       } else {
         validatedData = userData.user[0];
-        checkOrgCount = Object.values(
-          validatedData.organization_members
-        ).filter((data) => data.organization_id === orgID);
+        checkOrgCount = Object.values(validatedData.organization_members).filter(
+          (data) => data.organization_id === orgID
+        );
         let setRole = 'User';
         validatedData.organization_members.forEach((orgMember) => {
           if (orgMember.organization_id === orgID) {
@@ -230,9 +209,7 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
         validatedData.role = setRole;
       }
 
-      const checkOrg = !!(
-        checkOrgCount.length > 0 || Object.values(selectedUser).length > 0
-      );
+      const checkOrg = !!(checkOrgCount.length > 0 || Object.values(selectedUser).length > 0);
 
       if (!state.isEmailVerified || userDataCount > 0) {
         setState({
@@ -305,12 +282,7 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
   const renderAdditionalField = () => {
     let isDisable = false;
 
-    if (
-      !state.isUserFromSameOrg &&
-      userData &&
-      userData.user &&
-      userData.user.length > 0
-    ) {
+    if (!state.isUserFromSameOrg && userData && userData.user && userData.user.length > 0) {
       isDisable = true;
     }
 
@@ -330,21 +302,13 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
                 autoComplete="false"
                 disabled={isDisable}
               />
-              <p className={classes.showError}>
-                {state.error.userName ? "Name can't be blank. " : ''}
-              </p>
+              <p className={classes.showError}>{state.error.userName ? "Name can't be blank. " : ''}</p>
             </Box>
           </Grid>
           <Grid item md={12} lg={12}>
             <Box my={1.5}>
-              <FormControl
-                fullWidth
-                variant="filled"
-                className={classes.formControl}
-              >
-                <InputLabel id="demo-simple-select-filled-label">
-                  User Role
-                </InputLabel>
+              <FormControl fullWidth variant="filled" className={classes.formControl}>
+                <InputLabel id="demo-simple-select-filled-label">User Role</InputLabel>
                 <Select
                   className={classes.layoutTypeWidth}
                   value={state.formData.userRole}
@@ -450,9 +414,7 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
                         disabled={state.isEmailVerified}
                       />
                     </Box>
-                    <p className={classes.showError}>
-                      {state.error.userEmail ? 'Enter the valid email.' : ''}
-                    </p>
+                    <p className={classes.showError}>{state.error.userEmail ? 'Enter the valid email.' : ''}</p>
                     {renderValidationButton()}
                   </Grid>
                   {renderAdditionalField()}
@@ -463,12 +425,7 @@ const ManageUser = ({ orgID, selectedUser, toggleDrawer, initialUserData }) => {
           </div>
         </Grid>
         <Grid item md={12} lg={12}>
-          <Grid
-            container
-            direction="row"
-            justify="flex-end"
-            alignItems="center"
-          >
+          <Grid container direction="row" justify="flex-end" alignItems="center">
             {renderActionButton()}
           </Grid>
         </Grid>

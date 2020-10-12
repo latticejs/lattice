@@ -1,13 +1,4 @@
-import {
-  Avatar,
-  Badge,
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  TextField,
-  Typography,
-} from '@material-ui/core';
+import { Avatar, Badge, Box, Button, Grid, IconButton, TextField, Typography } from '@material-ui/core';
 import { OrgContext } from '../context';
 import { makeStyles } from '@material-ui/core/styles';
 import { toast } from 'react-toastify';
@@ -199,9 +190,7 @@ const OrgEditorDrawer = ({ toggleDrawer, orgData, showLoader }) => {
         response = updateOrgDetail(updateOrgState);
       }
       if (response) {
-        const message = updateOrgState.id
-          ? 'Org updated successfully'
-          : 'Org added successfully';
+        const message = updateOrgState.id ? 'Org updated successfully' : 'Org added successfully';
         toast.success(message);
         toggleDrawer(anchor, false);
         setShowLoader(false);
@@ -289,11 +278,7 @@ const OrgEditorDrawer = ({ toggleDrawer, orgData, showLoader }) => {
                       onChange={imageUploadHandler}
                     />
                     <label htmlFor="icon-button-file">
-                      <IconButton
-                        className={classes.profilePicAction}
-                        aria-label="upload picture"
-                        component="span"
-                      >
+                      <IconButton className={classes.profilePicAction} aria-label="upload picture" component="span">
                         <EditIcon fontSize="small" />
                       </IconButton>
                     </label>
@@ -348,9 +333,7 @@ const OrgEditorDrawer = ({ toggleDrawer, orgData, showLoader }) => {
                   style={{ background: `${skinColor.color}` }}
                   className={classNames(
                     classes.colorBox,
-                    orgState.skin_color === skinColor.color
-                      ? classes.selectedTheme
-                      : ''
+                    orgState.skin_color === skinColor.color ? classes.selectedTheme : ''
                   )}
                   onClick={(e) => colorHandler(e, skinColor.color)}
                 />
@@ -359,12 +342,7 @@ const OrgEditorDrawer = ({ toggleDrawer, orgData, showLoader }) => {
           </Grid>
           <Grid item md={12} lg={12}>
             <Box mt={6}>
-              <Grid
-                container
-                direction="row"
-                justify="flex-end"
-                alignItems="center"
-              >
+              <Grid container direction="row" justify="flex-end" alignItems="center">
                 <Grid item md={6} lg={6}>
                   <Box mr={2}>
                     <Button

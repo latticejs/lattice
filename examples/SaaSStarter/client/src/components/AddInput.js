@@ -48,12 +48,7 @@ const AddInput = ({ value = '', onChange = noOpp, onAdd = noOpp }) => {
         }}
       />
       <Divider className={classes.divider} orientation="vertical" />
-      <IconButton
-        color="primary"
-        className={classes.iconButton}
-        aria-label="add"
-        onClick={onAdd}
-      >
+      <IconButton color="primary" className={classes.iconButton} aria-label="add" onClick={onAdd}>
         <AddBoxIcon />
       </IconButton>
     </Paper>

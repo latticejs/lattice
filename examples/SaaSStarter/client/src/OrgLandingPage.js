@@ -1,13 +1,4 @@
-import {
-  Box,
-  Breadcrumbs,
-  Button,
-  Drawer,
-  Fab,
-  Grid,
-  Tooltip,
-  Typography,
-} from '@material-ui/core';
+import { Box, Breadcrumbs, Button, Drawer, Fab, Grid, Tooltip, Typography } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import { OrgContext } from './context';
 import { makeStyles } from '@material-ui/core/styles';
@@ -80,9 +71,7 @@ const useStyles = makeStyles((theme) => ({
  */
 const getUserCard = (selectedOrg, userOrgRoles, classes) => {
   let usersInfoCard = null;
-  const selectedOrgWithRole = userOrgRoles.filter(
-    (org) => org.orgId === selectedOrg.id
-  );
+  const selectedOrgWithRole = userOrgRoles.filter((org) => org.orgId === selectedOrg.id);
 
   if (selectedOrgWithRole && selectedOrgWithRole[0].role === 'Admin') {
     usersInfoCard = (
@@ -105,10 +94,7 @@ const getUserCard = (selectedOrg, userOrgRoles, classes) => {
                     </Grid>
                     <Grid item md={12} lg={12} className={classes.alignCenter}>
                       <Typography variant="subtitle1">
-                        <Box color="secondary.light">
-                          {' '}
-                          Add New users, Edit Existing users.
-                        </Box>
+                        <Box color="secondary.light"> Add New users, Edit Existing users.</Box>
                       </Typography>
                     </Grid>
                   </Grid>
@@ -118,10 +104,7 @@ const getUserCard = (selectedOrg, userOrgRoles, classes) => {
           </Grid>
           <Box my={3} mx={3} textAlign="right">
             <Grid item md={12} lg={12}>
-              <NavLink
-                to={`/${selectedOrg.orgCode}/users/`}
-                className={classes.customNavlink}
-              >
+              <NavLink to={`/${selectedOrg.orgCode}/users/`} className={classes.customNavlink}>
                 <Button variant="contained" className={classes.secondaryBtn}>
                   Users
                 </Button>
@@ -140,9 +123,7 @@ const getUserCard = (selectedOrg, userOrgRoles, classes) => {
  */
 const getUserGroupCard = (selectedOrg, userOrgRoles, classes) => {
   const userGroupInfoCard = null;
-  const selectedOrgWithRole = userOrgRoles.filter(
-    (org) => org.orgId === selectedOrg.id
-  );
+  const selectedOrgWithRole = userOrgRoles.filter((org) => org.orgId === selectedOrg.id);
 
   if (selectedOrgWithRole && selectedOrgWithRole[0].role === 'Admin') {
     return (
@@ -175,10 +156,7 @@ const getUserGroupCard = (selectedOrg, userOrgRoles, classes) => {
           </Grid>
           <Box my={3} mx={3} textAlign="right">
             <Grid item md={12} lg={12}>
-              <NavLink
-                to={`/${selectedOrg.orgCode}/groups/`}
-                className={classes.customNavlink}
-              >
+              <NavLink to={`/${selectedOrg.orgCode}/groups/`} className={classes.customNavlink}>
                 <Button variant="contained" className={classes.secondaryBtn}>
                   Groups
                 </Button>
@@ -198,11 +176,7 @@ const OrgLandingPage = ({ showLoader }) => {
   const { selectedOrg, userOrgRoles, isSuperAdmin } = useContext(OrgContext);
   const classes = useStyles();
   const usersInfoCard = getUserCard(selectedOrg, userOrgRoles, classes);
-  const userGroupInfoCard = getUserGroupCard(
-    selectedOrg,
-    userOrgRoles,
-    classes
-  );
+  const userGroupInfoCard = getUserGroupCard(selectedOrg, userOrgRoles, classes);
   const [state, setState] = useState({ right: false, openMenu: false });
   const [orgData, setOrgData] = useState({});
   const anchor = 'right';
@@ -210,10 +184,7 @@ const OrgLandingPage = ({ showLoader }) => {
    * To open and close the drawer
    */
   const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
     setState({ ...state, [anchor]: open });
@@ -257,10 +228,7 @@ const OrgLandingPage = ({ showLoader }) => {
             </Typography>
             <Grid item md={12} lg={12}>
               <Box mt={1} mb={3}>
-                <Breadcrumbs
-                  separator={<NavigateNextIcon fontSize="small" />}
-                  aria-label="breadcrumb"
-                >
+                <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
                   <NavLink className={classes.breadcrumbsNavlink} to="/">
                     Organisation List
                   </NavLink>
@@ -290,11 +258,7 @@ const OrgLandingPage = ({ showLoader }) => {
         onClose={toggleDrawer(anchor, false)}
         classes={{ paper: classes.sideDrawerPaper }}
       >
-        <OrgEditorDrawer
-          toggleDrawer={toggleDrawer(anchor, false)}
-          orgData={orgData}
-          showLoader={showLoader}
-        />
+        <OrgEditorDrawer toggleDrawer={toggleDrawer(anchor, false)} orgData={orgData} showLoader={showLoader} />
       </Drawer>
     </div>
   );

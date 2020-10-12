@@ -7,11 +7,7 @@ import gql from 'graphql-tag';
 
 const GET_USERGROUP = gql`
   query user_group($offset: Int, $limit: Int, $orgId: uuid) {
-    user_group(
-      where: { org_id: { _eq: $orgId } }
-      offset: $offset
-      limit: $limit
-    ) {
+    user_group(where: { org_id: { _eq: $orgId } }, offset: $offset, limit: $limit) {
       id
       group_details {
         id
@@ -69,9 +65,7 @@ const UPDATE_USERGROUP = gql`
  */
 const INSERT_USERGROUP = gql`
   mutation insertUserGroup($users: jsonb, $orgId: uuid, $groupId: uuid) {
-    insert_user_group(
-      objects: { users: $users, org_id: $orgId, group_id: $groupId }
-    ) {
+    insert_user_group(objects: { users: $users, org_id: $orgId, group_id: $groupId }) {
       affected_rows
       returning {
         id
@@ -82,11 +76,7 @@ const INSERT_USERGROUP = gql`
 
 const GET_USERS = gql`
   query user($orgID: uuid) {
-    user(
-      where: {
-        _and: { organization_members: { organization_id: { _eq: $orgID } } }
-      }
-    ) {
+    user(where: { _and: { organization_members: { organization_id: { _eq: $orgID } } } }) {
       id
       name
       organization_members(where: { organization_id: { _eq: $orgID } }) {
@@ -128,9 +118,7 @@ export const Provider = ({ children, currentOrg }) => {
   });
   const userGroupsLoading = userGoupsResponse.loading;
   const userGroupsError = userGoupsResponse.error;
-  const userGroupsData = !userGoupsResponse.loading
-    ? userGoupsResponse.data.user_group
-    : undefined;
+  const userGroupsData = !userGoupsResponse.loading ? userGoupsResponse.data.user_group : undefined;
   const usersResponse = useQuery(GET_USERS, { variables: { orgID: orgId } });
   const [insertGroup] = useMutation(INSERT_GROUP);
   const [insertUserGroup] = useMutation(INSERT_USERGROUP);
@@ -166,8 +154,7 @@ export const Provider = ({ children, currentOrg }) => {
       },
     });
     return result.then((response) => {
-      userGroupObj.group_details.id =
-        response.data.insert_group.returning[0].id;
+      userGroupObj.group_details.id = response.data.insert_group.returning[0].id;
       insertUserGroupDetail(userGroupObj);
     });
   };

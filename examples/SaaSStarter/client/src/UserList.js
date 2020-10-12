@@ -159,13 +159,7 @@ const columns = [
 
 const UserList = ({ showLoader }) => {
   const classes = useStyles();
-  const {
-    usersLoading,
-    users,
-    deleteUserCotext,
-    totalUser,
-    fetchUsers,
-  } = useContext(UserContext);
+  const { usersLoading, users, deleteUserCotext, totalUser, fetchUsers } = useContext(UserContext);
   const { selectedOrg, userOrgRoles, isSuperAdmin } = useContext(OrgContext);
   const [selectedUser, setUser] = useState({});
   const [isModalOpen, setModalStatus] = useState(false);
@@ -192,10 +186,7 @@ const UserList = ({ showLoader }) => {
    * To open and close the drawer
    */
   const toggleDrawer = (anchor, open, user = {}) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
     setUser(user);
@@ -393,12 +384,7 @@ const UserList = ({ showLoader }) => {
     sortingHandlerParent(obj, rowsPerPage, 0, filteringObj);
   };
 
-  const sortingHandlerParent = (
-    orderBy,
-    rowsPerPage,
-    page,
-    filteringObjData
-  ) => {
+  const sortingHandlerParent = (orderBy, rowsPerPage, page, filteringObjData) => {
     fetchUsers({
       orderBy,
       limit: rowsPerPage,
@@ -485,10 +471,7 @@ const UserList = ({ showLoader }) => {
                         >
                           {column.label}
                           {column.isShow ? (
-                            <TableSortLabel
-                              onClick={() => sortingHandler(column)}
-                              active={false}
-                            />
+                            <TableSortLabel onClick={() => sortingHandler(column)} active={false} />
                           ) : null}
                         </TableCell>
                       ))}
@@ -527,52 +510,27 @@ const UserList = ({ showLoader }) => {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {userList
-                      .slice(
-                        page * rowsPerPage,
-                        page * rowsPerPage + rowsPerPage
-                      )
-                      .map((row) => (
-                        <TableRow
-                          hover
-                          role="checkbox"
-                          tabIndex={-1}
-                          key={row.id}
-                        >
-                          <TableCell
-                            key={`${row.id}1`}
-                            className={classes.dataColumn}
-                          >
-                            {row.name}
+                    {userList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+                      <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                        <TableCell key={`${row.id}1`} className={classes.dataColumn}>
+                          {row.name}
+                        </TableCell>
+                        <TableCell key={`${row.id}2`} className={classes.dataColumn}>
+                          {row.email}
+                        </TableCell>
+                        <TableCell key={`${row.id}3`} className={classes.dataColumn}>
+                          {row.organization_members[0].role}
+                        </TableCell>
+                        <TableCell key={`${row.id}4`} className={classes.dataColumn}>
+                          {getFormattedDate(row.created_at)}
+                        </TableCell>
+                        {isUserAdmin ? (
+                          <TableCell key={`${row.id}5`} className={classes.actionColumn}>
+                            <ActionComponent patient={row} />
                           </TableCell>
-                          <TableCell
-                            key={`${row.id}2`}
-                            className={classes.dataColumn}
-                          >
-                            {row.email}
-                          </TableCell>
-                          <TableCell
-                            key={`${row.id}3`}
-                            className={classes.dataColumn}
-                          >
-                            {row.organization_members[0].role}
-                          </TableCell>
-                          <TableCell
-                            key={`${row.id}4`}
-                            className={classes.dataColumn}
-                          >
-                            {getFormattedDate(row.created_at)}
-                          </TableCell>
-                          {isUserAdmin ? (
-                            <TableCell
-                              key={`${row.id}5`}
-                              className={classes.actionColumn}
-                            >
-                              <ActionComponent patient={row} />
-                            </TableCell>
-                          ) : null}
-                        </TableRow>
-                      ))}
+                        ) : null}
+                      </TableRow>
+                    ))}
                   </TableBody>
                 </Table>
               </TableContainer>
@@ -603,29 +561,18 @@ const UserList = ({ showLoader }) => {
               orgID={orgID}
             />
           </Drawer>
-          <Dialog
-            onClose={handleClose}
-            aria-labelledby="customized-dialog-title"
-            open={open}
-          >
+          <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
             <MuiDialogTitle disableTypography className={classes.root}>
               <Typography variant="h6">Delete User</Typography>
             </MuiDialogTitle>
             <MuiDialogContent className={classes.dialogContent} dividers>
-              <Typography gutterBottom>
-                Are you sure want to delete user ?
-              </Typography>
+              <Typography gutterBottom>Are you sure want to delete user ?</Typography>
             </MuiDialogContent>
             <MuiDialogActions>
               <Button variant="contained" color="default" onClick={handleClose}>
                 No
               </Button>
-              <Button
-                className={classes.buttonMargin}
-                variant="contained"
-                color="primary"
-                onClick={onDeleteUser}
-              >
+              <Button className={classes.buttonMargin} variant="contained" color="primary" onClick={onDeleteUser}>
                 Yes
               </Button>
             </MuiDialogActions>

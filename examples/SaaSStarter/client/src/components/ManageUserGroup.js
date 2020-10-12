@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Grid,
-  Paper,
-  TextField,
-  Typography,
-} from '@material-ui/core';
+import { Box, Button, Grid, Paper, TextField, Typography } from '@material-ui/core';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import { UserGroupContext } from '../context';
 import { toast } from 'react-toastify';
@@ -75,12 +68,8 @@ const userGroupObj = {
  */
 const ManageUserGroup = ({ toggleDrawer, selectedUserGroup, showLoader }) => {
   const classes = useStyles();
-  const { userOptions, insertGroupDetail, updateGroupDetail } = useContext(
-    UserGroupContext
-  );
-  const userGroupCopy = selectedUserGroup.id
-    ? { ...selectedUserGroup }
-    : { ...userGroupObj };
+  const { userOptions, insertGroupDetail, updateGroupDetail } = useContext(UserGroupContext);
+  const userGroupCopy = selectedUserGroup.id ? { ...selectedUserGroup } : { ...userGroupObj };
 
   if (!selectedUserGroup.id) {
     userGroupCopy.group_details = { id: '', name: '' };
@@ -188,12 +177,7 @@ const ManageUserGroup = ({ toggleDrawer, selectedUserGroup, showLoader }) => {
           </div>
         </Grid>
         <Grid item md={12} lg={12}>
-          <Grid
-            container
-            direction="row"
-            justify="flex-end"
-            alignItems="center"
-          >
+          <Grid container direction="row" justify="flex-end" alignItems="center">
             <Box clone mt={4}>
               <Grid container spacing={2}>
                 <Grid item md={6} lg={6}>
