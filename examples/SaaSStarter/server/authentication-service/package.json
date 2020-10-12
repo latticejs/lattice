@@ -1,0 +1,28 @@
+{
+  "name": "authentication-service",
+  "version": "1.0.0",
+  "description": "A micro-service to authenticate requests with a valid JWT.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "JWT",
+    "auth",
+    "Auth0",
+    "service"
+  ],
+  "author": "Nowfal Nazar",
+  "license": "ISC",
+  "dependencies": {
+    "@sentry/node": "^5.17.0",
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.2"
+  }
+}

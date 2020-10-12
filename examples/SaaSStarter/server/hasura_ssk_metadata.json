@@ -1,0 +1,927 @@
+{
+  "version": 2,
+  "tables": [
+    {
+      "table": {
+        "schema": "public",
+        "name": "group"
+      },
+      "array_relationships": [
+        {
+          "name": "group_users",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "user_group"
+              },
+              "column_mapping": {
+                "id": "group_id"
+              }
+            }
+          }
+        }
+      ],
+      "insert_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "check": {},
+            "columns": [
+              "name"
+            ],
+            "backend_only": false
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "name"
+            ],
+            "filter": {}
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "name"
+            ],
+            "filter": {},
+            "check": null
+          }
+        }
+      ],
+      "delete_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "filter": {}
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "logged_in_user"
+      },
+      "array_relationships": [
+        {
+          "name": "organization_member",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "organization_member"
+              },
+              "column_mapping": {
+                "id": "user_id"
+              }
+            }
+          }
+        },
+        {
+          "name": "user_roles",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "user_role"
+              },
+              "column_mapping": {
+                "auth_id": "user_auth_id"
+              }
+            }
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "auth_id",
+              "created_at",
+              "email",
+              "id",
+              "name",
+              "profile_photo",
+              "updated_at"
+            ],
+            "filter": {
+              "auth_id": {
+                "_eq": "X-Hasura-User-Id"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "media"
+      },
+      "object_relationships": [
+        {
+          "name": "organization",
+          "using": {
+            "foreign_key_constraint_on": "organization_id"
+          }
+        }
+      ],
+      "insert_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "check": {
+              "organization": {
+                "organization_members": {
+                  "user": {
+                    "auth_id": {
+                      "_eq": "X-Hasura-User-Id"
+                    }
+                  }
+                }
+              }
+            },
+            "columns": [
+              "filetype",
+              "is_delete",
+              "name",
+              "organization_id",
+              "url"
+            ],
+            "backend_only": false
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "created_at",
+              "filetype",
+              "id",
+              "is_delete",
+              "name",
+              "organization_id",
+              "updated_at",
+              "url"
+            ],
+            "filter": {
+              "organization": {
+                "organization_members": {
+                  "user": {
+                    "auth_id": {
+                      "_eq": "X-Hasura-User-Id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "filetype",
+              "is_delete",
+              "name",
+              "url"
+            ],
+            "filter": {
+              "organization": {
+                "organization_members": {
+                  "user": {
+                    "auth_id": {
+                      "_eq": "X-Hasura-User-Id"
+                    }
+                  }
+                }
+              }
+            },
+            "check": null
+          }
+        }
+      ],
+      "delete_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "filter": {
+              "organization": {
+                "organization_members": {
+                  "user": {
+                    "auth_id": {
+                      "_eq": "X-Hasura-User-Id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "organization"
+      },
+      "configuration": {
+        "custom_root_fields": {},
+        "custom_column_names": {
+          "code": "orgCode"
+        }
+      },
+      "array_relationships": [
+        {
+          "name": "media",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "organization_id",
+              "table": {
+                "schema": "public",
+                "name": "media"
+              }
+            }
+          }
+        },
+        {
+          "name": "organization_members",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "organization_id",
+              "table": {
+                "schema": "public",
+                "name": "organization_member"
+              }
+            }
+          }
+        },
+        {
+          "name": "org_groups",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "user_group"
+              },
+              "column_mapping": {
+                "id": "org_id"
+              }
+            }
+          }
+        },
+        {
+          "name": "org_user_roles",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "user_role"
+              },
+              "column_mapping": {
+                "id": "org_id"
+              }
+            }
+          }
+        }
+      ],
+      "insert_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "check": {},
+            "columns": [
+              "id",
+              "created_at",
+              "updated_at",
+              "name",
+              "code",
+              "logo_url",
+              "skin_color"
+            ],
+            "backend_only": false
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "code",
+              "id",
+              "logo_url",
+              "name",
+              "skin_color"
+            ],
+            "filter": {
+              "organization_members": {
+                "user": {
+                  "auth_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "code",
+              "logo_url",
+              "name",
+              "skin_color"
+            ],
+            "filter": {
+              "organization_members": {
+                "user": {
+                  "auth_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            },
+            "check": null
+          }
+        }
+      ],
+      "delete_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "filter": {}
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "organization_member"
+      },
+      "object_relationships": [
+        {
+          "name": "organization",
+          "using": {
+            "foreign_key_constraint_on": "organization_id"
+          }
+        },
+        {
+          "name": "user",
+          "using": {
+            "foreign_key_constraint_on": "user_id"
+          }
+        }
+      ],
+      "insert_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "check": {},
+            "columns": [
+              "created_at",
+              "organization_id",
+              "role",
+              "updated_at",
+              "user_id"
+            ],
+            "backend_only": false
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "created_at",
+              "organization_id",
+              "role",
+              "updated_at",
+              "user_id"
+            ],
+            "filter": {}
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "created_at",
+              "role",
+              "updated_at"
+            ],
+            "filter": {},
+            "check": null
+          }
+        }
+      ],
+      "delete_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "filter": {}
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "organization_stats"
+      },
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "name",
+              "users_count",
+              "groups_count"
+            ],
+            "filter": {}
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "role"
+      },
+      "array_relationships": [
+        {
+          "name": "role_users",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "user_role"
+              },
+              "column_mapping": {
+                "id": "role_id"
+              }
+            }
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "name",
+              "created_at",
+              "updated_at"
+            ],
+            "filter": {}
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "user"
+      },
+      "array_relationships": [
+        {
+          "name": "organization_members",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "user_id",
+              "table": {
+                "schema": "public",
+                "name": "organization_member"
+              }
+            }
+          }
+        },
+        {
+          "name": "user_roles",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "user_role"
+              },
+              "column_mapping": {
+                "auth_id": "user_auth_id"
+              }
+            }
+          }
+        }
+      ],
+      "insert_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "check": {},
+            "columns": [
+              "auth_id",
+              "created_at",
+              "email",
+              "id",
+              "name",
+              "profile_photo",
+              "updated_at"
+            ],
+            "backend_only": false
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "created_at",
+              "email",
+              "id",
+              "name",
+              "profile_photo",
+              "updated_at"
+            ],
+            "filter": {},
+            "limit": 10,
+            "allow_aggregations": true
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "email",
+              "name",
+              "profile_photo"
+            ],
+            "filter": {},
+            "check": null
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "user_group"
+      },
+      "object_relationships": [
+        {
+          "name": "group_details",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "group"
+              },
+              "column_mapping": {
+                "group_id": "id"
+              }
+            }
+          }
+        },
+        {
+          "name": "org_details",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "organization"
+              },
+              "column_mapping": {
+                "org_id": "id"
+              }
+            }
+          }
+        }
+      ],
+      "insert_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "check": {},
+            "columns": [
+              "group_id",
+              "org_id",
+              "users"
+            ],
+            "backend_only": false
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "created_at",
+              "group_id",
+              "id",
+              "org_id",
+              "updated_at",
+              "users"
+            ],
+            "filter": {}
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "users"
+            ],
+            "filter": {},
+            "check": null
+          }
+        }
+      ],
+      "delete_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "filter": {}
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "user_role"
+      },
+      "object_relationships": [
+        {
+          "name": "organization_details",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "organization"
+              },
+              "column_mapping": {
+                "org_id": "id"
+              }
+            }
+          }
+        },
+        {
+          "name": "role_details",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "role"
+              },
+              "column_mapping": {
+                "role_id": "id"
+              }
+            }
+          }
+        },
+        {
+          "name": "user_details",
+          "using": {
+            "manual_configuration": {
+              "remote_table": {
+                "schema": "public",
+                "name": "user"
+              },
+              "column_mapping": {
+                "user_auth_id": "auth_id"
+              }
+            }
+          }
+        }
+      ],
+      "computed_fields": [
+        {
+          "name": "is_super_admin",
+          "definition": {
+            "function": {
+              "schema": "public",
+              "name": "is_super_admin"
+            },
+            "table_argument": null
+          },
+          "comment": "Returns true if user has a role of super admin"
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "created_at",
+              "id",
+              "org_id",
+              "role_id",
+              "updated_at",
+              "user_auth_id"
+            ],
+            "computed_fields": [
+              "is_super_admin"
+            ],
+            "filter": {}
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "changeEmail",
+      "definition": {
+        "handler": "http://172.31.27.146:4710/change-email",
+        "output_type": "changeEmailOutput!",
+        "arguments": [
+          {
+            "name": "newEmail",
+            "type": "String"
+          },
+          {
+            "name": "name",
+            "type": "String"
+          },
+          {
+            "name": "profilePictureUrl",
+            "type": "String"
+          },
+          {
+            "name": "userId",
+            "type": "uuid"
+          }
+        ],
+        "type": "mutation",
+        "kind": "synchronous"
+      },
+      "permissions": [
+        {
+          "role": "user"
+        }
+      ]
+    },
+    {
+      "name": "changePassword",
+      "definition": {
+        "handler": "http://172.31.27.146:4710/change-password",
+        "output_type": "ChangePasswordOutput",
+        "arguments": [
+          {
+            "name": "credentials",
+            "type": "Credentials!"
+          },
+          {
+            "name": "userId",
+            "type": "uuid!"
+          }
+        ],
+        "type": "mutation",
+        "kind": "synchronous"
+      },
+      "permissions": [
+        {
+          "role": "user"
+        }
+      ]
+    },
+    {
+      "name": "signup",
+      "definition": {
+        "handler": "http://172.31.27.146:4710/signup",
+        "output_type": "signupOutput",
+        "arguments": [
+          {
+            "name": "name",
+            "type": "String"
+          },
+          {
+            "name": "email",
+            "type": "String"
+          },
+          {
+            "name": "orgId",
+            "type": "uuid"
+          },
+          {
+            "name": "role",
+            "type": "String"
+          }
+        ],
+        "type": "mutation",
+        "kind": "synchronous"
+      },
+      "permissions": [
+        {
+          "role": "user"
+        }
+      ]
+    },
+    {
+      "name": "unlinkUserFromOrgAndDeleteUserAccount",
+      "definition": {
+        "handler": "http://172.31.27.146:4710/delete-user",
+        "output_type": "unlinkUserOutput",
+        "arguments": [
+          {
+            "name": "userId",
+            "type": "String!"
+          },
+          {
+            "name": "orgId",
+            "type": "String!"
+          }
+        ],
+        "type": "mutation",
+        "kind": "synchronous"
+      },
+      "permissions": [
+        {
+          "role": "user"
+        }
+      ]
+    }
+  ],
+  "custom_types": {
+    "input_objects": [
+      {
+        "name": "Credentials",
+        "fields": [
+          {
+            "name": "oldPassword",
+            "type": "String!"
+          },
+          {
+            "name": "newPassword",
+            "type": "String!"
+          }
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "name": "signupOutput",
+        "fields": [
+          {
+            "name": "id",
+            "type": "uuid!"
+          }
+        ]
+      },
+      {
+        "name": "unlinkUserOutput",
+        "fields": [
+          {
+            "name": "user_id",
+            "type": "String!"
+          }
+        ]
+      },
+      {
+        "name": "ChangePasswordOutput",
+        "fields": [
+          {
+            "name": "user_id",
+            "type": "uuid!"
+          }
+        ]
+      },
+      {
+        "name": "changeEmailOutput",
+        "fields": [
+          {
+            "name": "user_id",
+            "type": "uuid!"
+          }
+        ]
+      }
+    ]
+  }
+}
