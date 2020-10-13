@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "version": "1.0.1-beta.2",
+  "name": "saas-starter",
+  "version": "1.0.0",
   "description": "SAAS Content Library",
   "main": "index.js",
   "private": true,
