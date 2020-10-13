@@ -1,4 +1,4 @@
-# MG-3 Image Manager Service.
+# Image Manager Service.
 
 A node.js service that is used to upload images to the s3 or other compatible storage systems.
 
