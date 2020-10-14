@@ -1,6 +1,6 @@
 # Minimal example
 
-![screenshot](template.png?raw=true "Minimal Demo")
+![screenshot](screen.png?raw=true "Minimal Demo")
 
 ## How to use
 
