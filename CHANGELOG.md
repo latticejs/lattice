@@ -121,6 +121,18 @@ CRA Templates has been created for following examples.
   - apollo-real-time-chart
   - lattice-ssr
 
+### Addition Phase - 2020-10-14
+Image.png file has been added in CRA Templates for following examples.
+  - basic
+  - crud
+  - dag-in-action
+  - rechart-grid-map
+  - minimal
+  - minimal-with-gulp
+  - apollo-enterprise
+  - apollo-real-time-chart
+  - lattice-ssr
+
 ### Fixed - 2020-10-01
 - examples/apollo-real-time-chart
 - examples/lattice-ssr
