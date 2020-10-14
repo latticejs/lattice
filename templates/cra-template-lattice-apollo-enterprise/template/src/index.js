@@ -6,6 +6,7 @@ import { ApolloProvider } from 'react-apollo';
 import apolloClient from './config/apollo';
 
 // Ours
+
 import App from './containers/App';
 
 ReactDOM.render(
