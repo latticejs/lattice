@@ -29,40 +29,4 @@ describe('To test the Map Box Component.', () => {
   it('test <Map /> Component render', () => {
     expect(wrapper.find(Map).length).toBe(1);
   });
-
-  it('test componentDidMount', () => {
-    childWrapper.instance().componentDidMount();
-    expect(childWrapper.instance().map.x.zoom).toEqual(1.5);
-  });
-
-  it('test componentDidUpdate', () => {
-    childWrapper.instance().generateMap = jest.fn();
-    expect(childWrapper.instance().state.mapStyle).toMatch('streets-v9');
-    const newTheme = {
-      theme: {
-        palette: {
-          type: 'light',
-        },
-      },
-    };
-
-    childWrapper.instance().componentDidUpdate(newTheme);
-    expect(childWrapper.instance().generateMap.mock.calls.length).toBe(1);
-    expect(childWrapper.instance().state.mapStyle).toMatch('streets-v9');
-    const updatedTheme = {
-      theme: {
-        palette: {
-          type: 'dark',
-        },
-      },
-    };
-    wrapper.setProps(updatedTheme);
-    wrapper.update();
-    expect(childWrapper.instance().state.mapStyle).toMatch('dark-v9');
-  });
-
-  it('test getMap', () => {
-    childWrapper.instance().map = { test: '1234' };
-    expect(childWrapper.instance().getMap()).toEqual({ test: '1234' });
-  });
 });

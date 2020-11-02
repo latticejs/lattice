@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Map } from '../components/';
+import Map from '../components/';
 import muiTheme from '../../.storybook/decorator-material-ui';
 import Mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -9,7 +9,7 @@ import { token } from '../../config';
 
 export default {
   title: 'Example/Map',
-  component: Map
+  component: Map,
 };
 
 const BasicMap = () => {
@@ -35,13 +35,12 @@ const BasicMap = () => {
       width={100}
     />
   );
-}
+};
 
 const Template = () => <BasicMap />;
 
 export const Basic = Template.bind({});
-Basic.decorators = [muiTheme()]
+Basic.decorators = [muiTheme()];
 
 export const Dark = Template.bind({});
-Dark.decorators = [muiTheme({ palette: { type: 'dark' } })]
-
+Dark.decorators = [muiTheme({ palette: { type: 'dark' } })];

@@ -3,7 +3,7 @@ import Mapboxgl from 'mapbox-gl';
 import { useTheme } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
-export const Map = (props) => {
+const Map = (props) => {
   const theme = useTheme();
   let mapContainer;
   let map;
@@ -23,9 +23,9 @@ export const Map = (props) => {
         return props.darkTheme;
       }
     }
-  }
+  };
 
-  const [state,setState] = useState({
+  const [state, setState] = useState({
     longitude: props.longitude,
     latitude: props.latitude,
     zoom: props.zoom,
@@ -33,15 +33,6 @@ export const Map = (props) => {
     height: props.height,
     width: props.width,
   });
-
-  useEffect(()=>{
-    if (theme.palette.type === 'light') {
-      setState({ ...state, mapStyle: props.lightTheme });
-    } else if (theme.palette.type === 'dark') {
-      setState({ ...state, mapStyle: props.darkTheme });
-    }
-    return generateMap();
-  },[]);
 
   /**
    * This function generate initial map and send mapObject to afterMapComplete()
@@ -60,7 +51,16 @@ export const Map = (props) => {
 
     map.on('load', setLayerFont);
     props.afterMapComplete(map);
-  }
+  };
+
+  useEffect(() => {
+    if (theme.palette.type === 'light') {
+      setState({ ...state, mapStyle: props.lightTheme });
+    } else if (theme.palette.type === 'dark') {
+      setState({ ...state, mapStyle: props.darkTheme });
+    }
+    return generateMap();
+  }, []);
 
   /**
    * Set the State and Country layer font.
@@ -81,16 +81,6 @@ export const Map = (props) => {
     });
   };
 
-  /**
-   * This function return current mapObject. When ever we need to customize map
-   *  we can get the mapObject using getMap() and work on that object.
-   * @params void
-   * @returns Object
-   */
-  const getMap = () => {
-    return map;
-  };
-
   const style = {
     position: 'static',
     height: state.height + 'vh',
@@ -98,7 +88,7 @@ export const Map = (props) => {
   };
 
   return <div ref={(el) => (mapContainer = el)} style={style} />;
-}
+};
 
 Map.propTypes = {
   darkTheme: PropTypes.string,
@@ -116,3 +106,5 @@ Map.defaultProps = {
   width: 200,
   height: 200,
 };
+
+export default Map;
