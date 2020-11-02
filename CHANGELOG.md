@@ -137,6 +137,7 @@ Image.png file has been added in CRA Templates for following examples.
 - examples/apollo-real-time-chart
 - examples/lattice-ssr
 - examples: fix apollo-real-time-chart example
+- examples: CLAP myapp bug
 
 ## Addition Phase - 2020-10-08
 - Added saas-starter example.
