@@ -41,7 +41,7 @@ async function clap(example, project, cmd) {
     process.exit(1);
   }
 
-  if (cmd.branch) {
+  if (cmd && cmd.branch) {
     branch = cmd.branch;
     repoOptions.ref = cmd.branch;
   }
