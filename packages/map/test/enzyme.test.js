@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 
-import Map from '../src/index.js';
+import Map from '../src/components/index.js';
 import React from 'react';
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
   Map: (x) => ({
