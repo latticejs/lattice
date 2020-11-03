@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@latticejs/map": "^1.0.1-beta.4",
     "@latticejs/mui-recharts": "^1.0.1-beta.3",
