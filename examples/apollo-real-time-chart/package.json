@@ -33,7 +33,7 @@
     "react-apollo": "^3.1.0",
     "react-dom": "^16.13.1",
     "recharts": "^1.8.5",
-    "systeminformation": "^3.54.0",
+    "systeminformation": "^4.27.11",
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
