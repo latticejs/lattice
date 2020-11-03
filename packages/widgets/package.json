@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/widgets",
-  "version": "1.0.1-beta.3",
+  "version": "1.0.1-beta.4",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,8 +19,6 @@
     "size": "bundlesize"
   },
   "peerDependencies": {
-    "@material-ui/core": "^4.8.2",
-    "@material-ui/icons": "^4.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -36,8 +34,6 @@
     "@babel/preset-react": "^7.10.1",
     "@latticejs/lattice-scripts": "^1.0.1-beta.2",
     "@latticejs/storybook-readme": "^1.0.1-beta.1",
-    "@material-ui/core": "^4.8.2",
-    "@material-ui/icons": "^4.5.1",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-storyshots": "^5.3.19",
@@ -61,7 +57,9 @@
   "dependencies": {
     "classnames": "^2.2.0",
     "core-js": "^3.6.1",
-    "prop-types": "^15.7.0"
+    "prop-types": "^15.7.0",
+    "@material-ui/core": "^4.8.2",
+    "@material-ui/icons": "^4.5.1"
   },
   "jest": {
     "setupFiles": [
