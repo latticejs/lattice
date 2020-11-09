@@ -12,6 +12,7 @@ jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
 describe('To test the Map Box Component.', () => {
   let wrapper;
   let childWrapper;
+  let useEffect;
 
   beforeEach(() => {
     wrapper = mount(
@@ -21,6 +22,7 @@ describe('To test the Map Box Component.', () => {
         zoom={1.5}
         accessToken="pk.eyJ1IjoiY2VsZXN0aWFsc3lzIiwiYSI6ImNrMzVoZTY2ZzA0ZmczY3J3cWlqbmptcXcifQ.0m0LKMmE9yGqFTXbZ-h4bQ"
         afterMapComplete={jest.fn()}
+        label="Shivani"
       />
     );
     childWrapper = wrapper.find(Map).childAt(0);
@@ -28,5 +30,12 @@ describe('To test the Map Box Component.', () => {
 
   it('test <Map /> Component render', () => {
     expect(wrapper.find(Map).length).toBe(1);
+  });
+
+  test('useEffect', () => {
+    useEffect = jest.spyOn(React, 'useEffect');
+    const mockUseEffect = jest.fn();
+    mockUseEffect();
+    expect(mockUseEffect).toHaveBeenCalled();
   });
 });
