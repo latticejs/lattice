@@ -12,8 +12,8 @@
   ],
   "scripts": {
     "build:clean": "rimraf dist/**",
-    "build": "npm run build:clean && lattice-scripts build ./src/index.js",
-    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
+    "build": "npm run build:clean && lattice-scripts build ./src/components/index.js",
+    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/components/index.js",
     "release": "npm run build",
     "prepublish": "npm run release",
     "storybook": "start-storybook -p 9016 -c .storybook",
