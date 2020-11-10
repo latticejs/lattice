@@ -10,7 +10,6 @@ const Main = (props) => {
   const [nightMode, setNightMode] = useState(false);
 
   const createTheme = () => {
-    // const { nightMode } = this.state;
     return createMuiTheme({
       palette: {
         type: nightMode ? 'dark' : 'light',
@@ -28,7 +27,7 @@ const Main = (props) => {
   return (
     <MuiThemeProvider theme={createTheme()}>
       <CssBaseline />
-      <App {...this.props} updateTheme={updateTheme} nightMode={nightMode} />
+      <App {...props} updateTheme={updateTheme} nightMode={nightMode} />
     </MuiThemeProvider>
   );
 };

@@ -1,6 +1,6 @@
 {
   "name": "cra-template-lattice-rechart-grid-map",
-  "version": "1.0.1-beta.2",
+  "version": "1.0.1-beta.3",
   "description": "Lattice example with Sunburst, AG-Grid and Map",
   "main": "template.json",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@latticejs/map": "^1.0.1-beta.4",
     "@latticejs/mui-recharts": "^1.0.1-beta.3",

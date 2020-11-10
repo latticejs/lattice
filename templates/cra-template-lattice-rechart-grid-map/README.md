@@ -1,8 +1,6 @@
 # Sunburst, Ag-Grid, Map example
 
-![screenshot](Mapbox.png?raw=true "Lattice Map Demo")
-![screenshot](Sunburst.png?raw=true "Sunburst Demo")
-![screenshot](AgGrid.png?raw=true "Ag-Grid Demo")
+[Lattice Recharts-Grid-Map Example](https://github.com/latticejs/lattice/tree/master/examples/rechart-grid-map)
 
 ## How to use
 

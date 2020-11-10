@@ -137,10 +137,13 @@ Image.png file has been added in CRA Templates for following examples.
 - examples/apollo-real-time-chart
 - examples/lattice-ssr
 - examples: fix apollo-real-time-chart example
+- examples: CLAP myapp bug and version is fixed
+
 
 ## Addition Phase - 2020-10-08
-- Added saas-starter example.
+- Added saas-starter example with complete ReadMe.
 - Moved the content of the client folder of SAAS-Starter in the root and .env file is added.
+- Added templates
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1

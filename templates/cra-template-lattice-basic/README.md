@@ -1,7 +1,9 @@
 # Lattice Basic example CRA Template
 
-![screenshot](template/screen.png?raw=true "Basic Demo")
+[Lattice Basic Example](https://github.com/latticejs/lattice/tree/master/examples/basic)
 
+
+Basic Example
 ## How to use
 
 ### With CRA

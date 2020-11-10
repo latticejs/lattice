@@ -1,6 +1,6 @@
 {
   "name": "cra-template-lattice-basic",
-  "version": "1.0.1-beta.2",
+  "version": "1.0.1-beta.3",
   "description": "A basic Lattice CRA App",
   "main": "template.json",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@latticejs/widgets": "^1.0.1-beta.3",
     "@material-ui/core": "^4.8.2",

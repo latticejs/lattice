@@ -149,6 +149,17 @@ You can only enable S3 Object Lock for a bucket when you create it. If you enabl
 7. Choose **Create bucket**.
 
 
+## Services
+
+### Image Manager Service.
+Hasura doesn't provide a native API to handle file uploads. File uploads have to be handled using an external REST API which uploads the images to the desired location. The image manager service provides the REST API needed to upload the images to AWS S3 or some other compatible object storage service and returns the image location/URI on successful upload. 
+
+### Authentication Service.
+The authentication service provides a mechanism by which other services like the image manager will be able to authenticate requests made to those services. You can configure the authentication service with the public key used to validate and verify jwt tokens.
+
+### User Actions Service.
+The user actions service is used to modify data, such as the login credentials which is stored on Auth0, on behalf of Hasura. On successful modification of the data on Auth0 the user actions service makes the corresponding changes on the Hasura server as well.
+
 ### Setting ENV variables
 
 The ENV variables for each service needs to be set before they can be started and used. The following section lists the env variables needed for each of the services. These variables can be set in the .env file for the corresponding service’s folder. Use the .env.sample file found in each service as a reference.
