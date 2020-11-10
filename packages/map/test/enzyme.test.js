@@ -20,7 +20,7 @@ describe('To test the Map Box Component.', () => {
         longitude={5}
         latitude={34}
         zoom={1.5}
-        accessToken="pk.eyJ1IjoiY2VsZXN0aWFsc3lzIiwiYSI6ImNrMzVoZTY2ZzA0ZmczY3J3cWlqbmptcXcifQ.0m0LKMmE9yGqFTXbZ-h4bQ"
+        accessToken="token1234"
         afterMapComplete={jest.fn()}
         label="Shivani"
       />
