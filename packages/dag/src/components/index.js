@@ -13,7 +13,6 @@ import Node from './node';
 import Edge from './edge';
 import GraphPanel from './panel';
 const useStyles = makeStyles((theme) => {
-  console.log({ backgroundColor: theme.palette.background.default });
   return {
     '@global': {
       span: {
