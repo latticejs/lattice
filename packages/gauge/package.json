@@ -45,6 +45,7 @@
     "@storybook/addon-essentials": "^6.0.26",
     "@storybook/addon-knobs": "^6.0.26",
     "@storybook/addon-links": "^6.0.26",
+    "@storybook/addon-storyshots": "^6.0.26",
     "@storybook/react": "^6.0.26",
     "babel-loader": "^8.1.0",
     "canvas": "^2.6.0",
