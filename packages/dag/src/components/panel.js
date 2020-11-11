@@ -94,7 +94,6 @@ class GraphPanel extends Component {
 
   render() {
     const { children, classes, node, source, target, style, actions = {} } = this.props;
-
     return createPortal(
       <Card className={classes.panel} style={style}>
         <Grid container className={classnames([classes.root, classes.details])}>

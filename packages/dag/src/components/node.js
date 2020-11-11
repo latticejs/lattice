@@ -79,7 +79,6 @@ export default class Node extends Component {
     const { data, overflow, dtt } = this.props;
     const width = (node.width / 2) * data.z;
     const height = Math.max(20, node.height / 5) * data.z;
-
     const getWidth = (parentWidth) => (inputWidth) => {
       return parentWidth > inputWidth ? inputWidth : parentWidth;
     };
@@ -122,6 +121,7 @@ export default class Node extends Component {
 
   onTextChange = (e) => {
     const { value } = e.target;
+
     this.setState({
       text: value,
     });
@@ -129,6 +129,7 @@ export default class Node extends Component {
 
   onKeyDown = (e) => {
     const { keyCode } = e;
+
     switch (keyCode) {
       case 13:
         // enter key
@@ -212,7 +213,12 @@ export default class Node extends Component {
         {showPanel &&
           showPanelIdx === idx &&
           nodePanel &&
-          nodePanel({ outerEl, data, actions: this.getActions(), ...panelPosition(data.x, data.y) })}
+          nodePanel({
+            outerEl,
+            data,
+            actions: this.getActions(),
+            ...panelPosition(data.x, data.y),
+          })}
       </g>
     );
   }

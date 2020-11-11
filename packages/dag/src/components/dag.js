@@ -64,7 +64,7 @@ export default class DagCore {
       height: initialState.height,
       nodes: initialState.nodes,
       edges: initialState.edges,
-      theme: initialState.classes.dagEdgeMarker,
+      theme: initialState.styleClasses.dagEdgeMarker,
       nodeRadius: initialState.nodeRadius,
     });
   }
