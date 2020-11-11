@@ -71,9 +71,7 @@ const PaperWrap = ({ children }) => {
 };
 
 const props = new Store({ ...getProps() });
-console.log('storyProp', props);
 const Template = (args) => {
-  console.log('args', args);
   if (args.type === 'Basic') {
     return <Dag {...args} />;
   }
