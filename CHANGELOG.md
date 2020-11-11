@@ -147,9 +147,11 @@ Image.png file has been added in CRA Templates for following examples.
 
 ## Update Phase - 2020-11-02
 Following packages Storybook are now upgraded from version 5 to 6.
-  - Map
-  - Tree
-  - Infinite-List
+- Map
+- Tree
+- Mui-recharts
+- Gauge
+- Infinite-List
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
