@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/gauge",
-  "version": "1.0.1-beta.2",
+  "version": "1.0.1-beta.4",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,17 +10,18 @@
   ],
   "scripts": {
     "build:clean": "rimraf dist/**",
-    "build": "npm run build:clean && lattice-scripts build ./src/index.js",
-    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/index.js",
+    "build": "npm run build:clean && lattice-scripts build ./src/components/Gauge.js",
+    "build:dev": "npm run build:clean && lattice-scripts build -e development ./src/components/Gauge.js",
     "release": "npm run build",
     "prepublish": "npm run release",
-    "storybook": "start-storybook -p 9016 -c .storybook",
     "test": "jest --no-cache",
-    "size": "bundlesize"
+    "size": "bundlesize",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "@material-ui/core": "^4.8.2",
-    "@material-ui/icons": "^4.5.1",
+    "@material-ui/core": "^5.8.2",
+    "@material-ui/icons": "^5.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -38,18 +39,23 @@
     "@latticejs/storybook-readme": "^1.0.1-beta.1",
     "@material-ui/core": "^4.8.2",
     "@material-ui/icons": "^4.5.1",
-    "@storybook/addon-storyshots": "^5.3.19",
-    "@storybook/addon-storysource": "^5.3.19",
-    "@storybook/react": "^5.3.19",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-controls": "^6.0.26",
+    "@storybook/addon-docs": "^6.0.26",
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-knobs": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/react": "^6.0.26",
+    "babel-loader": "^8.1.0",
+    "canvas": "^2.6.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "jest": "^23.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    "rimraf": "^2.7.0",
-    "storybook-readme": "^4.0.5",
-    "canvas": "^2.6.0"
+    "rimraf": "^2.7.0"
   },
   "dependencies": {
     "canvas-gauges": "^2.1.0",

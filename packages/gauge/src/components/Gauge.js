@@ -1,14 +1,35 @@
-import React, { Component } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { RadialGauge } from 'canvas-gauges';
-import { withTheme } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 
-class Gauge extends Component {
-  componentDidMount() {
-    const { value, settings, theme } = this.props;
-    settings.value = settings.value && !value ? settings.value : value;
-    const options = { ...settings, renderTo: this.el };
+const styles = makeStyles((theme) => {
+  return {
+    '@global': {
+      '[id^="story--example-gauge"][id$="dark-themed"]': {
+        backgroundColor: theme.palette.background.paper,
+      },
+    },
+    rootChart: {
+      fontFamily: theme.typography.fontFamily,
+      fontSize: theme.typography.fontSize,
+      color: theme.palette.text.primary,
+    },
+  };
+});
 
+export const Gauge = ({ ...props }) => {
+  const { value, settings } = props;
+  const theme = useTheme();
+  settings.value = settings.value && !value ? settings.value : value;
+  const ref = useRef(null);
+  const styleClasses = styles();
+
+  let gauge;
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const options = { ...settings, renderTo: ref.current };
     options.fontValue = theme.typography.fontFamily;
     options.fontNumbers = theme.typography.fontFamily;
     options.fontUnits = theme.typography.fontFamily;
@@ -39,25 +60,34 @@ class Gauge extends Component {
         options.colorMajorTicks !== 'transparent' ? theme.palette.text.secondary : options.colorMajorTicks;
       options.colorPlate = options.colorPlate !== 'transparent' ? theme.palette.grey['700'] : options.colorPlate;
     }
-    this.gauge = new RadialGauge(options).draw();
-  }
 
-  componentDidUpdate(prevProps) {
-    this.gauge.value = prevProps.value;
-    this.gauge.update(prevProps);
-  }
+    gauge = new RadialGauge(options).draw();
+  }, [ref.current]);
 
-  render() {
-    return (
-      <canvas
-        ref={(canvas) => {
-          this.el = canvas;
-        }}
-      />
-    );
-  }
-}
+  useEffect(() => {
+    if (gauge) {
+      gauge.value = props.value;
+      gauge.update(props);
+    }
+  }, [props, gauge]);
 
+  return (
+    <canvas
+      ref={(canvas) => {
+        if (canvas) {
+          ref.current = canvas;
+        }
+      }}
+      className={styleClasses.rootChart}
+    />
+  );
+};
+
+Gauge.propTypes = {
+  settings: PropTypes.object,
+  label: PropTypes.string.isRequired,
+  theme: PropTypes.object,
+};
 Gauge.defaultProps = {
   settings: {
     width: 250,
@@ -86,11 +116,3 @@ Gauge.defaultProps = {
     animationDuration: 1500,
   },
 };
-
-Gauge.propTypes = {
-  settings: PropTypes.object,
-  value: PropTypes.number.isRequired,
-  theme: PropTypes.object.isRequired,
-};
-
-export default withTheme(Gauge);
