@@ -1,89 +1,70 @@
 import React from 'react';
-
-// Ours
 import {
   AreaChart,
   BarChart,
   LineChart,
   PieChart,
+  Pie,
+  RadialBar,
+  Scatter,
   RadialBarChart,
   ScatterChart,
   Treemap,
   Area,
   Bar,
   Line,
-  Pie,
-  RadialBar,
-  Scatter,
   ResponsiveContainer,
   XAxis,
   YAxis,
-} from '../src';
-import muiTheme from '../.storybook/decorator-material-ui';
-import { JssDecorator } from './utils.js';
-import Readme from '../README.md';
-import { withReadme } from '@latticejs/storybook-readme';
+  MuiRecharts,
+} from '../components';
+import muiTheme from '../../.storybook/decorator-material-ui';
+import './basicChart.css';
 
-// Decorators
-const Flexed = (story) => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
-);
-const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw' }}>{story()}</div>;
-
-const withApiReadme = withReadme(Readme)(['api']);
-
-export default ({ storiesOf }) => {
-  storiesOf('mui-recharts/basic', module)
-    .addDecorator(JssDecorator)
-    .addDecorator(Flexed)
-    .addDecorator(muiTheme())
-    .addDecorator(FullViewport)
-    .add(
-      'Basic charts (light)',
-      withApiReadme(() => <BasicCharts />)
-    );
-
-  storiesOf('mui-recharts/basic', module)
-    .addDecorator(JssDecorator)
-    .addDecorator(Flexed)
-    .addDecorator(muiTheme({ palette: { type: 'dark' } }))
-    .addDecorator(FullViewport)
-    .add(
-      'Basic charts (dark)',
-      withApiReadme(() => <BasicCharts />)
-    );
+export default {
+  title: 'Example/Basic-Mui-Recharts',
+  component: MuiRecharts,
 };
 
-// Components
+const Template = (args) => {
+  if (args.type === 'BasicLight') {
+    return <BasicCharts className="recharts-responsive-container" {...args} />;
+  }
+  if (args.type === 'BasicDark') {
+    return <BasicCharts className="recharts-responsive-container" {...args} />;
+  }
+};
 
-const BasicCharts = (props) => (
-  <React.Fragment>
-    <ResponsiveContainer width="25%" aspect={1}>
-      <AreaChartBasic />
-    </ResponsiveContainer>
-    <ResponsiveContainer width="25%" aspect={1}>
-      <BarChartBasic />
-    </ResponsiveContainer>
-    <ResponsiveContainer width="25%" aspect={1}>
-      <BarStackChartBasic />
-    </ResponsiveContainer>
-    <ResponsiveContainer width="25%" aspect={1}>
-      <LineChartBasic />
-    </ResponsiveContainer>
-    <ResponsiveContainer width="25%" aspect={1}>
-      <PieChartBasic />
-    </ResponsiveContainer>
-    <ResponsiveContainer width="25%" aspect={1}>
-      <RadialChartBasic />
-    </ResponsiveContainer>
-    <ResponsiveContainer width="25%" aspect={1}>
-      <ScatterChartBasic />
-    </ResponsiveContainer>
-    <ResponsiveContainer width="25%" aspect={1}>
-      <TreeMapBasic />
-    </ResponsiveContainer>
-  </React.Fragment>
-);
+const BasicCharts = (props) => {
+  return (
+    <React.Fragment>
+      <ResponsiveContainer width="25%" aspect={1}>
+        <AreaChartBasic />
+      </ResponsiveContainer>
+      <ResponsiveContainer width="25%" aspect={1}>
+        <BarChartBasic />
+      </ResponsiveContainer>
+      <ResponsiveContainer width="25%" aspect={1}>
+        <BarStackChartBasic />
+      </ResponsiveContainer>
+      <ResponsiveContainer width="25%" aspect={1}>
+        <LineChartBasic />
+      </ResponsiveContainer>
+      <ResponsiveContainer width="25%" aspect={1}>
+        <PieChartBasic />
+      </ResponsiveContainer>
+      <ResponsiveContainer width="25%" aspect={1}>
+        <RadialChartBasic />
+      </ResponsiveContainer>
+      <ResponsiveContainer width="25%" aspect={1}>
+        <ScatterChartBasic />
+      </ResponsiveContainer>
+      <ResponsiveContainer width="25%" aspect={1}>
+        <TreeMapBasic />
+      </ResponsiveContainer>
+    </React.Fragment>
+  );
+};
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
@@ -229,35 +210,35 @@ const treeData = [
 ];
 
 const AreaChartBasic = (props) => (
-  <AreaChart data={data} {...props}>
+  <MuiRecharts data={data} WrappedChart={AreaChart} {...props}>
     <Area dataKey="pv" fill="#8884d8" stroke="#8884d8" />
     <Area dataKey="uv" fill="#82ca9d" stroke="#82ca9d" />
-  </AreaChart>
+  </MuiRecharts>
 );
 
 const BarChartBasic = (props) => (
-  <BarChart data={data} {...props}>
+  <MuiRecharts data={data} WrappedChart={BarChart} {...props}>
     <Bar dataKey="pv" fill="#8884d8" />
     <Bar dataKey="uv" fill="#82ca9d" />
-  </BarChart>
+  </MuiRecharts>
 );
 
 const BarStackChartBasic = (props) => (
-  <BarChart data={data} {...props}>
+  <MuiRecharts data={data} WrappedChart={BarChart} {...props}>
     <Bar dataKey="pv" stackId="1" fill="#8884d8" />
     <Bar dataKey="uv" stackId="1" fill="#82ca9d" />
-  </BarChart>
+  </MuiRecharts>
 );
 
 const LineChartBasic = (props) => (
-  <LineChart data={data} {...props}>
+  <MuiRecharts data={data} WrappedChart={LineChart} {...props}>
     <Line dataKey="pv" stroke="#8884d8" />
     <Line dataKey="uv" stroke="#82ca9d" />
-  </LineChart>
+  </MuiRecharts>
 );
 
 const PieChartBasic = (props) => (
-  <PieChart {...props}>
+  <MuiRecharts WrappedChart={PieChart} {...props}>
     <Pie
       dataKey="value"
       data={data.map((d) => ({ name: `${d.name} pv`, value: d.pv }))}
@@ -271,26 +252,27 @@ const PieChartBasic = (props) => (
       outerRadius={90}
       fill="#82ca9d"
     />
-  </PieChart>
+  </MuiRecharts>
 );
 
 const RadialChartBasic = (props) => (
-  <RadialBarChart {...props} innerRadius={20} barSize={10} data={data}>
+  <MuiRecharts WrappedChart={RadialBarChart} {...props} innerRadius={20} barSize={10} data={data}>
     <RadialBar minAngle={15} clockWise={true} dataKey="uv" background fill="#8884d8" />
-  </RadialBarChart>
+  </MuiRecharts>
 );
 
 const ScatterChartBasic = (props) => (
-  <ScatterChart {...props}>
+  <MuiRecharts WrappedChart={ScatterChart} {...props}>
     <XAxis dataKey="pv" type="number" hide />
     <YAxis dataKey="uv" type="number" hide />
     <Scatter data={data} fill="#8884d8" />
-  </ScatterChart>
+  </MuiRecharts>
 );
 
 const TreeMapBasic = (props) => (
-  <Treemap
+  <MuiRecharts
     data={treeData}
+    WrappedChart={Treemap}
     {...props}
     isAnimationActive={false} // Disable animation to avoid snapshot issues.
     dataKey="size"
@@ -299,3 +281,16 @@ const TreeMapBasic = (props) => (
     fill="#8884d8"
   />
 );
+
+export const BasicLight = Template.bind({});
+BasicLight.args = {
+  type: 'BasicLight',
+};
+
+export const BasicDark = Template.bind({});
+BasicDark.args = {
+  type: 'BasicDark',
+};
+
+BasicLight.decorators = [muiTheme()];
+BasicDark.decorators = [muiTheme({ palette: { type: 'dark' } })];
