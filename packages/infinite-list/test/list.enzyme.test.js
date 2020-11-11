@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { List, ListItem } from '../src';
+import { List, ListItem } from '../src/components/index.js';
 import ListItemText from '@material-ui/core/ListItemText';
 
 const list = Array.from(Array(10).keys()).map((v) => ({ index: v, title: `title ${v}` }));
@@ -27,6 +27,7 @@ const renderRow = ({ item, isEmpty, key, style }) => {
 };
 
 describe('<List />', () => {
+  let useEffect;
   it('renders <List /> with 10 <ListItem /> as divs', () => {
     const wrapper = mount(
       <List loadMore={() => {}} list={list} rowCount={list.length} rowHeight={68} height={150} width={150}>
@@ -39,5 +40,12 @@ describe('<List />', () => {
     const virtualizedTree = '.ReactVirtualized__Grid__innerScrollContainer';
     expect(wrapper.find(virtualizedTree).length).toBe(1);
     expect(wrapper.find(virtualizedTree).children().length).toBe(list.length); // 10
+  });
+
+  it('test useEffect', () => {
+    useEffect = jest.spyOn(React, 'useEffect');
+    const mockUseEffect = jest.fn();
+    mockUseEffect();
+    expect(mockUseEffect).toHaveBeenCalled();
   });
 });
