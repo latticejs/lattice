@@ -3345,7 +3345,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@6.0.28", "@storybook/addon-actions@^6.0.26":
+"@storybook/addon-actions@6.0.28", "@storybook/addon-actions@^6.0.26", "@storybook/addon-actions@^6.0.27":
   version "6.0.28"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.28.tgz#86c0353b597c2a41f6ac7efa7c0d5aeed6a456b2"
   integrity sha512-DrApIt/rMCBrynJsFbmXPba2BCAj+yOybCsr0cqNNMkaZytAnoeDEqseCdWUtNXSgDnprAQ0HIrS2TIf4twh8w==
@@ -3463,7 +3463,7 @@
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-essentials@^6.0.26", "@storybook/addon-essentials@^6.0.28":
+"@storybook/addon-essentials@^6.0.26", "@storybook/addon-essentials@^6.0.27", "@storybook/addon-essentials@^6.0.28":
   version "6.0.28"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-6.0.28.tgz#3844ab663807233952bfa549da741d688d798767"
   integrity sha512-zpq3A1IsbnKdooI7Tr4wvfpjWjtziXHWckki+WSdq5AOYEpevlDa7fzf5+gxHr3HKvpHYXKioq6YD5FdZ5k7Fw==
@@ -3546,7 +3546,7 @@
     qs "^6.6.0"
     ts-dedent "^1.1.0"
 
-"@storybook/addon-links@^6.0.26":
+"@storybook/addon-links@^6.0.26", "@storybook/addon-links@^6.0.27":
   version "6.0.28"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.0.28.tgz#990aa86332de7a745edfc9c98dffff8aa4916bda"
   integrity sha512-5i0nh8vKQKRZGQAnI05VBPSKnZYlaIeB7sPcAzBvb1a8aSVQS4O1MBS9H5e92iN9N4QD7GujhN0aQh3aRbq/hw==
@@ -3585,7 +3585,7 @@
     regenerator-runtime "^0.13.3"
     ts-dedent "^1.1.0"
 
-"@storybook/addon-storyshots@^6.0.26":
+"@storybook/addon-storyshots@^6.0.26", "@storybook/addon-storyshots@^6.0.27":
   version "6.0.28"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-6.0.28.tgz#689dbe3e848dac7cdc878bcb5e29b213ab356deb"
   integrity sha512-5tOKVlCJHVzDesYCwSBW6oOHmmOli2Lo2Rup6ygMq6ZYQUfwyrtA352WzZpW9MKH2VryxKrd0jNrcxVVMDDHFA==
@@ -3626,7 +3626,7 @@
     regenerator-runtime "^0.13.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-storysource@^6.0.26":
+"@storybook/addon-storysource@^6.0.26", "@storybook/addon-storysource@^6.0.27":
   version "6.0.28"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.0.28.tgz#aea78da499bddb29b39c4a8722cdac82d5ce57c3"
   integrity sha512-Y3IL8pY0gPlZobcp5A6teuiwshgSAmMju9EqliGIJPdeZ3tB0ZD8L0lL0UTV4nQZli2KPvkrAarY8UHLDV6L+A==
@@ -4171,7 +4171,7 @@
     ts-dedent "^1.1.0"
     webpack "^4.33.0"
 
-"@storybook/react@^6.0.26":
+"@storybook/react@^6.0.26", "@storybook/react@^6.0.27":
   version "6.0.28"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.0.28.tgz#b7b482342b995645770906833799a0b1e155f9b4"
   integrity sha512-a0X5htjhqlBYQbuQlllTHD8VBeiEUs0UMU3lnJv79B2B2BiIaXK0w5ptyQyiOznP5OzSLnjZEQwmiefepFpr3g==
