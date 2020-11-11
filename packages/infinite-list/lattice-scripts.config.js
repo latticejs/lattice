@@ -1,11 +1,11 @@
 module.exports = {
   build: {
     codeSplitting: [
-      './src/TableSearchCell.js',
-      './src/TableOrderCell.js',
-      './src/Table.js',
-      './src/ScrollLoader.js',
-      './src/List.js',
+      './src/components/TableSearchCell.js',
+      './src/components/TableOrderCell.js',
+      './src/components/Table.js',
+      './src/components/ScrollLoader.js',
+      './src/components/List.js',
     ],
   },
 };
