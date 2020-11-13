@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import LatticeAgGrid from '../src/components/index.js';
 
 describe('<AgGrid />', () => {
-  let wrapper, childWrapper;
+  let wrapper;
   let useEffect;
   const showPagination = false;
   const columnDefs = [
@@ -62,8 +62,6 @@ describe('<AgGrid />', () => {
         }}
       />
     );
-
-    childWrapper = wrapper.find(LatticeAgGrid).childAt(0);
   });
 
   it('test useEffect', () => {
