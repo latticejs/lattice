@@ -152,7 +152,10 @@ Following packages Storybook are now upgraded from version 5 to 6.
 - Mui-recharts
 - Infinite-List
 - Gauge
+<<<<<<< HEAD
 - Ag-Grid
+=======
+>>>>>>> ab18c67e1c6198ce128ac10691c32043cc62b7e1
 - Froala-Editor
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
