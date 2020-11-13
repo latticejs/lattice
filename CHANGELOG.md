@@ -145,10 +145,19 @@ Image.png file has been added in CRA Templates for following examples.
 - Moved the content of the client folder of SAAS-Starter in the root and .env file is added.
 - Added templates
 
+## Update Phase - 2020-11-02
 Following packages Storybook are now upgraded from version 5 to 6.
 - Map
 - Tree
+- Mui-recharts
+- Infinite-List
+- Gauge
+- Ag-Grid
 - Froala-Editor
 
 [unreleased]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.1...HEAD
 [1.0.1-beta.1]: https://github.com/:latticejs/lattice/compare/v1.0.1-beta.0...v1.0.1-beta.1
+
+## Update Phase - 2020-11-02
+Following packages Storybook are now upgraded from version 5 to 6.
+  - Map
