@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Dag, { DAG_DEFAULTS } from '../src';
+import Dag, { DAG_DEFAULTS } from '../src/components';
 
 describe('<Dag />', () => {
   it('renders one <Dag /> component', () => {
