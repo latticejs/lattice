@@ -1,0 +1,303 @@
+import React, { useState } from 'react';
+import Types from 'prop-types';
+import classNames from 'classnames';
+// \ Material-UI \
+import List from '@material-ui/core/List';
+import Grid from '@material-ui/core/Grid';
+import withStyles from '@material-ui/core/styles/withStyles';
+import { makeStyles } from '@material-ui/core/styles';
+
+// \ Ours \
+import TreeParent from './parent';
+import { Item as TreeChild } from './child';
+import { withTreeItemIcon } from './icons';
+
+// \ Tree Material style \
+const styles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexDirection: 'column',
+    color: theme.palette.text.secondary,
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.fontSize,
+  },
+  treeItemNested: {
+    paddingLeft: theme.spacing(4),
+  },
+}));
+
+const cascadeUnFold = ({ initial, item, lvl, key = '', getItemKey }) => {
+  // Note (dk): cascadeUnFold is a recursive fn used to generate the
+  // initial array of unfolded items (keys). This fn should be used
+  // only to initialize the expanded state at the constructor phase.
+  // Further modifications to the expanded state are handled through
+  // the toggleFold fn.
+  if (item.children) {
+    initial.items.push(item);
+    initial.keys.push(getItemKey({ item, lvl }));
+    lvl = lvl + 1;
+    return item.children.reduce((initial, subItem, idx) => {
+      return {
+        ...initial,
+        ...cascadeUnFold({
+          initial,
+          item: subItem,
+          key: getItemKey({ item, lvl }),
+          lvl,
+          getItemKey,
+        }),
+      };
+    }, initial);
+  }
+};
+
+// \ reset internal state helper \
+const defaultState = ({ treeData, expandedAll, cascadeUnFold, getItemKey }) => {
+  let expandedAllData = [];
+  if (expandedAll) {
+    // Note (dk): if expandedAll prop is true then the tree should unfold all
+    // the container items (those with childrens). So we call cascadeUnFold fn
+    // from the top of treeData, and since treeData is an array we run it
+    // through all the root items.
+    expandedAllData = treeData.reduce(
+      (all, item) => {
+        return {
+          ...all,
+          ...cascadeUnFold({
+            initial: { items: [], keys: [] },
+            item,
+            lvl: 1,
+            getItemKey,
+          }),
+        };
+      },
+      { items: [], keys: [] }
+    );
+  }
+
+  return {
+    expanded: expandedAll ? expandedAllData.keys : [],
+    checked: [],
+  };
+};
+
+// \ rendergeneric item internal fn \
+const renderGenericCreator = ({
+  parentFn,
+  childFn: ChildFn,
+  iconItem,
+  onCheckItem,
+  secondaryActions,
+  getItemKey,
+  toggleFold,
+  expanded,
+  isExpanded,
+  isChecked,
+  cascadeCheck,
+  showChecks,
+  markUnfoldedParent,
+  style,
+}) => {
+  const iterator = (item, isChild = false, lvl = 0, idx) => {
+    lvl = lvl + 1;
+    item.key = getItemKey({ item, lvl }); // `lattice-tree-${idx}-${lvl}`;
+    if (item.children) {
+      return parentFn({
+        item,
+        key: item.key,
+        childClass: style,
+        lvl,
+        isChild,
+        secondaryActions,
+        childrens: item.children.map((child, idxChild) => iterator(child, true, lvl, idxChild)),
+        iconItem,
+        expanded,
+        isExpanded,
+        onCheckItem,
+        isChecked,
+        cascadeCheck,
+        toggleFold,
+        getItemKey,
+        showChecks,
+        markUnfoldedParent,
+      });
+    } else {
+      return (
+        <ChildFn
+          key={item.key}
+          item={item}
+          secondaryActions={secondaryActions}
+          childClass={style}
+          isChild={isChild}
+          lvl={lvl}
+          onCheckItem={onCheckItem}
+          toggleFold={toggleFold}
+          expanded={expanded}
+          isExpanded={isExpanded}
+          isChecked={isChecked}
+          cascadeCheck={cascadeCheck}
+          iconItem={iconItem}
+          getItemKey={getItemKey}
+          showChecks={showChecks}
+        />
+      );
+    }
+  };
+  return iterator;
+};
+
+export const Tree = (props) => {
+  const [state, setState] = useState(defaultState({ ...props, cascadeUnFold: cascadeUnFold }));
+  const styleClasses = styles();
+
+  const style = {
+    treeItemNested: styleClasses.treeItemNested,
+  };
+
+  const isExpanded = ({ item, lvl }) => {
+    if (state.expanded) {
+      return state.expanded.indexOf(getItemKey({ item, lvl })) !== -1;
+    }
+  };
+
+  const toggleFold = ({ item, lvl }) => {
+    const { expanded } = state;
+    const key = getItemKey({ item, lvl });
+    const currentIndex = expanded.indexOf(key);
+    const newExpanded = [...expanded];
+
+    if (currentIndex === -1) {
+      newExpanded.push(key);
+    } else {
+      newExpanded.splice(currentIndex, 1);
+    }
+
+    setState({ expanded: newExpanded }, () => {
+      if (currentIndex === -1) {
+        props.onUnfoldItem(item);
+      } else {
+        props.onFoldItem(item);
+      }
+    });
+  };
+
+  const toggleCheck = ({ checked: check, items = [], keys = [] }) => {
+    const { checked } = state;
+    const currentsIndexes = keys.map((key) => ({ pos: checked.indexOf(key), key }));
+    let newChecked = [];
+
+    if (!checked.length) {
+      newChecked = newChecked.concat(currentsIndexes.map((c) => c.key));
+    } else {
+      // Note (dk): we need to order desc the currentIndexes array
+      // because it will be splicing the array and if we did that
+      // from bottom to top, newChecked idxs will be changing and
+      // that will leave us with inconsistent results.
+      // If we splice from top to bottom, re-arrangements will cause
+      // no harm.
+      currentsIndexes.sort((a, b) => a.pos < b.pos);
+      let idx = 0;
+      const length = currentsIndexes.length;
+      newChecked = [...checked];
+      for (; idx < length; idx++) {
+        let current = currentsIndexes[idx];
+        let chck = isChecked(current.key);
+        if (chck) {
+          newChecked.splice(current.pos, 1);
+        } else {
+          newChecked.push(current.key);
+        }
+      }
+    }
+
+    setState({ checked: newChecked }, () => {
+      props.onCheckItem({ check, items });
+    });
+  };
+
+  const isChecked = (item) => {
+    return state.checked.indexOf(item) !== -1;
+  };
+
+  const getItemKey = (params) => {
+    return props.getItemKey(params);
+  };
+  // Note (dk): this will create our default renderGenericItem. What is a renderGenericItem? It's a function
+  // used to know how to render the content, ie: how to render parent nodes and child nodes. While we are using
+  // a parent/child notation it is actually up to how you parse it. renderGenericItem eventually receives the result
+  // of each data iteration, a datum. Finally, renderGenericItemCreator creates a fn composing fns used to know
+  // how to render childrens and parents.
+  const renderGenericItem = props.renderGenericItemCreator({
+    parentFn: props.renderParentItem,
+    childFn: props.renderChildItem,
+    secondaryActions: props.secondaryActions,
+    iconItem: withTreeItemIcon(props.renderItemIcon),
+    onCheckItem: toggleCheck,
+    getItemKey: props.getItemKey,
+    toggleFold: toggleFold,
+    expanded: props.expandedAll,
+    isExpanded: isExpanded,
+    isChecked: isChecked,
+    cascadeCheck: props.cascadeCheck,
+    showChecks: props.showChecks,
+    markUnfoldedParent: props.markUnfoldedParent,
+    style,
+  });
+
+  const { treeData } = props;
+
+  const rootClasses = [styleClasses.root];
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12} md={12} className={classNames('tree-wrapper', rootClasses)}>
+        <List component="div" disablePadding>
+          {treeData.map((datum, idx) => renderGenericItem(datum, false, 0, idx))}
+        </List>
+      </Grid>
+    </Grid>
+  );
+};
+
+// \ Prop Types \
+let treeDataNode = Types.shape({
+  label: Types.oneOfType([Types.element, Types.string]).isRequired,
+});
+
+treeDataNode.children = Types.arrayOf(treeDataNode);
+
+export default Tree;
+
+Tree.propTypes = {
+  treeData: Types.arrayOf(treeDataNode),
+  renderGenericItemCreator: Types.func,
+  renderParentItem: Types.func,
+  renderChildItem: Types.func,
+  secondaryActions: Types.array,
+  renderItemIcon: Types.func,
+  getItemKey: Types.func,
+  onFoldItem: Types.func,
+  onUnfoldItem: Types.func,
+  onCheckItem: Types.func,
+  showChecks: Types.bool,
+  markUnfoldedParent: Types.bool,
+  expandedAll: Types.bool,
+  cascadeCheck: Types.bool,
+};
+
+Tree.defaultProps = {
+  treeData: [],
+  secondaryActions: [],
+  renderGenericItemCreator: renderGenericCreator,
+  renderParentItem: TreeParent,
+  renderChildItem: TreeChild,
+  renderItemIcon: () => {},
+  getItemKey: ({ item, lvl }) => `lattice-tree-${item.label}-${lvl}`,
+  onFoldItem: () => {},
+  onUnfoldItem: () => {},
+  onCheckItem: () => {},
+  showChecks: true,
+  expandedAll: false,
+  cascadeCheck: false,
+  markUnfoldedParent: false,
+};
