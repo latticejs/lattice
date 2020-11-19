@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
-import { action } from '@storybook/addon-actions';
+import React, { useState, useEffect } from 'react';
 
-// Ours
-import Tree from '../src/tree';
-import muiTheme from '../.storybook/decorator-material-ui';
-import { withReadme } from '@latticejs/storybook-readme';
-import Readme from '../README.md';
+import { Tree } from '../components';
 import pkg from './pkg.json';
 import { JSONIcon } from './json-icons';
 
-const Flexed = (story) => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>{story()}</div>
-);
-
-const FullViewport = (story) => <div style={{ height: '100vh', width: '100vw', padding: 12 }}>{story()}</div>;
+export default {
+  title: 'Example/Tree',
+  component: Tree,
+};
 
 const input = [
   {
@@ -54,25 +48,19 @@ const input = [
   },
 ];
 
-class BasicTree extends Component {
-  state = {
-    treeData: input,
-  };
+const BasicTree = (props) => {
+  const [state] = useState({ treeData: input });
 
-  render() {
-    return <Tree treeData={this.state.treeData} cascadeCheck {...this.props} />;
-  }
-}
+  return <Tree treeData={state.treeData} cascadeCheck {...props} />;
+};
 
-class CustomTree extends Component {
-  state = {
-    treeData: input,
-  };
+const CustomTree = (props) => {
+  const [state] = useState({ treeData: input });
 
-  parseExt = (label) => label.split('.')[1];
+  const parseExt = (label) => label.split('.')[1];
 
-  customIcon = ({ item, isChild, expanded }) => {
-    const ext = this.parseExt(item.label);
+  const customIcon = ({ item, isChild, expanded }) => {
+    const ext = parseExt(item.label);
     if (ext === 'js') {
       return (
         <svg
@@ -111,10 +99,8 @@ class CustomTree extends Component {
     }
   };
 
-  render() {
-    return <Tree treeData={this.state.treeData} {...this.props} renderItemIcon={this.customIcon} />;
-  }
-}
+  return <Tree treeData={state.treeData} {...props} renderItemIcon={customIcon} />;
+};
 
 const isString = (value) => typeof value === 'string';
 const isDate = (value) => value !== '' && (value instanceof Date || new Date(value).toString() !== 'Invalid Date');
@@ -179,67 +165,67 @@ var transform = (input, level = 0) => {
   return result;
 };
 
-class JSONTree extends Component {
-  state = {
-    treeData: [],
-  };
+const JSONTree = (props) => {
+  const [state, setState] = useState({ treeData: [] });
 
-  customIcon = ({ item, isChild, expanded }) => {
+  const customIcon = ({ item, isChild, expanded }) => {
     return <JSONIcon type={item.type} bold={expanded} item={item} />;
   };
 
-  componentDidMount() {
-    this.setState({
+  useEffect(() => {
+    setState({
       treeData: transform(pkg),
     });
+  }, []);
+
+  const getItemKey = ({ item, lvl }) => `custom-key-${item.id}-${lvl}`;
+
+  return (
+    <Tree
+      treeData={state.treeData}
+      {...props}
+      getItemKey={getItemKey}
+      renderItemIcon={customIcon}
+      expandedAll
+      cascadeCheck
+    />
+  );
+};
+
+// const Template = (args) => <Tree {...args} />;
+const Template = (args) => {
+  if (args.type === 'Basic') {
+    return <BasicTree />;
   }
-
-  getItemKey = ({ item, lvl }) => `custom-key-${item.id}-${lvl}`;
-
-  render() {
-    return (
-      <Tree
-        treeData={this.state.treeData}
-        {...this.props}
-        getItemKey={this.getItemKey}
-        renderItemIcon={this.customIcon}
-        expandedAll
-        cascadeCheck
-      />
-    );
+  if (args.type === 'Customized') {
+    return <CustomTree />;
   }
-}
+  if (args.type === 'Json') {
+    return <JSONTree />;
+  }
+};
 
-const loadReadmeSections = withReadme(Readme);
-const withApiReadme = loadReadmeSections(['api']);
+export const Basic = Template.bind({});
+Basic.args = {
+  type: 'Basic',
+};
+Basic.argTypes = {
+  onClick: { action: 'checkItem' },
+  onEdgeClick: { action: 'onFoldItem' },
+  onNodeClick: { action: 'onUnfoldItem' },
+};
 
-export default ({ storiesOf }) => {
-  storiesOf('tree', module)
-    .addDecorator(Flexed)
-    .addDecorator(muiTheme())
-    .addDecorator(FullViewport)
-    .add(
-      'basic',
-      withApiReadme(() => (
-        <BasicTree
-          onCheckItem={action('checkItem')}
-          onFoldItem={action('onFoldItem')}
-          onUnfoldItem={action('onUnfoldItem')}
-        />
-      ))
-    )
-    .add(
-      'customized',
-      withApiReadme(() => (
-        <CustomTree
-          onCheckItem={action('checkItem')}
-          onFoldItem={action('onFoldItem')}
-          onUnfoldItem={action('onUnfoldItem')}
-        />
-      ))
-    )
-    .add(
-      'JSON tree',
-      withApiReadme(() => <JSONTree />)
-    );
+export const Customized = Template.bind({});
+Customized.args = {
+  type: 'Customized',
+};
+Customized.argTypes = {
+  onClick: { action: 'checkItem' },
+  onEdgeClick: { action: 'onFoldItem' },
+  onNodeClick: { action: 'onUnfoldItem' },
+};
+
+export const Json = Template.bind({});
+Json.args = {
+  type: 'Json',
 };
