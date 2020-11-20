@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Sunburst from '../components/';
+import Sunburst from '../components/index.js';
 import { Tooltip } from 'recharts';
 
 export default {

@@ -7,9 +7,16 @@ import { arc } from 'd3-shape';
 // recharts
 import Layer from 'recharts/lib/container/Layer';
 import Surface from 'recharts/lib/container/Surface';
-import { findChildByType, getPresentationAttributes, filterSvgElements } from 'recharts/lib/util/ReactUtils';
+import { ResponsiveContainer } from 'recharts';
+import {
+  findChildByType,
+  getPresentationAttributes,
+  filterSvgElements,
+  validateWidthHeight,
+} from 'recharts/lib/util/ReactUtils';
 import Tooltip from 'recharts/lib/component/Tooltip';
 import { getValueByDataKey } from 'recharts/lib/util/ChartUtils';
+import { shallowEqual } from 'recharts/lib/util/ShallowEqual';
 
 import Animate from 'react-smooth'; // transitive dep
 
@@ -48,6 +55,7 @@ const dataArc = arc()
   });
 
 const Sunburst = (props) => {
+  const displayName = 'Sunburst';
   /**
    * Returns default, reset state for the sunburst chart.
    * @return {Object} Whole new state

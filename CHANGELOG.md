@@ -145,9 +145,14 @@ Image.png file has been added in CRA Templates for following examples.
 - Moved the content of the client folder of SAAS-Starter in the root and .env file is added.
 - Added templates
 
+## Update Phase - 2020-11-02
 Following packages Storybook are now upgraded from version 5 to 6.
 - Map
 - Tree
+- Mui-recharts
+- Infinite-List
+- Gauge
+- Ag-Grid
 - Froala-Editor
 - Recharts-Sunburst
 

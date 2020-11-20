@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/recharts-sunburst",
-  "version": "1.0.1-beta.4",
+  "version": "1.0.1-beta.3",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -50,6 +50,7 @@
     "babel-plugin-transform-async-functions": "^6.22.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "jest": "^26.6.3",
     "markdown-loader-jest": "^0.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
