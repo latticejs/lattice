@@ -1,6 +1,6 @@
 {
   "name": "@latticejs/recharts-sunburst",
-  "version": "1.0.1-beta.3",
+  "version": "1.0.1-beta.4",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
