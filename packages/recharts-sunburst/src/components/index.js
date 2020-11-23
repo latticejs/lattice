@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 // d3
 import { hierarchy, partition } from 'd3-hierarchy';
@@ -7,6 +7,7 @@ import { arc } from 'd3-shape';
 // recharts
 import Layer from 'recharts/lib/container/Layer';
 import Surface from 'recharts/lib/container/Surface';
+import { ResponsiveContainer } from 'recharts';
 import {
   findChildByType,
   getPresentationAttributes,
@@ -53,103 +54,66 @@ const dataArc = arc()
     return Math.sqrt(d.y1);
   });
 
-export default class Sunburst extends Component {
-  static displayName = 'Sunburst';
-
-  static defaultProps = {
-    dataKey: 'value',
-    nameKey: 'name',
-    isAnimationActive: false,
-    isUpdateAnimationActive: false,
-    animationBegin: 0,
-    animationDuration: 600,
-    animationEasing: 'ease-out',
-  };
-
-  state = {
-    ...Sunburst.createDefaultState(),
-    data: this.props.data,
-  };
-
+const Sunburst = (props) => {
+  const displayName = 'Sunburst';
   /**
    * Returns default, reset state for the sunburst chart.
    * @return {Object} Whole new state
    */
-  static createDefaultState() {
+  const createDefaultState = () => {
     return {
       isTooltipActive: false,
       activeNode: null,
       data: null,
     };
-  }
+  };
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.data !== prevState.data) {
-      return {
-        ...Sunburst.createDefaultState(),
-        data: nextProps.data,
-      };
+  const [state, setState] = useState({
+    ...createDefaultState(),
+    data: props.data,
+  });
+
+  // /**
+  //  * Returns default, reset state for the sunburst chart.
+  //  * @return {Object} Whole new state
+  //  */
+
+  const renderContentItem = (content, node, nodeProps) => {
+    if (React.isValidElement(content)) {
+      return React.cloneElement(content, nodeProps);
+    } else if (typeof content === 'function') {
+      return content(nodeProps);
     }
-
-    return null;
-  }
-
-  shouldComponentUpdate(props, state) {
-    return !shallowEqual(props, this.props) || !shallowEqual(state, this.state);
-  }
-
-  handleMouseEnter(node, e) {
-    const { onMouseEnter, children } = this.props;
-    const tooltipItem = findChildByType(children, Tooltip);
-    this.setState(
-      {
-        isTooltipActive: tooltipItem ? true : false,
-        activeNode: node,
-      },
-      () => {
-        if (onMouseEnter) {
-          onMouseEnter(node, e);
-        }
-      }
-    );
-  }
-
-  handleMouseLeave(node, e) {
-    const { onMouseLeave } = this.props;
-    this.setState(
-      {
-        isTooltipActive: false,
-        activeNode: null,
-      },
-      () => {
-        if (onMouseLeave) {
-          onMouseLeave(node, e);
-        }
-      }
-    );
-  }
-
-  handleClick(node) {
-    const { onClick } = this.props;
-
-    if (onClick) {
-      onClick(node);
+    const { nameKey, colors = {} } = props;
+    const { activeNode } = state;
+    let opacity = 1;
+    if (activeNode) {
+      const ancestors = activeNode.ancestors();
+      opacity = ancestors.filter((n) => n.data[nameKey] === node.data[nameKey]).length > 0 ? 1 : 0.3;
     }
-  }
+    const { depth, fill = 'purple', stroke = 'white' } = nodeProps;
+    const name = node.data[nameKey];
 
-  renderAnimatedItem(content, node, nodeProps, isLeaf) {
-    const {
-      isAnimationActive,
-      animationBegin,
-      animationDuration,
-      animationEasing,
-      isUpdateAnimationActive,
-    } = this.props;
+    return (
+      <path
+        display={depth ? null : 'none'}
+        d={dataArc(nodeProps)}
+        fillRule={'evenodd'}
+        {...getPresentationAttributes(props)}
+        fill={node.data.fill || colors[name] || fill}
+        stroke={node.data.stroke || stroke}
+        style={{ opacity }}
+      />
+    );
+  };
+
+  const renderAnimatedItem = (content, node, nodeProps, isLeaf) => {
+    const { isAnimationActive, animationBegin, animationDuration, animationEasing, isUpdateAnimationActive } = props;
 
     const event = {
-      onMouseEnter: this.handleMouseEnter.bind(this, node, nodeProps),
-      onMouseLeave: this.handleMouseLeave.bind(this, node, nodeProps),
-      onClick: this.handleClick.bind(this, node, nodeProps),
+      onMouseEnter: handleMouseEnter.bind(this, node, nodeProps),
+      onMouseLeave: handleMouseLeave.bind(this, node, nodeProps),
+      onClick: handleClick.bind(this, node, nodeProps),
     };
     if (!node.depth) return;
     const position = node.depth ? node.parent.children.indexOf(node) : 0;
@@ -173,7 +137,7 @@ export default class Sunburst extends Component {
               begin={(node.depth + position * 0.1) * 350 + animationBegin}
             >
               <Layer {...event}>
-                {this.renderContentItem(content, node, {
+                {renderContentItem(content, node, {
                   ...nodeProps,
                   isAnimationActive,
                   isUpdateAnimationActive,
@@ -215,74 +179,86 @@ export default class Sunburst extends Component {
       //   )}
       // </Smooth>
     );
-  }
+  };
 
-  renderContentItem(content, node, nodeProps) {
-    if (React.isValidElement(content)) {
-      return React.cloneElement(content, nodeProps);
-    } else if (typeof content === 'function') {
-      return content(nodeProps);
-    }
-    const { nameKey, colors = {} } = this.props;
-    const { activeNode } = this.state;
-    let opacity = 1;
-    if (activeNode) {
-      const ancestors = activeNode.ancestors();
-      opacity = ancestors.filter((n) => n.data[nameKey] === node.data[nameKey]).length > 0 ? 1 : 0.3;
-    }
-    const { depth, fill = 'purple', stroke = 'white' } = nodeProps;
-    const name = node.data[nameKey];
-
-    return (
-      <path
-        display={depth ? null : 'none'}
-        d={dataArc(nodeProps)}
-        fillRule={'evenodd'}
-        {...getPresentationAttributes(this.props)}
-        fill={node.data.fill || colors[name] || fill}
-        stroke={node.data.stroke || stroke}
-        style={{ opacity }}
-      />
+  const handleMouseEnter = (node, e) => {
+    const { onMouseEnter, children } = props;
+    const tooltipItem = findChildByType(children, Tooltip);
+    setState(
+      {
+        ...state,
+        isTooltipActive: tooltipItem ? true : false,
+        activeNode: node,
+      },
+      () => {
+        if (onMouseEnter) {
+          onMouseEnter(node, e);
+        }
+      }
     );
-  }
+  };
+
+  const handleMouseLeave = (node, e) => {
+    const { onMouseLeave } = props;
+    setState(
+      {
+        ...state,
+        isTooltipActive: false,
+        activeNode: null,
+      },
+      () => {
+        if (onMouseLeave) {
+          onMouseLeave(node, e);
+        }
+      }
+    );
+  };
+
+  const handleClick = (node) => {
+    const { onClick } = props;
+
+    if (onClick) {
+      onClick(node);
+    }
+  };
 
   // renderNode(node, index, root) {
-  renderNode(root, node, i) {
-    const { content } = this.props;
-    const nodeProps = { ...getPresentationAttributes(this.props), ...node, root };
+  const renderNode = (root, node, i) => {
+    const { content } = props;
+    const nodeProps = { ...getPresentationAttributes(props), ...node, root };
     const isLeaf = !node.children || !node.children.length;
     return (
       <Layer key={`recharts-sunburst-node-${i}`} className={`recharts-sunburst-depth-${node.depth}`}>
-        {this.renderAnimatedItem(content, node, nodeProps, isLeaf)}
+        {renderAnimatedItem(content, node, nodeProps, isLeaf)}
         {node.children && node.children.length
-          ? node.children.map((child, index) => this.renderNode(node, child, index))
+          ? node.children.map((child, index) => renderNode(node, child, index))
           : null}
       </Layer>
     );
-  }
+  };
 
-  renderAllNodes() {
-    const { width, height, data, dataKey, nameKey } = this.props;
+  const renderAllNodes = () => {
+    const { width, height, data, dataKey, nameKey } = props;
     const radius = Math.min(width, height) / 2;
     const root = computeData({ [nameKey]: 'root', children: data }, radius, dataKey);
 
     return (
       <Layer transform={`translate( ${width / 2} , ${height / 2})`}>
-        {root.map((node, index) => this.renderNode(root, node, index))}
+        {root.map((node, index) => renderNode(root, node, index))}
       </Layer>
     );
-  }
+  };
 
-  renderTooltip() {
-    const { children, nameKey } = this.props;
+  const renderTooltip = () => {
+    const { children, nameKey } = props;
     const tooltipItem = findChildByType(children, Tooltip);
 
     if (!tooltipItem) {
       return null;
     }
 
-    const { width, height } = this.props;
-    const { isTooltipActive, activeNode } = this.state;
+    const { width, height } = props;
+    const { isTooltipActive, activeNode } = state;
     const viewBox = { x: 0, y: 0, width, height };
 
     let coordinate = null;
@@ -314,29 +290,33 @@ export default class Sunburst extends Component {
       label: '',
       payload,
     });
-  }
+  };
 
-  render() {
-    if (!validateWidthHeight(this)) {
-      return null;
-    }
+  const { width, height, className, style, children, ...others } = props;
+  const attrs = getPresentationAttributes(others);
 
-    const { width, height, className, style, children, ...others } = this.props;
-    const attrs = getPresentationAttributes(others);
+  return (
+    <div
+      className={classNames('recharts-wrapper', className)}
+      style={{ position: 'relative', cursor: 'default', width, height }}
+    >
+      <Surface {...attrs} width={width} height={height}>
+        {renderAllNodes()}
+        {filterSvgElements(children)}
+      </Surface>
+      {renderTooltip()}
+    </div>
+  );
+};
 
-    return (
-      <div
-        className={classNames('recharts-wrapper', className)}
-        style={{ ...style, position: 'relative', cursor: 'default', width, height }}
-      >
-        <Surface {...attrs} width={width} height={height}>
-          {this.renderAllNodes()}
-          {filterSvgElements(children)}
-        </Surface>
-        {this.renderTooltip()}
-      </div>
-    );
-  }
-}
+export default Sunburst;
 
-// pureRender(Sunburst);
+Sunburst.defaultProps = {
+  dataKey: 'value',
+  nameKey: 'name',
+  isAnimationActive: false,
+  isUpdateAnimationActive: false,
+  animationBegin: 0,
+  animationDuration: 600,
+  animationEasing: 'ease-out',
+};

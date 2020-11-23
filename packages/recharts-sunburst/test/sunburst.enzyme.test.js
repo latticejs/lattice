@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Sunburst from '../src';
+import Sunburst from '../src/components';
 
 const data = [
   {

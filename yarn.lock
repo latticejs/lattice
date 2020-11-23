@@ -3584,7 +3584,7 @@
     qs "^6.6.0"
     ts-dedent "^1.1.0"
 
-"@storybook/addon-links@^6.0.26", "@storybook/addon-links@^6.0.27":
+"@storybook/addon-links@^6.0.26", "@storybook/addon-links@^6.0.27", "@storybook/addon-links@^6.0.28":
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.1.2.tgz#4e0cda342838c79579311f1566bd92847018ecd8"
   integrity sha512-nllLhqc0yQdiZAoPqQ1sxluZh8zMyP2NiH9Y26ph/4dcn6sLyMdxOgfvIWKsWa32+c3c71MsauK6xQ9kS3+fwg==
@@ -7176,7 +7176,7 @@ babel-loader@8.1.0:
     pify "^4.0.1"
     schema-utils "^2.6.5"
 
-babel-loader@^8.0.6, babel-loader@^8.1.0:
+babel-loader@^8.0.6, babel-loader@^8.1.0, babel-loader@^8.2.1:
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.1.tgz#e53313254677e86f27536f5071d807e01d24ec00"
   integrity sha512-dMF8sb2KQ8kJl21GUjkW1HWmcsL39GOV5vnzjqrCzEPNY0S0UfMLnumidiwIajDSBmKhYf5iRW+HXaM4cvCKBw==
@@ -18092,7 +18092,7 @@ jest@^23.4.0, jest@^23.6.0:
     import-local "^1.0.0"
     jest-cli "^23.6.0"
 
-jest@^26.4.2:
+jest@^26.4.2, jest@^26.6.3:
   version "26.6.3"
   resolved "https://registry.yarnpkg.com/jest/-/jest-26.6.3.tgz#40e8fdbe48f00dfa1f0ce8121ca74b88ac9148ef"
   integrity sha512-lGS5PXGAzR4RF7V5+XObhqz2KZIDUA1yD0DG6pBVmy10eh0ZIXQImRuzocsI/N2XZ1GrLFwTS27In2i2jlpq1Q==
