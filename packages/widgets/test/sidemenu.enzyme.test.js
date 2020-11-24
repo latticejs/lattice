@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { SideMenu } from '../src';
+import { SideMenu } from '../src/components/index';
 
 const sideMenuMockClick = jest.fn();
 const navigation = [

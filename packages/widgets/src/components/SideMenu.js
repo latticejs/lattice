@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 
 // Material-UI
@@ -45,60 +45,47 @@ const styles = (theme) => ({
   },
 });
 
-class SideMenu extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showMini: props.mini || false,
-      mouseOver: false,
-      open: this.getActiveRouteGroup(),
-    };
-  }
-
-  getActiveRouteGroup() {
-    const { activeRoute, navigation } = this.props;
+const SideMenu = (props) => {
+  const getActiveRouteGroup = () => {
+    const { activeRoute, navigation } = props;
     return navigation.filter((r) => r.children && r.children.includes(activeRoute))[0] || null;
-  }
-
-  handleMouseEnter = () => {
-    this.setState({ mouseOver: true });
   };
 
-  handleMouseLeave = () => {
-    this.setState({ mouseOver: false });
+  const [state, setState] = useState({
+    showMini: props.mini || false,
+    mouseOver: false,
+    open: getActiveRouteGroup(),
+  });
+
+  const handleMouseEnter = () => {
+    setState({ ...state, mouseOver: true });
   };
 
-  toggleGroup(route) {
-    this.setState({
-      open: this.isOpen(route) ? null : route,
-    });
-  }
+  const handleMouseLeave = () => {
+    setState({ ...state, mouseOver: false });
+  };
 
-  isOpen(route) {
-    const { open } = this.state;
+  const isOpen = (route) => {
+    const { open } = state;
     return open === route;
-  }
+  };
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.mini !== prevState.showMini) {
-      return {
-        showMini: nextProps.mini,
-      };
-    }
+  const toggleGroup = (route) => {
+    setState({
+      ...state,
+      open: isOpen(route) ? null : route,
+    });
+  };
 
-    return null;
-  }
-
-  isActive(route) {
-    const { activeRoute } = this.props;
+  const isActive = (route) => {
+    const { activeRoute } = props;
     return route === activeRoute || (route.children && route.children.includes(activeRoute));
-  }
+  };
 
-  renderRoute(route, index, inset) {
-    const { showMini, mouseOver } = this.state;
+  const renderRoute = (route, index, inset) => {
+    const { showMini, mouseOver } = state;
     const { title, icon: Icon } = route;
-    const { onItemClick, classes } = this.props;
+    const { onItemClick, classes } = props;
     const itemClassName = classnames([
       classes.listItemText,
       !showMini || mouseOver ? '' : classes.listItemHidden,
@@ -109,7 +96,7 @@ class SideMenu extends Component {
         button
         key={`nav-route-${index}`}
         onClick={() => onItemClick(route)}
-        className={classnames(this.isActive(route) ? classes.activeItem : classes.listItem)}
+        className={classnames(isActive(route) ? classes.activeItem : classes.listItem)}
         classes={{
           gutters: classes.listItemGutters,
         }}
@@ -128,22 +115,33 @@ class SideMenu extends Component {
         />
       </ListItem>
     );
-  }
+  };
 
-  renderGroup(route, index) {
-    const { showMini, mouseOver } = this.state;
-    const { classes } = this.props;
+  const isActiveNew = (route) => {
+    const { activeRoute } = props;
+    return route === activeRoute || (route.children && route.children.includes(activeRoute));
+  };
+
+  const isOpenNew = (route) => {
+    const { open } = state;
+    return open === route;
+  };
+
+  const renderGroup = (route, index) => {
+    const { showMini, mouseOver } = state;
+    const { classes } = props;
     const itemClassName = classnames(classes.listItemText, !showMini || mouseOver ? '' : classes.listItemHidden);
 
     const { title, children, icon: Icon } = route;
-    const isActive = this.isActive(route);
-    const isOpen = this.isOpen(route);
+
+    const isActive = isActiveNew(route);
+    const isOpen = isOpenNew(route);
 
     return (
       <React.Fragment key={index}>
         <ListItem
           button
-          onClick={() => this.toggleGroup(route)}
+          onClick={() => toggleGroup(route)}
           className={classnames(isActive ? classes.activeItem : classes.listItem)}
           classes={{
             gutters: classes.listItemGutters,
@@ -166,33 +164,31 @@ class SideMenu extends Component {
         </ListItem>
         <Collapse in={isOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {children.map((route, idx) => this.renderRoute(route, `${index}-${idx}`, true))}
+            {children.map((route, idx) => renderRoute(route, `${index}-${idx}`, true))}
           </List>
         </Collapse>
       </React.Fragment>
     );
-  }
+  };
 
-  render() {
-    const { showMini, mouseOver } = this.state;
-    const { navigation, width = 250, miniWidth = 80, classes, className = '' } = this.props;
-    const wrapperWidth = !showMini || mouseOver ? width : miniWidth;
+  const { showMini, mouseOver } = state;
+  const { navigation, width = 250, miniWidth = 80, classes, className = '' } = props;
+  const wrapperWidth = !showMini || mouseOver ? width : miniWidth;
 
-    return (
-      <List
-        className={classnames(classes.root, className)}
-        style={{ width: wrapperWidth }}
-        component="nav"
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        <div className={classes.topSpacer} />
-        {navigation.map((route, index) => {
-          return route.children ? this.renderGroup(route, index) : this.renderRoute(route, index);
-        })}
-      </List>
-    );
-  }
-}
+  return (
+    <List
+      className={classnames(classes.root, className)}
+      style={{ width: wrapperWidth }}
+      component="nav"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className={classes.topSpacer} />
+      {navigation.map((route, index) => {
+        return route.children ? renderGroup(route, index) : renderRoute(route, index);
+      })}
+    </List>
+  );
+};
 
 export default withStyles(styles)(SideMenu);

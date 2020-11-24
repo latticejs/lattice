@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Widget } from '../src';
+import { Widget } from '../src/components/index';
 
 describe('<Widget />', () => {
   it('renders one empty <Widget /> component with a title', () => {
