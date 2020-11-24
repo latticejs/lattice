@@ -23,12 +23,27 @@ npm install @latticejs/widgets
 import React, { Component } from 'react';
 import { Loader } from '@latticejs/widgets';
 
-const App = () => {
-  return (
-    <Loader loading={isLoading}>
-      <h1>Loaded!</h1>
-    </Loader>
-  );
+class App extends Component {
+  state = {
+    isLoading: true
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isLoading: false
+      });
+    }, 2000);
+  }
+
+  render() {
+    const { isLoading } = this.state;
+    return (
+      <Loader loading={isLoading}>
+        <h1>Loaded!</h1>
+      </Loader>
+    );
+  }
 }
 ```
 
@@ -83,13 +98,15 @@ const navigation = [
   }
 ];
 
-const App = () => {
-  return (
-    <SideMenu
-      navigation={navigation}
-      onItemClick={(item) => console.log(item)}
-    />
-  );
+class App extends Component {
+  render() {
+    return (
+      <SideMenu
+        navigation={navigation}
+        onItemClick={(item) => console.log(item)}
+      />
+    )
+  }
 }
 ```
 
@@ -136,12 +153,14 @@ Used to indicate component's min width.
 import React, { Component } from 'react';
 import { Widget } from '@latticejs/widgets';
 
-const App = () => {
-  return (
-    <Widget featured title="Title">
+class App extends Component {
+  render() {
+    return (
+      <Widget featured title="Title">
         Basic Widget
       </Widget>
-  );
+    )
+  }
 }
 ```
 
