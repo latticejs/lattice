@@ -43,7 +43,7 @@
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
     "apollo-upload-client": "^13.0.0",
-    "axios": "^0.21.0",
+    "axios": "^0.19.0",
     "clsx": "^1.1.0",
     "date-fns": "^2.11.0",
     "env-cmd": "^10.1.0",
