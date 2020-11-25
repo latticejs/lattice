@@ -28,7 +28,7 @@
   "dependencies": {
     "ag-grid-community": "^19.1.4",
     "ag-grid-react": "^19.1.2",
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
