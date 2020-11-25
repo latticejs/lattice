@@ -20,10 +20,18 @@ npm install @latticejs/widgets
 ### Usage
 
 ```jsx
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Loader } from '@latticejs/widgets';
 
 const App = () => {
+  const [isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  },[])
+
   return (
     <Loader loading={isLoading}>
       <h1>Loaded!</h1>
@@ -65,7 +73,7 @@ Used to indicate if the loader needs to be resizer to the entire screen (100vh x
 ### Usage
 
 ```jsx
-import React, { Component } from 'react';
+import React from 'react';
 import { SideMenu } from '@latticejs/widgets';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
@@ -89,7 +97,7 @@ const App = () => {
       navigation={navigation}
       onItemClick={(item) => console.log(item)}
     />
-  );
+  )
 }
 ```
 
@@ -133,15 +141,15 @@ Used to indicate component's min width.
 ### Usage
 
 ```jsx
-import React, { Component } from 'react';
+import React from 'react';
 import { Widget } from '@latticejs/widgets';
 
 const App = () => {
   return (
     <Widget featured title="Title">
-        Basic Widget
-      </Widget>
-  );
+      Basic Widget
+    </Widget>
+  )
 }
 ```
 
