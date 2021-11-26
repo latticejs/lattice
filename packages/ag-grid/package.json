@@ -25,7 +25,7 @@
     "react-dom": "^16.13.1"
   },
   "dependencies": {
-    "ag-grid-community": "^19.1.4",
+    "ag-grid-community": "^25.2.0",
     "ag-grid-react": "^19.1.2",
     "typeface-roboto": "^0.0.54"
   },
