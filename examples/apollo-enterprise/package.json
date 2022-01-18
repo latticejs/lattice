@@ -17,7 +17,7 @@
     "apollo-link-http": "^1.5.0",
     "apollo-link-state": "^0.4.0",
     "cors": "^2.8.0",
-    "formik": "^1.5.0",
+    "formik": "^2.0.0",
     "graphql": "^14.5.0",
     "graphql-shield": "^6.1.0",
     "graphql-tag": "^2.10.0",
