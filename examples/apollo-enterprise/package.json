@@ -19,7 +19,7 @@
     "cors": "^2.8.0",
     "formik": "^1.5.0",
     "graphql": "^14.5.0",
-    "graphql-shield": "^6.1.0",
+    "graphql-shield": "^7.4.1",
     "graphql-tag": "^2.10.0",
     "graphql-yoga": "^1.18.0",
     "jsonwebtoken": "^8.5.0",
@@ -33,7 +33,7 @@
     "react-router-dom": "^5.0.0",
     "recharts": "^1.8.5",
     "typeface-roboto": "^0.0.54",
-    "yup": "^0.27.0",
+    "yup": "^0.30.0",
     "react-smooth": "1.0.2"
   },
   "scripts": {
