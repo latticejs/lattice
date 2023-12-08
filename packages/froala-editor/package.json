@@ -56,10 +56,10 @@
     "typeface-roboto": "0.0.75"
   },
   "dependencies": {
-    "froala-editor": "^3.0.6",
+    "froala-editor": "^4.1.4",
     "identity-obj-proxy": "^3.0.0",
     "material-design-icons": "^3.0.1",
-    "react-froala-wysiwyg": "^3.0.6"
+    "react-froala-wysiwyg": "^4.1.4"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./setupTest.js",
