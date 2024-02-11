@@ -22,7 +22,7 @@
     "apollo-server": "^2.9.0",
     "classnames": "^2.2.0",
     "graphql": "^14.5.0",
-    "libnpmsearch": "^2.0.0",
+    "libnpmsearch": "^7.0.0",
     "react": "^16.13.1",
     "react-apollo": "^3.1.0",
     "react-container-dimensions": "^1.4.0",
